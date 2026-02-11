@@ -31,7 +31,7 @@ namespace TRAMADE
             {
                 conexion.Abrir();  //Abrir la conexion a la base de datos
 
-                string consulta = "SELECT * FROM VistaUsuariosLogin WHERE Usuario_Id = @usuario AND Usuario_Contraseña = @contra";  //Consulta con parametros
+                string consulta = "SELECT * FROM VistaUsuariosLogin WHERE correo_usuario = @usuario AND password_usuario = @contra";  //Consulta con parametros
                 SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);//Nuevo comado sql que sera ejecuta contra la base de datos
                 cmd.Parameters.AddWithValue("@usuario", usuario); //Agrega un parametro llamado @usuario al comando SQL y le asigna el valor que escribio el ususario en el text box
                 cmd.Parameters.AddWithValue("@contra", contraseña); //esto remplazqa el @Usuario en SQL con el valor real 
