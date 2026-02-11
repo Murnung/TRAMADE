@@ -11,7 +11,8 @@ namespace TRAMADE
 {
     internal class clsConexion
     {
-        string conexion = "Data Source = (localdb)\\Servidor_Claudio;; Initial Catalog = proyecto; Integrated Security = true";
+        string conexion = "Data Source=db-tramade.database.windows.net;Initial Catalog=DB_TRAMADE;User ID=TMSS;Password=Elmaster8;";
+
         public SqlConnection SqlC = new SqlConnection();
         public clsConexion()
         {
