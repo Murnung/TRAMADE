@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,41 @@ namespace TRAMADE
             txtContraseña.ForeColor = Color.Gray;
         }
 
+        clsConexion conexion = new clsConexion();
+
+         public void login (string usuario, string contraseña)
+        {
+            try
+            {
+                conexion.Abrir();  //Abrir la conexion a la base de datos
+
+                string consulta = "SELECT * FROM VistaUsuariosLogin WHERE Usuario_Id = @usuario AND Usuario_Contraseña = @contra";  //Consulta con parametros
+                SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);//Nuevo comado sql que sera ejecuta contra la base de datos
+                cmd.Parameters.AddWithValue("@usuario", usuario); //Agrega un parametro llamado @usuario al comando SQL y le asigna el valor que escribio el ususario en el text box
+                cmd.Parameters.AddWithValue("@contra", contraseña); //esto remplazqa el @Usuario en SQL con el valor real 
+
+                //ejecuta y lee los resultados
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())  //Intenta lee una fila
+                {
+                    MessageBox.Show("Inicio de seccion exitoso");
+                    Form1 frm = new Form1();
+                    frm.ShowDialog();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                }
+                dr.Close(); //Librea recursos del sqldatareader
+                conexion.Cerrar(); //Cierra la conexion a labase de datos
+                
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Error");
+            }
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -39,7 +75,16 @@ namespace TRAMADE
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-
+            if (txtUsuario.Text == null || txtContraseña == null)
+            {
+                MessageBox.Show("Necesita llenar ambos campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string usuario = txtUsuario.Text.Trim();  //Trim para eliminar espacios de ambos lados
+                string contra = txtContraseña.Text.Trim();
+                login(usuario, contra);
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
