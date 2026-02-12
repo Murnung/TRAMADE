@@ -137,5 +137,10 @@ namespace TRAMADE
                 txtContraseña.ForeColor = Color.Gray;
             }
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
