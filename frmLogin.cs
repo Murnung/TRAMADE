@@ -41,7 +41,7 @@ namespace TRAMADE
 
                 if (dr.Read())  //Intenta lee una fila
                 {
-                    MessageBox.Show("Inicio de seccion exitoso");
+                    MessageBox.Show("Inicio de sesión exitoso");
                     Form1 frm = new Form1();
                     frm.ShowDialog();
                     
