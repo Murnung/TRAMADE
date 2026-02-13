@@ -34,14 +34,14 @@ namespace TRAMADE
                 string consulta = "SELECT * FROM VistaUsuariosLogin WHERE correo_usuario = @usuario AND password_usuario = @contra";  //Consulta con parametros
                 SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);//Nuevo comado sql que sera ejecuta contra la base de datos
                 cmd.Parameters.AddWithValue("@usuario", usuario); //Agrega un parametro llamado @usuario al comando SQL y le asigna el valor que escribio el ususario en el text box
-                cmd.Parameters.AddWithValue("@contra", contraseña); //esto remplazqa el @Usuario en SQL con el valor real 
+                cmd.Parameters.AddWithValue("@contra", contraseña); //esto reemplaza el @Usuario en SQL con el valor real 
 
                 //ejecuta y lee los resultados
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.Read())  //Intenta lee una fila
                 {
-                    MessageBox.Show("Inicio de seccion exitoso");
+                    MessageBox.Show("Inicio de sesión exitoso");
                     Form1 frm = new Form1();
                     frm.ShowDialog();
                     
