@@ -114,6 +114,7 @@
             this.btnRegistrar.Size = new System.Drawing.Size(260, 45);
             this.btnRegistrar.TabIndex = 7;
             this.btnRegistrar.Text = "REGISTRAR SOLICITUD";
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
             // 
             // btnActualizar
             // 

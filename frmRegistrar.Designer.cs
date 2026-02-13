@@ -28,31 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2Panel1.SuspendLayout();
+            this.pnlRegistrar = new Guna.UI2.WinForms.Guna2Panel();
             this.SuspendLayout();
             // 
-            // guna2Panel1
+            // pnlRegistrar
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.BorderRadius = 20;
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(23, 36);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(748, 392);
-            this.guna2Panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(507, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "FREGISTRO DE NUEVA SOLICITUD DE COMPRA";
+            this.pnlRegistrar.BackColor = System.Drawing.Color.White;
+            this.pnlRegistrar.BorderRadius = 20;
+            this.pnlRegistrar.Location = new System.Drawing.Point(77, 53);
+            this.pnlRegistrar.Name = "pnlRegistrar";
+            this.pnlRegistrar.Size = new System.Drawing.Size(653, 349);
+            this.pnlRegistrar.TabIndex = 0;
             // 
             // frmRegistrar
             // 
@@ -60,18 +46,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(70)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(817, 459);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.pnlRegistrar);
             this.Name = "frmRegistrar";
             this.Text = "frmRegistrar";
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.frmRegistrar_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Panel pnlRegistrar;
     }
 }
