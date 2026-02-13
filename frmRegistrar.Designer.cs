@@ -29,16 +29,39 @@
         private void InitializeComponent()
         {
             this.pnlRegistrar = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
+            this.pnlRegistrar.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRegistrar
             // 
             this.pnlRegistrar.BackColor = System.Drawing.Color.White;
             this.pnlRegistrar.BorderRadius = 20;
+            this.pnlRegistrar.Controls.Add(this.btnRegresar);
             this.pnlRegistrar.Location = new System.Drawing.Point(77, 53);
             this.pnlRegistrar.Name = "pnlRegistrar";
             this.pnlRegistrar.Size = new System.Drawing.Size(653, 349);
             this.pnlRegistrar.TabIndex = 0;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(240, 188);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(129, 51);
+            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnRegresar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnRegresar.StateDisabled.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnRegresar.StateDisabled.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnRegresar.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnRegresar.StatePressed.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnRegresar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnRegresar.TabIndex = 0;
+            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegresar.Values.Text = "Regresar";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // frmRegistrar
             // 
@@ -50,6 +73,7 @@
             this.Name = "frmRegistrar";
             this.Text = "frmRegistrar";
             this.Load += new System.EventHandler(this.frmRegistrar_Load);
+            this.pnlRegistrar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -57,5 +81,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel pnlRegistrar;
+        private Krypton.Toolkit.KryptonButton btnRegresar;
     }
 }

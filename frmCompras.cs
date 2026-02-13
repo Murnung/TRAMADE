@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,12 @@ namespace TRAMADE
         public frmCompras()
         {
             InitializeComponent();
-            
+            RedondearBoton(btnPrueba, 10);
+        }
+
+        private void RedondearBoton(KryptonButton btn, int radio = 20)
+        {
+            btn.StateCommon.Border.Rounding = radio;
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,6 +75,12 @@ namespace TRAMADE
         }
 
         private void btnRegistrar_Click_1(object sender, EventArgs e)
+        {
+            frmRegistrar ObjRegistrar = new frmRegistrar();
+            ObjRegistrar.Show();
+        }
+
+        private void btnPrueba_Click(object sender, EventArgs e)
         {
             frmRegistrar ObjRegistrar = new frmRegistrar();
             ObjRegistrar.Show();
