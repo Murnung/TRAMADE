@@ -15,7 +15,6 @@ namespace TRAMADE
         public frmRegistrar()
         {
             InitializeComponent();
-            pnlRegistrar.BorderRadius = 30;
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -28,20 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlRegistrar = new Guna.UI2.WinForms.Guna2Panel();
+           
             this.btnRegresar = new Krypton.Toolkit.KryptonButton();
-            this.pnlRegistrar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlRegistrar
-            // 
-            this.pnlRegistrar.BackColor = System.Drawing.Color.White;
-            this.pnlRegistrar.BorderRadius = 20;
-            this.pnlRegistrar.Controls.Add(this.btnRegresar);
-            this.pnlRegistrar.Location = new System.Drawing.Point(77, 53);
-            this.pnlRegistrar.Name = "pnlRegistrar";
-            this.pnlRegistrar.Size = new System.Drawing.Size(653, 349);
-            this.pnlRegistrar.TabIndex = 0;
             // 
             // btnRegresar
             // 
@@ -69,18 +58,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(70)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(817, 459);
-            this.Controls.Add(this.pnlRegistrar);
             this.Name = "frmRegistrar";
             this.Text = "frmRegistrar";
             this.Load += new System.EventHandler(this.frmRegistrar_Load);
-            this.pnlRegistrar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel pnlRegistrar;
         private Krypton.Toolkit.KryptonButton btnRegresar;
     }
 }

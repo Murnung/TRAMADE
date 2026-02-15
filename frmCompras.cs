@@ -16,7 +16,6 @@ namespace TRAMADE
         public frmCompras()
         {
             InitializeComponent();
-            RedondearBoton(btnPrueba, 10);
         }
 
         private void RedondearBoton(KryptonButton btn, int radio = 20)
@@ -74,13 +73,7 @@ namespace TRAMADE
 
         }
 
-        private void btnRegistrar_Click_1(object sender, EventArgs e)
-        {
-            frmRegistrar ObjRegistrar = new frmRegistrar();
-            ObjRegistrar.Show();
-        }
-
-        private void btnPrueba_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click_2(object sender, EventArgs e)
         {
             frmRegistrar ObjRegistrar = new frmRegistrar();
             ObjRegistrar.Show();
