@@ -36,6 +36,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton4 = new Krypton.Toolkit.KryptonButton();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +102,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.kryptonButton4);
+            this.panel2.Controls.Add(this.kryptonButton3);
+            this.panel2.Controls.Add(this.kryptonButton2);
+            this.panel2.Controls.Add(this.kryptonButton1);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(187, 81);
@@ -113,6 +121,42 @@
             this.panel3.Size = new System.Drawing.Size(1027, 11);
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.Location = new System.Drawing.Point(42, 27);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(183, 40);
+            this.kryptonButton1.TabIndex = 7;
+            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.kryptonButton1.Values.Text = "REGISTRAR SOLICITUD";
+            // 
+            // kryptonButton2
+            // 
+            this.kryptonButton2.Location = new System.Drawing.Point(255, 27);
+            this.kryptonButton2.Name = "kryptonButton2";
+            this.kryptonButton2.Size = new System.Drawing.Size(189, 40);
+            this.kryptonButton2.TabIndex = 8;
+            this.kryptonButton2.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.kryptonButton2.Values.Text = "ACTUALIZAR SOLICITUD";
+            // 
+            // kryptonButton3
+            // 
+            this.kryptonButton3.Location = new System.Drawing.Point(477, 27);
+            this.kryptonButton3.Name = "kryptonButton3";
+            this.kryptonButton3.Size = new System.Drawing.Size(195, 40);
+            this.kryptonButton3.TabIndex = 9;
+            this.kryptonButton3.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.kryptonButton3.Values.Text = "AUTORIZAR SOLICITUD";
+            // 
+            // kryptonButton4
+            // 
+            this.kryptonButton4.Location = new System.Drawing.Point(703, 27);
+            this.kryptonButton4.Name = "kryptonButton4";
+            this.kryptonButton4.Size = new System.Drawing.Size(211, 40);
+            this.kryptonButton4.TabIndex = 10;
+            this.kryptonButton4.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.kryptonButton4.Values.Text = "SEGUIMIENTO DE COMPRAS";
             // 
             // frmCompras
             // 
@@ -145,5 +189,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private Krypton.Toolkit.KryptonButton kryptonButton4;
+        private Krypton.Toolkit.KryptonButton kryptonButton3;
+        private Krypton.Toolkit.KryptonButton kryptonButton2;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
