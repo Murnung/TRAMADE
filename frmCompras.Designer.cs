@@ -36,11 +36,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnSeguimiento = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAutorizar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnActualizar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRegistrar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPrueba = new Krypton.Toolkit.KryptonButton();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,9 +54,9 @@
             // 
             this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Location = new System.Drawing.Point(0, 24);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 30);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1238, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1238, 30);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -71,7 +66,7 @@
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(1238, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(1238, 30);
             this.menuStrip3.TabIndex = 3;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -103,10 +98,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnSeguimiento);
-            this.panel2.Controls.Add(this.btnAutorizar);
-            this.panel2.Controls.Add(this.btnActualizar);
-            this.panel2.Controls.Add(this.btnRegistrar);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(187, 81);
@@ -123,108 +114,12 @@
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // btnSeguimiento
-            // 
-            this.btnSeguimiento.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSeguimiento.BorderRadius = 10;
-            this.btnSeguimiento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSeguimiento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSeguimiento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSeguimiento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSeguimiento.FillColor = System.Drawing.Color.Teal;
-            this.btnSeguimiento.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnSeguimiento.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSeguimiento.ForeColor = System.Drawing.Color.White;
-            this.btnSeguimiento.Location = new System.Drawing.Point(764, 26);
-            this.btnSeguimiento.Name = "btnSeguimiento";
-            this.btnSeguimiento.Size = new System.Drawing.Size(224, 45);
-            this.btnSeguimiento.TabIndex = 10;
-            this.btnSeguimiento.Text = "SEGUIMIENTO DE COMPRAS";
-            // 
-            // btnAutorizar
-            // 
-            this.btnAutorizar.BorderRadius = 10;
-            this.btnAutorizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAutorizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAutorizar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAutorizar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAutorizar.FillColor = System.Drawing.Color.Teal;
-            this.btnAutorizar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAutorizar.ForeColor = System.Drawing.Color.White;
-            this.btnAutorizar.Location = new System.Drawing.Point(513, 26);
-            this.btnAutorizar.Name = "btnAutorizar";
-            this.btnAutorizar.Size = new System.Drawing.Size(245, 45);
-            this.btnAutorizar.TabIndex = 9;
-            this.btnAutorizar.Text = "AUTORIZAR SOLICITUD";
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BorderRadius = 10;
-            this.btnActualizar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnActualizar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnActualizar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnActualizar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnActualizar.FillColor = System.Drawing.Color.Teal;
-            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(279, 26);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(228, 45);
-            this.btnActualizar.TabIndex = 8;
-            this.btnActualizar.Text = "ACTUALIZAR SOLICITUD";
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.BorderRadius = 10;
-            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnRegistrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegistrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegistrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRegistrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRegistrar.FillColor = System.Drawing.Color.Teal;
-            this.btnRegistrar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(13, 26);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(260, 45);
-            this.btnRegistrar.TabIndex = 7;
-            this.btnRegistrar.Text = "REGISTRAR SOLICITUD";
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
-            // 
-            // btnPrueba
-            // 
-            this.btnPrueba.Location = new System.Drawing.Point(242, 220);
-            this.btnPrueba.Name = "btnPrueba";
-            this.btnPrueba.Size = new System.Drawing.Size(218, 55);
-            this.btnPrueba.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnPrueba.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnPrueba.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnPrueba.StateDisabled.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnPrueba.StateDisabled.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnPrueba.StateDisabled.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnPrueba.StateNormal.Back.Color1 = System.Drawing.Color.Green;
-            this.btnPrueba.StateNormal.Back.Color2 = System.Drawing.Color.Green;
-            this.btnPrueba.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnPrueba.StatePressed.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnPrueba.StatePressed.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnPrueba.StatePressed.Back.ColorAlign = Krypton.Toolkit.PaletteRectangleAlign.Local;
-            this.btnPrueba.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
-            this.btnPrueba.StateTracking.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnPrueba.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnPrueba.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnPrueba.TabIndex = 7;
-            this.btnPrueba.Values.DropDownArrowColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnPrueba.Values.Text = "Prueba";
-            this.btnPrueba.Click += new System.EventHandler(this.btnPrueba_Click);
-            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1238, 586);
-            this.Controls.Add(this.btnPrueba);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -250,10 +145,5 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button btnSeguimiento;
-        private Guna.UI2.WinForms.Guna2Button btnAutorizar;
-        private Guna.UI2.WinForms.Guna2Button btnActualizar;
-        private Guna.UI2.WinForms.Guna2Button btnRegistrar;
-        private Krypton.Toolkit.KryptonButton btnPrueba;
     }
 }
