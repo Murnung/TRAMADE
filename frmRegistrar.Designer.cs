@@ -266,7 +266,7 @@
             // 
             // kryptonTextBox1
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(227, 147);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(217, 147);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(127, 33);
             this.kryptonTextBox1.StateCommon.Border.Rounding = 10F;
@@ -370,6 +370,7 @@
             this.kryptonComboBox1.Location = new System.Drawing.Point(145, 277);
             this.kryptonComboBox1.Name = "kryptonComboBox1";
             this.kryptonComboBox1.Size = new System.Drawing.Size(181, 32);
+            this.kryptonComboBox1.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.White;
             this.kryptonComboBox1.StateCommon.ComboBox.Border.Rounding = 10F;
             this.kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.kryptonComboBox1.TabIndex = 51;
