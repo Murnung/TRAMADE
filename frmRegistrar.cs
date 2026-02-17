@@ -41,5 +41,15 @@ namespace TRAMADE
         {
             this.Close();
         }
+
+        private void kryptonTextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegresar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

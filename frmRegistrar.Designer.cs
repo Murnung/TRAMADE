@@ -46,24 +46,22 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox4 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox6 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox7 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox8 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox9 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox10 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonNumericUpDown1 = new Krypton.Toolkit.KryptonNumericUpDown();
-            this.kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.lstProducto = new System.Windows.Forms.ListBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.kryptonComboBox2 = new Krypton.Toolkit.KryptonComboBox();
+            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox4 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox5 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox6 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox7 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox8 = new Krypton.Toolkit.KryptonTextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox9 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox10 = new Krypton.Toolkit.KryptonTextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -117,6 +115,7 @@
             this.btnRegresar.TabIndex = 21;
             this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegresar.Values.Text = "REGRESAR";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
             // 
             // panel2
             // 
@@ -264,117 +263,6 @@
             this.label15.TabIndex = 39;
             this.label15.Text = "Total";
             // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(216, 158);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(127, 33);
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox1.TabIndex = 40;
-            // 
-            // kryptonTextBox2
-            // 
-            this.kryptonTextBox2.Location = new System.Drawing.Point(617, 215);
-            this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(138, 33);
-            this.kryptonTextBox2.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox2.TabIndex = 41;
-            // 
-            // kryptonTextBox3
-            // 
-            this.kryptonTextBox3.Location = new System.Drawing.Point(617, 158);
-            this.kryptonTextBox3.Name = "kryptonTextBox3";
-            this.kryptonTextBox3.Size = new System.Drawing.Size(138, 33);
-            this.kryptonTextBox3.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox3.TabIndex = 42;
-            // 
-            // kryptonTextBox4
-            // 
-            this.kryptonTextBox4.Location = new System.Drawing.Point(560, 270);
-            this.kryptonTextBox4.Name = "kryptonTextBox4";
-            this.kryptonTextBox4.Size = new System.Drawing.Size(138, 33);
-            this.kryptonTextBox4.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox4.TabIndex = 43;
-            // 
-            // kryptonTextBox6
-            // 
-            this.kryptonTextBox6.Location = new System.Drawing.Point(145, 314);
-            this.kryptonTextBox6.Name = "kryptonTextBox6";
-            this.kryptonTextBox6.Size = new System.Drawing.Size(181, 33);
-            this.kryptonTextBox6.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox6.TabIndex = 45;
-            // 
-            // kryptonTextBox7
-            // 
-            this.kryptonTextBox7.Location = new System.Drawing.Point(168, 412);
-            this.kryptonTextBox7.Name = "kryptonTextBox7";
-            this.kryptonTextBox7.Size = new System.Drawing.Size(120, 33);
-            this.kryptonTextBox7.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox7.TabIndex = 46;
-            // 
-            // kryptonTextBox8
-            // 
-            this.kryptonTextBox8.Location = new System.Drawing.Point(398, 413);
-            this.kryptonTextBox8.Name = "kryptonTextBox8";
-            this.kryptonTextBox8.Size = new System.Drawing.Size(138, 33);
-            this.kryptonTextBox8.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox8.TabIndex = 47;
-            // 
-            // kryptonTextBox9
-            // 
-            this.kryptonTextBox9.Location = new System.Drawing.Point(404, 478);
-            this.kryptonTextBox9.Name = "kryptonTextBox9";
-            this.kryptonTextBox9.Size = new System.Drawing.Size(138, 33);
-            this.kryptonTextBox9.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox9.TabIndex = 48;
-            // 
-            // kryptonTextBox10
-            // 
-            this.kryptonTextBox10.Location = new System.Drawing.Point(404, 541);
-            this.kryptonTextBox10.Name = "kryptonTextBox10";
-            this.kryptonTextBox10.Size = new System.Drawing.Size(138, 33);
-            this.kryptonTextBox10.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox10.TabIndex = 49;
-            // 
-            // kryptonNumericUpDown1
-            // 
-            this.kryptonNumericUpDown1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.kryptonNumericUpDown1.Location = new System.Drawing.Point(168, 468);
-            this.kryptonNumericUpDown1.Maximum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.kryptonNumericUpDown1.Minimum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.kryptonNumericUpDown1.Name = "kryptonNumericUpDown1";
-            this.kryptonNumericUpDown1.Size = new System.Drawing.Size(120, 32);
-            this.kryptonNumericUpDown1.StateCommon.Border.Rounding = 10F;
-            this.kryptonNumericUpDown1.TabIndex = 50;
-            this.kryptonNumericUpDown1.Value = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            // 
-            // kryptonComboBox1
-            // 
-            this.kryptonComboBox1.DropDownWidth = 175;
-            this.kryptonComboBox1.Location = new System.Drawing.Point(145, 277);
-            this.kryptonComboBox1.Name = "kryptonComboBox1";
-            this.kryptonComboBox1.Size = new System.Drawing.Size(181, 32);
-            this.kryptonComboBox1.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonComboBox1.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.kryptonComboBox1.TabIndex = 51;
-            // 
             // kryptonButton1
             // 
             this.kryptonButton1.Location = new System.Drawing.Point(476, 359);
@@ -414,15 +302,92 @@
             this.label16.TabIndex = 54;
             this.label16.Text = "Seleccione el producto";
             // 
-            // kryptonComboBox2
+            // kryptonTextBox1
             // 
-            this.kryptonComboBox2.DropDownWidth = 175;
-            this.kryptonComboBox2.Location = new System.Drawing.Point(227, 366);
-            this.kryptonComboBox2.Name = "kryptonComboBox2";
-            this.kryptonComboBox2.Size = new System.Drawing.Size(181, 32);
-            this.kryptonComboBox2.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.kryptonComboBox2.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.kryptonComboBox2.TabIndex = 55;
+            this.kryptonTextBox1.Location = new System.Drawing.Point(208, 158);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(165, 27);
+            this.kryptonTextBox1.TabIndex = 55;
+            this.kryptonTextBox1.Text = "kryptonTextBox1";
+            // 
+            // kryptonTextBox3
+            // 
+            this.kryptonTextBox3.Location = new System.Drawing.Point(136, 320);
+            this.kryptonTextBox3.Name = "kryptonTextBox3";
+            this.kryptonTextBox3.Size = new System.Drawing.Size(165, 27);
+            this.kryptonTextBox3.TabIndex = 57;
+            // 
+            // kryptonTextBox4
+            // 
+            this.kryptonTextBox4.Location = new System.Drawing.Point(168, 412);
+            this.kryptonTextBox4.Name = "kryptonTextBox4";
+            this.kryptonTextBox4.Size = new System.Drawing.Size(133, 27);
+            this.kryptonTextBox4.TabIndex = 58;
+            // 
+            // kryptonTextBox5
+            // 
+            this.kryptonTextBox5.Location = new System.Drawing.Point(128, 463);
+            this.kryptonTextBox5.Name = "kryptonTextBox5";
+            this.kryptonTextBox5.Size = new System.Drawing.Size(133, 27);
+            this.kryptonTextBox5.TabIndex = 59;
+            // 
+            // kryptonTextBox6
+            // 
+            this.kryptonTextBox6.Location = new System.Drawing.Point(398, 413);
+            this.kryptonTextBox6.Name = "kryptonTextBox6";
+            this.kryptonTextBox6.Size = new System.Drawing.Size(111, 27);
+            this.kryptonTextBox6.TabIndex = 60;
+            // 
+            // kryptonTextBox7
+            // 
+            this.kryptonTextBox7.Location = new System.Drawing.Point(398, 473);
+            this.kryptonTextBox7.Name = "kryptonTextBox7";
+            this.kryptonTextBox7.Size = new System.Drawing.Size(111, 27);
+            this.kryptonTextBox7.TabIndex = 61;
+            // 
+            // kryptonTextBox8
+            // 
+            this.kryptonTextBox8.Location = new System.Drawing.Point(398, 541);
+            this.kryptonTextBox8.Name = "kryptonTextBox8";
+            this.kryptonTextBox8.Size = new System.Drawing.Size(111, 27);
+            this.kryptonTextBox8.TabIndex = 62;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(238, 366);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(153, 24);
+            this.comboBox1.TabIndex = 63;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(136, 279);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(165, 24);
+            this.comboBox2.TabIndex = 64;
+            // 
+            // kryptonTextBox2
+            // 
+            this.kryptonTextBox2.Location = new System.Drawing.Point(610, 158);
+            this.kryptonTextBox2.Name = "kryptonTextBox2";
+            this.kryptonTextBox2.Size = new System.Drawing.Size(165, 27);
+            this.kryptonTextBox2.TabIndex = 65;
+            // 
+            // kryptonTextBox9
+            // 
+            this.kryptonTextBox9.Location = new System.Drawing.Point(610, 215);
+            this.kryptonTextBox9.Name = "kryptonTextBox9";
+            this.kryptonTextBox9.Size = new System.Drawing.Size(165, 27);
+            this.kryptonTextBox9.TabIndex = 66;
+            // 
+            // kryptonTextBox10
+            // 
+            this.kryptonTextBox10.Location = new System.Drawing.Point(548, 279);
+            this.kryptonTextBox10.Name = "kryptonTextBox10";
+            this.kryptonTextBox10.Size = new System.Drawing.Size(165, 27);
+            this.kryptonTextBox10.TabIndex = 67;
             // 
             // frmRegistrar
             // 
@@ -430,21 +395,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(814, 606);
-            this.Controls.Add(this.kryptonComboBox2);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.lstProducto);
-            this.Controls.Add(this.kryptonButton1);
-            this.Controls.Add(this.kryptonComboBox1);
-            this.Controls.Add(this.kryptonNumericUpDown1);
             this.Controls.Add(this.kryptonTextBox10);
             this.Controls.Add(this.kryptonTextBox9);
+            this.Controls.Add(this.kryptonTextBox2);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.kryptonTextBox8);
             this.Controls.Add(this.kryptonTextBox7);
             this.Controls.Add(this.kryptonTextBox6);
+            this.Controls.Add(this.kryptonTextBox5);
             this.Controls.Add(this.kryptonTextBox4);
             this.Controls.Add(this.kryptonTextBox3);
-            this.Controls.Add(this.kryptonTextBox2);
             this.Controls.Add(this.kryptonTextBox1);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lstProducto);
+            this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -467,8 +432,6 @@
             this.Load += new System.EventHandler(this.frmRegistrar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,21 +456,21 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox4;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox6;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox7;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox8;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox9;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox10;
-        private Krypton.Toolkit.KryptonNumericUpDown kryptonNumericUpDown1;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
         private System.Windows.Forms.ListBox lstProducto;
         private System.Windows.Forms.Label label16;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox2;
         private Krypton.Toolkit.KryptonButton btnRegresar;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox4;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox5;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox6;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox7;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox8;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox9;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox10;
     }
 }
