@@ -148,7 +148,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 155);
+            this.label3.Location = new System.Drawing.Point(31, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 22);
             this.label3.TabIndex = 25;
@@ -266,7 +266,7 @@
             // 
             // kryptonTextBox1
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(217, 147);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(216, 158);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(127, 33);
             this.kryptonTextBox1.StateCommon.Border.Rounding = 10F;
