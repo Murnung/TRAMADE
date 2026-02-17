@@ -16,15 +16,7 @@ namespace TRAMADE
         public frmCompras()
         {
             InitializeComponent();
-            RedondearBoton(btnRegistrar, 10);
-            RedondearBoton(btnActualizar, 10);
-            RedondearBoton(btnAutorizar, 10);
-            RedondearBoton(btnSeguimiento, 10);
-        }
-
-        private void RedondearBoton(KryptonButton btn, int radio = 20)
-        {
-            btn.StateCommon.Border.Rounding = radio;
+           
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
