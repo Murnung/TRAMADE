@@ -118,13 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Reportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clientes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Menu2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Maximizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Maximizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Captura de pantalla 2026-02-10 192130-artguru" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Captura de pantalla 2026-02-10 192130-artguru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Inventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura de pantalla 2026-02-10 193854" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura de pantalla 2026-02-10 193854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Compras" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Compras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cerrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Cerrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo de la empresa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo de la empresa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Captura de pantalla 2026-02-10 192130" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Captura de pantalla 2026-02-10 192130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Captura de pantalla 2026-02-10 193854" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Captura de pantalla 2026-02-10 193854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Menu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconos\Proveedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
