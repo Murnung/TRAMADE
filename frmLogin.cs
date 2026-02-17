@@ -42,9 +42,10 @@ namespace TRAMADE
                 if (dr.Read())  //Intenta lee una fila
                 {
                     MessageBox.Show("Inicio de seccion exitoso");
-                    Form1 frm = new Form1();
-                    frm.ShowDialog();
-                    
+                    frmMenuPrincipal objMenu = new frmMenuPrincipal();
+                    objMenu.Show();
+                    this.Hide();
+
                 }
                 else
                 {
@@ -83,7 +84,7 @@ namespace TRAMADE
             {
                 string usuario = txtUsuario.Text.Trim();  //Trim para eliminar espacios de ambos lados
                 string contra = txtContraseña.Text.Trim();
-                login(usuario, contra);
+                login(usuario, contra);                              
             }
         }
 
