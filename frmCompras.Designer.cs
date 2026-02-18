@@ -127,6 +127,7 @@
             this.btnSeguimiento.TabIndex = 10;
             this.btnSeguimiento.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE COMPRA";
+            this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
             // 
             // btnAutorizar
             // 

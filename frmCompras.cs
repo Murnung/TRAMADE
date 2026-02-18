@@ -92,5 +92,11 @@ namespace TRAMADE
             frmAutorizar ObjAutorizar = new frmAutorizar();
             ObjAutorizar.Show();
         }
+
+        private void btnSeguimiento_Click(object sender, EventArgs e)
+        {
+            frmSeguimiento ObjSeguimiento = new frmSeguimiento();
+            ObjSeguimiento.Show();
+        }
     }
 }

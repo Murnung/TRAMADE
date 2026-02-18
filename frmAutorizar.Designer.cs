@@ -241,6 +241,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Name = "frmAutorizar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAutorizar";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
