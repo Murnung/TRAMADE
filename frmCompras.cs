@@ -80,5 +80,11 @@ namespace TRAMADE
             frmRegistrar ObjRegistrar = new frmRegistrar();
             ObjRegistrar.Show();
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            frmActualizar ObjActualizar = new frmActualizar();
+            ObjActualizar.Show();
+        }
     }
 }

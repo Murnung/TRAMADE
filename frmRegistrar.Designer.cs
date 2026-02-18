@@ -30,7 +30,10 @@
         {
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
+            this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,11 +62,8 @@
             this.txtEntrega = new Krypton.Toolkit.KryptonTextBox();
             this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
             this.btnQuitar = new Krypton.Toolkit.KryptonButton();
-            this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
-            this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.kryptonListBox1 = new Krypton.Toolkit.KryptonListBox();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -79,6 +79,7 @@
             this.label14.Size = new System.Drawing.Size(122, 42);
             this.label14.TabIndex = 20;
             this.label14.Text = "TSMS";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // panel1
             // 
@@ -90,6 +91,36 @@
             this.panel1.Size = new System.Drawing.Size(968, 64);
             this.panel1.TabIndex = 21;
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(692, 22);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
+            this.btnRegresar.Size = new System.Drawing.Size(106, 29);
+            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.StateCommon.Border.Rounding = 10F;
+            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
+            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
+            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnRegresar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegresar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegresar.TabIndex = 71;
+            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegresar.Values.Text = "REGRESAR";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_2);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
@@ -99,6 +130,53 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(834, 68);
             this.panel2.TabIndex = 22;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(524, 17);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpiar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpiar.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpiar.OverrideFocus.Back.Color2 = System.Drawing.Color.Silver;
+            this.btnLimpiar.Size = new System.Drawing.Size(106, 29);
+            this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpiar.StateCommon.Border.Rounding = 10F;
+            this.btnLimpiar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnLimpiar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
+            this.btnLimpiar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnLimpiar.StateTracking.Back.Color2 = System.Drawing.Color.Silver;
+            this.btnLimpiar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnLimpiar.TabIndex = 70;
+            this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnLimpiar.Values.Text = "LIMPIAR";
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(638, 17);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.Blue;
+            this.btnRegistrar.OverrideFocus.Border.Rounding = 10F;
+            this.btnRegistrar.Size = new System.Drawing.Size(175, 29);
+            this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateCommon.Border.Rounding = 10F;
+            this.btnRegistrar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnRegistrar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateTracking.Back.Color2 = System.Drawing.Color.Blue;
+            this.btnRegistrar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnRegistrar.StateTracking.Border.Rounding = 10F;
+            this.btnRegistrar.TabIndex = 69;
+            this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegistrar.Values.Text = "REGISTRAR Y ENVIAR";
             // 
             // label1
             // 
@@ -117,6 +195,7 @@
             this.label2.Size = new System.Drawing.Size(556, 32);
             this.label2.TabIndex = 24;
             this.label2.Text = "REGISTRO DE SOLICITUD DE COMPRAS";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -368,52 +447,6 @@
             this.btnQuitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnQuitar.Values.Text = "QUITAR";
             // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(638, 17);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.Blue;
-            this.btnRegistrar.OverrideFocus.Border.Rounding = 10F;
-            this.btnRegistrar.Size = new System.Drawing.Size(175, 29);
-            this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnRegistrar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnRegistrar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnRegistrar.StateCommon.Border.Rounding = 10F;
-            this.btnRegistrar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnRegistrar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnRegistrar.StateTracking.Back.Color2 = System.Drawing.Color.Blue;
-            this.btnRegistrar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnRegistrar.StateTracking.Border.Rounding = 10F;
-            this.btnRegistrar.TabIndex = 69;
-            this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegistrar.Values.Text = "REGISTRAR Y ENVIAR";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(524, 17);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar.OverrideFocus.Back.Color2 = System.Drawing.Color.Silver;
-            this.btnLimpiar.Size = new System.Drawing.Size(106, 29);
-            this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar.StateCommon.Border.Rounding = 10F;
-            this.btnLimpiar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnLimpiar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnLimpiar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar.StateTracking.Back.Color2 = System.Drawing.Color.Silver;
-            this.btnLimpiar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnLimpiar.TabIndex = 70;
-            this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnLimpiar.Values.Text = "LIMPIAR";
-            // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(136, 471);
@@ -433,36 +466,6 @@
             this.kryptonListBox1.Size = new System.Drawing.Size(299, 205);
             this.kryptonListBox1.StateCommon.Border.Rounding = 10F;
             this.kryptonListBox1.TabIndex = 70;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(692, 22);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.Size = new System.Drawing.Size(106, 29);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Rounding = 10F;
-            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnRegresar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.TabIndex = 71;
-            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "REGRESAR";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_2);
             // 
             // frmRegistrar
             // 
