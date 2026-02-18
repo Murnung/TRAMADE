@@ -56,5 +56,10 @@ namespace TRAMADE
         {
 
         }
+
+        private void btnRegresar_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
