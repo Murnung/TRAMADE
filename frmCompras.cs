@@ -86,5 +86,11 @@ namespace TRAMADE
             frmActualizar ObjActualizar = new frmActualizar();
             ObjActualizar.Show();
         }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            frmAutorizar ObjAutorizar = new frmAutorizar();
+            ObjAutorizar.Show();
+        }
     }
 }

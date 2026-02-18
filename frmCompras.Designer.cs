@@ -34,8 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.btnSeguimiento = new Krypton.Toolkit.KryptonButton();
+            this.btnAutorizar = new Krypton.Toolkit.KryptonButton();
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
             this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -94,8 +94,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.kryptonButton2);
-            this.panel2.Controls.Add(this.kryptonButton1);
+            this.panel2.Controls.Add(this.btnSeguimiento);
+            this.panel2.Controls.Add(this.btnAutorizar);
             this.panel2.Controls.Add(this.btnActualizar);
             this.panel2.Controls.Add(this.btnRegistrar);
             this.panel2.Controls.Add(this.panel4);
@@ -105,52 +105,53 @@
             this.panel2.Size = new System.Drawing.Size(1030, 105);
             this.panel2.TabIndex = 5;
             // 
-            // kryptonButton2
+            // btnSeguimiento
             // 
-            this.kryptonButton2.Location = new System.Drawing.Point(734, 27);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
-            this.kryptonButton2.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
-            this.kryptonButton2.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.kryptonButton2.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
-            this.kryptonButton2.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.kryptonButton2.Size = new System.Drawing.Size(248, 40);
-            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
-            this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
-            this.kryptonButton2.StateCommon.Border.Rounding = 10F;
-            this.kryptonButton2.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton2.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.kryptonButton2.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
-            this.kryptonButton2.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.kryptonButton2.StateTracking.Border.Rounding = 10F;
-            this.kryptonButton2.TabIndex = 10;
-            this.kryptonButton2.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton2.Values.Text = "SEGUIMIENTO DE COMPRA";
+            this.btnSeguimiento.Location = new System.Drawing.Point(734, 27);
+            this.btnSeguimiento.Name = "btnSeguimiento";
+            this.btnSeguimiento.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnSeguimiento.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnSeguimiento.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSeguimiento.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnSeguimiento.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnSeguimiento.Size = new System.Drawing.Size(248, 40);
+            this.btnSeguimiento.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnSeguimiento.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnSeguimiento.StateCommon.Border.Rounding = 10F;
+            this.btnSeguimiento.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnSeguimiento.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeguimiento.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSeguimiento.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnSeguimiento.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnSeguimiento.StateTracking.Border.Rounding = 10F;
+            this.btnSeguimiento.TabIndex = 10;
+            this.btnSeguimiento.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE COMPRA";
             // 
-            // kryptonButton1
+            // btnAutorizar
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(482, 27);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
-            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
-            this.kryptonButton1.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.kryptonButton1.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
-            this.kryptonButton1.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.kryptonButton1.Size = new System.Drawing.Size(246, 40);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
-            this.kryptonButton1.StateCommon.Border.Rounding = 10F;
-            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.kryptonButton1.StateCommon.Content.ShortText.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.kryptonButton1.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
-            this.kryptonButton1.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.kryptonButton1.StateTracking.Border.Rounding = 10F;
-            this.kryptonButton1.TabIndex = 9;
-            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton1.Values.Text = "AUTORIZAR SOLICITUD";
+            this.btnAutorizar.Location = new System.Drawing.Point(482, 27);
+            this.btnAutorizar.Name = "btnAutorizar";
+            this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnAutorizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAutorizar.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnAutorizar.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnAutorizar.Size = new System.Drawing.Size(246, 40);
+            this.btnAutorizar.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnAutorizar.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnAutorizar.StateCommon.Border.Rounding = 10F;
+            this.btnAutorizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnAutorizar.StateCommon.Content.ShortText.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnAutorizar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutorizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAutorizar.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnAutorizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnAutorizar.StateTracking.Border.Rounding = 10F;
+            this.btnAutorizar.TabIndex = 9;
+            this.btnAutorizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnAutorizar.Values.Text = "AUTORIZAR SOLICITUD";
+            this.btnAutorizar.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // btnActualizar
             // 
@@ -252,8 +253,8 @@
         private System.Windows.Forms.Panel panel3;
         private Krypton.Toolkit.KryptonButton btnRegistrar;
         private Krypton.Toolkit.KryptonButton btnActualizar;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private Krypton.Toolkit.KryptonButton kryptonButton2;
+        private Krypton.Toolkit.KryptonButton btnAutorizar;
+        private Krypton.Toolkit.KryptonButton btnSeguimiento;
         private System.Windows.Forms.Label label14;
     }
 }

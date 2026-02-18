@@ -78,6 +78,12 @@
     <Compile Include="frmActualizar.Designer.cs">
       <DependentUpon>frmActualizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAutorizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAutorizar.Designer.cs">
+      <DependentUpon>frmAutorizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmActualizar.resx">
       <DependentUpon>frmActualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAutorizar.resx">
+      <DependentUpon>frmAutorizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
