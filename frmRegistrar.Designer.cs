@@ -82,7 +82,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(70)))), ((int)(((byte)(40)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.panel1.Controls.Add(this.btnRegresar);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Location = new System.Drawing.Point(-5, 0);
@@ -92,7 +92,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(70)))), ((int)(((byte)(40)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Controls.Add(this.btnRegistrar);
             this.panel2.Location = new System.Drawing.Point(-20, 586);
