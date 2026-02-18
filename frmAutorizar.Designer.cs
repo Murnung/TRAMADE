@@ -169,7 +169,7 @@
             // 
             // btnAutorizar
             // 
-            this.btnAutorizar.Location = new System.Drawing.Point(35, 189);
+            this.btnAutorizar.Location = new System.Drawing.Point(337, 205);
             this.btnAutorizar.Name = "btnAutorizar";
             this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
             this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
@@ -191,7 +191,7 @@
             // 
             // btnDenegar
             // 
-            this.btnDenegar.Location = new System.Drawing.Point(272, 189);
+            this.btnDenegar.Location = new System.Drawing.Point(563, 205);
             this.btnDenegar.Name = "btnDenegar";
             this.btnDenegar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.btnDenegar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
@@ -215,7 +215,7 @@
             // 
             this.kryptonTextBox1.Location = new System.Drawing.Point(35, 132);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(477, 33);
+            this.kryptonTextBox1.Size = new System.Drawing.Size(303, 33);
             this.kryptonTextBox1.StateCommon.Border.Rounding = 10F;
             this.kryptonTextBox1.TabIndex = 74;
             // 
