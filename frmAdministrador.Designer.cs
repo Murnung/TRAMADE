@@ -128,7 +128,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(49, 22);
+            this.label2.Location = new System.Drawing.Point(33, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 22);
             this.label2.TabIndex = 0;
@@ -137,9 +137,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Usuario;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 109);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 46);
+            this.pictureBox1.Size = new System.Drawing.Size(29, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
