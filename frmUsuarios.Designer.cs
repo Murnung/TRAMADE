@@ -29,33 +29,36 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnBitacora = new Krypton.Toolkit.KryptonButton();
             this.btnUsuarios = new Krypton.Toolkit.KryptonButton();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chkActivar = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
-            this.btnEditar = new Krypton.Toolkit.KryptonButton();
             this.btnNuevo = new Krypton.Toolkit.KryptonButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new Krypton.Toolkit.KryptonButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(95)))), ((int)(((byte)(122)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnBitacora);
             this.panel1.Controls.Add(this.btnUsuarios);
             this.panel1.Controls.Add(this.label6);
@@ -66,37 +69,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(167, 634);
             this.panel1.TabIndex = 17;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label5.Location = new System.Drawing.Point(1, 159);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 16);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "_______________________";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(1, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "_______________________";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(30, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Administrador";
             // 
             // btnBitacora
             // 
@@ -158,6 +130,37 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "_______________________";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.Location = new System.Drawing.Point(1, 159);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(168, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "_______________________";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Location = new System.Drawing.Point(1, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(168, 16);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "_______________________";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(44, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Administrador";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -183,48 +186,6 @@
             this.chkActivar.Text = "ACTIVAR / INACTIVAR";
             this.chkActivar.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 18);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "BUSCAR";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(120, 81);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(292, 33);
-            this.txtBuscar.StateCommon.Border.Rounding = 10F;
-            this.txtBuscar.TabIndex = 23;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(527, 88);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.OverrideDefault.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnEditar.OverrideDefault.Back.Color2 = System.Drawing.Color.Goldenrod;
-            this.btnEditar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnEditar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnEditar.Size = new System.Drawing.Size(103, 25);
-            this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnEditar.StateCommon.Back.Color2 = System.Drawing.Color.Goldenrod;
-            this.btnEditar.StateCommon.Border.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnEditar.StateCommon.Border.Color2 = System.Drawing.Color.Goldenrod;
-            this.btnEditar.StateCommon.Border.Rounding = 10F;
-            this.btnEditar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnEditar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnEditar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnEditar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnEditar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditar.TabIndex = 22;
-            this.btnEditar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnEditar.Values.Text = "EDITAR";
-            // 
             // btnNuevo
             // 
             this.btnNuevo.Location = new System.Drawing.Point(418, 88);
@@ -249,6 +210,34 @@
             this.btnNuevo.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnNuevo.Values.Text = "NUEVO";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(38, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 18);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "BUSCAR";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(401, 38);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "GESTIÓN DE USUARIOS";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(120, 81);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(292, 33);
+            this.txtBuscar.StateCommon.Border.Rounding = 10F;
+            this.txtBuscar.TabIndex = 23;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -264,16 +253,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(804, 385);
             this.dataGridView1.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 39);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "GESTIÓN DE USUARIOS";
             // 
             // Column1
             // 
@@ -310,6 +289,40 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 125;
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(527, 88);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.OverrideDefault.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnEditar.OverrideDefault.Back.Color2 = System.Drawing.Color.Goldenrod;
+            this.btnEditar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnEditar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
+            this.btnEditar.Size = new System.Drawing.Size(103, 25);
+            this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnEditar.StateCommon.Back.Color2 = System.Drawing.Color.Goldenrod;
+            this.btnEditar.StateCommon.Border.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnEditar.StateCommon.Border.Color2 = System.Drawing.Color.Goldenrod;
+            this.btnEditar.StateCommon.Border.Rounding = 10F;
+            this.btnEditar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnEditar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnEditar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
+            this.btnEditar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnEditar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditar.TabIndex = 22;
+            this.btnEditar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnEditar.Values.Text = "EDITAR";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Usuario;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,6 +339,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,5 +365,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
