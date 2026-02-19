@@ -33,5 +33,10 @@ namespace TRAMADE
         {
 
         }
+
+        private void frmBitacora_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -120,6 +120,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -137,15 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Usuario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\USUARIO1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

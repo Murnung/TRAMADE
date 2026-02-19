@@ -34,15 +34,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(95)))), ((int)(((byte)(122)))));
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnBitacora);
             this.panel1.Controls.Add(this.btnUsuarios);
             this.panel1.Controls.Add(this.label5);
@@ -134,16 +131,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Administrador";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Usuario;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 109);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -157,7 +144,6 @@
             this.Load += new System.EventHandler(this.frmAdministrador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,6 +155,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Krypton.Toolkit.KryptonButton btnBitacora;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
