@@ -170,5 +170,23 @@
   <ItemGroup>
     <None Include="Resources\DINERO.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACTUALIZAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GESTION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GESTION1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEGUIMIENTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GES.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -63,6 +63,16 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ACTUALIZAR {
+            get {
+                object obj = ResourceManager.GetObject("ACTUALIZAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2026_02_10_192130 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2026-02-10 192130", resourceCulture);
@@ -113,9 +123,59 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GES {
+            get {
+                object obj = ResourceManager.GetObject("GES", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GESTION {
+            get {
+                object obj = ResourceManager.GetObject("GESTION", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GESTION1 {
+            get {
+                object obj = ResourceManager.GetObject("GESTION1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MAS {
             get {
                 object obj = ResourceManager.GetObject("MAS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MAS1 {
+            get {
+                object obj = ResourceManager.GetObject("MAS1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SEGUIMIENTO {
+            get {
+                object obj = ResourceManager.GetObject("SEGUIMIENTO", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
