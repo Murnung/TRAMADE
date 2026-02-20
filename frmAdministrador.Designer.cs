@@ -34,17 +34,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(95)))), ((int)(((byte)(122)))));
-            this.panel1.Controls.Add(this.btnBitacora);
-            this.panel1.Controls.Add(this.btnUsuarios);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnUsuarios);
+            this.panel1.Controls.Add(this.btnBitacora);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(172, 675);
@@ -59,7 +62,7 @@
             this.btnBitacora.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
             this.btnBitacora.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
             this.btnBitacora.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnBitacora.Size = new System.Drawing.Size(165, 25);
+            this.btnBitacora.Size = new System.Drawing.Size(165, 35);
             this.btnBitacora.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnBitacora.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
             this.btnBitacora.StateCommon.Border.Draw = Krypton.Toolkit.InheritBool.False;
@@ -104,7 +107,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label5.Location = new System.Drawing.Point(1, 159);
+            this.label5.Location = new System.Drawing.Point(1, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 16);
             this.label5.TabIndex = 2;
@@ -131,6 +134,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Administrador";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.USUARIO;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -144,6 +157,7 @@
             this.Load += new System.EventHandler(this.frmAdministrador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,5 +169,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Krypton.Toolkit.KryptonButton btnBitacora;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

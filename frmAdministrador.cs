@@ -34,5 +34,10 @@ namespace TRAMADE
             ObjBitacora.Show();
            
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

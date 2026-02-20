@@ -181,5 +181,11 @@
   <ItemGroup>
     <None Include="Resources\Usuario" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USUARIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventario.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
