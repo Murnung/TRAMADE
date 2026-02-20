@@ -41,5 +41,20 @@ namespace TRAMADE
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmSeguimiento_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonGroupBox1_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

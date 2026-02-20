@@ -29,23 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.btnRegresar = new Krypton.Toolkit.KryptonButton();
+            this.label14 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.kryptonListBox1 = new Krypton.Toolkit.KryptonListBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btnQuitar = new Krypton.Toolkit.KryptonButton();
-            this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
-            this.txtEntrega = new Krypton.Toolkit.KryptonTextBox();
-            this.txtPedido = new Krypton.Toolkit.KryptonTextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtTotal = new Krypton.Toolkit.KryptonTextBox();
-            this.txtImpuesto = new Krypton.Toolkit.KryptonTextBox();
-            this.txtSubtotal = new Krypton.Toolkit.KryptonTextBox();
-            this.txtPrecio = new Krypton.Toolkit.KryptonTextBox();
-            this.txtDireccion = new Krypton.Toolkit.KryptonTextBox();
-            this.txtNumero = new Krypton.Toolkit.KryptonTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.btnAgregar = new Krypton.Toolkit.KryptonButton();
             this.label15 = new System.Windows.Forms.Label();
@@ -61,12 +49,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAnular = new Krypton.Toolkit.KryptonButton();
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
-            this.btnAnular = new Krypton.Toolkit.KryptonButton();
+            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox4 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox5 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox6 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox7 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox8 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox9 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
+            this.kryptonComboBox2 = new Krypton.Toolkit.KryptonComboBox();
+            this.kryptonNumericUpDown1 = new Krypton.Toolkit.KryptonNumericUpDown();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,17 +79,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(808, 69);
             this.panel1.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(11, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(122, 42);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "TSMS";
             // 
             // btnRegresar
             // 
@@ -120,6 +110,17 @@
             this.btnRegresar.Values.Text = "REGRESAR";
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(11, 18);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(122, 42);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "TSMS";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -137,18 +138,6 @@
             this.kryptonListBox1.Size = new System.Drawing.Size(299, 205);
             this.kryptonListBox1.StateCommon.Border.Rounding = 10F;
             this.kryptonListBox1.TabIndex = 98;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(126, 437);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 97;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // btnQuitar
             // 
@@ -169,85 +158,6 @@
             this.btnQuitar.TabIndex = 96;
             this.btnQuitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnQuitar.Values.Text = "QUITAR";
-            // 
-            // txtContacto
-            // 
-            this.txtContacto.Location = new System.Drawing.Point(514, 243);
-            this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(165, 27);
-            this.txtContacto.TabIndex = 95;
-            // 
-            // txtEntrega
-            // 
-            this.txtEntrega.Location = new System.Drawing.Point(600, 181);
-            this.txtEntrega.Name = "txtEntrega";
-            this.txtEntrega.Size = new System.Drawing.Size(165, 27);
-            this.txtEntrega.TabIndex = 94;
-            // 
-            // txtPedido
-            // 
-            this.txtPedido.Location = new System.Drawing.Point(600, 124);
-            this.txtPedido.Name = "txtPedido";
-            this.txtPedido.Size = new System.Drawing.Size(165, 27);
-            this.txtPedido.TabIndex = 93;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(126, 245);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(165, 24);
-            this.comboBox2.TabIndex = 92;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(228, 332);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(153, 24);
-            this.comboBox1.TabIndex = 91;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(388, 494);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(94, 27);
-            this.txtTotal.TabIndex = 90;
-            // 
-            // txtImpuesto
-            // 
-            this.txtImpuesto.Location = new System.Drawing.Point(388, 439);
-            this.txtImpuesto.Name = "txtImpuesto";
-            this.txtImpuesto.Size = new System.Drawing.Size(94, 27);
-            this.txtImpuesto.TabIndex = 89;
-            // 
-            // txtSubtotal
-            // 
-            this.txtSubtotal.Location = new System.Drawing.Point(388, 379);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(94, 27);
-            this.txtSubtotal.TabIndex = 88;
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(158, 378);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(133, 27);
-            this.txtPrecio.TabIndex = 87;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(126, 286);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(165, 27);
-            this.txtDireccion.TabIndex = 86;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(198, 124);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(165, 27);
-            this.txtNumero.TabIndex = 85;
             // 
             // label16
             // 
@@ -409,6 +319,31 @@
             this.panel2.Size = new System.Drawing.Size(816, 68);
             this.panel2.TabIndex = 99;
             // 
+            // btnAnular
+            // 
+            this.btnAnular.Location = new System.Drawing.Point(470, 12);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnAnular.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnAnular.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnAnular.OverrideFocus.Back.Color2 = System.Drawing.Color.OrangeRed;
+            this.btnAnular.OverrideFocus.Border.Rounding = 10F;
+            this.btnAnular.Size = new System.Drawing.Size(102, 29);
+            this.btnAnular.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnAnular.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnAnular.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnAnular.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnAnular.StateCommon.Border.Rounding = 10F;
+            this.btnAnular.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnAnular.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnAnular.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnAnular.StateTracking.Back.Color2 = System.Drawing.Color.OrangeRed;
+            this.btnAnular.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnAnular.StateTracking.Border.Rounding = 10F;
+            this.btnAnular.TabIndex = 73;
+            this.btnAnular.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnAnular.Values.Text = "ANULAR ";
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(358, 12);
@@ -455,30 +390,125 @@
             this.btnActualizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnActualizar.Values.Text = "ACTUALIZAR Y ENVIAR";
             // 
-            // btnAnular
+            // kryptonTextBox1
             // 
-            this.btnAnular.Location = new System.Drawing.Point(470, 12);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.OverrideFocus.Back.Color2 = System.Drawing.Color.OrangeRed;
-            this.btnAnular.OverrideFocus.Border.Rounding = 10F;
-            this.btnAnular.Size = new System.Drawing.Size(102, 29);
-            this.btnAnular.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateCommon.Border.Rounding = 10F;
-            this.btnAnular.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnAnular.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnAnular.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateTracking.Back.Color2 = System.Drawing.Color.OrangeRed;
-            this.btnAnular.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnAnular.StateTracking.Border.Rounding = 10F;
-            this.btnAnular.TabIndex = 73;
-            this.btnAnular.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnAnular.Values.Text = "ANULAR ";
+            this.kryptonTextBox1.Location = new System.Drawing.Point(189, 124);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(190, 31);
+            this.kryptonTextBox1.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox1.TabIndex = 100;
+            // 
+            // kryptonTextBox2
+            // 
+            this.kryptonTextBox2.Location = new System.Drawing.Point(588, 124);
+            this.kryptonTextBox2.Name = "kryptonTextBox2";
+            this.kryptonTextBox2.Size = new System.Drawing.Size(190, 31);
+            this.kryptonTextBox2.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox2.TabIndex = 101;
+            // 
+            // kryptonTextBox3
+            // 
+            this.kryptonTextBox3.Location = new System.Drawing.Point(588, 181);
+            this.kryptonTextBox3.Name = "kryptonTextBox3";
+            this.kryptonTextBox3.Size = new System.Drawing.Size(190, 31);
+            this.kryptonTextBox3.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox3.TabIndex = 102;
+            // 
+            // kryptonTextBox4
+            // 
+            this.kryptonTextBox4.Location = new System.Drawing.Point(588, 238);
+            this.kryptonTextBox4.Name = "kryptonTextBox4";
+            this.kryptonTextBox4.Size = new System.Drawing.Size(190, 31);
+            this.kryptonTextBox4.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox4.TabIndex = 103;
+            // 
+            // kryptonTextBox5
+            // 
+            this.kryptonTextBox5.Location = new System.Drawing.Point(126, 291);
+            this.kryptonTextBox5.Name = "kryptonTextBox5";
+            this.kryptonTextBox5.Size = new System.Drawing.Size(190, 31);
+            this.kryptonTextBox5.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox5.TabIndex = 104;
+            // 
+            // kryptonTextBox6
+            // 
+            this.kryptonTextBox6.Location = new System.Drawing.Point(158, 378);
+            this.kryptonTextBox6.Name = "kryptonTextBox6";
+            this.kryptonTextBox6.Size = new System.Drawing.Size(109, 31);
+            this.kryptonTextBox6.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox6.TabIndex = 105;
+            // 
+            // kryptonTextBox7
+            // 
+            this.kryptonTextBox7.Location = new System.Drawing.Point(388, 379);
+            this.kryptonTextBox7.Name = "kryptonTextBox7";
+            this.kryptonTextBox7.Size = new System.Drawing.Size(89, 31);
+            this.kryptonTextBox7.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox7.TabIndex = 106;
+            // 
+            // kryptonTextBox8
+            // 
+            this.kryptonTextBox8.Location = new System.Drawing.Point(388, 434);
+            this.kryptonTextBox8.Name = "kryptonTextBox8";
+            this.kryptonTextBox8.Size = new System.Drawing.Size(89, 31);
+            this.kryptonTextBox8.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox8.TabIndex = 107;
+            // 
+            // kryptonTextBox9
+            // 
+            this.kryptonTextBox9.Location = new System.Drawing.Point(388, 494);
+            this.kryptonTextBox9.Name = "kryptonTextBox9";
+            this.kryptonTextBox9.Size = new System.Drawing.Size(89, 31);
+            this.kryptonTextBox9.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox9.TabIndex = 108;
+            // 
+            // kryptonComboBox1
+            // 
+            this.kryptonComboBox1.DropDownWidth = 186;
+            this.kryptonComboBox1.Location = new System.Drawing.Point(126, 243);
+            this.kryptonComboBox1.Name = "kryptonComboBox1";
+            this.kryptonComboBox1.Size = new System.Drawing.Size(190, 30);
+            this.kryptonComboBox1.StateCommon.ComboBox.Border.Rounding = 5F;
+            this.kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.kryptonComboBox1.TabIndex = 109;
+            // 
+            // kryptonComboBox2
+            // 
+            this.kryptonComboBox2.DropDownWidth = 186;
+            this.kryptonComboBox2.Location = new System.Drawing.Point(228, 332);
+            this.kryptonComboBox2.Name = "kryptonComboBox2";
+            this.kryptonComboBox2.Size = new System.Drawing.Size(190, 30);
+            this.kryptonComboBox2.StateCommon.ComboBox.Border.Rounding = 5F;
+            this.kryptonComboBox2.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.kryptonComboBox2.TabIndex = 110;
+            // 
+            // kryptonNumericUpDown1
+            // 
+            this.kryptonNumericUpDown1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.kryptonNumericUpDown1.Location = new System.Drawing.Point(126, 433);
+            this.kryptonNumericUpDown1.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.kryptonNumericUpDown1.Minimum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.kryptonNumericUpDown1.Name = "kryptonNumericUpDown1";
+            this.kryptonNumericUpDown1.Size = new System.Drawing.Size(141, 30);
+            this.kryptonNumericUpDown1.StateCommon.Border.Rounding = 5F;
+            this.kryptonNumericUpDown1.TabIndex = 111;
+            this.kryptonNumericUpDown1.Value = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // frmActualizar
             // 
@@ -486,21 +516,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(800, 604);
+            this.Controls.Add(this.kryptonNumericUpDown1);
+            this.Controls.Add(this.kryptonComboBox2);
+            this.Controls.Add(this.kryptonComboBox1);
+            this.Controls.Add(this.kryptonTextBox9);
+            this.Controls.Add(this.kryptonTextBox8);
+            this.Controls.Add(this.kryptonTextBox7);
+            this.Controls.Add(this.kryptonTextBox6);
+            this.Controls.Add(this.kryptonTextBox5);
+            this.Controls.Add(this.kryptonTextBox4);
+            this.Controls.Add(this.kryptonTextBox3);
+            this.Controls.Add(this.kryptonTextBox2);
+            this.Controls.Add(this.kryptonTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.kryptonListBox1);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnQuitar);
-            this.Controls.Add(this.txtContacto);
-            this.Controls.Add(this.txtEntrega);
-            this.Controls.Add(this.txtPedido);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.txtImpuesto);
-            this.Controls.Add(this.txtSubtotal);
-            this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtDireccion);
-            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label15);
@@ -522,8 +552,9 @@
             this.Text = "frmActualizar";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,19 +567,7 @@
         private Krypton.Toolkit.KryptonButton btnRegresar;
         private System.Windows.Forms.Label label2;
         private Krypton.Toolkit.KryptonListBox kryptonListBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private Krypton.Toolkit.KryptonButton btnQuitar;
-        private Krypton.Toolkit.KryptonTextBox txtContacto;
-        private Krypton.Toolkit.KryptonTextBox txtEntrega;
-        private Krypton.Toolkit.KryptonTextBox txtPedido;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private Krypton.Toolkit.KryptonTextBox txtTotal;
-        private Krypton.Toolkit.KryptonTextBox txtImpuesto;
-        private Krypton.Toolkit.KryptonTextBox txtSubtotal;
-        private Krypton.Toolkit.KryptonTextBox txtPrecio;
-        private Krypton.Toolkit.KryptonTextBox txtDireccion;
-        private Krypton.Toolkit.KryptonTextBox txtNumero;
         private System.Windows.Forms.Label label16;
         private Krypton.Toolkit.KryptonButton btnAgregar;
         private System.Windows.Forms.Label label15;
@@ -567,5 +586,17 @@
         private Krypton.Toolkit.KryptonButton btnAnular;
         private Krypton.Toolkit.KryptonButton btnLimpiar;
         private Krypton.Toolkit.KryptonButton btnActualizar;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox4;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox5;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox6;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox7;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox8;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox9;
+        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
+        private Krypton.Toolkit.KryptonComboBox kryptonComboBox2;
+        private Krypton.Toolkit.KryptonNumericUpDown kryptonNumericUpDown1;
     }
 }
