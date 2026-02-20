@@ -489,7 +489,7 @@
             0,
             0,
             0});
-            this.kryptonNumericUpDown1.Location = new System.Drawing.Point(126, 433);
+            this.kryptonNumericUpDown1.Location = new System.Drawing.Point(158, 433);
             this.kryptonNumericUpDown1.Maximum = new decimal(new int[] {
             100,
             0,
@@ -501,7 +501,7 @@
             0,
             0});
             this.kryptonNumericUpDown1.Name = "kryptonNumericUpDown1";
-            this.kryptonNumericUpDown1.Size = new System.Drawing.Size(141, 30);
+            this.kryptonNumericUpDown1.Size = new System.Drawing.Size(109, 30);
             this.kryptonNumericUpDown1.StateCommon.Border.Rounding = 5F;
             this.kryptonNumericUpDown1.TabIndex = 111;
             this.kryptonNumericUpDown1.Value = new decimal(new int[] {

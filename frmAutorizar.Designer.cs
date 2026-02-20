@@ -64,12 +64,12 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(823, 69);
+            this.panel1.Size = new System.Drawing.Size(924, 69);
             this.panel1.TabIndex = 27;
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(650, 18);
+            this.btnRegresar.Location = new System.Drawing.Point(796, 18);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
@@ -165,7 +165,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.panel2.Location = new System.Drawing.Point(0, 612);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(815, 37);
+            this.panel2.Size = new System.Drawing.Size(926, 37);
             this.panel2.TabIndex = 75;
             // 
             // dataGridView1
@@ -181,7 +181,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(761, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(870, 306);
             this.dataGridView1.TabIndex = 76;
             // 
             // Column1
@@ -224,7 +224,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(793, 645);
+            this.ClientSize = new System.Drawing.Size(916, 645);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.kryptonTextBox1);
