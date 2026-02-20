@@ -209,6 +209,7 @@
             this.btnNuevo.TabIndex = 21;
             this.btnNuevo.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnNuevo.Values.Text = "NUEVO";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // label3
             // 

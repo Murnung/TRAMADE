@@ -33,5 +33,11 @@ namespace TRAMADE
         {
 
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmNuevo ObjNuevo = new frmNuevo();
+            ObjNuevo.Show();
+        }
     }
 }
