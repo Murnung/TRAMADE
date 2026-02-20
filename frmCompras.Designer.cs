@@ -193,10 +193,13 @@
             this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
             this.btnRegistrar.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
-            this.btnRegistrar.Size = new System.Drawing.Size(221, 40);
+            this.btnRegistrar.Size = new System.Drawing.Size(230, 40);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
             this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnRegistrar.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.BottomRight;
             this.btnRegistrar.StateCommon.Border.Rounding = 10F;
+            this.btnRegistrar.StateCommon.Content.Image.ImageColorMap = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegistrar.StateCommon.Content.Image.ImageColorTo = System.Drawing.SystemColors.ButtonFace;
             this.btnRegistrar.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnRegistrar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
