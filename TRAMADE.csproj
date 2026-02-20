@@ -165,16 +165,10 @@
     <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MAS.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\COMPRAS.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DINERO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TIEMPO.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

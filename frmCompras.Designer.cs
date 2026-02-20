@@ -39,6 +39,7 @@
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
             this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -225,12 +226,46 @@
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.ButtonStyle = Krypton.Toolkit.ButtonStyle.Alternate;
+            this.kryptonButton1.Location = new System.Drawing.Point(281, 261);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
+            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
+            this.kryptonButton1.OverrideDefault.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.kryptonButton1.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.kryptonButton1.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
+            this.kryptonButton1.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
+            this.kryptonButton1.Size = new System.Drawing.Size(230, 40);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
+            this.kryptonButton1.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.BottomRight;
+            this.kryptonButton1.StateCommon.Border.Rounding = 10F;
+            this.kryptonButton1.StateCommon.Content.Image.ImageColorMap = System.Drawing.SystemColors.ButtonFace;
+            this.kryptonButton1.StateCommon.Content.Image.ImageColorTo = System.Drawing.SystemColors.ButtonFace;
+            this.kryptonButton1.StateCommon.Content.LongText.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton1.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonButton1.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonButton1.StateNormal.Back.Color1 = System.Drawing.Color.Teal;
+            this.kryptonButton1.StateNormal.Back.Color2 = System.Drawing.Color.Teal;
+            this.kryptonButton1.StatePressed.Back.Color1 = System.Drawing.Color.Cyan;
+            this.kryptonButton1.StatePressed.Back.Color2 = System.Drawing.Color.Cyan;
+            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.Color.Teal;
+            this.kryptonButton1.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
+            this.kryptonButton1.TabIndex = 11;
+            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.kryptonButton1.Values.Text = "REGISTRAR SOLICITUD";
+            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1229, 586);
+            this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -260,5 +295,6 @@
         private Krypton.Toolkit.KryptonButton btnAutorizar;
         private Krypton.Toolkit.KryptonButton btnSeguimiento;
         private System.Windows.Forms.Label label14;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
