@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new Krypton.Toolkit.KryptonButton();
+            this.btnMaximizar = new Krypton.Toolkit.KryptonButton();
+            this.btnMinimizar = new Krypton.Toolkit.KryptonButton();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.flpBarraLateral = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnVentas = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnInventario = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btnCompras = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.btnProveedores = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.picCerrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.tmrTransicionLateral = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            this.flpBarraLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -63,26 +64,94 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.btnSalir);
+            this.panel1.Controls.Add(this.btnMaximizar);
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.btnMenu);
             this.panel1.Controls.Add(this.lblBienvenidoUsuario);
-            this.panel1.Controls.Add(this.picCerrar);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1171, 65);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(1107, 12);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(37, 38);
+            this.btnSalir.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnSalir.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnSalir.StatePressed.Back.Color1 = System.Drawing.Color.Red;
+            this.btnSalir.StatePressed.Back.Color2 = System.Drawing.Color.Red;
+            this.btnSalir.StateTracking.Back.Color1 = System.Drawing.Color.Red;
+            this.btnSalir.StateTracking.Back.Color2 = System.Drawing.Color.Red;
+            this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
+            this.btnSalir.Values.Text = "";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Location = new System.Drawing.Point(1049, 12);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(37, 38);
+            this.btnMaximizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
+            this.btnMaximizar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
+            this.btnMaximizar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
+            this.btnMaximizar.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnMaximizar.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnMaximizar.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
+            this.btnMaximizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertPressed;
+            this.btnMaximizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnMaximizar.TabIndex = 8;
+            this.btnMaximizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
+            this.btnMaximizar.Values.Text = "";
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Location = new System.Drawing.Point(992, 12);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(37, 38);
+            this.btnMinimizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
+            this.btnMinimizar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
+            this.btnMinimizar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
+            this.btnMinimizar.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnMinimizar.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnMinimizar.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
+            this.btnMinimizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertPressed;
+            this.btnMinimizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnMinimizar.TabIndex = 7;
+            this.btnMinimizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
+            this.btnMinimizar.Values.Text = "";
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(19, 14);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(55, 36);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMenu.TabIndex = 6;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // lblBienvenidoUsuario
             // 
@@ -94,91 +163,22 @@
             this.lblBienvenidoUsuario.TabIndex = 5;
             this.lblBienvenidoUsuario.Text = "Bienvenido, [Usuario]";
             // 
-            // flowLayoutPanel1
+            // flpBarraLateral
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Controls.Add(this.panel5);
-            this.flowLayoutPanel1.Controls.Add(this.panel6);
-            this.flowLayoutPanel1.Controls.Add(this.panel7);
-            this.flowLayoutPanel1.Controls.Add(this.panel8);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 65);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(245, 689);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(78, 147);
-            this.label1.Margin = new System.Windows.Forms.Padding(78, 0, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 24);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "TSMS.SW";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnInicio);
-            this.panel2.Location = new System.Drawing.Point(3, 174);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(245, 60);
-            this.panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnClientes);
-            this.panel3.Location = new System.Drawing.Point(3, 240);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(245, 60);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnVentas);
-            this.panel4.Location = new System.Drawing.Point(3, 306);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(245, 60);
-            this.panel4.TabIndex = 7;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnInventario);
-            this.panel5.Location = new System.Drawing.Point(3, 372);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(245, 60);
-            this.panel5.TabIndex = 9;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnCompras);
-            this.panel6.Location = new System.Drawing.Point(3, 438);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(245, 60);
-            this.panel6.TabIndex = 11;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.btnProveedores);
-            this.panel7.Location = new System.Drawing.Point(3, 504);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(242, 60);
-            this.panel7.TabIndex = 13;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.button6);
-            this.panel8.Location = new System.Drawing.Point(3, 570);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(245, 60);
-            this.panel8.TabIndex = 15;
+            this.flpBarraLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.flpBarraLateral.Controls.Add(this.pictureBox1);
+            this.flpBarraLateral.Controls.Add(this.panel2);
+            this.flpBarraLateral.Controls.Add(this.panel3);
+            this.flpBarraLateral.Controls.Add(this.panel4);
+            this.flpBarraLateral.Controls.Add(this.panel5);
+            this.flpBarraLateral.Controls.Add(this.panel6);
+            this.flpBarraLateral.Controls.Add(this.panel7);
+            this.flpBarraLateral.Controls.Add(this.panel8);
+            this.flpBarraLateral.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flpBarraLateral.Location = new System.Drawing.Point(0, 65);
+            this.flpBarraLateral.Name = "flpBarraLateral";
+            this.flpBarraLateral.Size = new System.Drawing.Size(245, 689);
+            this.flpBarraLateral.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -192,19 +192,35 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnInicio);
+            this.panel2.Location = new System.Drawing.Point(3, 150);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(245, 60);
+            this.panel2.TabIndex = 3;
+            // 
             // btnInicio
             // 
             this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInicio.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.Image = global::TRAMADE.Properties.Resources.Home;
             this.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInicio.Location = new System.Drawing.Point(-3, 3);
+            this.btnInicio.Location = new System.Drawing.Point(-3, 0);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnInicio.Size = new System.Drawing.Size(248, 60);
+            this.btnInicio.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnInicio.Size = new System.Drawing.Size(245, 60);
             this.btnInicio.TabIndex = 2;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnClientes);
+            this.panel3.Location = new System.Drawing.Point(3, 216);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(245, 60);
+            this.panel3.TabIndex = 5;
             // 
             // btnClientes
             // 
@@ -218,11 +234,19 @@
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(-3, 0);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnClientes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnClientes.Size = new System.Drawing.Size(245, 60);
             this.btnClientes.TabIndex = 4;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnVentas);
+            this.panel4.Location = new System.Drawing.Point(3, 282);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(245, 60);
+            this.panel4.TabIndex = 7;
             // 
             // btnVentas
             // 
@@ -236,11 +260,19 @@
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.Location = new System.Drawing.Point(-3, 0);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnVentas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnVentas.Size = new System.Drawing.Size(245, 60);
             this.btnVentas.TabIndex = 6;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnInventario);
+            this.panel5.Location = new System.Drawing.Point(3, 348);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(245, 60);
+            this.panel5.TabIndex = 9;
             // 
             // btnInventario
             // 
@@ -252,13 +284,21 @@
             this.btnInventario.ForeColor = System.Drawing.SystemColors.Window;
             this.btnInventario.Image = global::TRAMADE.Properties.Resources.Inventario;
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventario.Location = new System.Drawing.Point(-3, 3);
+            this.btnInventario.Location = new System.Drawing.Point(-3, -1);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
+            this.btnInventario.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnInventario.Size = new System.Drawing.Size(245, 60);
             this.btnInventario.TabIndex = 8;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnCompras);
+            this.panel6.Location = new System.Drawing.Point(3, 414);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(245, 60);
+            this.panel6.TabIndex = 11;
             // 
             // btnCompras
             // 
@@ -270,13 +310,21 @@
             this.btnCompras.ForeColor = System.Drawing.SystemColors.Window;
             this.btnCompras.Image = global::TRAMADE.Properties.Resources.Compras;
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(-3, -3);
+            this.btnCompras.Location = new System.Drawing.Point(-3, -6);
             this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnCompras.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
             this.btnCompras.Size = new System.Drawing.Size(245, 60);
             this.btnCompras.TabIndex = 10;
             this.btnCompras.Text = "Compras";
             this.btnCompras.UseVisualStyleBackColor = false;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.btnProveedores);
+            this.panel7.Location = new System.Drawing.Point(3, 480);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(242, 60);
+            this.panel7.TabIndex = 13;
             // 
             // btnProveedores
             // 
@@ -288,13 +336,21 @@
             this.btnProveedores.ForeColor = System.Drawing.SystemColors.Window;
             this.btnProveedores.Image = global::TRAMADE.Properties.Resources.Proveedores;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 3);
+            this.btnProveedores.Location = new System.Drawing.Point(-3, -6);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Padding = new System.Windows.Forms.Padding(37, 0, 0, 0);
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
             this.btnProveedores.Size = new System.Drawing.Size(266, 60);
             this.btnProveedores.TabIndex = 12;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.button6);
+            this.panel8.Location = new System.Drawing.Point(3, 546);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(245, 60);
+            this.panel8.TabIndex = 15;
             // 
             // button6
             // 
@@ -306,84 +362,25 @@
             this.button6.ForeColor = System.Drawing.SystemColors.Window;
             this.button6.Image = global::TRAMADE.Properties.Resources.Reportes;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(-3, -3);
+            this.button6.Location = new System.Drawing.Point(-3, -6);
             this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button6.Size = new System.Drawing.Size(245, 60);
             this.button6.TabIndex = 14;
             this.button6.Text = "Reportes";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // pictureBox5
+            // tmrTransicionLateral
             // 
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(19, 14);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(55, 36);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox5.TabIndex = 6;
-            this.pictureBox5.TabStop = false;
-            // 
-            // picCerrar
-            // 
-            this.picCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCerrar.Image = ((System.Drawing.Image)(resources.GetObject("picCerrar.Image")));
-            this.picCerrar.Location = new System.Drawing.Point(1123, 12);
-            this.picCerrar.Name = "picCerrar";
-            this.picCerrar.Size = new System.Drawing.Size(36, 35);
-            this.picCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCerrar.TabIndex = 4;
-            this.picCerrar.TabStop = false;
-            this.picCerrar.Click += new System.EventHandler(this.picCerrar_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1081, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 35);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1039, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(36, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Vista General";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.label2);
-            this.panel9.Location = new System.Drawing.Point(271, 94);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(846, 208);
-            this.panel9.TabIndex = 2;
+            this.tmrTransicionLateral.Enabled = true;
+            this.tmrTransicionLateral.Interval = 2;
+            this.tmrTransicionLateral.Tick += new System.EventHandler(this.tmrTransicionLateral_Tick);
             // 
             // frmMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1171, 754);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flpBarraLateral);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMenuPrincipal";
@@ -391,8 +388,9 @@
             this.Text = "frmMenuPrincipal";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            this.flpBarraLateral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -400,13 +398,6 @@
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -414,14 +405,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox picCerrar;
         private System.Windows.Forms.Label lblBienvenidoUsuario;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox btnMenu;
+        private System.Windows.Forms.FlowLayoutPanel flpBarraLateral;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnClientes;
@@ -436,7 +423,9 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel9;
+        private Krypton.Toolkit.KryptonButton btnSalir;
+        private Krypton.Toolkit.KryptonButton btnMaximizar;
+        private Krypton.Toolkit.KryptonButton btnMinimizar;
+        private System.Windows.Forms.Timer tmrTransicionLateral;
     }
 }
