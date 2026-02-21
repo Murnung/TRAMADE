@@ -63,6 +63,16 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_55281 {
+            get {
+                object obj = ResourceManager.GetObject("calendar_55281", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2026_02_10_192130 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2026-02-10 192130", resourceCulture);
@@ -86,6 +96,56 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap Captura_de_pantalla_2026_02_10_193854 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2026-02-10 193854", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_right_18827469 {
+            get {
+                object obj = ResourceManager.GetObject("chevron-right_18827469", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_búsqueda_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-búsqueda-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap left_arrow_17909673 {
+            get {
+                object obj = ResourceManager.GetObject("left-arrow_17909673", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_2805355 {
+            get {
+                object obj = ResourceManager.GetObject("refresh_2805355", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrow_17910491 {
+            get {
+                object obj = ResourceManager.GetObject("right-arrow_17910491", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
