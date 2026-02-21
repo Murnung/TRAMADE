@@ -80,6 +80,7 @@
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
             this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
             this.label32 = new System.Windows.Forms.Label();
+            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -94,6 +95,7 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox1);
             this.kryptonGroup1.Panel.Controls.Add(this.btnRegistrar);
             this.kryptonGroup1.Panel.Controls.Add(this.btnLimpiar);
             this.kryptonGroup1.Panel.Controls.Add(this.txtCiudad);
@@ -737,6 +739,20 @@
             this.label32.TabIndex = 1;
             this.label32.Text = "TMSS.SW";
             // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Enabled = false;
+            this.kryptonTextBox1.Location = new System.Drawing.Point(168, 3);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(469, 35);
+            this.kryptonTextBox1.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.kryptonTextBox1.StateActive.Border.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateActive.Border.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateActive.Border.Rounding = 10F;
+            this.kryptonTextBox1.StateActive.Border.Width = 4;
+            this.kryptonTextBox1.TabIndex = 22;
+            this.kryptonTextBox1.Text = "Estimado usuario los campos con (*) son necesarios.";
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -813,5 +829,6 @@
         private Krypton.Toolkit.KryptonButton btnRegistrar;
         private Krypton.Toolkit.KryptonButton btnLimpiar;
         private System.Windows.Forms.Label label32;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
     }
 }
