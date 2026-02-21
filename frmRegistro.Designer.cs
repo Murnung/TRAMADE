@@ -77,6 +77,9 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.txtCiudad = new Krypton.Toolkit.KryptonTextBox();
+            this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
+            this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
+            this.label32 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -91,6 +94,8 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.btnRegistrar);
+            this.kryptonGroup1.Panel.Controls.Add(this.btnLimpiar);
             this.kryptonGroup1.Panel.Controls.Add(this.txtCiudad);
             this.kryptonGroup1.Panel.Controls.Add(this.label31);
             this.kryptonGroup1.Panel.Controls.Add(this.txtCorreo);
@@ -689,12 +694,56 @@
             this.txtCiudad.StateActive.Border.Width = 4;
             this.txtCiudad.TabIndex = 19;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(422, 423);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(109, 32);
+            this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.btnLimpiar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.btnLimpiar.StateCommon.Border.Rounding = 25F;
+            this.btnLimpiar.StateCommon.Border.Width = 1;
+            this.btnLimpiar.TabIndex = 20;
+            this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnLimpiar.Values.Text = "LIMPIAR";
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(555, 423);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(153, 32);
+            this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegistrar.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegistrar.StateCommon.Border.Rounding = 25F;
+            this.btnRegistrar.StateCommon.Border.Width = 1;
+            this.btnRegistrar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnRegistrar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnRegistrar.TabIndex = 21;
+            this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegistrar.Values.Text = "REGISTRAR Y ENVIAR";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(69, 11);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(111, 25);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "TMSS.SW";
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(812, 546);
+            this.Controls.Add(this.label32);
             this.Controls.Add(this.kryptonGroup1);
             this.Name = "frmRegistro";
             this.Text = "frmRegistro";
@@ -706,6 +755,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -760,5 +810,8 @@
         private System.Windows.Forms.Label label30;
         private Krypton.Toolkit.KryptonTextBox txtCiudad;
         private System.Windows.Forms.Label label31;
+        private Krypton.Toolkit.KryptonButton btnRegistrar;
+        private Krypton.Toolkit.KryptonButton btnLimpiar;
+        private System.Windows.Forms.Label label32;
     }
 }
