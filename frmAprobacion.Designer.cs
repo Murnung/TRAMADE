@@ -118,7 +118,7 @@
             this.btnAutorizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
             this.btnAutorizar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.btnAutorizar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
-            this.btnAutorizar.StateCommon.Border.Width = 2;
+            this.btnAutorizar.StateCommon.Border.Width = 1;
             this.btnAutorizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnAutorizar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnAutorizar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,7 +135,7 @@
             this.btnNegar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.btnNegar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.btnNegar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
-            this.btnNegar.StateCommon.Border.Width = 2;
+            this.btnNegar.StateCommon.Border.Width = 1;
             this.btnNegar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnNegar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnNegar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
