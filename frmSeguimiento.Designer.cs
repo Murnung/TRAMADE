@@ -128,7 +128,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(375, 24);
+            this.txtBuscar.Location = new System.Drawing.Point(373, 47);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(303, 29);
             this.txtBuscar.StateActive.Border.Color1 = System.Drawing.Color.Black;
@@ -174,9 +174,10 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(375, 72);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(16, 56);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(303, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(303, 22);
             this.dateTimePicker1.TabIndex = 25;
             // 
             // kgActivos
