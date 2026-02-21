@@ -12,11 +12,6 @@ namespace TRAMADE
 {
     public partial class frmRegistroClientes : Form
     {
-        public frmRegistroClientes()
-        {
-            InitializeComponent();
-        }
-
        
 
         private void label2_Click(object sender, EventArgs e)
