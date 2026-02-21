@@ -17,16 +17,19 @@ namespace TRAMADE
             InitializeComponent();
         }
 
-        private void kryptonGroup1_Panel_Paint(object sender, PaintEventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txtID_TextChanged(object sender, EventArgs e)
+        private void kryptonLabel2_Click(object sender, EventArgs e)
         {
 
         }
 
-       
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
