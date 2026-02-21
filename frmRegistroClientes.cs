@@ -17,10 +17,7 @@ namespace TRAMADE
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -37,10 +34,6 @@ namespace TRAMADE
 
         }
 
-        private void kryptonPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void label9_Click(object sender, EventArgs e)
         {
