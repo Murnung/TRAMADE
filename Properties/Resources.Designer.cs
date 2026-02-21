@@ -113,6 +113,16 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Diseño_sin_título__1__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Diseño_sin_título__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_búsqueda_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-búsqueda-50", resourceCulture);
@@ -126,6 +136,26 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap left_arrow_17909673 {
             get {
                 object obj = ResourceManager.GetObject("left-arrow_17909673", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_8924441 {
+            get {
+                object obj = ResourceManager.GetObject("photo_8924441", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_89244411 {
+            get {
+                object obj = ResourceManager.GetObject("photo_89244411", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

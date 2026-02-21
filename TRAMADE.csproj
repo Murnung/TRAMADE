@@ -85,16 +85,22 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegistrarInv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarInv.Designer.cs">
+      <DependentUpon>frmRegistrarInv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmInventario.resx">
       <DependentUpon>frmInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarInv.resx">
+      <DependentUpon>frmRegistrarInv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -146,6 +152,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\right-arrow_17910491.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_8924441.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_89244411.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diseño_sin_título__1_-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
