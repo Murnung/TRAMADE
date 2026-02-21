@@ -97,6 +97,12 @@
     <Compile Include="frmRegistro.Designer.cs">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegistroNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroNuevo.Designer.cs">
+      <DependentUpon>frmRegistroNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistro.resx">
       <DependentUpon>frmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroNuevo.resx">
+      <DependentUpon>frmRegistroNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
