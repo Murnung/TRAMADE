@@ -10,23 +10,16 @@ using System.Windows.Forms;
 
 namespace TRAMADE
 {
-    public partial class frmRegistro : Form
+    public partial class frmAprobacion : Form
     {
-        public frmRegistro()
+        public frmAprobacion()
         {
             InitializeComponent();
         }
 
-        private void kryptonGroup1_Panel_Paint(object sender, PaintEventArgs e)
+        private void frmAprobacion_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }

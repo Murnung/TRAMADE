@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtID = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtFechaRegistro = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,7 +48,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -67,6 +63,7 @@
             this.txtCiudad = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btnLimpiar = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -81,6 +78,7 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox1);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonButton1);
             this.kryptonGroup1.Panel.Controls.Add(this.btnLimpiar);
             this.kryptonGroup1.Panel.Controls.Add(this.txtCiudad);
@@ -98,12 +96,9 @@
             this.kryptonGroup1.Panel.Controls.Add(this.txtFechaRegistro);
             this.kryptonGroup1.Panel.Controls.Add(this.label11);
             this.kryptonGroup1.Panel.Controls.Add(this.txtID);
-            this.kryptonGroup1.Panel.Controls.Add(this.label3);
             this.kryptonGroup1.Panel.Controls.Add(this.label2);
-            this.kryptonGroup1.Panel.Controls.Add(this.label1);
             this.kryptonGroup1.Panel.Controls.Add(this.label8);
             this.kryptonGroup1.Panel.Controls.Add(this.label9);
-            this.kryptonGroup1.Panel.Controls.Add(this.label10);
             this.kryptonGroup1.Panel.Controls.Add(this.label19);
             this.kryptonGroup1.Panel.Controls.Add(this.label20);
             this.kryptonGroup1.Panel.Controls.Add(this.label18);
@@ -113,7 +108,6 @@
             this.kryptonGroup1.Panel.Controls.Add(this.label24);
             this.kryptonGroup1.Panel.Controls.Add(this.label27);
             this.kryptonGroup1.Panel.Controls.Add(this.label28);
-            this.kryptonGroup1.Panel.Controls.Add(this.label29);
             this.kryptonGroup1.Panel.Controls.Add(this.label30);
             this.kryptonGroup1.Panel.Controls.Add(this.label31);
             this.kryptonGroup1.Panel.Controls.Add(this.label32);
@@ -126,17 +120,6 @@
             this.kryptonGroup1.StateCommon.Border.Rounding = 25;
             this.kryptonGroup1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(292, 64);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "REGISTRO DE NUEVO CLIENTE";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -146,18 +129,6 @@
             this.label2.Size = new System.Drawing.Size(139, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Datos principales del cliente";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(-7, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(903, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "_________________________________________________________________________________" +
-    "_______________________________________________";
             // 
             // txtID
             // 
@@ -195,17 +166,6 @@
             this.label9.Size = new System.Drawing.Size(139, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "Datos principales del cliente";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(292, 64);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "REGISTRO DE NUEVO CLIENTE";
             // 
             // txtFechaRegistro
             // 
@@ -389,17 +349,6 @@
             this.label28.TabIndex = 1;
             this.label28.Text = "Datos principales del cliente";
             // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.White;
-            this.label29.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(17, 21);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(292, 64);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "REGISTRO DE NUEVO CLIENTE";
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -426,10 +375,10 @@
             // 
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.White;
-            this.label34.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(17, 21);
+            this.label34.Font = new System.Drawing.Font("Sans Serif Collection", 13.25F);
+            this.label34.Location = new System.Drawing.Point(-5, 41);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(292, 64);
+            this.label34.Size = new System.Drawing.Size(273, 62);
             this.label34.TabIndex = 0;
             this.label34.Text = "REGISTRO DE NUEVO CLIENTE";
             // 
@@ -606,6 +555,24 @@
             this.kryptonButton1.TabIndex = 27;
             this.kryptonButton1.Values.Text = "REGISTRAR Y ENVIAR";
             // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Location = new System.Drawing.Point(120, 3);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(419, 35);
+            this.kryptonTextBox1.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.kryptonTextBox1.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.kryptonTextBox1.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.kryptonTextBox1.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox1.StateActive.Border.Rounding = 10;
+            this.kryptonTextBox1.StateActive.Border.Width = 4;
+            this.kryptonTextBox1.StateActive.Content.Color1 = System.Drawing.Color.Black;
+            this.kryptonTextBox1.StateActive.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox1.TabIndex = 28;
+            this.kryptonTextBox1.Text = "Estimado usuario los campos con (*) son necesarios.";
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -629,14 +596,11 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonGroup kryptonGroup1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtID;
-        private System.Windows.Forms.Label label3;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtFechaRegistro;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;
@@ -650,7 +614,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
@@ -666,5 +629,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtNombre;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnLimpiar;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
     }
 }
