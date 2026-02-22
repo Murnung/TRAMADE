@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
@@ -56,8 +58,8 @@
             this.txtDepartamento = new Krypton.Toolkit.KryptonTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -71,6 +73,8 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
+            this.kryptonGroup1.Panel.Controls.Add(this.label7);
             this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
             this.kryptonGroup1.Panel.Controls.Add(this.label6);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox1);
@@ -104,6 +108,28 @@
             this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 0;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(161, 392);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(147, 35);
+            this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtTelefono.StateActive.Border.Rounding = 10F;
+            this.txtTelefono.StateActive.Border.Width = 4;
+            this.txtTelefono.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label6.Location = new System.Drawing.Point(19, 392);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(141, 44);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Teléfono personal";
             // 
             // kryptonTextBox1
             // 
@@ -251,15 +277,15 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.label12.Location = new System.Drawing.Point(24, 318);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(176, 16);
+            this.label12.Size = new System.Drawing.Size(118, 16);
             this.label12.TabIndex = 11;
-            this.label12.Text = "Datos principales del cliente";
+            this.label12.Text = "Datos de Contacto";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(-14, 278);
+            this.label11.Location = new System.Drawing.Point(-14, 281);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(817, 26);
             this.label11.TabIndex = 10;
@@ -283,7 +309,7 @@
             this.cmbTipoCliente.Items.AddRange(new object[] {
             "Empresa",
             "Persona natural"});
-            this.cmbTipoCliente.Location = new System.Drawing.Point(543, 234);
+            this.cmbTipoCliente.Location = new System.Drawing.Point(543, 243);
             this.cmbTipoCliente.Name = "cmbTipoCliente";
             this.cmbTipoCliente.Size = new System.Drawing.Size(147, 35);
             this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,7 +326,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label9.Location = new System.Drawing.Point(392, 234);
+            this.label9.Location = new System.Drawing.Point(392, 238);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(126, 44);
             this.label9.TabIndex = 7;
@@ -308,7 +334,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(161, 234);
+            this.txtNombre.Location = new System.Drawing.Point(161, 206);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(147, 35);
             this.txtNombre.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -322,7 +348,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label4.Location = new System.Drawing.Point(392, 170);
+            this.label4.Location = new System.Drawing.Point(392, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 44);
             this.label4.TabIndex = 5;
@@ -330,7 +356,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(161, 179);
+            this.txtID.Location = new System.Drawing.Point(161, 159);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(147, 35);
             this.txtID.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -344,7 +370,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label3.Location = new System.Drawing.Point(30, 179);
+            this.label3.Location = new System.Drawing.Point(3, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 44);
             this.label3.TabIndex = 3;
@@ -375,7 +401,7 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(543, 170);
+            this.txtFecha.Location = new System.Drawing.Point(543, 159);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(147, 35);
             this.txtFecha.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -389,7 +415,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label5.Location = new System.Drawing.Point(3, 234);
+            this.label5.Location = new System.Drawing.Point(3, 206);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(152, 44);
             this.label5.TabIndex = 5;
@@ -428,27 +454,27 @@
             this.label32.TabIndex = 1;
             this.label32.Text = "TMSS.SW";
             // 
-            // label6
+            // label7
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label6.Location = new System.Drawing.Point(19, 392);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 44);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Teléfono personal";
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label7.Location = new System.Drawing.Point(3, 247);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 44);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Razón social";
             // 
-            // txtTelefono
+            // txtRazonSocial
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 392);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(147, 35);
-            this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtTelefono.StateActive.Border.Rounding = 10F;
-            this.txtTelefono.StateActive.Border.Width = 4;
-            this.txtTelefono.TabIndex = 24;
+            this.txtRazonSocial.Location = new System.Drawing.Point(161, 247);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(147, 35);
+            this.txtRazonSocial.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtRazonSocial.StateActive.Border.Rounding = 10F;
+            this.txtRazonSocial.StateActive.Border.Width = 4;
+            this.txtRazonSocial.TabIndex = 26;
             // 
             // frmRegistro
             // 
@@ -459,7 +485,7 @@
             this.Controls.Add(this.label32);
             this.Controls.Add(this.kryptonGroup1);
             this.Name = "frmRegistro";
-            this.Text = "frmRegistro";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
             this.kryptonGroup1.Panel.ResumeLayout(false);
             this.kryptonGroup1.Panel.PerformLayout();
@@ -503,5 +529,7 @@
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private Krypton.Toolkit.KryptonTextBox txtTelefono;
         private System.Windows.Forms.Label label6;
+        private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
+        private System.Windows.Forms.Label label7;
     }
 }
