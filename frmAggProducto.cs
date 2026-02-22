@@ -17,14 +17,21 @@ namespace TRAMADE
             InitializeComponent();
         }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton1_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
