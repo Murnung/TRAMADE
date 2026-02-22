@@ -36,5 +36,11 @@ namespace TRAMADE
         {
 
         }
+
+        private void btnAggProducto_Click(object sender, EventArgs e)
+        {
+            frmAggProducto objVentana = new frmAggProducto();
+            objVentana.ShowDialog();
+        }
     }
 }
