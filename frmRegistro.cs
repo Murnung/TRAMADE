@@ -31,5 +31,15 @@ namespace TRAMADE
         {
 
         }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
