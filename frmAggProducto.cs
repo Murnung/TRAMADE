@@ -21,5 +21,10 @@ namespace TRAMADE
         {
             this.Close();
         }
+
+        private void kryptonTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
