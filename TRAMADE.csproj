@@ -135,5 +135,8 @@
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tramade logo png.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

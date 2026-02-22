@@ -16,5 +16,10 @@ namespace TRAMADE
         {
             InitializeComponent();
         }
+
+        private void btnAggProducto_Click(object sender, EventArgs e)
+        {
+            frmAggProducto objProducto = new frmAggProducto();
+        }
     }
 }
