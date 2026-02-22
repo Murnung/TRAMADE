@@ -19,7 +19,8 @@ namespace TRAMADE
 
         private void btnAggProducto_Click(object sender, EventArgs e)
         {
-            frmAggProducto objProducto = new frmAggProducto();
+            frmAggProducto objAggProducto = new frmAggProducto();
+            objAggProducto.ShowDialog();
         }
     }
 }

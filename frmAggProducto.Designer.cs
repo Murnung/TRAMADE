@@ -32,12 +32,9 @@
             this.kryptonButton9 = new Krypton.Toolkit.KryptonButton();
             this.btnAggProducto = new Krypton.Toolkit.KryptonButton();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
-            this.buttonSpecAny1 = new Krypton.Toolkit.ButtonSpecAny();
-            this.buttonSpecAny2 = new Krypton.Toolkit.ButtonSpecAny();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
             this.numeral = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,14 +42,21 @@
             this.CantidadStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seleccion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.buttonSpecAny1 = new Krypton.Toolkit.ButtonSpecAny();
+            this.buttonSpecAny2 = new Krypton.Toolkit.ButtonSpecAny();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
+            this.kryptonGroup1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonButton9
             // 
-            this.kryptonButton9.Location = new System.Drawing.Point(428, 484);
+            this.kryptonButton9.Location = new System.Drawing.Point(233, 369);
             this.kryptonButton9.Name = "kryptonButton9";
             this.kryptonButton9.Size = new System.Drawing.Size(123, 20);
             this.kryptonButton9.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -67,12 +71,12 @@
             this.kryptonButton9.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.kryptonButton9.TabIndex = 26;
             this.kryptonButton9.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton9.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton9.Values.Image")));
+            this.kryptonButton9.Values.Image = global::TRAMADE.Properties.Resources.Basurero_png_1_;
             this.kryptonButton9.Values.Text = "Eliminar producto";
             // 
             // btnAggProducto
             // 
-            this.btnAggProducto.Location = new System.Drawing.Point(287, 484);
+            this.btnAggProducto.Location = new System.Drawing.Point(92, 369);
             this.btnAggProducto.Name = "btnAggProducto";
             this.btnAggProducto.Size = new System.Drawing.Size(123, 20);
             this.btnAggProducto.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -87,7 +91,7 @@
             this.btnAggProducto.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAggProducto.TabIndex = 25;
             this.btnAggProducto.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnAggProducto.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAggProducto.Values.Image")));
+            this.btnAggProducto.Values.Image = global::TRAMADE.Properties.Resources.Signo_de_suma_png_redimensionada_2;
             this.btnAggProducto.Values.Text = "Agregar producto";
             // 
             // kryptonTextBox1
@@ -96,24 +100,12 @@
             this.kryptonTextBox1.ButtonSpecs.Add(this.buttonSpecAny2);
             this.kryptonTextBox1.CueHint.CueHintText = "Ingrese nombre o código del producto";
             this.kryptonTextBox1.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(420, 253);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(225, 138);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(405, 35);
             this.kryptonTextBox1.StateCommon.Border.Rounding = 20F;
             this.kryptonTextBox1.TabIndex = 23;
             this.kryptonTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // buttonSpecAny1
-            // 
-            this.buttonSpecAny1.Edge = Krypton.Toolkit.PaletteRelativeEdgeAlign.Near;
-            this.buttonSpecAny1.Image = ((System.Drawing.Image)(resources.GetObject("buttonSpecAny1.Image")));
-            this.buttonSpecAny1.UniqueName = "1cd0ef32f05d4208949f65d35e06f9f0";
-            // 
-            // buttonSpecAny2
-            // 
-            this.buttonSpecAny2.Edge = Krypton.Toolkit.PaletteRelativeEdgeAlign.Far;
-            this.buttonSpecAny2.Image = ((System.Drawing.Image)(resources.GetObject("buttonSpecAny2.Image")));
-            this.buttonSpecAny2.UniqueName = "df054032f49042d2845b22b92630c15d";
             // 
             // panel1
             // 
@@ -121,7 +113,7 @@
             this.panel1.Controls.Add(this.kryptonButton1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(205, 120);
+            this.panel1.Location = new System.Drawing.Point(10, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(803, 100);
             this.panel1.TabIndex = 22;
@@ -138,7 +130,7 @@
             this.kryptonButton1.StateCommon.Border.Rounding = 10F;
             this.kryptonButton1.TabIndex = 10;
             this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton1.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.Values.Image")));
+            this.kryptonButton1.Values.Image = global::TRAMADE.Properties.Resources.Cerrar_png;
             this.kryptonButton1.Values.Text = "";
             // 
             // label1
@@ -152,16 +144,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Agregar productos";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // kryptonDataGridView1
             // 
             this.kryptonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -173,7 +155,7 @@
             this.CantidadStock,
             this.PrecioUnit,
             this.Seleccion});
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(276, 306);
+            this.kryptonDataGridView1.Location = new System.Drawing.Point(81, 191);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
             this.kryptonDataGridView1.RowHeadersVisible = false;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(654, 209);
@@ -209,22 +191,58 @@
             this.Seleccion.HeaderText = "Selección";
             this.Seleccion.Name = "Seleccion";
             // 
+            // kryptonGroup1
+            // 
+            this.kryptonGroup1.Location = new System.Drawing.Point(1, 0);
+            this.kryptonGroup1.Size = new System.Drawing.Size(819, 444);
+            this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonGroup1.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonGroup1.StateCommon.Border.Width = 3;
+            this.kryptonGroup1.TabIndex = 27;
+            // 
+            // buttonSpecAny1
+            // 
+            this.buttonSpecAny1.Edge = Krypton.Toolkit.PaletteRelativeEdgeAlign.Near;
+            this.buttonSpecAny1.Image = ((System.Drawing.Image)(resources.GetObject("buttonSpecAny1.Image")));
+            this.buttonSpecAny1.UniqueName = "1cd0ef32f05d4208949f65d35e06f9f0";
+            // 
+            // buttonSpecAny2
+            // 
+            this.buttonSpecAny2.Edge = Krypton.Toolkit.PaletteRelativeEdgeAlign.Far;
+            this.buttonSpecAny2.Image = ((System.Drawing.Image)(resources.GetObject("buttonSpecAny2.Image")));
+            this.buttonSpecAny2.UniqueName = "df054032f49042d2845b22b92630c15d";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Tramade_logo_png;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(68, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAggProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 634);
+            this.ClientSize = new System.Drawing.Size(823, 445);
             this.Controls.Add(this.kryptonButton9);
             this.Controls.Add(this.btnAggProducto);
             this.Controls.Add(this.kryptonTextBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.kryptonDataGridView1);
+            this.Controls.Add(this.kryptonGroup1);
             this.Name = "frmAggProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAggProducto";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
+            this.kryptonGroup1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +266,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnit;
         private System.Windows.Forms.DataGridViewButtonColumn Seleccion;
+        private Krypton.Toolkit.KryptonGroup kryptonGroup1;
     }
 }

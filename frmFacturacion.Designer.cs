@@ -117,7 +117,7 @@
             this.kryptonButton10.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.kryptonButton10.TabIndex = 65;
             this.kryptonButton10.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton10.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton10.Values.Image")));
+            this.kryptonButton10.Values.Image = global::TRAMADE.Properties.Resources.Signo_de_nuevo_png_1_;
             this.kryptonButton10.Values.Text = "Nuevo";
             // 
             // kryptonButton13
@@ -133,7 +133,7 @@
             this.kryptonButton13.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.kryptonButton13.TabIndex = 64;
             this.kryptonButton13.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton13.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton13.Values.Image")));
+            this.kryptonButton13.Values.Image = global::TRAMADE.Properties.Resources.Check_png_3_;
             this.kryptonButton13.Values.Text = "Emitir factura";
             // 
             // kryptonButton12
@@ -149,7 +149,7 @@
             this.kryptonButton12.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.kryptonButton12.TabIndex = 63;
             this.kryptonButton12.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton12.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton12.Values.Image")));
+            this.kryptonButton12.Values.Image = global::TRAMADE.Properties.Resources.ojo_png_3_;
             this.kryptonButton12.Values.Text = "Vista previa";
             // 
             // kryptonButton11
@@ -165,7 +165,7 @@
             this.kryptonButton11.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.kryptonButton11.TabIndex = 62;
             this.kryptonButton11.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton11.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton11.Values.Image")));
+            this.kryptonButton11.Values.Image = global::TRAMADE.Properties.Resources.Escoba_borrador_png_3_;
             this.kryptonButton11.Values.Text = "Limpiar";
             // 
             // kryptonLabel16
@@ -263,7 +263,7 @@
             this.kryptonButton9.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.kryptonButton9.TabIndex = 52;
             this.kryptonButton9.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton9.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton9.Values.Image")));
+            this.kryptonButton9.Values.Image = global::TRAMADE.Properties.Resources.Basurero_png_1_;
             this.kryptonButton9.Values.Text = "Eliminar producto";
             // 
             // btnAggProducto
@@ -283,7 +283,7 @@
             this.btnAggProducto.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAggProducto.TabIndex = 51;
             this.btnAggProducto.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnAggProducto.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnAggProducto.Values.Image")));
+            this.btnAggProducto.Values.Image = global::TRAMADE.Properties.Resources.Signo_de_suma_png_redimensionada_2;
             this.btnAggProducto.Values.Text = "Agregar producto";
             this.btnAggProducto.Click += new System.EventHandler(this.btnAggProducto_Click);
             // 
@@ -462,7 +462,7 @@
             this.kryptonButton6.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.kryptonButton6.TabIndex = 18;
             this.kryptonButton6.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton6.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton6.Values.Image")));
+            this.kryptonButton6.Values.Image = global::TRAMADE.Properties.Resources.Editar;
             this.kryptonButton6.Values.Text = "kryptonButton6";
             // 
             // kryptonButton5
@@ -478,7 +478,7 @@
             this.kryptonButton5.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.kryptonButton5.TabIndex = 18;
             this.kryptonButton5.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton5.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton5.Values.Image")));
+            this.kryptonButton5.Values.Image = global::TRAMADE.Properties.Resources.Editar;
             this.kryptonButton5.Values.Text = "kryptonButton5";
             // 
             // kryptonTextBox3
@@ -511,7 +511,7 @@
             this.kryptonButton4.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.kryptonButton4.TabIndex = 15;
             this.kryptonButton4.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton4.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton4.Values.Image")));
+            this.kryptonButton4.Values.Image = global::TRAMADE.Properties.Resources.Editar;
             this.kryptonButton4.Values.Text = "kryptonButton4";
             // 
             // kryptonTextBox2
@@ -659,7 +659,7 @@
             this.kryptonButton3.TabIndex = 7;
             this.kryptonButton3.TabStop = false;
             this.kryptonButton3.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton3.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton3.Values.Image")));
+            this.kryptonButton3.Values.Image = global::TRAMADE.Properties.Resources.Home_png;
             this.kryptonButton3.Values.Text = "kryptonButton3";
             // 
             // label2
@@ -692,7 +692,7 @@
             this.kryptonButton2.TabIndex = 7;
             this.kryptonButton2.TabStop = false;
             this.kryptonButton2.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton2.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.Values.Image")));
+            this.kryptonButton2.Values.Image = global::TRAMADE.Properties.Resources.REGRESAR;
             this.kryptonButton2.Values.Text = "REGRESAR";
             // 
             // kryptonButton1

@@ -63,6 +63,16 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Basurero_png_1_ {
+            get {
+                object obj = ResourceManager.GetObject("Basurero png(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2026_02_10_192130 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2026-02-10 192130", resourceCulture);
@@ -86,6 +96,96 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap Captura_de_pantalla_2026_02_10_193854 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2026-02-10 193854", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cerrar_png {
+            get {
+                object obj = ResourceManager.GetObject("Cerrar png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Check_png_3_ {
+            get {
+                object obj = ResourceManager.GetObject("Check png(3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Editar {
+            get {
+                object obj = ResourceManager.GetObject("Editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Escoba_borrador_png_3_ {
+            get {
+                object obj = ResourceManager.GetObject("Escoba borrador png(3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Home_png {
+            get {
+                object obj = ResourceManager.GetObject("Home png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojo_png_3_ {
+            get {
+                object obj = ResourceManager.GetObject("ojo png(3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REGRESAR {
+            get {
+                object obj = ResourceManager.GetObject("REGRESAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Signo_de_nuevo_png_1_ {
+            get {
+                object obj = ResourceManager.GetObject("Signo de nuevo png(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Signo_de_suma_png_redimensionada_2 {
+            get {
+                object obj = ResourceManager.GetObject("Signo de suma png redimensionada 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

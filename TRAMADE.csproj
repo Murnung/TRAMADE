@@ -138,5 +138,35 @@
   <ItemGroup>
     <None Include="Resources\Tramade logo png.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basurero png%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Signo de suma png redimensionada 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REGRESAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Signo de nuevo png%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Escoba borrador png%283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo png%283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check png%283%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
