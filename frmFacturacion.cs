@@ -16,5 +16,25 @@ namespace TRAMADE
         {
             InitializeComponent();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonDateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonLabel13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
