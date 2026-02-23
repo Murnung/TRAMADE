@@ -22,5 +22,11 @@ namespace TRAMADE
             frmAggProducto objAggProducto = new frmAggProducto();
             objAggProducto.ShowDialog();
         }
+
+        private void kryptonButton12_Click(object sender, EventArgs e)
+        {
+            frmVistaPrevia objVistaPrevia = new frmVistaPrevia();
+            objVistaPrevia.ShowDialog();
+        }
     }
 }

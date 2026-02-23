@@ -73,6 +73,26 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Calendario_png {
+            get {
+                object obj = ResourceManager.GetObject("Calendario png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Calendario_png__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Calendario png (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2026_02_10_192130 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2026-02-10 192130", resourceCulture);
@@ -146,6 +166,16 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap Home_png {
             get {
                 object obj = ResourceManager.GetObject("Home png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_tramade_transparente {
+            get {
+                object obj = ResourceManager.GetObject("Logo tramade transparente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

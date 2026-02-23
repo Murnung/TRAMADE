@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAggProducto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
@@ -329,8 +329,8 @@
             // RestarProducto
             // 
             this.RestarProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.RestarProducto.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.RestarProducto.DefaultCellStyle = dataGridViewCellStyle2;
             this.RestarProducto.FillWeight = 45.48522F;
             this.RestarProducto.HeaderText = "-";
             this.RestarProducto.Image = global::TRAMADE.Properties.Resources.resta_1_;
@@ -346,6 +346,7 @@
             this.Controls.Add(this.kryptonTextBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.kryptonGroup1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAggProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAggProducto";

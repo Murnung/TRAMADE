@@ -87,8 +87,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup4 = new Krypton.Toolkit.KryptonGroup();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).BeginInit();
@@ -107,10 +107,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).BeginInit();
             this.kryptonGroup4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5.Panel)).BeginInit();
             this.kryptonGroup5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonButton10
@@ -160,6 +160,7 @@
             this.kryptonButton12.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.kryptonButton12.Values.Image = global::TRAMADE.Properties.Resources.ojo_png_3_;
             this.kryptonButton12.Values.Text = "Vista previa";
+            this.kryptonButton12.Click += new System.EventHandler(this.kryptonButton12_Click);
             // 
             // kryptonButton11
             // 
@@ -398,6 +399,7 @@
             // kryptonTextBox5
             // 
             this.kryptonTextBox5.CueHint.CueHintText = "Nombre de vendedor";
+            this.kryptonTextBox5.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonTextBox5.Location = new System.Drawing.Point(62, 37);
             this.kryptonTextBox5.Name = "kryptonTextBox5";
             this.kryptonTextBox5.Size = new System.Drawing.Size(145, 22);
@@ -415,6 +417,7 @@
             // kryptonTextBox6
             // 
             this.kryptonTextBox6.CueHint.CueHintText = "ID de vendedor";
+            this.kryptonTextBox6.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonTextBox6.Location = new System.Drawing.Point(107, 6);
             this.kryptonTextBox6.Name = "kryptonTextBox6";
             this.kryptonTextBox6.Size = new System.Drawing.Size(100, 22);
@@ -493,6 +496,7 @@
             // kryptonTextBox3
             // 
             this.kryptonTextBox3.CueHint.CueHintText = "( ! ) Dirección del cliente";
+            this.kryptonTextBox3.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonTextBox3.Location = new System.Drawing.Point(62, 68);
             this.kryptonTextBox3.Name = "kryptonTextBox3";
             this.kryptonTextBox3.Size = new System.Drawing.Size(145, 22);
@@ -525,7 +529,8 @@
             // 
             // kryptonTextBox2
             // 
-            this.kryptonTextBox2.CueHint.CueHintText = "     DNI/RTN del cliente";
+            this.kryptonTextBox2.CueHint.CueHintText = "DNI/RTN del cliente";
+            this.kryptonTextBox2.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonTextBox2.Location = new System.Drawing.Point(62, 37);
             this.kryptonTextBox2.Name = "kryptonTextBox2";
             this.kryptonTextBox2.Size = new System.Drawing.Size(145, 22);
@@ -543,6 +548,7 @@
             // kryptonTextBox1
             // 
             this.kryptonTextBox1.CueHint.CueHintText = "( ! ) Nombre del cliente";
+            this.kryptonTextBox1.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonTextBox1.Location = new System.Drawing.Point(62, 6);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(145, 22);
@@ -789,16 +795,6 @@
             this.kryptonGroup4.StateCommon.Border.Width = 3;
             this.kryptonGroup4.TabIndex = 67;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Tramade_logo_png;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // kryptonGroup5
             // 
             this.kryptonGroup5.Location = new System.Drawing.Point(310, 126);
@@ -808,6 +804,16 @@
             this.kryptonGroup5.StateCommon.Border.Rounding = 20F;
             this.kryptonGroup5.StateCommon.Border.Width = 1;
             this.kryptonGroup5.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Tramade_logo_png;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(68, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // frmFacturacion
             // 
@@ -869,10 +875,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4)).EndInit();
             this.kryptonGroup4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5.Panel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5)).EndInit();
             this.kryptonGroup5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
