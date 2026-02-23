@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label7 = new System.Windows.Forms.Label();
-            this.btnNuevo = new Krypton.Toolkit.KryptonButton();
+            this.btnAgregar = new Krypton.Toolkit.KryptonButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,29 +55,30 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "AGREGAR NUEVO USUARIO";
             // 
-            // btnNuevo
+            // btnAgregar
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(18, 411);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnNuevo.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnNuevo.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnNuevo.OverrideFocus.Back.Color2 = System.Drawing.Color.LightBlue;
-            this.btnNuevo.Size = new System.Drawing.Size(219, 34);
-            this.btnNuevo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnNuevo.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnNuevo.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
-            this.btnNuevo.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
-            this.btnNuevo.StateCommon.Border.Rounding = 10F;
-            this.btnNuevo.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnNuevo.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
-            this.btnNuevo.StateTracking.Back.Color2 = System.Drawing.Color.LightBlue;
-            this.btnNuevo.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnNuevo.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnNuevo.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnNuevo.TabIndex = 22;
-            this.btnNuevo.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnNuevo.Values.Text = "AGREGAR NUEVO USUARIO";
+            this.btnAgregar.Location = new System.Drawing.Point(18, 411);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnAgregar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnAgregar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnAgregar.OverrideFocus.Back.Color2 = System.Drawing.Color.LightBlue;
+            this.btnAgregar.Size = new System.Drawing.Size(219, 34);
+            this.btnAgregar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnAgregar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnAgregar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnAgregar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnAgregar.StateCommon.Border.Rounding = 10F;
+            this.btnAgregar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnAgregar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnAgregar.StateTracking.Back.Color2 = System.Drawing.Color.LightBlue;
+            this.btnAgregar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnAgregar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnAgregar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnAgregar.TabIndex = 22;
+            this.btnAgregar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnAgregar.Values.Text = "AGREGAR NUEVO USUARIO";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label5
             // 
@@ -210,7 +211,7 @@
             this.ClientSize = new System.Drawing.Size(498, 457);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cmbSucursal);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -234,7 +235,7 @@
 
         #endregion
         private System.Windows.Forms.Label label7;
-        private Krypton.Toolkit.KryptonButton btnNuevo;
+        private Krypton.Toolkit.KryptonButton btnAgregar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;

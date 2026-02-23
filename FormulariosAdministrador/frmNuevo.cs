@@ -15,6 +15,7 @@ namespace TRAMADE
     {
         
         clsConexion ObjConexion = new clsConexion();
+        clsUsuario ObjUsuario = new clsUsuario();
         public frmNuevo()
         {
             InitializeComponent();
@@ -49,6 +50,47 @@ namespace TRAMADE
                 int sucursalId = Convert.ToInt32(drv["id_sucursal"]);
                 string sucursalNombre = drv["nombre_sucursal"].ToString();
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtCorreo.Text) ||
+                string.IsNullOrWhiteSpace(txtContraseña.Text) ||
+                cmbRol.SelectedIndex == -1 ||
+                cmbSucursal.SelectedIndex == -1)
+            {
+                MessageBox.Show("Llene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Asignar valores al objeto
+            ObjUsuario.setNombre(txtNombre.Text.Trim());
+            ObjUsuario.setCorreo(txtCorreo.Text.Trim());
+            ObjUsuario.setContrasena(txtContraseña.Text.Trim());
+            ObjUsuario.setRol(Convert.ToInt32(cmbRol.SelectedValue));
+            ObjUsuario.setSucursal(Convert.ToInt32(cmbSucursal.SelectedValue));
+
+            //Intentar insertar
+            if (ObjUsuario.insertarUsuarios(ObjConexion))
+            {
+                MessageBox.Show("¡Usuario registrado con éxito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar campos para registrar otro usuario
+                txtNombre.Clear();
+                txtCorreo.Clear();
+                txtContraseña.Clear();
+                cmbRol.SelectedIndex = -1;
+                cmbSucursal.SelectedIndex = -1;
+                txtNombre.Focus();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo completar el registro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
         }
     }
 }
