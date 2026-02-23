@@ -20,13 +20,15 @@ namespace TRAMADE
         public frmUsuarios()
         {
             InitializeComponent();
-            ObjConexion.Abrir();
-            string consulta = "select * from VistaUsurioTabla"
+        }
+
+        private void RecargarUsuarios()
+        {
+            string consulta = "select * from VistaUsuarioTabla";
             SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgbUsuarios.DataSource = dt;
-            this.reportViewer1.RefreshReport();
         }
 
 
@@ -35,6 +37,7 @@ namespace TRAMADE
         {
             frmBitacora ObjBitacora = new frmBitacora();
             ObjBitacora.Show();
+            ObjConexion.Cerrar();
             this.Close();
         }
 
@@ -55,6 +58,28 @@ namespace TRAMADE
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                ObjConexion.Abrir(); // Abrir la conexión
+                string consulta = "SELECT * FROM VistaUsuarioTabla"; // Consulta SQL
+                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt); // Llenar el DataTable
+                dgbUsuarios.DataSource = dt; // Asignar al DataGridView
+                this.reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar(); // Siempre cerrar la conexión
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
