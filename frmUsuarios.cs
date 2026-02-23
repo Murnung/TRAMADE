@@ -67,7 +67,7 @@ namespace TRAMADE
                 DataTable dt = new DataTable();
                 adapter.Fill(dt); // Llenar el DataTable
                 dgbUsuarios.DataSource = dt; // Asignar al DataGridView
-                this.reportViewer1.RefreshReport();
+                
             }
             catch (Exception ex)
             {
