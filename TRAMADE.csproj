@@ -70,28 +70,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAggProducto.cs">
+    <Compile Include="Formularios_Facturacion\frmAggProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAggProducto.Designer.cs">
+    <Compile Include="Formularios_Facturacion\frmAggProducto.Designer.cs">
       <DependentUpon>frmAggProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmitirFactura.cs">
+    <Compile Include="Formularios_Facturacion\frmEmitirFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmitirFactura.Designer.cs">
+    <Compile Include="Formularios_Facturacion\frmEmitirFactura.Designer.cs">
       <DependentUpon>frmEmitirFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFacturacion.cs">
+    <Compile Include="Formularios_Facturacion\frmFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFacturacion.Designer.cs">
+    <Compile Include="Formularios_Facturacion\frmFacturacion.Designer.cs">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHistorialFacturas.cs">
+    <Compile Include="Formularios_Facturacion\frmHistorialFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHistorialFacturas.Designer.cs">
+    <Compile Include="Formularios_Facturacion\frmHistorialFacturas.Designer.cs">
       <DependentUpon>frmHistorialFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -100,10 +100,10 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVistaPrevia.cs">
+    <Compile Include="Formularios_Facturacion\frmVistaPrevia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVistaPrevia.Designer.cs">
+    <Compile Include="Formularios_Facturacion\frmVistaPrevia.Designer.cs">
       <DependentUpon>frmVistaPrevia.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -111,22 +111,22 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAggProducto.resx">
+    <EmbeddedResource Include="Formularios_Facturacion\frmAggProducto.resx">
       <DependentUpon>frmAggProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmitirFactura.resx">
+    <EmbeddedResource Include="Formularios_Facturacion\frmEmitirFactura.resx">
       <DependentUpon>frmEmitirFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFacturacion.resx">
+    <EmbeddedResource Include="Formularios_Facturacion\frmFacturacion.resx">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHistorialFacturas.resx">
+    <EmbeddedResource Include="Formularios_Facturacion\frmHistorialFacturas.resx">
       <DependentUpon>frmHistorialFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVistaPrevia.resx">
+    <EmbeddedResource Include="Formularios_Facturacion\frmVistaPrevia.resx">
       <DependentUpon>frmVistaPrevia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -230,6 +230,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ordenar pns.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Clases_Facturacion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
