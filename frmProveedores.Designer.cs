@@ -78,7 +78,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1255, 65);
+            this.panel1.Size = new System.Drawing.Size(1153, 65);
             this.panel1.TabIndex = 2;
             // 
             // btnMenu
@@ -164,10 +164,9 @@
             this.flpBarraLateral.Controls.Add(this.panel6);
             this.flpBarraLateral.Controls.Add(this.panel7);
             this.flpBarraLateral.Controls.Add(this.panel8);
-            this.flpBarraLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpBarraLateral.Location = new System.Drawing.Point(0, 65);
             this.flpBarraLateral.Name = "flpBarraLateral";
-            this.flpBarraLateral.Size = new System.Drawing.Size(245, 766);
+            this.flpBarraLateral.Size = new System.Drawing.Size(245, 642);
             this.flpBarraLateral.TabIndex = 3;
             // 
             // panel2
@@ -298,10 +297,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 831);
+            this.ClientSize = new System.Drawing.Size(1153, 707);
             this.Controls.Add(this.flpBarraLateral);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProveedores";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
