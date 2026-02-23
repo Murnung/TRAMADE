@@ -173,6 +173,16 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap resta_1_ {
+            get {
+                object obj = ResourceManager.GetObject("resta(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Signo_de_nuevo_png_1_ {
             get {
                 object obj = ResourceManager.GetObject("Signo de nuevo png(1)", resourceCulture);
@@ -186,6 +196,16 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap Signo_de_suma_png_redimensionada_2 {
             get {
                 object obj = ResourceManager.GetObject("Signo de suma png redimensionada 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Suma_1_ {
+            get {
+                object obj = ResourceManager.GetObject("Suma(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
