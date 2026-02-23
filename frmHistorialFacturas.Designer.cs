@@ -38,8 +38,6 @@
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup2 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
-            this.buttonSpecAny1 = new Krypton.Toolkit.ButtonSpecAny();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
             this.Numeral = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +45,10 @@
             this.DNIRTNCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton4 = new Krypton.Toolkit.KryptonButton();
+            this.buttonSpecAny1 = new Krypton.Toolkit.ButtonSpecAny();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).BeginInit();
             this.kryptonGroup4.Panel.SuspendLayout();
@@ -60,8 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).BeginInit();
             this.kryptonGroup2.Panel.SuspendLayout();
             this.kryptonGroup2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup4
@@ -152,6 +154,8 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.kryptonButton4);
+            this.kryptonGroup1.Panel.Controls.Add(this.kryptonButton1);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox1);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonGroup2);
             this.kryptonGroup1.Size = new System.Drawing.Size(801, 306);
@@ -179,28 +183,12 @@
             this.kryptonTextBox1.ButtonSpecs.Add(this.buttonSpecAny1);
             this.kryptonTextBox1.CueHint.CueHintText = "Ingrese nombre o código del producto";
             this.kryptonTextBox1.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(18, 14);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(18, 10);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(405, 35);
             this.kryptonTextBox1.StateCommon.Border.Rounding = 20F;
             this.kryptonTextBox1.TabIndex = 42;
             this.kryptonTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // buttonSpecAny1
-            // 
-            this.buttonSpecAny1.Edge = Krypton.Toolkit.PaletteRelativeEdgeAlign.Near;
-            this.buttonSpecAny1.Image = global::TRAMADE.Properties.Resources.lupa__1_;
-            this.buttonSpecAny1.UniqueName = "1cd0ef32f05d4208949f65d35e06f9f0";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Tramade_logo_png;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // kryptonDataGridView1
             // 
@@ -279,6 +267,68 @@
             this.kryptonButton3.Values.Image = global::TRAMADE.Properties.Resources.ojo_png_3_;
             this.kryptonButton3.Values.Text = "Ver factura";
             // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.Location = new System.Drawing.Point(429, 10);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(42, 39);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonButton1.StateCommon.Border.Rounding = 10F;
+            this.kryptonButton1.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.kryptonButton1.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.kryptonButton1.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.StateCommon.Content.ShortText.Image")));
+            this.kryptonButton1.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.kryptonButton1.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.kryptonButton1.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonButton1.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
+            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.kryptonButton1.TabIndex = 58;
+            this.kryptonButton1.TabStop = false;
+            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.kryptonButton1.Values.Image = global::TRAMADE.Properties.Resources.Calendario_BC_png;
+            this.kryptonButton1.Values.Text = "";
+            // 
+            // kryptonButton4
+            // 
+            this.kryptonButton4.Location = new System.Drawing.Point(477, 22);
+            this.kryptonButton4.Name = "kryptonButton4";
+            this.kryptonButton4.Size = new System.Drawing.Size(28, 23);
+            this.kryptonButton4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonButton4.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonButton4.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonButton4.StateCommon.Border.Rounding = 10F;
+            this.kryptonButton4.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.kryptonButton4.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.kryptonButton4.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton4.StateCommon.Content.ShortText.Image")));
+            this.kryptonButton4.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.kryptonButton4.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.kryptonButton4.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonButton4.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
+            this.kryptonButton4.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.kryptonButton4.TabIndex = 58;
+            this.kryptonButton4.TabStop = false;
+            this.kryptonButton4.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.kryptonButton4.Values.Image = global::TRAMADE.Properties.Resources.Ordenar_pns;
+            this.kryptonButton4.Values.Text = "";
+            // 
+            // buttonSpecAny1
+            // 
+            this.buttonSpecAny1.Edge = Krypton.Toolkit.PaletteRelativeEdgeAlign.Near;
+            this.buttonSpecAny1.Image = global::TRAMADE.Properties.Resources.lupa__1_;
+            this.buttonSpecAny1.UniqueName = "1cd0ef32f05d4208949f65d35e06f9f0";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Tramade_logo_png;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(68, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmHistorialFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,8 +353,8 @@
             this.kryptonGroup2.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2)).EndInit();
             this.kryptonGroup2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,5 +379,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DNIRTNCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaEmision;
         private Krypton.Toolkit.KryptonButton kryptonButton3;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonButton kryptonButton4;
     }
 }

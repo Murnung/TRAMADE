@@ -73,6 +73,16 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Calendario_BC_png {
+            get {
+                object obj = ResourceManager.GetObject("Calendario BC png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Calendario_png {
             get {
                 object obj = ResourceManager.GetObject("Calendario png", resourceCulture);
@@ -216,6 +226,16 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap ojo_png_3_ {
             get {
                 object obj = ResourceManager.GetObject("ojo png(3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ordenar_pns {
+            get {
+                object obj = ResourceManager.GetObject("Ordenar pns", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
