@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesAdministrador\clsUsuario.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -92,16 +93,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormualriosAdministrador\frmAdministrador.cs">
+    <Compile Include="FormulariosAdministrador\frmAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormualriosAdministrador\frmAdministrador.Designer.cs">
+    <Compile Include="FormulariosAdministrador\frmAdministrador.Designer.cs">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormualriosAdministrador\frmBitacora.cs">
+    <Compile Include="FormulariosAdministrador\frmBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormualriosAdministrador\frmBitacora.Designer.cs">
+    <Compile Include="FormulariosAdministrador\frmBitacora.Designer.cs">
       <DependentUpon>frmBitacora.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -110,16 +111,16 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormualriosAdministrador\frmNuevo.cs">
+    <Compile Include="FormulariosAdministrador\frmNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormualriosAdministrador\frmNuevo.Designer.cs">
+    <Compile Include="FormulariosAdministrador\frmNuevo.Designer.cs">
       <DependentUpon>frmNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormualriosAdministrador\frmUsuarios.cs">
+    <Compile Include="FormulariosAdministrador\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormualriosAdministrador\frmUsuarios.Designer.cs">
+    <Compile Include="FormulariosAdministrador\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -127,19 +128,19 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormualriosAdministrador\frmAdministrador.resx">
+    <EmbeddedResource Include="FormulariosAdministrador\frmAdministrador.resx">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormualriosAdministrador\frmBitacora.resx">
+    <EmbeddedResource Include="FormulariosAdministrador\frmBitacora.resx">
       <DependentUpon>frmBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormualriosAdministrador\frmNuevo.resx">
+    <EmbeddedResource Include="FormulariosAdministrador\frmNuevo.resx">
       <DependentUpon>frmNuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormualriosAdministrador\frmUsuarios.resx">
+    <EmbeddedResource Include="FormulariosAdministrador\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

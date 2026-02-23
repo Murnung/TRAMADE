@@ -145,6 +145,7 @@
             // 
             // cmbSucursal
             // 
+            this.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSucursal.DropDownWidth = 243;
             this.cmbSucursal.Location = new System.Drawing.Point(199, 330);
             this.cmbSucursal.Name = "cmbSucursal";
@@ -152,6 +153,7 @@
             this.cmbSucursal.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cmbSucursal.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbSucursal.TabIndex = 15;
+            this.cmbSucursal.SelectedIndexChanged += new System.EventHandler(this.cmbSucursal_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -189,6 +191,7 @@
             // 
             // cmbRol
             // 
+            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.DropDownWidth = 243;
             this.cmbRol.Location = new System.Drawing.Point(199, 268);
             this.cmbRol.Name = "cmbRol";
@@ -196,6 +199,8 @@
             this.cmbRol.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cmbRol.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbRol.TabIndex = 24;
+            this.cmbRol.DropDownStyleChanged += new System.EventHandler(this.frmNuevo_Load);
+            this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
             // frmNuevo
             // 
