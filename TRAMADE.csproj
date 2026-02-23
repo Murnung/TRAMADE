@@ -92,16 +92,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAdministrador.cs">
+    <Compile Include="FormualriosAdministrador\frmAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdministrador.Designer.cs">
+    <Compile Include="FormualriosAdministrador\frmAdministrador.Designer.cs">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBitacora.cs">
+    <Compile Include="FormualriosAdministrador\frmBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBitacora.Designer.cs">
+    <Compile Include="FormualriosAdministrador\frmBitacora.Designer.cs">
       <DependentUpon>frmBitacora.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -110,16 +110,16 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNuevo.cs">
+    <Compile Include="FormualriosAdministrador\frmNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNuevo.Designer.cs">
+    <Compile Include="FormualriosAdministrador\frmNuevo.Designer.cs">
       <DependentUpon>frmNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuarios.cs">
+    <Compile Include="FormualriosAdministrador\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuarios.Designer.cs">
+    <Compile Include="FormualriosAdministrador\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -127,19 +127,19 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAdministrador.resx">
+    <EmbeddedResource Include="FormualriosAdministrador\frmAdministrador.resx">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBitacora.resx">
+    <EmbeddedResource Include="FormualriosAdministrador\frmBitacora.resx">
       <DependentUpon>frmBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNuevo.resx">
+    <EmbeddedResource Include="FormualriosAdministrador\frmNuevo.resx">
       <DependentUpon>frmNuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuarios.resx">
+    <EmbeddedResource Include="FormualriosAdministrador\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

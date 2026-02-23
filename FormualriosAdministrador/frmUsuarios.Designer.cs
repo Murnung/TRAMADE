@@ -178,7 +178,7 @@
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Location = new System.Drawing.Point(197, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(852, 525);
+            this.panel2.Size = new System.Drawing.Size(856, 525);
             this.panel2.TabIndex = 18;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -221,7 +221,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 88);
+            this.label3.Location = new System.Drawing.Point(47, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 18);
             this.label3.TabIndex = 24;
@@ -239,9 +239,9 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(120, 81);
+            this.txtBuscar.Location = new System.Drawing.Point(128, 80);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(292, 33);
+            this.txtBuscar.Size = new System.Drawing.Size(284, 33);
             this.txtBuscar.StateCommon.Border.Rounding = 10F;
             this.txtBuscar.TabIndex = 23;
             // 
@@ -250,12 +250,12 @@
             this.dgbUsuarios.AllowUserToAddRows = false;
             this.dgbUsuarios.AllowUserToDeleteRows = false;
             this.dgbUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgbUsuarios.Location = new System.Drawing.Point(41, 120);
+            this.dgbUsuarios.Location = new System.Drawing.Point(50, 119);
             this.dgbUsuarios.Name = "dgbUsuarios";
             this.dgbUsuarios.ReadOnly = true;
             this.dgbUsuarios.RowHeadersWidth = 51;
             this.dgbUsuarios.RowTemplate.Height = 24;
-            this.dgbUsuarios.Size = new System.Drawing.Size(804, 385);
+            this.dgbUsuarios.Size = new System.Drawing.Size(766, 385);
             this.dgbUsuarios.TabIndex = 20;
             // 
             // btnEditar
