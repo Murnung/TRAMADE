@@ -76,11 +76,23 @@
     <Compile Include="frmAggProducto.Designer.cs">
       <DependentUpon>frmAggProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmitirFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmitirFactura.Designer.cs">
+      <DependentUpon>frmEmitirFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFacturacion.Designer.cs">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistorialFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorialFacturas.Designer.cs">
+      <DependentUpon>frmHistorialFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -102,8 +114,14 @@
     <EmbeddedResource Include="frmAggProducto.resx">
       <DependentUpon>frmAggProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEmitirFactura.resx">
+      <DependentUpon>frmEmitirFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFacturacion.resx">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorialFacturas.resx">
+      <DependentUpon>frmHistorialFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -191,6 +209,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Calendario png %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verificacion png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Impresion png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X %282%29 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

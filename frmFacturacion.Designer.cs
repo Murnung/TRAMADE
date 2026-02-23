@@ -86,8 +86,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
-            this.kryptonGroup4 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
+            this.kryptonGroup4 = new Krypton.Toolkit.KryptonGroup();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2)).BeginInit();
@@ -104,12 +104,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3.Panel)).BeginInit();
             this.kryptonGroup3.Panel.SuspendLayout();
             this.kryptonGroup3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).BeginInit();
-            this.kryptonGroup4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5.Panel)).BeginInit();
             this.kryptonGroup5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).BeginInit();
+            this.kryptonGroup4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,6 +144,7 @@
             this.kryptonButton13.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.kryptonButton13.Values.Image = global::TRAMADE.Properties.Resources.Check_png_3_;
             this.kryptonButton13.Values.Text = "Emitir factura";
+            this.kryptonButton13.Click += new System.EventHandler(this.kryptonButton13_Click);
             // 
             // kryptonButton12
             // 
@@ -731,6 +732,7 @@
             this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.kryptonButton1.Values.Text = "Ver facturas emitidas";
             this.kryptonButton1.Values.UACShieldIconSize = Krypton.Toolkit.IconSize.Medium;
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // label1
             // 
@@ -786,15 +788,6 @@
             this.kryptonGroup3.StateCommon.Border.Rounding = 20F;
             this.kryptonGroup3.TabIndex = 66;
             // 
-            // kryptonGroup4
-            // 
-            this.kryptonGroup4.Location = new System.Drawing.Point(3, 2);
-            this.kryptonGroup4.Size = new System.Drawing.Size(1069, 595);
-            this.kryptonGroup4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonGroup4.StateCommon.Border.Color1 = System.Drawing.Color.Black;
-            this.kryptonGroup4.StateCommon.Border.Width = 3;
-            this.kryptonGroup4.TabIndex = 67;
-            // 
             // kryptonGroup5
             // 
             this.kryptonGroup5.Location = new System.Drawing.Point(310, 126);
@@ -804,6 +797,15 @@
             this.kryptonGroup5.StateCommon.Border.Rounding = 20F;
             this.kryptonGroup5.StateCommon.Border.Width = 1;
             this.kryptonGroup5.TabIndex = 0;
+            // 
+            // kryptonGroup4
+            // 
+            this.kryptonGroup4.Location = new System.Drawing.Point(3, 2);
+            this.kryptonGroup4.Size = new System.Drawing.Size(1069, 595);
+            this.kryptonGroup4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonGroup4.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonGroup4.StateCommon.Border.Width = 3;
+            this.kryptonGroup4.TabIndex = 67;
             // 
             // pictureBox1
             // 
@@ -872,12 +874,12 @@
             this.kryptonGroup3.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3)).EndInit();
             this.kryptonGroup3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4)).EndInit();
-            this.kryptonGroup4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5.Panel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5)).EndInit();
             this.kryptonGroup5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4)).EndInit();
+            this.kryptonGroup4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

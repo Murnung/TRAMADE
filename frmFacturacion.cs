@@ -28,5 +28,17 @@ namespace TRAMADE
             frmVistaPrevia objVistaPrevia = new frmVistaPrevia();
             objVistaPrevia.ShowDialog();
         }
+
+        private void kryptonButton13_Click(object sender, EventArgs e)
+        {
+            frmEmitirFactura objEmitirFactura = new frmEmitirFactura();
+            objEmitirFactura.ShowDialog();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            frmHistorialFacturas objHistorialFacturas = new frmHistorialFacturas();
+            objHistorialFacturas.ShowDialog();
+        }
     }
 }
