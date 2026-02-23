@@ -41,12 +41,14 @@
             this.cmbCategoría = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbSucursal = new System.Windows.Forms.ComboBox();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.btnSubir = new Krypton.Toolkit.KryptonButton();
             this.label8 = new System.Windows.Forms.Label();
+            this.pbImagenProducto = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCancelar = new Krypton.Toolkit.KryptonButton();
+            this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdProducto
@@ -160,14 +162,14 @@
             this.cmbSucursal.Size = new System.Drawing.Size(200, 24);
             this.cmbSucursal.TabIndex = 12;
             // 
-            // kryptonButton1
+            // btnSubir
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(420, 401);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
-            this.kryptonButton1.TabIndex = 14;
-            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton1.Values.Text = "Subir";
+            this.btnSubir.Location = new System.Drawing.Point(420, 401);
+            this.btnSubir.Name = "btnSubir";
+            this.btnSubir.Size = new System.Drawing.Size(90, 25);
+            this.btnSubir.TabIndex = 14;
+            this.btnSubir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSubir.Values.Text = "Subir";
             // 
             // label8
             // 
@@ -180,6 +182,16 @@
             this.label8.Text = "Nota: La resolución de la \r\nimagen debe de tener\r\n un mínimo de 500x500 px \r\nde r" +
     "esolución.";
             // 
+            // pbImagenProducto
+            // 
+            this.pbImagenProducto.Image = global::TRAMADE.Properties.Resources.photo_89244411;
+            this.pbImagenProducto.Location = new System.Drawing.Point(402, 299);
+            this.pbImagenProducto.Name = "pbImagenProducto";
+            this.pbImagenProducto.Size = new System.Drawing.Size(131, 86);
+            this.pbImagenProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImagenProducto.TabIndex = 16;
+            this.pbImagenProducto.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TRAMADE.Properties.Resources.Diseño_sin_título__1__removebg_preview;
@@ -190,24 +202,34 @@
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // btnCancelar
             // 
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.photo_89244411;
-            this.pictureBox1.Location = new System.Drawing.Point(402, 299);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(131, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.btnCancelar.Location = new System.Drawing.Point(575, 474);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 25);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnCancelar.Values.Text = "Cancelar";
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(688, 474);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(90, 25);
+            this.btnRegistrar.TabIndex = 20;
+            this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegistrar.Values.Text = "Registrar";
             // 
             // frmRegistrarInv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 522);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.pbImagenProducto);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.kryptonButton1);
+            this.Controls.Add(this.btnSubir);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbSucursal);
             this.Controls.Add(this.label6);
@@ -224,8 +246,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Name = "frmRegistrarInv";
             this.Text = "frmRegistrarInv";
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,9 +268,11 @@
         private System.Windows.Forms.ComboBox cmbCategoría;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbSucursal;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonButton btnSubir;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbImagenProducto;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private Krypton.Toolkit.KryptonButton btnCancelar;
+        private Krypton.Toolkit.KryptonButton btnRegistrar;
     }
 }

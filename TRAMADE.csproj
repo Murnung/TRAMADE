@@ -73,10 +73,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInventario.cs">
+    <Compile Include="FormulariosInventario\frmEditarInv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInventario.Designer.cs">
+    <Compile Include="FormulariosInventario\frmEditarInv.Designer.cs">
+      <DependentUpon>frmEditarInv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosInventario\frmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosInventario\frmInventario.Designer.cs">
       <DependentUpon>frmInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -85,21 +91,24 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrarInv.cs">
+    <Compile Include="FormulariosInventario\frmRegistrarInv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrarInv.Designer.cs">
+    <Compile Include="FormulariosInventario\frmRegistrarInv.Designer.cs">
       <DependentUpon>frmRegistrarInv.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmInventario.resx">
+    <EmbeddedResource Include="FormulariosInventario\frmEditarInv.resx">
+      <DependentUpon>frmEditarInv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosInventario\frmInventario.resx">
       <DependentUpon>frmInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrarInv.resx">
+    <EmbeddedResource Include="FormulariosInventario\frmRegistrarInv.resx">
       <DependentUpon>frmRegistrarInv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
