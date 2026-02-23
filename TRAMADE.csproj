@@ -73,10 +73,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAprobacion.cs">
+    <Compile Include="FormularioCliente\frmAprobacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAprobacion.Designer.cs">
+    <Compile Include="FormularioCliente\frmAprobacion.Designer.cs">
       <DependentUpon>frmAprobacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmClientes.cs">
@@ -91,28 +91,28 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenu.cs">
+    <Compile Include="FormularioCliente\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenu.Designer.cs">
+    <Compile Include="FormularioCliente\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistro.cs">
+    <Compile Include="FormularioCliente\frmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistro.Designer.cs">
+    <Compile Include="FormularioCliente\frmRegistro.Designer.cs">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistroNuevo.cs">
+    <Compile Include="FormularioCliente\frmRegistroNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistroNuevo.Designer.cs">
+    <Compile Include="FormularioCliente\frmRegistroNuevo.Designer.cs">
       <DependentUpon>frmRegistroNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeguimiento.cs">
+    <Compile Include="FormularioCliente\frmSeguimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeguimiento.Designer.cs">
+    <Compile Include="FormularioCliente\frmSeguimiento.Designer.cs">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -120,7 +120,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAprobacion.resx">
+    <EmbeddedResource Include="FormularioCliente\frmAprobacion.resx">
       <DependentUpon>frmAprobacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
@@ -129,16 +129,16 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
+    <EmbeddedResource Include="FormularioCliente\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistro.resx">
+    <EmbeddedResource Include="FormularioCliente\frmRegistro.resx">
       <DependentUpon>frmRegistro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistroNuevo.resx">
+    <EmbeddedResource Include="FormularioCliente\frmRegistroNuevo.resx">
       <DependentUpon>frmRegistroNuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeguimiento.resx">
+    <EmbeddedResource Include="FormularioCliente\frmSeguimiento.resx">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -174,5 +174,6 @@
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
