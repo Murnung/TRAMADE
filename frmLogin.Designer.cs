@@ -28,128 +28,225 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Recuperar = new System.Windows.Forms.Label();
+            this.btnIngresar = new Krypton.Toolkit.KryptonButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelBienvenida = new Krypton.Toolkit.KryptonLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtUsuario = new Krypton.Toolkit.KryptonTextBox();
+            this.txtPassword = new Krypton.Toolkit.KryptonTextBox();
+            this.btnSalir = new Krypton.Toolkit.KryptonButton();
+            this.lkRestablecer = new Krypton.Toolkit.KryptonLinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnIniciarSesion
-            // 
-            this.btnIniciarSesion.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesion.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(104, 200);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(187, 40);
-            this.btnIniciarSesion.TabIndex = 3;
-            this.btnIniciarSesion.Text = "Inciar Sesión";
-            this.btnIniciarSesion.UseVisualStyleBackColor = false;
-            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(158, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 36);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "TSMS";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsuario.Location = new System.Drawing.Point(43, 114);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(304, 20);
-            this.txtUsuario.TabIndex = 5;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
-            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
-            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContraseña.Location = new System.Drawing.Point(43, 153);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(304, 20);
-            this.txtContraseña.TabIndex = 6;
-            this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
-            this.txtContraseña.Leave += new System.EventHandler(this.txtContraseña_Leave);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 63);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 31);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Bienvenido";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(102, 184);
+            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(413, 236);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 13);
+            this.label3.Size = new System.Drawing.Size(178, 16);
             this.label3.TabIndex = 8;
             this.label3.Text = "¿Olvidó la contraseña?";
             // 
-            // Recuperar
+            // btnIngresar
             // 
-            this.Recuperar.AutoSize = true;
-            this.Recuperar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Recuperar.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Recuperar.Location = new System.Drawing.Point(231, 184);
-            this.Recuperar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Recuperar.Name = "Recuperar";
-            this.Recuperar.Size = new System.Drawing.Size(66, 13);
-            this.Recuperar.TabIndex = 9;
-            this.Recuperar.Text = "Recuperar";
+            this.btnIngresar.Location = new System.Drawing.Point(458, 272);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnIngresar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnIngresar.OverrideDefault.Border.Rounding = 10F;
+            this.btnIngresar.Size = new System.Drawing.Size(167, 33);
+            this.btnIngresar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnIngresar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnIngresar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnIngresar.StateCommon.Border.Rounding = 10F;
+            this.btnIngresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnIngresar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F);
+            this.btnIngresar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnIngresar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnIngresar.StateNormal.Border.Rounding = 10F;
+            this.btnIngresar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(123)))));
+            this.btnIngresar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(123)))));
+            this.btnIngresar.StateTracking.Border.Rounding = 10F;
+            this.btnIngresar.TabIndex = 10;
+            this.btnIngresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnIngresar.Values.Text = "Ingresar";
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.panel1.Controls.Add(this.kryptonLabel1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(-6, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(350, 384);
+            this.panel1.TabIndex = 11;
+            // 
+            // labelBienvenida
+            // 
+            this.labelBienvenida.Location = new System.Drawing.Point(436, 39);
+            this.labelBienvenida.Name = "labelBienvenida";
+            this.labelBienvenida.Size = new System.Drawing.Size(205, 45);
+            this.labelBienvenida.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBienvenida.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelBienvenida.StateNormal.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelBienvenida.StateNormal.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelBienvenida.StateNormal.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelBienvenida.TabIndex = 12;
+            this.labelBienvenida.Values.Text = "Bienvenido";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(348, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(369, 380);
+            this.panel2.TabIndex = 0;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtUsuario.Location = new System.Drawing.Point(431, 113);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(217, 27);
+            this.txtUsuario.StateActive.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            this.txtUsuario.StateActive.Border.Rounding = 10F;
+            this.txtUsuario.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtUsuario.StateCommon.Border.Rounding = 10F;
+            this.txtUsuario.StateCommon.Content.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.StateNormal.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            this.txtUsuario.StateNormal.Border.Rounding = 10F;
+            this.txtUsuario.StateNormal.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.txtUsuario.TabIndex = 13;
+            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter_1);
+            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave_1);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtPassword.Location = new System.Drawing.Point(431, 174);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(217, 27);
+            this.txtPassword.StateActive.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
+            this.txtPassword.StateActive.Border.Rounding = 10F;
+            this.txtPassword.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.txtPassword.StateCommon.Border.Rounding = 10F;
+            this.txtPassword.StateCommon.Content.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.StateNormal.Border.Rounding = 10F;
+            this.txtPassword.StateNormal.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.txtPassword.TabIndex = 14;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(458, 333);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
+            this.btnSalir.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
+            this.btnSalir.OverrideDefault.Border.Rounding = 10F;
+            this.btnSalir.Size = new System.Drawing.Size(167, 33);
+            this.btnSalir.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
+            this.btnSalir.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
+            this.btnSalir.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnSalir.StateCommon.Border.Rounding = 10F;
+            this.btnSalir.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnSalir.StateCommon.Content.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F);
+            this.btnSalir.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
+            this.btnSalir.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
+            this.btnSalir.StateNormal.Border.Rounding = 10F;
+            this.btnSalir.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSalir.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSalir.StateTracking.Border.Rounding = 10F;
+            this.btnSalir.TabIndex = 15;
+            this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSalir.Values.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // lkRestablecer
+            // 
+            this.lkRestablecer.Location = new System.Drawing.Point(589, 234);
+            this.lkRestablecer.Name = "lkRestablecer";
+            this.lkRestablecer.Size = new System.Drawing.Size(89, 20);
+            this.lkRestablecer.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.lkRestablecer.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.lkRestablecer.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkRestablecer.StateNormal.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.lkRestablecer.StateNormal.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.lkRestablecer.TabIndex = 16;
+            this.lkRestablecer.Values.Text = "Restablecer";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Logo_de_la_empresa;
+            this.pictureBox1.Location = new System.Drawing.Point(64, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(228, 202);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(87, 262);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(205, 84);
+            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel1.StateNormal.LongText.Color1 = System.Drawing.Color.White;
+            this.kryptonLabel1.StateNormal.LongText.Color2 = System.Drawing.Color.White;
+            this.kryptonLabel1.StateNormal.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonLabel1.StateNormal.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.kryptonLabel1.TabIndex = 17;
+            this.kryptonLabel1.Values.Text = "TRAMADE \r\n    S.A";
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 271);
-            this.Controls.Add(this.Recuperar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtContraseña);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.ClientSize = new System.Drawing.Size(712, 378);
+            this.Controls.Add(this.lkRestablecer);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnIniciarSesion);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.labelBienvenida);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnIniciarSesion;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label Recuperar;
+        private Krypton.Toolkit.KryptonButton btnIngresar;
+        private System.Windows.Forms.Panel panel1;
+        private Krypton.Toolkit.KryptonLabel labelBienvenida;
+        private System.Windows.Forms.Panel panel2;
+        private Krypton.Toolkit.KryptonTextBox txtUsuario;
+        private Krypton.Toolkit.KryptonTextBox txtPassword;
+        private Krypton.Toolkit.KryptonButton btnSalir;
+        private Krypton.Toolkit.KryptonLinkLabel lkRestablecer;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

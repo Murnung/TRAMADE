@@ -53,6 +53,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.tmrTransicionLateral = new System.Windows.Forms.Timer(this.components);
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
@@ -376,10 +377,20 @@
             this.tmrTransicionLateral.Interval = 2;
             this.tmrTransicionLateral.Tick += new System.EventHandler(this.tmrTransicionLateral_Tick);
             // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
+            this.kryptonButton1.TabIndex = 2;
+            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.kryptonButton1.Values.Text = "kryptonButton1";
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1171, 754);
+            this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.flpBarraLateral);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -427,5 +438,6 @@
         private Krypton.Toolkit.KryptonButton btnMaximizar;
         private Krypton.Toolkit.KryptonButton btnMinimizar;
         private System.Windows.Forms.Timer tmrTransicionLateral;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
