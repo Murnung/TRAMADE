@@ -142,5 +142,11 @@ namespace TRAMADE.FormulariosAdministrador
             else
                 MessageBox.Show("Error al actualizar el usuario.");
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            ObjConexion.Cerrar();
+            this.Close();
+        }
     }
 }
