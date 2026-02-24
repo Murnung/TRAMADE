@@ -16,5 +16,36 @@ namespace TRAMADE
         {
             InitializeComponent();
         }
+
+        bool sidebarExpand = true;
+
+        private void tmrTransicionLateral(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                flpBarraLateral.Width -= 5;
+                if (flpBarraLateral.Width <= 85)
+                {
+                    sidebarExpand = false;
+                    tmrTransicionLateral.Stop();
+                }
+            }
+
+            else
+            {
+                flpBarraLateral.Width += 5;
+                if (flpBarraLateral.Width >= 245)
+                {
+                    sidebarExpand = true;
+                    tmrTransicionLateral.Stop();
+                }
+            }
+
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            tmrTransicionLateral.Start();
+        }
     }
 }
