@@ -281,6 +281,7 @@
             this.btnEditar.TabIndex = 22;
             this.btnEditar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnEditar.Values.Text = "EDITAR";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // frmUsuarios
             // 

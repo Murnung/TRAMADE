@@ -35,7 +35,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtContraseña = new Krypton.Toolkit.KryptonTextBox();
-            this.txtNombre = new Krypton.Toolkit.KryptonTextBox();
+            this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -143,13 +143,13 @@
             this.txtContraseña.StateCommon.Border.Rounding = 5F;
             this.txtContraseña.TabIndex = 31;
             // 
-            // txtNombre
+            // txtBuscar
             // 
-            this.txtNombre.Location = new System.Drawing.Point(163, 77);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(247, 31);
-            this.txtNombre.StateCommon.Border.Rounding = 5F;
-            this.txtNombre.TabIndex = 29;
+            this.txtBuscar.Location = new System.Drawing.Point(163, 77);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(247, 31);
+            this.txtBuscar.StateCommon.Border.Rounding = 5F;
+            this.txtBuscar.TabIndex = 29;
             // 
             // label2
             // 
@@ -209,19 +209,19 @@
             // 
             this.kryptonButton1.Location = new System.Drawing.Point(190, 311);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.AppWorkspace;
-            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.AppWorkspace;
-            this.kryptonButton1.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.AppWorkspace;
-            this.kryptonButton1.OverrideFocus.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.kryptonButton1.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.kryptonButton1.OverrideFocus.Back.Color2 = System.Drawing.Color.OrangeRed;
             this.kryptonButton1.Size = new System.Drawing.Size(113, 34);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.SystemColors.AppWorkspace;
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonShadow;
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.kryptonButton1.StateCommon.Border.Color1 = System.Drawing.SystemColors.AppWorkspace;
             this.kryptonButton1.StateCommon.Border.Color2 = System.Drawing.SystemColors.AppWorkspace;
             this.kryptonButton1.StateCommon.Border.Rounding = 10F;
             this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.SystemColors.AppWorkspace;
-            this.kryptonButton1.StateTracking.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.kryptonButton1.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.kryptonButton1.StateTracking.Back.Color2 = System.Drawing.Color.OrangeRed;
             this.kryptonButton1.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.kryptonButton1.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.kryptonButton1.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
@@ -243,7 +243,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -265,7 +265,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private Krypton.Toolkit.KryptonTextBox txtContraseña;
-        private Krypton.Toolkit.KryptonTextBox txtNombre;
+        private Krypton.Toolkit.KryptonTextBox txtBuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

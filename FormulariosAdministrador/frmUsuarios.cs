@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
+using TRAMADE.FormulariosAdministrador;
 
 namespace TRAMADE
 {
@@ -82,6 +83,12 @@ namespace TRAMADE
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmEditar ObjEditar = new frmEditar();
+            ObjEditar.Show();   
         }
     }
 }
