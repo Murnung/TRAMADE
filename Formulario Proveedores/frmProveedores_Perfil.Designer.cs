@@ -49,9 +49,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
-            this.kryptonListBox1 = new Krypton.Toolkit.KryptonListBox();
-            this.kryptonListBox2 = new Krypton.Toolkit.KryptonListBox();
-            this.kryptonListBox3 = new Krypton.Toolkit.KryptonListBox();
+            this.lstInformacionGeneral = new Krypton.Toolkit.KryptonListBox();
+            this.lstDatosdeContacto = new Krypton.Toolkit.KryptonListBox();
+            this.lstProductosSuministrados = new Krypton.Toolkit.KryptonListBox();
             this.btnEditar = new Krypton.Toolkit.KryptonButton();
             this.chkEstado = new Krypton.Toolkit.KryptonCheckBox();
             this.flpBarraLateral.SuspendLayout();
@@ -309,29 +309,29 @@
             this.lblBienvenidoUsuario.TabIndex = 5;
             this.lblBienvenidoUsuario.Text = "Bienvenido, [Usuario]";
             // 
-            // kryptonListBox1
+            // lstInformacionGeneral
             // 
-            this.kryptonListBox1.Location = new System.Drawing.Point(287, 160);
-            this.kryptonListBox1.Name = "kryptonListBox1";
-            this.kryptonListBox1.Size = new System.Drawing.Size(744, 139);
-            this.kryptonListBox1.StateCommon.Border.Rounding = 17F;
-            this.kryptonListBox1.TabIndex = 23;
+            this.lstInformacionGeneral.Location = new System.Drawing.Point(287, 160);
+            this.lstInformacionGeneral.Name = "lstInformacionGeneral";
+            this.lstInformacionGeneral.Size = new System.Drawing.Size(744, 139);
+            this.lstInformacionGeneral.StateCommon.Border.Rounding = 17F;
+            this.lstInformacionGeneral.TabIndex = 23;
             // 
-            // kryptonListBox2
+            // lstDatosdeContacto
             // 
-            this.kryptonListBox2.Location = new System.Drawing.Point(287, 317);
-            this.kryptonListBox2.Name = "kryptonListBox2";
-            this.kryptonListBox2.Size = new System.Drawing.Size(744, 139);
-            this.kryptonListBox2.StateCommon.Border.Rounding = 17F;
-            this.kryptonListBox2.TabIndex = 24;
+            this.lstDatosdeContacto.Location = new System.Drawing.Point(287, 317);
+            this.lstDatosdeContacto.Name = "lstDatosdeContacto";
+            this.lstDatosdeContacto.Size = new System.Drawing.Size(744, 139);
+            this.lstDatosdeContacto.StateCommon.Border.Rounding = 17F;
+            this.lstDatosdeContacto.TabIndex = 24;
             // 
-            // kryptonListBox3
+            // lstProductosSuministrados
             // 
-            this.kryptonListBox3.Location = new System.Drawing.Point(287, 473);
-            this.kryptonListBox3.Name = "kryptonListBox3";
-            this.kryptonListBox3.Size = new System.Drawing.Size(744, 139);
-            this.kryptonListBox3.StateCommon.Border.Rounding = 17F;
-            this.kryptonListBox3.TabIndex = 25;
+            this.lstProductosSuministrados.Location = new System.Drawing.Point(287, 473);
+            this.lstProductosSuministrados.Name = "lstProductosSuministrados";
+            this.lstProductosSuministrados.Size = new System.Drawing.Size(744, 139);
+            this.lstProductosSuministrados.StateCommon.Border.Rounding = 17F;
+            this.lstProductosSuministrados.TabIndex = 25;
             // 
             // btnEditar
             // 
@@ -368,9 +368,9 @@
             this.ClientSize = new System.Drawing.Size(1153, 707);
             this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.kryptonListBox3);
-            this.Controls.Add(this.kryptonListBox2);
-            this.Controls.Add(this.kryptonListBox1);
+            this.Controls.Add(this.lstProductosSuministrados);
+            this.Controls.Add(this.lstDatosdeContacto);
+            this.Controls.Add(this.lstInformacionGeneral);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flpBarraLateral);
             this.Controls.Add(this.panel1);
@@ -415,9 +415,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btnMenu;
         private System.Windows.Forms.Label lblBienvenidoUsuario;
-        private Krypton.Toolkit.KryptonListBox kryptonListBox1;
-        private Krypton.Toolkit.KryptonListBox kryptonListBox2;
-        private Krypton.Toolkit.KryptonListBox kryptonListBox3;
+        private Krypton.Toolkit.KryptonListBox lstInformacionGeneral;
+        private Krypton.Toolkit.KryptonListBox lstDatosdeContacto;
+        private Krypton.Toolkit.KryptonListBox lstProductosSuministrados;
         private Krypton.Toolkit.KryptonButton btnEditar;
         private Krypton.Toolkit.KryptonCheckBox chkEstado;
     }
