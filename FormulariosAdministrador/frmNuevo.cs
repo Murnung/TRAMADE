@@ -92,5 +92,14 @@ namespace TRAMADE
 
 
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtCorreo.Clear();
+            txtContraseña.Clear();
+            cmbRol.SelectedIndex = -1;
+            cmbSucursal.SelectedIndex = -1;
+        }
     }
 }
