@@ -19,7 +19,7 @@ namespace TRAMADE
 
         bool sidebarExpand = true;
 
-        private void tmrTransicionLateral(object sender, EventArgs e)
+        /*private void tmrTransicionLateral(object sender, EventArgs e)
         {
             if (sidebarExpand)
             {
@@ -46,7 +46,7 @@ namespace TRAMADE
         private void btnMenu_Click(object sender, EventArgs e)
         {
             tmrTransicionLateral.Start();
-        }
+        }*/
 
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
         {
