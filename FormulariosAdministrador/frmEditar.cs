@@ -53,6 +53,8 @@ namespace TRAMADE.FormulariosAdministrador
             clsUsuario.llenarComboSucrusal(cmbSucursal, ObjConexion);
 
             // Inicialmente deshabilitar controles
+            txtNombre.Enabled = false;
+            txtCorreo.Enabled = false;
             txtContrasena.Enabled = false;
             cmbRol.Enabled = false;
             cmbSucursal.Enabled = false;
