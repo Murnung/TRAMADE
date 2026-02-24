@@ -84,6 +84,7 @@
             this.btnLimpiar.TabIndex = 36;
             this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnLimpiar.Values.Text = "LIMPIAR";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnConfirmar
             // 

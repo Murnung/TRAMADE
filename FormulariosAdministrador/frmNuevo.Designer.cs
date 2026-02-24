@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
             this.cmbRol = new Krypton.Toolkit.KryptonComboBox();
+            this.btnSalir = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSucursal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbRol)).BeginInit();
             this.SuspendLayout();
@@ -168,7 +169,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(257, 411);
+            this.btnLimpiar.Location = new System.Drawing.Point(243, 411);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.AppWorkspace;
             this.btnLimpiar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.AppWorkspace;
@@ -204,12 +205,38 @@
             this.cmbRol.DropDownStyleChanged += new System.EventHandler(this.frmNuevo_Load);
             this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(362, 411);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSalir.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSalir.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSalir.OverrideFocus.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalir.Size = new System.Drawing.Size(113, 34);
+            this.btnSalir.StateCommon.Back.Color1 = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSalir.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnSalir.StateCommon.Border.Color1 = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSalir.StateCommon.Border.Color2 = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSalir.StateCommon.Border.Rounding = 10F;
+            this.btnSalir.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnSalir.StateTracking.Back.Color1 = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSalir.StateTracking.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnSalir.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalir.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalir.TabIndex = 25;
+            this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSalir.Values.Text = "SALIR";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(498, 457);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnAgregar);
@@ -223,6 +250,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNuevo";
@@ -248,5 +276,6 @@
         private System.Windows.Forms.Label label3;
         private Krypton.Toolkit.KryptonButton btnLimpiar;
         private Krypton.Toolkit.KryptonComboBox cmbRol;
+        private Krypton.Toolkit.KryptonButton btnSalir;
     }
 }

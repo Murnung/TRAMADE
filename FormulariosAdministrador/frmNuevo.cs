@@ -101,5 +101,10 @@ namespace TRAMADE
             cmbRol.SelectedIndex = -1;
             cmbSucursal.SelectedIndex = -1;
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

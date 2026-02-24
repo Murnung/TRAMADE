@@ -148,5 +148,14 @@ namespace TRAMADE.FormulariosAdministrador
             ObjConexion.Cerrar();
             this.Close();
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Clear();
+            txtNombre.Clear();
+            txtCorreo.Clear();
+            txtContrasena.Clear();
+            cmbRol.SelectedIndex = -1;
+            cmbSucursal.SelectedIndex = -1;        }
     }
 }
