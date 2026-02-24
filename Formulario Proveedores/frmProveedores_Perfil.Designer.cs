@@ -335,14 +335,14 @@
             // 
             // btnEditor
             // 
-            this.btnEditor.Location = new System.Drawing.Point(999, 645);
+            this.btnEditor.Location = new System.Drawing.Point(1011, 652);
             this.btnEditor.Name = "btnEditor";
-            this.btnEditor.Size = new System.Drawing.Size(117, 50);
+            this.btnEditor.Size = new System.Drawing.Size(113, 43);
             this.btnEditor.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
             this.btnEditor.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
             this.btnEditor.StateCommon.Border.Rounding = 10F;
             this.btnEditor.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
-            this.btnEditor.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditor.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditor.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnEditor.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnEditor.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
