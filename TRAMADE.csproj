@@ -33,8 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Krypton.Toolkit, Version=100.26.1.19, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\Krypton.Toolkit.100.26.1.19\lib\net472\Krypton.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,11 +76,23 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProveedores.cs">
+    <Compile Include="Formulario Proveedores\frmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProveedores.Designer.cs">
+    <Compile Include="Formulario Proveedores\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario Proveedores\frmProveedores_Añadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario Proveedores\frmProveedores_Añadir.Designer.cs">
+      <DependentUpon>frmProveedores_Añadir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario Proveedores\frmProveedores_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario Proveedores\frmProveedores_Editar.Designer.cs">
+      <DependentUpon>frmProveedores_Editar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,8 +102,14 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProveedores.resx">
+    <EmbeddedResource Include="Formulario Proveedores\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario Proveedores\frmProveedores_Añadir.resx">
+      <DependentUpon>frmProveedores_Añadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario Proveedores\frmProveedores_Editar.resx">
+      <DependentUpon>frmProveedores_Editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,6 +121,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
