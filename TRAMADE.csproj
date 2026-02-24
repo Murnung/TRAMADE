@@ -70,6 +70,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario Proveedores\Clases\clsProveedores.cs" />
+    <Compile Include="Formulario Proveedores\Clases\clsProveedores_Añadir.cs" />
+    <Compile Include="Formulario Proveedores\Clases\clsProveedores_Editar.cs" />
+    <Compile Include="Formulario Proveedores\Clases\clsProveedores_Perfil.cs" />
     <Compile Include="Formulario Proveedores\frmProveedores_Perfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,5 +157,6 @@
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
