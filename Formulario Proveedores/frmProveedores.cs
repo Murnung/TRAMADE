@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.Formulario_Proveedores.Clases;
 
 namespace TRAMADE
 {
@@ -48,10 +49,12 @@ namespace TRAMADE
             
         }
 
+
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
         {
-            frmProveedores_Añadir frmAñadir = new frmProveedores_Añadir();
-            frmAñadir.ShowDialog();
+            frmProveedores_Añadir ObjNuevo = new frmProveedores_Añadir();
+
+            ObjNuevo.ShowDialog();
         }
     }
 }

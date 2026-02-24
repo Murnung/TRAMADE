@@ -85,6 +85,9 @@ namespace TRAMADE
                 string contra = txtContraseña.Text.Trim();
                 login(usuario, contra);
             }
+
+            frmProveedores frm = new frmProveedores();
+            frm.ShowDialog();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

@@ -397,6 +397,7 @@
             // dgvProveedores
             // 
             this.dgvProveedores.AllowUserToResizeRows = false;
+            this.dgvProveedores.AutoGenerateKryptonColumns = false;
             this.dgvProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
