@@ -21,7 +21,6 @@ namespace TRAMADE.Formulario_Proveedores
         {
             frmProveedores_Editar frmEditar = new frmProveedores_Editar();
             frmEditar.Show();
-            this.Hide();
         }
     }
 }
