@@ -166,6 +166,10 @@
             // 
             this.btnGuardar.Location = new System.Drawing.Point(598, 503);
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnGuardar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnGuardar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnGuardar.Size = new System.Drawing.Size(144, 50);
             this.btnGuardar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
             this.btnGuardar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
@@ -184,14 +188,18 @@
             // 
             this.btnCancelar.Location = new System.Drawing.Point(434, 503);
             this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
+            this.btnCancelar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
+            this.btnCancelar.OverrideFocus.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnCancelar.OverrideFocus.Back.Color2 = System.Drawing.Color.Silver;
             this.btnCancelar.Size = new System.Drawing.Size(144, 50);
             this.btnCancelar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
             this.btnCancelar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
             this.btnCancelar.StateCommon.Border.Rounding = 10F;
             this.btnCancelar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
             this.btnCancelar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancelar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancelar.StateTracking.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnCancelar.StateTracking.Back.Color2 = System.Drawing.Color.Silver;
             this.btnCancelar.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
             this.btnCancelar.StateTracking.Border.Color2 = System.Drawing.Color.Navy;
             this.btnCancelar.TabIndex = 13;

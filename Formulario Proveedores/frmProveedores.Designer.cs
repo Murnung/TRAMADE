@@ -53,13 +53,12 @@
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.btnFiltrarActivo = new Krypton.Toolkit.KryptonButton();
             this.btnFiltrarInactivo = new Krypton.Toolkit.KryptonButton();
-            this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
             this.dgvProveedores = new Krypton.Toolkit.KryptonDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
@@ -71,8 +70,6 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
-            this.kryptonPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -323,6 +320,10 @@
             // 
             this.btnAñadirProveedor.Location = new System.Drawing.Point(280, 159);
             this.btnAñadirProveedor.Name = "btnAñadirProveedor";
+            this.btnAñadirProveedor.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnAñadirProveedor.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnAñadirProveedor.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAñadirProveedor.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAñadirProveedor.Size = new System.Drawing.Size(228, 50);
             this.btnAñadirProveedor.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
             this.btnAñadirProveedor.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
@@ -353,6 +354,10 @@
             // 
             this.btnFiltrarActivo.Location = new System.Drawing.Point(880, 259);
             this.btnFiltrarActivo.Name = "btnFiltrarActivo";
+            this.btnFiltrarActivo.OverrideDefault.Back.Color1 = System.Drawing.Color.Lime;
+            this.btnFiltrarActivo.OverrideDefault.Back.Color2 = System.Drawing.Color.Lime;
+            this.btnFiltrarActivo.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnFiltrarActivo.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnFiltrarActivo.Size = new System.Drawing.Size(106, 44);
             this.btnFiltrarActivo.StateCommon.Back.Color1 = System.Drawing.Color.Lime;
             this.btnFiltrarActivo.StateCommon.Back.Color2 = System.Drawing.Color.Lime;
@@ -371,6 +376,10 @@
             // 
             this.btnFiltrarInactivo.Location = new System.Drawing.Point(1001, 259);
             this.btnFiltrarInactivo.Name = "btnFiltrarInactivo";
+            this.btnFiltrarInactivo.OverrideDefault.Back.Color1 = System.Drawing.Color.Red;
+            this.btnFiltrarInactivo.OverrideDefault.Back.Color2 = System.Drawing.Color.Red;
+            this.btnFiltrarInactivo.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFiltrarInactivo.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnFiltrarInactivo.Size = new System.Drawing.Size(106, 44);
             this.btnFiltrarInactivo.StateCommon.Back.Color1 = System.Drawing.Color.Red;
             this.btnFiltrarInactivo.StateCommon.Back.Color2 = System.Drawing.Color.Red;
@@ -384,18 +393,6 @@
             this.btnFiltrarInactivo.TabIndex = 15;
             this.btnFiltrarInactivo.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnFiltrarInactivo.Values.Text = "Inactivo";
-            // 
-            // kryptonPanel2
-            // 
-            this.kryptonPanel2.Controls.Add(this.dgvProveedores);
-            this.kryptonPanel2.Location = new System.Drawing.Point(280, 322);
-            this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.PanelBackStyle = Krypton.Toolkit.PaletteBackStyle.PanelCustom1;
-            this.kryptonPanel2.Size = new System.Drawing.Size(827, 307);
-            this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.kryptonPanel2.StateCommon.Draw = Krypton.Toolkit.InheritBool.True;
-            this.kryptonPanel2.StateCommon.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonPanel2.TabIndex = 19;
             // 
             // dgvProveedores
             // 
@@ -414,7 +411,7 @@
             this.dgvProveedores.GridStyles.StyleDataCells = Krypton.Toolkit.GridStyle.Sheet;
             this.dgvProveedores.GridStyles.StyleRow = Krypton.Toolkit.GridStyle.Sheet;
             this.dgvProveedores.HideOuterBorders = true;
-            this.dgvProveedores.Location = new System.Drawing.Point(0, 0);
+            this.dgvProveedores.Location = new System.Drawing.Point(280, 333);
             this.dgvProveedores.Name = "dgvProveedores";
             this.dgvProveedores.RowHeadersVisible = false;
             this.dgvProveedores.RowHeadersWidth = 51;
@@ -433,26 +430,12 @@
             this.dgvProveedores.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvProveedores.TabIndex = 20;
             // 
-            // Column1
+            // Column5
             // 
-            this.Column1.HeaderText = "Razón Social";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 140;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre Comercial";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 205;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "RTN";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.Column5.HeaderText = "Estado";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
             // 
             // Column4
             // 
@@ -461,19 +444,33 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 180;
             // 
-            // Column5
+            // Column3
             // 
-            this.Column5.HeaderText = "Estado";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.Column3.HeaderText = "RTN";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nombre Comercial";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 205;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Razón Social";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 140;
             // 
             // frmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 707);
-            this.Controls.Add(this.kryptonPanel2);
+            this.Controls.Add(this.dgvProveedores);
             this.Controls.Add(this.btnFiltrarActivo);
             this.Controls.Add(this.btnFiltrarInactivo);
             this.Controls.Add(this.txtBuscar);
@@ -497,8 +494,6 @@
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
-            this.kryptonPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -532,7 +527,6 @@
         private Krypton.Toolkit.KryptonTextBox txtBuscar;
         private Krypton.Toolkit.KryptonButton btnFiltrarActivo;
         private Krypton.Toolkit.KryptonButton btnFiltrarInactivo;
-        private Krypton.Toolkit.KryptonPanel kryptonPanel2;
         private Krypton.Toolkit.KryptonDataGridView dgvProveedores;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

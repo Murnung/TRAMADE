@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.cmbClasificacion = new Krypton.Toolkit.KryptonComboBox();
-            this.btnCancelar = new Krypton.Toolkit.KryptonButton();
-            this.btnGuardar = new Krypton.Toolkit.KryptonButton();
             this.txtCorreoCentral = new Krypton.Toolkit.KryptonTextBox();
             this.txtTelefonoGeneral = new Krypton.Toolkit.KryptonTextBox();
             this.txtRtn = new Krypton.Toolkit.KryptonTextBox();
@@ -42,6 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelar = new Krypton.Toolkit.KryptonButton();
+            this.btnGuardar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.cmbClasificacion)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,43 +62,6 @@
             this.cmbClasificacion.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClasificacion.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbClasificacion.TabIndex = 27;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(434, 503);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(144, 50);
-            this.btnCancelar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
-            this.btnCancelar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
-            this.btnCancelar.StateCommon.Border.Rounding = 10F;
-            this.btnCancelar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
-            this.btnCancelar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancelar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancelar.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
-            this.btnCancelar.StateTracking.Border.Color2 = System.Drawing.Color.Navy;
-            this.btnCancelar.TabIndex = 26;
-            this.btnCancelar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnCancelar.Values.Text = "CANCELAR";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(598, 503);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(144, 50);
-            this.btnGuardar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
-            this.btnGuardar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
-            this.btnGuardar.StateCommon.Border.Rounding = 10F;
-            this.btnGuardar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
-            this.btnGuardar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGuardar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGuardar.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
-            this.btnGuardar.StateTracking.Border.Color2 = System.Drawing.Color.Navy;
-            this.btnGuardar.TabIndex = 25;
-            this.btnGuardar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnGuardar.Values.Text = "GUARDAR";
             // 
             // txtCorreoCentral
             // 
@@ -216,14 +179,58 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Editar Proveedor";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(434, 502);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
+            this.btnCancelar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
+            this.btnCancelar.OverrideFocus.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnCancelar.OverrideFocus.Back.Color2 = System.Drawing.Color.Silver;
+            this.btnCancelar.Size = new System.Drawing.Size(144, 50);
+            this.btnCancelar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
+            this.btnCancelar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
+            this.btnCancelar.StateCommon.Border.Rounding = 10F;
+            this.btnCancelar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
+            this.btnCancelar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.StateTracking.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnCancelar.StateTracking.Back.Color2 = System.Drawing.Color.Silver;
+            this.btnCancelar.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
+            this.btnCancelar.StateTracking.Border.Color2 = System.Drawing.Color.Navy;
+            this.btnCancelar.TabIndex = 29;
+            this.btnCancelar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnCancelar.Values.Text = "CANCELAR";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(598, 502);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnGuardar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnGuardar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.Size = new System.Drawing.Size(144, 50);
+            this.btnGuardar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnGuardar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnGuardar.StateCommon.Border.Rounding = 10F;
+            this.btnGuardar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
+            this.btnGuardar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
+            this.btnGuardar.StateTracking.Border.Color2 = System.Drawing.Color.Navy;
+            this.btnGuardar.TabIndex = 28;
+            this.btnGuardar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnGuardar.Values.Text = "GUARDAR";
+            // 
             // frmProveedores_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 588);
-            this.Controls.Add(this.cmbClasificacion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.cmbClasificacion);
             this.Controls.Add(this.txtCorreoCentral);
             this.Controls.Add(this.txtTelefonoGeneral);
             this.Controls.Add(this.txtRtn);
@@ -248,8 +255,6 @@
         #endregion
 
         private Krypton.Toolkit.KryptonComboBox cmbClasificacion;
-        private Krypton.Toolkit.KryptonButton btnCancelar;
-        private Krypton.Toolkit.KryptonButton btnGuardar;
         private Krypton.Toolkit.KryptonTextBox txtCorreoCentral;
         private Krypton.Toolkit.KryptonTextBox txtTelefonoGeneral;
         private Krypton.Toolkit.KryptonTextBox txtRtn;
@@ -261,5 +266,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private Krypton.Toolkit.KryptonButton btnCancelar;
+        private Krypton.Toolkit.KryptonButton btnGuardar;
     }
 }
