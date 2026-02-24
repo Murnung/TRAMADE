@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,29 +19,10 @@ namespace TRAMADE
             InitializeComponent();
         }
 
-        bool sidebarExpand = true;
-
         private void tmrTransicionLateral(object sender, EventArgs e)
         {
-            if (sidebarExpand)
-            {
-                flpBarraLateral.Width -= 5;
-                if (flpBarraLateral.Width <= 85)
-                {
-                    sidebarExpand = false;
-                    
-                }
-            }
 
-            else
-            {
-                flpBarraLateral.Width += 5;
-                if (flpBarraLateral.Width >= 245)
-                {
-                    sidebarExpand = true;
-                    
-                }
-            }
+
 
         }
 
@@ -49,12 +31,11 @@ namespace TRAMADE
             
         }
 
-
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
         {
-            frmProveedores_Añadir ObjNuevo = new frmProveedores_Añadir();
+            frmProveedores_Añadir frmAñadir = new frmProveedores_Añadir();
 
-            ObjNuevo.ShowDialog();
+            frmAñadir.ShowDialog();
         }
     }
 }
