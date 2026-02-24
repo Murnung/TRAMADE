@@ -170,7 +170,7 @@
             // pbImagenProducto
             // 
             this.pbImagenProducto.Image = global::TRAMADE.Properties.Resources.photo_89244411;
-            this.pbImagenProducto.Location = new System.Drawing.Point(399, 310);
+            this.pbImagenProducto.Location = new System.Drawing.Point(398, 313);
             this.pbImagenProducto.Name = "pbImagenProducto";
             this.pbImagenProducto.Size = new System.Drawing.Size(131, 86);
             this.pbImagenProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
