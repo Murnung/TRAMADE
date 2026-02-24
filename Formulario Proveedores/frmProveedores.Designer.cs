@@ -526,7 +526,7 @@
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Timer tmrTransicionLateral;
+        //private System.Windows.Forms.Timer tmrTransicionLateral;
         private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonButton btnAñadirProveedor;
         private Krypton.Toolkit.KryptonTextBox txtBuscar;

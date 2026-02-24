@@ -27,7 +27,7 @@ namespace TRAMADE
                 if (flpBarraLateral.Width <= 85)
                 {
                     sidebarExpand = false;
-                    tmrTransicionLateral.Stop();
+                    
                 }
             }
 
@@ -37,7 +37,7 @@ namespace TRAMADE
                 if (flpBarraLateral.Width >= 245)
                 {
                     sidebarExpand = true;
-                    tmrTransicionLateral.Stop();
+                    
                 }
             }
 
@@ -45,7 +45,7 @@ namespace TRAMADE
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            tmrTransicionLateral.Start();
+            
         }
 
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
