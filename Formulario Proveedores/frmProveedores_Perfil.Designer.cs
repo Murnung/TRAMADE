@@ -52,7 +52,7 @@
             this.kryptonListBox1 = new Krypton.Toolkit.KryptonListBox();
             this.kryptonListBox2 = new Krypton.Toolkit.KryptonListBox();
             this.kryptonListBox3 = new Krypton.Toolkit.KryptonListBox();
-            this.btnEditor = new Krypton.Toolkit.KryptonButton();
+            this.btnEditar = new Krypton.Toolkit.KryptonButton();
             this.chkEstado = new Krypton.Toolkit.KryptonCheckBox();
             this.flpBarraLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -333,23 +333,24 @@
             this.kryptonListBox3.StateCommon.Border.Rounding = 17F;
             this.kryptonListBox3.TabIndex = 25;
             // 
-            // btnEditor
+            // btnEditar
             // 
-            this.btnEditor.Location = new System.Drawing.Point(1011, 652);
-            this.btnEditor.Name = "btnEditor";
-            this.btnEditor.Size = new System.Drawing.Size(113, 43);
-            this.btnEditor.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
-            this.btnEditor.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
-            this.btnEditor.StateCommon.Border.Rounding = 10F;
-            this.btnEditor.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
-            this.btnEditor.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditor.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEditor.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEditor.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
-            this.btnEditor.StateTracking.Border.Color2 = System.Drawing.Color.Navy;
-            this.btnEditor.TabIndex = 26;
-            this.btnEditor.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnEditor.Values.Text = "EDITAR";
+            this.btnEditar.Location = new System.Drawing.Point(1011, 652);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(113, 43);
+            this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
+            this.btnEditar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
+            this.btnEditar.StateCommon.Border.Rounding = 10F;
+            this.btnEditar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
+            this.btnEditar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEditar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEditar.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
+            this.btnEditar.StateTracking.Border.Color2 = System.Drawing.Color.Navy;
+            this.btnEditar.TabIndex = 26;
+            this.btnEditar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnEditar.Values.Text = "EDITAR";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // chkEstado
             // 
@@ -366,7 +367,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 707);
             this.Controls.Add(this.chkEstado);
-            this.Controls.Add(this.btnEditor);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.kryptonListBox3);
             this.Controls.Add(this.kryptonListBox2);
             this.Controls.Add(this.kryptonListBox1);
@@ -417,7 +418,7 @@
         private Krypton.Toolkit.KryptonListBox kryptonListBox1;
         private Krypton.Toolkit.KryptonListBox kryptonListBox2;
         private Krypton.Toolkit.KryptonListBox kryptonListBox3;
-        private Krypton.Toolkit.KryptonButton btnEditor;
+        private Krypton.Toolkit.KryptonButton btnEditar;
         private Krypton.Toolkit.KryptonCheckBox chkEstado;
     }
 }

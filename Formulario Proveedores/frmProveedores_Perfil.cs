@@ -16,5 +16,12 @@ namespace TRAMADE.Formulario_Proveedores
         {
             InitializeComponent();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmProveedores_Editar frmEditar = new frmProveedores_Editar();
+            frmEditar.Show();
+            this.Hide();
+        }
     }
 }

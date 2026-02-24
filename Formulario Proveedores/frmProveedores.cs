@@ -47,5 +47,11 @@ namespace TRAMADE
         {
             tmrTransicionLateral.Start();
         }
+
+        private void btnAñadirProveedor_Click(object sender, EventArgs e)
+        {
+            frmProveedores_Añadir frmAñadir = new frmProveedores_Añadir();
+            frmAñadir.ShowDialog();
+        }
     }
 }
