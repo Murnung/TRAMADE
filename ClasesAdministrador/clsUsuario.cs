@@ -131,6 +131,41 @@ namespace TRAMADE.ClasesAdministrador
                 conexion.Cerrar();
             }
         }
+
+        public bool actualizarUsuario(clsConexion conexion, int idUsuario,
+                              string nombre, string correo, string contrasena)
+        {
+            try
+            {
+                conexion.Abrir();
+
+                SqlCommand comando = new SqlCommand("PA_ACTUALIZAR_USUARIO", conexion.SqlC);
+
+              
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@id_usuario", idUsuario);
+                comando.Parameters.AddWithValue("@id_rol", rol);
+                comando.Parameters.AddWithValue("@id_estado", estado);
+                comando.Parameters.AddWithValue("@id_sucursal", sucursal);
+                comando.Parameters.AddWithValue("@nombre_usuario", nombre);
+                comando.Parameters.AddWithValue("@correo_usuario", correo);
+                comando.Parameters.AddWithValue("@password_usuario", contrasena);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                return filasAfectadas > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar usuario: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
     }//Fin de clase cls usuio
 } //Fin de namespace
 
