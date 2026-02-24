@@ -58,41 +58,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(39, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 32);
+            this.label1.Size = new System.Drawing.Size(274, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "Añadir Proveedor";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(53, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(245, 29);
+            this.label2.Size = new System.Drawing.Size(260, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "Información general";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(53, 345);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(222, 29);
+            this.label3.Size = new System.Drawing.Size(234, 40);
             this.label3.TabIndex = 2;
             this.label3.Text = "Datos de contacto";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(404, 345);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 29);
+            this.label4.Size = new System.Drawing.Size(174, 40);
             this.label4.TabIndex = 3;
             this.label4.Text = "Clasificación";
             // 
@@ -100,8 +100,8 @@
             // 
             this.txtRazonComercial.CueHint.Color1 = System.Drawing.Color.Gray;
             this.txtRazonComercial.CueHint.CueHintText = "RAZÓN SOCIAL";
-            this.txtRazonComercial.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonComercial.Location = new System.Drawing.Point(60, 178);
+            this.txtRazonComercial.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazonComercial.Location = new System.Drawing.Point(60, 189);
             this.txtRazonComercial.Name = "txtRazonComercial";
             this.txtRazonComercial.Size = new System.Drawing.Size(331, 34);
             this.txtRazonComercial.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,7 +111,7 @@
             // 
             this.txtDireccionFiscal.CueHint.Color1 = System.Drawing.Color.Gray;
             this.txtDireccionFiscal.CueHint.CueHintText = "DIRECCION FISCAL";
-            this.txtDireccionFiscal.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccionFiscal.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccionFiscal.Location = new System.Drawing.Point(411, 189);
             this.txtDireccionFiscal.Name = "txtDireccionFiscal";
             this.txtDireccionFiscal.Size = new System.Drawing.Size(331, 34);
@@ -122,7 +122,7 @@
             // 
             this.txtNombreComercial.CueHint.Color1 = System.Drawing.Color.Gray;
             this.txtNombreComercial.CueHint.CueHintText = "NOMBRE COMERCIAL";
-            this.txtNombreComercial.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreComercial.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreComercial.Location = new System.Drawing.Point(60, 275);
             this.txtNombreComercial.Name = "txtNombreComercial";
             this.txtNombreComercial.Size = new System.Drawing.Size(331, 34);
@@ -133,7 +133,7 @@
             // 
             this.txtRtn.CueHint.Color1 = System.Drawing.Color.Gray;
             this.txtRtn.CueHint.CueHintText = "RTN";
-            this.txtRtn.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRtn.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRtn.Location = new System.Drawing.Point(411, 275);
             this.txtRtn.Name = "txtRtn";
             this.txtRtn.Size = new System.Drawing.Size(331, 34);
@@ -144,7 +144,7 @@
             // 
             this.txtTelefonoGeneral.CueHint.Color1 = System.Drawing.Color.Gray;
             this.txtTelefonoGeneral.CueHint.CueHintText = "TELEFÓNO GENERAL";
-            this.txtTelefonoGeneral.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefonoGeneral.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoGeneral.Location = new System.Drawing.Point(60, 388);
             this.txtTelefonoGeneral.Name = "txtTelefonoGeneral";
             this.txtTelefonoGeneral.Size = new System.Drawing.Size(331, 34);
@@ -155,8 +155,8 @@
             // 
             this.txtCorreoCentral.CueHint.Color1 = System.Drawing.Color.Gray;
             this.txtCorreoCentral.CueHint.CueHintText = "CORREO CENTRAL";
-            this.txtCorreoCentral.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoCentral.Location = new System.Drawing.Point(60, 467);
+            this.txtCorreoCentral.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreoCentral.Location = new System.Drawing.Point(58, 467);
             this.txtCorreoCentral.Name = "txtCorreoCentral";
             this.txtCorreoCentral.Size = new System.Drawing.Size(331, 34);
             this.txtCorreoCentral.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,7 +171,7 @@
             this.btnGuardar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
             this.btnGuardar.StateCommon.Border.Rounding = 10F;
             this.btnGuardar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
-            this.btnGuardar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnGuardar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnGuardar.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
@@ -189,7 +189,7 @@
             this.btnCancelar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
             this.btnCancelar.StateCommon.Border.Rounding = 10F;
             this.btnCancelar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
-            this.btnCancelar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnCancelar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnCancelar.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
@@ -202,7 +202,7 @@
             // 
             this.cmbClasificacion.CueHint.Color1 = System.Drawing.Color.Gray;
             this.cmbClasificacion.CueHint.CueHintText = "SELECCIONE LA CLASIFICACION";
-            this.cmbClasificacion.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbClasificacion.CueHint.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClasificacion.DropDownWidth = 331;
             this.cmbClasificacion.Items.AddRange(new object[] {
