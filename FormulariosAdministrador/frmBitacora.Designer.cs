@@ -37,24 +37,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtDesde = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvBitacora = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
+            this.cmbUsuario = new Krypton.Toolkit.KryptonComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -175,74 +171,40 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Controls.Add(this.cmbUsuario);
             this.panel2.Controls.Add(this.btnBuscar);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.dtHasta);
+            this.panel2.Controls.Add(this.dtDesde);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvBitacora);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(190, 39);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(875, 524);
+            this.panel2.Size = new System.Drawing.Size(905, 524);
             this.panel2.TabIndex = 19;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // btnBuscar
+            // dtHasta
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(719, 111);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.LightBlue;
-            this.btnBuscar.Size = new System.Drawing.Size(103, 25);
-            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
-            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
-            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
-            this.btnBuscar.StateCommon.Border.Rounding = 10F;
-            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
-            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.Color.LightBlue;
-            this.btnBuscar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnBuscar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscar.TabIndex = 39;
-            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnBuscar.Values.Text = "BUSCAR";
+            this.dtHasta.Location = new System.Drawing.Point(155, 114);
+            this.dtHasta.Name = "dtHasta";
+            this.dtHasta.Size = new System.Drawing.Size(269, 22);
+            this.dtHasta.TabIndex = 38;
             // 
-            // dateTimePicker2
+            // dtDesde
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(155, 112);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(269, 22);
-            this.dateTimePicker2.TabIndex = 38;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(155, 85);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(269, 22);
-            this.dateTimePicker1.TabIndex = 37;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Todos"});
-            this.comboBox1.Location = new System.Drawing.Point(515, 112);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 24);
-            this.comboBox1.TabIndex = 36;
+            this.dtDesde.Location = new System.Drawing.Point(155, 81);
+            this.dtDesde.Name = "dtDesde";
+            this.dtDesde.Size = new System.Drawing.Size(269, 22);
+            this.dtDesde.TabIndex = 37;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(437, 115);
+            this.label7.Location = new System.Drawing.Point(437, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 18);
             this.label7.TabIndex = 35;
@@ -268,56 +230,19 @@
             this.label3.TabIndex = 33;
             this.label3.Text = "Fecha Desde:";
             // 
-            // dataGridView1
+            // dgvBitacora
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column5,
-            this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 143);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(806, 359);
-            this.dataGridView1.TabIndex = 32;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 50;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Usuario";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tabla";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Acción";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Fecha";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
+            this.dgvBitacora.AllowUserToAddRows = false;
+            this.dgvBitacora.AllowUserToDeleteRows = false;
+            this.dgvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBitacora.Location = new System.Drawing.Point(26, 142);
+            this.dgvBitacora.Name = "dgvBitacora";
+            this.dgvBitacora.ReadOnly = true;
+            this.dgvBitacora.RowHeadersWidth = 51;
+            this.dgvBitacora.RowTemplate.Height = 24;
+            this.dgvBitacora.Size = new System.Drawing.Size(864, 359);
+            this.dgvBitacora.TabIndex = 32;
+            this.dgvBitacora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBitacora_CellContentClick);
             // 
             // label1
             // 
@@ -330,12 +255,48 @@
             this.label1.Text = "BITÁCORA DE ACTIVIDADES";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(719, 111);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.LightBlue;
+            this.btnBuscar.Size = new System.Drawing.Size(103, 25);
+            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(198)))), ((int)(((byte)(224)))));
+            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnBuscar.StateCommon.Border.Rounding = 10F;
+            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.Color.LightBlue;
+            this.btnBuscar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnBuscar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscar.TabIndex = 39;
+            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnBuscar.Values.Text = "BUSCAR";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // cmbUsuario
+            // 
+            this.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUsuario.DropDownWidth = 187;
+            this.cmbUsuario.Location = new System.Drawing.Point(515, 110);
+            this.cmbUsuario.Name = "cmbUsuario";
+            this.cmbUsuario.Size = new System.Drawing.Size(187, 26);
+            this.cmbUsuario.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbUsuario.TabIndex = 40;
+            this.cmbUsuario.SelectedIndexChanged += new System.EventHandler(this.cmbUsuario_SelectedIndexChanged_1);
+            // 
             // frmBitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(1077, 575);
+            this.ClientSize = new System.Drawing.Size(1121, 575);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmBitacora";
@@ -347,7 +308,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,20 +324,15 @@
         private Krypton.Toolkit.KryptonButton btnUsuarios;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dtHasta;
+        private System.Windows.Forms.DateTimePicker dtDesde;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBitacora;
         private System.Windows.Forms.Label label1;
-        private Krypton.Toolkit.KryptonButton btnBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Krypton.Toolkit.KryptonButton btnBuscar;
+        private Krypton.Toolkit.KryptonComboBox cmbUsuario;
     }
 }
