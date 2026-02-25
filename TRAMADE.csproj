@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesCompras\clsCompras.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -72,22 +73,22 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmActualizar.cs">
+    <Compile Include="FormulariosCompras\frmActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmActualizar.Designer.cs">
+    <Compile Include="FormulariosCompras\frmActualizar.Designer.cs">
       <DependentUpon>frmActualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAutorizar.cs">
+    <Compile Include="FormulariosCompras\frmAutorizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAutorizar.Designer.cs">
+    <Compile Include="FormulariosCompras\frmAutorizar.Designer.cs">
       <DependentUpon>frmAutorizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCompras.cs">
+    <Compile Include="FormulariosCompras\frmCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCompras.Designer.cs">
+    <Compile Include="FormulariosCompras\frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -96,16 +97,16 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrar.cs">
+    <Compile Include="FormulariosCompras\frmRegistrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrar.Designer.cs">
+    <Compile Include="FormulariosCompras\frmRegistrar.Designer.cs">
       <DependentUpon>frmRegistrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeguimiento.cs">
+    <Compile Include="FormulariosCompras\frmSeguimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeguimiento.Designer.cs">
+    <Compile Include="FormulariosCompras\frmSeguimiento.Designer.cs">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -113,22 +114,22 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmActualizar.resx">
+    <EmbeddedResource Include="FormulariosCompras\frmActualizar.resx">
       <DependentUpon>frmActualizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAutorizar.resx">
+    <EmbeddedResource Include="FormulariosCompras\frmAutorizar.resx">
       <DependentUpon>frmAutorizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCompras.resx">
+    <EmbeddedResource Include="FormulariosCompras\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrar.resx">
+    <EmbeddedResource Include="FormulariosCompras\frmRegistrar.resx">
       <DependentUpon>frmRegistrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeguimiento.resx">
+    <EmbeddedResource Include="FormulariosCompras\frmSeguimiento.resx">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

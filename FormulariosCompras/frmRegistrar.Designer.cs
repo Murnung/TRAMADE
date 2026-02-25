@@ -51,7 +51,7 @@
             this.btnAgregar = new Krypton.Toolkit.KryptonButton();
             this.label16 = new System.Windows.Forms.Label();
             this.btnQuitar = new Krypton.Toolkit.KryptonButton();
-            this.kryptonListBox1 = new Krypton.Toolkit.KryptonListBox();
+            this.lstProductos = new Krypton.Toolkit.KryptonListBox();
             this.txtId = new Krypton.Toolkit.KryptonTextBox();
             this.txtPedido = new Krypton.Toolkit.KryptonTextBox();
             this.txtEntrega = new Krypton.Toolkit.KryptonTextBox();
@@ -61,12 +61,12 @@
             this.txtSubtotal = new Krypton.Toolkit.KryptonTextBox();
             this.txtImpuesto = new Krypton.Toolkit.KryptonTextBox();
             this.txtTotal = new Krypton.Toolkit.KryptonTextBox();
-            this.txtProducto = new Krypton.Toolkit.KryptonComboBox();
+            this.cmbProducto = new Krypton.Toolkit.KryptonComboBox();
             this.cmbProveedor = new Krypton.Toolkit.KryptonComboBox();
             this.nudCantidad = new Krypton.Toolkit.KryptonNumericUpDown();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProveedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -369,13 +369,13 @@
             this.btnQuitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnQuitar.Values.Text = "QUITAR";
             // 
-            // kryptonListBox1
+            // lstProductos
             // 
-            this.kryptonListBox1.Location = new System.Drawing.Point(498, 366);
-            this.kryptonListBox1.Name = "kryptonListBox1";
-            this.kryptonListBox1.Size = new System.Drawing.Size(299, 205);
-            this.kryptonListBox1.StateCommon.Border.Rounding = 10F;
-            this.kryptonListBox1.TabIndex = 70;
+            this.lstProductos.Location = new System.Drawing.Point(498, 366);
+            this.lstProductos.Name = "lstProductos";
+            this.lstProductos.Size = new System.Drawing.Size(299, 205);
+            this.lstProductos.StateCommon.Border.Rounding = 10F;
+            this.lstProductos.TabIndex = 70;
             // 
             // txtId
             // 
@@ -450,16 +450,16 @@
             this.txtTotal.StateCommon.Border.Rounding = 5F;
             this.txtTotal.TabIndex = 79;
             // 
-            // txtProducto
+            // cmbProducto
             // 
-            this.txtProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtProducto.DropDownWidth = 186;
-            this.txtProducto.Location = new System.Drawing.Point(249, 366);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(190, 30);
-            this.txtProducto.StateCommon.ComboBox.Border.Rounding = 5F;
-            this.txtProducto.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.txtProducto.TabIndex = 81;
+            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProducto.DropDownWidth = 186;
+            this.cmbProducto.Location = new System.Drawing.Point(249, 366);
+            this.cmbProducto.Name = "cmbProducto";
+            this.cmbProducto.Size = new System.Drawing.Size(190, 30);
+            this.cmbProducto.StateCommon.ComboBox.Border.Rounding = 5F;
+            this.cmbProducto.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbProducto.TabIndex = 81;
             // 
             // cmbProveedor
             // 
@@ -508,7 +508,7 @@
             this.ClientSize = new System.Drawing.Size(809, 644);
             this.Controls.Add(this.nudCantidad);
             this.Controls.Add(this.cmbProveedor);
-            this.Controls.Add(this.txtProducto);
+            this.Controls.Add(this.cmbProducto);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.txtImpuesto);
             this.Controls.Add(this.txtSubtotal);
@@ -518,7 +518,7 @@
             this.Controls.Add(this.txtEntrega);
             this.Controls.Add(this.txtPedido);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.kryptonListBox1);
+            this.Controls.Add(this.lstProductos);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.btnAgregar);
@@ -545,7 +545,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -576,7 +576,7 @@
         private Krypton.Toolkit.KryptonButton btnQuitar;
         private Krypton.Toolkit.KryptonButton btnRegistrar;
         private Krypton.Toolkit.KryptonButton btnLimpiar;
-        private Krypton.Toolkit.KryptonListBox kryptonListBox1;
+        private Krypton.Toolkit.KryptonListBox lstProductos;
         private Krypton.Toolkit.KryptonButton btnRegresar;
         private Krypton.Toolkit.KryptonTextBox txtId;
         private Krypton.Toolkit.KryptonTextBox txtPedido;
@@ -587,7 +587,7 @@
         private Krypton.Toolkit.KryptonTextBox txtSubtotal;
         private Krypton.Toolkit.KryptonTextBox txtImpuesto;
         private Krypton.Toolkit.KryptonTextBox txtTotal;
-        private Krypton.Toolkit.KryptonComboBox txtProducto;
+        private Krypton.Toolkit.KryptonComboBox cmbProducto;
         private Krypton.Toolkit.KryptonComboBox cmbProveedor;
         private Krypton.Toolkit.KryptonNumericUpDown nudCantidad;
     }
