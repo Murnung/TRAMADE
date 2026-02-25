@@ -37,6 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
+            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
             this.chkActivar = new System.Windows.Forms.CheckBox();
             this.btnNuevo = new Krypton.Toolkit.KryptonButton();
@@ -45,8 +47,6 @@
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.dgbUsuarios = new System.Windows.Forms.DataGridView();
             this.btnEditar = new Krypton.Toolkit.KryptonButton();
-            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
-            this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -188,6 +188,56 @@
             this.panel2.TabIndex = 18;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(794, 510);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.OverrideDefault.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnRefrescar.OverrideDefault.Back.Color2 = System.Drawing.Color.Goldenrod;
+            this.btnRefrescar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnRefrescar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
+            this.btnRefrescar.Size = new System.Drawing.Size(103, 25);
+            this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.Color.Goldenrod;
+            this.btnRefrescar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnRefrescar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnRefrescar.StateCommon.Border.Rounding = 10F;
+            this.btnRefrescar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnRefrescar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnRefrescar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
+            this.btnRefrescar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnRefrescar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescar.TabIndex = 28;
+            this.btnRefrescar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRefrescar.Values.Text = "REFRESCAR";
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(418, 88);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.SystemColors.Control;
+            this.btnBuscar.Size = new System.Drawing.Size(103, 25);
+            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBuscar.StateCommon.Border.Rounding = 10F;
+            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.SystemColors.Control;
+            this.btnBuscar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnBuscar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscar.TabIndex = 27;
+            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnBuscar.Values.Text = "BUSCAR";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // btnActualizar
             // 
             this.btnActualizar.Location = new System.Drawing.Point(620, 510);
@@ -316,56 +366,6 @@
             this.btnEditar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnEditar.Values.Text = "EDITAR";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(418, 88);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.SystemColors.Control;
-            this.btnBuscar.Size = new System.Drawing.Size(103, 25);
-            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.StateCommon.Border.Rounding = 10F;
-            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.SystemColors.Control;
-            this.btnBuscar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnBuscar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscar.TabIndex = 27;
-            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnBuscar.Values.Text = "BUSCAR";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnRefrescar
-            // 
-            this.btnRefrescar.Location = new System.Drawing.Point(794, 510);
-            this.btnRefrescar.Name = "btnRefrescar";
-            this.btnRefrescar.OverrideDefault.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRefrescar.OverrideDefault.Back.Color2 = System.Drawing.Color.Goldenrod;
-            this.btnRefrescar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRefrescar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRefrescar.Size = new System.Drawing.Size(103, 25);
-            this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.Color.Goldenrod;
-            this.btnRefrescar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
-            this.btnRefrescar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
-            this.btnRefrescar.StateCommon.Border.Rounding = 10F;
-            this.btnRefrescar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnRefrescar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRefrescar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRefrescar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnRefrescar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRefrescar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRefrescar.TabIndex = 28;
-            this.btnRefrescar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRefrescar.Values.Text = "REFRESCAR";
-            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
             // frmUsuarios
             // 

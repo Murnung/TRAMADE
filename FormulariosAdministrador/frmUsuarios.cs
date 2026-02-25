@@ -67,12 +67,7 @@ namespace TRAMADE
             try
             {
                 ObjConexion.Abrir(); // Abrir la conexión
-                string consulta = "SELECT * FROM VistaUsuarioTabla"; // Consulta SQL
-                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt); // Llenar el DataTable
-                
-                dgbUsuarios.DataSource = dt; // Asignar al DataGridView
+                RecargarUsuarios();
 
                 chkActivar.Enabled = false;
                 dgbUsuarios.Columns["ID rol"].Visible = false;
