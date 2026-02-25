@@ -53,7 +53,15 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.tmrTransicionLateral = new System.Windows.Forms.Timer(this.components);
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.pnlVistaGeneral = new Krypton.Toolkit.KryptonPanel();
+            this.btnProductosAgot = new Krypton.Toolkit.KryptonButton();
+            this.btnComprasRealizadas = new Krypton.Toolkit.KryptonButton();
+            this.btnVentasRealizadas = new Krypton.Toolkit.KryptonButton();
+            this.btnTotalProductos = new Krypton.Toolkit.KryptonButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
@@ -65,6 +73,10 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlVistaGeneral)).BeginInit();
+            this.pnlVistaGeneral.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -377,20 +389,205 @@
             this.tmrTransicionLateral.Interval = 2;
             this.tmrTransicionLateral.Tick += new System.EventHandler(this.tmrTransicionLateral_Tick);
             // 
-            // kryptonButton1
+            // pnlVistaGeneral
             // 
-            this.kryptonButton1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
-            this.kryptonButton1.TabIndex = 2;
-            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton1.Values.Text = "kryptonButton1";
+            this.pnlVistaGeneral.Controls.Add(this.btnProductosAgot);
+            this.pnlVistaGeneral.Controls.Add(this.btnComprasRealizadas);
+            this.pnlVistaGeneral.Controls.Add(this.btnVentasRealizadas);
+            this.pnlVistaGeneral.Controls.Add(this.btnTotalProductos);
+            this.pnlVistaGeneral.Controls.Add(this.label1);
+            this.pnlVistaGeneral.Location = new System.Drawing.Point(279, 119);
+            this.pnlVistaGeneral.Name = "pnlVistaGeneral";
+            this.pnlVistaGeneral.Size = new System.Drawing.Size(850, 156);
+            this.pnlVistaGeneral.StateCommon.Color1 = System.Drawing.Color.White;
+            this.pnlVistaGeneral.StateCommon.Color2 = System.Drawing.Color.White;
+            this.pnlVistaGeneral.StateNormal.Color1 = System.Drawing.Color.White;
+            this.pnlVistaGeneral.StateNormal.Color2 = System.Drawing.Color.White;
+            this.pnlVistaGeneral.TabIndex = 2;
+            // 
+            // btnProductosAgot
+            // 
+            this.btnProductosAgot.Location = new System.Drawing.Point(643, 45);
+            this.btnProductosAgot.Name = "btnProductosAgot";
+            this.btnProductosAgot.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnProductosAgot.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnProductosAgot.OverrideDefault.Back.Image = global::TRAMADE.Properties.Resources.totalproductos;
+            this.btnProductosAgot.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnProductosAgot.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnProductosAgot.OverrideDefault.Border.Rounding = 10F;
+            this.btnProductosAgot.Size = new System.Drawing.Size(174, 91);
+            this.btnProductosAgot.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnProductosAgot.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnProductosAgot.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnProductosAgot.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnProductosAgot.StateCommon.Border.Rounding = 10F;
+            this.btnProductosAgot.StateCommon.Border.Width = 2;
+            this.btnProductosAgot.StateCommon.Content.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosAgot.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnProductosAgot.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnProductosAgot.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnProductosAgot.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnProductosAgot.StateNormal.Border.Rounding = 10F;
+            this.btnProductosAgot.StateNormal.Border.Width = 2;
+            this.btnProductosAgot.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnProductosAgot.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnProductosAgot.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnProductosAgot.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnProductosAgot.TabIndex = 4;
+            this.btnProductosAgot.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnProductosAgot.Values.Image = global::TRAMADE.Properties.Resources.Productosagotados;
+            this.btnProductosAgot.Values.Text = "Productos\r\nagotados";
+            // 
+            // btnComprasRealizadas
+            // 
+            this.btnComprasRealizadas.Location = new System.Drawing.Point(436, 45);
+            this.btnComprasRealizadas.Name = "btnComprasRealizadas";
+            this.btnComprasRealizadas.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnComprasRealizadas.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnComprasRealizadas.OverrideDefault.Back.Image = global::TRAMADE.Properties.Resources.totalproductos;
+            this.btnComprasRealizadas.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnComprasRealizadas.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnComprasRealizadas.OverrideDefault.Border.Rounding = 10F;
+            this.btnComprasRealizadas.Size = new System.Drawing.Size(174, 91);
+            this.btnComprasRealizadas.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnComprasRealizadas.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnComprasRealizadas.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnComprasRealizadas.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnComprasRealizadas.StateCommon.Border.Rounding = 10F;
+            this.btnComprasRealizadas.StateCommon.Border.Width = 2;
+            this.btnComprasRealizadas.StateCommon.Content.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprasRealizadas.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnComprasRealizadas.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnComprasRealizadas.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnComprasRealizadas.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnComprasRealizadas.StateNormal.Border.Rounding = 10F;
+            this.btnComprasRealizadas.StateNormal.Border.Width = 2;
+            this.btnComprasRealizadas.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnComprasRealizadas.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnComprasRealizadas.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnComprasRealizadas.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnComprasRealizadas.TabIndex = 3;
+            this.btnComprasRealizadas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnComprasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.comprasrealizadas;
+            this.btnComprasRealizadas.Values.Text = "Compras\r\nrealizadas";
+            this.btnComprasRealizadas.Click += new System.EventHandler(this.kryptonButton2_Click);
+            // 
+            // btnVentasRealizadas
+            // 
+            this.btnVentasRealizadas.Location = new System.Drawing.Point(229, 45);
+            this.btnVentasRealizadas.Name = "btnVentasRealizadas";
+            this.btnVentasRealizadas.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnVentasRealizadas.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnVentasRealizadas.OverrideDefault.Back.Image = global::TRAMADE.Properties.Resources.totalproductos;
+            this.btnVentasRealizadas.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnVentasRealizadas.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnVentasRealizadas.OverrideDefault.Border.Rounding = 10F;
+            this.btnVentasRealizadas.Size = new System.Drawing.Size(174, 91);
+            this.btnVentasRealizadas.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnVentasRealizadas.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnVentasRealizadas.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnVentasRealizadas.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnVentasRealizadas.StateCommon.Border.Rounding = 10F;
+            this.btnVentasRealizadas.StateCommon.Border.Width = 2;
+            this.btnVentasRealizadas.StateCommon.Content.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentasRealizadas.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnVentasRealizadas.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnVentasRealizadas.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnVentasRealizadas.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnVentasRealizadas.StateNormal.Border.Rounding = 10F;
+            this.btnVentasRealizadas.StateNormal.Border.Width = 2;
+            this.btnVentasRealizadas.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnVentasRealizadas.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnVentasRealizadas.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnVentasRealizadas.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnVentasRealizadas.TabIndex = 2;
+            this.btnVentasRealizadas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnVentasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.ventasrealizadas;
+            this.btnVentasRealizadas.Values.Text = "Ventas \r\nrealizadas";
+            // 
+            // btnTotalProductos
+            // 
+            this.btnTotalProductos.Location = new System.Drawing.Point(22, 45);
+            this.btnTotalProductos.Name = "btnTotalProductos";
+            this.btnTotalProductos.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnTotalProductos.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnTotalProductos.OverrideDefault.Back.Image = global::TRAMADE.Properties.Resources.totalproductos;
+            this.btnTotalProductos.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnTotalProductos.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnTotalProductos.OverrideDefault.Border.Rounding = 10F;
+            this.btnTotalProductos.Size = new System.Drawing.Size(174, 91);
+            this.btnTotalProductos.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnTotalProductos.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnTotalProductos.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnTotalProductos.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnTotalProductos.StateCommon.Border.Rounding = 10F;
+            this.btnTotalProductos.StateCommon.Border.Width = 2;
+            this.btnTotalProductos.StateCommon.Content.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotalProductos.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnTotalProductos.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnTotalProductos.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnTotalProductos.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(156)))), ((int)(((byte)(156)))));
+            this.btnTotalProductos.StateNormal.Border.Rounding = 10F;
+            this.btnTotalProductos.StateNormal.Border.Width = 2;
+            this.btnTotalProductos.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnTotalProductos.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnTotalProductos.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnTotalProductos.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(242)))));
+            this.btnTotalProductos.TabIndex = 1;
+            this.btnTotalProductos.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnTotalProductos.Values.Image = global::TRAMADE.Properties.Resources.totalproductos;
+            this.btnTotalProductos.Values.Text = " Total de     \r\nproductos   ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(18, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Vista General";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.label2);
+            this.panel9.Controls.Add(this.pictureBox2);
+            this.panel9.Location = new System.Drawing.Point(279, 300);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(226, 173);
+            this.panel9.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::TRAMADE.Properties.Resources.vistaClientes2;
+            this.pictureBox2.Location = new System.Drawing.Point(79, 47);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(68, 67);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label2.Location = new System.Drawing.Point(45, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 24);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Clientes";
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1171, 754);
-            this.Controls.Add(this.kryptonButton1);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.pnlVistaGeneral);
             this.Controls.Add(this.flpBarraLateral);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -409,6 +606,12 @@
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pnlVistaGeneral)).EndInit();
+            this.pnlVistaGeneral.ResumeLayout(false);
+            this.pnlVistaGeneral.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -438,6 +641,14 @@
         private Krypton.Toolkit.KryptonButton btnMaximizar;
         private Krypton.Toolkit.KryptonButton btnMinimizar;
         private System.Windows.Forms.Timer tmrTransicionLateral;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonPanel pnlVistaGeneral;
+        private System.Windows.Forms.Label label1;
+        private Krypton.Toolkit.KryptonButton btnTotalProductos;
+        private Krypton.Toolkit.KryptonButton btnProductosAgot;
+        private Krypton.Toolkit.KryptonButton btnComprasRealizadas;
+        private Krypton.Toolkit.KryptonButton btnVentasRealizadas;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -51,5 +51,10 @@ namespace TRAMADE
         {
             Application.Exit();
         }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
