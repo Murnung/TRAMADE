@@ -71,9 +71,13 @@ namespace TRAMADE
                 SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt); // Llenar el DataTable
+                
                 dgbUsuarios.DataSource = dt; // Asignar al DataGridView
 
                 chkActivar.Enabled = false;
+                dgbUsuarios.Columns["ID rol"].Visible = false;
+                dgbUsuarios.Columns["ID sucursal"].Visible = false;
+                dgbUsuarios.Columns["ID estado"].Visible = false;
 
             }
             catch (Exception ex)
