@@ -91,6 +91,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(968, 64);
             this.panel1.TabIndex = 21;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnRegresar
             // 
@@ -460,6 +461,7 @@
             this.cmbProducto.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cmbProducto.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProducto.TabIndex = 81;
+            this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
             // 
             // cmbProveedor
             // 

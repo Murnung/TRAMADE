@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.ClasesCompras;
 
 namespace TRAMADE
 {
     public partial class frmRegistrar : Form
     {
+        clsConexion ObjConexion = new clsConexion();
+        clsCompras ObjCompras = new clsCompras();
         public frmRegistrar()
         {
             InitializeComponent();
@@ -24,6 +27,8 @@ namespace TRAMADE
 
         private void frmRegistrar_Load(object sender, EventArgs e)
         {
+            clsCompras.llenarComboProducto(cmbProducto,ObjConexion);
+            clsCompras.llenarComboProveedor(cmbProveedor, ObjConexion);
 
         }
 
@@ -74,6 +79,22 @@ namespace TRAMADE
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProducto.SelectedIndex != -1 && cmbProducto.SelectedItem is DataRowView) //Verifica con selectedIndex que se este seleccionando algo y "is DataRowView": Revisa que lo que seleccionaste sea una fila de datos real y no un simple texto.
+            {
+                DataRowView drv = (DataRowView)cmbProducto.SelectedItem;
+                int rolId = Convert.ToInt32(drv["id_producto"]); 
+                string rolNombre = drv["nombre_producto"].ToString();
+            }
 
         }
     }
