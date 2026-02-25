@@ -184,7 +184,7 @@ namespace TRAMADE.ClasesAdministrador
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error al actualizar la tabla: " + ex.Message);
+                MessageBox.Show("Error al actualizar el estado del usuario: " + ex.Message);
                 return false;
             }
             finally
