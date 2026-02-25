@@ -406,6 +406,7 @@
             this.txtNombreVendedor.Size = new System.Drawing.Size(145, 22);
             this.txtNombreVendedor.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtNombreVendedor.TabIndex = 17;
+            this.txtNombreVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel10
             // 
@@ -424,6 +425,7 @@
             this.txtIDVendedor.Size = new System.Drawing.Size(100, 22);
             this.txtIDVendedor.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtIDVendedor.TabIndex = 1;
+            this.txtIDVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel11
             // 
@@ -503,6 +505,7 @@
             this.txtDireccionCliente.Size = new System.Drawing.Size(145, 22);
             this.txtDireccionCliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtDireccionCliente.TabIndex = 17;
+            this.txtDireccionCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel8
             // 
@@ -537,6 +540,7 @@
             this.txtDNICliente.Size = new System.Drawing.Size(145, 22);
             this.txtDNICliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtDNICliente.TabIndex = 17;
+            this.txtDNICliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel7
             // 
@@ -555,6 +559,7 @@
             this.txtNombreCliente.Size = new System.Drawing.Size(145, 22);
             this.txtNombreCliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtNombreCliente.TabIndex = 0;
+            this.txtNombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel6
             // 

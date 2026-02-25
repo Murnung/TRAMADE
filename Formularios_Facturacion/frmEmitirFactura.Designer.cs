@@ -165,6 +165,7 @@
             // 
             // rbCreditoEF
             // 
+            this.rbCreditoEF.Enabled = false;
             this.rbCreditoEF.Location = new System.Drawing.Point(257, 253);
             this.rbCreditoEF.Name = "rbCreditoEF";
             this.rbCreditoEF.Size = new System.Drawing.Size(63, 20);
@@ -184,6 +185,7 @@
             // 
             // rdContadoEF
             // 
+            this.rdContadoEF.Enabled = false;
             this.rdContadoEF.Location = new System.Drawing.Point(257, 225);
             this.rdContadoEF.Name = "rdContadoEF";
             this.rdContadoEF.Size = new System.Drawing.Size(90, 25);
@@ -390,6 +392,7 @@
             this.txtDireccionClienteEF.Size = new System.Drawing.Size(145, 22);
             this.txtDireccionClienteEF.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtDireccionClienteEF.TabIndex = 17;
+            this.txtDireccionClienteEF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel8
             // 
@@ -409,6 +412,7 @@
             this.txtDNIClienteEF.Size = new System.Drawing.Size(145, 22);
             this.txtDNIClienteEF.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtDNIClienteEF.TabIndex = 17;
+            this.txtDNIClienteEF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel7
             // 
@@ -428,6 +432,7 @@
             this.txtNombreClienteEF.Size = new System.Drawing.Size(145, 22);
             this.txtNombreClienteEF.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtNombreClienteEF.TabIndex = 0;
+            this.txtNombreClienteEF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel6
             // 
@@ -465,11 +470,13 @@
             // 
             this.txtNombreVendedorEF.CueHint.CueHintText = "Nombre de vendedor";
             this.txtNombreVendedorEF.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.txtNombreVendedorEF.Enabled = false;
             this.txtNombreVendedorEF.Location = new System.Drawing.Point(62, 37);
             this.txtNombreVendedorEF.Name = "txtNombreVendedorEF";
             this.txtNombreVendedorEF.Size = new System.Drawing.Size(145, 22);
             this.txtNombreVendedorEF.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtNombreVendedorEF.TabIndex = 17;
+            this.txtNombreVendedorEF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel10
             // 
@@ -484,11 +491,13 @@
             // 
             this.txtIDVendedorEF.CueHint.CueHintText = "ID de vendedor";
             this.txtIDVendedorEF.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.txtIDVendedorEF.Enabled = false;
             this.txtIDVendedorEF.Location = new System.Drawing.Point(107, 6);
             this.txtIDVendedorEF.Name = "txtIDVendedorEF";
             this.txtIDVendedorEF.Size = new System.Drawing.Size(100, 22);
             this.txtIDVendedorEF.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtIDVendedorEF.TabIndex = 1;
+            this.txtIDVendedorEF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel11
             // 

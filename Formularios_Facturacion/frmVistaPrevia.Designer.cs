@@ -245,6 +245,7 @@
             // 
             // rbCreditoVP
             // 
+            this.rbCreditoVP.Enabled = false;
             this.rbCreditoVP.Location = new System.Drawing.Point(257, 253);
             this.rbCreditoVP.Name = "rbCreditoVP";
             this.rbCreditoVP.Size = new System.Drawing.Size(63, 20);
@@ -264,6 +265,7 @@
             // 
             // rbContadoVP
             // 
+            this.rbContadoVP.Enabled = false;
             this.rbContadoVP.Location = new System.Drawing.Point(257, 225);
             this.rbContadoVP.Name = "rbContadoVP";
             this.rbContadoVP.Size = new System.Drawing.Size(90, 25);
