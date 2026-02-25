@@ -97,5 +97,15 @@ namespace TRAMADE
             }
 
         }
+
+        private void cmbProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProveedor.SelectedIndex != -1 && cmbProveedor.SelectedItem is DataRowView) //Verifica con selectedIndex que se este seleccionando algo y "is DataRowView": Revisa que lo que seleccionaste sea una fila de datos real y no un simple texto.
+            {
+                DataRowView drv = (DataRowView)cmbProveedor.SelectedItem;
+                int rolId = Convert.ToInt32(drv["id_proveedor"]);
+                string rolNombre = drv["nombre_comercial_proveedor"].ToString();
+            }
+        }
     }
 }

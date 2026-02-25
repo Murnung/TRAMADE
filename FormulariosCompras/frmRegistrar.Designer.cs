@@ -473,6 +473,7 @@
             this.cmbProveedor.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cmbProveedor.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProveedor.TabIndex = 82;
+            this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
             // 
             // nudCantidad
             // 
