@@ -18,6 +18,7 @@ namespace TRAMADE
         public frmProveedores()
         {
             InitializeComponent();
+            RecargarProveedores();
         }
 
         private void tmrTransicionLateral(object sender, EventArgs e)
@@ -34,16 +35,19 @@ namespace TRAMADE
 
         private void RecargarProveedores()
         {
-            clsProveedores_Añadir obj = new clsProveedores_Añadir();
-            dgvProveedores.DataSource = obj.ListarProveedores();
+            string consulta = "select * from VistaProveedorTabla";
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dgvProveedores.DataSource = dt;
         }
 
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
         {
             frmProveedores_Añadir frmAñadir = new frmProveedores_Añadir();
-            frmAñadir.ShowDialog(); // 🔥 espera a que se cierre
+            frmAñadir.ShowDialog(); 
 
-            RecargarProveedores(); // 🔥 se refresca cuando vuelves
+            RecargarProveedores(); 
         }
     }
 }

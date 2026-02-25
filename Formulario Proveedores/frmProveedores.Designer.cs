@@ -54,11 +54,7 @@
             this.btnFiltrarActivo = new Krypton.Toolkit.KryptonButton();
             this.btnFiltrarInactivo = new Krypton.Toolkit.KryptonButton();
             this.dgvProveedores = new Krypton.Toolkit.KryptonDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefresh = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
@@ -400,12 +396,6 @@
             this.dgvProveedores.AllowUserToDeleteRows = false;
             this.dgvProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
             this.dgvProveedores.GridStyles.Style = Krypton.Toolkit.DataGridViewStyle.Sheet;
             this.dgvProveedores.GridStyles.StyleBackground = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
             this.dgvProveedores.GridStyles.StyleColumn = Krypton.Toolkit.GridStyle.Sheet;
@@ -422,7 +412,7 @@
             this.dgvProveedores.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvProveedores.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
             this.dgvProveedores.StateCommon.DataCell.Border.Draw = Krypton.Toolkit.InheritBool.False;
-            this.dgvProveedores.StateCommon.DataCell.Content.Color1 = System.Drawing.Color.DimGray;
+            this.dgvProveedores.StateCommon.DataCell.Content.Color1 = System.Drawing.Color.Black;
             this.dgvProveedores.StateCommon.DataCell.Content.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvProveedores.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(65)))));
             this.dgvProveedores.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(65)))));
@@ -431,46 +421,34 @@
             this.dgvProveedores.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvProveedores.TabIndex = 20;
             // 
-            // Column1
+            // btnRefresh
             // 
-            this.Column1.HeaderText = "Razón Social";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 140;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre Comercial";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 205;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "RTN";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Telefóno Principal";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 180;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Estado";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.btnRefresh.Location = new System.Drawing.Point(669, 646);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.OverrideDefault.Back.Color1 = System.Drawing.Color.Lime;
+            this.btnRefresh.OverrideDefault.Back.Color2 = System.Drawing.Color.Lime;
+            this.btnRefresh.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRefresh.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRefresh.Size = new System.Drawing.Size(106, 44);
+            this.btnRefresh.StateCommon.Back.Color1 = System.Drawing.Color.Lime;
+            this.btnRefresh.StateCommon.Back.Color2 = System.Drawing.Color.Lime;
+            this.btnRefresh.StateCommon.Border.Rounding = 10F;
+            this.btnRefresh.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
+            this.btnRefresh.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRefresh.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRefresh.StateTracking.Border.Color1 = System.Drawing.Color.Green;
+            this.btnRefresh.StateTracking.Border.Color2 = System.Drawing.Color.Green;
+            this.btnRefresh.TabIndex = 21;
+            this.btnRefresh.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRefresh.Values.Text = "Refresh";
             // 
             // frmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 707);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvProveedores);
             this.Controls.Add(this.btnFiltrarActivo);
             this.Controls.Add(this.btnFiltrarInactivo);
@@ -529,10 +507,6 @@
         private Krypton.Toolkit.KryptonButton btnFiltrarActivo;
         private Krypton.Toolkit.KryptonButton btnFiltrarInactivo;
         private Krypton.Toolkit.KryptonDataGridView dgvProveedores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private Krypton.Toolkit.KryptonButton btnRefresh;
     }
 }

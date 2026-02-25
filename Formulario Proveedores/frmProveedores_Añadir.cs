@@ -65,26 +65,19 @@ namespace TRAMADE
             cmbTerminosdePago.SelectedIndex = -1;
         }
 
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             clsProveedores_Añadir objAdd = new clsProveedores_Añadir();
 
-            clsProveedores objP = new clsProveedores(
-                txtNombreComercial.Text,
-                txtRazonSocial.Text,
-                txtDireccionFiscal.Text,
-                txtRtn.Text,
-                Convert.ToInt32(cmbClasificacion.SelectedValue),
-                Convert.ToInt32(cmbTerminosdePago.SelectedValue),
-                txtTelefonoGeneral.Text,
-                txtCorreoCentral.Text
-            );
+            clsProveedores objP = new clsProveedores(txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text, txtRtn.Text, Convert.ToInt32(cmbClasificacion.SelectedValue), Convert.ToInt32(cmbTerminosdePago.SelectedValue), txtTelefonoGeneral.Text, txtCorreoCentral.Text);
 
             objAdd.InsertarProveedor(objP);
 
-            this.Close(); // 🔥 cierra añadir
-
             LimpiarCampos();
+
+            this.Close(); 
         }
     
     }

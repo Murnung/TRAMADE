@@ -45,33 +45,6 @@ namespace TRAMADE.Formulario_Proveedores.Clases
                 ObjConexion.Cerrar();
             }
         }
-
-        public DataTable ListarProveedores()
-        {
-            DataTable dt = new DataTable();
-
-            try
-            {
-                ObjConexion.Abrir();
-
-                string consulta = "SELECT * FROM VistaProveedorTabla";
-
-                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-                adapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al listar proveedores: " + ex.Message);
-            }
-            finally
-            {
-                ObjConexion.Cerrar();
-            }
-
-            return dt;
-        }
-
-
     }
 }
 
