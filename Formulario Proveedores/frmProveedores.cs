@@ -34,11 +34,8 @@ namespace TRAMADE
 
         private void RecargarProveedores()
         {
-            string consulta = "SELECT * FROM VistaProveedorTabla";
-            SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dgvProveedores.DataSource = dt;
+            clsProveedores_Añadir obj = new clsProveedores_Añadir();
+            dgvProveedores.DataSource = obj.ListarProveedores();
         }
 
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
