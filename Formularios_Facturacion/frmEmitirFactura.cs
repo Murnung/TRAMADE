@@ -16,5 +16,10 @@ namespace TRAMADE
         {
             InitializeComponent();
         }
+
+        private void btnListoEF_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

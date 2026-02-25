@@ -297,6 +297,7 @@
             this.btnRegresarHF.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegresarHF.Values.Image = global::TRAMADE.Properties.Resources.REGRESAR;
             this.btnRegresarHF.Values.Text = "REGRESAR";
+            this.btnRegresarHF.Click += new System.EventHandler(this.btnRegresarHF_Click);
             // 
             // label1
             // 

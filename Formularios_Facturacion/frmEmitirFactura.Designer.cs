@@ -563,6 +563,7 @@
             this.btnListoEF.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnListoEF.Values.Image = global::TRAMADE.Properties.Resources.Verificacion_png;
             this.btnListoEF.Values.Text = "REGRESAR";
+            this.btnListoEF.Click += new System.EventHandler(this.btnListoEF_Click);
             // 
             // btnGuardarEF
             // 

@@ -21,5 +21,10 @@ namespace TRAMADE
         {
 
         }
+
+        private void btnRegresarHF_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

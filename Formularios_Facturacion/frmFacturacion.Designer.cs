@@ -89,7 +89,6 @@
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup4 = new Krypton.Toolkit.KryptonGroup();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).BeginInit();
@@ -639,7 +638,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel3.Controls.Add(this.kryptonButton1);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.btnInicio);
             this.panel3.Controls.Add(this.label2);
@@ -819,15 +817,6 @@
             this.kryptonGroup4.StateCommon.Border.Width = 3;
             this.kryptonGroup4.TabIndex = 67;
             // 
-            // kryptonButton1
-            // 
-            this.kryptonButton1.Location = new System.Drawing.Point(800, 27);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
-            this.kryptonButton1.TabIndex = 10;
-            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton1.Values.Text = "kryptonButton1";
-            // 
             // frmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -959,6 +948,5 @@
         private Krypton.Toolkit.KryptonGroup kryptonGroup3;
         private Krypton.Toolkit.KryptonGroup kryptonGroup4;
         private Krypton.Toolkit.KryptonGroup kryptonGroup5;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
