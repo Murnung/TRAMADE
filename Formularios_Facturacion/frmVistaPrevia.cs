@@ -21,5 +21,10 @@ namespace TRAMADE
         {
 
         }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

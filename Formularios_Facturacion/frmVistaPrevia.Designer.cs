@@ -32,15 +32,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
+            this.btnRegresarVP = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonGroup4 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonLabel21 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
-            this.kryptonRadioButton2 = new Krypton.Toolkit.KryptonRadioButton();
+            this.rbCreditoVP = new Krypton.Toolkit.KryptonRadioButton();
             this.kryptonLabel16 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonRadioButton1 = new Krypton.Toolkit.KryptonRadioButton();
+            this.rbContadoVP = new Krypton.Toolkit.KryptonRadioButton();
             this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,33 +48,33 @@
             this.Precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kryptonLabel20 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel19 = new Krypton.Toolkit.KryptonLabel();
+            this.lblTotalVP = new Krypton.Toolkit.KryptonLabel();
             this.kryptonPictureBox2 = new Krypton.Toolkit.KryptonPictureBox();
-            this.kryptonLabel18 = new Krypton.Toolkit.KryptonLabel();
+            this.lblImpuestoVP = new Krypton.Toolkit.KryptonLabel();
             this.kryptonPictureBox1 = new Krypton.Toolkit.KryptonPictureBox();
-            this.kryptonLabel17 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel13 = new Krypton.Toolkit.KryptonLabel();
+            this.lblSubtotalVP = new Krypton.Toolkit.KryptonLabel();
+            this.lblfechaVencimientoVP = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel15 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel9 = new Krypton.Toolkit.KryptonLabel();
+            this.lblFechaEmisionVP = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel14 = new Krypton.Toolkit.KryptonLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
-            this.kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
+            this.txtDireccionClienteVP = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel8 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
+            this.txtDNIClienteVP = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel7 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            this.txtNombreClienteVP = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonGroup2 = new Krypton.Toolkit.KryptonGroup();
-            this.kryptonTextBox5 = new Krypton.Toolkit.KryptonTextBox();
+            this.txtNombreVendedorVP = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel10 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonTextBox6 = new Krypton.Toolkit.KryptonTextBox();
+            this.txtIDVendedorVP = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel11 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel12 = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
+            this.lblNumeroFacturaVP = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.panel3.SuspendLayout();
@@ -106,7 +106,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.kryptonButton2);
+            this.panel3.Controls.Add(this.btnRegresarVP);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(-3, -3);
@@ -135,28 +135,29 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Regresar";
             // 
-            // kryptonButton2
+            // btnRegresarVP
             // 
-            this.kryptonButton2.Location = new System.Drawing.Point(981, 16);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(34, 29);
-            this.kryptonButton2.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonButton2.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonButton2.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonButton2.StateCommon.Border.Rounding = 10F;
-            this.kryptonButton2.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonButton2.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.kryptonButton2.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Content.ShortText.Image")));
-            this.kryptonButton2.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonButton2.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.kryptonButton2.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonButton2.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
-            this.kryptonButton2.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.kryptonButton2.TabIndex = 7;
-            this.kryptonButton2.TabStop = false;
-            this.kryptonButton2.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton2.Values.Image = global::TRAMADE.Properties.Resources.REGRESAR;
-            this.kryptonButton2.Values.Text = "REGRESAR";
+            this.btnRegresarVP.Location = new System.Drawing.Point(981, 16);
+            this.btnRegresarVP.Name = "btnRegresarVP";
+            this.btnRegresarVP.Size = new System.Drawing.Size(34, 29);
+            this.btnRegresarVP.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresarVP.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresarVP.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresarVP.StateCommon.Border.Rounding = 10F;
+            this.btnRegresarVP.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.btnRegresarVP.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.btnRegresarVP.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Content.ShortText.Image")));
+            this.btnRegresarVP.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.btnRegresarVP.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.btnRegresarVP.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresarVP.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
+            this.btnRegresarVP.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnRegresarVP.TabIndex = 7;
+            this.btnRegresarVP.TabStop = false;
+            this.btnRegresarVP.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegresarVP.Values.Image = global::TRAMADE.Properties.Resources.REGRESAR;
+            this.btnRegresarVP.Values.Text = "REGRESAR";
+            this.btnRegresarVP.Click += new System.EventHandler(this.kryptonButton2_Click);
             // 
             // label1
             // 
@@ -191,7 +192,7 @@
             this.kryptonGroup4.Panel.Controls.Add(this.kryptonLabel5);
             this.kryptonGroup4.Panel.Controls.Add(this.kryptonGroup2);
             this.kryptonGroup4.Panel.Controls.Add(this.kryptonLabel12);
-            this.kryptonGroup4.Panel.Controls.Add(this.kryptonLabel2);
+            this.kryptonGroup4.Panel.Controls.Add(this.lblNumeroFacturaVP);
             this.kryptonGroup4.Panel.Controls.Add(this.kryptonLabel1);
             this.kryptonGroup4.Panel.Controls.Add(this.panel3);
             this.kryptonGroup4.Panel.Controls.Add(this.kryptonPanel1);
@@ -218,19 +219,19 @@
             // 
             // kryptonGroup3.Panel
             // 
-            this.kryptonGroup3.Panel.Controls.Add(this.kryptonRadioButton2);
+            this.kryptonGroup3.Panel.Controls.Add(this.rbCreditoVP);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel16);
-            this.kryptonGroup3.Panel.Controls.Add(this.kryptonRadioButton1);
+            this.kryptonGroup3.Panel.Controls.Add(this.rbContadoVP);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonDataGridView1);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel20);
-            this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel19);
+            this.kryptonGroup3.Panel.Controls.Add(this.lblTotalVP);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonPictureBox2);
-            this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel18);
+            this.kryptonGroup3.Panel.Controls.Add(this.lblImpuestoVP);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonPictureBox1);
-            this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel17);
-            this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel13);
+            this.kryptonGroup3.Panel.Controls.Add(this.lblSubtotalVP);
+            this.kryptonGroup3.Panel.Controls.Add(this.lblfechaVencimientoVP);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel15);
-            this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel9);
+            this.kryptonGroup3.Panel.Controls.Add(this.lblFechaEmisionVP);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel14);
             this.kryptonGroup3.Panel.Controls.Add(this.label3);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel3);
@@ -242,13 +243,13 @@
             this.kryptonGroup3.StateCommon.Border.Width = 1;
             this.kryptonGroup3.TabIndex = 54;
             // 
-            // kryptonRadioButton2
+            // rbCreditoVP
             // 
-            this.kryptonRadioButton2.Location = new System.Drawing.Point(257, 253);
-            this.kryptonRadioButton2.Name = "kryptonRadioButton2";
-            this.kryptonRadioButton2.Size = new System.Drawing.Size(63, 20);
-            this.kryptonRadioButton2.TabIndex = 58;
-            this.kryptonRadioButton2.Values.Text = "Crédito";
+            this.rbCreditoVP.Location = new System.Drawing.Point(257, 253);
+            this.rbCreditoVP.Name = "rbCreditoVP";
+            this.rbCreditoVP.Size = new System.Drawing.Size(63, 20);
+            this.rbCreditoVP.TabIndex = 58;
+            this.rbCreditoVP.Values.Text = "Crédito";
             // 
             // kryptonLabel16
             // 
@@ -261,13 +262,13 @@
             this.kryptonLabel16.TabIndex = 67;
             this.kryptonLabel16.Values.Text = "Total a pagar:";
             // 
-            // kryptonRadioButton1
+            // rbContadoVP
             // 
-            this.kryptonRadioButton1.Location = new System.Drawing.Point(257, 225);
-            this.kryptonRadioButton1.Name = "kryptonRadioButton1";
-            this.kryptonRadioButton1.Size = new System.Drawing.Size(90, 25);
-            this.kryptonRadioButton1.TabIndex = 57;
-            this.kryptonRadioButton1.Values.Text = "Contado";
+            this.rbContadoVP.Location = new System.Drawing.Point(257, 225);
+            this.rbContadoVP.Name = "rbContadoVP";
+            this.rbContadoVP.Size = new System.Drawing.Size(90, 25);
+            this.rbContadoVP.TabIndex = 57;
+            this.rbContadoVP.Values.Text = "Contado";
             // 
             // kryptonDataGridView1
             // 
@@ -333,16 +334,16 @@
             this.kryptonLabel20.TabIndex = 56;
             this.kryptonLabel20.Values.Text = "Forma de pago:";
             // 
-            // kryptonLabel19
+            // lblTotalVP
             // 
-            this.kryptonLabel19.Location = new System.Drawing.Point(131, 248);
-            this.kryptonLabel19.Name = "kryptonLabel19";
-            this.kryptonLabel19.Size = new System.Drawing.Size(90, 25);
-            this.kryptonLabel19.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.kryptonLabel19.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
-            this.kryptonLabel19.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel19.TabIndex = 66;
-            this.kryptonLabel19.Values.Text = "L. 0.00";
+            this.lblTotalVP.Location = new System.Drawing.Point(131, 248);
+            this.lblTotalVP.Name = "lblTotalVP";
+            this.lblTotalVP.Size = new System.Drawing.Size(90, 25);
+            this.lblTotalVP.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
+            this.lblTotalVP.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
+            this.lblTotalVP.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVP.TabIndex = 66;
+            this.lblTotalVP.Values.Text = "L. 0.00";
             // 
             // kryptonPictureBox2
             // 
@@ -353,13 +354,13 @@
             this.kryptonPictureBox2.TabIndex = 59;
             this.kryptonPictureBox2.TabStop = false;
             // 
-            // kryptonLabel18
+            // lblImpuestoVP
             // 
-            this.kryptonLabel18.Location = new System.Drawing.Point(131, 225);
-            this.kryptonLabel18.Name = "kryptonLabel18";
-            this.kryptonLabel18.Size = new System.Drawing.Size(45, 20);
-            this.kryptonLabel18.TabIndex = 65;
-            this.kryptonLabel18.Values.Text = "L. 0.00";
+            this.lblImpuestoVP.Location = new System.Drawing.Point(131, 225);
+            this.lblImpuestoVP.Name = "lblImpuestoVP";
+            this.lblImpuestoVP.Size = new System.Drawing.Size(45, 20);
+            this.lblImpuestoVP.TabIndex = 65;
+            this.lblImpuestoVP.Values.Text = "L. 0.00";
             // 
             // kryptonPictureBox1
             // 
@@ -370,21 +371,21 @@
             this.kryptonPictureBox1.TabIndex = 59;
             this.kryptonPictureBox1.TabStop = false;
             // 
-            // kryptonLabel17
+            // lblSubtotalVP
             // 
-            this.kryptonLabel17.Location = new System.Drawing.Point(131, 204);
-            this.kryptonLabel17.Name = "kryptonLabel17";
-            this.kryptonLabel17.Size = new System.Drawing.Size(90, 25);
-            this.kryptonLabel17.TabIndex = 64;
-            this.kryptonLabel17.Values.Text = "L. 0.00";
+            this.lblSubtotalVP.Location = new System.Drawing.Point(131, 204);
+            this.lblSubtotalVP.Name = "lblSubtotalVP";
+            this.lblSubtotalVP.Size = new System.Drawing.Size(90, 25);
+            this.lblSubtotalVP.TabIndex = 64;
+            this.lblSubtotalVP.Values.Text = "L. 0.00";
             // 
-            // kryptonLabel13
+            // lblfechaVencimientoVP
             // 
-            this.kryptonLabel13.Location = new System.Drawing.Point(213, 53);
-            this.kryptonLabel13.Name = "kryptonLabel13";
-            this.kryptonLabel13.Size = new System.Drawing.Size(90, 25);
-            this.kryptonLabel13.TabIndex = 58;
-            this.kryptonLabel13.Values.Text = "22/02/2026";
+            this.lblfechaVencimientoVP.Location = new System.Drawing.Point(213, 53);
+            this.lblfechaVencimientoVP.Name = "lblfechaVencimientoVP";
+            this.lblfechaVencimientoVP.Size = new System.Drawing.Size(90, 25);
+            this.lblfechaVencimientoVP.TabIndex = 58;
+            this.lblfechaVencimientoVP.Values.Text = "22/02/2026";
             // 
             // kryptonLabel15
             // 
@@ -394,13 +395,13 @@
             this.kryptonLabel15.TabIndex = 63;
             this.kryptonLabel15.Values.Text = "Impuesto 15%:";
             // 
-            // kryptonLabel9
+            // lblFechaEmisionVP
             // 
-            this.kryptonLabel9.Location = new System.Drawing.Point(213, 27);
-            this.kryptonLabel9.Name = "kryptonLabel9";
-            this.kryptonLabel9.Size = new System.Drawing.Size(90, 25);
-            this.kryptonLabel9.TabIndex = 57;
-            this.kryptonLabel9.Values.Text = "22/02/2026";
+            this.lblFechaEmisionVP.Location = new System.Drawing.Point(213, 27);
+            this.lblFechaEmisionVP.Name = "lblFechaEmisionVP";
+            this.lblFechaEmisionVP.Size = new System.Drawing.Size(90, 25);
+            this.lblFechaEmisionVP.TabIndex = 57;
+            this.lblFechaEmisionVP.Values.Text = "22/02/2026";
             // 
             // kryptonLabel14
             // 
@@ -447,11 +448,11 @@
             // 
             // kryptonGroup1.Panel
             // 
-            this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox3);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDireccionClienteVP);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonLabel8);
-            this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox2);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDNIClienteVP);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonLabel7);
-            this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox1);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtNombreClienteVP);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonLabel6);
             this.kryptonGroup1.Size = new System.Drawing.Size(243, 110);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.White;
@@ -459,16 +460,16 @@
             this.kryptonGroup1.StateCommon.Border.Rounding = 20F;
             this.kryptonGroup1.TabIndex = 53;
             // 
-            // kryptonTextBox3
+            // txtDireccionClienteVP
             // 
-            this.kryptonTextBox3.CueHint.CueHintText = "( ! ) Dirección del cliente";
-            this.kryptonTextBox3.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonTextBox3.Enabled = false;
-            this.kryptonTextBox3.Location = new System.Drawing.Point(62, 68);
-            this.kryptonTextBox3.Name = "kryptonTextBox3";
-            this.kryptonTextBox3.Size = new System.Drawing.Size(145, 22);
-            this.kryptonTextBox3.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.kryptonTextBox3.TabIndex = 17;
+            this.txtDireccionClienteVP.CueHint.CueHintText = "( ! ) Dirección del cliente";
+            this.txtDireccionClienteVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.txtDireccionClienteVP.Enabled = false;
+            this.txtDireccionClienteVP.Location = new System.Drawing.Point(62, 68);
+            this.txtDireccionClienteVP.Name = "txtDireccionClienteVP";
+            this.txtDireccionClienteVP.Size = new System.Drawing.Size(145, 22);
+            this.txtDireccionClienteVP.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            this.txtDireccionClienteVP.TabIndex = 17;
             // 
             // kryptonLabel8
             // 
@@ -478,16 +479,16 @@
             this.kryptonLabel8.TabIndex = 16;
             this.kryptonLabel8.Values.Text = "Dirección:";
             // 
-            // kryptonTextBox2
+            // txtDNIClienteVP
             // 
-            this.kryptonTextBox2.CueHint.CueHintText = "DNI/RTN del cliente";
-            this.kryptonTextBox2.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonTextBox2.Enabled = false;
-            this.kryptonTextBox2.Location = new System.Drawing.Point(62, 37);
-            this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(145, 22);
-            this.kryptonTextBox2.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.kryptonTextBox2.TabIndex = 17;
+            this.txtDNIClienteVP.CueHint.CueHintText = "DNI/RTN del cliente";
+            this.txtDNIClienteVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.txtDNIClienteVP.Enabled = false;
+            this.txtDNIClienteVP.Location = new System.Drawing.Point(62, 37);
+            this.txtDNIClienteVP.Name = "txtDNIClienteVP";
+            this.txtDNIClienteVP.Size = new System.Drawing.Size(145, 22);
+            this.txtDNIClienteVP.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            this.txtDNIClienteVP.TabIndex = 17;
             // 
             // kryptonLabel7
             // 
@@ -497,16 +498,16 @@
             this.kryptonLabel7.TabIndex = 16;
             this.kryptonLabel7.Values.Text = "DNI/RTN:";
             // 
-            // kryptonTextBox1
+            // txtNombreClienteVP
             // 
-            this.kryptonTextBox1.CueHint.CueHintText = "( ! ) Nombre del cliente";
-            this.kryptonTextBox1.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonTextBox1.Enabled = false;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(62, 6);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(145, 22);
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.kryptonTextBox1.TabIndex = 0;
+            this.txtNombreClienteVP.CueHint.CueHintText = "( ! ) Nombre del cliente";
+            this.txtNombreClienteVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.txtNombreClienteVP.Enabled = false;
+            this.txtNombreClienteVP.Location = new System.Drawing.Point(62, 6);
+            this.txtNombreClienteVP.Name = "txtNombreClienteVP";
+            this.txtNombreClienteVP.Size = new System.Drawing.Size(145, 22);
+            this.txtNombreClienteVP.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            this.txtNombreClienteVP.TabIndex = 0;
             // 
             // kryptonLabel6
             // 
@@ -530,9 +531,9 @@
             // 
             // kryptonGroup2.Panel
             // 
-            this.kryptonGroup2.Panel.Controls.Add(this.kryptonTextBox5);
+            this.kryptonGroup2.Panel.Controls.Add(this.txtNombreVendedorVP);
             this.kryptonGroup2.Panel.Controls.Add(this.kryptonLabel10);
-            this.kryptonGroup2.Panel.Controls.Add(this.kryptonTextBox6);
+            this.kryptonGroup2.Panel.Controls.Add(this.txtIDVendedorVP);
             this.kryptonGroup2.Panel.Controls.Add(this.kryptonLabel11);
             this.kryptonGroup2.Size = new System.Drawing.Size(243, 79);
             this.kryptonGroup2.StateCommon.Back.Color1 = System.Drawing.Color.White;
@@ -540,16 +541,16 @@
             this.kryptonGroup2.StateCommon.Border.Rounding = 20F;
             this.kryptonGroup2.TabIndex = 51;
             // 
-            // kryptonTextBox5
+            // txtNombreVendedorVP
             // 
-            this.kryptonTextBox5.CueHint.CueHintText = "Nombre de vendedor";
-            this.kryptonTextBox5.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonTextBox5.Enabled = false;
-            this.kryptonTextBox5.Location = new System.Drawing.Point(62, 37);
-            this.kryptonTextBox5.Name = "kryptonTextBox5";
-            this.kryptonTextBox5.Size = new System.Drawing.Size(145, 22);
-            this.kryptonTextBox5.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.kryptonTextBox5.TabIndex = 17;
+            this.txtNombreVendedorVP.CueHint.CueHintText = "Nombre de vendedor";
+            this.txtNombreVendedorVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.txtNombreVendedorVP.Enabled = false;
+            this.txtNombreVendedorVP.Location = new System.Drawing.Point(62, 37);
+            this.txtNombreVendedorVP.Name = "txtNombreVendedorVP";
+            this.txtNombreVendedorVP.Size = new System.Drawing.Size(145, 22);
+            this.txtNombreVendedorVP.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            this.txtNombreVendedorVP.TabIndex = 17;
             // 
             // kryptonLabel10
             // 
@@ -559,16 +560,16 @@
             this.kryptonLabel10.TabIndex = 16;
             this.kryptonLabel10.Values.Text = "Nombre:";
             // 
-            // kryptonTextBox6
+            // txtIDVendedorVP
             // 
-            this.kryptonTextBox6.CueHint.CueHintText = "ID de vendedor";
-            this.kryptonTextBox6.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonTextBox6.Enabled = false;
-            this.kryptonTextBox6.Location = new System.Drawing.Point(107, 6);
-            this.kryptonTextBox6.Name = "kryptonTextBox6";
-            this.kryptonTextBox6.Size = new System.Drawing.Size(100, 22);
-            this.kryptonTextBox6.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.kryptonTextBox6.TabIndex = 1;
+            this.txtIDVendedorVP.CueHint.CueHintText = "ID de vendedor";
+            this.txtIDVendedorVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.txtIDVendedorVP.Enabled = false;
+            this.txtIDVendedorVP.Location = new System.Drawing.Point(107, 6);
+            this.txtIDVendedorVP.Name = "txtIDVendedorVP";
+            this.txtIDVendedorVP.Size = new System.Drawing.Size(100, 22);
+            this.txtIDVendedorVP.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            this.txtIDVendedorVP.TabIndex = 1;
             // 
             // kryptonLabel11
             // 
@@ -586,16 +587,16 @@
             this.kryptonLabel12.TabIndex = 50;
             this.kryptonLabel12.Values.Text = "Datos del vendedor:";
             // 
-            // kryptonLabel2
+            // lblNumeroFacturaVP
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(494, 81);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(163, 29);
-            this.kryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.kryptonLabel2.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
-            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel2.TabIndex = 48;
-            this.kryptonLabel2.Values.Text = "INV/2026/0001";
+            this.lblNumeroFacturaVP.Location = new System.Drawing.Point(494, 81);
+            this.lblNumeroFacturaVP.Name = "lblNumeroFacturaVP";
+            this.lblNumeroFacturaVP.Size = new System.Drawing.Size(163, 29);
+            this.lblNumeroFacturaVP.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
+            this.lblNumeroFacturaVP.StateCommon.ShortText.Color2 = System.Drawing.Color.Black;
+            this.lblNumeroFacturaVP.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroFacturaVP.TabIndex = 48;
+            this.lblNumeroFacturaVP.Values.Text = "INV/2026/0001";
             // 
             // kryptonLabel1
             // 
@@ -660,25 +661,25 @@
 
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
-        private Krypton.Toolkit.KryptonButton kryptonButton2;
+        private Krypton.Toolkit.KryptonButton btnRegresarVP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonGroup kryptonGroup4;
         private System.Windows.Forms.Label label4;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private Krypton.Toolkit.KryptonLabel lblNumeroFacturaVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonGroup kryptonGroup2;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox5;
+        private Krypton.Toolkit.KryptonTextBox txtNombreVendedorVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel10;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox6;
+        private Krypton.Toolkit.KryptonTextBox txtIDVendedorVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel11;
         private Krypton.Toolkit.KryptonLabel kryptonLabel12;
         private Krypton.Toolkit.KryptonGroup kryptonGroup1;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
+        private Krypton.Toolkit.KryptonTextBox txtDireccionClienteVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel8;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private Krypton.Toolkit.KryptonTextBox txtDNIClienteVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel7;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox txtNombreClienteVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel6;
         private Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private Krypton.Toolkit.KryptonGroup kryptonGroup3;
@@ -686,8 +687,8 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private Krypton.Toolkit.KryptonLabel kryptonLabel4;
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel13;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel9;
+        private Krypton.Toolkit.KryptonLabel lblfechaVencimientoVP;
+        private Krypton.Toolkit.KryptonLabel lblFechaEmisionVP;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox1;
         private Krypton.Toolkit.KryptonPictureBox kryptonPictureBox2;
         private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
@@ -697,13 +698,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio_unitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private Krypton.Toolkit.KryptonLabel kryptonLabel16;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel19;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel18;
-        private Krypton.Toolkit.KryptonLabel kryptonLabel17;
+        private Krypton.Toolkit.KryptonLabel lblTotalVP;
+        private Krypton.Toolkit.KryptonLabel lblImpuestoVP;
+        private Krypton.Toolkit.KryptonLabel lblSubtotalVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel15;
         private Krypton.Toolkit.KryptonLabel kryptonLabel14;
-        private Krypton.Toolkit.KryptonRadioButton kryptonRadioButton2;
-        private Krypton.Toolkit.KryptonRadioButton kryptonRadioButton1;
+        private Krypton.Toolkit.KryptonRadioButton rbCreditoVP;
+        private Krypton.Toolkit.KryptonRadioButton rbContadoVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel20;
         private Krypton.Toolkit.KryptonLabel kryptonLabel21;
     }
