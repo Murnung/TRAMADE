@@ -54,11 +54,11 @@
             this.btnFiltrarActivo = new Krypton.Toolkit.KryptonButton();
             this.btnFiltrarInactivo = new Krypton.Toolkit.KryptonButton();
             this.dgvProveedores = new Krypton.Toolkit.KryptonDataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
@@ -422,7 +422,7 @@
             this.dgvProveedores.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.dgvProveedores.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
             this.dgvProveedores.StateCommon.DataCell.Border.Draw = Krypton.Toolkit.InheritBool.False;
-            this.dgvProveedores.StateCommon.DataCell.Content.Color1 = System.Drawing.Color.White;
+            this.dgvProveedores.StateCommon.DataCell.Content.Color1 = System.Drawing.Color.DimGray;
             this.dgvProveedores.StateCommon.DataCell.Content.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvProveedores.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(65)))));
             this.dgvProveedores.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(65)))));
@@ -431,26 +431,12 @@
             this.dgvProveedores.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvProveedores.TabIndex = 20;
             // 
-            // Column5
+            // Column1
             // 
-            this.Column5.HeaderText = "Estado";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Telefóno Principal";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 180;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "RTN";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.Column1.HeaderText = "Razón Social";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 140;
             // 
             // Column2
             // 
@@ -459,12 +445,26 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 205;
             // 
-            // Column1
+            // Column3
             // 
-            this.Column1.HeaderText = "Razón Social";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 140;
+            this.Column3.HeaderText = "RTN";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Telefóno Principal";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 180;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Estado";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
             // 
             // frmProveedores
             // 

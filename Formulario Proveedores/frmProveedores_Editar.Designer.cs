@@ -42,8 +42,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new Krypton.Toolkit.KryptonButton();
             this.btnGuardar = new Krypton.Toolkit.KryptonButton();
+            this.cmbTerminosdePago = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.cmbClasificacion)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTerminosdePago)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbClasificacion
@@ -181,7 +183,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(434, 502);
+            this.btnCancelar.Location = new System.Drawing.Point(436, 525);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
             this.btnCancelar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
@@ -203,7 +205,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(598, 502);
+            this.btnGuardar.Location = new System.Drawing.Point(600, 525);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
             this.btnGuardar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
@@ -223,11 +225,32 @@
             this.btnGuardar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnGuardar.Values.Text = "GUARDAR";
             // 
+            // cmbTerminosdePago
+            // 
+            this.cmbTerminosdePago.CueHint.Color1 = System.Drawing.Color.Gray;
+            this.cmbTerminosdePago.CueHint.CueHintText = "TERMINOS DE PAGO";
+            this.cmbTerminosdePago.CueHint.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTerminosdePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTerminosdePago.DropDownWidth = 331;
+            this.cmbTerminosdePago.Items.AddRange(new object[] {
+            "CREDITO MADERA",
+            "CREDITO VARIOS 15 DIAS",
+            "CREDITO VARIOS 30 DIAS",
+            "AL CONTADO"});
+            this.cmbTerminosdePago.Location = new System.Drawing.Point(411, 467);
+            this.cmbTerminosdePago.Name = "cmbTerminosdePago";
+            this.cmbTerminosdePago.Size = new System.Drawing.Size(331, 33);
+            this.cmbTerminosdePago.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTerminosdePago.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbTerminosdePago.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTerminosdePago.TabIndex = 31;
+            // 
             // frmProveedores_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 588);
+            this.Controls.Add(this.cmbTerminosdePago);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cmbClasificacion);
@@ -247,6 +270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbClasificacion)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTerminosdePago)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +292,6 @@
         private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonButton btnCancelar;
         private Krypton.Toolkit.KryptonButton btnGuardar;
+        private Krypton.Toolkit.KryptonComboBox cmbTerminosdePago;
     }
 }
