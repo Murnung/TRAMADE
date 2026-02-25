@@ -141,7 +141,7 @@ namespace TRAMADE.ClasesAdministrador
 
                 SqlCommand comando = new SqlCommand("PA_ACTUALIZAR_USUARIO", conexion.SqlC);
 
-              
+
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@id_usuario", idUsuario);
@@ -166,6 +166,33 @@ namespace TRAMADE.ClasesAdministrador
                 conexion.Cerrar();
             }
         }
-    }//Fin de clase cls usuio
+
+        public bool cambiarEstado(clsConexion conexion, int idUsuario, int estado)
+        {
+            try
+            {
+                conexion.Abrir();
+                SqlCommand cmd = new SqlCommand(" PA_CAMBIAR_ESTADO_USUARIO", conexion.SqlC);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_usuario",idUsuario);
+                cmd.Parameters.AddWithValue("@id_estado", estado);
+
+                int filas = cmd.ExecuteNonQuery();
+
+                return filas > 0;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al cambiar estado: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+    }
+    //Fin de clase cls usuio
 } //Fin de namespace
 

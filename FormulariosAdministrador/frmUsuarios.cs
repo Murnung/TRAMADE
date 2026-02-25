@@ -9,14 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using TRAMADE.FormulariosAdministrador;
+using TRAMADE.ClasesAdministrador;
 
 namespace TRAMADE
 {
+     
     public partial class frmUsuarios : Form
     {
         //Objeto de conexion a la base de datos
 
         clsConexion ObjConexion = new clsConexion();
+        clsUsuario ObjUsuario = new clsUsuario();
+        int usuarioIdSeleccionado;
 
         public frmUsuarios()
         {
@@ -89,6 +93,51 @@ namespace TRAMADE
         {
             frmEditar ObjEditar = new frmEditar();
             ObjEditar.Show();   
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (dgbUsuarios.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un usuario.");
+                return;
+            }
+
+            int id = Convert.ToInt32(dgbUsuarios.CurrentRow.Cells["ID"].Value);
+
+            int estado;
+
+            if (chkActivar.Checked)
+            {
+                estado = 1; // activo
+            }
+            else
+            {
+                estado = 0; // inactivo
+            }
+
+            bool ok = ObjUsuario.cambiarEstado(ObjConexion, id, estado);
+
+            if (ok)
+            {
+                MessageBox.Show("Estado actualizado.");
+                RecargarUsuarios();
+            }
+
+            
+        }
+
+        private void dgbUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgbUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                chkActivar.Checked = Convert.ToInt32(dgbUsuarios.Rows[e.RowIndex].Cells["ID estado"].Value) == 1;
+            }
         }
     }
 }

@@ -44,6 +44,7 @@
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.dgbUsuarios = new System.Windows.Forms.DataGridView();
             this.btnEditar = new Krypton.Toolkit.KryptonButton();
+            this.btnActualizar = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -169,6 +170,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.Controls.Add(this.btnActualizar);
             this.panel2.Controls.Add(this.chkActivar);
             this.panel2.Controls.Add(this.btnNuevo);
             this.panel2.Controls.Add(this.label3);
@@ -178,7 +180,7 @@
             this.panel2.Controls.Add(this.btnEditar);
             this.panel2.Location = new System.Drawing.Point(197, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(856, 525);
+            this.panel2.Size = new System.Drawing.Size(856, 559);
             this.panel2.TabIndex = 18;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -257,6 +259,8 @@
             this.dgbUsuarios.RowTemplate.Height = 24;
             this.dgbUsuarios.Size = new System.Drawing.Size(766, 385);
             this.dgbUsuarios.TabIndex = 20;
+            this.dgbUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbUsuarios_CellClick);
+            this.dgbUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbUsuarios_CellContentClick);
             // 
             // btnEditar
             // 
@@ -283,12 +287,37 @@
             this.btnEditar.Values.Text = "EDITAR";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(636, 510);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnActualizar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnActualizar.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnActualizar.OverrideFocus.Back.Color2 = System.Drawing.SystemColors.Control;
+            this.btnActualizar.Size = new System.Drawing.Size(168, 25);
+            this.btnActualizar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnActualizar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnActualizar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnActualizar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(64)))), ((int)(((byte)(137)))));
+            this.btnActualizar.StateCommon.Border.Rounding = 10F;
+            this.btnActualizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnActualizar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonShadow;
+            this.btnActualizar.StateTracking.Back.Color2 = System.Drawing.SystemColors.Control;
+            this.btnActualizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnActualizar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnActualizar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnActualizar.TabIndex = 26;
+            this.btnActualizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnActualizar.Values.Text = "ACTUALIZAR";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(1077, 575);
+            this.ClientSize = new System.Drawing.Size(1077, 609);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmUsuarios";
@@ -322,5 +351,6 @@
         private System.Windows.Forms.DataGridView dgbUsuarios;
         private Krypton.Toolkit.KryptonButton btnEditar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Krypton.Toolkit.KryptonButton btnActualizar;
     }
 }
