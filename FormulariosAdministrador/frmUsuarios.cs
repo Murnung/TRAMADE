@@ -72,7 +72,9 @@ namespace TRAMADE
                 DataTable dt = new DataTable();
                 adapter.Fill(dt); // Llenar el DataTable
                 dgbUsuarios.DataSource = dt; // Asignar al DataGridView
-                
+
+                chkActivar.Enabled = false;
+
             }
             catch (Exception ex)
             {
@@ -105,6 +107,7 @@ namespace TRAMADE
 
             int id = Convert.ToInt32(dgbUsuarios.CurrentRow.Cells["ID"].Value);
 
+            
             int estado;
 
             if (chkActivar.Checked)
@@ -113,14 +116,16 @@ namespace TRAMADE
             }
             else
             {
-                estado = 0; // inactivo
+                estado = 2; // inactivo
             }
+            chkActivar.Enabled = false; // vuelve a deshabilitar
+
 
             bool ok = ObjUsuario.cambiarEstado(ObjConexion, id, estado);
 
             if (ok)
             {
-                MessageBox.Show("Estado actualizado.");
+                MessageBox.Show("Tabla actualizada.");
                 RecargarUsuarios();
             }
 
@@ -136,6 +141,7 @@ namespace TRAMADE
         {
             if (e.RowIndex >= 0)
             {
+                chkActivar.Enabled = true;
                 chkActivar.Checked = Convert.ToInt32(dgbUsuarios.Rows[e.RowIndex].Cells["ID estado"].Value) == 1;
             }
         }

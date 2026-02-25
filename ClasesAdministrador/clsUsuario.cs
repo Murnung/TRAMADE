@@ -172,7 +172,7 @@ namespace TRAMADE.ClasesAdministrador
             try
             {
                 conexion.Abrir();
-                SqlCommand cmd = new SqlCommand(" PA_CAMBIAR_ESTADO_USUARIO", conexion.SqlC);
+                SqlCommand cmd = new SqlCommand("PA_CAMBIAR_ESTADO_USUARIO", conexion.SqlC);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@id_usuario",idUsuario);
@@ -184,7 +184,7 @@ namespace TRAMADE.ClasesAdministrador
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error al cambiar estado: " + ex.Message);
+                MessageBox.Show("Error al actualizar la tabla: " + ex.Message);
                 return false;
             }
             finally
