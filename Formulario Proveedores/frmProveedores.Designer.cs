@@ -420,6 +420,7 @@
             this.dgvProveedores.StateCommon.HeaderColumn.Content.Color1 = System.Drawing.Color.White;
             this.dgvProveedores.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvProveedores.TabIndex = 20;
+            this.dgvProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedores_CellDoubleClick);
             // 
             // btnRefresh
             // 

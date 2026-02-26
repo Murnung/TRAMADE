@@ -51,7 +51,7 @@
             this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
             this.lstInformacionGeneral = new Krypton.Toolkit.KryptonListBox();
             this.lstDatosdeContacto = new Krypton.Toolkit.KryptonListBox();
-            this.lstProductosSuministrados = new Krypton.Toolkit.KryptonListBox();
+            this.lstClasificacion = new Krypton.Toolkit.KryptonListBox();
             this.chkEstado = new Krypton.Toolkit.KryptonCheckBox();
             this.btnEditar = new Krypton.Toolkit.KryptonButton();
             this.flpBarraLateral.SuspendLayout();
@@ -325,13 +325,13 @@
             this.lstDatosdeContacto.StateCommon.Border.Rounding = 17F;
             this.lstDatosdeContacto.TabIndex = 24;
             // 
-            // lstProductosSuministrados
+            // lstClasificacion
             // 
-            this.lstProductosSuministrados.Location = new System.Drawing.Point(287, 473);
-            this.lstProductosSuministrados.Name = "lstProductosSuministrados";
-            this.lstProductosSuministrados.Size = new System.Drawing.Size(744, 139);
-            this.lstProductosSuministrados.StateCommon.Border.Rounding = 17F;
-            this.lstProductosSuministrados.TabIndex = 25;
+            this.lstClasificacion.Location = new System.Drawing.Point(287, 473);
+            this.lstClasificacion.Name = "lstClasificacion";
+            this.lstClasificacion.Size = new System.Drawing.Size(744, 139);
+            this.lstClasificacion.StateCommon.Border.Rounding = 17F;
+            this.lstClasificacion.TabIndex = 25;
             // 
             // chkEstado
             // 
@@ -371,7 +371,7 @@
             this.ClientSize = new System.Drawing.Size(1153, 707);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.chkEstado);
-            this.Controls.Add(this.lstProductosSuministrados);
+            this.Controls.Add(this.lstClasificacion);
             this.Controls.Add(this.lstDatosdeContacto);
             this.Controls.Add(this.lstInformacionGeneral);
             this.Controls.Add(this.label1);
@@ -420,7 +420,7 @@
         private System.Windows.Forms.Label lblBienvenidoUsuario;
         private Krypton.Toolkit.KryptonListBox lstInformacionGeneral;
         private Krypton.Toolkit.KryptonListBox lstDatosdeContacto;
-        private Krypton.Toolkit.KryptonListBox lstProductosSuministrados;
+        private Krypton.Toolkit.KryptonListBox lstClasificacion;
         private Krypton.Toolkit.KryptonCheckBox chkEstado;
         private Krypton.Toolkit.KryptonButton btnEditar;
     }
