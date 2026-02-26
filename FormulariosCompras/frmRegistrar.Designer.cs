@@ -64,10 +64,13 @@
             this.cmbProducto = new Krypton.Toolkit.KryptonComboBox();
             this.cmbProveedor = new Krypton.Toolkit.KryptonComboBox();
             this.nudCantidad = new Krypton.Toolkit.KryptonNumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cmbFormaPago = new Krypton.Toolkit.KryptonComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFormaPago)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -223,7 +226,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(434, 215);
+            this.label5.Location = new System.Drawing.Point(434, 203);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(151, 22);
             this.label5.TabIndex = 27;
@@ -233,7 +236,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(434, 277);
+            this.label7.Location = new System.Drawing.Point(434, 249);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 22);
             this.label7.TabIndex = 29;
@@ -253,7 +256,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(37, 277);
+            this.label6.Location = new System.Drawing.Point(31, 249);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 22);
             this.label6.TabIndex = 33;
@@ -263,7 +266,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(37, 325);
+            this.label8.Location = new System.Drawing.Point(31, 297);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 22);
             this.label8.TabIndex = 34;
@@ -273,7 +276,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(37, 412);
+            this.label10.Location = new System.Drawing.Point(31, 425);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 22);
             this.label10.TabIndex = 35;
@@ -283,7 +286,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(40, 468);
+            this.label11.Location = new System.Drawing.Point(42, 483);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 22);
             this.label11.TabIndex = 36;
@@ -293,7 +296,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(310, 471);
+            this.label12.Location = new System.Drawing.Point(310, 483);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 22);
             this.label12.TabIndex = 37;
@@ -303,7 +306,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(316, 413);
+            this.label13.Location = new System.Drawing.Point(316, 425);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 22);
             this.label13.TabIndex = 38;
@@ -313,7 +316,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(322, 528);
+            this.label15.Location = new System.Drawing.Point(322, 540);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 22);
             this.label15.TabIndex = 39;
@@ -344,7 +347,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(40, 366);
+            this.label16.Location = new System.Drawing.Point(31, 336);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(192, 22);
             this.label16.TabIndex = 54;
@@ -397,7 +400,7 @@
             // 
             // txtEntrega
             // 
-            this.txtEntrega.Location = new System.Drawing.Point(603, 215);
+            this.txtEntrega.Location = new System.Drawing.Point(603, 203);
             this.txtEntrega.Name = "txtEntrega";
             this.txtEntrega.Size = new System.Drawing.Size(190, 31);
             this.txtEntrega.StateCommon.Border.Rounding = 5F;
@@ -405,7 +408,7 @@
             // 
             // txtContacto
             // 
-            this.txtContacto.Location = new System.Drawing.Point(603, 268);
+            this.txtContacto.Location = new System.Drawing.Point(603, 249);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(190, 31);
             this.txtContacto.StateCommon.Border.Rounding = 5F;
@@ -413,7 +416,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(156, 327);
+            this.txtDireccion.Location = new System.Drawing.Point(156, 288);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(190, 31);
             this.txtDireccion.StateCommon.Border.Rounding = 5F;
@@ -421,7 +424,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(184, 412);
+            this.txtPrecio.Location = new System.Drawing.Point(168, 424);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(93, 31);
             this.txtPrecio.StateCommon.Border.Rounding = 5F;
@@ -429,7 +432,7 @@
             // 
             // txtSubtotal
             // 
-            this.txtSubtotal.Location = new System.Drawing.Point(398, 412);
+            this.txtSubtotal.Location = new System.Drawing.Point(398, 424);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(94, 31);
             this.txtSubtotal.StateCommon.Border.Rounding = 5F;
@@ -437,7 +440,7 @@
             // 
             // txtImpuesto
             // 
-            this.txtImpuesto.Location = new System.Drawing.Point(398, 471);
+            this.txtImpuesto.Location = new System.Drawing.Point(398, 483);
             this.txtImpuesto.Name = "txtImpuesto";
             this.txtImpuesto.Size = new System.Drawing.Size(94, 31);
             this.txtImpuesto.StateCommon.Border.Rounding = 5F;
@@ -445,7 +448,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(398, 528);
+            this.txtTotal.Location = new System.Drawing.Point(398, 540);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(94, 31);
             this.txtTotal.StateCommon.Border.Rounding = 5F;
@@ -455,7 +458,7 @@
             // 
             this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.DropDownWidth = 186;
-            this.cmbProducto.Location = new System.Drawing.Point(249, 366);
+            this.cmbProducto.Location = new System.Drawing.Point(241, 336);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(190, 30);
             this.cmbProducto.StateCommon.ComboBox.Border.Rounding = 5F;
@@ -467,7 +470,7 @@
             // 
             this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProveedor.DropDownWidth = 186;
-            this.cmbProveedor.Location = new System.Drawing.Point(166, 277);
+            this.cmbProveedor.Location = new System.Drawing.Point(156, 249);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(190, 30);
             this.cmbProveedor.StateCommon.ComboBox.Border.Rounding = 5F;
@@ -482,7 +485,7 @@
             0,
             0,
             0});
-            this.nudCantidad.Location = new System.Drawing.Point(184, 460);
+            this.nudCantidad.Location = new System.Drawing.Point(168, 483);
             this.nudCantidad.Maximum = new decimal(new int[] {
             100,
             0,
@@ -503,12 +506,36 @@
             0,
             0});
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(31, 376);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(131, 22);
+            this.label17.TabIndex = 113;
+            this.label17.Text = "Forma de pago";
+            // 
+            // cmbFormaPago
+            // 
+            this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFormaPago.DropDownWidth = 186;
+            this.cmbFormaPago.Location = new System.Drawing.Point(241, 376);
+            this.cmbFormaPago.Name = "cmbFormaPago";
+            this.cmbFormaPago.Size = new System.Drawing.Size(190, 30);
+            this.cmbFormaPago.StateCommon.ComboBox.Border.Rounding = 5F;
+            this.cmbFormaPago.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbFormaPago.TabIndex = 114;
+            this.cmbFormaPago.SelectedIndexChanged += new System.EventHandler(this.cmbFormaPago_SelectedIndexChanged);
+            // 
             // frmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(809, 644);
+            this.Controls.Add(this.cmbFormaPago);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.nudCantidad);
             this.Controls.Add(this.cmbProveedor);
             this.Controls.Add(this.cmbProducto);
@@ -541,6 +568,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRegistrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRegistrar";
@@ -550,6 +578,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFormaPago)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -593,5 +622,7 @@
         private Krypton.Toolkit.KryptonComboBox cmbProducto;
         private Krypton.Toolkit.KryptonComboBox cmbProveedor;
         private Krypton.Toolkit.KryptonNumericUpDown nudCantidad;
+        private System.Windows.Forms.Label label17;
+        private Krypton.Toolkit.KryptonComboBox cmbFormaPago;
     }
 }

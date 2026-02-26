@@ -29,7 +29,8 @@ namespace TRAMADE
         {
             clsCompras.llenarComboProducto(cmbProducto,ObjConexion);
             clsCompras.llenarComboProveedor(cmbProveedor, ObjConexion);
-
+            clsCompras.llenarComboFormaPago(cmbFormaPago, ObjConexion);
+            txtPrecio.Clear();
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -91,9 +92,11 @@ namespace TRAMADE
         {
             if (cmbProducto.SelectedIndex != -1 && cmbProducto.SelectedItem is DataRowView) //Verifica con selectedIndex que se este seleccionando algo y "is DataRowView": Revisa que lo que seleccionaste sea una fila de datos real y no un simple texto.
             {
+             
                 DataRowView drv = (DataRowView)cmbProducto.SelectedItem;
-                int rolId = Convert.ToInt32(drv["id_producto"]); 
-                string rolNombre = drv["nombre_producto"].ToString();
+                int productoId = Convert.ToInt32(drv["id_producto"]); 
+                string productoNombre = drv["nombre_producto"].ToString();
+                clsCompras.llenarTextoPrecio(txtPrecio, cmbProducto, ObjConexion);
             }
 
         }
@@ -103,8 +106,18 @@ namespace TRAMADE
             if (cmbProveedor.SelectedIndex != -1 && cmbProveedor.SelectedItem is DataRowView) //Verifica con selectedIndex que se este seleccionando algo y "is DataRowView": Revisa que lo que seleccionaste sea una fila de datos real y no un simple texto.
             {
                 DataRowView drv = (DataRowView)cmbProveedor.SelectedItem;
-                int rolId = Convert.ToInt32(drv["id_proveedor"]);
-                string rolNombre = drv["nombre_comercial_proveedor"].ToString();
+                int proveedorlId = Convert.ToInt32(drv["id_proveedor"]);
+                string proveedorNombre = drv["nombre_comercial_proveedor"].ToString();
+            }
+        }
+
+        private void cmbFormaPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbFormaPago.SelectedIndex != -1 && cmbFormaPago.SelectedItem is DataRowView)
+            {
+                DataRowView drv = (DataRowView)cmbFormaPago.SelectedItem;
+                int formaPagoID = Convert.ToInt32(drv["id_forma_pago"]);
+                string nombreFormaPago = drv["descripcion_forma_pago"].ToString();
             }
         }
     }
