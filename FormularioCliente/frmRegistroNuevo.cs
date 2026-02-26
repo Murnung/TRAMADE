@@ -31,5 +31,21 @@ namespace TRAMADE
         {
 
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtID.Text = "";
+            txtNombre.Text = "";
+            txtRazon.Text = "";
+            txtFecha.Text = "";
+            cmbTipoCliente.Text = "";
+
+            txtContacto.Text = "";
+            txtTelefono.Text = "";
+            txtDepartamento.Text = "";
+            txtCorreo.Text = "";
+            txtDireccion.Text = "";
+            txtCiudad.Text = "";
+        }
     }
 }

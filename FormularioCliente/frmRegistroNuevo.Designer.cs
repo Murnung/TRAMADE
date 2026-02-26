@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
+            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnInhabilitar = new Krypton.Toolkit.KryptonButton();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             this.btnGuardar = new Krypton.Toolkit.KryptonButton();
@@ -56,10 +60,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDepartamento = new Krypton.Toolkit.KryptonTextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
-            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -109,6 +109,50 @@
             this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label7.Location = new System.Drawing.Point(3, 246);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 44);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Razón social";
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.Location = new System.Drawing.Point(161, 246);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(147, 35);
+            this.txtRazonSocial.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtRazonSocial.StateActive.Border.Rounding = 10F;
+            this.txtRazonSocial.StateActive.Border.Width = 4;
+            this.txtRazonSocial.TabIndex = 27;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(161, 392);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(147, 35);
+            this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtTelefono.StateActive.Border.Rounding = 10F;
+            this.txtTelefono.StateActive.Border.Width = 4;
+            this.txtTelefono.TabIndex = 25;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label6.Location = new System.Drawing.Point(19, 392);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(141, 44);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Teléfono personal";
             // 
             // btnInhabilitar
             // 
@@ -174,6 +218,7 @@
             this.btnLimpiar.TabIndex = 20;
             this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnLimpiar.Values.Text = "LIMPIAR";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // txtCiudad
             // 
@@ -436,50 +481,6 @@
             this.label16.Size = new System.Drawing.Size(127, 44);
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label6.Location = new System.Drawing.Point(19, 392);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 44);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Teléfono personal";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 392);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(147, 35);
-            this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtTelefono.StateActive.Border.Rounding = 10F;
-            this.txtTelefono.StateActive.Border.Width = 4;
-            this.txtTelefono.TabIndex = 25;
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(161, 246);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(147, 35);
-            this.txtRazonSocial.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtRazonSocial.StateActive.Border.Rounding = 10F;
-            this.txtRazonSocial.StateActive.Border.Width = 4;
-            this.txtRazonSocial.TabIndex = 27;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label7.Location = new System.Drawing.Point(3, 246);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 44);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Razón social";
             // 
             // frmRegistroNuevo
             // 

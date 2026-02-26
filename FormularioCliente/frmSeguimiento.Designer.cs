@@ -80,14 +80,14 @@
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
             this.kryptonGroup1.Panel.Controls.Add(this.txtBuscar);
             this.kryptonGroup1.Panel.Enabled = false;
-            this.kryptonGroup1.Size = new System.Drawing.Size(727, 424);
+            this.kryptonGroup1.Size = new System.Drawing.Size(727, 485);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 1;
             // 
             // kgInactivos
             // 
-            this.kgInactivos.Location = new System.Drawing.Point(501, 113);
+            this.kgInactivos.Location = new System.Drawing.Point(499, 93);
             // 
             // kgInactivos.Panel
             // 
@@ -124,7 +124,7 @@
             // 
             // kgRegistrados
             // 
-            this.kgRegistrados.Location = new System.Drawing.Point(39, 109);
+            this.kgRegistrados.Location = new System.Drawing.Point(41, 89);
             // 
             // kgRegistrados.Panel
             // 
@@ -162,7 +162,7 @@
             // 
             // kgActivos
             // 
-            this.kgActivos.Location = new System.Drawing.Point(285, 113);
+            this.kgActivos.Location = new System.Drawing.Point(286, 93);
             // 
             // kgActivos.Panel
             // 
@@ -215,9 +215,9 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(62, 265);
+            this.kryptonDataGridView1.Location = new System.Drawing.Point(16, 231);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(597, 122);
+            this.kryptonDataGridView1.Size = new System.Drawing.Size(583, 229);
             this.kryptonDataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.kryptonDataGridView1.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.kryptonDataGridView1.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
@@ -297,7 +297,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 520);
             this.Controls.Add(this.kryptonGroup1);
             this.Name = "frmSeguimiento";
             this.Text = "frmSeguimiento";

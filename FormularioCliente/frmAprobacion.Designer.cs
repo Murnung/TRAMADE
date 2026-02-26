@@ -77,7 +77,7 @@
             this.Column6});
             this.kryptonDataGridView1.Location = new System.Drawing.Point(38, 158);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(546, 229);
+            this.kryptonDataGridView1.Size = new System.Drawing.Size(541, 229);
             this.kryptonDataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.kryptonDataGridView1.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.kryptonDataGridView1.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;

@@ -93,6 +93,7 @@
             this.btnRegistrar.TabIndex = 27;
             this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegistrar.Values.Text = "REGISTRAR CLIENTE";
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnActualizar
             // 
@@ -110,6 +111,7 @@
             this.btnActualizar.TabIndex = 28;
             this.btnActualizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnActualizar.Values.Text = "ACTUALIZAR CLIENTE";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAutorizar
             // 
@@ -127,6 +129,7 @@
             this.btnAutorizar.TabIndex = 29;
             this.btnAutorizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnAutorizar.Values.Text = "AUTORIZAR CLIENTE";
+            this.btnAutorizar.Click += new System.EventHandler(this.btnAutorizar_Click);
             // 
             // btnSeguimiento
             // 
@@ -144,6 +147,7 @@
             this.btnSeguimiento.TabIndex = 30;
             this.btnSeguimiento.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE CLIENTE";
+            this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
             // 
             // frmMenu
             // 
