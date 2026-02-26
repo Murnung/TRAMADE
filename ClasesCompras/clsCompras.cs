@@ -206,20 +206,46 @@ namespace TRAMADE.ClasesCompras
             try
             {
                 conexion.Abrir();
-                SqlCommand comando = new SqlCommand("PA_INSERTAR_COMPRA", conexion.SqlC);
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@id_proveedor", proveedor);
-                comando.Parameters.AddWithValue("@id_forma_pago", formaPago);
-                comando.Parameters.AddWithValue("@id_estado", estado);
-                comando.Parameters.AddWithValue("@id_usuario", idUsuario); // ✅ viene de la sesión
-                comando.Parameters.AddWithValue("@fecha_entrega", entrega);
+                // 1. INSERTAR CABECERA Y OBTENER ID
+                SqlCommand cmdCabecera = new SqlCommand("PA_INSERTAR_COMPRA", conexion.SqlC);
+                cmdCabecera.CommandType = CommandType.StoredProcedure;
 
-                int filasAfectadas = comando.ExecuteNonQuery();
-                return filasAfectadas > 0;
+                cmdCabecera.Parameters.AddWithValue("@id_proveedor", proveedor);
+                cmdCabecera.Parameters.AddWithValue("@id_forma_pago", formaPago);
+                cmdCabecera.Parameters.AddWithValue("@id_estado", estado);
+                cmdCabecera.Parameters.AddWithValue("@id_usuario", idUsuario);
+
+                // Manejo de fecha nula por si el DateTimePicker no tiene fecha
+                if (entrega == DateTime.MinValue)
+                    cmdCabecera.Parameters.AddWithValue("@fecha_entrega", DBNull.Value);
+                else
+                    cmdCabecera.Parameters.AddWithValue("@fecha_entrega", entrega);
+
+                // ExecuteScalar devuelve la primera columna de la primera fila (el SELECT SCOPE_IDENTITY)
+                object resultado = cmdCabecera.ExecuteScalar();
+
+                if (resultado != null)
+                {
+                    int idGenerado = Convert.ToInt32(resultado);
+
+                    // 2. INSERTAR DETALLE
+                    SqlCommand cmdDetalle = new SqlCommand("PA_INSERTAR_DETALLE_COMPRA", conexion.SqlC);
+                    cmdDetalle.CommandType = CommandType.StoredProcedure;
+
+                    cmdDetalle.Parameters.AddWithValue("@id_compra", idGenerado);
+                    cmdDetalle.Parameters.AddWithValue("@id_producto", producto);
+                    cmdDetalle.Parameters.AddWithValue("@cantidad", cantidad);
+                    // Nota: Segun tu ultimo ALTER PROCEDURE, ya no pides precio_unitario en el detalle
+
+                    int filasDetalle = cmdDetalle.ExecuteNonQuery();
+                    return filasDetalle > 0;
+                }
+
+                return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al ejecutar procedimiento: " + ex.Message);
+                MessageBox.Show("Error crítico: " + ex.Message);
                 return false;
             }
             finally

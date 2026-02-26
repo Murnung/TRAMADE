@@ -15,6 +15,8 @@ namespace TRAMADE
     {
         clsConexion ObjConexion = new clsConexion();
         clsCompras ObjCompras = new clsCompras();
+        
+  
         public frmRegistrar()
         {
             InitializeComponent();
@@ -141,43 +143,49 @@ namespace TRAMADE
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             // Validaciones
-            if (cmbProveedor.SelectedIndex == -1 ||
-                cmbFormaPago.SelectedIndex == -1 ||
-                cmbProducto.SelectedIndex == -1 ||
-                string.IsNullOrWhiteSpace(txtContacto.Text) ||
-                string.IsNullOrWhiteSpace(txtDireccion.Text))
+            if (cmbProveedor.SelectedValue == null || cmbProducto.SelectedValue == null)
             {
-                MessageBox.Show("Llene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione un proveedor y un producto.");
                 return;
             }
 
-            // Asignar valores al objeto
-            ObjCompras.setProveedor(Convert.ToInt32(cmbProveedor.SelectedValue));
-            ObjCompras.setFormaPago(Convert.ToInt32(cmbFormaPago.SelectedValue));
-            ObjCompras.setProducto(Convert.ToInt32(cmbProducto.SelectedValue));
-            ObjCompras.setCantidad(Convert.ToInt32(nudCantidad.Value));
-            ObjCompras.setPrecio(Convert.ToDecimal(txtPrecio.Text));
-            ObjCompras.setContacto(txtContacto.Text.Trim());
-            ObjCompras.setDireccion(txtDireccion.Text.Trim());
-            ObjCompras.setEntrega(dtEntrega.Value);
-            ObjCompras.setIdUsuario(clsSesion.id_usuario);
+            try
+            {
+                // Asignación de datos
+                ObjCompras.setIdUsuario(clsSesion.id_usuario);
+                ObjCompras.setProveedor(Convert.ToInt32(cmbProveedor.SelectedValue));
+                ObjCompras.setFormaPago(Convert.ToInt32(cmbFormaPago.SelectedValue));
+                ObjCompras.setProducto(Convert.ToInt32(cmbProducto.SelectedValue));
+                ObjCompras.setCantidad(Convert.ToInt32(nudCantidad.Value));
 
-            // Intentar insertar
-            if (ObjCompras.insertarCompras(ObjConexion))
-            {
-                MessageBox.Show("¡Compra registrada con éxito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnLimpiar_Click(sender, e);
+                // Manejo de precio (aunque no se use en el detalle, es buena práctica)
+                decimal precio;
+                decimal.TryParse(txtPrecio.Text, out precio);
+                ObjCompras.setPrecio(precio);
+
+                ObjCompras.setContacto(txtContacto.Text.Trim());
+                ObjCompras.setDireccion(txtDireccion.Text.Trim());
+                ObjCompras.setEntrega(dtEntrega.Value);
+
+                bool resultadoFinal = ObjCompras.insertarCompras(ObjConexion);
+
+                if (resultadoFinal)
+                {
+                    MessageBox.Show("¡COMPRA REGISTRADA EXITOSAMENTE!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnLimpiar_Click(sender, e);
+                }
+                else
+                {
+                    // Si entra aquí, insertarCompras devolvió 'false'
+                    MessageBox.Show("La compra no pudo ser registrada");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se pudo completar el registro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error en el formulario: " + ex.Message);
             }
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-    }
+     
     }
 }

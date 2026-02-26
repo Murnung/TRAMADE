@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace TRAMADE
 {
+    
     public partial class frmLogin : Form
     {
         public frmLogin()
@@ -24,8 +25,7 @@ namespace TRAMADE
         }
 
         clsConexion conexion = new clsConexion();
-
-         public void login (string usuario, string contraseña)
+        public void login (string usuario, string contraseña)
         {
             
                 try
@@ -41,15 +41,15 @@ namespace TRAMADE
 
                     if (dr.Read())
                     {
-                        // Guarda los datos del usuario en la sesión
-                        clsSesion.id_usuario = Convert.ToInt32(dr["id_usuario"]);
-                        clsSesion.nombre_usuario = dr["nombre_usuario"].ToString();
+                    // Guarda los datos del usuario en la sesión
+                    clsSesion.id_usuario = Convert.ToInt32(dr["id_usuario"]);
+                    clsSesion.nombre_usuario = dr["nombre_usuario"].ToString();
 
-                        MessageBox.Show("Inicio de sesión exitoso");
+                    MessageBox.Show("Inicio de sesión exitoso");
                         dr.Close();
                         conexion.Cerrar();
 
-                        Form1 frm = new Form1();
+                        frmCompras frm = new frmCompras();
                         frm.ShowDialog();
                     }
                     else
