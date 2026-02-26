@@ -37,7 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,8 +52,6 @@
             this.btnQuitar = new Krypton.Toolkit.KryptonButton();
             this.lstProductos = new Krypton.Toolkit.KryptonListBox();
             this.txtId = new Krypton.Toolkit.KryptonTextBox();
-            this.txtPedido = new Krypton.Toolkit.KryptonTextBox();
-            this.txtEntrega = new Krypton.Toolkit.KryptonTextBox();
             this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
             this.txtDireccion = new Krypton.Toolkit.KryptonTextBox();
             this.txtPrecio = new Krypton.Toolkit.KryptonTextBox();
@@ -66,6 +63,7 @@
             this.nudCantidad = new Krypton.Toolkit.KryptonNumericUpDown();
             this.label17 = new System.Windows.Forms.Label();
             this.cmbFormaPago = new Krypton.Toolkit.KryptonComboBox();
+            this.dtEntrega = new Krypton.Toolkit.KryptonDateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).BeginInit();
@@ -131,9 +129,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Controls.Add(this.btnRegistrar);
-            this.panel2.Location = new System.Drawing.Point(-20, 586);
+            this.panel2.Location = new System.Drawing.Point(-20, 556);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 68);
+            this.panel2.Size = new System.Drawing.Size(834, 56);
             this.panel2.TabIndex = 22;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -157,6 +155,7 @@
             this.btnLimpiar.TabIndex = 70;
             this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnLimpiar.Values.Text = "LIMPIAR";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnRegistrar
             // 
@@ -206,27 +205,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 158);
+            this.label3.Location = new System.Drawing.Point(27, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 22);
             this.label3.TabIndex = 25;
             this.label3.Text = "Número de compra";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(434, 158);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 22);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Fecha de pedido";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(434, 203);
+            this.label5.Location = new System.Drawing.Point(430, 165);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(151, 22);
             this.label5.TabIndex = 27;
@@ -236,7 +225,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(434, 249);
+            this.label7.Location = new System.Drawing.Point(430, 211);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 22);
             this.label7.TabIndex = 29;
@@ -247,7 +236,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(509, 350);
+            this.label9.Location = new System.Drawing.Point(505, 312);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 22);
             this.label9.TabIndex = 31;
@@ -256,7 +245,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(31, 249);
+            this.label6.Location = new System.Drawing.Point(27, 211);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 22);
             this.label6.TabIndex = 33;
@@ -266,7 +255,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(31, 297);
+            this.label8.Location = new System.Drawing.Point(27, 259);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 22);
             this.label8.TabIndex = 34;
@@ -276,7 +265,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(31, 425);
+            this.label10.Location = new System.Drawing.Point(27, 387);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 22);
             this.label10.TabIndex = 35;
@@ -286,7 +275,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(42, 483);
+            this.label11.Location = new System.Drawing.Point(38, 445);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 22);
             this.label11.TabIndex = 36;
@@ -296,7 +285,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(310, 483);
+            this.label12.Location = new System.Drawing.Point(306, 445);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 22);
             this.label12.TabIndex = 37;
@@ -306,7 +295,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(316, 425);
+            this.label13.Location = new System.Drawing.Point(312, 387);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 22);
             this.label13.TabIndex = 38;
@@ -316,7 +305,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(322, 540);
+            this.label15.Location = new System.Drawing.Point(318, 502);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 22);
             this.label15.TabIndex = 39;
@@ -324,7 +313,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(498, 329);
+            this.btnAgregar.Location = new System.Drawing.Point(494, 291);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.OverrideDefault.Back.Color1 = System.Drawing.Color.LightSkyBlue;
             this.btnAgregar.OverrideDefault.Back.Color2 = System.Drawing.Color.LightSkyBlue;
@@ -347,7 +336,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(31, 336);
+            this.label16.Location = new System.Drawing.Point(27, 298);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(192, 22);
             this.label16.TabIndex = 54;
@@ -355,7 +344,7 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(690, 329);
+            this.btnQuitar.Location = new System.Drawing.Point(686, 291);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.OverrideDefault.Back.Color1 = System.Drawing.Color.LightSkyBlue;
             this.btnQuitar.OverrideDefault.Back.Color2 = System.Drawing.Color.LightSkyBlue;
@@ -375,7 +364,7 @@
             // 
             // lstProductos
             // 
-            this.lstProductos.Location = new System.Drawing.Point(498, 366);
+            this.lstProductos.Location = new System.Drawing.Point(494, 328);
             this.lstProductos.Name = "lstProductos";
             this.lstProductos.Size = new System.Drawing.Size(299, 205);
             this.lstProductos.StateCommon.Border.Rounding = 10F;
@@ -384,31 +373,15 @@
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(217, 158);
+            this.txtId.Location = new System.Drawing.Point(213, 165);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(175, 31);
             this.txtId.StateCommon.Border.Rounding = 5F;
             this.txtId.TabIndex = 71;
             // 
-            // txtPedido
-            // 
-            this.txtPedido.Location = new System.Drawing.Point(603, 158);
-            this.txtPedido.Name = "txtPedido";
-            this.txtPedido.Size = new System.Drawing.Size(190, 31);
-            this.txtPedido.StateCommon.Border.Rounding = 5F;
-            this.txtPedido.TabIndex = 72;
-            // 
-            // txtEntrega
-            // 
-            this.txtEntrega.Location = new System.Drawing.Point(603, 203);
-            this.txtEntrega.Name = "txtEntrega";
-            this.txtEntrega.Size = new System.Drawing.Size(190, 31);
-            this.txtEntrega.StateCommon.Border.Rounding = 5F;
-            this.txtEntrega.TabIndex = 73;
-            // 
             // txtContacto
             // 
-            this.txtContacto.Location = new System.Drawing.Point(603, 249);
+            this.txtContacto.Location = new System.Drawing.Point(599, 211);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(190, 31);
             this.txtContacto.StateCommon.Border.Rounding = 5F;
@@ -416,7 +389,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(156, 288);
+            this.txtDireccion.Location = new System.Drawing.Point(152, 250);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(190, 31);
             this.txtDireccion.StateCommon.Border.Rounding = 5F;
@@ -424,7 +397,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(168, 424);
+            this.txtPrecio.Location = new System.Drawing.Point(164, 386);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(93, 31);
             this.txtPrecio.StateCommon.Border.Rounding = 5F;
@@ -432,7 +405,7 @@
             // 
             // txtSubtotal
             // 
-            this.txtSubtotal.Location = new System.Drawing.Point(398, 424);
+            this.txtSubtotal.Location = new System.Drawing.Point(394, 386);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(94, 31);
             this.txtSubtotal.StateCommon.Border.Rounding = 5F;
@@ -440,7 +413,7 @@
             // 
             // txtImpuesto
             // 
-            this.txtImpuesto.Location = new System.Drawing.Point(398, 483);
+            this.txtImpuesto.Location = new System.Drawing.Point(394, 445);
             this.txtImpuesto.Name = "txtImpuesto";
             this.txtImpuesto.Size = new System.Drawing.Size(94, 31);
             this.txtImpuesto.StateCommon.Border.Rounding = 5F;
@@ -448,7 +421,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(398, 540);
+            this.txtTotal.Location = new System.Drawing.Point(394, 502);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(94, 31);
             this.txtTotal.StateCommon.Border.Rounding = 5F;
@@ -458,7 +431,7 @@
             // 
             this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.DropDownWidth = 186;
-            this.cmbProducto.Location = new System.Drawing.Point(241, 336);
+            this.cmbProducto.Location = new System.Drawing.Point(237, 298);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(190, 30);
             this.cmbProducto.StateCommon.ComboBox.Border.Rounding = 5F;
@@ -470,7 +443,7 @@
             // 
             this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProveedor.DropDownWidth = 186;
-            this.cmbProveedor.Location = new System.Drawing.Point(156, 249);
+            this.cmbProveedor.Location = new System.Drawing.Point(152, 211);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(190, 30);
             this.cmbProveedor.StateCommon.ComboBox.Border.Rounding = 5F;
@@ -485,7 +458,7 @@
             0,
             0,
             0});
-            this.nudCantidad.Location = new System.Drawing.Point(168, 483);
+            this.nudCantidad.Location = new System.Drawing.Point(164, 445);
             this.nudCantidad.Maximum = new decimal(new int[] {
             100,
             0,
@@ -501,7 +474,7 @@
             this.nudCantidad.StateCommon.Border.Rounding = 5F;
             this.nudCantidad.TabIndex = 112;
             this.nudCantidad.Value = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -510,7 +483,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(31, 376);
+            this.label17.Location = new System.Drawing.Point(27, 338);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(131, 22);
             this.label17.TabIndex = 113;
@@ -520,7 +493,7 @@
             // 
             this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormaPago.DropDownWidth = 186;
-            this.cmbFormaPago.Location = new System.Drawing.Point(241, 376);
+            this.cmbFormaPago.Location = new System.Drawing.Point(237, 338);
             this.cmbFormaPago.Name = "cmbFormaPago";
             this.cmbFormaPago.Size = new System.Drawing.Size(190, 30);
             this.cmbFormaPago.StateCommon.ComboBox.Border.Rounding = 5F;
@@ -528,12 +501,21 @@
             this.cmbFormaPago.TabIndex = 114;
             this.cmbFormaPago.SelectedIndexChanged += new System.EventHandler(this.cmbFormaPago_SelectedIndexChanged);
             // 
+            // dtEntrega
+            // 
+            this.dtEntrega.Location = new System.Drawing.Point(599, 165);
+            this.dtEntrega.Name = "dtEntrega";
+            this.dtEntrega.Size = new System.Drawing.Size(188, 29);
+            this.dtEntrega.StateCommon.Border.Rounding = 5F;
+            this.dtEntrega.TabIndex = 116;
+            // 
             // frmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(809, 644);
+            this.ClientSize = new System.Drawing.Size(816, 608);
+            this.Controls.Add(this.dtEntrega);
             this.Controls.Add(this.cmbFormaPago);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.nudCantidad);
@@ -545,8 +527,6 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtContacto);
-            this.Controls.Add(this.txtEntrega);
-            this.Controls.Add(this.txtPedido);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lstProductos);
             this.Controls.Add(this.btnQuitar);
@@ -562,7 +542,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -592,7 +571,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
@@ -611,8 +589,6 @@
         private Krypton.Toolkit.KryptonListBox lstProductos;
         private Krypton.Toolkit.KryptonButton btnRegresar;
         private Krypton.Toolkit.KryptonTextBox txtId;
-        private Krypton.Toolkit.KryptonTextBox txtPedido;
-        private Krypton.Toolkit.KryptonTextBox txtEntrega;
         private Krypton.Toolkit.KryptonTextBox txtContacto;
         private Krypton.Toolkit.KryptonTextBox txtDireccion;
         private Krypton.Toolkit.KryptonTextBox txtPrecio;
@@ -624,5 +600,6 @@
         private Krypton.Toolkit.KryptonNumericUpDown nudCantidad;
         private System.Windows.Forms.Label label17;
         private Krypton.Toolkit.KryptonComboBox cmbFormaPago;
+        private Krypton.Toolkit.KryptonDateTimePicker dtEntrega;
     }
 }

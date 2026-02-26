@@ -14,10 +14,10 @@ namespace TRAMADE.ClasesCompras
 {
     internal class clsCompras
     {
-        private static int id, cantidad;
-        private static DateTime pedido, entrega;
-        private static string proveedor, producto, contacto, direccion;
-        private static decimal precioCosto, subtotal = 0, impuesto = 0, total = 0;
+        private int  cantidad, proveedor, producto, formaPago;
+        private  DateTime entrega;
+        private  string contacto, direccion;
+        private decimal precioCosto, subtotal = 0, impuesto = 0, total = 0;
 
 
         //Constructor vacio
@@ -26,6 +26,41 @@ namespace TRAMADE.ClasesCompras
 
         }
 
+       
+        // Setters
+        public void setProveedor(int valor)
+        {
+            proveedor = valor;
+        }
+
+        public void setProducto(int valor)
+        {
+            producto = valor; 
+        }
+
+        public void setFormaPago(int valor)
+        {
+            formaPago = valor;  
+        }
+
+        public void setCantidad(int valor)
+        {
+            cantidad = valor; 
+        }
+        public void setContacto(string valor)
+        {
+            contacto = valor;
+        }
+
+        public void setDireccion(string valor)
+        {
+            direccion = valor;
+        }
+
+        public void setPrecio(decimal valor)
+        {
+            precioCosto = valor;    
+        }
 
         //Metodo para llenar combo box de producto 
         public static void llenarComboProducto(Krypton.Toolkit.KryptonComboBox cmb, clsConexion conexion)
@@ -135,6 +170,8 @@ namespace TRAMADE.ClasesCompras
             }
         }
 
+
+        
 
 
 

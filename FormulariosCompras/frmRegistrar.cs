@@ -120,5 +120,22 @@ namespace TRAMADE
                 string nombreFormaPago = drv["descripcion_forma_pago"].ToString();
             }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtId.Clear();
+            dtEntrega.Value = DateTime.Now;
+            cmbProveedor.SelectedIndex = -1;
+            txtDireccion.Clear();
+            cmbProducto.SelectedIndex = -1;
+            cmbFormaPago.SelectedIndex = -1;
+            txtPrecio.Clear();
+            nudCantidad.Value = 1;
+            txtSubtotal.Clear();
+            txtImpuesto.Clear();
+            txtTotal.Clear();
+            lstProductos.Items.Clear();
+
+        }
     }
 }
