@@ -325,6 +325,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(284, 33);
             this.txtBuscar.StateCommon.Border.Rounding = 10F;
             this.txtBuscar.TabIndex = 23;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
             // dgbUsuarios
