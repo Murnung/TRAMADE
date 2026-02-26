@@ -9,15 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.SessionState;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TRAMADE.ClasesCompras
 {
     internal class clsCompras
     {
-        private int  cantidad, proveedor, producto, formaPago;
-        private  DateTime entrega;
-        private  string contacto, direccion;
+        private int cantidad, proveedor, producto, formaPago, estado = 7, idUsuario;
+        private DateTime entrega;
+        private string contacto, direccion;
         private decimal precioCosto;
+        private bool autorizar = false;
 
 
         //Constructor vacio
@@ -26,7 +28,7 @@ namespace TRAMADE.ClasesCompras
 
         }
 
-       
+
         // Setters
         public void setProveedor(int valor)
         {
@@ -35,17 +37,17 @@ namespace TRAMADE.ClasesCompras
 
         public void setProducto(int valor)
         {
-            producto = valor; 
+            producto = valor;
         }
 
         public void setFormaPago(int valor)
         {
-            formaPago = valor;  
+            formaPago = valor;
         }
 
         public void setCantidad(int valor)
         {
-            cantidad = valor; 
+            cantidad = valor;
         }
         public void setContacto(string valor)
         {
@@ -59,7 +61,17 @@ namespace TRAMADE.ClasesCompras
 
         public void setPrecio(decimal valor)
         {
-            precioCosto = valor;    
+            precioCosto = valor;
+        }
+
+        public void setEntrega(DateTime valor)
+        {
+            entrega = valor;
+        }
+
+        public void setIdUsuario(int valor)
+        {
+            idUsuario = valor;
         }
 
         //Metodo para calcular subtotal
@@ -72,7 +84,7 @@ namespace TRAMADE.ClasesCompras
         //Metodo para calcular el impuesto
         public decimal impuesto()
         {
-            return subtotal() * 0.15;
+            return subtotal() * 0.15m;
         }
 
         //Metodo para calcular el total a pagar
@@ -155,17 +167,17 @@ namespace TRAMADE.ClasesCompras
             }
             finally
             {
-
+                conexion.Cerrar();
             }
         }
 
 
-        public static void llenarTextoPrecio (KryptonTextBox txt, KryptonComboBox cmb, clsConexion conexion)
+        public static void llenarTextoPrecio(KryptonTextBox txt, KryptonComboBox cmb, clsConexion conexion)
         {
             try
             {
                 if (cmb.SelectedValue == null) return;
-                
+
                 conexion.Abrir();
                 DataRowView drv = (DataRowView)cmb.SelectedItem; //Toma lo que el usuario seleccionó en el ComboBox y lo convierte en un DataRowView para poder leer sus columnas como drv["id_producto"]
                 int idProducto = Convert.ToInt32(drv["id_producto"]);
@@ -189,7 +201,6 @@ namespace TRAMADE.ClasesCompras
             }
         }
 
-        //Metodo para insertar compras
         public bool insertarCompras(clsConexion conexion)
         {
             try
@@ -197,34 +208,25 @@ namespace TRAMADE.ClasesCompras
                 conexion.Abrir();
                 SqlCommand comando = new SqlCommand("PA_INSERTAR_COMPRA", conexion.SqlC);
                 comando.CommandType = CommandType.StoredProcedure;
-
                 comando.Parameters.AddWithValue("@id_proveedor", proveedor);
                 comando.Parameters.AddWithValue("@id_forma_pago", formaPago);
-                comando.Parameters.AddWithValue("@id_estado", idEstado);
-                comando.Parameters.AddWithValue("@id_usuario", idUsuario);
-                comando.Parameters.AddWithValue("@descripcion_compra", descripcion);
+                comando.Parameters.AddWithValue("@id_estado", estado);
+                comando.Parameters.AddWithValue("@id_usuario", idUsuario); // ✅ viene de la sesión
+                comando.Parameters.AddWithValue("@fecha_entrega", entrega);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
                 return filasAfectadas > 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar compra: " + ex.Message);
+                MessageBox.Show("Error al ejecutar procedimiento: " + ex.Message);
                 return false;
             }
             finally
             {
                 conexion.Cerrar();
             }
-
         }
-
-
-
-
-
-
-
-
     }
 }
+    

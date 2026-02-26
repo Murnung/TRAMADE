@@ -140,39 +140,44 @@ namespace TRAMADE
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (cmbProveedor.SelectedIndex == -1 || cmbProducto.SelectedIndex == -1 ||
-            cmbFormaPago.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txtCantidad.Text) ||
-            string.IsNullOrWhiteSpace(txtPrecio.Text) || string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            // Validaciones
+            if (cmbProveedor.SelectedIndex == -1 ||
+                cmbFormaPago.SelectedIndex == -1 ||
+                cmbProducto.SelectedIndex == -1 ||
+                string.IsNullOrWhiteSpace(txtContacto.Text) ||
+                string.IsNullOrWhiteSpace(txtDireccion.Text))
             {
                 MessageBox.Show("Llene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            // Asignar valores al objeto
             ObjCompras.setProveedor(Convert.ToInt32(cmbProveedor.SelectedValue));
-            ObjCompras.setProducto(Convert.ToInt32(cmbProducto.SelectedValue));
             ObjCompras.setFormaPago(Convert.ToInt32(cmbFormaPago.SelectedValue));
-            ObjCompras.setCantidad(Convert.ToInt32(txtCantidad.Text.Trim()));
-            ObjCompras.setPrecio(Convert.ToDecimal(txtPrecio.Text.Trim()));
-       
+            ObjCompras.setProducto(Convert.ToInt32(cmbProducto.SelectedValue));
+            ObjCompras.setCantidad(Convert.ToInt32(nudCantidad.Value));
+            ObjCompras.setPrecio(Convert.ToDecimal(txtPrecio.Text));
+            ObjCompras.setContacto(txtContacto.Text.Trim());
+            ObjCompras.setDireccion(txtDireccion.Text.Trim());
+            ObjCompras.setEntrega(dtEntrega.Value);
+            ObjCompras.setIdUsuario(clsSesion.id_usuario);
 
-            bool registrado = ObjCompras.insertarCompras(ObjConexion, idEstado: 1, idUsuario: usuarioIdActual);
-
-            if (registrado)
+            // Intentar insertar
+            if (ObjCompras.insertarCompras(ObjConexion))
             {
-                MessageBox.Show("¡Compra registrada correctamente!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Limpiar campos
-                cmbProveedor.SelectedIndex = -1;
-                cmbProducto.SelectedIndex = -1;
-                cmbFormaPago.SelectedIndex = -1;
-                txtCantidad.Clear();
-                txtPrecio.Clear();
-                txtDescripcion.Clear();
+                MessageBox.Show("¡Compra registrada con éxito!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnLimpiar_Click(sender, e);
             }
             else
             {
-                MessageBox.Show("Error al registrar la compra.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se pudo completar el registro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
     }
 }
