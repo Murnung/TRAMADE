@@ -217,10 +217,7 @@
             this.cmbClasificacion.CueHint.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClasificacion.DropDownWidth = 331;
-            this.cmbClasificacion.Items.AddRange(new object[] {
-            "MADERA",
-            "VARIOS"});
-            this.cmbClasificacion.Location = new System.Drawing.Point(411, 389);
+            this.cmbClasificacion.Location = new System.Drawing.Point(411, 388);
             this.cmbClasificacion.Name = "cmbClasificacion";
             this.cmbClasificacion.Size = new System.Drawing.Size(331, 33);
             this.cmbClasificacion.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,11 +231,6 @@
             this.cmbTerminosdePago.CueHint.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTerminosdePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTerminosdePago.DropDownWidth = 331;
-            this.cmbTerminosdePago.Items.AddRange(new object[] {
-            "CREDITO MADERA",
-            "CREDITO VARIOS 15 DIAS",
-            "CREDITO VARIOS 30 DIAS",
-            "AL CONTADO"});
             this.cmbTerminosdePago.Location = new System.Drawing.Point(411, 468);
             this.cmbTerminosdePago.Name = "cmbTerminosdePago";
             this.cmbTerminosdePago.Size = new System.Drawing.Size(331, 33);
