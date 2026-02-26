@@ -221,14 +221,14 @@ namespace TRAMADE.ClasesCompras
                 else
                     cmdCabecera.Parameters.AddWithValue("@fecha_entrega", entrega);
 
-                // ExecuteScalar devuelve la primera columna de la primera fila (el SELECT SCOPE_IDENTITY)
+                // ExecuteScalar() ejecuta la consulta , toma solo el primer valor devuelto, en este caso select SCOPE_IDENTITY(), el cual devuelve el id de compra generado
                 object resultado = cmdCabecera.ExecuteScalar();
-
-                if (resultado != null)
+                
+                if (resultado != null) //Verific que SP si devolvio un ID
                 {
-                    int idGenerado = Convert.ToInt32(resultado);
-
-                    // 2. INSERTAR DETALLE
+                    int idGenerado = Convert.ToInt32(resultado); //Convierte el Object a entero
+                    
+                    // INSERTAR DETALLE
                     SqlCommand cmdDetalle = new SqlCommand("PA_INSERTAR_DETALLE_COMPRA", conexion.SqlC);
                     cmdDetalle.CommandType = CommandType.StoredProcedure;
 
@@ -240,7 +240,7 @@ namespace TRAMADE.ClasesCompras
                     int filasDetalle = cmdDetalle.ExecuteNonQuery();
                     return filasDetalle > 0;
                 }
-
+                
                 return false;
             }
             catch (Exception ex)
