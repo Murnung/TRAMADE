@@ -223,6 +223,7 @@
             this.cmbClasificacion.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClasificacion.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbClasificacion.TabIndex = 14;
+            this.cmbClasificacion.SelectedIndexChanged += new System.EventHandler(this.cmbClasificacion_SelectedIndexChanged);
             // 
             // cmbTerminosdePago
             // 
@@ -237,6 +238,7 @@
             this.cmbTerminosdePago.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTerminosdePago.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbTerminosdePago.TabIndex = 15;
+            this.cmbTerminosdePago.SelectedIndexChanged += new System.EventHandler(this.cmbTerminosdePago_SelectedIndexChanged);
             // 
             // frmProveedores_Añadir
             // 

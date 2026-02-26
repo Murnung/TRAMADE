@@ -46,7 +46,6 @@ namespace TRAMADE.Formulario_Proveedores.Clases
                 ObjConexion.Cerrar();
             }
         }
-
     }
 }
 
