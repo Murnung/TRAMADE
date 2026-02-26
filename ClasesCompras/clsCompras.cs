@@ -245,27 +245,26 @@ namespace TRAMADE.ClasesCompras
                     cmdDetalle.Parameters.AddWithValue("@id_compra", idGenerado);
                     cmdDetalle.Parameters.AddWithValue("@id_producto", producto);
                     cmdDetalle.Parameters.AddWithValue("@cantidad", cantidad);
-                    // Nota: Segun tu ultimo ALTER PROCEDURE, ya no pides precio_unitario en el detalle
+             
 
                     int filasDetalle = cmdDetalle.ExecuteNonQuery();
-                    return filasDetalle > 0;
+                  
+                    if (proveedor != 0 && producto != 0)
+                    {
+                        //INSERTAR PRODUCTO_PROVEEDOR
+                        SqlCommand cmdProductoProveedor = new SqlCommand("PA_INSERTAR_PRODUCTO_PROVEEDOR", conexion.SqlC);
+                        cmdProductoProveedor.CommandType = CommandType.StoredProcedure;
+
+                        cmdProductoProveedor.Parameters.AddWithValue("@id_producto", producto);
+                        cmdProductoProveedor.Parameters.AddWithValue("@id_proveedor", proveedor);
+
+                        int filasProductoProveedor = cmdProductoProveedor.ExecuteNonQuery();
+                 
+
+                    }
+                    return true;
+
                 }
-                
-               
-                if (resultado != null)
-                {
-                    //INSERTAR PRODUCTO_PROVEEDOR
-                    SqlCommand cmdProductoProveedor = new SqlCommand("PA_INSERTAR_PRODUCTO_PROVEEDOR", conexion.SqlC);
-                    cmdProductoProveedor.CommandType = CommandType.StoredProcedure;
-
-                    cmdProductoProveedor.Parameters.AddWithValue("@id_producto", producto);
-                    cmdProductoProveedor.Parameters.AddWithValue("@id_proveedor", proveedor);
-
-                    int filasProductoProveedor = cmdProductoProveedor.ExecuteNonQuery();
-                    return filasProductoProveedor > 0;
-
-                }
-
 
                 return false;
 

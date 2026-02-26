@@ -29,6 +29,7 @@ namespace TRAMADE
 
         private void frmRegistrar_Load(object sender, EventArgs e)
         {
+            cmbProveedor.SelectedIndex = -1;
             clsCompras.llenarComboProducto(cmbProducto,ObjConexion);
             clsCompras.llenarComboProveedor(cmbProveedor, ObjConexion);
             clsCompras.llenarComboFormaPago(cmbFormaPago, ObjConexion);
