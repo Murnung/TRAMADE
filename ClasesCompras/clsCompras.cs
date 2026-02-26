@@ -17,7 +17,7 @@ namespace TRAMADE.ClasesCompras
         private int  cantidad, proveedor, producto, formaPago;
         private  DateTime entrega;
         private  string contacto, direccion;
-        private decimal precioCosto, subtotal = 0, impuesto = 0, total = 0;
+        private decimal precioCosto;
 
 
         //Constructor vacio
@@ -60,6 +60,25 @@ namespace TRAMADE.ClasesCompras
         public void setPrecio(decimal valor)
         {
             precioCosto = valor;    
+        }
+
+        //Metodo para calcular subtotal
+        public decimal subtotal()
+        {
+            return cantidad * precioCosto;
+        }
+
+
+        //Metodo para calcular el impuesto
+        public decimal impuesto()
+        {
+            return subtotal() * 0.15;
+        }
+
+        //Metodo para calcular el total a pagar
+        public decimal total()
+        {
+            return subtotal() + impuesto();
         }
 
         //Metodo para llenar combo box de producto 
@@ -170,8 +189,39 @@ namespace TRAMADE.ClasesCompras
             }
         }
 
+        //Metodo para insertar compras
+        public bool insertarCompras(clsConexion conexion)
+        {
+            try
+            {
+                conexion.Abrir();
+                SqlCommand comando = new SqlCommand("PA_INSERTAR_COMPRA", conexion.SqlC);
+                comando.CommandType = CommandType.StoredProcedure;
 
-        
+                comando.Parameters.AddWithValue("@id_proveedor", proveedor);
+                comando.Parameters.AddWithValue("@id_forma_pago", formaPago);
+                comando.Parameters.AddWithValue("@id_estado", idEstado);
+                comando.Parameters.AddWithValue("@id_usuario", idUsuario);
+                comando.Parameters.AddWithValue("@descripcion_compra", descripcion);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+                return filasAfectadas > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar compra: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+
+        }
+
+
+
+
 
 
 

@@ -181,6 +181,7 @@
             this.btnRegistrar.TabIndex = 69;
             this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegistrar.Values.Text = "REGISTRAR Y ENVIAR";
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // label1
             // 
