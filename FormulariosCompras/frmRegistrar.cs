@@ -127,10 +127,12 @@ namespace TRAMADE
         {
             txtId.Clear();
             dtEntrega.Value = DateTime.Now;
-            cmbProveedor.SelectedIndex = -1;
+            txtContacto.Clear();
             txtDireccion.Clear();
+            txtTelefono.Clear();
             cmbProducto.SelectedIndex = -1;
             cmbFormaPago.SelectedIndex = -1;
+            cmbProveedor.SelectedIndex = -1;
             txtPrecio.Clear();
             nudCantidad.Value = 1;
             txtSubtotal.Clear();
@@ -166,6 +168,7 @@ namespace TRAMADE
                 ObjCompras.setContacto(txtContacto.Text.Trim());
                 ObjCompras.setDireccion(txtDireccion.Text.Trim());
                 ObjCompras.setEntrega(dtEntrega.Value);
+                ObjCompras.setTelefono(txtTelefono.Text.Trim());
 
                 bool resultadoFinal = ObjCompras.insertarCompras(ObjConexion);
 
