@@ -251,7 +251,26 @@ namespace TRAMADE.ClasesCompras
                     return filasDetalle > 0;
                 }
                 
+               
+                if (resultado != null)
+                {
+                    //INSERTAR PRODUCTO_PROVEEDOR
+                    SqlCommand cmdProductoProveedor = new SqlCommand("PA_INSERTAR_PRODUCTO_PROVEEDOR", conexion.SqlC);
+                    cmdProductoProveedor.CommandType = CommandType.StoredProcedure;
+
+                    cmdProductoProveedor.Parameters.AddWithValue("@id_producto", producto);
+                    cmdProductoProveedor.Parameters.AddWithValue("@id_proveedor", proveedor);
+
+                    int filasProductoProveedor = cmdProductoProveedor.ExecuteNonQuery();
+                    return filasProductoProveedor > 0;
+
+                }
+
+
                 return false;
+
+
+
             }
             catch (Exception ex)
             {
