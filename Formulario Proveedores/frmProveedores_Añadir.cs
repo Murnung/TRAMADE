@@ -22,7 +22,12 @@ namespace TRAMADE
         clsConexion ObjConexion = new clsConexion();
         clsProveedores_Añadir objProv = new clsProveedores_Añadir();
 
-        
+        private void frmProveedores_Añadir_Load(object sender, EventArgs e)
+        {
+            clsProveedores_Añadir.llenarComboClasificacion(cmbClasificacion, ObjConexion);
+            clsProveedores_Añadir.llenarComboTerminosPago(cmbTerminosdePago, ObjConexion);
+        }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -56,10 +61,17 @@ namespace TRAMADE
 
         private void cmbClasificacion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbClasificacion.SelectedIndex != -1 && cmbClasificacion.SelectedItem is DataRowView)
+            /*if (cmbClasificacion.SelectedIndex != -1 && cmbClasificacion.SelectedItem is DataRowView)
             {
                 DataRowView drv = (DataRowView)cmbClasificacion.SelectedItem;
 
+                int id = Convert.ToInt32(drv["id_clasificacion_proveedor"]);
+                string nombre = drv["descripcion_clasificacion_proveedor"].ToString();
+            }*/
+
+            if (cmbClasificacion.SelectedIndex != -1 && cmbClasificacion.SelectedItem is DataRowView)
+            {
+                DataRowView drv = (DataRowView)cmbClasificacion.SelectedItem;
                 int id = Convert.ToInt32(drv["id_clasificacion_proveedor"]);
                 string nombre = drv["descripcion_clasificacion_proveedor"].ToString();
             }
@@ -67,14 +79,22 @@ namespace TRAMADE
 
         private void cmbTerminosdePago_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTerminosdePago.SelectedIndex != -1 && cmbTerminosdePago.SelectedItem is DataRowView)
+            /*if (cmbTerminosdePago.SelectedIndex != -1 && cmbTerminosdePago.SelectedItem is DataRowView)
             {
                 DataRowView drv = (DataRowView)cmbTerminosdePago.SelectedItem;
 
                 int terminosId = Convert.ToInt32(drv["id_terminos_de_pago_proveedor"]);
                 string descripcion = drv["descripcion_terminos_de_pago"].ToString();
+            }*/
+
+            if (cmbTerminosdePago.SelectedIndex != -1 && cmbTerminosdePago.SelectedItem is DataRowView)
+            {
+                DataRowView drv = (DataRowView)cmbTerminosdePago.SelectedItem;
+                int terminosId = Convert.ToInt32(drv["id_terminos_de_pago_proveedor"]);
+                string descripcion = drv["descripcion_terminos_de_pago"].ToString();
             }
         }
+
 
     }
 }
