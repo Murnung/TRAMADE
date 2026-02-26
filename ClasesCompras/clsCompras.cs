@@ -17,7 +17,7 @@ namespace TRAMADE.ClasesCompras
     {
         private int cantidad, proveedor, producto, formaPago, estado = 7, idUsuario;
         private DateTime entrega;
-        private string contacto, direccion;
+        private string contacto, direccion,telefono;
         private decimal precioCosto;
         private bool autorizar = false;
 
@@ -57,6 +57,11 @@ namespace TRAMADE.ClasesCompras
         public void setDireccion(string valor)
         {
             direccion = valor;
+        }
+        
+        public void setTelefono(string valor)
+        {
+            telefono = valor;   
         }
 
         public void setPrecio(decimal valor)
@@ -206,23 +211,28 @@ namespace TRAMADE.ClasesCompras
             try
             {
                 conexion.Abrir();
-                // 1. INSERTAR CABECERA Y OBTENER ID
-                SqlCommand cmdCabecera = new SqlCommand("PA_INSERTAR_COMPRA", conexion.SqlC);
-                cmdCabecera.CommandType = CommandType.StoredProcedure;
+                //INSERTAR COMPRA
+                SqlCommand cmdCompra = new SqlCommand("PA_INSERTAR_COMPRA", conexion.SqlC);
+                cmdCompra.CommandType = CommandType.StoredProcedure;
 
-                cmdCabecera.Parameters.AddWithValue("@id_proveedor", proveedor);
-                cmdCabecera.Parameters.AddWithValue("@id_forma_pago", formaPago);
-                cmdCabecera.Parameters.AddWithValue("@id_estado", estado);
-                cmdCabecera.Parameters.AddWithValue("@id_usuario", idUsuario);
+                cmdCompra.Parameters.AddWithValue("@id_proveedor", proveedor);
+                cmdCompra.Parameters.AddWithValue("@id_forma_pago", formaPago);
+                cmdCompra.Parameters.AddWithValue("@id_estado", estado);
+                cmdCompra.Parameters.AddWithValue("@id_usuario", idUsuario);
 
                 // Manejo de fecha nula por si el DateTimePicker no tiene fecha
                 if (entrega == DateTime.MinValue)
-                    cmdCabecera.Parameters.AddWithValue("@fecha_entrega", DBNull.Value);
+                    cmdCompra.Parameters.AddWithValue("@fecha_entrega", DBNull.Value);
                 else
-                    cmdCabecera.Parameters.AddWithValue("@fecha_entrega", entrega);
+                    cmdCompra.Parameters.AddWithValue("@fecha_entrega", entrega);
+
+                cmdCompra.Parameters.AddWithValue("@direccion_entrega", direccion);
+                cmdCompra.Parameters.AddWithValue("@contacto_entrega", contacto);
+                cmdCompra.Parameters.AddWithValue("@telefono_entrega", telefono);
+
 
                 // ExecuteScalar() ejecuta la consulta , toma solo el primer valor devuelto, en este caso select SCOPE_IDENTITY(), el cual devuelve el id de compra generado
-                object resultado = cmdCabecera.ExecuteScalar();
+                object resultado = cmdCompra.ExecuteScalar();
                 
                 if (resultado != null) //Verific que SP si devolvio un ID
                 {

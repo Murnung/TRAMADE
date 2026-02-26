@@ -64,6 +64,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.cmbFormaPago = new Krypton.Toolkit.KryptonComboBox();
             this.dtEntrega = new Krypton.Toolkit.KryptonDateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).BeginInit();
@@ -510,12 +512,32 @@
             this.dtEntrega.StateCommon.Border.Rounding = 5F;
             this.dtEntrega.TabIndex = 116;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(430, 250);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 22);
+            this.label4.TabIndex = 117;
+            this.label4.Text = "Contacto";
+            // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Location = new System.Drawing.Point(597, 254);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(190, 31);
+            this.kryptonTextBox1.StateCommon.Border.Rounding = 5F;
+            this.kryptonTextBox1.TabIndex = 118;
+            // 
             // frmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(816, 608);
+            this.Controls.Add(this.kryptonTextBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dtEntrega);
             this.Controls.Add(this.cmbFormaPago);
             this.Controls.Add(this.label17);
@@ -602,5 +624,7 @@
         private System.Windows.Forms.Label label17;
         private Krypton.Toolkit.KryptonComboBox cmbFormaPago;
         private Krypton.Toolkit.KryptonDateTimePicker dtEntrega;
+        private System.Windows.Forms.Label label4;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
     }
 }
