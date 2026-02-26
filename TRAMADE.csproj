@@ -78,6 +78,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios Login, Menú\Clases\clsClientesPanel.cs" />
+    <Compile Include="Formularios Login, Menú\Clases\clsGraficoInventario.cs" />
+    <Compile Include="Formularios Login, Menú\Clases\clsGraficoTendencia.cs" />
+    <Compile Include="Formularios Login, Menú\Clases\clsResponsive.cs" />
+    <Compile Include="Formularios Login, Menú\Clases\clsUltimasCompras.cs" />
+    <Compile Include="Formularios Login, Menú\Clases\clsUltimasVentas.cs" />
+    <Compile Include="Formularios Login, Menú\Clases\clsVistaGeneral.cs" />
     <Compile Include="Formularios Login, Menú\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
