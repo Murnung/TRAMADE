@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores_Añadir));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new Krypton.Toolkit.KryptonButton();
+            this.btnMinimizar = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnMaximizar = new Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,22 +55,87 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.panel1.Controls.Add(this.btnSalir);
+            this.panel1.Controls.Add(this.btnMinimizar);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnMaximizar);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(812, 120);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(751, 23);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(37, 38);
+            this.btnSalir.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnSalir.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnSalir.StatePressed.Back.Color1 = System.Drawing.Color.Red;
+            this.btnSalir.StatePressed.Back.Color2 = System.Drawing.Color.Red;
+            this.btnSalir.StateTracking.Back.Color1 = System.Drawing.Color.Red;
+            this.btnSalir.StateTracking.Back.Color2 = System.Drawing.Color.Red;
+            this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnSalir.TabIndex = 18;
+            this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
+            this.btnSalir.Values.Text = "";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Location = new System.Drawing.Point(636, 23);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(37, 38);
+            this.btnMinimizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
+            this.btnMinimizar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
+            this.btnMinimizar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
+            this.btnMinimizar.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnMinimizar.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnMinimizar.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
+            this.btnMinimizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertPressed;
+            this.btnMinimizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnMinimizar.TabIndex = 16;
+            this.btnMinimizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
+            this.btnMinimizar.Values.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(39, 40);
+            this.label1.Location = new System.Drawing.Point(39, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "Añadir Proveedor";
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Location = new System.Drawing.Point(693, 23);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(37, 38);
+            this.btnMaximizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
+            this.btnMaximizar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
+            this.btnMaximizar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
+            this.btnMaximizar.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnMaximizar.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnMaximizar.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
+            this.btnMaximizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertPressed;
+            this.btnMaximizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnMaximizar.TabIndex = 17;
+            this.btnMaximizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
+            this.btnMaximizar.Values.Text = "";
             // 
             // label2
             // 
@@ -260,6 +329,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProveedores_Añadir";
             this.Text = "frmProveedores_Añadir";
             this.panel1.ResumeLayout(false);
@@ -288,5 +358,8 @@
         private Krypton.Toolkit.KryptonButton btnCancelar;
         private Krypton.Toolkit.KryptonComboBox cmbClasificacion;
         private Krypton.Toolkit.KryptonComboBox cmbTerminosdePago;
+        private Krypton.Toolkit.KryptonButton btnSalir;
+        private Krypton.Toolkit.KryptonButton btnMinimizar;
+        private Krypton.Toolkit.KryptonButton btnMaximizar;
     }
 }

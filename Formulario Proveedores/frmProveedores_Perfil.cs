@@ -58,5 +58,10 @@ namespace TRAMADE.Formulario_Proveedores
             frmProveedores_Editar frmEditar = new frmProveedores_Editar(_idProveedor);
             frmEditar.ShowDialog();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

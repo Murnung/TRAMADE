@@ -221,6 +221,7 @@
             this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
             this.btnSalir.Values.Text = "";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnMaximizar
             // 
@@ -497,6 +498,7 @@
             this.Controls.Add(this.btnAñadirProveedor);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProveedores";

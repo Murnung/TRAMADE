@@ -84,6 +84,11 @@ namespace TRAMADE
             dgvProveedores.DataSource = ObjProveedores.ObtenerProveedores();
             dgvProveedores.Columns["id_proveedor"].Visible = false;
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 
