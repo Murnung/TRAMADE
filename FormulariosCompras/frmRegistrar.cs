@@ -34,6 +34,9 @@ namespace TRAMADE
             clsCompras.llenarComboProveedor(cmbProveedor, ObjConexion);
             clsCompras.llenarComboFormaPago(cmbFormaPago, ObjConexion);
             txtPrecio.Clear();
+
+            txtSubtotal.Text = Convert.ToString(ObjCompras.subtotal());
+            
         }
 
         private void label1_Click_1(object sender, EventArgs e)
