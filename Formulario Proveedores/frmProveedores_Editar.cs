@@ -24,9 +24,7 @@ namespace TRAMADE
             // ← usar ObjEditar, NO clsProveedores_Editar directamente
             clsProveedores_Añadir.llenarComboClasificacion(cmbClasificacion, ObjConexion);
             clsProveedores_Añadir.llenarComboTerminosPago(cmbTerminosdePago, ObjConexion);
-            ObjEditar.CargarDatosActuales(_idProveedor, txtRazonSocial, txtNombreComercial,
-                                          txtDireccionFiscal, txtRtn, txtTelefonoGeneral,
-                                          txtCorreoCentral, cmbClasificacion, cmbTerminosdePago);
+            ObjEditar.CargarDatosActuales(_idProveedor, txtRazonSocial, txtNombreComercial, txtDireccionFiscal, txtRtn, txtTelefonoGeneral, txtCorreoCentral, cmbClasificacion, cmbTerminosdePago);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
