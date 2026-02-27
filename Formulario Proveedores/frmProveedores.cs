@@ -42,6 +42,7 @@ namespace TRAMADE
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgvProveedores.DataSource = dt;
+            dgvProveedores.Columns["id_proveedor"].Visible = false; // ← oculta pero existe para leerla
         }
 
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
@@ -56,11 +57,25 @@ namespace TRAMADE
         {
             if (e.RowIndex >= 0)
             {
-                int idProveedor = Convert.ToInt32(dgvProveedores.Rows[e.RowIndex].Cells["id_proveedor"].Value);
-
+                // Leer columna 0 que sería id_proveedor si la agregas oculta
+                int idProveedor = Convert.ToInt32(dgvProveedores.Rows[e.RowIndex].Cells[0].Value);
                 frmProveedores_Perfil frmPerfil = new frmProveedores_Perfil(idProveedor);
                 frmPerfil.Show();
             }
+        }
+
+        private void btnFiltrarActivo_Click(object sender, EventArgs e)
+        {
+            clsProveedores ObjProveedores = new clsProveedores();
+            dgvProveedores.DataSource = ObjProveedores.FiltrarPorEstado("ACTIVO");
+            dgvProveedores.Columns["id_proveedor"].Visible = false;
+        }
+
+        private void btnFiltrarInactivo_Click(object sender, EventArgs e)
+        {
+            clsProveedores ObjProveedores = new clsProveedores();
+            dgvProveedores.DataSource = ObjProveedores.FiltrarPorEstado("INACTIVO");
+            dgvProveedores.Columns["id_proveedor"].Visible = false;
         }
     }
 }

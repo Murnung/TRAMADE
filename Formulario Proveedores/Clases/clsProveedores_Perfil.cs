@@ -34,8 +34,6 @@ namespace TRAMADE.Formulario_Proveedores.Clases
                 if (reader.Read())
                 {
                     ObjPerfil = new clsProveedores_Perfil();
-
-                    // Campos heredados de clsProveedores
                     ObjPerfil.id_proveedor = Convert.ToInt32(reader["id_proveedor"]);
                     ObjPerfil.nombre_comercial_proveedor = reader["nombre_comercial_proveedor"].ToString();
                     ObjPerfil.razon_social_proveedor = reader["razon_social_proveedor"].ToString();
@@ -46,17 +44,19 @@ namespace TRAMADE.Formulario_Proveedores.Clases
                     ObjPerfil.id_terminos_de_pago_proveedor = Convert.ToInt32(reader["id_terminos_de_pago_proveedor"]);
                     ObjPerfil.contacto_proveedor = reader["contacto_proveedor"].ToString();
                     ObjPerfil.correo_electronico_proveedor = reader["correo_electronico_proveedor"].ToString();
-
-                    // Campos propios de la clase hija
                     ObjPerfil.descripcion_clasificacion = reader["descripcion_clasificacion_proveedor"].ToString();
                     ObjPerfil.descripcion_terminos_de_pago = reader["descripcion_terminos_de_pago"].ToString();
                     ObjPerfil.dias_credito = Convert.ToInt32(reader["dias_credito"]);
+                }
+                else
+                {
+                    MessageBox.Show("El reader no devolvió filas para id: " + idProveedor); // ← debug
                 }
                 reader.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener perfil: " + ex.Message);
+                MessageBox.Show("Error exacto: " + ex.Message); // ← antes solo decía "Error al obtener perfil"
             }
             finally
             {

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TRAMADE.Formulario_Proveedores.Clases
 {
@@ -39,6 +40,29 @@ namespace TRAMADE.Formulario_Proveedores.Clases
             id_terminos_de_pago_proveedor = terminos;
             contacto_proveedor = contacto;
             correo_electronico_proveedor = correo;
+        }
+
+        public DataTable FiltrarPorEstado(string estado)  // ← int a string
+        {
+            clsConexion ObjConexion = new clsConexion();
+            DataTable dt = new DataTable();
+            try
+            {
+                ObjConexion.Abrir();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM VistaProveedorTabla WHERE [Estado] = @estado", ObjConexion.SqlC);
+                cmd.Parameters.AddWithValue("@estado", estado);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+            return dt;
         }
 
     }

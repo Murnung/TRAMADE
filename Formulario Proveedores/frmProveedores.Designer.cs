@@ -54,7 +54,6 @@
             this.btnFiltrarActivo = new Krypton.Toolkit.KryptonButton();
             this.btnFiltrarInactivo = new Krypton.Toolkit.KryptonButton();
             this.dgvProveedores = new Krypton.Toolkit.KryptonDataGridView();
-            this.btnRefresh = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
@@ -367,6 +366,7 @@
             this.btnFiltrarActivo.TabIndex = 16;
             this.btnFiltrarActivo.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnFiltrarActivo.Values.Text = "Activo";
+            this.btnFiltrarActivo.Click += new System.EventHandler(this.btnFiltrarActivo_Click);
             // 
             // btnFiltrarInactivo
             // 
@@ -389,11 +389,13 @@
             this.btnFiltrarInactivo.TabIndex = 15;
             this.btnFiltrarInactivo.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnFiltrarInactivo.Values.Text = "Inactivo";
+            this.btnFiltrarInactivo.Click += new System.EventHandler(this.btnFiltrarInactivo_Click);
             // 
             // dgvProveedores
             // 
             this.dgvProveedores.AllowUserToAddRows = false;
             this.dgvProveedores.AllowUserToDeleteRows = false;
+            this.dgvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedores.GridStyles.Style = Krypton.Toolkit.DataGridViewStyle.Sheet;
@@ -422,34 +424,11 @@
             this.dgvProveedores.TabIndex = 20;
             this.dgvProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedores_CellDoubleClick);
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(669, 646);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.OverrideDefault.Back.Color1 = System.Drawing.Color.Lime;
-            this.btnRefresh.OverrideDefault.Back.Color2 = System.Drawing.Color.Lime;
-            this.btnRefresh.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnRefresh.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnRefresh.Size = new System.Drawing.Size(106, 44);
-            this.btnRefresh.StateCommon.Back.Color1 = System.Drawing.Color.Lime;
-            this.btnRefresh.StateCommon.Back.Color2 = System.Drawing.Color.Lime;
-            this.btnRefresh.StateCommon.Border.Rounding = 10F;
-            this.btnRefresh.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
-            this.btnRefresh.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnRefresh.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnRefresh.StateTracking.Border.Color1 = System.Drawing.Color.Green;
-            this.btnRefresh.StateTracking.Border.Color2 = System.Drawing.Color.Green;
-            this.btnRefresh.TabIndex = 21;
-            this.btnRefresh.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRefresh.Values.Text = "Refresh";
-            // 
             // frmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 707);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvProveedores);
             this.Controls.Add(this.btnFiltrarActivo);
             this.Controls.Add(this.btnFiltrarInactivo);
@@ -508,6 +487,5 @@
         private Krypton.Toolkit.KryptonButton btnFiltrarActivo;
         private Krypton.Toolkit.KryptonButton btnFiltrarInactivo;
         private Krypton.Toolkit.KryptonDataGridView dgvProveedores;
-        private Krypton.Toolkit.KryptonButton btnRefresh;
     }
 }

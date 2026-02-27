@@ -17,6 +17,8 @@ namespace TRAMADE
         public frmProveedores_Añadir()
         {
             InitializeComponent();
+            clsProveedores_Añadir.llenarComboClasificacion(cmbClasificacion, ObjConexion);
+            clsProveedores_Añadir.llenarComboTerminosPago(cmbTerminosdePago, ObjConexion);
         }
 
         clsConexion ObjConexion = new clsConexion();
@@ -24,8 +26,7 @@ namespace TRAMADE
 
         private void frmProveedores_Añadir_Load(object sender, EventArgs e)
         {
-            clsProveedores_Añadir.llenarComboClasificacion(cmbClasificacion, ObjConexion);
-            clsProveedores_Añadir.llenarComboTerminosPago(cmbTerminosdePago, ObjConexion);
+            
         }
 
 
