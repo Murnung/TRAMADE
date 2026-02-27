@@ -15,8 +15,6 @@ namespace TRAMADE
     {
         clsConexion ObjConexion = new clsConexion();
         clsCompras ObjCompras = new clsCompras();
-        
-  
         public frmRegistrar()
         {
             InitializeComponent();
@@ -33,10 +31,8 @@ namespace TRAMADE
             clsCompras.llenarComboProducto(cmbProducto,ObjConexion);
             clsCompras.llenarComboProveedor(cmbProveedor, ObjConexion);
             clsCompras.llenarComboFormaPago(cmbFormaPago, ObjConexion);
-            txtPrecio.Clear();
+            btnLimpiar_Click(sender, e);
 
-            txtSubtotal.Text = Convert.ToString(ObjCompras.subtotal());
-            
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -103,6 +99,8 @@ namespace TRAMADE
                 int productoId = Convert.ToInt32(drv["id_producto"]); 
                 string productoNombre = drv["nombre_producto"].ToString();
                 clsCompras.llenarTextoPrecio(txtPrecio, cmbProducto, ObjConexion);
+
+                calcularTotales();
             }
 
         }
@@ -179,7 +177,7 @@ namespace TRAMADE
                 if (resultadoFinal)
                 {
                     MessageBox.Show("¡COMPRA REGISTRADA EXITOSAMENTE!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnLimpiar_Click(sender, e);
+                   // btnLimpiar_Click(sender, e);
                 }
                 else
                 {
@@ -193,6 +191,21 @@ namespace TRAMADE
             }
         }
 
-     
+        private void calcularTotales()
+        {
+            decimal precio = 0;
+            decimal.TryParse(txtPrecio.Text, out precio);
+            ObjCompras.setCantidad((int)nudCantidad.Value);
+            ObjCompras.setPrecio(precio);
+
+            txtSubtotal.Text = ObjCompras.Subtotal().ToString("0.00");
+            txtImpuesto.Text = ObjCompras.Impuesto().ToString("0.00");
+            txtTotal.Text = ObjCompras.Total().ToString("0.00");
+        }
+
+        private void nudCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            calcularTotales();
+        }
     }
 }

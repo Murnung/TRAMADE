@@ -20,6 +20,7 @@ namespace TRAMADE.ClasesCompras
         private string contacto, direccion,telefono;
         private decimal precioCosto;
         private bool autorizar = false;
+        private const decimal IVA = 0.15m;
 
 
         //Constructor vacio
@@ -79,25 +80,17 @@ namespace TRAMADE.ClasesCompras
             idUsuario = valor;
         }
 
-        //Metodo para calcular subtotal
-        public decimal subtotal()
-        {
+        public decimal Subtotal() {
             return cantidad * precioCosto;
         }
 
-
-        //Metodo para calcular el impuesto
-        public decimal impuesto()
-        {
-            return subtotal() * 0.15m;
+        public decimal Impuesto() {
+            return Subtotal() * IVA;
         }
 
-        //Metodo para calcular el total a pagar
-        public decimal total()
-        {
-            return subtotal() + impuesto();
+        public decimal Total() {
+            return Subtotal() * (1 + IVA);
         }
-
         //Metodo para llenar combo box de producto 
         public static void llenarComboProducto(Krypton.Toolkit.KryptonComboBox cmb, clsConexion conexion)
         {
