@@ -50,7 +50,6 @@ namespace TRAMADE
             ObjEditar.ActualizarProveedor(ObjProveedores);
 
             this.Close();
-            Application.OpenForms["frmProveedores_Perfil"]?.Close();
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
