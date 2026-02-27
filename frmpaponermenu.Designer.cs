@@ -35,8 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
             this.btnInicio = new System.Windows.Forms.Button();
-            this.btnProveedores = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.flpBarraLateral = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -50,6 +48,8 @@
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flpBarraLateral.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -76,6 +76,7 @@
             this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnSalir.TabIndex = 9;
             this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
             this.btnSalir.Values.Text = "";
             // 
             // btnMaximizar
@@ -97,6 +98,7 @@
             this.btnMaximizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnMaximizar.TabIndex = 8;
             this.btnMaximizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
             this.btnMaximizar.Values.Text = "";
             // 
             // btnMinimizar
@@ -118,6 +120,7 @@
             this.btnMinimizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnMinimizar.TabIndex = 7;
             this.btnMinimizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
             this.btnMinimizar.Values.Text = "";
             // 
             // panel1
@@ -159,41 +162,6 @@
             this.btnInicio.TabIndex = 2;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = false;
-            // 
-            // btnProveedores
-            // 
-            this.btnProveedores.BackColor = System.Drawing.Color.White;
-            this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProveedores.FlatAppearance.BorderSize = 0;
-            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(-3, -6);
-            this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.btnProveedores.Size = new System.Drawing.Size(266, 60);
-            this.btnProveedores.TabIndex = 12;
-            this.btnProveedores.Text = "Proveedores";
-            this.btnProveedores.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.Window;
-            this.button6.Image = global::TRAMADE.Properties.Resources.Reportes;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(-3, -6);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(245, 60);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "Reportes";
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // flpBarraLateral
             // 
@@ -348,6 +316,42 @@
             this.btnCompras.TabIndex = 10;
             this.btnCompras.Text = "Compras";
             this.btnCompras.UseVisualStyleBackColor = false;
+            // 
+            // btnProveedores
+            // 
+            this.btnProveedores.BackColor = System.Drawing.Color.White;
+            this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
+            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnProveedores.Image = global::TRAMADE.Properties.Resources.PRoveedores_Seleccionado_;
+            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.Location = new System.Drawing.Point(-21, -3);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
+            this.btnProveedores.Size = new System.Drawing.Size(266, 60);
+            this.btnProveedores.TabIndex = 12;
+            this.btnProveedores.Text = "    Proveedores";
+            this.btnProveedores.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.Window;
+            this.button6.Image = global::TRAMADE.Properties.Resources.Reportes;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(-3, -6);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(245, 60);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "Reportes";
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // frmpaponermenu
             // 

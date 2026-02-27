@@ -181,5 +181,17 @@
   <ItemGroup>
     <None Include="Resources\Iconos\Reportes.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconos\Minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconos\Maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconos\Cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconos\PRoveedores%28Seleccionado%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
