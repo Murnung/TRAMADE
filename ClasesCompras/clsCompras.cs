@@ -323,6 +323,86 @@ namespace TRAMADE.ClasesCompras
                 conexion.Cerrar();
             }
         }
+
+        public bool actualizarCompra(clsConexion conexion)
+        {
+            try
+            {
+                conexion.Abrir();
+                //ACTUALIZAR COMPRA 
+                SqlCommand cmdCompras = new SqlCommand("PA_ACTUALIZAR_COMPRA");
+                cmdCompras.Parameters.AddWithValue("id_proveedor", proveedor);
+                cmdCompras.Parameters.AddWithValue("id_forma_pago", formaPago);
+                cmdCompras.Parameters.AddWithValue("id_estado", estado);
+                cmdCompras.Parameters.AddWithValue("id_usuario", idUsuario);
+
+                // Manejo de fecha nula por si el DateTimePicker no tiene fecha
+                if (entrega == DateTime.MinValue)
+                    cmdCompras.Parameters.AddWithValue("@fecha_entrega", DBNull.Value);
+                else
+                    cmdCompras.Parameters.AddWithValue("@fecha_entrega", entrega);
+
+                cmdCompras.Parameters.AddWithValue("@direccion_entrega", direccion);
+                cmdCompras.Parameters.AddWithValue("@contacto_entrega", contacto);
+                cmdCompras.Parameters.AddWithValue("@telefono_entrega", telefono);
+
+                //Ejecuta la consulta, toma solo el primer valor devuelto, en este caso SCPE_IDENTITY(), el cual devuelve el id de compra generada
+                object resultado = cmdCompras.ExecuteScalar();
+
+                if (resultado != null) //Verifica que SP si devolvio un 
+                {
+                    int idGenerado = Convert.ToInt32(resultado); //Convierte el object a entero
+
+                    foreach(DataRow fila in listaProductos.Rows)
+                    {
+                        //ACUTALIZAR DETALLE COMPRA
+                        int idProductoFila = Convert.ToInt32(fila["idProducto"]);
+                        int cantidadFila = Convert.ToInt32(fila["cantidad"]);
+
+                        SqlCommand cmdDetalle = new SqlCommand("PA_ACTUALIZAR_DETALLE_COMPRA", conexion.SqlC);
+                        cmdDetalle.CommandType = CommandType.StoredProcedure;
+                        cmdDetalle.Parameters.AddWithValue("@id_compra", idGenerado);
+                        cmdDetalle.Parameters.AddWithValue("@id_producto", idProductoFila);
+                        cmdDetalle.Parameters.AddWithValue("@cantidad", cantidadFila);
+                        cmdDetalle.ExecuteNonQuery();
+
+                        //ACTUALIZAR PRODUCTO_PROVEEDOR
+                        if (proveedor != 0 && producto != 0)
+                        {
+                            // Verificar si ya existe la relacion producto_proveedor
+                            string sqlVerificar = "SELECT COUNT(*) FROM Vista_Producto_Proveedor  WHERE id_producto = @id_producto AND id_proveedor = @id_proveedor";
+                            SqlCommand cmdVerificar = new SqlCommand(sqlVerificar, conexion.SqlC);
+                            cmdVerificar.Parameters.AddWithValue("@id_producto", idProductoFila);
+                            cmdVerificar.Parameters.AddWithValue("@id_proveedor", proveedor);
+
+                            int existe = Convert.ToInt32(cmdVerificar.ExecuteScalar());
+
+                            if (existe == 0) // Solo inserta si no existe
+                            {
+                                SqlCommand cmdProductoProveedor = new SqlCommand("PA_ACTUALIZAR_PRODUCTO_PROVEEDOR", conexion.SqlC);
+                                cmdProductoProveedor.CommandType = CommandType.StoredProcedure;
+                                cmdProductoProveedor.Parameters.AddWithValue("@id_producto", idProductoFila);
+                                cmdProductoProveedor.Parameters.AddWithValue("@id_proveedor", proveedor);
+                                cmdProductoProveedor.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    listaProductos.Clear();
+                    return true;
+                }
+                return false;   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error crítico: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+
+        }
     }
 }
     

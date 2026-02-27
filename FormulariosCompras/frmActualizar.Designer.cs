@@ -238,7 +238,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(211, 124);
+            this.txtId.Location = new System.Drawing.Point(182, 124);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(190, 31);
             this.txtId.StateCommon.Border.Rounding = 5F;
