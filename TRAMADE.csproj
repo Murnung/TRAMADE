@@ -104,6 +104,12 @@
     <Compile Include="Formulario Proveedores\frmProveedores_Editar.Designer.cs">
       <DependentUpon>frmProveedores_Editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmpaponermenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmpaponermenu.Designer.cs">
+      <DependentUpon>frmpaponermenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario Proveedores\frmProveedores_Editar.resx">
       <DependentUpon>frmProveedores_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmpaponermenu.resx">
+      <DependentUpon>frmpaponermenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -157,6 +166,20 @@
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Iconos\Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconos\Ventas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconos\Inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconos\Compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconos\Reportes.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
