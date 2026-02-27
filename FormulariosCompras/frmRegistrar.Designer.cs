@@ -356,11 +356,12 @@
             // 
             // lstProductos
             // 
-            this.lstProductos.Location = new System.Drawing.Point(491, 328);
+            this.lstProductos.Location = new System.Drawing.Point(494, 326);
             this.lstProductos.Name = "lstProductos";
             this.lstProductos.Size = new System.Drawing.Size(299, 205);
             this.lstProductos.StateCommon.Border.Rounding = 10F;
             this.lstProductos.TabIndex = 70;
+            this.lstProductos.SelectedIndexChanged += new System.EventHandler(this.lstProductos_SelectedIndexChanged);
             // 
             // txtContacto
             // 

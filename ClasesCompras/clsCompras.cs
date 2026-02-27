@@ -49,6 +49,10 @@ namespace TRAMADE.ClasesCompras
         public void setPrecio(decimal valor){precioCosto = valor;}
         public void setEntrega(DateTime valor) {entrega = valor; }
 
+
+        //Getters
+        public int getCantidad() { return cantidad; }
+        public decimal getPrecio() { return precioCosto; }
         //Calculos 
         public void setIdUsuario(int valor) { idUsuario = valor; }
         public decimal Subtotal() {return cantidad * precioCosto;}
@@ -228,6 +232,12 @@ namespace TRAMADE.ClasesCompras
         public void limpiarLista()
         {
             listaProductos.Clear();
+        }
+
+        //Metodo pra obtener la fila 
+        public DataRow obtenerFila(int indice)
+        {
+            return listaProductos.Rows[indice];
         }
 
         public bool insertarCompras(clsConexion conexion)

@@ -37,6 +37,7 @@ namespace TRAMADE
             ObjCompras.vincularListBox(lstProductos); // Vincular lista al ListBox
             
 
+
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -240,6 +241,28 @@ namespace TRAMADE
         {
             ObjCompras.eliminarProducto(lstProductos);
             txtTotal.Text = ObjCompras.TotalLista().ToString("0.00");
+        }
+
+        private void lstProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstProductos.SelectedIndex == -1) return;
+
+            DataRow fila = ObjCompras.obtenerFila(lstProductos.SelectedIndex);
+
+            // Mostrar los datos del producto seleccionado
+            decimal precio = Convert.ToDecimal(fila["precioCosto"]);
+            int cantidadSel = Convert.ToInt32(fila["cantidad"]);
+
+            // Setear en la clase para usar los calculos
+            ObjCompras.setPrecio(precio);
+            ObjCompras.setCantidad(cantidadSel);
+            //Mostrar precio y cantidad
+            txtPrecio.Text = ObjCompras.getPrecio().ToString();
+            nudCantidad.Value = Convert.ToInt32(ObjCompras.getCantidad());
+            // Mostrar calculos
+            txtSubtotal.Text = ObjCompras.Subtotal().ToString("0.00");
+            txtImpuesto.Text = ObjCompras.Impuesto().ToString("0.00");
+           
         }
     }
 }
