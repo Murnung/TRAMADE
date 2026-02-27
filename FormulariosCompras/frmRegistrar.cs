@@ -28,13 +28,14 @@ namespace TRAMADE
 
         private void frmRegistrar_Load(object sender, EventArgs e)
         {
+            btnRegistrar.Enabled = false;
             cmbProveedor.SelectedIndex = -1;
             clsCompras.llenarComboProducto(cmbProducto,ObjConexion);
             clsCompras.llenarComboProveedor(cmbProveedor, ObjConexion);
             clsCompras.llenarComboFormaPago(cmbFormaPago, ObjConexion);
             btnLimpiar_Click(sender, e);
             ObjCompras.vincularListBox(lstProductos); // Vincular lista al ListBox
-            btnAgregar.Enabled = true;
+            
 
         }
 
@@ -65,6 +66,7 @@ namespace TRAMADE
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
+            
             if (cmbProducto.SelectedIndex == -1)
             {
                 MessageBox.Show("Seleccione un producto primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -84,8 +86,8 @@ namespace TRAMADE
 
             txtTotal.Text = ObjCompras.TotalLista().ToString("0.00");
 
-            btnAgregar.Enabled = true;
-            
+            btnRegistrar.Enabled = true;
+            nudCantidad.Value = 1;
 
         }
 
@@ -213,6 +215,8 @@ namespace TRAMADE
             {
                 MessageBox.Show("Error en el formulario: " + ex.Message);
             }
+            btnLimpiar_Click(sender, e);
+            btnRegistrar.Enabled = false;
         }
 
         private void calcularTotales()

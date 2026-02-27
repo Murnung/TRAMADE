@@ -300,10 +300,7 @@ namespace TRAMADE.ClasesCompras
                     }
                     listaProductos.Clear();
                     return true;
-                   
-
-                }
-                
+                }  
                 return false;
             }
             catch (Exception ex)
@@ -316,10 +313,6 @@ namespace TRAMADE.ClasesCompras
                 conexion.Cerrar();
             }
         }
-
-     
-       
-        
     }
 }
     
