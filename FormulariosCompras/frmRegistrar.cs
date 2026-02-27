@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.ClasesCompras;
-
 namespace TRAMADE
 {
     public partial class frmRegistrar : Form
     {
         clsConexion ObjConexion = new clsConexion();
         clsCompras ObjCompras = new clsCompras();
+
+     
         public frmRegistrar()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace TRAMADE
             clsCompras.llenarComboProveedor(cmbProveedor, ObjConexion);
             clsCompras.llenarComboFormaPago(cmbFormaPago, ObjConexion);
             btnLimpiar_Click(sender, e);
+            ObjCompras.vincularListBox(lstProductos); // Vincular lista al ListBox
+            btnAgregar.Enabled = true;
 
         }
 
@@ -62,6 +65,27 @@ namespace TRAMADE
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
+            if (cmbProducto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un producto primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DataRowView drv = (DataRowView)cmbProducto.SelectedItem;
+
+            ObjCompras.setProducto(Convert.ToInt32(drv["id_producto"]));
+            ObjCompras.setNombreProducto(drv["nombre_producto"].ToString());
+            ObjCompras.setCantidad(Convert.ToInt32(nudCantidad.Value));
+
+            decimal precio = 0;
+            decimal.TryParse(txtPrecio.Text, out precio);
+            ObjCompras.setPrecio(precio);
+
+            ObjCompras.agregarProducto();
+
+            txtTotal.Text = ObjCompras.TotalLista().ToString("0.00");
+
+            btnAgregar.Enabled = true;
+            
 
         }
 
@@ -140,7 +164,7 @@ namespace TRAMADE
             txtSubtotal.Clear();
             txtImpuesto.Clear();
             txtTotal.Clear();
-            lstProductos.Items.Clear();
+            ObjCompras.limpiarLista();
 
         }
 
@@ -153,24 +177,24 @@ namespace TRAMADE
                 return;
             }
 
+            if (cmbFormaPago.SelectedValue == null)
+            {
+                MessageBox.Show("Seleccione una forma de pago.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 // Asignación de datos
                 ObjCompras.setIdUsuario(clsSesion.id_usuario);
                 ObjCompras.setProveedor(Convert.ToInt32(cmbProveedor.SelectedValue));
                 ObjCompras.setFormaPago(Convert.ToInt32(cmbFormaPago.SelectedValue));
-                ObjCompras.setProducto(Convert.ToInt32(cmbProducto.SelectedValue));
                 ObjCompras.setCantidad(Convert.ToInt32(nudCantidad.Value));
-
-                // Manejo de precio (aunque no se use en el detalle, es buena práctica)
-                decimal precio;
-                decimal.TryParse(txtPrecio.Text, out precio);
-                ObjCompras.setPrecio(precio);
-
                 ObjCompras.setContacto(txtContacto.Text.Trim());
                 ObjCompras.setDireccion(txtDireccion.Text.Trim());
-                ObjCompras.setEntrega(dtEntrega.Value);
                 ObjCompras.setTelefono(txtTelefono.Text.Trim());
+                ObjCompras.setEntrega(dtEntrega.Value);
+                
 
                 bool resultadoFinal = ObjCompras.insertarCompras(ObjConexion);
 
@@ -206,6 +230,12 @@ namespace TRAMADE
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
         {
             calcularTotales();
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            ObjCompras.eliminarProducto(lstProductos);
+            txtTotal.Text = ObjCompras.TotalLista().ToString("0.00");
         }
     }
 }

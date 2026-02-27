@@ -1,6 +1,7 @@
 ﻿using Krypton.Toolkit;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,86 +12,47 @@ using System.Web.SessionState;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+
 namespace TRAMADE.ClasesCompras
 {
     internal class clsCompras
     {
         private int cantidad, proveedor, producto, formaPago, estado = 7, idUsuario;
         private DateTime entrega;
-        private string contacto, direccion,telefono;
+        private string contacto, direccion, telefono,nombreProducto;
         private decimal precioCosto;
         private bool autorizar = false;
         private const decimal IVA = 0.15m;
 
-
+        // Lista interna de productos
+        private DataTable listaProductos = new DataTable();
         //Constructor vacio
-        public clsCompras()
-        {
+        public clsCompras(){
+            //Incializar las columnas en el constructor
+            listaProductos.Columns.Add("idProducto", typeof(int));
+            listaProductos.Columns.Add("nombreProducto", typeof(string));
+            listaProductos.Columns.Add("cantidad", typeof(int));
+            listaProductos.Columns.Add("precioCosto", typeof(decimal));
 
         }
-
 
         // Setters
-        public void setProveedor(int valor)
-        {
-            proveedor = valor;
-        }
+        public void setProveedor(int valor){proveedor = valor;}
+        public void setProducto(int valor){producto = valor;}
+        public void setFormaPago(int valor){formaPago = valor;}
+        public void setCantidad(int valor){cantidad = valor;}
+        public void setContacto(string valor){contacto = valor;}
+        public void setDireccion(string valor){direccion = valor;}
+        public void setTelefono(string valor){telefono = valor;}
+        public void setNombreProducto(string valor) { nombreProducto = valor; }
+        public void setPrecio(decimal valor){precioCosto = valor;}
+        public void setEntrega(DateTime valor) {entrega = valor; }
 
-        public void setProducto(int valor)
-        {
-            producto = valor;
-        }
-
-        public void setFormaPago(int valor)
-        {
-            formaPago = valor;
-        }
-
-        public void setCantidad(int valor)
-        {
-            cantidad = valor;
-        }
-        public void setContacto(string valor)
-        {
-            contacto = valor;
-        }
-
-        public void setDireccion(string valor)
-        {
-            direccion = valor;
-        }
-        
-        public void setTelefono(string valor)
-        {
-            telefono = valor;   
-        }
-
-        public void setPrecio(decimal valor)
-        {
-            precioCosto = valor;
-        }
-
-        public void setEntrega(DateTime valor)
-        {
-            entrega = valor;
-        }
-
-        public void setIdUsuario(int valor)
-        {
-            idUsuario = valor;
-        }
-
-        public decimal Subtotal() {
-            return cantidad * precioCosto;
-        }
-
-        public decimal Impuesto() {
-            return Subtotal() * IVA;
-        }
-
-        public decimal Total() {
-            return Subtotal() * (1 + IVA);
-        }
+        //Calculos 
+        public void setIdUsuario(int valor) { idUsuario = valor; }
+        public decimal Subtotal() {return cantidad * precioCosto;}
+        public decimal Impuesto() {return Subtotal() * IVA; }
+        public decimal Total() { return Subtotal() * (1 + IVA);}
         //Metodo para llenar combo box de producto 
         public static void llenarComboProducto(Krypton.Toolkit.KryptonComboBox cmb, clsConexion conexion)
         {
@@ -198,6 +160,74 @@ namespace TRAMADE.ClasesCompras
                 conexion.Cerrar();
             }
         }
+  
+        // Vincular la lista al listbox
+        public void vincularListBox(KryptonListBox lst)
+        {
+            lst.DataSource = listaProductos;
+            lst.DisplayMember = "nombreProducto";
+        }
+
+     
+        // Agregar un products a la lista
+        public void agregarProducto()
+        {
+            // Validar que no se agregue el mismo producto dos veces
+            bool existe = false;
+            foreach (DataRow fila in listaProductos.Rows)
+            {
+                if (Convert.ToInt32(fila["idProducto"]) == producto)
+                {
+                    existe = true;
+                    break;
+                }
+            }
+
+            if (existe)
+            {
+                MessageBox.Show("Este producto ya fue agregado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataRow nuevaFila = listaProductos.NewRow();
+            nuevaFila["idProducto"] = producto;
+            nuevaFila["nombreProducto"] = nombreProducto;
+            nuevaFila["cantidad"] = cantidad;
+            nuevaFila["precioCosto"] = precioCosto;
+
+            listaProductos.Rows.Add(nuevaFila); // El ListBox se actualiza automaticamente
+        }
+
+        
+        // Eliminar producto seleccinado
+        public void eliminarProducto(KryptonListBox lst)
+        {
+            if (lst.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un producto para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            listaProductos.Rows[lst.SelectedIndex].Delete();
+            listaProductos.AcceptChanges();
+        }
+
+        // Total de la lista
+        public decimal TotalLista()
+        {
+            decimal total = 0;
+            foreach (DataRow fila in listaProductos.Rows)
+            {
+                decimal subtotal = Convert.ToInt32(fila["cantidad"]) * Convert.ToDecimal(fila["precioCosto"]);
+                total += subtotal * (1 + IVA);
+            }
+            return total;
+        }
+
+        //Metodo para limpiar la lista
+        public void limpiarLista()
+        {
+            listaProductos.Clear();
+        }
 
         public bool insertarCompras(clsConexion conexion)
         {
@@ -230,39 +260,37 @@ namespace TRAMADE.ClasesCompras
                 if (resultado != null) //Verific que SP si devolvio un ID
                 {
                     int idGenerado = Convert.ToInt32(resultado); //Convierte el Object a entero
-                    
-                    // INSERTAR DETALLE
-                    SqlCommand cmdDetalle = new SqlCommand("PA_INSERTAR_DETALLE_COMPRA", conexion.SqlC);
-                    cmdDetalle.CommandType = CommandType.StoredProcedure;
 
-                    cmdDetalle.Parameters.AddWithValue("@id_compra", idGenerado);
-                    cmdDetalle.Parameters.AddWithValue("@id_producto", producto);
-                    cmdDetalle.Parameters.AddWithValue("@cantidad", cantidad);
-             
-
-                    int filasDetalle = cmdDetalle.ExecuteNonQuery();
-                  
-                    if (proveedor != 0 && producto != 0)
+                    foreach (DataRow fila in listaProductos.Rows)
                     {
-                        //INSERTAR PRODUCTO_PROVEEDOR
-                        SqlCommand cmdProductoProveedor = new SqlCommand("PA_INSERTAR_PRODUCTO_PROVEEDOR", conexion.SqlC);
-                        cmdProductoProveedor.CommandType = CommandType.StoredProcedure;
+                        // INSERTAR DETALLE
+                        SqlCommand cmdDetalle = new SqlCommand("PA_INSERTAR_DETALLE_COMPRA", conexion.SqlC);
+                        cmdDetalle.CommandType = CommandType.StoredProcedure;
+                        cmdDetalle.Parameters.AddWithValue("@id_compra", idGenerado);
+                        cmdDetalle.Parameters.AddWithValue("@id_producto", producto);
+                        cmdDetalle.Parameters.AddWithValue("@cantidad", cantidad);
+                        cmdDetalle.ExecuteNonQuery();
 
-                        cmdProductoProveedor.Parameters.AddWithValue("@id_producto", producto);
-                        cmdProductoProveedor.Parameters.AddWithValue("@id_proveedor", proveedor);
 
-                        int filasProductoProveedor = cmdProductoProveedor.ExecuteNonQuery();
-                 
+                        if (proveedor != 0 && producto != 0)
+                        {
+                            //INSERTAR PRODUCTO_PROVEEDOR
+                            SqlCommand cmdProductoProveedor = new SqlCommand("PA_INSERTAR_PRODUCTO_PROVEEDOR", conexion.SqlC);
+                            cmdProductoProveedor.CommandType = CommandType.StoredProcedure;
+
+                            cmdProductoProveedor.Parameters.AddWithValue("@id_producto", producto);
+                            cmdProductoProveedor.Parameters.AddWithValue("@id_proveedor", proveedor);
+
+                            cmdProductoProveedor.ExecuteNonQuery();
+                        }
 
                     }
                     return true;
+                    listaProductos.Clear();
 
                 }
-
+                
                 return false;
-
-
-
             }
             catch (Exception ex)
             {
@@ -274,6 +302,10 @@ namespace TRAMADE.ClasesCompras
                 conexion.Cerrar();
             }
         }
+
+     
+       
+        
     }
 }
     

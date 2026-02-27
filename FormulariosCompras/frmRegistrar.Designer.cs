@@ -364,6 +364,7 @@
             this.btnQuitar.TabIndex = 68;
             this.btnQuitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnQuitar.Values.Text = "QUITAR";
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // lstProductos
             // 
