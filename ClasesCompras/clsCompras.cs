@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Web.SessionState;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 namespace TRAMADE.ClasesCompras
@@ -264,29 +265,42 @@ namespace TRAMADE.ClasesCompras
                     foreach (DataRow fila in listaProductos.Rows)
                     {
                         // INSERTAR DETALLE
+
+                        int idProductoFila = Convert.ToInt32(fila["idProducto"]);
+                        int cantidadFila = Convert.ToInt32(fila["cantidad"]);
+
                         SqlCommand cmdDetalle = new SqlCommand("PA_INSERTAR_DETALLE_COMPRA", conexion.SqlC);
                         cmdDetalle.CommandType = CommandType.StoredProcedure;
                         cmdDetalle.Parameters.AddWithValue("@id_compra", idGenerado);
-                        cmdDetalle.Parameters.AddWithValue("@id_producto", producto);
-                        cmdDetalle.Parameters.AddWithValue("@cantidad", cantidad);
+                        cmdDetalle.Parameters.AddWithValue("@id_producto", idProductoFila);
+                        cmdDetalle.Parameters.AddWithValue("@cantidad", cantidadFila);
                         cmdDetalle.ExecuteNonQuery();
 
-
+                        //INSERTAR PRODUCTO_PROVEEDOR
                         if (proveedor != 0 && producto != 0)
                         {
-                            //INSERTAR PRODUCTO_PROVEEDOR
-                            SqlCommand cmdProductoProveedor = new SqlCommand("PA_INSERTAR_PRODUCTO_PROVEEDOR", conexion.SqlC);
-                            cmdProductoProveedor.CommandType = CommandType.StoredProcedure;
+                            // Verificar si ya existe la relacion producto_proveedor
+                            string sqlVerificar = "SELECT COUNT(*) FROM Vista_Producto_Proveedor  WHERE id_producto = @id_producto AND id_proveedor = @id_proveedor";
+                            SqlCommand cmdVerificar = new SqlCommand(sqlVerificar, conexion.SqlC);
+                            cmdVerificar.Parameters.AddWithValue("@id_producto", idProductoFila);
+                            cmdVerificar.Parameters.AddWithValue("@id_proveedor", proveedor);
 
-                            cmdProductoProveedor.Parameters.AddWithValue("@id_producto", producto);
-                            cmdProductoProveedor.Parameters.AddWithValue("@id_proveedor", proveedor);
+                            int existe = Convert.ToInt32(cmdVerificar.ExecuteScalar());
 
-                            cmdProductoProveedor.ExecuteNonQuery();
+                            if (existe == 0) // Solo inserta si no existe
+                            {
+                                SqlCommand cmdProductoProveedor = new SqlCommand("PA_INSERTAR_PRODUCTO_PROVEEDOR", conexion.SqlC);
+                                cmdProductoProveedor.CommandType = CommandType.StoredProcedure;
+                                cmdProductoProveedor.Parameters.AddWithValue("@id_producto", idProductoFila);
+                                cmdProductoProveedor.Parameters.AddWithValue("@id_proveedor", proveedor);
+                                cmdProductoProveedor.ExecuteNonQuery();
+                            }
                         }
 
                     }
-                    return true;
                     listaProductos.Clear();
+                    return true;
+                   
 
                 }
                 

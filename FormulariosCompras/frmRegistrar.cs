@@ -151,7 +151,7 @@ namespace TRAMADE
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtId.Clear();
+        
             dtEntrega.Value = DateTime.Now;
             txtContacto.Clear();
             txtDireccion.Clear();
