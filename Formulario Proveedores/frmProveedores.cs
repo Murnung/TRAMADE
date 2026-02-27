@@ -77,6 +77,13 @@ namespace TRAMADE
             dgvProveedores.DataSource = ObjProveedores.FiltrarPorEstado("INACTIVO");
             dgvProveedores.Columns["id_proveedor"].Visible = false;
         }
+
+        public void RecargarProveedoresAC()
+        {
+            clsProveedores ObjProveedores = new clsProveedores();
+            dgvProveedores.DataSource = ObjProveedores.ObtenerProveedores();
+            dgvProveedores.Columns["id_proveedor"].Visible = false;
+        }
     }
 }
 

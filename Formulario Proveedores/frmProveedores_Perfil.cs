@@ -28,9 +28,30 @@ namespace TRAMADE.Formulario_Proveedores
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmProveedores_Editar frmEditar = new frmProveedores_Editar();
-            frmEditar.Show();
+            
         }
 
+        private void chkEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            clsProveedores_Perfil ObjPerfil = new clsProveedores_Perfil();
+
+            // Cambiar estado en BD
+            ObjPerfil.CambiarEstado(_idProveedor, chkEstado.Checked);
+
+            // Recargar perfil
+            ObjPerfil.CargarPerfil(_idProveedor, lstInformacionGeneral,
+                                    lstDatosdeContacto, lstClasificacion, chkEstado);
+
+            // Recargar DGV en frmProveedores en tiempo real
+            frmProveedores frmProv = Application.OpenForms["frmProveedores"] as frmProveedores;
+            if (frmProv != null)
+                frmProv.RecargarProveedoresAC();
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            frmProveedores_Editar frmEditar = new frmProveedores_Editar(_idProveedor);
+            frmEditar.ShowDialog();
+        }
     }
 }

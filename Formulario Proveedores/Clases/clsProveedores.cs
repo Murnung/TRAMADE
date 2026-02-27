@@ -65,5 +65,27 @@ namespace TRAMADE.Formulario_Proveedores.Clases
             return dt;
         }
 
+        // ─── OBTENER TABLA DE PROVEEDORES ────────────────────────────
+        public DataTable ObtenerProveedores()
+        {
+            clsConexion ObjConexion = new clsConexion();
+            DataTable dt = new DataTable();
+            try
+            {
+                ObjConexion.Abrir();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM VistaProveedorTabla", ObjConexion.SqlC);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener proveedores: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+            return dt;
+        }
+
     }
 }

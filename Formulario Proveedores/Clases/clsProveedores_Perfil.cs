@@ -112,5 +112,26 @@ namespace TRAMADE.Formulario_Proveedores.Clases
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        // ─── CAMBIAR ESTADO DEL PROVEEDOR ────────────────────────────
+        public void CambiarEstado(int idProveedor, bool activo)
+        {
+            try
+            {
+                ObjConexion.Abrir();
+                SqlCommand cmd = new SqlCommand("UPDATE PROVEEDOR SET id_estado = @estado WHERE id_proveedor = @id", ObjConexion.SqlC);
+                cmd.Parameters.AddWithValue("@estado", activo ? 1 : 2);
+                cmd.Parameters.AddWithValue("@id", idProveedor);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cambiar estado: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+        }
     }
 }

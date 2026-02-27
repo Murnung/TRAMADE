@@ -34,7 +34,7 @@
             this.txtRtn = new Krypton.Toolkit.KryptonTextBox();
             this.txtNombreComercial = new Krypton.Toolkit.KryptonTextBox();
             this.txtDireccionFiscal = new Krypton.Toolkit.KryptonTextBox();
-            this.txtRazonComercial = new Krypton.Toolkit.KryptonTextBox();
+            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -120,16 +120,16 @@
             this.txtDireccionFiscal.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccionFiscal.TabIndex = 20;
             // 
-            // txtRazonComercial
+            // txtRazonSocial
             // 
-            this.txtRazonComercial.CueHint.Color1 = System.Drawing.Color.Gray;
-            this.txtRazonComercial.CueHint.CueHintText = "RAZÓN SOCIAL";
-            this.txtRazonComercial.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonComercial.Location = new System.Drawing.Point(60, 189);
-            this.txtRazonComercial.Name = "txtRazonComercial";
-            this.txtRazonComercial.Size = new System.Drawing.Size(331, 42);
-            this.txtRazonComercial.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonComercial.TabIndex = 19;
+            this.txtRazonSocial.CueHint.Color1 = System.Drawing.Color.Gray;
+            this.txtRazonSocial.CueHint.CueHintText = "RAZÓN SOCIAL";
+            this.txtRazonSocial.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazonSocial.Location = new System.Drawing.Point(60, 189);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(331, 42);
+            this.txtRazonSocial.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazonSocial.TabIndex = 19;
             // 
             // label4
             // 
@@ -202,6 +202,7 @@
             this.btnCancelar.TabIndex = 29;
             this.btnCancelar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnCancelar.Values.Text = "CANCELAR";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnGuardar
             // 
@@ -224,6 +225,7 @@
             this.btnGuardar.TabIndex = 28;
             this.btnGuardar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnGuardar.Values.Text = "GUARDAR";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cmbTerminosdePago
             // 
@@ -259,7 +261,7 @@
             this.Controls.Add(this.txtRtn);
             this.Controls.Add(this.txtNombreComercial);
             this.Controls.Add(this.txtDireccionFiscal);
-            this.Controls.Add(this.txtRazonComercial);
+            this.Controls.Add(this.txtRazonSocial);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -284,7 +286,7 @@
         private Krypton.Toolkit.KryptonTextBox txtRtn;
         private Krypton.Toolkit.KryptonTextBox txtNombreComercial;
         private Krypton.Toolkit.KryptonTextBox txtDireccionFiscal;
-        private Krypton.Toolkit.KryptonTextBox txtRazonComercial;
+        private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

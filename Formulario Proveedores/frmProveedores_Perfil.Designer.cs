@@ -344,6 +344,7 @@
             this.chkEstado.StateCommon.ShortText.Font = new System.Drawing.Font("Poppins Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEstado.TabIndex = 27;
             this.chkEstado.Values.Text = "Activo";
+            this.chkEstado.CheckedChanged += new System.EventHandler(this.chkEstado_CheckedChanged);
             // 
             // btnEditar
             // 
@@ -366,6 +367,7 @@
             this.btnEditar.TabIndex = 30;
             this.btnEditar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnEditar.Values.Text = "EDITAR";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // label4
             // 
