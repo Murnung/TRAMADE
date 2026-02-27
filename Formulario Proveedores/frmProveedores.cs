@@ -35,7 +35,7 @@ namespace TRAMADE
 
         }
 
-        private void RecargarProveedores()
+        public void RecargarProveedores()
         {
             string consulta = "select * from VistaProveedorTabla";
             SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);

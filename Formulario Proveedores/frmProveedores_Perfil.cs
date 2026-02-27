@@ -20,8 +20,7 @@ namespace TRAMADE.Formulario_Proveedores
         {
             InitializeComponent();
             _idProveedor = idProveedor; // Asignar el valor del ID del proveedor al campo privado
-
-            MessageBox.Show("ID: " + _idProveedor); // debug
+            MessageBox.Show("ID: " + _idProveedor);
             clsProveedores_Perfil ObjPerfil = new clsProveedores_Perfil();
             ObjPerfil.CargarPerfil(_idProveedor, lstInformacionGeneral, lstDatosdeContacto, lstClasificacion, chkEstado);
         }
@@ -29,6 +28,12 @@ namespace TRAMADE.Formulario_Proveedores
         private void btnEditar_Click(object sender, EventArgs e)
         {
             
+        }
+
+        public void RecargarPerfil()
+        {
+            clsProveedores_Perfil ObjPerfil = new clsProveedores_Perfil();
+            ObjPerfil.CargarPerfil(_idProveedor, lstInformacionGeneral, lstDatosdeContacto, lstClasificacion, chkEstado);
         }
 
         private void chkEstado_CheckedChanged(object sender, EventArgs e)

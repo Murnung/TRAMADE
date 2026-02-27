@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.Formulario_Proveedores;
 using TRAMADE.Formulario_Proveedores.Clases;
 
 namespace TRAMADE
@@ -31,21 +32,33 @@ namespace TRAMADE
         {
         }
 
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             clsProveedores ObjProveedores = new clsProveedores(
-            txtNombreComercial.Text,
-            txtRazonSocial.Text,
-            txtDireccionFiscal.Text,
-            txtRtn.Text,
-            Convert.ToInt32(cmbClasificacion.SelectedValue),
-            Convert.ToInt32(cmbTerminosdePago.SelectedValue),
-            txtTelefonoGeneral.Text,
-            txtCorreoCentral.Text);
+                txtNombreComercial.Text,
+                txtRazonSocial.Text,
+                txtDireccionFiscal.Text,
+                txtRtn.Text,
+                Convert.ToInt32(cmbClasificacion.SelectedValue),
+                Convert.ToInt32(cmbTerminosdePago.SelectedValue),
+                txtTelefonoGeneral.Text,
+                txtCorreoCentral.Text);
 
             ObjProveedores.id_proveedor = _idProveedor;
 
             ObjEditar.ActualizarProveedor(ObjProveedores);
+
+            // ─── Recargar ListBox en frmProveedores_Perfil ───────────────
+            frmProveedores_Perfil frmPerfil = Application.OpenForms["frmProveedores_Perfil"] as frmProveedores_Perfil;
+            if (frmPerfil != null)
+                frmPerfil.RecargarPerfil();
+
+            // ─── Recargar DGV en frmProveedores ──────────────────────────
+            frmProveedores frmProv = Application.OpenForms["frmProveedores"] as frmProveedores;
+            if (frmProv != null)
+                frmProv.RecargarProveedores();
 
             this.Close();
         }
