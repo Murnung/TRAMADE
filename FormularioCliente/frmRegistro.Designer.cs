@@ -198,6 +198,14 @@
             this.kryptonTextBox1.StateActive.Border.Width = 4;
             this.kryptonTextBox1.StateActive.Content.Color1 = System.Drawing.Color.Black;
             this.kryptonTextBox1.StateActive.Content.Font = new System.Drawing.Font("Sans Serif Collection", 8F, System.Drawing.FontStyle.Bold);
+            this.kryptonTextBox1.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.kryptonTextBox1.StateDisabled.Border.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateDisabled.Border.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateDisabled.Border.Rounding = 10F;
+            this.kryptonTextBox1.StateDisabled.Border.Width = 4;
+            this.kryptonTextBox1.StateDisabled.Content.Color1 = System.Drawing.Color.Black;
+            this.kryptonTextBox1.StateDisabled.Content.Font = new System.Drawing.Font("Sans Serif Collection", 8F, System.Drawing.FontStyle.Bold);
+            this.kryptonTextBox1.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
             this.kryptonTextBox1.TabIndex = 22;
             this.kryptonTextBox1.Text = "Estimado usuario los campos con (*) son necesarios.";
             // 

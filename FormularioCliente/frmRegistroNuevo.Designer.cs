@@ -60,6 +60,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDepartamento = new Krypton.Toolkit.KryptonTextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -174,7 +175,7 @@
             // kryptonTextBox1
             // 
             this.kryptonTextBox1.Enabled = false;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(147, 3);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(269, 3);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(469, 56);
             this.kryptonTextBox1.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
@@ -184,6 +185,13 @@
             this.kryptonTextBox1.StateActive.Border.Width = 4;
             this.kryptonTextBox1.StateActive.Content.Color1 = System.Drawing.Color.Black;
             this.kryptonTextBox1.StateActive.Content.Font = new System.Drawing.Font("Sans Serif Collection", 8F, System.Drawing.FontStyle.Bold);
+            this.kryptonTextBox1.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.kryptonTextBox1.StateDisabled.Border.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateDisabled.Border.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateDisabled.Border.Rounding = 10F;
+            this.kryptonTextBox1.StateDisabled.Border.Width = 4;
+            this.kryptonTextBox1.StateDisabled.Content.Color1 = System.Drawing.Color.Black;
+            this.kryptonTextBox1.StateDisabled.Content.Font = new System.Drawing.Font("Sans Serif Collection", 8F, System.Drawing.FontStyle.Bold);
             this.kryptonTextBox1.TabIndex = 22;
             this.kryptonTextBox1.Text = "Estimado usuario los campos con (*) son necesarios.";
             // 
@@ -536,5 +544,6 @@
         private System.Windows.Forms.Label label6;
         private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
         private System.Windows.Forms.Label label7;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
