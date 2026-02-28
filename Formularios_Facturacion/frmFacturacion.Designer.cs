@@ -128,6 +128,7 @@
             this.btnNuevo.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnNuevo.Values.Image = global::TRAMADE.Properties.Resources.Signo_de_nuevo_png_1_;
             this.btnNuevo.Values.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEmitirFactura
             // 
@@ -178,6 +179,7 @@
             this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnLimpiar.Values.Image = global::TRAMADE.Properties.Resources.Escoba_borrador_png_3_;
             this.btnLimpiar.Values.Text = "Limpiar";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // kryptonLabel16
             // 
@@ -394,7 +396,7 @@
             this.btnIDVendedor.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnIDVendedor.TabIndex = 18;
             this.btnIDVendedor.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnIDVendedor.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton8.Values.Image")));
+            this.btnIDVendedor.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnIDVendedor.Values.Image")));
             this.btnIDVendedor.Values.Text = "kryptonButton8";
             // 
             // txtNombreVendedor
@@ -704,7 +706,7 @@
             this.btnRegresarFacturacion.StateCommon.Border.Rounding = 10F;
             this.btnRegresarFacturacion.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnRegresarFacturacion.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnRegresarFacturacion.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Content.ShortText.Image")));
+            this.btnRegresarFacturacion.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresarFacturacion.StateCommon.Content.ShortText.Image")));
             this.btnRegresarFacturacion.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnRegresarFacturacion.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.btnRegresarFacturacion.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
