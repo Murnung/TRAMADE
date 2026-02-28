@@ -30,9 +30,9 @@ namespace TRAMADE
         {
             btnRegistrar.Enabled = false;
             cmbProveedor.SelectedIndex = -1;
-            clsCompras.llenarComboProducto(cmbProducto,ObjConexion);
-            clsCompras.llenarComboProveedor(cmbProveedor, ObjConexion);
-            clsCompras.llenarComboFormaPago(cmbFormaPago, ObjConexion);
+            clsLlenarComboProducto.llenarComboProducto(cmbProducto,ObjConexion);
+            clsLlenarComboProveedor.llenarComboProveedor(cmbProveedor, ObjConexion);
+            clsLlenarComboFormaPago.llenarComboFormaPago(cmbFormaPago, ObjConexion);
             btnLimpiar_Click(sender, e);
             ObjCompras.vincularListBox(lstProductos); // Vincular lista al ListBox
             

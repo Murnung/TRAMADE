@@ -66,6 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasesCompras\clsCompras.cs" />
+    <Compile Include="ClasesCompras\clsLlenarComboFormaPago.cs" />
+    <Compile Include="ClasesCompras\clsLlenarComboProducto.cs" />
+    <Compile Include="ClasesCompras\clsLlenarComboProveedor.cs" />
+    <Compile Include="ClasesCompras\clsLlenarListBox.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsSesion.cs" />
     <Compile Include="Form1.cs">

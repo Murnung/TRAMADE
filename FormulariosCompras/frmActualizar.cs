@@ -95,9 +95,9 @@ namespace TRAMADE
 
         private void frmActualizar_Load(object sender, EventArgs e)
         {
-            clsCompras.llenarComboProveedor(cmbProveedor, ObjConexion);
-            clsCompras.llenarComboProducto(cmbProducto, ObjConexion);
-            clsCompras.llenarComboFormaPago(cmbFormaPago, ObjConexion);
+            clsLlenarComboProveedor.llenarComboProveedor(cmbProveedor, ObjConexion);
+            clsLlenarComboProducto.llenarComboProducto(cmbProducto, ObjConexion);
+            clsLlenarComboFormaPago.llenarComboFormaPago(cmbFormaPago, ObjConexion);
 
             cmbProveedor.Enabled = false;
             cmbProducto.Enabled = false;
