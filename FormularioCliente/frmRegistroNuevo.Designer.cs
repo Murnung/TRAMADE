@@ -34,7 +34,6 @@
             this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnInhabilitar = new Krypton.Toolkit.KryptonButton();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             this.btnGuardar = new Krypton.Toolkit.KryptonButton();
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
             this.txtCiudad = new Krypton.Toolkit.KryptonTextBox();
@@ -61,6 +60,13 @@
             this.txtDepartamento = new Krypton.Toolkit.KryptonTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
+            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
+            this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -74,12 +80,18 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.label18);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtBuscar);
+            this.kryptonGroup1.Panel.Controls.Add(this.btnBuscar);
+            this.kryptonGroup1.Panel.Controls.Add(this.label8);
+            this.kryptonGroup1.Panel.Controls.Add(this.label17);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtRTN);
             this.kryptonGroup1.Panel.Controls.Add(this.label7);
             this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
             this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
             this.kryptonGroup1.Panel.Controls.Add(this.label6);
             this.kryptonGroup1.Panel.Controls.Add(this.btnInhabilitar);
-            this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox1);
             this.kryptonGroup1.Panel.Controls.Add(this.btnGuardar);
             this.kryptonGroup1.Panel.Controls.Add(this.btnLimpiar);
             this.kryptonGroup1.Panel.Controls.Add(this.txtCiudad);
@@ -117,7 +129,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label7.Location = new System.Drawing.Point(3, 246);
+            this.label7.Location = new System.Drawing.Point(6, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 44);
             this.label7.TabIndex = 28;
@@ -125,7 +137,7 @@
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(161, 246);
+            this.txtRazonSocial.Location = new System.Drawing.Point(161, 219);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(147, 35);
             this.txtRazonSocial.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -183,29 +195,6 @@
             this.btnInhabilitar.TabIndex = 23;
             this.btnInhabilitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnInhabilitar.Values.Text = "INHABILITAR CLIENTE";
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Enabled = false;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(269, 3);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(469, 56);
-            this.kryptonTextBox1.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
-            this.kryptonTextBox1.StateActive.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox1.StateActive.Border.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox1.StateActive.Border.Rounding = 10F;
-            this.kryptonTextBox1.StateActive.Border.Width = 4;
-            this.kryptonTextBox1.StateActive.Content.Color1 = System.Drawing.Color.Black;
-            this.kryptonTextBox1.StateActive.Content.Font = new System.Drawing.Font("Sans Serif Collection", 8F, System.Drawing.FontStyle.Bold);
-            this.kryptonTextBox1.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
-            this.kryptonTextBox1.StateDisabled.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox1.StateDisabled.Border.Color2 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox1.StateDisabled.Border.Rounding = 10F;
-            this.kryptonTextBox1.StateDisabled.Border.Width = 4;
-            this.kryptonTextBox1.StateDisabled.Content.Color1 = System.Drawing.Color.Black;
-            this.kryptonTextBox1.StateDisabled.Content.Font = new System.Drawing.Font("Sans Serif Collection", 8F, System.Drawing.FontStyle.Bold);
-            this.kryptonTextBox1.TabIndex = 22;
-            this.kryptonTextBox1.Text = "Estimado usuario los campos con (*) son necesarios.";
             // 
             // btnGuardar
             // 
@@ -378,7 +367,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label10.Location = new System.Drawing.Point(3, 135);
+            this.label10.Location = new System.Drawing.Point(3, 109);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(176, 16);
             this.label10.TabIndex = 9;
@@ -390,7 +379,7 @@
             this.cmbTipoCliente.Items.AddRange(new object[] {
             "Empresa",
             "Persona natural"});
-            this.cmbTipoCliente.Location = new System.Drawing.Point(543, 234);
+            this.cmbTipoCliente.Location = new System.Drawing.Point(543, 153);
             this.cmbTipoCliente.Name = "cmbTipoCliente";
             this.cmbTipoCliente.Size = new System.Drawing.Size(147, 35);
             this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -400,6 +389,7 @@
             this.cmbTipoCliente.StateCommon.ComboBox.Border.Width = 4;
             this.cmbTipoCliente.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbTipoCliente.TabIndex = 8;
+            this.cmbTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cmbTipoCliente_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -407,7 +397,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label9.Location = new System.Drawing.Point(392, 234);
+            this.label9.Location = new System.Drawing.Point(362, 150);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(126, 44);
             this.label9.TabIndex = 7;
@@ -415,7 +405,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(161, 205);
+            this.txtNombre.Location = new System.Drawing.Point(161, 175);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(147, 35);
             this.txtNombre.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -429,15 +419,15 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label4.Location = new System.Drawing.Point(392, 170);
+            this.label4.Location = new System.Drawing.Point(362, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 44);
+            this.label4.Size = new System.Drawing.Size(175, 44);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Fecha de registro*";
+            this.label4.Text = "Fecha de actualización ";
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(161, 161);
+            this.txtID.Location = new System.Drawing.Point(161, 134);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(147, 35);
             this.txtID.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -451,17 +441,17 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label3.Location = new System.Drawing.Point(3, 161);
+            this.label3.Location = new System.Drawing.Point(3, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 44);
+            this.label3.Size = new System.Drawing.Size(106, 44);
             this.label3.TabIndex = 3;
-            this.label3.Text = "ID de cliente *";
+            this.label3.Text = "ID de cliente ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(-14, 109);
+            this.label2.Location = new System.Drawing.Point(-14, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(817, 26);
             this.label2.TabIndex = 2;
@@ -473,7 +463,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 10.6F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(-3, 84);
+            this.label1.Location = new System.Drawing.Point(3, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(378, 51);
             this.label1.TabIndex = 0;
@@ -481,7 +471,7 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(543, 170);
+            this.txtFecha.Location = new System.Drawing.Point(543, 112);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(147, 35);
             this.txtFecha.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -495,7 +485,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label5.Location = new System.Drawing.Point(3, 205);
+            this.label5.Location = new System.Drawing.Point(3, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(152, 44);
             this.label5.TabIndex = 5;
@@ -523,6 +513,102 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
             // 
+            // txtRTN
+            // 
+            this.txtRTN.Enabled = false;
+            this.txtRTN.Location = new System.Drawing.Point(543, 194);
+            this.txtRTN.Name = "txtRTN";
+            this.txtRTN.Size = new System.Drawing.Size(147, 35);
+            this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtRTN.StateActive.Border.Rounding = 10F;
+            this.txtRTN.StateActive.Border.Width = 4;
+            this.txtRTN.TabIndex = 29;
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Enabled = false;
+            this.txtDNI.Location = new System.Drawing.Point(543, 240);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(147, 35);
+            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtDNI.StateActive.Border.Rounding = 10F;
+            this.txtDNI.StateActive.Border.Width = 4;
+            this.txtDNI.TabIndex = 31;
+            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label17.Location = new System.Drawing.Point(362, 194);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(47, 44);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "RTN";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label8.Location = new System.Drawing.Point(362, 238);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 44);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "DNI";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(409, 13);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnBuscar.Size = new System.Drawing.Size(88, 32);
+            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.btnBuscar.StateCommon.Border.Rounding = 25F;
+            this.btnBuscar.StateCommon.Border.Width = 1;
+            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnBuscar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnBuscar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnBuscar.TabIndex = 36;
+            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnBuscar.Values.Text = "BUSCAR";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(171, 10);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(230, 35);
+            this.txtBuscar.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtBuscar.StateActive.Border.Rounding = 10F;
+            this.txtBuscar.StateActive.Border.Width = 4;
+            this.txtBuscar.TabIndex = 37;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label18.Location = new System.Drawing.Point(33, 10);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(132, 44);
+            this.label18.TabIndex = 38;
+            this.label18.Text = "Búsqueda por ID";
+            // 
             // frmRegistroNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -546,7 +632,6 @@
         #endregion
 
         private Krypton.Toolkit.KryptonGroup kryptonGroup1;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private Krypton.Toolkit.KryptonButton btnGuardar;
         private Krypton.Toolkit.KryptonButton btnLimpiar;
         private Krypton.Toolkit.KryptonTextBox txtCiudad;
@@ -578,5 +663,12 @@
         private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
         private System.Windows.Forms.Label label7;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Krypton.Toolkit.KryptonTextBox txtRTN;
+        private Krypton.Toolkit.KryptonTextBox txtDNI;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label8;
+        private Krypton.Toolkit.KryptonTextBox txtBuscar;
+        private Krypton.Toolkit.KryptonButton btnBuscar;
+        private System.Windows.Forms.Label label18;
     }
 }

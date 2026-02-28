@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Krypton.Toolkit;
+using System.Linq.Expressions;
 
 namespace TRAMADE.ClasesCliente
 {
@@ -16,11 +17,14 @@ namespace TRAMADE.ClasesCliente
     {
         private string id, nombre, razonSocial, tipoCliente, contacto, dni;
         private string correo, direccion, ciudad, telefono, departamento;
+        private int estado = 7;
         private string RTN;
         private int idUsuario;
         private DateTime fechaRegistro;
 
-
+        private DataTable ListaDepar = new DataTable();
+        private DataTable ListaCiudad = new DataTable();
+        private DataTable ListaTipoCliente = new DataTable();
         public clsCliente()
         {
 
@@ -95,6 +99,64 @@ namespace TRAMADE.ClasesCliente
             dni = valor;
         }
 
+
+        public static void llenarcomboDepartamento(Krypton.Toolkit.KryptonComboBox cmbDepartamento, clsConexion conexion)
+        {
+            try
+            {
+                conexion.Abrir();
+                string consulta = "SELECT id_departamento, nombre_departamento FROM DEPARTAMENTO";
+                SqlDataAdapter adapter = new SqlDataAdapter(consulta, conexion.SqlC);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                cmbDepartamento.DataSource = dt;
+                cmbDepartamento.DisplayMember = "nombre_departamento";
+                cmbDepartamento.ValueMember = "id_departamento";
+
+                cmbDepartamento.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar departamentos: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+
+
+        public static void llenarcombociudad(KryptonComboBox cmbCiudad, clsConexion conexion, int idDepartamento)
+        {
+            try
+            {
+                    conexion.Abrir();
+                    
+                    string consulta = "SELECT id_ciudad, nombre_ciudad FROM CIUDAD WHERE id_departamento = @idDep";
+                    SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
+                    cmd.Parameters.AddWithValue("@idDep", idDepartamento);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    cmbCiudad.DataSource = dt;
+                    cmbCiudad.DisplayMember = "nombre_ciudad";
+                    cmbCiudad.ValueMember = "id_ciudad";
+
+                    cmbCiudad.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar ciudades: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+    
+
         public bool InsertarCliente(clsConexion conexion)
         {
             try
@@ -132,5 +194,8 @@ namespace TRAMADE.ClasesCliente
                 conexion.Cerrar();
             }
         }
+
+        
+        
     }
 }

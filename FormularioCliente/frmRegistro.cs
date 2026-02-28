@@ -25,12 +25,18 @@ namespace TRAMADE
 
         private void frmRegistro_Load(object sender, EventArgs e)
         {
+            clsCliente.llenarcomboDepartamento(cmbDepartamento, ObjConexion);
+            
+
+
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtFecha.ReadOnly = true;
 
             txtID.Text = "AUTOGENERADO";
             txtID.ReadOnly = true;
             txtID.BackColor = Color.LightGray;
+
+           
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -63,12 +69,15 @@ namespace TRAMADE
             txtID.Text = "AUTOGENERADO";
             txtNombre.Text = "";
             cmbTipoCliente.SelectedIndex = -1;
+            cmbDepartamento.SelectedIndex = -1;
+            cmbCiudad.SelectedIndex = -1;
+
             txtContacto.Text = "";
             txtTelefono.Text = "";
-            txtDepartamento.Text = "";
+          
             txtCorreo.Text = "";
             txtDireccion.Text = "";
-            txtCiudad.Text = "";
+           
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             txtRTN.Text = "";
@@ -92,10 +101,10 @@ namespace TRAMADE
                 string.IsNullOrEmpty(cmbTipoCliente.Text) ||
                 string.IsNullOrEmpty(txtContacto.Text) ||
                 string.IsNullOrEmpty(txtTelefono.Text) ||
-                string.IsNullOrEmpty(txtDepartamento.Text) ||
+              
                 string.IsNullOrEmpty(txtCorreo.Text) ||
-                string.IsNullOrEmpty(txtDireccion.Text) ||
-                string.IsNullOrEmpty(txtCiudad.Text))
+                string.IsNullOrEmpty(txtDireccion.Text))
+                
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 return;
@@ -126,13 +135,16 @@ namespace TRAMADE
                 ObjCliente.setIdUsuario(clsSesion.id_usuario);
                 ObjCliente.setNombre(txtNombre.Text);
                 ObjCliente.setRazonSocial(txtRazonSocial.Text);
-                ObjCliente.setTipoCliente(cmbTipoCliente.Text);
+               
                 ObjCliente.setContacto(txtContacto.Text);
                 ObjCliente.setTelefono(txtTelefono.Text);
-                ObjCliente.setDepartamento(txtDepartamento.Text);
                 ObjCliente.setCorreo(txtCorreo.Text);
                 ObjCliente.setDireccion(txtDireccion.Text);
-                ObjCliente.setCiudad(txtCiudad.Text);
+
+                ObjCliente.setTipoCliente(cmbTipoCliente.Text);
+                ObjCliente.setDepartamento(cmbDepartamento.Text);
+                ObjCliente.setCiudad(cmbCiudad.Text);
+
                 ObjCliente.setRTN(txtRTN.Text);
                 ObjCliente.setDNI(txtDNI.Text);
                 DateTime fechaActual = DateTime.Now;
@@ -186,6 +198,19 @@ namespace TRAMADE
                 txtDNI.BackColor = Color.White;
                 
             }
+        }
+
+        private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDepartamento.SelectedIndex != -1 && cmbDepartamento.SelectedItem is DataRowView)
+            {
+                DataRowView drv = (DataRowView)cmbDepartamento.SelectedItem;
+                
+                int idSeleccionado = Convert.ToInt32(drv["id_departamento"]);
+
+                
+                clsCliente.llenarcombociudad(cmbCiudad, ObjConexion, idSeleccionado);
+    }
         }
     }
 }

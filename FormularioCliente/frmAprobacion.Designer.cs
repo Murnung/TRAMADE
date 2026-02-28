@@ -124,6 +124,10 @@
             // 
             this.btnNegar.Location = new System.Drawing.Point(311, 114);
             this.btnNegar.Name = "btnNegar";
+            this.btnNegar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnNegar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnNegar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
+            this.btnNegar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
             this.btnNegar.Size = new System.Drawing.Size(268, 38);
             this.btnNegar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.btnNegar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
@@ -133,6 +137,14 @@
             this.btnNegar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnNegar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnNegar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNegar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnNegar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnNegar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnNegar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnNegar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnNegar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnNegar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
+            this.btnNegar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
             this.btnNegar.TabIndex = 23;
             this.btnNegar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnNegar.Values.Text = "DENEGAR  SELECCIONES";
@@ -141,6 +153,10 @@
             // 
             this.btnAutorizar.Location = new System.Drawing.Point(37, 114);
             this.btnAutorizar.Name = "btnAutorizar";
+            this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
+            this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
+            this.btnAutorizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(207)))), ((int)(((byte)(33)))));
+            this.btnAutorizar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(207)))), ((int)(((byte)(33)))));
             this.btnAutorizar.Size = new System.Drawing.Size(268, 38);
             this.btnAutorizar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
             this.btnAutorizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
@@ -150,6 +166,14 @@
             this.btnAutorizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnAutorizar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnAutorizar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutorizar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
+            this.btnAutorizar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
+            this.btnAutorizar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
+            this.btnAutorizar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
+            this.btnAutorizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
+            this.btnAutorizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
+            this.btnAutorizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(207)))), ((int)(((byte)(33)))));
+            this.btnAutorizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(207)))), ((int)(((byte)(33)))));
             this.btnAutorizar.TabIndex = 22;
             this.btnAutorizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnAutorizar.Values.Text = "AUTORIZAR SELECCIONES";
