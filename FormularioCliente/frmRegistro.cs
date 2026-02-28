@@ -62,8 +62,7 @@ namespace TRAMADE
         {
             txtID.Text = "AUTOGENERADO";
             txtNombre.Text = "";
-            txtRazonSocial.Text = "";
-            cmbTipoCliente.Text = "";
+            cmbTipoCliente.SelectedIndex = -1;
             txtContacto.Text = "";
             txtTelefono.Text = "";
             txtDepartamento.Text = "";
@@ -75,6 +74,14 @@ namespace TRAMADE
             txtRTN.Text = "";
             txtRTN.Enabled = false;
             txtRTN.BackColor = Color.LightGray;
+
+            txtDNI.Text = "";
+            txtDNI.Enabled = false;
+            txtDNI.BackColor = Color.LightGray;
+
+            txtRazonSocial.Text = "";
+            txtRazonSocial.Enabled = false;
+            txtRazonSocial.BackColor = Color.LightGray;
 
         }
 
@@ -103,6 +110,15 @@ namespace TRAMADE
                 }
             }
 
+            if (cmbTipoCliente.Text == "Persona")
+            {
+                if (string.IsNullOrEmpty(txtDNI.Text))
+                {
+                    MessageBox.Show("El número de Identidad (DNI) es obligatorio para personas naturales.");
+                    return;
+                }
+            }
+
             try
             {
 
@@ -118,6 +134,7 @@ namespace TRAMADE
                 ObjCliente.setDireccion(txtDireccion.Text);
                 ObjCliente.setCiudad(txtCiudad.Text);
                 ObjCliente.setRTN(txtRTN.Text);
+                ObjCliente.setDNI(txtDNI.Text);
                 DateTime fechaActual = DateTime.Now;
                 ObjCliente.setFechaRegistro(fechaActual);
 
@@ -150,6 +167,10 @@ namespace TRAMADE
 
                 txtRazonSocial.Enabled = true;
                 txtRazonSocial.BackColor = Color.White;
+
+                txtDNI.Enabled = false;
+                txtDNI.Text = "";
+                txtDNI.BackColor = Color.LightGray;
             }
             else
             {
@@ -160,6 +181,10 @@ namespace TRAMADE
                 txtRazonSocial.Enabled = false;
                 txtRazonSocial.Text = "";
                 txtRazonSocial.BackColor = Color.LightGray;
+                
+                txtDNI.Enabled = true;
+                txtDNI.BackColor = Color.White;
+                
             }
         }
     }

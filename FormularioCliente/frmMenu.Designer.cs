@@ -81,6 +81,10 @@
             // 
             this.btnRegistrar.Location = new System.Drawing.Point(216, 92);
             this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(93)))), ((int)(((byte)(74)))));
+            this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.Size = new System.Drawing.Size(170, 61);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
@@ -90,6 +94,14 @@
             this.btnRegistrar.StateCommon.Border.Width = 1;
             this.btnRegistrar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnRegistrar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(93)))), ((int)(((byte)(74)))));
+            this.btnRegistrar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(93)))), ((int)(((byte)(74)))));
             this.btnRegistrar.TabIndex = 27;
             this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegistrar.Values.Text = "REGISTRAR CLIENTE";
@@ -99,6 +111,10 @@
             // 
             this.btnActualizar.Location = new System.Drawing.Point(404, 92);
             this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(120)))), ((int)(((byte)(134)))));
+            this.btnActualizar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(120)))), ((int)(((byte)(134)))));
             this.btnActualizar.Size = new System.Drawing.Size(170, 61);
             this.btnActualizar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
@@ -108,6 +124,14 @@
             this.btnActualizar.StateCommon.Border.Width = 1;
             this.btnActualizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnActualizar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(120)))), ((int)(((byte)(134)))));
+            this.btnActualizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(120)))), ((int)(((byte)(134)))));
             this.btnActualizar.TabIndex = 28;
             this.btnActualizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnActualizar.Values.Text = "ACTUALIZAR CLIENTE";
@@ -117,6 +141,10 @@
             // 
             this.btnAutorizar.Location = new System.Drawing.Point(602, 92);
             this.btnAutorizar.Name = "btnAutorizar";
+            this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
+            this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
+            this.btnAutorizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
+            this.btnAutorizar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
             this.btnAutorizar.Size = new System.Drawing.Size(170, 61);
             this.btnAutorizar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
             this.btnAutorizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
@@ -126,6 +154,14 @@
             this.btnAutorizar.StateCommon.Border.Width = 1;
             this.btnAutorizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnAutorizar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutorizar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
+            this.btnAutorizar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
+            this.btnAutorizar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
+            this.btnAutorizar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
+            this.btnAutorizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
+            this.btnAutorizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
+            this.btnAutorizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
+            this.btnAutorizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
             this.btnAutorizar.TabIndex = 29;
             this.btnAutorizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnAutorizar.Values.Text = "AUTORIZAR CLIENTE";
@@ -135,6 +171,10 @@
             // 
             this.btnSeguimiento.Location = new System.Drawing.Point(792, 92);
             this.btnSeguimiento.Name = "btnSeguimiento";
+            this.btnSeguimiento.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(167)))), ((int)(((byte)(118)))));
+            this.btnSeguimiento.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(167)))), ((int)(((byte)(118)))));
             this.btnSeguimiento.Size = new System.Drawing.Size(177, 61);
             this.btnSeguimiento.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
@@ -144,6 +184,14 @@
             this.btnSeguimiento.StateCommon.Border.Width = 1;
             this.btnSeguimiento.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnSeguimiento.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeguimiento.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(167)))), ((int)(((byte)(118)))));
+            this.btnSeguimiento.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(167)))), ((int)(((byte)(118)))));
             this.btnSeguimiento.TabIndex = 30;
             this.btnSeguimiento.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE CLIENTE";

@@ -14,7 +14,7 @@ namespace TRAMADE.ClasesCliente
 {
     internal class clsCliente
     {
-        private string id, nombre, razonSocial, tipoCliente, contacto;
+        private string id, nombre, razonSocial, tipoCliente, contacto, dni;
         private string correo, direccion, ciudad, telefono, departamento;
         private string RTN;
         private int idUsuario;
@@ -89,6 +89,12 @@ namespace TRAMADE.ClasesCliente
         {
             idUsuario = valor;
         }
+
+        public void setDNI(string valor)
+        {
+            dni = valor;
+        }
+
         public bool InsertarCliente(clsConexion conexion)
         {
             try
@@ -98,14 +104,15 @@ namespace TRAMADE.ClasesCliente
                 cmdCliente.CommandType = CommandType.StoredProcedure;
 
                 cmdCliente.Parameters.AddWithValue("@nombre_cliente", nombre);
-                cmdCliente.Parameters.AddWithValue("@razon_social", razonSocial);
-                cmdCliente.Parameters.AddWithValue("@rtn_cliente", RTN);
-
+                cmdCliente.Parameters.AddWithValue("@razon_social", string.IsNullOrWhiteSpace(razonSocial) ? (object)DBNull.Value : razonSocial);
+                cmdCliente.Parameters.AddWithValue("@rtn_cliente", string.IsNullOrWhiteSpace(RTN) ? (object)DBNull.Value : RTN);
+                cmdCliente.Parameters.AddWithValue("@dni_cliente", string.IsNullOrWhiteSpace(dni) ? (object)DBNull.Value : dni);
+                
                 cmdCliente.Parameters.AddWithValue("@telefono_cliente", telefono);
                 cmdCliente.Parameters.AddWithValue("@contacto_cliente", contacto);
                 cmdCliente.Parameters.AddWithValue("@correo_electronico_cliente", correo);
                 cmdCliente.Parameters.AddWithValue("@direccion_cliente", direccion);
-               
+                
                 //Provisionales
                 cmdCliente.Parameters.AddWithValue("@id_usuario", 2);
                 cmdCliente.Parameters.AddWithValue("@id_clasificacion_cliente", 1);
