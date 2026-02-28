@@ -116,42 +116,53 @@ namespace TRAMADE
             try
             {
                 ObjConexion.Abrir();
-                string consulta = "SELECT * FROM CLIENTE WHERE id_cliente = @busqueda";
+                string consulta = @"SELECT C.*, CI.id_departamento 
+                    FROM CLIENTE C
+                    INNER JOIN CIUDAD CI ON C.id_ciudad = CI.id_ciudad
+                    WHERE C.id_cliente = @busqueda"; 
                 SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC);
                 cmd.Parameters.AddWithValue("@busqueda", busqueda);
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read())
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
                 {
-                    IdSeleccionado = Convert.ToInt32(reader["id_cliente"]);
+                    DataRow row = dt.Rows[0];
+                    IdSeleccionado = Convert.ToInt32(row["id_cliente"]);
 
-                    txtID.Text = reader["id_cliente"].ToString();
-                    txtID.BackColor = Color.LightGray;
-                    txtID.Enabled = false;
+                   
+                    txtID.Text = row["id_cliente"].ToString();
+                    txtNombre.Text = row["nombre_cliente"].ToString();
+                    txtContacto.Text = row["contacto_cliente"].ToString();
+                    txtTelefono.Text = row["telefono_cliente"].ToString();
+                    txtCorreo.Text = row["correo_electronico_cliente"].ToString();
+                    txtDireccion.Text = row["direccion_cliente"].ToString();
+                    txtDNI.Text = row["dni_cliente"].ToString();
+                    txtRTN.Text = row["rtn_cliente"].ToString();
+                    txtRazonSocial.Text = row["razon_social"].ToString();
 
-                    txtNombre.Text = reader["nombre_cliente"].ToString();
-                    txtContacto.Text = reader["contacto_cliente"].ToString();
-                    txtTelefono.Text = reader["telefono_cliente"].ToString();
-                    txtCorreo.Text = reader["correo_electronico_cliente"].ToString();
-                    txtDireccion.Text = reader["direccion_cliente"].ToString();
-                    txtDNI.Text = reader["dni_cliente"].ToString();
-                    txtRTN.Text = reader["rtn_cliente"].ToString();
-                    txtRazonSocial.Text = reader["razon_social"].ToString();
+                    cmbTipoCliente.SelectedValue = row["id_clasificacion_cliente"];
+
+                    if (row["id_departamento"] != DBNull.Value)
+                    {
+                        int idDepa = Convert.ToInt32(row["id_departamento"]);
+                        cmbDepartamento.SelectedValue = idDepa;
+
+                        clsCliente.llenarcombociudad(cmbCiudad, ObjConexion, idDepa);
+                        
+                        if (row["id_ciudad"] != DBNull.Value)
+                        {
+                            cmbCiudad.SelectedValue = row["id_ciudad"];
+                        }
+                    }
 
 
-                    cmbTipoCliente.SelectedValue = reader["id_clasificacion_cliente"];
-                    int idDepa = Convert.ToInt32(reader["id_departamento"]);
-                    cmbDepartamento.SelectedValue = idDepa;
-                    clsCliente.llenarcombociudad(cmbCiudad, ObjConexion, idDepa);
-                    cmbCiudad.SelectedValue = reader["id_ciudad"];
-
-                    reader.Close();
                 }
                 else
                 {
-                    reader.Close();
-                    IdSeleccionado = 0;
-                    MessageBox.Show("No se encontró ningún cliente con el ID proporcionado.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                  MessageBox.Show("No se encontró ningún cliente con el ID proporcionado.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
