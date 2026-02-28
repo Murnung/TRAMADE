@@ -35,8 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonDateTimePicker1 = new Krypton.Toolkit.KryptonDateTimePicker();
+            this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
+            this.dtDesde = new Krypton.Toolkit.KryptonDateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,6 +48,7 @@
             this.kryptonGroupBox3 = new Krypton.Toolkit.KryptonGroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnBuscar = new Krypton.Toolkit.KryptonButton();
+            this.dtHasta = new Krypton.Toolkit.KryptonDateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
@@ -74,12 +75,12 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1044, 66);
+            this.panel1.Size = new System.Drawing.Size(1301, 66);
             this.panel1.TabIndex = 28;
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(910, 18);
+            this.btnRegresar.Location = new System.Drawing.Point(1074, 18);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
@@ -121,16 +122,16 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel2.Location = new System.Drawing.Point(0, 659);
+            this.panel2.Location = new System.Drawing.Point(0, 694);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(908, 49);
+            this.panel2.Size = new System.Drawing.Size(1234, 36);
             this.panel2.TabIndex = 76;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 77);
+            this.label2.Location = new System.Drawing.Point(12, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(605, 32);
             this.label2.TabIndex = 77;
@@ -140,7 +141,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 131);
+            this.label1.Location = new System.Drawing.Point(27, 253);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 78;
@@ -150,35 +151,35 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(483, 154);
+            this.label3.Location = new System.Drawing.Point(343, 319);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 79;
             this.label3.Text = "COMPRA";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // kryptonTextBox1
+            // txtBuscar
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(571, 150);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(283, 33);
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox1.TabIndex = 81;
+            this.txtBuscar.Location = new System.Drawing.Point(431, 315);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(283, 33);
+            this.txtBuscar.StateCommon.Border.Rounding = 10F;
+            this.txtBuscar.TabIndex = 81;
             // 
-            // kryptonDateTimePicker1
+            // dtDesde
             // 
-            this.kryptonDateTimePicker1.Location = new System.Drawing.Point(36, 154);
-            this.kryptonDateTimePicker1.Name = "kryptonDateTimePicker1";
-            this.kryptonDateTimePicker1.Size = new System.Drawing.Size(235, 29);
-            this.kryptonDateTimePicker1.StateCommon.Border.Rounding = 5F;
-            this.kryptonDateTimePicker1.TabIndex = 82;
+            this.dtDesde.Location = new System.Drawing.Point(31, 278);
+            this.dtDesde.Name = "dtDesde";
+            this.dtDesde.Size = new System.Drawing.Size(278, 29);
+            this.dtDesde.StateCommon.Border.Rounding = 5F;
+            this.dtDesde.TabIndex = 82;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(46, 37);
+            this.label4.Location = new System.Drawing.Point(78, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 18);
             this.label4.TabIndex = 0;
@@ -190,7 +191,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(149)))), ((int)(((byte)(80)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(50, 37);
+            this.label5.Location = new System.Drawing.Point(94, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 18);
             this.label5.TabIndex = 1;
@@ -214,24 +215,24 @@
             this.dgvCompras.AllowUserToAddRows = false;
             this.dgvCompras.AllowUserToDeleteRows = false;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompras.Location = new System.Drawing.Point(18, 336);
+            this.dgvCompras.Location = new System.Drawing.Point(29, 354);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
-            this.dgvCompras.Size = new System.Drawing.Size(998, 303);
+            this.dgvCompras.Size = new System.Drawing.Size(1162, 317);
             this.dgvCompras.TabIndex = 85;
             // 
             // kryptonGroupBox2
             // 
             this.kryptonGroupBox2.CaptionVisible = false;
-            this.kryptonGroupBox2.Location = new System.Drawing.Point(18, 206);
+            this.kryptonGroupBox2.Location = new System.Drawing.Point(59, 126);
             // 
             // kryptonGroupBox2.Panel
             // 
             this.kryptonGroupBox2.Panel.Controls.Add(this.pictureBox1);
             this.kryptonGroupBox2.Panel.Controls.Add(this.label4);
-            this.kryptonGroupBox2.Size = new System.Drawing.Size(298, 109);
+            this.kryptonGroupBox2.Size = new System.Drawing.Size(326, 109);
             this.kryptonGroupBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.kryptonGroupBox2.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.kryptonGroupBox2.StateCommon.Border.Rounding = 10F;
@@ -241,7 +242,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.pictureBox1.Image = global::TRAMADE.Properties.Resources.COMPRAS;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(44, 29);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -251,14 +252,14 @@
             // kryptonGroupBox1
             // 
             this.kryptonGroupBox1.CaptionVisible = false;
-            this.kryptonGroupBox1.Location = new System.Drawing.Point(357, 206);
+            this.kryptonGroupBox1.Location = new System.Drawing.Point(425, 126);
             // 
             // kryptonGroupBox1.Panel
             // 
             this.kryptonGroupBox1.Panel.Controls.Add(this.pictureBox2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.label5);
             this.kryptonGroupBox1.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox1_Panel_Paint);
-            this.kryptonGroupBox1.Size = new System.Drawing.Size(295, 109);
+            this.kryptonGroupBox1.Size = new System.Drawing.Size(330, 109);
             this.kryptonGroupBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(149)))), ((int)(((byte)(80)))));
             this.kryptonGroupBox1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(149)))), ((int)(((byte)(80)))));
             this.kryptonGroupBox1.StateCommon.Border.Rounding = 10F;
@@ -268,7 +269,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(149)))), ((int)(((byte)(80)))));
             this.pictureBox2.Image = global::TRAMADE.Properties.Resources.DINERO;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 26);
+            this.pictureBox2.Location = new System.Drawing.Point(37, 28);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(51, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -278,7 +279,7 @@
             // kryptonGroupBox3
             // 
             this.kryptonGroupBox3.CaptionVisible = false;
-            this.kryptonGroupBox3.Location = new System.Drawing.Point(683, 206);
+            this.kryptonGroupBox3.Location = new System.Drawing.Point(796, 126);
             // 
             // kryptonGroupBox3.Panel
             // 
@@ -303,7 +304,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(860, 158);
+            this.btnBuscar.Location = new System.Drawing.Point(735, 319);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -325,20 +326,30 @@
             this.btnBuscar.TabIndex = 90;
             this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnBuscar.Values.Text = "BUSCAR";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // dtHasta
+            // 
+            this.dtHasta.Location = new System.Drawing.Point(31, 319);
+            this.dtHasta.Name = "dtHasta";
+            this.dtHasta.Size = new System.Drawing.Size(278, 29);
+            this.dtHasta.StateCommon.Border.Rounding = 5F;
+            this.dtHasta.TabIndex = 91;
             // 
             // frmSeguimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1034, 685);
+            this.ClientSize = new System.Drawing.Size(1210, 720);
+            this.Controls.Add(this.dtHasta);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.kryptonGroupBox3);
             this.Controls.Add(this.kryptonGroupBox1);
             this.Controls.Add(this.kryptonGroupBox2);
             this.Controls.Add(this.dgvCompras);
-            this.Controls.Add(this.kryptonDateTimePicker1);
-            this.Controls.Add(this.kryptonTextBox1);
+            this.Controls.Add(this.dtDesde);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -383,8 +394,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private Krypton.Toolkit.KryptonDateTimePicker kryptonDateTimePicker1;
+        private Krypton.Toolkit.KryptonTextBox txtBuscar;
+        private Krypton.Toolkit.KryptonDateTimePicker dtDesde;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -396,5 +407,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private Krypton.Toolkit.KryptonButton btnBuscar;
+        private Krypton.Toolkit.KryptonDateTimePicker dtHasta;
     }
 }

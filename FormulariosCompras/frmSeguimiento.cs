@@ -64,11 +64,7 @@ namespace TRAMADE
             try
             {
                 ObjConexion.Abrir(); // Abrir la conexión
-                string consulta = "SELECT * FROM VistaUsuarioTabla"; // Consulta SQL
-                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt); // Llenar el DataTable
-                dgvCompras.DataSource = dt; // Asignar al DataGridView
+                RecargarUsuarios();
 
             }
             catch (Exception ex)
@@ -86,6 +82,54 @@ namespace TRAMADE
 
         private void kryptonGroupBox1_Panel_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ObjConexion.Abrir(); // Abrimos la conexión
+
+                // Consulta base
+                string consulta = "SELECT * FROM VistaComprasTabla WHERE [Fecha pedido] >= @desde AND [Fecha pedido] <= @hasta";
+
+                int id = 0;
+                bool filtrarPorId = int.TryParse(txtBuscar.Text.Trim(), out id);
+
+                if (filtrarPorId)
+                {
+                    consulta += " AND [ID compra] = @id"; //Agregamos filsto para el id de la solicitud de compra por si aplica
+                }
+
+                using (SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC))
+                {
+                    // Parámetros de fecha
+                    cmd.Parameters.AddWithValue("@desde", dtDesde.Value.Date);
+                    cmd.Parameters.AddWithValue("@hasta", dtHasta.Value.Date.AddDays(1).AddSeconds(-1)); // hasta 23:59:59
+
+                     //Parametros de ID por si aplieca
+                    if (filtrarPorId)
+                    {
+                        cmd.Parameters.AddWithValue("@id",id);
+                    }
+                    // Llenar DataTable con los resultados
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Asignar al DataGridView
+                    dgvCompras.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar compras: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar(); // Cerramos la conexión siempre
+            }
 
         }
     }
