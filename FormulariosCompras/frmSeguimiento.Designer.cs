@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
@@ -48,7 +48,7 @@
             this.kryptonGroupBox3 = new Krypton.Toolkit.KryptonGroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
             this.kryptonGroupBox2.Panel.SuspendLayout();
@@ -73,12 +73,12 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(902, 66);
+            this.panel1.Size = new System.Drawing.Size(1044, 66);
             this.panel1.TabIndex = 28;
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(743, 18);
+            this.btnRegresar.Location = new System.Drawing.Point(910, 18);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
@@ -208,18 +208,18 @@
             this.label6.Text = "Tiempo de respuesta promedio";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // dataGridView1
+            // dgvCompras
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 336);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(872, 303);
-            this.dataGridView1.TabIndex = 85;
+            this.dgvCompras.AllowUserToAddRows = false;
+            this.dgvCompras.AllowUserToDeleteRows = false;
+            this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompras.Location = new System.Drawing.Point(18, 336);
+            this.dgvCompras.Name = "dgvCompras";
+            this.dgvCompras.ReadOnly = true;
+            this.dgvCompras.RowHeadersWidth = 51;
+            this.dgvCompras.RowTemplate.Height = 24;
+            this.dgvCompras.Size = new System.Drawing.Size(998, 303);
+            this.dgvCompras.TabIndex = 85;
             // 
             // kryptonGroupBox2
             // 
@@ -230,7 +230,7 @@
             // 
             this.kryptonGroupBox2.Panel.Controls.Add(this.pictureBox1);
             this.kryptonGroupBox2.Panel.Controls.Add(this.label4);
-            this.kryptonGroupBox2.Size = new System.Drawing.Size(257, 109);
+            this.kryptonGroupBox2.Size = new System.Drawing.Size(298, 109);
             this.kryptonGroupBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.kryptonGroupBox2.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.kryptonGroupBox2.StateCommon.Border.Rounding = 10F;
@@ -250,14 +250,14 @@
             // kryptonGroupBox1
             // 
             this.kryptonGroupBox1.CaptionVisible = false;
-            this.kryptonGroupBox1.Location = new System.Drawing.Point(281, 206);
+            this.kryptonGroupBox1.Location = new System.Drawing.Point(357, 206);
             // 
             // kryptonGroupBox1.Panel
             // 
             this.kryptonGroupBox1.Panel.Controls.Add(this.pictureBox2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.label5);
             this.kryptonGroupBox1.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox1_Panel_Paint);
-            this.kryptonGroupBox1.Size = new System.Drawing.Size(261, 109);
+            this.kryptonGroupBox1.Size = new System.Drawing.Size(295, 109);
             this.kryptonGroupBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(149)))), ((int)(((byte)(80)))));
             this.kryptonGroupBox1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(149)))), ((int)(((byte)(80)))));
             this.kryptonGroupBox1.StateCommon.Border.Rounding = 10F;
@@ -277,7 +277,7 @@
             // kryptonGroupBox3
             // 
             this.kryptonGroupBox3.CaptionVisible = false;
-            this.kryptonGroupBox3.Location = new System.Drawing.Point(548, 206);
+            this.kryptonGroupBox3.Location = new System.Drawing.Point(683, 206);
             // 
             // kryptonGroupBox3.Panel
             // 
@@ -305,11 +305,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(902, 685);
+            this.ClientSize = new System.Drawing.Size(1028, 685);
             this.Controls.Add(this.kryptonGroupBox3);
             this.Controls.Add(this.kryptonGroupBox1);
             this.Controls.Add(this.kryptonGroupBox2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.kryptonDateTimePicker1);
             this.Controls.Add(this.kryptonTextBox1);
             this.Controls.Add(this.label3);
@@ -323,7 +323,7 @@
             this.Load += new System.EventHandler(this.frmSeguimiento_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).EndInit();
             this.kryptonGroupBox2.Panel.ResumeLayout(false);
             this.kryptonGroupBox2.Panel.PerformLayout();
@@ -361,7 +361,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCompras;
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox2;
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox1;
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox3;
