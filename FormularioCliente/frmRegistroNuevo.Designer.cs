@@ -159,6 +159,10 @@
             // 
             this.btnInhabilitar.Location = new System.Drawing.Point(407, 492);
             this.btnInhabilitar.Name = "btnInhabilitar";
+            this.btnInhabilitar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnInhabilitar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnInhabilitar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
+            this.btnInhabilitar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
             this.btnInhabilitar.Size = new System.Drawing.Size(153, 32);
             this.btnInhabilitar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.btnInhabilitar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
@@ -168,6 +172,14 @@
             this.btnInhabilitar.StateCommon.Border.Width = 1;
             this.btnInhabilitar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnInhabilitar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnInhabilitar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnInhabilitar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnInhabilitar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnInhabilitar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnInhabilitar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnInhabilitar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnInhabilitar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
+            this.btnInhabilitar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
             this.btnInhabilitar.TabIndex = 23;
             this.btnInhabilitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnInhabilitar.Values.Text = "INHABILITAR CLIENTE";
@@ -199,6 +211,8 @@
             // 
             this.btnGuardar.Location = new System.Drawing.Point(570, 492);
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnGuardar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnGuardar.Size = new System.Drawing.Size(153, 32);
             this.btnGuardar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnGuardar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -208,6 +222,13 @@
             this.btnGuardar.StateCommon.Border.Width = 1;
             this.btnGuardar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnGuardar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnGuardar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnGuardar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnGuardar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnGuardar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnGuardar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnGuardar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnGuardar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnGuardar.Values.Text = "GUARDAR CAMBIOS";
@@ -216,6 +237,10 @@
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(292, 492);
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLimpiar.Size = new System.Drawing.Size(109, 32);
             this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.Color.White;
@@ -223,6 +248,14 @@
             this.btnLimpiar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
             this.btnLimpiar.StateCommon.Border.Rounding = 25F;
             this.btnLimpiar.StateCommon.Border.Width = 1;
+            this.btnLimpiar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StatePressed.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLimpiar.TabIndex = 20;
             this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnLimpiar.Values.Text = "LIMPIAR";

@@ -213,6 +213,10 @@
             // 
             this.btnRegistrar.Location = new System.Drawing.Point(570, 492);
             this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnRegistrar.Size = new System.Drawing.Size(153, 32);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -222,8 +226,14 @@
             this.btnRegistrar.StateCommon.Border.Width = 1;
             this.btnRegistrar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnRegistrar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnRegistrar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRegistrar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnRegistrar.TabIndex = 21;
             this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegistrar.Values.Text = "REGISTRAR Y ENVIAR";
@@ -233,6 +243,8 @@
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(437, 492);
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLimpiar.Size = new System.Drawing.Size(109, 32);
             this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.Color.White;
@@ -240,6 +252,14 @@
             this.btnLimpiar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
             this.btnLimpiar.StateCommon.Border.Rounding = 25F;
             this.btnLimpiar.StateCommon.Border.Width = 1;
+            this.btnLimpiar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StatePressed.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLimpiar.TabIndex = 20;
             this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnLimpiar.Values.Text = "LIMPIAR";

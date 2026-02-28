@@ -79,7 +79,6 @@
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonDataGridView1);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
             this.kryptonGroup1.Panel.Controls.Add(this.txtBuscar);
-            this.kryptonGroup1.Panel.Enabled = false;
             this.kryptonGroup1.Size = new System.Drawing.Size(727, 485);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
@@ -105,9 +104,21 @@
             this.txtInactivos.Name = "txtInactivos";
             this.txtInactivos.Size = new System.Drawing.Size(100, 23);
             this.txtInactivos.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.txtInactivos.StateActive.Border.Color1 = System.Drawing.Color.Transparent;
-            this.txtInactivos.StateActive.Border.Color2 = System.Drawing.Color.Transparent;
+            this.txtInactivos.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateActive.Content.Color1 = System.Drawing.Color.Black;
+            this.txtInactivos.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateCommon.Content.Color1 = System.Drawing.Color.Black;
+            this.txtInactivos.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateDisabled.Content.Color1 = System.Drawing.Color.Black;
             this.txtInactivos.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.txtInactivos.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.txtInactivos.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtInactivos.TabIndex = 1;
             this.txtInactivos.Text = "JUAS";
             // 
@@ -145,7 +156,17 @@
             this.txtRegistrados.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.txtRegistrados.StateActive.Border.Color1 = System.Drawing.Color.Transparent;
             this.txtRegistrados.StateActive.Border.Color2 = System.Drawing.Color.Transparent;
-            this.txtRegistrados.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.txtRegistrados.StateActive.Content.Color1 = System.Drawing.Color.Black;
+            this.txtRegistrados.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
+            this.txtRegistrados.StateCommon.Content.Color1 = System.Drawing.Color.Black;
+            this.txtRegistrados.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
+            this.txtRegistrados.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
+            this.txtRegistrados.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
+            this.txtRegistrados.StateDisabled.Content.Color1 = System.Drawing.Color.Black;
+            this.txtRegistrados.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
+            this.txtRegistrados.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
+            this.txtRegistrados.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
+            this.txtRegistrados.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtRegistrados.TabIndex = 1;
             this.txtRegistrados.Text = "JUAS";
             // 
@@ -154,7 +175,8 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 25);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(5, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 54);
             this.label3.TabIndex = 0;
@@ -180,9 +202,21 @@
             this.txtActivos.Name = "txtActivos";
             this.txtActivos.Size = new System.Drawing.Size(100, 23);
             this.txtActivos.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
-            this.txtActivos.StateActive.Border.Color1 = System.Drawing.Color.Transparent;
-            this.txtActivos.StateActive.Border.Color2 = System.Drawing.Color.Transparent;
-            this.txtActivos.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.txtActivos.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateActive.Content.Color1 = System.Drawing.Color.Black;
+            this.txtActivos.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateCommon.Content.Color1 = System.Drawing.Color.Black;
+            this.txtActivos.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateDisabled.Content.Color1 = System.Drawing.Color.Black;
+            this.txtActivos.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
+            this.txtActivos.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtActivos.TabIndex = 1;
             this.txtActivos.Text = "JUAS";
             // 
@@ -217,7 +251,7 @@
             this.Column6});
             this.kryptonDataGridView1.Location = new System.Drawing.Point(16, 231);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(583, 229);
+            this.kryptonDataGridView1.Size = new System.Drawing.Size(670, 229);
             this.kryptonDataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.kryptonDataGridView1.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.kryptonDataGridView1.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
