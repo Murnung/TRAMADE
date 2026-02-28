@@ -25,25 +25,25 @@ namespace TRAMADE
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             frmRegistro objRegis = new frmRegistro();
-            frmRegistro.Show();
+            objRegis.Show();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             frmRegistroNuevo objRegisNue = new frmRegistroNuevo();
-            frmRegistroNuevo.Show();
+            objRegisNue.Show();
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)
         {
             frmAprobacion objApro = new frmAprobacion();
-            frmAprobacion.Show();
+            objApro.Show();
         }
 
         private void btnSeguimiento_Click(object sender, EventArgs e)
         {
             frmSeguimiento objSegui = new frmSeguimiento();
-            frmSeguimiento.Show();
+            objSegui.Show();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace TRAMADE
         {
             txtID.Text = "";
             txtNombre.Text = "";
-            txtRazon.Text = "";
+            txtRazonSocial.Text = "";
             txtFecha.Text = "";
             cmbTipoCliente.Text = "";
 

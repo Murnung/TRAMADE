@@ -42,7 +42,7 @@ namespace TRAMADE
                 if (dr.Read())  //Intenta lee una fila
                 {
                     MessageBox.Show("Inicio de sesion exitoso");
-                    Form1 frm = new Form1();
+                    frmMenu frm = new frmMenu();
                     frm.ShowDialog();
                     
                 }
