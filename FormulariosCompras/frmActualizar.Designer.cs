@@ -35,10 +35,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAnular = new Krypton.Toolkit.KryptonButton();
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
-            this.txtId = new Krypton.Toolkit.KryptonTextBox();
+            this.txtbBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtEntrega = new Krypton.Toolkit.KryptonDateTimePicker();
@@ -67,6 +66,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFormaPago)).BeginInit();
@@ -157,7 +157,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel2.Controls.Add(this.btnAnular);
             this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Controls.Add(this.btnActualizar);
             this.panel2.Location = new System.Drawing.Point(-8, 554);
@@ -165,34 +164,9 @@
             this.panel2.Size = new System.Drawing.Size(816, 68);
             this.panel2.TabIndex = 99;
             // 
-            // btnAnular
-            // 
-            this.btnAnular.Location = new System.Drawing.Point(470, 12);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.OverrideFocus.Back.Color2 = System.Drawing.Color.OrangeRed;
-            this.btnAnular.OverrideFocus.Border.Rounding = 10F;
-            this.btnAnular.Size = new System.Drawing.Size(102, 29);
-            this.btnAnular.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateCommon.Border.Rounding = 10F;
-            this.btnAnular.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnAnular.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnAnular.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnAnular.StateTracking.Back.Color2 = System.Drawing.Color.OrangeRed;
-            this.btnAnular.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnAnular.StateTracking.Border.Rounding = 10F;
-            this.btnAnular.TabIndex = 73;
-            this.btnAnular.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnAnular.Values.Text = "ANULAR ";
-            // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(358, 12);
+            this.btnLimpiar.Location = new System.Drawing.Point(466, 12);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
@@ -210,6 +184,7 @@
             this.btnLimpiar.TabIndex = 72;
             this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnLimpiar.Values.Text = "LIMPIAR";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnActualizar
             // 
@@ -235,14 +210,15 @@
             this.btnActualizar.TabIndex = 71;
             this.btnActualizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnActualizar.Values.Text = "ACTUALIZAR Y ENVIAR";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // txtId
+            // txtbBuscar
             // 
-            this.txtId.Location = new System.Drawing.Point(182, 124);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(190, 31);
-            this.txtId.StateCommon.Border.Rounding = 5F;
-            this.txtId.TabIndex = 100;
+            this.txtbBuscar.Location = new System.Drawing.Point(201, 124);
+            this.txtbBuscar.Name = "txtbBuscar";
+            this.txtbBuscar.Size = new System.Drawing.Size(190, 31);
+            this.txtbBuscar.StateCommon.Border.Rounding = 5F;
+            this.txtbBuscar.TabIndex = 100;
             // 
             // txtTelefono
             // 
@@ -318,6 +294,7 @@
             0,
             0,
             0});
+            this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
             // 
             // cmbProveedor
             // 
@@ -329,6 +306,7 @@
             this.cmbProveedor.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cmbProveedor.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProveedor.TabIndex = 140;
+            this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
             // 
             // cmbProducto
             // 
@@ -391,11 +369,12 @@
             // 
             // lstProductos
             // 
-            this.lstProductos.Location = new System.Drawing.Point(497, 339);
+            this.lstProductos.Location = new System.Drawing.Point(500, 337);
             this.lstProductos.Name = "lstProductos";
             this.lstProductos.Size = new System.Drawing.Size(299, 205);
             this.lstProductos.StateCommon.Border.Rounding = 10F;
             this.lstProductos.TabIndex = 132;
+            this.lstProductos.SelectedIndexChanged += new System.EventHandler(this.lstProductos_SelectedIndexChanged);
             // 
             // btnQuitar
             // 
@@ -416,6 +395,7 @@
             this.btnQuitar.TabIndex = 131;
             this.btnQuitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnQuitar.Values.Text = "QUITAR";
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // label16
             // 
@@ -446,6 +426,7 @@
             this.btnAgregar.TabIndex = 129;
             this.btnAgregar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnAgregar.Values.Text = "AGREGAR PRODUCTO";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label15
             // 
@@ -546,12 +527,39 @@
             this.label5.TabIndex = 119;
             this.label5.Text = "Fecha de entrega";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(406, 127);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.Blue;
+            this.btnBuscar.OverrideFocus.Border.Rounding = 10F;
+            this.btnBuscar.Size = new System.Drawing.Size(93, 28);
+            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Border.Rounding = 10F;
+            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnBuscar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.Color.Blue;
+            this.btnBuscar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnBuscar.StateTracking.Border.Rounding = 10F;
+            this.btnBuscar.TabIndex = 74;
+            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnBuscar.Values.Text = "BUSCAR";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // frmActualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(800, 604);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtEntrega);
@@ -580,7 +588,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtbBuscar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
@@ -589,6 +597,7 @@
             this.Name = "frmActualizar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmActualizar";
+            this.Load += new System.EventHandler(this.frmActualizar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -609,10 +618,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private Krypton.Toolkit.KryptonButton btnAnular;
         private Krypton.Toolkit.KryptonButton btnLimpiar;
         private Krypton.Toolkit.KryptonButton btnActualizar;
-        private Krypton.Toolkit.KryptonTextBox txtId;
+        private Krypton.Toolkit.KryptonTextBox txtbBuscar;
         private Krypton.Toolkit.KryptonTextBox txtTelefono;
         private System.Windows.Forms.Label label4;
         private Krypton.Toolkit.KryptonDateTimePicker dtEntrega;
@@ -641,5 +649,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
+        private Krypton.Toolkit.KryptonButton btnBuscar;
     }
 }
