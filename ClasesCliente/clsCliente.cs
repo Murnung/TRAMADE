@@ -218,7 +218,7 @@ namespace TRAMADE.ClasesCliente
                 conexion.Cerrar();
             }
         }
-        /*public void ActulizarCliente(clsConexion conexion)
+        public bool ActulizarCliente(clsConexion conexion)
         {
             try
             {
@@ -226,6 +226,7 @@ namespace TRAMADE.ClasesCliente
                 SqlCommand cmdCliente = new SqlCommand("PA_ACTUALIZAR_CLIENTE", conexion.SqlC);
                 cmdCliente.CommandType = CommandType.StoredProcedure;
 
+                cmdCliente.Parameters.AddWithValue("@id_cliente", Convert.ToInt32(id));
                 cmdCliente.Parameters.AddWithValue("@nombre_cliente", nombre);
 
                 cmdCliente.Parameters.AddWithValue("@rtn_cliente", string.IsNullOrWhiteSpace(RTN) ? (object)DBNull.Value : RTN);
@@ -239,13 +240,23 @@ namespace TRAMADE.ClasesCliente
                 cmdCliente.Parameters.AddWithValue("@direccion_cliente", direccion);
                 cmdCliente.Parameters.AddWithValue("@id_clasificacion_cliente", Convert.ToInt32(tipoCliente));
                 cmdCliente.Parameters.AddWithValue("@id_ciudad", Convert.ToInt32(ciudad));
-                cmdCliente.Parameters.AddWithValue("@id_estado", Convert.ToInt32(estado));
+                
 
                 cmdCliente.Parameters.AddWithValue("@id_usuario", 2);
 
                 cmdCliente.ExecuteNonQuery();
+                return true;
             }
-        }*/
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar en la base de datos: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
 
 
 

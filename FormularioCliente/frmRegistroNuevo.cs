@@ -20,6 +20,7 @@ namespace TRAMADE
         public frmRegistroNuevo()
         {
             InitializeComponent();
+            txtID.ReadOnly = true;
         }
 
         private void frmRegistroNuevo_Load(object sender, EventArgs e)
@@ -27,7 +28,8 @@ namespace TRAMADE
 
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtFecha.ReadOnly = true;
-
+            txtID.ReadOnly = true;
+            txtID.BackColor = Color.LightGray;
             clsCliente.llenarcomboDepartamento(cmbDepartamento, ObjConexion);
             clsCliente.llenarcomboTipoCliente(cmbTipoCliente, ObjConexion);
 
@@ -45,7 +47,10 @@ namespace TRAMADE
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtID.Text = "";
+            txtID.Clear();
+            txtID.ReadOnly = true;
+            txtID.BackColor = Color.LightGray;
+
             txtNombre.Text = "";
             cmbTipoCliente.SelectedIndex = -1;
             cmbTipoCliente.SelectedItem = null;
@@ -54,6 +59,7 @@ namespace TRAMADE
             txtTelefono.Text = "";
             txtCorreo.Text = "";
             txtDireccion.Text = "";
+            txtBuscar.Text = "";
 
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
@@ -75,38 +81,11 @@ namespace TRAMADE
 
         }
 
-        private void cmbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbTipoCliente.Text == "Empresa")
-            {
-                txtRTN.Enabled = true;
-                txtRTN.BackColor = Color.White;
-
-                txtRazonSocial.Enabled = true;
-                txtRazonSocial.BackColor = Color.White;
-
-                txtDNI.Enabled = false;
-                txtDNI.Text = "";
-                txtDNI.BackColor = Color.LightGray;
-            }
-            else
-            {
-                txtRTN.Enabled = false;
-                txtRTN.Text = "";
-                txtRTN.BackColor = Color.LightGray;
-
-                txtRazonSocial.Enabled = false;
-                txtRazonSocial.Text = "";
-                txtRazonSocial.BackColor = Color.LightGray;
-
-                txtDNI.Enabled = true;
-                txtDNI.BackColor = Color.White;
-
-            }
-        }
+       
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            
             string busqueda = txtBuscar.Text.Trim();
             if (string.IsNullOrEmpty(busqueda))
             {
@@ -131,9 +110,13 @@ namespace TRAMADE
                 {
                     DataRow row = dt.Rows[0];
                     IdSeleccionado = Convert.ToInt32(row["id_cliente"]);
-
                    
+
+
                     txtID.Text = row["id_cliente"].ToString();
+                    txtID.ReadOnly = true;
+                    txtID.BackColor = Color.LightGray;
+
                     txtNombre.Text = row["nombre_cliente"].ToString();
                     txtContacto.Text = row["contacto_cliente"].ToString();
                     txtTelefono.Text = row["telefono_cliente"].ToString();
@@ -172,6 +155,124 @@ namespace TRAMADE
             finally
             {
                 ObjConexion.Cerrar();
+            }
+        }
+
+        private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDepartamento.SelectedIndex != -1 && cmbDepartamento.SelectedItem is DataRowView)
+            {
+                DataRowView drv = (DataRowView)cmbDepartamento.SelectedItem;
+
+                int idSeleccionado = Convert.ToInt32(drv["id_departamento"]);
+
+
+                clsCliente.llenarcombociudad(cmbCiudad, ObjConexion, idSeleccionado);
+            }
+        }
+
+        private void cmbTipoCliente_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cmbTipoCliente.Text == "PERSONA JURÍDICA")
+            {
+                txtRTN.Enabled = true;
+                txtRTN.BackColor = Color.White;
+
+                txtRazonSocial.Enabled = true;
+                txtRazonSocial.BackColor = Color.White;
+
+                txtDNI.Enabled = false;
+                txtDNI.Text = "";
+                txtDNI.BackColor = Color.LightGray;
+            }
+            if (cmbTipoCliente.Text == "PERSONA NATURAL")
+            {
+                txtRTN.Enabled = false;
+                txtRTN.Text = "";
+                txtRTN.BackColor = Color.LightGray;
+
+                txtRazonSocial.Enabled = false;
+                txtRazonSocial.Text = "";
+                txtRazonSocial.BackColor = Color.LightGray;
+
+                txtDNI.Enabled = true;
+                txtDNI.BackColor = Color.White;
+
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            
+            if (string.IsNullOrEmpty(txtNombre.Text) ||
+                string.IsNullOrEmpty(txtContacto.Text) ||
+                string.IsNullOrEmpty(txtTelefono.Text) ||
+                string.IsNullOrEmpty(txtCorreo.Text) ||
+                string.IsNullOrEmpty(txtDireccion.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+           
+            if (cmbTipoCliente.Text == "PERSONA JURÍDICA") 
+            {
+                if (string.IsNullOrEmpty(txtRTN.Text) || string.IsNullOrEmpty(txtRazonSocial.Text))
+                {
+                    MessageBox.Show("Para empresas, el RTN y la Razón Social son obligatorios.");
+                    return;
+                }
+            }
+
+             if (cmbTipoCliente.Text == "PERSONA NATURAL")
+            {
+                if (string.IsNullOrEmpty(txtDNI.Text))
+                {
+                    MessageBox.Show("El número de Identidad (DNI) es obligatorio para personas naturales.");
+                    return;
+                }
+            }
+
+            
+            if (cmbDepartamento.SelectedValue == null || cmbCiudad.SelectedValue == null)
+            {
+                MessageBox.Show("Por favor, seleccione un departamento y una ciudad.");
+                return;
+            }
+
+            try
+            {
+               
+                ObjCliente.setID(txtID.Text);
+
+                ObjCliente.setIdUsuario(clsSesion.id_usuario);
+                ObjCliente.setNombre(txtNombre.Text);
+                ObjCliente.setRazonSocial(txtRazonSocial.Text);
+                ObjCliente.setContacto(txtContacto.Text);
+                ObjCliente.setTelefono(txtTelefono.Text);
+                ObjCliente.setCorreo(txtCorreo.Text);
+                ObjCliente.setDireccion(txtDireccion.Text);
+                ObjCliente.setRTN(txtRTN.Text);
+                ObjCliente.setDNI(txtDNI.Text);
+
+                ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
+                ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());
+
+                bool Resultado = ObjCliente.ActulizarCliente(ObjConexion);
+
+                if (Resultado)
+                {
+                    MessageBox.Show("¡Datos del cliente actualizados exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnLimpiar_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar la información del cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error crítico al actualizar: " + ex.Message, "Error de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -226,10 +226,15 @@ namespace TRAMADE
 
                 
                 clsCliente.llenarcombociudad(cmbCiudad, ObjConexion, idSeleccionado);
-    }
+            }
         }
 
         private void txtRTN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCiudad_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
