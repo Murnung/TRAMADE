@@ -28,6 +28,10 @@ namespace TRAMADE
         private void kryptonButton12_Click(object sender, EventArgs e)
         {
             frmVistaPrevia objVistaPrevia = new frmVistaPrevia();
+            objVistaPrevia.txtNombreClienteVP.Text = txtNombreCliente.Text;
+            objVistaPrevia.txtDNIClienteVP.Text = txtDNICliente.Text;
+            objVistaPrevia.txtDireccionClienteVP.Text = txtDireccionCliente.Text;
+            objVistaPrevia.lblNumeroFacturaVP.Text = lblNumeroFactura.Text;
             objVistaPrevia.ShowDialog();
         }
 

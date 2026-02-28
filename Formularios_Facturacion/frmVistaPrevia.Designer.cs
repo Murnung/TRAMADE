@@ -146,7 +146,7 @@
             this.btnRegresarVP.StateCommon.Border.Rounding = 10F;
             this.btnRegresarVP.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnRegresarVP.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnRegresarVP.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Content.ShortText.Image")));
+            this.btnRegresarVP.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresarVP.StateCommon.Content.ShortText.Image")));
             this.btnRegresarVP.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnRegresarVP.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.btnRegresarVP.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
@@ -466,12 +466,13 @@
             // 
             this.txtDireccionClienteVP.CueHint.CueHintText = "( ! ) Dirección del cliente";
             this.txtDireccionClienteVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.txtDireccionClienteVP.Enabled = false;
             this.txtDireccionClienteVP.Location = new System.Drawing.Point(62, 68);
             this.txtDireccionClienteVP.Name = "txtDireccionClienteVP";
+            this.txtDireccionClienteVP.ReadOnly = true;
             this.txtDireccionClienteVP.Size = new System.Drawing.Size(145, 22);
             this.txtDireccionClienteVP.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtDireccionClienteVP.TabIndex = 17;
+            this.txtDireccionClienteVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel8
             // 
@@ -485,12 +486,13 @@
             // 
             this.txtDNIClienteVP.CueHint.CueHintText = "DNI/RTN del cliente";
             this.txtDNIClienteVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.txtDNIClienteVP.Enabled = false;
             this.txtDNIClienteVP.Location = new System.Drawing.Point(62, 37);
             this.txtDNIClienteVP.Name = "txtDNIClienteVP";
+            this.txtDNIClienteVP.ReadOnly = true;
             this.txtDNIClienteVP.Size = new System.Drawing.Size(145, 22);
             this.txtDNIClienteVP.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtDNIClienteVP.TabIndex = 17;
+            this.txtDNIClienteVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel7
             // 
@@ -504,12 +506,13 @@
             // 
             this.txtNombreClienteVP.CueHint.CueHintText = "( ! ) Nombre del cliente";
             this.txtNombreClienteVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.txtNombreClienteVP.Enabled = false;
             this.txtNombreClienteVP.Location = new System.Drawing.Point(62, 6);
             this.txtNombreClienteVP.Name = "txtNombreClienteVP";
+            this.txtNombreClienteVP.ReadOnly = true;
             this.txtNombreClienteVP.Size = new System.Drawing.Size(145, 22);
             this.txtNombreClienteVP.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtNombreClienteVP.TabIndex = 0;
+            this.txtNombreClienteVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel6
             // 
@@ -668,7 +671,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonGroup kryptonGroup4;
         private System.Windows.Forms.Label label4;
-        private Krypton.Toolkit.KryptonLabel lblNumeroFacturaVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonGroup kryptonGroup2;
         private Krypton.Toolkit.KryptonTextBox txtNombreVendedorVP;
@@ -677,11 +679,8 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel11;
         private Krypton.Toolkit.KryptonLabel kryptonLabel12;
         private Krypton.Toolkit.KryptonGroup kryptonGroup1;
-        private Krypton.Toolkit.KryptonTextBox txtDireccionClienteVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel8;
-        private Krypton.Toolkit.KryptonTextBox txtDNIClienteVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel7;
-        private Krypton.Toolkit.KryptonTextBox txtNombreClienteVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel6;
         private Krypton.Toolkit.KryptonLabel kryptonLabel5;
         private Krypton.Toolkit.KryptonGroup kryptonGroup3;
@@ -709,5 +708,9 @@
         private Krypton.Toolkit.KryptonRadioButton rbContadoVP;
         private Krypton.Toolkit.KryptonLabel kryptonLabel20;
         private Krypton.Toolkit.KryptonLabel kryptonLabel21;
+        public Krypton.Toolkit.KryptonTextBox txtDireccionClienteVP;
+        public Krypton.Toolkit.KryptonTextBox txtDNIClienteVP;
+        public Krypton.Toolkit.KryptonTextBox txtNombreClienteVP;
+        public Krypton.Toolkit.KryptonLabel lblNumeroFacturaVP;
     }
 }
