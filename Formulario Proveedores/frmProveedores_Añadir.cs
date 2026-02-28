@@ -46,10 +46,10 @@ namespace TRAMADE
 
             // En btnGuardar antes de guardar:
             if (!clsValidar.ValidarProveedor(
-                txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text,
-                txtRtn.Text, txtTelefonoGeneral.Text, txtCorreoCentral.Text,
-                Convert.ToInt32(cmbClasificacion.SelectedValue),
-                Convert.ToInt32(cmbTerminosdePago.SelectedValue))) return;
+            txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text,
+            txtRtn.Text, txtTelefonoGeneral.Text, txtCorreoCentral.Text,
+            Convert.ToInt32(cmbClasificacion.SelectedValue),
+            Convert.ToInt32(cmbTerminosdePago.SelectedValue))) return; // ← sin idProveedorActual
 
             clsProveedores ObjProveedores = new clsProveedores(
                 clsValidar.Limpiar(txtNombreComercial.Text),

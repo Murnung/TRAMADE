@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -98,7 +99,8 @@ namespace TRAMADE
 
         public static bool ValidarProveedor(string nombre, string razon, string direccion,
                                              string rtn, string telefono, string correo,
-                                             int idClasificacion, int idTerminos)
+                                             int idClasificacion, int idTerminos,
+                                             int idProveedorActual = 0) // ← nuevo parámetro
         {
             if (!NullOVacio(nombre, "Nombre Comercial")) return false;
             if (!LongitudMinima(nombre, "Nombre Comercial", 3)) return false;
@@ -113,6 +115,7 @@ namespace TRAMADE
 
             if (!NullOVacio(rtn, "RTN")) return false;
             if (!RTN(rtn)) return false;
+            if (!RTNDuplicado(rtn, idProveedorActual)) return false; // ← nueva
 
             if (!NullOVacio(telefono, "Teléfono")) return false;
             if (!Telefono(telefono)) return false;
@@ -122,10 +125,12 @@ namespace TRAMADE
 
             if (!ComboSeleccionado(idClasificacion, "Clasificación")) return false;
             if (!ComboSeleccionado(idTerminos, "Términos de Pago")) return false;
-            if (!ClasificacionTerminos(idClasificacion, idTerminos)) return false; // ← nueva
+            if (!ClasificacionTerminos(idClasificacion, idTerminos)) return false;
 
             return true;
         }
+
+
 
         // ─── LIMPIAR ESPACIOS ANTES Y DESPUÉS ────────────────────────
         public static string Limpiar(string valor)
@@ -157,5 +162,39 @@ namespace TRAMADE
             return true;
         }
 
+        // ─── VALIDAR RTN DUPLICADO ────────────────────────────────────
+        public static bool RTNDuplicado(string rtn, int idProveedorActual = 0)
+        {
+            clsConexion ObjConexion = new clsConexion();
+            try
+            {
+                ObjConexion.Abrir();
+                // idProveedorActual = 0 en Añadir, en Editar se pasa el ID para excluirse a sí mismo
+                SqlCommand cmd = new SqlCommand(@"
+            SELECT COUNT(*) FROM PROVEEDOR 
+            WHERE rtn_proveedor = @rtn 
+            AND id_proveedor != @idProveedorActual", ObjConexion.SqlC);
+                cmd.Parameters.AddWithValue("@rtn", rtn.Trim());
+                cmd.Parameters.AddWithValue("@idProveedorActual", idProveedorActual);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count > 0)
+                {
+                    MessageBox.Show("El RTN ingresado ya está registrado en otro proveedor.", "Validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al validar RTN: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+        }
     }
 }
