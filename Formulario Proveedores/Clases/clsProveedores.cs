@@ -87,5 +87,34 @@ namespace TRAMADE.Formulario_Proveedores.Clases
             return dt;
         }
 
+        // ─── BUSCAR PROVEEDORES ───────────────────────────────────────
+        public DataTable BuscarProveedores(string criterio)
+        {
+            clsConexion ObjConexion = new clsConexion();
+            DataTable dt = new DataTable();
+            try
+            {
+                ObjConexion.Abrir();
+                SqlCommand cmd = new SqlCommand(@"
+            SELECT * FROM VistaProveedorTabla 
+            WHERE [Razón Social]      LIKE @criterio
+               OR [Nombre Comercial] LIKE @criterio
+               OR [RTN]              LIKE @criterio", ObjConexion.SqlC);
+                cmd.Parameters.AddWithValue("@criterio", "%" + criterio.Trim() + "%");
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+            return dt;
+        }
+
+
     }
 }

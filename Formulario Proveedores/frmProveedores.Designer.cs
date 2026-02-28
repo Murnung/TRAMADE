@@ -112,6 +112,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(547, 42);
             this.txtBuscar.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.TabIndex = 14;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnFiltrarActivo
             // 

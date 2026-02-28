@@ -89,6 +89,22 @@ namespace TRAMADE
         {
             this.Close();
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            clsProveedores ObjProveedores = new clsProveedores();
+
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                // Si está vacío mostrar todos
+                RecargarProveedores();
+            }
+            else
+            {
+                dgvProveedores.DataSource = ObjProveedores.BuscarProveedores(txtBuscar.Text);
+                dgvProveedores.Columns["id_proveedor"].Visible = false;
+            }
+        }
     }
 }
 
