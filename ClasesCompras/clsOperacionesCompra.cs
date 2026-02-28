@@ -14,7 +14,7 @@ namespace TRAMADE.ClasesCompras
     {
         public clsOperacionesCompra() { }
 
-        // ─── INSERTAR ────────────────────────────────────────────────────────────
+        // INSERTAR 
         public bool insertarCompras(clsConexion conexion)
         {
             try
@@ -53,7 +53,7 @@ namespace TRAMADE.ClasesCompras
             }
         }
 
-        // ─── ACTUALIZAR ──────────────────────────────────────────────────────────
+        // ACTUALIZAR 
         public bool actualizarCompra(clsConexion conexion)
         {
             try

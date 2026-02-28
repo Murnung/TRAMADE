@@ -66,10 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasesCompras\clsCompras.cs" />
+    <Compile Include="ClasesCompras\clsFiltrarCompras.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboFormaPago.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboProducto.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboProveedor.cs" />
     <Compile Include="ClasesCompras\clsLlenarListBox.cs" />
+    <Compile Include="ClasesCompras\clsLlenarTextoPrecioCosto.cs" />
     <Compile Include="ClasesCompras\clsOperacionesCompra.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsSesion.cs" />

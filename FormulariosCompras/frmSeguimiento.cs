@@ -21,6 +21,7 @@ namespace TRAMADE
         }
         clsConexion ObjConexion = new clsConexion();
         clsCompras ObjCompras = new clsCompras();
+        clsFiltrarCompras ObjFc = new clsFiltrarCompras();
 
         private void recargarCompras()
         {
@@ -93,7 +94,7 @@ namespace TRAMADE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObjCompras.FiltrarCompras(ObjConexion, dtDesde, dtHasta, txtBuscar.Text);
+            DataTable dt = ObjFc.FiltrarFechas(ObjConexion, dtDesde, dtHasta, txtBuscar.Text);
             if (dt != null)
             {
                 dgvCompras.DataSource = dt;

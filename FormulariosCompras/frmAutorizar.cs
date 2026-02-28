@@ -22,6 +22,7 @@ namespace TRAMADE
         clsConexion ObjConexion = new clsConexion();
         clsCompras ObjCompras = new clsCompras();
         clsOperacionesCompra ObjOp = new clsOperacionesCompra();
+        clsFiltrarCompras ObjFc= new clsFiltrarCompras();
         private void AgregarColumnaCheck()
         {
             // Evitar duplicar la columna si ya existe
@@ -117,7 +118,7 @@ namespace TRAMADE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObjCompras.BuscarCompra(ObjConexion, txtBuscar.Text);
+            DataTable dt = ObjFc.BuscarCompra(ObjConexion, txtBuscar.Text);
             if (dt != null)
             {
                 dgvCompras.DataSource = dt;

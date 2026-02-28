@@ -125,7 +125,7 @@ namespace TRAMADE
                 DataRowView drv = (DataRowView)cmbProducto.SelectedItem;
                 int productoId = Convert.ToInt32(drv["id_producto"]); 
                 string productoNombre = drv["nombre_producto"].ToString();
-                clsCompras.llenarTextoPrecio(txtPrecio, cmbProducto, ObjConexion);
+                clsLlenarTextoPrecioCosto.llenarTextoPrecio(txtPrecio, cmbProducto, ObjConexion);
 
                 calcularTotales();
             }
