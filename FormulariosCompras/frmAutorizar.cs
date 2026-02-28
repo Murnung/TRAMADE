@@ -21,6 +21,7 @@ namespace TRAMADE
 
         clsConexion ObjConexion = new clsConexion();
         clsCompras ObjCompras = new clsCompras();
+        clsOperacionesCompra ObjOp = new clsOperacionesCompra();
         private void AgregarColumnaCheck()
         {
             // Evitar duplicar la columna si ya existe
@@ -89,7 +90,7 @@ namespace TRAMADE
                 if (marcado)
                 {
                     int idCompra = Convert.ToInt32(fila.Cells["ID compra"].Value);
-                    ObjCompras.autorizarCompra(ObjConexion, idCompra);
+                    ObjOp.autorizarCompra(ObjConexion, idCompra);
                 }
             }
             MessageBox.Show("Compras autorizadas correctamente.");
@@ -106,7 +107,7 @@ namespace TRAMADE
                 if (marcado)
                 {
                     int idCompra = Convert.ToInt32(fila.Cells["ID compra"].Value);
-                    ObjCompras.denegarCompra(ObjConexion, idCompra);
+                    ObjOp.denegarCompra(ObjConexion, idCompra);
                 }
             }
             MessageBox.Show("Compras denegadas correctamente.");

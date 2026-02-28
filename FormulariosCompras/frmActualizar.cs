@@ -19,7 +19,7 @@ namespace TRAMADE
             InitializeComponent();
         }
         clsConexion ObjConexion = new clsConexion();
-        clsCompras ObjCompras = new clsCompras();
+        clsOperacionesCompra ObjOp = new clsOperacionesCompra();
         int compraIdSeleccionado = 0;
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -67,12 +67,14 @@ namespace TRAMADE
                     dtEntrega.Enabled = true;
                     nudCantidad.Enabled = true;
 
-                    reader.Close(); 
+                    reader.Close();
 
-                   // Cargar productos al ListBox
-                    ObjCompras.cargarProductosPorCompra(compraIdSeleccionado, ObjConexion);
+                    ObjConexion.Cerrar();
 
-                    txtTotal.Text = ObjCompras.TotalLista().ToString("0.00");
+                    // Cargar productos al ListBox
+                    ObjOp.cargarProductosPorCompra(compraIdSeleccionado, ObjConexion);
+
+                    txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
                 }
                 else
                 {
@@ -87,7 +89,8 @@ namespace TRAMADE
             }
             finally
             {
-                ObjConexion.Cerrar();
+                if (ObjConexion.SqlC.State == System.Data.ConnectionState.Open)
+                    ObjConexion.Cerrar();
             }
 
 
@@ -117,7 +120,7 @@ namespace TRAMADE
          
 
             btnLimpiar_Click(sender, e);
-            ObjCompras.vincularListBox(lstProductos);
+            ObjOp.vincularListBox(lstProductos);
 
         }
 
@@ -136,28 +139,28 @@ namespace TRAMADE
         {
             if (lstProductos.SelectedIndex == -1) return;
 
-            DataRow fila = ObjCompras.obtenerFila(lstProductos.SelectedIndex);
+            DataRow fila = ObjOp.obtenerFila(lstProductos.SelectedIndex);
 
             // Mostrar los datos del producto seleccionado
             decimal precio = Convert.ToDecimal(fila["precioCosto"]);
             int cantidadSel = Convert.ToInt32(fila["cantidad"]);
 
             // Setear en la clase para usar los calculos
-            ObjCompras.setPrecio(precio);
-            ObjCompras.setCantidad(cantidadSel);
+            ObjOp.setPrecio(precio);
+            ObjOp.setCantidad(cantidadSel);
             //Mostrar precio y cantidad
-            txtPrecio.Text = ObjCompras.getPrecio().ToString();
-            nudCantidad.Value = Convert.ToInt32(ObjCompras.getCantidad());
+            txtPrecio.Text = ObjOp.getPrecio().ToString();
+            nudCantidad.Value = Convert.ToInt32(ObjOp.getCantidad());
             // Mostrar calculos
-            txtSubtotal.Text = ObjCompras.Subtotal().ToString("0.00");
-            txtImpuesto.Text = ObjCompras.Impuesto().ToString("0.00");
+            txtSubtotal.Text = ObjOp.Subtotal().ToString("0.00");
+            txtImpuesto.Text = ObjOp.Impuesto().ToString("0.00");
 
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            ObjCompras.eliminarProducto(lstProductos);
-            txtTotal.Text = ObjCompras.TotalLista().ToString("0.00");
+            ObjOp.eliminarProducto(lstProductos);
+            txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
 
         }
 
@@ -170,17 +173,17 @@ namespace TRAMADE
             }
             DataRowView drv = (DataRowView)cmbProducto.SelectedItem;
 
-            ObjCompras.setProducto(Convert.ToInt32(cmbProducto.SelectedValue));
-            ObjCompras.setNombreProducto(drv["nombre_producto"].ToString());
-            ObjCompras.setCantidad(Convert.ToInt32(nudCantidad.Value));
+            ObjOp.setProducto(Convert.ToInt32(cmbProducto.SelectedValue));
+            ObjOp.setNombreProducto(drv["nombre_producto"].ToString());
+            ObjOp.setCantidad(Convert.ToInt32(nudCantidad.Value));
 
             decimal precio = 0;
             decimal.TryParse(txtPrecio.Text, out precio);
-            ObjCompras.setPrecio(precio);
+            ObjOp.setPrecio(precio);
 
-            ObjCompras.agregarProducto();
+            ObjOp.agregarProducto();
 
-            txtTotal.Text = ObjCompras.TotalLista().ToString("0.00");
+            txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
 
             btnActualizar.Enabled = true;
             nudCantidad.Value = 1;
@@ -192,12 +195,12 @@ namespace TRAMADE
         {
             decimal precio = 0;
             decimal.TryParse(txtPrecio.Text, out precio);
-            ObjCompras.setCantidad((int)nudCantidad.Value);
-            ObjCompras.setPrecio(precio);
+            ObjOp.setCantidad((int)nudCantidad.Value);
+            ObjOp.setPrecio(precio);
 
-            txtSubtotal.Text = ObjCompras.Subtotal().ToString("0.00");
-            txtImpuesto.Text = ObjCompras.Impuesto().ToString("0.00");
-            txtTotal.Text = ObjCompras.Total().ToString("0.00");
+            txtSubtotal.Text = ObjOp.Subtotal().ToString("0.00");
+            txtImpuesto.Text = ObjOp.Impuesto().ToString("0.00");
+            txtTotal.Text = ObjOp.Total().ToString("0.00");
         }
 
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
@@ -220,7 +223,7 @@ namespace TRAMADE
             txtSubtotal.Clear();
             txtImpuesto.Clear();
             txtTotal.Clear();
-            ObjCompras.limpiarLista();
+            ObjOp.limpiarLista();
 
         }
 
@@ -236,18 +239,18 @@ namespace TRAMADE
             try
             {
                 // Asignación de datos
-                ObjCompras.setIdCompra(compraIdSeleccionado);
-                ObjCompras.setIdUsuario(clsSesion.id_usuario);
-                ObjCompras.setProveedor(Convert.ToInt32(cmbProveedor.SelectedValue));
-                ObjCompras.setFormaPago(Convert.ToInt32(cmbFormaPago.SelectedValue));
-                ObjCompras.setCantidad(Convert.ToInt32(nudCantidad.Value));
-                ObjCompras.setContacto(txtContacto.Text.Trim());
-                ObjCompras.setDireccion(txtDireccion.Text.Trim());
-                ObjCompras.setTelefono(txtTelefono.Text.Trim());
-                ObjCompras.setEntrega(dtEntrega.Value);
+                ObjOp.setIdCompra(compraIdSeleccionado);
+                ObjOp.setIdUsuario(clsSesion.id_usuario);
+                ObjOp.setProveedor(Convert.ToInt32(cmbProveedor.SelectedValue));
+                ObjOp.setFormaPago(Convert.ToInt32(cmbFormaPago.SelectedValue));
+                ObjOp.setCantidad(Convert.ToInt32(nudCantidad.Value));
+                ObjOp.setContacto(txtContacto.Text.Trim());
+                ObjOp.setDireccion(txtDireccion.Text.Trim());
+                ObjOp.setTelefono(txtTelefono.Text.Trim());
+                ObjOp.setEntrega(dtEntrega.Value);
                 
 
-                bool resultadoFinal = ObjCompras.actualizarCompra(ObjConexion);
+                bool resultadoFinal = ObjOp.actualizarCompra(ObjConexion);
 
                 if (resultadoFinal)
                 {
