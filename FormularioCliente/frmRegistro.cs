@@ -26,9 +26,9 @@ namespace TRAMADE
         private void frmRegistro_Load(object sender, EventArgs e)
         {
             clsCliente.llenarcomboDepartamento(cmbDepartamento, ObjConexion);
-            
+            clsCliente.llenarcomboTipoCliente(cmbTipoCliente, ObjConexion);
 
-
+           
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtFecha.ReadOnly = true;
 
@@ -36,7 +36,8 @@ namespace TRAMADE
             txtID.ReadOnly = true;
             txtID.BackColor = Color.LightGray;
 
-           
+            txtDNI.Enabled = false;
+            txtDNI.BackColor = Color.LightGray;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -68,9 +69,12 @@ namespace TRAMADE
         {
             txtID.Text = "AUTOGENERADO";
             txtNombre.Text = "";
-            cmbTipoCliente.SelectedIndex = -1;
-            cmbDepartamento.SelectedIndex = -1;
-            cmbCiudad.SelectedIndex = -1;
+
+            cmbTipoCliente.SelectedItem = null;
+            cmbDepartamento.SelectedItem = null;
+
+            cmbCiudad.DataSource = null;
+            cmbCiudad.Items.Clear();
 
             txtContacto.Text = "";
             txtTelefono.Text = "";
@@ -92,16 +96,15 @@ namespace TRAMADE
             txtRazonSocial.Enabled = false;
             txtRazonSocial.BackColor = Color.LightGray;
 
+            txtNombre.Focus();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text) ||
                 string.IsNullOrEmpty(txtFecha.Text) ||
-                string.IsNullOrEmpty(cmbTipoCliente.Text) ||
                 string.IsNullOrEmpty(txtContacto.Text) ||
                 string.IsNullOrEmpty(txtTelefono.Text) ||
-              
                 string.IsNullOrEmpty(txtCorreo.Text) ||
                 string.IsNullOrEmpty(txtDireccion.Text))
                 
@@ -110,7 +113,7 @@ namespace TRAMADE
                 return;
             }
 
-            if (cmbTipoCliente.Text == "Empresa")
+            if (cmbTipoCliente.Text == "PERSONA JURÍDICA")
             {
                 if (string.IsNullOrEmpty(txtRTN.Text) || string.IsNullOrEmpty(txtRazonSocial.Text))
                 {
@@ -119,13 +122,19 @@ namespace TRAMADE
                 }
             }
 
-            if (cmbTipoCliente.Text == "Persona")
+            if (cmbTipoCliente.Text == "PERSONA NATURAL")
             {
                 if (string.IsNullOrEmpty(txtDNI.Text))
                 {
                     MessageBox.Show("El número de Identidad (DNI) es obligatorio para personas naturales.");
                     return;
                 }
+            }
+
+            if (cmbDepartamento.SelectedValue == null || cmbCiudad == null)
+            {
+                MessageBox.Show("Por favor, seleccione un departamento y una ciudad.");
+                return;
             }
 
             try
@@ -141,14 +150,21 @@ namespace TRAMADE
                 ObjCliente.setCorreo(txtCorreo.Text);
                 ObjCliente.setDireccion(txtDireccion.Text);
 
-                ObjCliente.setTipoCliente(cmbTipoCliente.Text);
-                ObjCliente.setDepartamento(cmbDepartamento.Text);
-                ObjCliente.setCiudad(cmbCiudad.Text);
-
+             
                 ObjCliente.setRTN(txtRTN.Text);
                 ObjCliente.setDNI(txtDNI.Text);
                 DateTime fechaActual = DateTime.Now;
                 ObjCliente.setFechaRegistro(fechaActual);
+
+                if (cmbTipoCliente.SelectedValue != null)
+                    ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
+
+                if (cmbDepartamento.SelectedValue != null)
+                    ObjCliente.setDepartamento(cmbDepartamento.SelectedValue.ToString());
+
+                if (cmbCiudad.SelectedValue != null)
+                    ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());
+
 
                 bool Resultado = ObjCliente.InsertarCliente(ObjConexion);
 
@@ -172,7 +188,7 @@ namespace TRAMADE
 
         private void cmbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTipoCliente.Text == "Empresa")
+            if (cmbTipoCliente.Text == "PERSONA JURÍDICA")
             {
                 txtRTN.Enabled = true;
                 txtRTN.BackColor = Color.White;
@@ -184,7 +200,7 @@ namespace TRAMADE
                 txtDNI.Text = "";
                 txtDNI.BackColor = Color.LightGray;
             }
-            else
+            if (cmbTipoCliente.Text == "PERSONA NATURAL")
             {
                 txtRTN.Enabled = false;
                 txtRTN.Text = "";
@@ -193,10 +209,10 @@ namespace TRAMADE
                 txtRazonSocial.Enabled = false;
                 txtRazonSocial.Text = "";
                 txtRazonSocial.BackColor = Color.LightGray;
-                
+
                 txtDNI.Enabled = true;
                 txtDNI.BackColor = Color.White;
-                
+
             }
         }
 
@@ -211,6 +227,11 @@ namespace TRAMADE
                 
                 clsCliente.llenarcombociudad(cmbCiudad, ObjConexion, idSeleccionado);
     }
+        }
+
+        private void txtRTN_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

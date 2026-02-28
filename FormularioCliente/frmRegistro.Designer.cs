@@ -164,6 +164,7 @@
             this.txtRTN.StateActive.Border.Rounding = 10F;
             this.txtRTN.StateActive.Border.Width = 4;
             this.txtRTN.TabIndex = 27;
+            this.txtRTN.TextChanged += new System.EventHandler(this.txtRTN_TextChanged);
             // 
             // txtRazonSocial
             // 
@@ -408,9 +409,6 @@
             // 
             this.cmbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCliente.DropDownWidth = 123;
-            this.cmbTipoCliente.Items.AddRange(new object[] {
-            "Empresa",
-            "Persona natural"});
             this.cmbTipoCliente.Location = new System.Drawing.Point(543, 159);
             this.cmbTipoCliente.Name = "cmbTipoCliente";
             this.cmbTipoCliente.Size = new System.Drawing.Size(147, 35);
