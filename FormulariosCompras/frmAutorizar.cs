@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.ClasesCompras;
 
 namespace TRAMADE
 {
@@ -17,14 +18,41 @@ namespace TRAMADE
         {
             InitializeComponent();
         }
+
         clsConexion ObjConexion = new clsConexion();
-        private void RecargarCompras()
+        clsCompras ObjCompras = new clsCompras();
+        private void AgregarColumnaCheck()
         {
-            string consulta = "select * from VistaComprasTabla";
-            SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dgvCompras.DataSource = dt;
+            // Evitar duplicar la columna si ya existe
+            if (dgvCompras.Columns.Contains("Seleccionar")) return;
+
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.Name= "Seleccionar";
+            chk.HeaderText= "Seleccionar";
+            chk.Width = 80;
+            dgvCompras.Columns.Insert(0, chk); // La pone de primera
+        }
+
+        private void recargarCompras()
+        {
+            try
+            {
+                ObjConexion.Abrir();
+                string consulta = "SELECT * FROM VistaComprasTabla";
+                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgvCompras.DataSource = dt;
+                AgregarColumnaCheck();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al recargar: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -44,18 +72,55 @@ namespace TRAMADE
 
         private void frmAutorizar_Load(object sender, EventArgs e)
         {
-            try
+            recargarCompras();
+            dgvCompras.Columns["ID proveedor"].Visible = false;
+            dgvCompras.Columns["ID producto"].Visible = false;
+            dgvCompras.Columns["ID forma pago"].Visible = false;
+            dgvCompras.Columns["ID estado"].Visible = false;
+
+        }
+
+        private void btnAutorizar_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow fila in dgvCompras.Rows)
             {
-                ObjConexion.Abrir();
-                RecargarCompras();
+                bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
+
+                if (marcado)
+                {
+                    int idCompra = Convert.ToInt32(fila.Cells["ID compra"].Value);
+                    ObjCompras.autorizarCompra(ObjConexion, idCompra);
+                }
             }
-            catch (Exception ex)
+            MessageBox.Show("Compras autorizadas correctamente.");
+            recargarCompras();
+
+        }
+
+        private void btnDenegar_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow fila in dgvCompras.Rows)
             {
-                MessageBox.Show("Error al cargar los datos: " + ex.Message);
+                bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
+
+                if (marcado)
+                {
+                    int idCompra = Convert.ToInt32(fila.Cells["ID compra"].Value);
+                    ObjCompras.denegarCompra(ObjConexion, idCompra);
+                }
             }
-            finally
+            MessageBox.Show("Compras denegadas correctamente.");
+            recargarCompras();
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DataTable dt = ObjCompras.BuscarCompra(ObjConexion, txtBuscar.Text);
+            if (dt != null)
             {
-                ObjConexion.Cerrar();
+                dgvCompras.DataSource = dt;
+                AgregarColumnaCheck();
             }
         }
     }

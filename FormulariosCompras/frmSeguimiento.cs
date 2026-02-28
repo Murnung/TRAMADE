@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.ClasesCompras;
 
 namespace TRAMADE
 {
@@ -19,14 +20,28 @@ namespace TRAMADE
             InitializeComponent();
         }
         clsConexion ObjConexion = new clsConexion();
+        clsCompras ObjCompras = new clsCompras();
 
-        private void RecargarUsuarios()
+        private void recargarCompras()
         {
-            string consulta = "select * from VistaComprasTabla";
-            SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dgvCompras.DataSource = dt;
+
+            try
+            {
+                ObjConexion.Abrir();
+                string consulta = "SELECT * FROM VistaComprasTabla";
+                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgvCompras.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al recargar: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -61,20 +76,11 @@ namespace TRAMADE
 
         private void frmSeguimiento_Load(object sender, EventArgs e)
         {
-            try
-            {
-                ObjConexion.Abrir(); // Abrir la conexión
-                RecargarUsuarios();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar los datos: " + ex.Message);
-            }
-            finally
-            {
-                ObjConexion.Cerrar(); // Siempre cerrar la conexión
-            }
+            recargarCompras();
+            dgvCompras.Columns["ID proveedor"].Visible = false;
+            dgvCompras.Columns["ID producto"].Visible = false;
+            dgvCompras.Columns["ID forma pago"].Visible = false;
+            dgvCompras.Columns["ID estado"].Visible = false;
 
         }
 
@@ -87,50 +93,11 @@ namespace TRAMADE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            try
+            DataTable dt = ObjCompras.FiltrarCompras(ObjConexion, dtDesde, dtHasta, txtBuscar.Text);
+            if (dt != null)
             {
-                ObjConexion.Abrir(); // Abrimos la conexión
-
-                // Consulta base
-                string consulta = "SELECT * FROM VistaComprasTabla WHERE [Fecha pedido] >= @desde AND [Fecha pedido] <= @hasta";
-
-                int id = 0;
-                bool filtrarPorId = int.TryParse(txtBuscar.Text.Trim(), out id);
-
-                if (filtrarPorId)
-                {
-                    consulta += " AND [ID compra] = @id"; //Agregamos filsto para el id de la solicitud de compra por si aplica
-                }
-
-                using (SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC))
-                {
-                    // Parámetros de fecha
-                    cmd.Parameters.AddWithValue("@desde", dtDesde.Value.Date);
-                    cmd.Parameters.AddWithValue("@hasta", dtHasta.Value.Date.AddDays(1).AddSeconds(-1)); // hasta 23:59:59
-
-                     //Parametros de ID por si aplieca
-                    if (filtrarPorId)
-                    {
-                        cmd.Parameters.AddWithValue("@id",id);
-                    }
-                    // Llenar DataTable con los resultados
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    // Asignar al DataGridView
-                    dgvCompras.DataSource = dt;
-                }
+                dgvCompras.DataSource = dt;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al filtrar compras: " + ex.Message);
-            }
-            finally
-            {
-                ObjConexion.Cerrar(); // Cerramos la conexión siempre
-            }
-
         }
     }
 }

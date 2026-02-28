@@ -18,7 +18,7 @@ namespace TRAMADE.ClasesCompras
 {
     internal class clsCompras
     {
-        private int cantidad, proveedor, producto, formaPago, estado = 7, idUsuario,idCompra;
+        private int cantidad, proveedor, producto, formaPago, estado = 7, idUsuario, idCompra;
         private DateTime entrega;
         private string contacto, direccion, telefono, nombreProducto;
         private decimal precioCosto;
@@ -50,6 +50,7 @@ namespace TRAMADE.ClasesCompras
         public void setPrecio(decimal valor) { precioCosto = valor; }
         public void setEntrega(DateTime valor) { entrega = valor; }
         public void setIdCompra(int valor) { idCompra = valor; }
+     
 
         //Getters
         public int getCantidad() { return cantidad; }
@@ -307,7 +308,6 @@ namespace TRAMADE.ClasesCompras
                                 cmdProductoProveedor.ExecuteNonQuery();
                             }
                         }
-
                     }
                     listaProductos.Clear();
                     return true;
@@ -324,14 +324,14 @@ namespace TRAMADE.ClasesCompras
                 conexion.Cerrar();
             }
         }
-
+        
         public bool actualizarCompra(clsConexion conexion)
         {
             try
             {
                 conexion.Abrir();
                 //ACTUALIZAR COMPRA 
-                SqlCommand cmdCompras = new SqlCommand("PA_ACTUALIZAR_COMPRA",conexion.SqlC);
+                SqlCommand cmdCompras = new SqlCommand("PA_ACTUALIZAR_COMPRA", conexion.SqlC);
                 cmdCompras.CommandType = CommandType.StoredProcedure;
                 cmdCompras.Parameters.AddWithValue("@id_compra", idCompra);
                 cmdCompras.Parameters.AddWithValue("@id_proveedor", proveedor);
@@ -343,7 +343,7 @@ namespace TRAMADE.ClasesCompras
                 if (entrega == DateTime.MinValue)
                     cmdCompras.Parameters.AddWithValue("@fecha_entrega", DBNull.Value);
                 else
-                     cmdCompras.Parameters.AddWithValue("@fecha_entrega", entrega);
+                    cmdCompras.Parameters.AddWithValue("@fecha_entrega", entrega);
 
                 cmdCompras.Parameters.AddWithValue("@autorizada", autorizar);
                 cmdCompras.Parameters.AddWithValue("@direccion_entrega", direccion);
@@ -355,8 +355,7 @@ namespace TRAMADE.ClasesCompras
 
                 int filas = Convert.ToInt32(resultado);
 
-
-                if (filas > 0 ) //Verifica que SP si devolvio un 
+                if (filas > 0) //Verifica que SP si devolvio un 
                 {
                     //Eliminar detalles antiguos usando el SP
                     SqlCommand cmdEliminarDetalles = new SqlCommand("PA_ELIMINAR_DETALLE_COMPRA", conexion.SqlC);
@@ -366,7 +365,7 @@ namespace TRAMADE.ClasesCompras
                     foreach (DataRow fila in listaProductos.Rows)
                     {
                         //ACUTALIZAR DETALLE COMPRA
-                         
+
                         int idProductoFila = Convert.ToInt32(fila["idProducto"]);
                         int cantidadFila = Convert.ToInt32(fila["cantidad"]);
 
@@ -412,7 +411,6 @@ namespace TRAMADE.ClasesCompras
             {
                 conexion.Cerrar();
             }
-
         }
 
         public void cargarProductosPorCompra(int idCompra, clsConexion conexion)
@@ -424,7 +422,7 @@ namespace TRAMADE.ClasesCompras
                 SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
                 cmd.Parameters.AddWithValue("@id_compra", idCompra);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd); 
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
                 listaProductos.Clear();
 
@@ -451,8 +449,142 @@ namespace TRAMADE.ClasesCompras
                 conexion.Cerrar();
             }
         }
+        public bool autorizarCompra(clsConexion conexion, int idCompra)
+        {
+            try
+            {
+                conexion.Abrir();
 
+                using (SqlCommand cmd = new SqlCommand("PA_AUTORIZAR_COMPRA", conexion.SqlC))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_compra", idCompra);
 
+                    int filas = cmd.ExecuteNonQuery();
+                    return filas > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al autorizar la compra: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+
+        public bool denegarCompra(clsConexion conexion, int idCompra)
+        {
+            try
+            {
+                conexion.Abrir();
+
+                using (SqlCommand cmd = new SqlCommand("PA_DENEGAR_COMPRA", conexion.SqlC))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_compra", idCompra);
+
+                    int filas = cmd.ExecuteNonQuery();
+                    return filas > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al denegar la compra: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+
+        //Filtrar por fechas
+        public DataTable FiltrarCompras(clsConexion conexion, KryptonDateTimePicker desde, KryptonDateTimePicker hasta, string textoBuscar)
+        {
+            try
+            {
+                conexion.Abrir();
+
+                string consulta = "SELECT * FROM VistaComprasTabla WHERE [Fecha pedido] >= @desde AND [Fecha pedido] <= @hasta";
+
+                int id = 0;
+                bool filtrarPorId = int.TryParse(textoBuscar.Trim(), out id);
+
+                if (filtrarPorId)
+                {
+                    consulta += " AND [ID compra] = @id";
+                }
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC))
+                {
+                    cmd.Parameters.AddWithValue("@desde", desde.Value.Date);
+                    cmd.Parameters.AddWithValue("@hasta", hasta.Value.Date.AddDays(1).AddSeconds(-1));
+
+                    if (filtrarPorId)
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                    }
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar compras: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+
+        //Buscar por id de compra
+        public DataTable BuscarCompra(clsConexion conexion, string textoBuscar)
+        {
+            try
+            {
+                conexion.Abrir();
+
+                string consulta = "SELECT * FROM VistaComprasTabla";
+
+                int id = 0;
+                bool filtrarPorId = int.TryParse(textoBuscar.Trim(), out id);
+
+                if (filtrarPorId)
+                {
+                    consulta += " WHERE [ID compra] = @id";
+                }
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC))
+                {
+                    if (filtrarPorId)
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                    }
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar compra: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
     }
 }
     

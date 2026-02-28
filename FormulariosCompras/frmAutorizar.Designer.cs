@@ -34,9 +34,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnAutorizar = new Krypton.Toolkit.KryptonButton();
             this.btnDenegar = new Krypton.Toolkit.KryptonButton();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
@@ -124,6 +125,7 @@
             this.btnAutorizar.TabIndex = 72;
             this.btnAutorizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnAutorizar.Values.Text = "AUTORIZAR SELECCIONES";
+            this.btnAutorizar.Click += new System.EventHandler(this.btnAutorizar_Click);
             // 
             // btnDenegar
             // 
@@ -146,14 +148,15 @@
             this.btnDenegar.TabIndex = 73;
             this.btnDenegar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnDenegar.Values.Text = "DENEGAR SELECCIONES";
+            this.btnDenegar.Click += new System.EventHandler(this.btnDenegar_Click);
             // 
-            // kryptonTextBox1
+            // txtBuscar
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(20, 139);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(303, 33);
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 10F;
-            this.kryptonTextBox1.TabIndex = 74;
+            this.txtBuscar.Location = new System.Drawing.Point(20, 139);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(303, 33);
+            this.txtBuscar.StateCommon.Border.Rounding = 10F;
+            this.txtBuscar.TabIndex = 74;
             // 
             // panel2
             // 
@@ -174,15 +177,42 @@
             this.dgvCompras.TabIndex = 76;
             this.dgvCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(329, 141);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.Blue;
+            this.btnBuscar.OverrideFocus.Border.Rounding = 10F;
+            this.btnBuscar.Size = new System.Drawing.Size(139, 31);
+            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Border.Rounding = 10F;
+            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnBuscar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.Color.Blue;
+            this.btnBuscar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnBuscar.StateTracking.Border.Rounding = 10F;
+            this.btnBuscar.TabIndex = 91;
+            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnBuscar.Values.Text = "BUSCAR";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // frmAutorizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1046, 645);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.kryptonTextBox1);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnDenegar);
             this.Controls.Add(this.btnAutorizar);
             this.Controls.Add(this.panel1);
@@ -207,8 +237,9 @@
         private System.Windows.Forms.Label label14;
         private Krypton.Toolkit.KryptonButton btnAutorizar;
         private Krypton.Toolkit.KryptonButton btnDenegar;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox txtBuscar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvCompras;
+        private Krypton.Toolkit.KryptonButton btnBuscar;
     }
 }
