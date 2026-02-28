@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsConexion.cs" />
+    <Compile Include="Formulario Proveedores\Clases\clsValidar.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +75,7 @@
     <Compile Include="Formulario Proveedores\Clases\clsProveedores_Añadir.cs" />
     <Compile Include="Formulario Proveedores\Clases\clsProveedores_Editar.cs" />
     <Compile Include="Formulario Proveedores\Clases\clsProveedores_Perfil.cs" />
+    <Compile Include="Formulario Proveedores\clsCombobox.cs" />
     <Compile Include="Formulario Proveedores\frmProveedores_Perfil.cs">
       <SubType>Form</SubType>
     </Compile>
