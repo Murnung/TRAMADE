@@ -200,14 +200,11 @@ namespace TRAMADE.ClasesCliente
                 cmdCliente.Parameters.AddWithValue("@contacto_cliente", contacto);
                 cmdCliente.Parameters.AddWithValue("@correo_electronico_cliente", correo);
                 cmdCliente.Parameters.AddWithValue("@direccion_cliente", direccion);
-                
-                //Provisionales
-                cmdCliente.Parameters.AddWithValue("@id_usuario", 2);
-                cmdCliente.Parameters.AddWithValue("@id_estado", Convert.ToInt32(departamento));
-
+                cmdCliente.Parameters.AddWithValue("@id_estado", Convert.ToInt32(estado));
                 cmdCliente.Parameters.AddWithValue("@id_clasificacion_cliente", Convert.ToInt32(tipoCliente));
                 cmdCliente.Parameters.AddWithValue("@id_ciudad", Convert.ToInt32(ciudad));
                 
+                cmdCliente.Parameters.AddWithValue("@id_usuario", 2);
                 cmdCliente.ExecuteNonQuery();
                 return true;
             }
@@ -221,8 +218,36 @@ namespace TRAMADE.ClasesCliente
                 conexion.Cerrar();
             }
         }
+        /*public void ActulizarCliente(clsConexion conexion)
+        {
+            try
+            {
+                conexion.Abrir();
+                SqlCommand cmdCliente = new SqlCommand("PA_ACTUALIZAR_CLIENTE", conexion.SqlC);
+                cmdCliente.CommandType = CommandType.StoredProcedure;
 
-        
-        
+                cmdCliente.Parameters.AddWithValue("@nombre_cliente", nombre);
+
+                cmdCliente.Parameters.AddWithValue("@rtn_cliente", string.IsNullOrWhiteSpace(RTN) ? (object)DBNull.Value : RTN);
+                cmdCliente.Parameters.AddWithValue("@razon_social", string.IsNullOrWhiteSpace(razonSocial) ? (object)DBNull.Value : razonSocial);
+                cmdCliente.Parameters.AddWithValue("@dni_cliente", string.IsNullOrWhiteSpace(dni) ? (object)DBNull.Value : dni);
+
+
+                cmdCliente.Parameters.AddWithValue("@telefono_cliente", telefono);
+                cmdCliente.Parameters.AddWithValue("@contacto_cliente", contacto);
+                cmdCliente.Parameters.AddWithValue("@correo_electronico_cliente", correo);
+                cmdCliente.Parameters.AddWithValue("@direccion_cliente", direccion);
+                cmdCliente.Parameters.AddWithValue("@id_clasificacion_cliente", Convert.ToInt32(tipoCliente));
+                cmdCliente.Parameters.AddWithValue("@id_ciudad", Convert.ToInt32(ciudad));
+                cmdCliente.Parameters.AddWithValue("@id_estado", Convert.ToInt32(estado));
+
+                cmdCliente.Parameters.AddWithValue("@id_usuario", 2);
+
+                cmdCliente.ExecuteNonQuery();
+            }
+        }*/
+
+
+
     }
 }

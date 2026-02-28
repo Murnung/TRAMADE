@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace TRAMADE
     {
         clsConexion ObjConexion = new clsConexion();
         clsCliente ObjCliente = new clsCliente();
+        int IdSeleccionado = 0;
         public frmRegistroNuevo()
         {
             InitializeComponent();
@@ -22,11 +24,13 @@ namespace TRAMADE
 
         private void frmRegistroNuevo_Load(object sender, EventArgs e)
         {
-          
 
-            
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtFecha.ReadOnly = true;
+
+            clsCliente.llenarcomboDepartamento(cmbDepartamento, ObjConexion);
+            clsCliente.llenarcomboTipoCliente(cmbTipoCliente, ObjConexion);
+
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -44,12 +48,13 @@ namespace TRAMADE
             txtID.Text = "";
             txtNombre.Text = "";
             cmbTipoCliente.SelectedIndex = -1;
+            cmbTipoCliente.SelectedItem = null;
+            cmbDepartamento.SelectedItem = null;
             txtContacto.Text = "";
             txtTelefono.Text = "";
-            txtDepartamento.Text = "";
             txtCorreo.Text = "";
             txtDireccion.Text = "";
-            txtCiudad.Text = "";
+
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             txtRTN.Text = "";
@@ -102,39 +107,61 @@ namespace TRAMADE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           /* if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            string busqueda = txtBuscar.Text.Trim();
+            if (string.IsNullOrEmpty(busqueda))
             {
-                MessageBox.Show("Por favor, ingrese el ID del cliente para buscar.");
-                txtBuscar.Focus();
+                MessageBox.Show("Por favor, ingrese el ID del cliente.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            DataTable datos = ObjCliente.BusquedaClienteID(txtBuscar.Text, ObjConexion);
-
-            if (datos.Rows.Count > 0)
+            try
             {
-                DataRow fila = datos.Rows[0];
+                ObjConexion.Abrir();
+                string consulta = "SELECT * FROM CLIENTE WHERE id_cliente = @busqueda";
+                SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC);
+                cmd.Parameters.AddWithValue("@busqueda", busqueda);
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                txtID.Text = fila["id_cliente"].ToString();
-                txtID.ReadOnly = true;
-                txtID.BackColor = Color.LightGray;
-                cmbTipoCliente.SelectedIndex = 0;
-                txtNombre.Text = fila["nombre_cliente"].ToString();
-                txtDNI.Text = fila["dni_cliente"].ToString();
-                txtRazonSocial.Text = fila["razon_social"].ToString();
-                txtRTN.Text = fila["rtn_cliente"].ToString();
+                if (reader.Read())
+                {
+                    IdSeleccionado = Convert.ToInt32(reader["id_cliente"]);
 
-                txtContacto.Text = fila["contacto_cliente"].ToString();
-                txtTelefono.Text = fila["telefono_cliente"].ToString();
-                txtDepartamento.Text = fila["departamento_cliente"].ToString();
-                txtCorreo.Text = fila["correo_electronico_cliente"].ToString();
-                txtDireccion.Text = fila["direccion_cliente"].ToString();
-                //Pendiente de cambio por cmb
-                txtCiudad.Text = fila["ciudad_cliente"].ToString();
+                    txtID.Text = reader["id_cliente"].ToString();
+                    txtID.BackColor = Color.LightGray;
+                    txtID.Enabled = false;
+
+                    txtNombre.Text = reader["nombre_cliente"].ToString();
+                    txtContacto.Text = reader["contacto_cliente"].ToString();
+                    txtTelefono.Text = reader["telefono_cliente"].ToString();
+                    txtCorreo.Text = reader["correo_electronico_cliente"].ToString();
+                    txtDireccion.Text = reader["direccion_cliente"].ToString();
+                    txtDNI.Text = reader["dni_cliente"].ToString();
+                    txtRTN.Text = reader["rtn_cliente"].ToString();
+                    txtRazonSocial.Text = reader["razon_social"].ToString();
+
+
+                    cmbTipoCliente.SelectedValue = reader["id_clasificacion_cliente"];
+                    int idDepa = Convert.ToInt32(reader["id_departamento"]);
+                    cmbDepartamento.SelectedValue = idDepa;
+                    clsCliente.llenarcombociudad(cmbCiudad, ObjConexion, idDepa);
+                    cmbCiudad.SelectedValue = reader["id_ciudad"];
+
+                    reader.Close();
+                }
+                else
+                {
+                    reader.Close();
+                    IdSeleccionado = 0;
+                    MessageBox.Show("No se encontró ningún cliente con el ID proporcionado.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se encontró ningún cliente con ese ID.");
-            } */
+                MessageBox.Show("Error al buscar cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
         }
     }
 }

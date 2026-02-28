@@ -207,9 +207,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label6.Location = new System.Drawing.Point(19, 392);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 44);
+            this.label6.Size = new System.Drawing.Size(149, 44);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Teléfono personal";
+            this.label6.Text = "Teléfono personal*";
             // 
             // kryptonTextBox1
             // 

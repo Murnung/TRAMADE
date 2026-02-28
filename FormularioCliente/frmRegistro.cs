@@ -69,6 +69,11 @@ namespace TRAMADE
         {
             txtID.Text = "AUTOGENERADO";
             txtNombre.Text = "";
+            txtContacto.Text = "";
+            txtTelefono.Text = "";
+            txtCorreo.Text = "";
+            txtDireccion.Text = "";
+
 
             cmbTipoCliente.SelectedItem = null;
             cmbDepartamento.SelectedItem = null;
@@ -76,12 +81,6 @@ namespace TRAMADE
             cmbCiudad.DataSource = null;
             cmbCiudad.Items.Clear();
 
-            txtContacto.Text = "";
-            txtTelefono.Text = "";
-          
-            txtCorreo.Text = "";
-            txtDireccion.Text = "";
-           
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
             txtRTN.Text = "";
@@ -121,6 +120,7 @@ namespace TRAMADE
                     return;
                 }
             }
+            
 
             if (cmbTipoCliente.Text == "PERSONA NATURAL")
             {
