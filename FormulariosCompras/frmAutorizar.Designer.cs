@@ -59,12 +59,12 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(924, 69);
+            this.panel1.Size = new System.Drawing.Size(1036, 69);
             this.panel1.TabIndex = 27;
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(796, 18);
+            this.btnRegresar.Location = new System.Drawing.Point(887, 18);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
@@ -160,7 +160,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.panel2.Location = new System.Drawing.Point(0, 612);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(926, 37);
+            this.panel2.Size = new System.Drawing.Size(1050, 37);
             this.panel2.TabIndex = 75;
             // 
             // dgvCompras
@@ -170,7 +170,7 @@
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
-            this.dgvCompras.Size = new System.Drawing.Size(884, 319);
+            this.dgvCompras.Size = new System.Drawing.Size(1002, 319);
             this.dgvCompras.TabIndex = 76;
             this.dgvCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -179,7 +179,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(916, 645);
+            this.ClientSize = new System.Drawing.Size(1046, 645);
             this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.kryptonTextBox1);
