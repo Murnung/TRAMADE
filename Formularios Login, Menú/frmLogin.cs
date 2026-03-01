@@ -41,18 +41,18 @@ namespace TRAMADE
 
                 if (dr.Read())  //Intenta lee una fila
                 {
-<<<<<<< HEAD:frmLogin.cs
+
                     MessageBox.Show("Inicio de sesión exitoso");
                     Form1 frm = new Form1();
                     frm.ShowDialog();
                     
-=======
+
                     MessageBox.Show("Inicio de seccion exitoso");
                     frmMenuPrincipal objMenu = new frmMenuPrincipal();
                     objMenu.Show();
                     this.Hide();
 
->>>>>>> Menú:Formularios Login, Menú/frmLogin.cs
+
                 }
                 else
                 {
