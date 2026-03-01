@@ -241,7 +241,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.COMPRAS;
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Compras;
             this.pictureBox1.Location = new System.Drawing.Point(34, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(44, 29);
