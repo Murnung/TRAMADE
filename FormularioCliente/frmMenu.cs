@@ -31,7 +31,7 @@ namespace TRAMADE
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-                frmRegistro objRegis = new frmRegistro();
+            frmRegistro objRegis = new frmRegistro();
             objRegis.Show();
         }
 
