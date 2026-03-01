@@ -110,6 +110,8 @@
             // 
             // dgvAprobacion
             // 
+            this.dgvAprobacion.AllowUserToAddRows = false;
+            this.dgvAprobacion.AllowUserToDeleteRows = false;
             this.dgvAprobacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

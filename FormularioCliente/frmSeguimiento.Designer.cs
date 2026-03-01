@@ -127,6 +127,8 @@
             // 
             // dvgSeguimiento
             // 
+            this.dvgSeguimiento.AllowUserToAddRows = false;
+            this.dvgSeguimiento.AllowUserToDeleteRows = false;
             this.dvgSeguimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -134,6 +136,7 @@
             this.dvgSeguimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgSeguimiento.Location = new System.Drawing.Point(41, 246);
             this.dvgSeguimiento.Name = "dvgSeguimiento";
+            this.dvgSeguimiento.ReadOnly = true;
             this.dvgSeguimiento.Size = new System.Drawing.Size(641, 189);
             this.dvgSeguimiento.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dvgSeguimiento.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
