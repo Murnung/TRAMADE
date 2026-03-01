@@ -29,6 +29,9 @@ namespace TRAMADE
                 string nombreRecurso = Assembly.GetExecutingAssembly()
                     .GetManifestResourceNames()
                     .FirstOrDefault(rn => rn.EndsWith("rptCompras.rdlc"));
+                
+                string todosLosRecursos = string.Join("\n", Assembly.GetExecutingAssembly().GetManifestResourceNames());
+                MessageBox.Show("Recursos encontrados:\n" + todosLosRecursos);
 
                 if (string.IsNullOrEmpty(nombreRecurso))
                 {
