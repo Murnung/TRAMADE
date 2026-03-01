@@ -318,7 +318,7 @@ namespace TRAMADE.ClasesCliente
                 bool filtrarPorID = int.TryParse(textoBuscar.Trim(), out id);
                 if (filtrarPorID)
                 {
-                    consulta += "Where id_cliente = @id";
+                    consulta += "Where [ID Cliente] = @id";
                 }
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC))
                 {

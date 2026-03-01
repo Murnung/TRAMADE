@@ -68,7 +68,7 @@ namespace TRAMADE
                 bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
                 if (marcado)
                 {
-                    int idCliente = Convert.ToInt32(fila.Cells["id_cliente"].Value);
+                    int idCliente = Convert.ToInt32(fila.Cells["ID Cliente"].Value);
                     ObjCliente.AutorizarCliente(ObjConexion, idCliente);
                 }
             }
@@ -83,7 +83,7 @@ namespace TRAMADE
                 bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
                 if (marcado)
                 {
-                    int idCliente = Convert.ToInt32(fila.Cells["id_cliente"].Value);
+                    int idCliente = Convert.ToInt32(fila.Cells["ID Cliente"].Value);
                     ObjCliente.DenegarCliente(ObjConexion, idCliente);
                 }
             }

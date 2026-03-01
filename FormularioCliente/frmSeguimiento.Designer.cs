@@ -38,15 +38,11 @@
             this.kgActivos = new Krypton.Toolkit.KryptonGroup();
             this.txtActivos = new Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
+            this.dgvAprobacion = new Krypton.Toolkit.KryptonDataGridView();
+            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -63,7 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kgActivos.Panel)).BeginInit();
             this.kgActivos.Panel.SuspendLayout();
             this.kgActivos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAprobacion)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
@@ -72,11 +68,12 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.label18);
+            this.kryptonGroup1.Panel.Controls.Add(this.btnBuscar);
+            this.kryptonGroup1.Panel.Controls.Add(this.dgvAprobacion);
             this.kryptonGroup1.Panel.Controls.Add(this.kgInactivos);
             this.kryptonGroup1.Panel.Controls.Add(this.kgRegistrados);
             this.kryptonGroup1.Panel.Controls.Add(this.kgActivos);
-            this.kryptonGroup1.Panel.Controls.Add(this.dateTimePicker1);
-            this.kryptonGroup1.Panel.Controls.Add(this.kryptonDataGridView1);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
             this.kryptonGroup1.Panel.Controls.Add(this.txtBuscar);
             this.kryptonGroup1.Size = new System.Drawing.Size(727, 485);
@@ -86,7 +83,7 @@
             // 
             // kgInactivos
             // 
-            this.kgInactivos.Location = new System.Drawing.Point(499, 93);
+            this.kgInactivos.Location = new System.Drawing.Point(495, 49);
             // 
             // kgInactivos.Panel
             // 
@@ -135,7 +132,7 @@
             // 
             // kgRegistrados
             // 
-            this.kgRegistrados.Location = new System.Drawing.Point(41, 89);
+            this.kgRegistrados.Location = new System.Drawing.Point(41, 45);
             // 
             // kgRegistrados.Panel
             // 
@@ -184,7 +181,7 @@
             // 
             // kgActivos
             // 
-            this.kgActivos.Location = new System.Drawing.Point(286, 93);
+            this.kgActivos.Location = new System.Drawing.Point(282, 49);
             // 
             // kgActivos.Panel
             // 
@@ -231,79 +228,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Clientes Activos";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(16, 56);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(303, 22);
-            this.dateTimePicker1.TabIndex = 25;
-            // 
-            // kryptonDataGridView1
-            // 
-            this.kryptonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(16, 231);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(670, 229);
-            this.kryptonDataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.kryptonDataGridView1.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonDataGridView1.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.HeaderRow.Border.Color2 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.TabIndex = 24;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column2.HeaderText = "ID de Cliente";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 98;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column3.HeaderText = "Nombre de cliente/organización";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 182;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column4.HeaderText = "Fecha de Registro";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 121;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column5.HeaderText = "Tipo de cliente";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 74;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column6.HeaderText = "Estado";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 71;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -317,7 +241,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(373, 47);
+            this.txtBuscar.Location = new System.Drawing.Point(166, 201);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(303, 29);
             this.txtBuscar.StateActive.Border.Color1 = System.Drawing.Color.Black;
@@ -325,6 +249,70 @@
             this.txtBuscar.StateActive.Border.Rounding = 5F;
             this.txtBuscar.StateActive.Border.Width = 3;
             this.txtBuscar.TabIndex = 0;
+            // 
+            // dgvAprobacion
+            // 
+            this.dgvAprobacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAprobacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAprobacion.Location = new System.Drawing.Point(41, 246);
+            this.dgvAprobacion.Name = "dgvAprobacion";
+            this.dgvAprobacion.Size = new System.Drawing.Size(641, 189);
+            this.dgvAprobacion.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgvAprobacion.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.dgvAprobacion.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.dgvAprobacion.StateCommon.HeaderColumn.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.dgvAprobacion.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.HeaderRow.Border.Color2 = System.Drawing.Color.White;
+            this.dgvAprobacion.TabIndex = 29;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(481, 198);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnBuscar.Size = new System.Drawing.Size(88, 32);
+            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.btnBuscar.StateCommon.Border.Rounding = 25F;
+            this.btnBuscar.StateCommon.Border.Width = 1;
+            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnBuscar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnBuscar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnBuscar.TabIndex = 38;
+            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnBuscar.Values.Text = "BUSCAR";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(18, 196);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(132, 44);
+            this.label18.TabIndex = 40;
+            this.label18.Text = "Búsqueda por ID";
             // 
             // frmSeguimiento
             // 
@@ -355,7 +343,7 @@
             this.kgActivos.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kgActivos)).EndInit();
             this.kgActivos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAprobacion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,15 +351,8 @@
         #endregion
 
         private Krypton.Toolkit.KryptonGroup kryptonGroup1;
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
         private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonTextBox txtBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private Krypton.Toolkit.KryptonGroup kgActivos;
         private Krypton.Toolkit.KryptonTextBox txtActivos;
         private System.Windows.Forms.Label label2;
@@ -381,5 +362,8 @@
         private Krypton.Toolkit.KryptonGroup kgRegistrados;
         private Krypton.Toolkit.KryptonTextBox txtRegistrados;
         private System.Windows.Forms.Label label3;
+        private Krypton.Toolkit.KryptonDataGridView dgvAprobacion;
+        private Krypton.Toolkit.KryptonButton btnBuscar;
+        private System.Windows.Forms.Label label18;
     }
 }
