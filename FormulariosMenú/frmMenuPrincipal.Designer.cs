@@ -43,15 +43,10 @@
             this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
             this.flpBarraLateral = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnInicio = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnClientes = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnVentas = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnInventario = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnCompras = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -80,6 +75,11 @@
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnInicio = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.btnCompras = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.flpBarraLateral.SuspendLayout();
@@ -222,7 +222,7 @@
             this.lblBienvenidoUsuario.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenidoUsuario.Location = new System.Drawing.Point(91, 18);
             this.lblBienvenidoUsuario.Name = "lblBienvenidoUsuario";
-            this.lblBienvenidoUsuario.Size = new System.Drawing.Size(350, 38);
+            this.lblBienvenidoUsuario.Size = new System.Drawing.Size(273, 29);
             this.lblBienvenidoUsuario.TabIndex = 5;
             this.lblBienvenidoUsuario.Text = "Bienvenido, [Usuario]";
             // 
@@ -250,19 +250,6 @@
             this.panel2.Size = new System.Drawing.Size(245, 54);
             this.panel2.TabIndex = 3;
             // 
-            // btnInicio
-            // 
-            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInicio.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInicio.Location = new System.Drawing.Point(-3, -3);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnInicio.Size = new System.Drawing.Size(248, 63);
-            this.btnInicio.TabIndex = 2;
-            this.btnInicio.Text = "Inicio";
-            this.btnInicio.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnClientes);
@@ -270,23 +257,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(245, 60);
             this.panel3.TabIndex = 5;
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(-3, 0);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnClientes.Size = new System.Drawing.Size(245, 60);
-            this.btnClientes.TabIndex = 4;
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -296,23 +266,6 @@
             this.panel4.Size = new System.Drawing.Size(245, 60);
             this.panel4.TabIndex = 7;
             // 
-            // btnVentas
-            // 
-            this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVentas.FlatAppearance.BorderSize = 0;
-            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVentas.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(-3, 0);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnVentas.Size = new System.Drawing.Size(245, 60);
-            this.btnVentas.TabIndex = 6;
-            this.btnVentas.Text = "Ventas";
-            this.btnVentas.UseVisualStyleBackColor = false;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnInventario);
@@ -321,23 +274,6 @@
             this.panel5.Size = new System.Drawing.Size(245, 60);
             this.panel5.TabIndex = 9;
             // 
-            // btnInventario
-            // 
-            this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInventario.FlatAppearance.BorderSize = 0;
-            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventario.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventario.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventario.Location = new System.Drawing.Point(-3, -1);
-            this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnInventario.Size = new System.Drawing.Size(245, 60);
-            this.btnInventario.TabIndex = 8;
-            this.btnInventario.Text = "Inventario";
-            this.btnInventario.UseVisualStyleBackColor = false;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.btnCompras);
@@ -345,23 +281,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(245, 60);
             this.panel6.TabIndex = 11;
-            // 
-            // btnCompras
-            // 
-            this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCompras.FlatAppearance.BorderSize = 0;
-            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompras.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompras.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(-3, -6);
-            this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnCompras.Size = new System.Drawing.Size(245, 60);
-            this.btnCompras.TabIndex = 10;
-            this.btnCompras.Text = "Compras";
-            this.btnCompras.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -379,6 +298,7 @@
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnProveedores.Image = global::TRAMADE.Properties.Resources.Proveedores;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.Location = new System.Drawing.Point(-3, -6);
             this.btnProveedores.Name = "btnProveedores";
@@ -404,6 +324,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.Window;
+            this.button6.Image = global::TRAMADE.Properties.Resources.Reportes;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(-3, -6);
             this.button6.Name = "button6";
@@ -427,7 +348,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label1.Location = new System.Drawing.Point(29, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 29);
+            this.label1.Size = new System.Drawing.Size(151, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vista General";
             // 
@@ -634,7 +555,7 @@
             this.lblTotal.BackColor = System.Drawing.Color.White;
             this.lblTotal.Location = new System.Drawing.Point(78, 148);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(89, 16);
+            this.lblTotal.Size = new System.Drawing.Size(71, 13);
             this.lblTotal.TabIndex = 20;
             this.lblTotal.Text = "Total Clientes";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -645,7 +566,7 @@
             this.lblTotalClientes.BackColor = System.Drawing.Color.White;
             this.lblTotalClientes.Location = new System.Drawing.Point(98, 122);
             this.lblTotalClientes.Name = "lblTotalClientes";
-            this.lblTotalClientes.Size = new System.Drawing.Size(44, 16);
+            this.lblTotalClientes.Size = new System.Drawing.Size(35, 13);
             this.lblTotalClientes.TabIndex = 19;
             this.lblTotalClientes.Text = "label3";
             this.lblTotalClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -674,7 +595,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label2.Location = new System.Drawing.Point(69, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 29);
+            this.label2.Size = new System.Drawing.Size(94, 24);
             this.label2.TabIndex = 13;
             this.label2.Text = "Clientes";
             // 
@@ -777,7 +698,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label6.Location = new System.Drawing.Point(43, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(377, 29);
+            this.label6.Size = new System.Drawing.Size(307, 24);
             this.label6.TabIndex = 18;
             this.label6.Text = "Últimas Compras Realizadas";
             // 
@@ -816,7 +737,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label7.Location = new System.Drawing.Point(65, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(350, 29);
+            this.label7.Size = new System.Drawing.Size(286, 24);
             this.label7.TabIndex = 20;
             this.label7.Text = "Últimas Ventas Realizadas";
             // 
@@ -830,6 +751,92 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInicio.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.Image = global::TRAMADE.Properties.Resources.Home;
+            this.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInicio.Location = new System.Drawing.Point(-3, -3);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnInicio.Size = new System.Drawing.Size(248, 63);
+            this.btnInicio.TabIndex = 2;
+            this.btnInicio.Text = "Inicio";
+            this.btnInicio.UseVisualStyleBackColor = true;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnClientes.Image = global::TRAMADE.Properties.Resources.Clientes;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(-3, 0);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnClientes.Size = new System.Drawing.Size(245, 60);
+            this.btnClientes.TabIndex = 4;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.UseVisualStyleBackColor = false;
+            // 
+            // btnVentas
+            // 
+            this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVentas.FlatAppearance.BorderSize = 0;
+            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentas.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnVentas.Image = global::TRAMADE.Properties.Resources.Ventas;
+            this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentas.Location = new System.Drawing.Point(-3, 0);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnVentas.Size = new System.Drawing.Size(245, 60);
+            this.btnVentas.TabIndex = 6;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = false;
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInventario.FlatAppearance.BorderSize = 0;
+            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventario.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnInventario.Image = global::TRAMADE.Properties.Resources.Inventario1;
+            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventario.Location = new System.Drawing.Point(-3, -1);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnInventario.Size = new System.Drawing.Size(245, 60);
+            this.btnInventario.TabIndex = 8;
+            this.btnInventario.Text = "Inventario";
+            this.btnInventario.UseVisualStyleBackColor = false;
+            // 
+            // btnCompras
+            // 
+            this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompras.FlatAppearance.BorderSize = 0;
+            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompras.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCompras.Image = global::TRAMADE.Properties.Resources.Compras1;
+            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.Location = new System.Drawing.Point(-3, -6);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
+            this.btnCompras.Size = new System.Drawing.Size(245, 60);
+            this.btnCompras.TabIndex = 10;
+            this.btnCompras.Text = "Compras";
+            this.btnCompras.UseVisualStyleBackColor = false;
             // 
             // btnMenu
             // 
