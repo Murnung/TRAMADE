@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.Formulario_Reporte;
 
 namespace TRAMADE
 {
@@ -15,6 +16,15 @@ namespace TRAMADE
         public frmReportes()
         {
             InitializeComponent();
+        }
+        
+        private clsReportes _reportes;
+
+        private void frmReportes_Load(object sender, EventArgs e)
+        {
+            _reportes = new clsReportes(cmbSucursal, cmbTipoReporte);
+            _reportes.CargarSucursales();
+            _reportes.CargarTiposReporte();
         }
     }
 }

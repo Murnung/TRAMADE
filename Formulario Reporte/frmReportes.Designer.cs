@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlServicios = new System.Windows.Forms.Panel();
+            this.cmbSucursal = new System.Windows.Forms.ComboBox();
+            this.cmbTipoReporte = new System.Windows.Forms.ComboBox();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.btnGenerar = new Krypton.Toolkit.KryptonButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,14 +45,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbFormato = new System.Windows.Forms.ComboBox();
             this.btnDescargar = new Krypton.Toolkit.KryptonButton();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
-            this.cmbTipoReporte = new System.Windows.Forms.ComboBox();
-            this.cmbSucursal = new System.Windows.Forms.ComboBox();
             this.pnlServicios.SuspendLayout();
             this.pnlReportes.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,6 +72,38 @@
             this.pnlServicios.Name = "pnlServicios";
             this.pnlServicios.Size = new System.Drawing.Size(687, 297);
             this.pnlServicios.TabIndex = 0;
+            // 
+            // cmbSucursal
+            // 
+            this.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSucursal.FormattingEnabled = true;
+            this.cmbSucursal.Location = new System.Drawing.Point(470, 105);
+            this.cmbSucursal.Name = "cmbSucursal";
+            this.cmbSucursal.Size = new System.Drawing.Size(153, 21);
+            this.cmbSucursal.TabIndex = 14;
+            // 
+            // cmbTipoReporte
+            // 
+            this.cmbTipoReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoReporte.FormattingEnabled = true;
+            this.cmbTipoReporte.Location = new System.Drawing.Point(470, 175);
+            this.cmbTipoReporte.Name = "cmbTipoReporte";
+            this.cmbTipoReporte.Size = new System.Drawing.Size(153, 21);
+            this.cmbTipoReporte.TabIndex = 13;
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Location = new System.Drawing.Point(110, 175);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(200, 20);
+            this.dtpHasta.TabIndex = 11;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Location = new System.Drawing.Point(113, 103);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(197, 20);
+            this.dtpDesde.TabIndex = 10;
             // 
             // btnGenerar
             // 
@@ -205,20 +237,6 @@
             this.btnDescargar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnDescargar.Values.Text = "Descargar";
             // 
-            // dtpDesde
-            // 
-            this.dtpDesde.Location = new System.Drawing.Point(113, 103);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(197, 20);
-            this.dtpDesde.TabIndex = 10;
-            // 
-            // dtpHasta
-            // 
-            this.dtpHasta.Location = new System.Drawing.Point(110, 175);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(200, 20);
-            this.dtpHasta.TabIndex = 11;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
@@ -229,27 +247,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1333, 115);
             this.panel1.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("MS Reference Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(529, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(265, 60);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Reportes ";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.TramadeIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // btnRegresar
             // 
@@ -275,23 +272,26 @@
             this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegresar.Values.Text = "Regresar";
             // 
-            // cmbTipoReporte
+            // label8
             // 
-            this.cmbTipoReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoReporte.FormattingEnabled = true;
-            this.cmbTipoReporte.Location = new System.Drawing.Point(470, 175);
-            this.cmbTipoReporte.Name = "cmbTipoReporte";
-            this.cmbTipoReporte.Size = new System.Drawing.Size(153, 21);
-            this.cmbTipoReporte.TabIndex = 13;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("MS Reference Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(529, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(265, 60);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Reportes ";
             // 
-            // cmbSucursal
+            // pictureBox1
             // 
-            this.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSucursal.FormattingEnabled = true;
-            this.cmbSucursal.Location = new System.Drawing.Point(470, 105);
-            this.cmbSucursal.Name = "cmbSucursal";
-            this.cmbSucursal.Size = new System.Drawing.Size(153, 21);
-            this.cmbSucursal.TabIndex = 14;
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.TramadeIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmReportes
             // 
@@ -309,6 +309,7 @@
             this.Name = "frmReportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReportes";
+            this.Load += new System.EventHandler(this.frmReportes_Load);
             this.pnlServicios.ResumeLayout(false);
             this.pnlServicios.PerformLayout();
             this.pnlReportes.ResumeLayout(false);
