@@ -343,5 +343,35 @@ namespace TRAMADE.ClasesCliente
             }
         }
 
+        public dynamic ObtenerEstadisticas(clsConexion conexion)
+        {
+            try
+            {
+                conexion.Abrir();
+          
+                string consulta = "PA_OBTENER_CONTADORES ";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return new
+                    {
+                        Total = reader["Total"].ToString(),
+                        Activos = reader["Activos"].ToString(),
+                        Inactivos = reader["Inactivos"].ToString()
+                    };
+                }
+                return null;
+            }
+            finally 
+            { 
+                conexion.Cerrar(); 
+            }
+        }
+
+
     }
 }

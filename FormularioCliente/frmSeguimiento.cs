@@ -22,6 +22,7 @@ namespace TRAMADE
         private void frmSeguimiento_Load(object sender, EventArgs e)
         {
             recargarClientes();
+            ActualizarContadores();
         }
         clsConexion ObjConexion = new clsConexion();
         clsCliente ObjCliente = new clsCliente();
@@ -61,6 +62,18 @@ namespace TRAMADE
             if (dt != null)
             {
                 dvgSeguimiento.DataSource = dt;   
+            }
+        }
+
+        private void ActualizarContadores()
+        {
+            var stats = ObjCliente.ObtenerEstadisticas(ObjConexion);
+            if (stats != null)
+            {
+                
+                txtRegistrados.Text = stats.Total;
+                txtActivos.Text = stats.Activos;
+                txtInactivos.Text = stats.Inactivos;
             }
         }
     }

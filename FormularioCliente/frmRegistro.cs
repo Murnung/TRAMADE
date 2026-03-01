@@ -25,6 +25,7 @@ namespace TRAMADE
 
         private void frmRegistro_Load(object sender, EventArgs e)
         {
+            txtNombre.Focus();
             clsCliente.llenarcomboDepartamento(cmbDepartamento, ObjConexion);
             clsCliente.llenarcomboTipoCliente(cmbTipoCliente, ObjConexion);
 
@@ -38,6 +39,7 @@ namespace TRAMADE
 
             txtDNI.Enabled = false;
             txtDNI.BackColor = Color.LightGray;
+
         }
 
         private void label2_Click(object sender, EventArgs e)
