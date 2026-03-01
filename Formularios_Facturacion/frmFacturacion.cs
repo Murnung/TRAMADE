@@ -121,5 +121,10 @@ namespace TRAMADE
                 }
         
         }
+
+        private void frmFacturacion_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

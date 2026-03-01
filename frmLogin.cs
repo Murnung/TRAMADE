@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace TRAMADE
 {
     public partial class frmLogin : Form
@@ -41,6 +42,8 @@ namespace TRAMADE
 
                 if (dr.Read())  //Intenta lee una fila
                 {
+                    
+                    
                     MessageBox.Show("Inicio de sesión exitoso");
                     Form1 frm = new Form1();
                     frm.ShowDialog();

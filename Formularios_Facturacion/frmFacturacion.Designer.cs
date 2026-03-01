@@ -60,14 +60,14 @@
             this.kryptonLabel12 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
             this.btnDireccionCliente = new Krypton.Toolkit.KryptonButton();
-            this.btnDNICliente = new Krypton.Toolkit.KryptonButton();
-            this.txtDireccionCliente = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel8 = new Krypton.Toolkit.KryptonLabel();
-            this.btnNombreCliente = new Krypton.Toolkit.KryptonButton();
-            this.txtDNICliente = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel7 = new Krypton.Toolkit.KryptonLabel();
             this.txtNombreCliente = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
+            this.btnDNICliente = new Krypton.Toolkit.KryptonButton();
+            this.btnNombreCliente = new Krypton.Toolkit.KryptonButton();
+            this.txtDireccionCliente = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel8 = new Krypton.Toolkit.KryptonLabel();
+            this.txtDNICliente = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel7 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
             this.dtpVencimiento = new Krypton.Toolkit.KryptonDateTimePicker();
             this.dtpEmision = new Krypton.Toolkit.KryptonDateTimePicker();
@@ -482,6 +482,25 @@
             this.btnDireccionCliente.Values.Image = global::TRAMADE.Properties.Resources.Editar;
             this.btnDireccionCliente.Values.Text = "kryptonButton6";
             // 
+            // txtNombreCliente
+            // 
+            this.txtNombreCliente.CueHint.CueHintText = "( ! ) Nombre del cliente";
+            this.txtNombreCliente.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.txtNombreCliente.Location = new System.Drawing.Point(62, 34);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(145, 22);
+            this.txtNombreCliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            this.txtNombreCliente.TabIndex = 0;
+            this.txtNombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // kryptonLabel6
+            // 
+            this.kryptonLabel6.Location = new System.Drawing.Point(3, 34);
+            this.kryptonLabel6.Name = "kryptonLabel6";
+            this.kryptonLabel6.Size = new System.Drawing.Size(90, 25);
+            this.kryptonLabel6.TabIndex = 0;
+            this.kryptonLabel6.Values.Text = "Cliente:";
+            // 
             // btnDNICliente
             // 
             this.btnDNICliente.Location = new System.Drawing.Point(204, 3);
@@ -497,6 +516,22 @@
             this.btnDNICliente.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnDNICliente.Values.Image = global::TRAMADE.Properties.Resources.Editar;
             this.btnDNICliente.Values.Text = "kryptonButton5";
+            // 
+            // btnNombreCliente
+            // 
+            this.btnNombreCliente.Location = new System.Drawing.Point(204, 34);
+            this.btnNombreCliente.Name = "btnNombreCliente";
+            this.btnNombreCliente.Size = new System.Drawing.Size(22, 20);
+            this.btnNombreCliente.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnNombreCliente.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnNombreCliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
+            this.btnNombreCliente.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnNombreCliente.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
+            this.btnNombreCliente.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnNombreCliente.TabIndex = 15;
+            this.btnNombreCliente.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnNombreCliente.Values.Image = global::TRAMADE.Properties.Resources.Editar;
+            this.btnNombreCliente.Values.Text = "kryptonButton4";
             // 
             // txtDireccionCliente
             // 
@@ -516,22 +551,6 @@
             this.kryptonLabel8.Size = new System.Drawing.Size(90, 25);
             this.kryptonLabel8.TabIndex = 16;
             this.kryptonLabel8.Values.Text = "Dirección:";
-            // 
-            // btnNombreCliente
-            // 
-            this.btnNombreCliente.Location = new System.Drawing.Point(204, 34);
-            this.btnNombreCliente.Name = "btnNombreCliente";
-            this.btnNombreCliente.Size = new System.Drawing.Size(22, 20);
-            this.btnNombreCliente.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnNombreCliente.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnNombreCliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
-            this.btnNombreCliente.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnNombreCliente.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
-            this.btnNombreCliente.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnNombreCliente.TabIndex = 15;
-            this.btnNombreCliente.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnNombreCliente.Values.Image = global::TRAMADE.Properties.Resources.Editar;
-            this.btnNombreCliente.Values.Text = "kryptonButton4";
             // 
             // txtDNICliente
             // 
@@ -553,25 +572,6 @@
             this.kryptonLabel7.Size = new System.Drawing.Size(90, 25);
             this.kryptonLabel7.TabIndex = 16;
             this.kryptonLabel7.Values.Text = "DNI/RTN:";
-            // 
-            // txtNombreCliente
-            // 
-            this.txtNombreCliente.CueHint.CueHintText = "( ! ) Nombre del cliente";
-            this.txtNombreCliente.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.txtNombreCliente.Location = new System.Drawing.Point(62, 34);
-            this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(145, 22);
-            this.txtNombreCliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.txtNombreCliente.TabIndex = 0;
-            this.txtNombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // kryptonLabel6
-            // 
-            this.kryptonLabel6.Location = new System.Drawing.Point(3, 34);
-            this.kryptonLabel6.Name = "kryptonLabel6";
-            this.kryptonLabel6.Size = new System.Drawing.Size(90, 25);
-            this.kryptonLabel6.TabIndex = 0;
-            this.kryptonLabel6.Values.Text = "Cliente:";
             // 
             // kryptonLabel5
             // 
@@ -864,6 +864,7 @@
             this.Controls.Add(this.kryptonGroup4);
             this.Name = "frmFacturacion";
             this.Text = "frmFacturacion";
+            this.Load += new System.EventHandler(this.frmFacturacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).EndInit();
             this.kryptonGroup2.Panel.ResumeLayout(false);
