@@ -1,4 +1,4 @@
-﻿namespace ComponentFactory
+﻿que tonamespace ComponentFactory
 {
     internal class Krypton
     {
