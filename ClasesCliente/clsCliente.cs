@@ -131,20 +131,20 @@ namespace TRAMADE.ClasesCliente
         {
             try
             {
-                    conexion.Abrir();
-                    
-                    string consulta = "SELECT id_ciudad, nombre_ciudad FROM CIUDAD WHERE id_departamento = @idDep";
-                    SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
-                    cmd.Parameters.AddWithValue("@idDep", idDepartamento);
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
+                conexion.Abrir();
 
-                    cmbCiudad.DataSource = dt;
-                    cmbCiudad.DisplayMember = "nombre_ciudad";
-                    cmbCiudad.ValueMember = "id_ciudad";
+                string consulta = "SELECT id_ciudad, nombre_ciudad FROM CIUDAD WHERE id_departamento = @idDep";
+                SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
+                cmd.Parameters.AddWithValue("@idDep", idDepartamento);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
 
-                    cmbCiudad.SelectedIndex = -1;
+                cmbCiudad.DataSource = dt;
+                cmbCiudad.DisplayMember = "nombre_ciudad";
+                cmbCiudad.ValueMember = "id_ciudad";
+
+                cmbCiudad.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -190,8 +190,8 @@ namespace TRAMADE.ClasesCliente
                 cmdCliente.CommandType = CommandType.StoredProcedure;
 
                 cmdCliente.Parameters.AddWithValue("@nombre_cliente", nombre);
-               
-                cmdCliente.Parameters.AddWithValue("@rtn_cliente", string.IsNullOrWhiteSpace(RTN) ? (object)DBNull.Value : RTN); 
+
+                cmdCliente.Parameters.AddWithValue("@rtn_cliente", string.IsNullOrWhiteSpace(RTN) ? (object)DBNull.Value : RTN);
                 cmdCliente.Parameters.AddWithValue("@razon_social", string.IsNullOrWhiteSpace(razonSocial) ? (object)DBNull.Value : razonSocial);
                 cmdCliente.Parameters.AddWithValue("@dni_cliente", string.IsNullOrWhiteSpace(dni) ? (object)DBNull.Value : dni);
 
@@ -203,7 +203,7 @@ namespace TRAMADE.ClasesCliente
                 cmdCliente.Parameters.AddWithValue("@id_estado", Convert.ToInt32(estado));
                 cmdCliente.Parameters.AddWithValue("@id_clasificacion_cliente", Convert.ToInt32(tipoCliente));
                 cmdCliente.Parameters.AddWithValue("@id_ciudad", Convert.ToInt32(ciudad));
-                
+
                 cmdCliente.Parameters.AddWithValue("@id_usuario", 2);
                 cmdCliente.ExecuteNonQuery();
                 return true;
@@ -240,7 +240,7 @@ namespace TRAMADE.ClasesCliente
                 cmdCliente.Parameters.AddWithValue("@direccion_cliente", direccion);
                 cmdCliente.Parameters.AddWithValue("@id_clasificacion_cliente", Convert.ToInt32(tipoCliente));
                 cmdCliente.Parameters.AddWithValue("@id_ciudad", Convert.ToInt32(ciudad));
-                
+
 
                 cmdCliente.Parameters.AddWithValue("@id_usuario", 2);
 
@@ -258,7 +258,90 @@ namespace TRAMADE.ClasesCliente
             }
         }
 
+        public bool AutorizarCliente(clsConexion conexion, int idCliente)
+        {
+            try
+            {
+                conexion.Abrir();
+                using (SqlCommand cmd = new SqlCommand("PA_AUTORIZAR_CLIENTE", conexion.SqlC))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_cliente", idCliente);
+                    int filas = cmd.ExecuteNonQuery();
+                    return filas > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al autorizar cliente: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
 
+        public bool DenegarCliente(clsConexion conexion, int idCliente)
+        {
+            try
+            {
+                conexion.Abrir();
+                using (SqlCommand cmd = new SqlCommand("PA_DENEGAR_CLIENTE", conexion.SqlC))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_cliente", idCliente);
+                    int filas = cmd.ExecuteNonQuery();
+                    return filas > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al denegar cliente: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+
+        public DataTable BuscarCliente(clsConexion conexion, string textoBuscar)
+        {
+            try
+            {
+                conexion.Abrir();
+
+                string consulta = "select * from vista_aprobacion_clientes";
+
+                int id = 0;
+                bool filtrarPorID = int.TryParse(textoBuscar.Trim(), out id);
+                if (filtrarPorID)
+                {
+                    consulta += "Where [ID cliente]= @id";
+                }
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC))
+                {
+                    if (filtrarPorID)
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                    }
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar cliente: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
 
     }
 }

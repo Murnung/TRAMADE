@@ -131,7 +131,7 @@
             this.cmbTipoCliente.DropDownWidth = 123;
             this.cmbTipoCliente.Location = new System.Drawing.Point(543, 150);
             this.cmbTipoCliente.Name = "cmbTipoCliente";
-            this.cmbTipoCliente.Size = new System.Drawing.Size(147, 35);
+            this.cmbTipoCliente.Size = new System.Drawing.Size(180, 35);
             this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoCliente.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.cmbTipoCliente.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -147,7 +147,7 @@
             this.cmbCiudad.DropDownWidth = 123;
             this.cmbCiudad.Location = new System.Drawing.Point(543, 383);
             this.cmbCiudad.Name = "cmbCiudad";
-            this.cmbCiudad.Size = new System.Drawing.Size(147, 35);
+            this.cmbCiudad.Size = new System.Drawing.Size(195, 35);
             this.cmbCiudad.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCiudad.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.cmbCiudad.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -162,7 +162,7 @@
             this.cmbDepartamento.DropDownWidth = 123;
             this.cmbDepartamento.Location = new System.Drawing.Point(161, 439);
             this.cmbDepartamento.Name = "cmbDepartamento";
-            this.cmbDepartamento.Size = new System.Drawing.Size(147, 35);
+            this.cmbDepartamento.Size = new System.Drawing.Size(208, 35);
             this.cmbDepartamento.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartamento.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.cmbDepartamento.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -198,6 +198,8 @@
             // 
             this.btnBuscar.Location = new System.Drawing.Point(409, 13);
             this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnBuscar.Size = new System.Drawing.Size(88, 32);
@@ -249,7 +251,7 @@
             // 
             this.txtDNI.Location = new System.Drawing.Point(543, 240);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(147, 35);
+            this.txtDNI.Size = new System.Drawing.Size(180, 35);
             this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtDNI.StateActive.Border.Rounding = 10F;
             this.txtDNI.StateActive.Border.Width = 4;
@@ -260,7 +262,7 @@
             // 
             this.txtRTN.Location = new System.Drawing.Point(543, 194);
             this.txtRTN.Name = "txtRTN";
-            this.txtRTN.Size = new System.Drawing.Size(147, 35);
+            this.txtRTN.Size = new System.Drawing.Size(180, 35);
             this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtRTN.StateActive.Border.Rounding = 10F;
             this.txtRTN.StateActive.Border.Width = 4;
@@ -292,7 +294,7 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(161, 392);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(147, 35);
+            this.txtTelefono.Size = new System.Drawing.Size(208, 35);
             this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtTelefono.StateActive.Border.Rounding = 10F;
             this.txtTelefono.StateActive.Border.Width = 4;
@@ -343,6 +345,8 @@
             // 
             this.btnGuardar.Location = new System.Drawing.Point(570, 492);
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnGuardar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnGuardar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnGuardar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnGuardar.Size = new System.Drawing.Size(153, 32);
@@ -410,7 +414,7 @@
             // 
             this.txtCorreo.Location = new System.Drawing.Point(543, 331);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(147, 35);
+            this.txtCorreo.Size = new System.Drawing.Size(195, 35);
             this.txtCorreo.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtCorreo.StateActive.Border.Rounding = 10F;
             this.txtCorreo.StateActive.Border.Width = 4;
@@ -432,7 +436,7 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(543, 427);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(147, 35);
+            this.txtDireccion.Size = new System.Drawing.Size(195, 35);
             this.txtDireccion.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtDireccion.StateActive.Border.Rounding = 10F;
             this.txtDireccion.StateActive.Border.Width = 4;
@@ -456,7 +460,7 @@
             // 
             this.txtContacto.Location = new System.Drawing.Point(161, 340);
             this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(147, 35);
+            this.txtContacto.Size = new System.Drawing.Size(208, 35);
             this.txtContacto.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtContacto.StateActive.Border.Rounding = 10F;
             this.txtContacto.StateActive.Border.Width = 4;
@@ -590,7 +594,7 @@
             // 
             this.txtFecha.Location = new System.Drawing.Point(543, 112);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(147, 35);
+            this.txtFecha.Size = new System.Drawing.Size(180, 35);
             this.txtFecha.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtFecha.StateActive.Border.Rounding = 10F;
             this.txtFecha.StateActive.Border.Width = 4;
