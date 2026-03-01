@@ -31,14 +31,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnIngresar = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelBienvenida = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelBienvenida = new Krypton.Toolkit.KryptonLabel();
             this.txtUsuario = new Krypton.Toolkit.KryptonTextBox();
             this.txtPassword = new Krypton.Toolkit.KryptonTextBox();
             this.btnSalir = new Krypton.Toolkit.KryptonButton();
             this.lkRestablecer = new Krypton.Toolkit.KryptonLinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,21 +47,21 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(413, 236);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(551, 290);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 16);
+            this.label3.Size = new System.Drawing.Size(225, 22);
             this.label3.TabIndex = 8;
             this.label3.Text = "¿Olvidó la contraseña?";
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(458, 272);
+            this.btnIngresar.Location = new System.Drawing.Point(611, 335);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.btnIngresar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.btnIngresar.OverrideDefault.Border.Rounding = 10F;
-            this.btnIngresar.Size = new System.Drawing.Size(167, 33);
+            this.btnIngresar.Size = new System.Drawing.Size(223, 41);
             this.btnIngresar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.btnIngresar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.btnIngresar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
@@ -85,16 +85,51 @@
             this.panel1.Controls.Add(this.kryptonLabel1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(-6, -2);
+            this.panel1.Location = new System.Drawing.Point(-8, -2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 384);
+            this.panel1.Size = new System.Drawing.Size(467, 473);
             this.panel1.TabIndex = 11;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(116, 322);
+            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(304, 129);
+            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel1.StateNormal.LongText.Color1 = System.Drawing.Color.White;
+            this.kryptonLabel1.StateNormal.LongText.Color2 = System.Drawing.Color.White;
+            this.kryptonLabel1.StateNormal.ShortText.Color1 = System.Drawing.Color.White;
+            this.kryptonLabel1.StateNormal.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.kryptonLabel1.TabIndex = 17;
+            this.kryptonLabel1.Values.Text = "TRAMADE \r\n    S.A";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(85, 36);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(304, 249);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(464, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(492, 468);
+            this.panel2.TabIndex = 0;
             // 
             // labelBienvenida
             // 
-            this.labelBienvenida.Location = new System.Drawing.Point(436, 39);
+            this.labelBienvenida.Location = new System.Drawing.Point(581, 48);
+            this.labelBienvenida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelBienvenida.Name = "labelBienvenida";
-            this.labelBienvenida.Size = new System.Drawing.Size(205, 45);
+            this.labelBienvenida.Size = new System.Drawing.Size(273, 56);
             this.labelBienvenida.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBienvenida.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.labelBienvenida.StateNormal.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
@@ -103,19 +138,13 @@
             this.labelBienvenida.TabIndex = 12;
             this.labelBienvenida.Values.Text = "Bienvenido";
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(348, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(369, 380);
-            this.panel2.TabIndex = 0;
-            // 
             // txtUsuario
             // 
             this.txtUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtUsuario.Location = new System.Drawing.Point(431, 113);
+            this.txtUsuario.Location = new System.Drawing.Point(575, 139);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(217, 27);
+            this.txtUsuario.Size = new System.Drawing.Size(289, 30);
             this.txtUsuario.StateActive.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
             this.txtUsuario.StateActive.Border.Rounding = 10F;
             this.txtUsuario.StateCommon.Back.Color1 = System.Drawing.Color.White;
@@ -132,9 +161,10 @@
             // txtPassword
             // 
             this.txtPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtPassword.Location = new System.Drawing.Point(431, 174);
+            this.txtPassword.Location = new System.Drawing.Point(575, 214);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(217, 27);
+            this.txtPassword.Size = new System.Drawing.Size(289, 30);
             this.txtPassword.StateActive.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
             this.txtPassword.StateActive.Border.Rounding = 10F;
             this.txtPassword.StateCommon.Back.Color1 = System.Drawing.Color.White;
@@ -149,12 +179,13 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(458, 333);
+            this.btnSalir.Location = new System.Drawing.Point(611, 410);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
             this.btnSalir.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
             this.btnSalir.OverrideDefault.Border.Rounding = 10F;
-            this.btnSalir.Size = new System.Drawing.Size(167, 33);
+            this.btnSalir.Size = new System.Drawing.Size(223, 41);
             this.btnSalir.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
             this.btnSalir.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
             this.btnSalir.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
@@ -174,9 +205,10 @@
             // 
             // lkRestablecer
             // 
-            this.lkRestablecer.Location = new System.Drawing.Point(589, 234);
+            this.lkRestablecer.Location = new System.Drawing.Point(785, 288);
+            this.lkRestablecer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lkRestablecer.Name = "lkRestablecer";
-            this.lkRestablecer.Size = new System.Drawing.Size(89, 20);
+            this.lkRestablecer.Size = new System.Drawing.Size(119, 25);
             this.lkRestablecer.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.lkRestablecer.StateCommon.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.lkRestablecer.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,35 +217,12 @@
             this.lkRestablecer.TabIndex = 16;
             this.lkRestablecer.Values.Text = "Restablecer";
             // 
-            // pictureBox1
-            // 
-//            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Logo_de_la_empresa;
-            this.pictureBox1.Location = new System.Drawing.Point(64, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(228, 202);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // kryptonLabel1
-            // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(87, 262);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(205, 84);
-            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonLabel1.StateNormal.LongText.Color1 = System.Drawing.Color.White;
-            this.kryptonLabel1.StateNormal.LongText.Color2 = System.Drawing.Color.White;
-            this.kryptonLabel1.StateNormal.ShortText.Color1 = System.Drawing.Color.White;
-            this.kryptonLabel1.StateNormal.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.kryptonLabel1.TabIndex = 17;
-            this.kryptonLabel1.Values.Text = "TRAMADE \r\n    S.A";
-            // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.ClientSize = new System.Drawing.Size(712, 378);
+            this.ClientSize = new System.Drawing.Size(949, 465);
             this.Controls.Add(this.lkRestablecer);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
@@ -223,7 +232,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";

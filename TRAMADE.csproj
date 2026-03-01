@@ -200,6 +200,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Usuario" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -257,6 +258,11 @@
     <Content Include="Resources\Iconos\ventasrealizadas.png" />
     <Content Include="Resources\Iconos\vistaClientes.png" />
     <Content Include="Resources\Iconos\vistaClientes2.png" />
+    <Content Include="Resources\inventario.png" />
+    <Content Include="Resources\Logo de la empresa.png" />
+    <Content Include="Resources\Menu.png" />
+    <Content Include="Resources\TIEMPO.png" />
+    <Content Include="Resources\USUARIO.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
