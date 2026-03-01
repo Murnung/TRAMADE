@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             this.cmbTipoCliente = new Krypton.Toolkit.KryptonComboBox();
             this.cmbCiudad = new Krypton.Toolkit.KryptonComboBox();
             this.cmbDepartamento = new Krypton.Toolkit.KryptonComboBox();
@@ -43,7 +44,6 @@
             this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
             this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnInhabilitar = new Krypton.Toolkit.KryptonButton();
             this.btnGuardar = new Krypton.Toolkit.KryptonButton();
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
             this.label31 = new System.Windows.Forms.Label();
@@ -67,7 +67,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -98,7 +97,6 @@
             this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
             this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
             this.kryptonGroup1.Panel.Controls.Add(this.label6);
-            this.kryptonGroup1.Panel.Controls.Add(this.btnInhabilitar);
             this.kryptonGroup1.Panel.Controls.Add(this.btnGuardar);
             this.kryptonGroup1.Panel.Controls.Add(this.btnLimpiar);
             this.kryptonGroup1.Panel.Controls.Add(this.label31);
@@ -126,6 +124,33 @@
             this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 1;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(633, 13);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.Size = new System.Drawing.Size(90, 25);
+            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Width = 2;
+            this.btnRegresar.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.TabIndex = 42;
+            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegresar.Values.Text = "Regresar";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // cmbTipoCliente
             // 
@@ -314,35 +339,6 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Teléfono personal";
             // 
-            // btnInhabilitar
-            // 
-            this.btnInhabilitar.Location = new System.Drawing.Point(407, 492);
-            this.btnInhabilitar.Name = "btnInhabilitar";
-            this.btnInhabilitar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
-            this.btnInhabilitar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
-            this.btnInhabilitar.Size = new System.Drawing.Size(153, 32);
-            this.btnInhabilitar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.btnInhabilitar.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
-            this.btnInhabilitar.StateCommon.Border.Rounding = 25F;
-            this.btnInhabilitar.StateCommon.Border.Width = 1;
-            this.btnInhabilitar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnInhabilitar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnInhabilitar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
-            this.btnInhabilitar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
-            this.btnInhabilitar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
-            this.btnInhabilitar.TabIndex = 23;
-            this.btnInhabilitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnInhabilitar.Values.Text = "INHABILITAR CLIENTE";
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(570, 492);
@@ -374,7 +370,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(292, 492);
+            this.btnLimpiar.Location = new System.Drawing.Point(455, 492);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnLimpiar.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -626,33 +622,6 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
             // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(633, 13);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.Size = new System.Drawing.Size(90, 25);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Border.Width = 2;
-            this.btnRegresar.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateNormal.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StatePressed.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StatePressed.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.TabIndex = 42;
-            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "Regresar";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
             // frmRegistroNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,7 +629,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(859, 588);
             this.Controls.Add(this.kryptonGroup1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmRegistroNuevo";
             this.Text = "  ";
             this.Load += new System.EventHandler(this.frmRegistroNuevo_Load);
@@ -701,7 +670,6 @@
         private Krypton.Toolkit.KryptonTextBox txtFecha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label16;
-        private Krypton.Toolkit.KryptonButton btnInhabilitar;
         private Krypton.Toolkit.KryptonTextBox txtTelefono;
         private System.Windows.Forms.Label label6;
         private Krypton.Toolkit.KryptonTextBox txtRazonSocial;

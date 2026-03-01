@@ -248,7 +248,7 @@
             // kryptonTextBox1
             // 
             this.kryptonTextBox1.Enabled = false;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(238, 3);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(258, 3);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
             this.kryptonTextBox1.Size = new System.Drawing.Size(342, 56);
             this.kryptonTextBox1.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
@@ -587,32 +587,29 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(666, 3);
+            this.btnRegresar.Location = new System.Drawing.Point(675, 3);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.Size = new System.Drawing.Size(100, 25);
+            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.Size = new System.Drawing.Size(90, 25);
             this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
             this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
             this.btnRegresar.StateCommon.Border.Width = 2;
-            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnRegresar.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
             this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.StateNormal.Back.Color2 = System.Drawing.Color.Transparent;
             this.btnRegresar.StatePressed.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.StatePressed.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnRegresar.TabIndex = 43;
             this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegresar.Values.Text = "Regresar";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // frmRegistro
             // 
@@ -623,7 +620,7 @@
             this.Controls.Add(this.label32);
             this.Controls.Add(this.kryptonGroup1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmRegistro";
             this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
