@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient; // Indispensable para conectar con SQL
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,8 @@ namespace TRAMADE
 {
     public partial class frmHistorialFacturas : Form
     {
+        bool ordenAscendente = false; // Por defecto: más nuevas primero
+
         public frmHistorialFacturas()
         {
             InitializeComponent();
@@ -23,52 +25,79 @@ namespace TRAMADE
             CargarHistorial();
         }
 
-        // 1. MÉTODO PARA CARGAR TODAS LAS FACTURAS
-        private void CargarHistorial()
+        private void CargarHistorial(string filtro = "", DateTime? fecha = null)
         {
             try
             {
-                dgvHistorialFacturas.Rows.Clear(); // Limpiamos antes de cargar
-
+                dgvHistorialFacturas.Rows.Clear();
                 clsConexion conexion = new clsConexion();
                 conexion.Abrir();
 
-                // Traemos los datos necesarios haciendo JOIN con Cliente
+                // 1. Primero contamos cuántas facturas hay en total para el numeral descendente
+                string queryContar = "SELECT COUNT(*) FROM FACTURA";
+                SqlCommand cmdContar = new SqlCommand(queryContar, conexion.SqlC);
+                int totalRegistros = (int)cmdContar.ExecuteScalar();
+
+                // 2. Consulta principal
                 string query = @"SELECT F.id_factura, F.numero_factura, F.id_usuario, 
                                         C.rtn_cliente, C.dni_cliente, F.fecha_emision 
                                  FROM FACTURA F
                                  INNER JOIN CLIENTE C ON F.id_cliente = C.id_cliente
-                                 ORDER BY F.fecha_emision DESC"; // Las más nuevas primero
+                                 WHERE 1=1";
+
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    // Limpiamos el formato INV/2026/000X para buscar el número real
+                    string soloNumero = filtro.Replace("INV/2026/", "").TrimStart('0');
+                    if (string.IsNullOrEmpty(soloNumero)) soloNumero = "0";
+
+                    query += " AND (F.numero_factura LIKE @fNum OR C.rtn_cliente LIKE @fTxt OR C.dni_cliente LIKE @fTxt)";
+                }
+
+                if (fecha.HasValue)
+                {
+                    query += " AND CAST(F.fecha_emision AS DATE) = @fecha";
+                }
+
+                // Aplicamos el orden
+                query += ordenAscendente ? " ORDER BY F.numero_factura ASC" : " ORDER BY F.fecha_emision DESC";
 
                 SqlCommand cmd = new SqlCommand(query, conexion.SqlC);
+
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    string soloNumero = filtro.Replace("INV/2026/", "").TrimStart('0');
+                    cmd.Parameters.AddWithValue("@fNum", "%" + soloNumero + "%");
+                    cmd.Parameters.AddWithValue("@fTxt", "%" + filtro + "%");
+                }
+
+                if (fecha.HasValue)
+                {
+                    cmd.Parameters.AddWithValue("@fecha", fecha.Value.Date);
+                }
+
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                int contador = 1; // Para el numeral (1, 2, 3...)
+                // Lógica del numeral: si es DESC (más nueva arriba), empezamos desde el total
+                int contador = ordenAscendente ? 1 : totalRegistros;
 
                 while (dr.Read())
                 {
-                    // Formateamos el número de factura como quieres
                     int numF = Convert.ToInt32(dr["numero_factura"]);
                     string facturaFormateada = "INV/2026/" + numF.ToString("D4");
-
-                    // Manejo de DNI o RTN
                     string dni = dr["rtn_cliente"].ToString();
                     if (string.IsNullOrEmpty(dni)) dni = dr["dni_cliente"].ToString();
 
-                    // Agregamos la fila al Grid
-                    // OJO: dgvHistorialFacturas.Rows.Add devuelve el índice de la fila agregada
                     int n = dgvHistorialFacturas.Rows.Add();
-
-                    dgvHistorialFacturas.Rows[n].Cells[0].Value = contador; // Numeral
-                    dgvHistorialFacturas.Rows[n].Cells[1].Value = facturaFormateada; // NumFactura
-                    dgvHistorialFacturas.Rows[n].Cells[2].Value = dr["id_usuario"].ToString(); // IDVendedor
-                    dgvHistorialFacturas.Rows[n].Cells[3].Value = dni; // DNIRTNClieten
+                    dgvHistorialFacturas.Rows[n].Cells[0].Value = contador; // Numeral dinámico
+                    dgvHistorialFacturas.Rows[n].Cells[1].Value = facturaFormateada;
+                    dgvHistorialFacturas.Rows[n].Cells[2].Value = dr["id_usuario"].ToString();
+                    dgvHistorialFacturas.Rows[n].Cells[3].Value = dni;
                     dgvHistorialFacturas.Rows[n].Cells[4].Value = Convert.ToDateTime(dr["fecha_emision"]).ToString("dd/MM/yyyy HH:mm");
-
-                    // ¡EL TRUCO! Guardamos el ID real de la DB en el Tag de la fila (invisible)
                     dgvHistorialFacturas.Rows[n].Tag = dr["id_factura"];
 
-                    contador++;
+                    // Si es ASC sumamos, si es DESC restamos
+                    if (ordenAscendente) contador++; else contador--;
                 }
 
                 dr.Close();
@@ -76,31 +105,35 @@ namespace TRAMADE
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar el historial: " + ex.Message);
+                MessageBox.Show("Error al cargar historial: " + ex.Message);
             }
         }
 
-        // 2. BOTÓN PARA VER LA FACTURA SELECCIONADA
+        private void txtBuscarFactura_TextChanged(object sender, EventArgs e)
+        {
+            CargarHistorial(txtBuscarFactura.Text.Trim());
+        }
+
+        private void btnCalendarioFacturas_Click(object sender, EventArgs e)
+        {
+            // Mostramos el valor del DateTimePicker que agregaste
+            CargarHistorial("", dtpCalendario.Value);
+        }
+
+        private void btnOrdenarFacturas_Click(object sender, EventArgs e)
+        {
+            ordenAscendente = !ordenAscendente; // Cambia entre ASC y DESC
+            CargarHistorial(txtBuscarFactura.Text.Trim());
+        }
+
         private void btnVerFacturaHF_Click(object sender, EventArgs e)
         {
-            // 1. Verificamos que haya una fila seleccionada y que no sea la fila vacía del final
             if (dgvHistorialFacturas.CurrentRow != null && dgvHistorialFacturas.CurrentRow.Tag != null)
             {
-                // 2. Recuperamos el ID que guardamos en el Tag
                 int idFactura = Convert.ToInt32(dgvHistorialFacturas.CurrentRow.Tag);
-
-                // --- PRUEBA (Borrala después de confirmar que funciona) ---
-                // MessageBox.Show("Abriendo factura ID: " + idFactura); 
-                // -----------------------------------------------------------
-
-                // 3. Abrimos el formulario de emisión
                 frmEmitirFactura objEmitir = new frmEmitirFactura();
                 objEmitir.IdFacturaRecibido = idFactura;
                 objEmitir.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona una factura de la lista haciendo clic en la fila.", "TRAMADE", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -108,8 +141,6 @@ namespace TRAMADE
         {
             this.Close();
         }
-
-        private void kryptonLabel2_Click(object sender, EventArgs e) { }
 
         private void dgvHistorialFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -49,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtpCalendario = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).BeginInit();
             this.kryptonGroup4.Panel.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.dtpCalendario);
             this.kryptonGroup1.Panel.Controls.Add(this.btnOrdenarFacturas);
             this.kryptonGroup1.Panel.Controls.Add(this.btnCalendarioFacturas);
             this.kryptonGroup1.Panel.Controls.Add(this.txtBuscarFactura);
@@ -119,6 +121,7 @@
             this.btnOrdenarFacturas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnOrdenarFacturas.Values.Image = global::TRAMADE.Properties.Resources.Ordenar_pns;
             this.btnOrdenarFacturas.Values.Text = "";
+            this.btnOrdenarFacturas.Click += new System.EventHandler(this.btnOrdenarFacturas_Click);
             // 
             // btnCalendarioFacturas
             // 
@@ -142,6 +145,7 @@
             this.btnCalendarioFacturas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnCalendarioFacturas.Values.Image = global::TRAMADE.Properties.Resources.Calendario_BC_png;
             this.btnCalendarioFacturas.Values.Text = "";
+            this.btnCalendarioFacturas.Click += new System.EventHandler(this.btnCalendarioFacturas_Click);
             // 
             // txtBuscarFactura
             // 
@@ -155,6 +159,8 @@
             this.txtBuscarFactura.StateCommon.Border.Rounding = 20F;
             this.txtBuscarFactura.TabIndex = 42;
             this.txtBuscarFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBuscarFactura.TextChanged += new System.EventHandler(this.txtBuscarFactura_TextChanged);
+            this.txtBuscarFactura.Click += new System.EventHandler(this.frmHistorialFacturas_Load);
             // 
             // btnBuscarFacturas
             // 
@@ -333,6 +339,13 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Historial de facturas";
             // 
+            // dtpCalendario
+            // 
+            this.dtpCalendario.Location = new System.Drawing.Point(522, 22);
+            this.dtpCalendario.Name = "dtpCalendario";
+            this.dtpCalendario.Size = new System.Drawing.Size(200, 20);
+            this.dtpCalendario.TabIndex = 59;
+            // 
             // frmHistorialFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,5 +399,6 @@
         private Krypton.Toolkit.KryptonButton btnVerFacturaHF;
         private Krypton.Toolkit.KryptonButton btnCalendarioFacturas;
         private Krypton.Toolkit.KryptonButton btnOrdenarFacturas;
+        private System.Windows.Forms.DateTimePicker dtpCalendario;
     }
 }
