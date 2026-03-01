@@ -312,13 +312,13 @@ namespace TRAMADE.ClasesCliente
             {
                 conexion.Abrir();
 
-                string consulta = "select * from vista_aprobacion_clientes";
+                string consulta = "select * from vista_aprobacion_clientes ";
 
                 int id = 0;
                 bool filtrarPorID = int.TryParse(textoBuscar.Trim(), out id);
                 if (filtrarPorID)
                 {
-                    consulta += "Where [ID cliente]= @id";
+                    consulta += "Where id_cliente = @id";
                 }
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC))
                 {
