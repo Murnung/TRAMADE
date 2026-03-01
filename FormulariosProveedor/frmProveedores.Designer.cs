@@ -449,7 +449,7 @@
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnProveedores.Image = global::TRAMADE.Properties.Resources.PRoveedores_Seleccionado_;
+ //         this.btnProveedores.Image = global::TRAMADE.Properties.Resources.PRoveedores_Seleccionado_;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.Location = new System.Drawing.Point(-21, -3);
             this.btnProveedores.Name = "btnProveedores";
