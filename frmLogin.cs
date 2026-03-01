@@ -24,6 +24,8 @@ namespace TRAMADE
             txtPassword.ForeColor = Color.Gray;
         }
 
+        private void frmLogin_Load(object sender, EventArgs e) { }
+
         clsConexion conexion = new clsConexion();
         public void login (string usuario, string contraseña)
         {
