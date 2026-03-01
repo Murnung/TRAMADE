@@ -151,7 +151,7 @@
             this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnSalir.TabIndex = 9;
             this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
+//            this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
             this.btnSalir.Values.Text = "";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -174,7 +174,7 @@
             this.btnMaximizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnMaximizar.TabIndex = 8;
             this.btnMaximizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
+//            this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
             this.btnMaximizar.Values.Text = "";
             this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
@@ -197,7 +197,7 @@
             this.btnMinimizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnMinimizar.TabIndex = 7;
             this.btnMinimizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
+//            this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
             this.btnMinimizar.Values.Text = "";
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
@@ -251,7 +251,7 @@
             // 
             this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInicio.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.Image = global::TRAMADE.Properties.Resources.Home;
+//            this.btnInicio.Image = global::TRAMADE.Properties.Resources.Home;
             this.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInicio.Location = new System.Drawing.Point(-3, -3);
             this.btnInicio.Name = "btnInicio";
@@ -277,7 +277,7 @@
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnClientes.Image = global::TRAMADE.Properties.Resources.Clientes1;
+//            this.btnClientes.Image = global::TRAMADE.Properties.Resources.Clientes1;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(-3, 0);
             this.btnClientes.Name = "btnClientes";
@@ -303,7 +303,7 @@
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentas.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnVentas.Image = global::TRAMADE.Properties.Resources.Ventas;
+//            this.btnVentas.Image = global::TRAMADE.Properties.Resources.Ventas;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.Location = new System.Drawing.Point(-3, 0);
             this.btnVentas.Name = "btnVentas";
@@ -329,7 +329,7 @@
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnInventario.Image = global::TRAMADE.Properties.Resources.Inventario;
+//            this.btnInventario.Image = global::TRAMADE.Properties.Resources.Inventario;
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.Location = new System.Drawing.Point(-3, -1);
             this.btnInventario.Name = "btnInventario";
@@ -355,7 +355,7 @@
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompras.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompras.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCompras.Image = global::TRAMADE.Properties.Resources.Compras;
+//            this.btnCompras.Image = global::TRAMADE.Properties.Resources.Compras;
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCompras.Location = new System.Drawing.Point(-3, -6);
             this.btnCompras.Name = "btnCompras";
@@ -381,7 +381,7 @@
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnProveedores.Image = global::TRAMADE.Properties.Resources.Proveedores;
+//            this.btnProveedores.Image = global::TRAMADE.Properties.Resources.Proveedores;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.Location = new System.Drawing.Point(-3, -6);
             this.btnProveedores.Name = "btnProveedores";
@@ -407,7 +407,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.Window;
-            this.button6.Image = global::TRAMADE.Properties.Resources.Reportes;
+//            this.button6.Image = global::TRAMADE.Properties.Resources.Reportes;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(-3, -6);
             this.button6.Name = "button6";
@@ -486,7 +486,7 @@
             this.btnProductosAgotados.StateTracking.Border.Rounding = 10F;
             this.btnProductosAgotados.TabIndex = 5;
             this.btnProductosAgotados.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnProductosAgotados.Values.Image = global::TRAMADE.Properties.Resources.Productosagotados;
+//            this.btnProductosAgotados.Values.Image = global::TRAMADE.Properties.Resources.Productosagotados;
             this.btnProductosAgotados.Values.Text = "Productos \r\nagotados";
             this.btnProductosAgotados.Click += new System.EventHandler(this.btnProductosAgotados_Click);
             // 
@@ -520,7 +520,7 @@
             this.btnComprasRealizadas.StateTracking.Border.Rounding = 10F;
             this.btnComprasRealizadas.TabIndex = 4;
             this.btnComprasRealizadas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnComprasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.comprasrealizadas;
+//            this.btnComprasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.comprasrealizadas;
             this.btnComprasRealizadas.Values.Text = "Compras\r\nrealizadas";
             this.btnComprasRealizadas.Click += new System.EventHandler(this.btnComprasRealizadas_Click);
             // 
@@ -554,7 +554,7 @@
             this.btnVentasRealizadas.StateTracking.Border.Rounding = 10F;
             this.btnVentasRealizadas.TabIndex = 3;
             this.btnVentasRealizadas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnVentasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.ventasrealizadas;
+//            this.btnVentasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.ventasrealizadas;
             this.btnVentasRealizadas.Values.Text = "  Ventas \r\nRegistradas";
             this.btnVentasRealizadas.Click += new System.EventHandler(this.btnVentasRealizadas_Click);
             // 
@@ -588,7 +588,7 @@
             this.btnProductos.StateTracking.Border.Rounding = 10F;
             this.btnProductos.TabIndex = 2;
             this.btnProductos.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnProductos.Values.Image = global::TRAMADE.Properties.Resources.totalproductos;
+//            this.btnProductos.Values.Image = global::TRAMADE.Properties.Resources.totalproductos;
             this.btnProductos.Values.Text = "   Total\r\nProductos";
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
@@ -665,7 +665,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = global::TRAMADE.Properties.Resources.vistaClientes2;
+//            this.pictureBox2.Image = global::TRAMADE.Properties.Resources.vistaClientes2;
             this.pictureBox2.Location = new System.Drawing.Point(81, 34);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(68, 67);
