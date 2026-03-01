@@ -207,7 +207,7 @@
             this.btnRegistrar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.MAS1;
             this.btnRegistrar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.MAS1;
             this.btnRegistrar.Values.Text = "REGISTRAR SOLICITUD";
-           this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
             // 
             // panel3
             // 

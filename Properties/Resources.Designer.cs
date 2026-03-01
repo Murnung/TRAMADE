@@ -103,9 +103,29 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap COMPRAS {
+        internal static System.Drawing.Bitmap Cerrar {
             get {
-                object obj = ResourceManager.GetObject("COMPRAS", resourceCulture);
+                object obj = ResourceManager.GetObject("Cerrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Compras {
+            get {
+                object obj = ResourceManager.GetObject("Compras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap comprasrealizadas {
+            get {
+                object obj = ResourceManager.GetObject("comprasrealizadas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +173,36 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Home {
+            get {
+                object obj = ResourceManager.GetObject("Home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inventario {
+            get {
+                object obj = ResourceManager.GetObject("Inventario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_de_la_empresa {
+            get {
+                object obj = ResourceManager.GetObject("Logo de la empresa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MAS {
             get {
                 object obj = ResourceManager.GetObject("MAS", resourceCulture);
@@ -173,6 +223,46 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Menu {
+            get {
+                object obj = ResourceManager.GetObject("Menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Menu1 {
+            get {
+                object obj = ResourceManager.GetObject("Menu1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Productosagotados {
+            get {
+                object obj = ResourceManager.GetObject("Productosagotados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Proveedores {
+            get {
+                object obj = ResourceManager.GetObject("Proveedores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SEGUIMIENTO {
             get {
                 object obj = ResourceManager.GetObject("SEGUIMIENTO", resourceCulture);
@@ -186,6 +276,46 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap TIEMPO {
             get {
                 object obj = ResourceManager.GetObject("TIEMPO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap totalproductos {
+            get {
+                object obj = ResourceManager.GetObject("totalproductos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap USUARIO {
+            get {
+                object obj = ResourceManager.GetObject("USUARIO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ventas {
+            get {
+                object obj = ResourceManager.GetObject("Ventas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vistaClientes2 {
+            get {
+                object obj = ResourceManager.GetObject("vistaClientes2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
