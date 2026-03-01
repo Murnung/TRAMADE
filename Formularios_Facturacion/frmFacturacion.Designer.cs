@@ -59,11 +59,9 @@
             this.kryptonLabel11 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel12 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
-            this.btnDireccionCliente = new Krypton.Toolkit.KryptonButton();
             this.txtNombreCliente = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
             this.btnDNICliente = new Krypton.Toolkit.KryptonButton();
-            this.btnNombreCliente = new Krypton.Toolkit.KryptonButton();
             this.txtDireccionCliente = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel8 = new Krypton.Toolkit.KryptonLabel();
             this.txtDNICliente = new Krypton.Toolkit.KryptonTextBox();
@@ -398,6 +396,7 @@
             this.btnIDVendedor.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnIDVendedor.Values.Image = ((System.Drawing.Image)(resources.GetObject("btnIDVendedor.Values.Image")));
             this.btnIDVendedor.Values.Text = "kryptonButton8";
+            this.btnIDVendedor.Click += new System.EventHandler(this.btnIDVendedor_Click);
             // 
             // txtNombreVendedor
             // 
@@ -451,11 +450,9 @@
             // 
             // kryptonGroup1.Panel
             // 
-            this.kryptonGroup1.Panel.Controls.Add(this.btnDireccionCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.txtNombreCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonLabel6);
             this.kryptonGroup1.Panel.Controls.Add(this.btnDNICliente);
-            this.kryptonGroup1.Panel.Controls.Add(this.btnNombreCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.txtDireccionCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonLabel8);
             this.kryptonGroup1.Panel.Controls.Add(this.txtDNICliente);
@@ -465,22 +462,6 @@
             this.kryptonGroup1.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.kryptonGroup1.StateCommon.Border.Rounding = 20F;
             this.kryptonGroup1.TabIndex = 46;
-            // 
-            // btnDireccionCliente
-            // 
-            this.btnDireccionCliente.Location = new System.Drawing.Point(204, 68);
-            this.btnDireccionCliente.Name = "btnDireccionCliente";
-            this.btnDireccionCliente.Size = new System.Drawing.Size(22, 20);
-            this.btnDireccionCliente.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnDireccionCliente.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnDireccionCliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
-            this.btnDireccionCliente.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnDireccionCliente.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
-            this.btnDireccionCliente.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnDireccionCliente.TabIndex = 18;
-            this.btnDireccionCliente.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnDireccionCliente.Values.Image = global::TRAMADE.Properties.Resources.Editar;
-            this.btnDireccionCliente.Values.Text = "kryptonButton6";
             // 
             // txtNombreCliente
             // 
@@ -516,22 +497,7 @@
             this.btnDNICliente.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnDNICliente.Values.Image = global::TRAMADE.Properties.Resources.Editar;
             this.btnDNICliente.Values.Text = "kryptonButton5";
-            // 
-            // btnNombreCliente
-            // 
-            this.btnNombreCliente.Location = new System.Drawing.Point(204, 34);
-            this.btnNombreCliente.Name = "btnNombreCliente";
-            this.btnNombreCliente.Size = new System.Drawing.Size(22, 20);
-            this.btnNombreCliente.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnNombreCliente.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnNombreCliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
-            this.btnNombreCliente.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnNombreCliente.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
-            this.btnNombreCliente.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnNombreCliente.TabIndex = 15;
-            this.btnNombreCliente.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnNombreCliente.Values.Image = global::TRAMADE.Properties.Resources.Editar;
-            this.btnNombreCliente.Values.Text = "kryptonButton4";
+            this.btnDNICliente.Click += new System.EventHandler(this.btnDNICliente_Click);
             // 
             // txtDireccionCliente
             // 
@@ -563,7 +529,6 @@
             this.txtDNICliente.TabIndex = 17;
             this.txtDNICliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDNICliente.TextChanged += new System.EventHandler(this.txtDNICliente_TextChanged);
-            this.txtDNICliente.Leave += new System.EventHandler(this.txtDNICliente_Leave);
             // 
             // kryptonLabel7
             // 
@@ -929,11 +894,9 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel11;
         private Krypton.Toolkit.KryptonLabel kryptonLabel12;
         private Krypton.Toolkit.KryptonGroup kryptonGroup1;
-        private Krypton.Toolkit.KryptonButton btnDireccionCliente;
         private Krypton.Toolkit.KryptonButton btnDNICliente;
         private Krypton.Toolkit.KryptonTextBox txtDireccionCliente;
         private Krypton.Toolkit.KryptonLabel kryptonLabel8;
-        private Krypton.Toolkit.KryptonButton btnNombreCliente;
         private Krypton.Toolkit.KryptonTextBox txtDNICliente;
         private Krypton.Toolkit.KryptonLabel kryptonLabel7;
         private Krypton.Toolkit.KryptonTextBox txtNombreCliente;

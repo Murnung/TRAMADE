@@ -112,19 +112,43 @@ namespace TRAMADE
 
         private void txtDNICliente_Leave(object sender, EventArgs e)
         {
-            
-                // Verificamos que la caja no esté vacía antes de ir a buscar a la base de datos
-                if (txtDNICliente.Text.Trim() != "")
-                {
-                    // Llamamos al método que creamos arriba
-                    BuscarCliente(txtDNICliente.Text.Trim());
-                }
-        
+           
         }
 
         private void frmFacturacion_Load(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void btnIDVendedor_Click(object sender, EventArgs e)
+        {
+            if (clsSesion.id_usuario != 0)
+            {
+                // Jalamos los datos de la memoria global
+                txtIDVendedor.Text = clsSesion.id_usuario.ToString();
+                txtNombreVendedor.Text = clsSesion.nombre_usuario;
+
+                // Bloqueamos las cajitas para que no lo borren
+                txtIDVendedor.ReadOnly = true;
+                txtNombreVendedor.ReadOnly = true;
+            }
+            else
+            {
+                MessageBox.Show("No se detectó ningún usuario logueado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnDNICliente_Click(object sender, EventArgs e)
+        {
+            if (txtDNICliente.Text.Trim() != "")
+            {
+                // Llamamos al método que ya tenías creado
+                BuscarCliente(txtDNICliente.Text.Trim());
+            }
+            else
+            {
+                MessageBox.Show("Por favor, escriba un DNI o RTN antes de buscar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

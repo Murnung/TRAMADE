@@ -42,10 +42,11 @@ namespace TRAMADE
 
                 if (dr.Read())  //Intenta lee una fila
                 {
-                    
-                    
+                    clsSesion.id_usuario = Convert.ToInt32(dr["id_usuario"]);
+                    clsSesion.nombre_usuario = dr["nombre_usuario"].ToString();
+
                     MessageBox.Show("Inicio de sesión exitoso");
-                    Form1 frm = new Form1();
+                    frmFacturacion frm = new frmFacturacion();
                     frm.ShowDialog();
                     
                 }
