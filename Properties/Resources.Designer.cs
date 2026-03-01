@@ -93,15 +93,9 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
         internal static System.Drawing.Bitmap Cerrar {
             get {
                 object obj = ResourceManager.GetObject("Cerrar", resourceCulture);
-=======
-        internal static System.Drawing.Bitmap inventario {
-            get {
-                object obj = ResourceManager.GetObject("inventario", resourceCulture);
->>>>>>> origin/Administrador
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -109,7 +103,6 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
         internal static System.Drawing.Bitmap Clientes {
             get {
                 object obj = ResourceManager.GetObject("Clientes", resourceCulture);
@@ -313,11 +306,6 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap vistaClientes2 {
             get {
                 object obj = ResourceManager.GetObject("vistaClientes2", resourceCulture);
-=======
-        internal static System.Drawing.Bitmap USUARIO {
-            get {
-                object obj = ResourceManager.GetObject("USUARIO", resourceCulture);
->>>>>>> origin/Administrador
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
