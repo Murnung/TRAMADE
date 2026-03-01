@@ -14,6 +14,7 @@ namespace TRAMADE
     public partial class frmEditarInv : Form
     {
         int _idProducto;
+        byte[] imagenBytes;
         public frmEditarInv(int idProducto)
         {
             InitializeComponent();
@@ -85,6 +86,17 @@ namespace TRAMADE
                 cmbCategoria.SelectedItem = dr["Categoría"].ToString();
                 cmbProveedor.SelectedItem = dr["Proveedor"].ToString();
                 cmbSucursal.SelectedItem = dr["Sucursal"].ToString();
+
+                object imagenObj = dr["imagen_producto"];
+                if (imagenObj != null && imagenObj != DBNull.Value)
+                {
+                    imagenBytes = (byte[])imagenObj;
+                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBytes))
+                    {
+                        imgProducto.Image = Image.FromStream(ms);
+                        imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
             }
 
             obj.Cerrar();
@@ -132,11 +144,15 @@ namespace TRAMADE
 
                 // UPDATE PRODUCTO
                 SqlCommand cmdProd = new SqlCommand("UPDATE PRODUCTO SET nombre_producto = @nombre, id_categoria = @idCat, " +
-                                                    "precio_unitario = @precio, precio_costo = @costo WHERE id_producto = @id", obj.SqlC);
+                                                    "precio_unitario = @precio, precio_costo = @costo, imagen_producto = @imagen WHERE id_producto = @id", obj.SqlC);
                 cmdProd.Parameters.AddWithValue("@nombre", txtNombreProducto.Text);
                 cmdProd.Parameters.AddWithValue("@idCat", idCategoria);
-                cmdProd.Parameters.AddWithValue("@precio", txtPrecio.Text);
-                cmdProd.Parameters.AddWithValue("@costo", txtPrecioCosto.Text);
+                cmdProd.Parameters.AddWithValue("@precio", decimal.Parse(txtPrecio.Text, System.Globalization.CultureInfo.InvariantCulture));
+                cmdProd.Parameters.AddWithValue("@costo", decimal.Parse(txtPrecioCosto.Text, System.Globalization.CultureInfo.InvariantCulture));
+                if (imagenBytes != null)
+                    cmdProd.Parameters.Add("@imagen", System.Data.SqlDbType.VarBinary).Value = imagenBytes;
+                else
+                    cmdProd.Parameters.Add("@imagen", System.Data.SqlDbType.VarBinary).Value = DBNull.Value;
                 cmdProd.Parameters.AddWithValue("@id", _idProducto);
                 cmdProd.ExecuteNonQuery();
 
@@ -163,6 +179,20 @@ namespace TRAMADE
             finally
             {
                 obj.Cerrar();
+            }
+        }
+
+        private void btnSubir_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
+            openFile.Title = "Seleccionar imagen del producto";
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                imagenBytes = System.IO.File.ReadAllBytes(openFile.FileName);
+                imgProducto.Image = Image.FromFile(openFile.FileName);
+                imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
     }

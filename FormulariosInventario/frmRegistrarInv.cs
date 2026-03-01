@@ -13,6 +13,8 @@ namespace TRAMADE
 {
     public partial class frmRegistrarInv : Form
     {
+
+        byte[] imagenBytes;
         public frmRegistrarInv()
         {
             InitializeComponent();
@@ -90,13 +92,17 @@ namespace TRAMADE
                 cmdSuc.Parameters.AddWithValue("@nombre", cmbSucursal.SelectedItem.ToString());
                 int idSucursal = (int)cmdSuc.ExecuteScalar();
 
-                // INSERT en PRODUCTO y obtener ID generado
-                SqlCommand cmdProd = new SqlCommand("INSERT INTO PRODUCTO (nombre_producto, id_categoria, precio_unitario, precio_costo) " +
-                                                    "VALUES (@nombre, @idCat, @precio, @costo); SELECT SCOPE_IDENTITY();", obj.SqlC);
+                // INSERT en PRODUCTO con imagen
+                SqlCommand cmdProd = new SqlCommand("INSERT INTO PRODUCTO (nombre_producto, id_categoria, precio_unitario, precio_costo, imagen_producto) " +
+                                                    "VALUES (@nombre, @idCat, @precio, @costo, @imagen); SELECT SCOPE_IDENTITY();", obj.SqlC);
                 cmdProd.Parameters.AddWithValue("@nombre", txtNombreProducto.Text);
                 cmdProd.Parameters.AddWithValue("@idCat", idCategoria);
-                cmdProd.Parameters.AddWithValue("@precio", txtPrecio.Text);
-                cmdProd.Parameters.AddWithValue("@costo", txtPrecioCosto.Text);
+                cmdProd.Parameters.AddWithValue("@precio", decimal.Parse(txtPrecio.Text, System.Globalization.CultureInfo.InvariantCulture));
+                cmdProd.Parameters.AddWithValue("@costo", decimal.Parse(txtPrecioCosto.Text, System.Globalization.CultureInfo.InvariantCulture));
+                if (imagenBytes != null)
+                    cmdProd.Parameters.Add("@imagen", System.Data.SqlDbType.VarBinary).Value = imagenBytes;
+                else
+                    cmdProd.Parameters.Add("@imagen", System.Data.SqlDbType.VarBinary).Value = DBNull.Value;
                 int nuevoID = Convert.ToInt32(cmdProd.ExecuteScalar());
 
                 // INSERT en PRODUCTO_PROVEEDOR
@@ -147,6 +153,20 @@ namespace TRAMADE
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSubir_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
+            openFile.Title = "Seleccionar imagen del producto";
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                imagenBytes = System.IO.File.ReadAllBytes(openFile.FileName);
+                imgProducto.Image = Image.FromFile(openFile.FileName);
+                imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
     }
 }

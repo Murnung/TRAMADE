@@ -41,8 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.imgProducto = new System.Windows.Forms.PictureBox();
+            this.lblNombreProducto = new System.Windows.Forms.Label();
             this.btnSiguiente = new Krypton.Toolkit.KryptonButton();
             this.btnAtras = new Krypton.Toolkit.KryptonButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -54,7 +54,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,7 +83,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnRegistrar.Location = new System.Drawing.Point(588, 26);
+            this.btnRegistrar.Location = new System.Drawing.Point(600, 26);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(81, 25);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -96,7 +96,7 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEditar.Location = new System.Drawing.Point(694, 26);
+            this.btnEditar.Location = new System.Drawing.Point(706, 26);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(81, 25);
             this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -109,7 +109,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEliminar.Location = new System.Drawing.Point(798, 26);
+            this.btnEliminar.Location = new System.Drawing.Point(810, 26);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(81, 25);
             this.btnEliminar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -123,7 +123,7 @@
             // 
             this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(1000, 14);
+            this.lblFecha.Location = new System.Drawing.Point(1024, 14);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(100, 23);
             this.lblFecha.TabIndex = 5;
@@ -133,7 +133,7 @@
             // btnRegresar
             // 
             this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnRegresar.Location = new System.Drawing.Point(24, 399);
+            this.btnRegresar.Location = new System.Drawing.Point(24, 481);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(81, 25);
             this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -145,7 +145,7 @@
             // btnExportarInventario
             // 
             this.btnExportarInventario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnExportarInventario.Location = new System.Drawing.Point(730, 395);
+            this.btnExportarInventario.Location = new System.Drawing.Point(751, 479);
             this.btnExportarInventario.Name = "btnExportarInventario";
             this.btnExportarInventario.Size = new System.Drawing.Size(175, 25);
             this.btnExportarInventario.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -158,7 +158,7 @@
             // lblPagina
             // 
             this.lblPagina.AutoSize = true;
-            this.lblPagina.Location = new System.Drawing.Point(976, 399);
+            this.lblPagina.Location = new System.Drawing.Point(985, 483);
             this.lblPagina.Name = "lblPagina";
             this.lblPagina.Size = new System.Drawing.Size(89, 16);
             this.lblPagina.TabIndex = 9;
@@ -182,43 +182,46 @@
             this.dgvInventario.RowHeadersWidth = 51;
             this.dgvInventario.RowTemplate.Height = 24;
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventario.Size = new System.Drawing.Size(1073, 273);
+            this.dgvInventario.Size = new System.Drawing.Size(1100, 329);
             this.dgvInventario.TabIndex = 12;
+            this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellContentClick);
+            this.dgvInventario.SelectionChanged += new System.EventHandler(this.dgvInventario_SelectionChanged);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(206, 352);
+            this.panel2.Controls.Add(this.imgProducto);
+            this.panel2.Controls.Add(this.lblNombreProducto);
+            this.panel2.Location = new System.Drawing.Point(201, 420);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(332, 92);
+            this.panel2.Size = new System.Drawing.Size(464, 104);
             this.panel2.TabIndex = 13;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // pictureBox4
+            // imgProducto
             // 
-            this.pictureBox4.Image = global::TRAMADE.Properties.Resources.photo_8924441;
-            this.pictureBox4.Location = new System.Drawing.Point(32, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(141, 82);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
+            this.imgProducto.Image = global::TRAMADE.Properties.Resources.photo_8924441;
+            this.imgProducto.Location = new System.Drawing.Point(32, 8);
+            this.imgProducto.Name = "imgProducto";
+            this.imgProducto.Size = new System.Drawing.Size(141, 91);
+            this.imgProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgProducto.TabIndex = 1;
+            this.imgProducto.TabStop = false;
             // 
-            // label3
+            // lblNombreProducto
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(141)))), ((int)(((byte)(144)))));
-            this.label3.Location = new System.Drawing.Point(186, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 46);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Imagen \r\ndel Producto";
+            this.lblNombreProducto.AutoSize = true;
+            this.lblNombreProducto.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(141)))), ((int)(((byte)(144)))));
+            this.lblNombreProducto.Location = new System.Drawing.Point(186, 28);
+            this.lblNombreProducto.Name = "lblNombreProducto";
+            this.lblNombreProducto.Size = new System.Drawing.Size(122, 46);
+            this.lblNombreProducto.TabIndex = 0;
+            this.lblNombreProducto.Text = "Imagen \r\ndel Producto";
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(1071, 396);
+            this.btnSiguiente.Location = new System.Drawing.Point(1080, 480);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(28, 25);
             this.btnSiguiente.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
@@ -231,7 +234,7 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(943, 395);
+            this.btnAtras.Location = new System.Drawing.Point(952, 479);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(27, 25);
             this.btnAtras.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
@@ -266,7 +269,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 164);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1127, 185);
+            this.panel1.Size = new System.Drawing.Size(1151, 185);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -300,7 +303,7 @@
             // 
             this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHora.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(1000, 37);
+            this.lblHora.Location = new System.Drawing.Point(1024, 37);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(115, 23);
             this.lblHora.TabIndex = 20;
@@ -316,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 450);
+            this.ClientSize = new System.Drawing.Size(1148, 536);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.btnBuscar);
@@ -343,7 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -366,11 +369,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvInventario;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNombreProducto;
         private System.Windows.Forms.PictureBox pictureBox3;
         private Krypton.Toolkit.KryptonButton btnSiguiente;
         private Krypton.Toolkit.KryptonButton btnAtras;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox imgProducto;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private Krypton.Toolkit.KryptonButton btnBuscar;

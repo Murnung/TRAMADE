@@ -28,7 +28,20 @@ namespace TRAMADE
         private void frmInventario_Load(object sender, EventArgs e)
         {
             dgvInventario.ReadOnly = true;
+            dgvInventario.AllowUserToResizeRows = false;
+            dgvInventario.AllowUserToResizeColumns = false;
+            dgvInventario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+            dgvInventario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvInventario.EnableHeadersVisualStyles = false;
+            dgvInventario.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+            dgvInventario.DefaultCellStyle.SelectionForeColor = Color.White;
+
+
             CargarProductos();
+
+            //Para que no se muestre la columna de imagen en el DGV pero sí
+            //esté disponible para mostrarla en el PictureBox
+            dgvInventario.Columns["imagen_producto"].Visible = false;
 
             cmbFiltrar.Items.Add("Orden Alfabético");
             cmbFiltrar.Items.Add("Categoría");
@@ -91,7 +104,12 @@ namespace TRAMADE
 
                 try
                 {
-                    // Eliminar de PRODUCTO_PROVEEDOR primero
+                    // Eliminar de DETALLE_COMPRA primero
+                    SqlCommand cmdDC = new SqlCommand("DELETE FROM DETALLE_COMPRA WHERE id_producto = @id", obj.SqlC);
+                    cmdDC.Parameters.AddWithValue("@id", idProducto);
+                    cmdDC.ExecuteNonQuery();
+
+                    // Eliminar de PRODUCTO_PROVEEDOR
                     SqlCommand cmdPP = new SqlCommand("DELETE FROM PRODUCTO_PROVEEDOR WHERE id_producto = @id", obj.SqlC);
                     cmdPP.Parameters.AddWithValue("@id", idProducto);
                     cmdPP.ExecuteNonQuery();
@@ -193,8 +211,8 @@ namespace TRAMADE
             }
             else
             {
-                cmd = new SqlCommand("SELECT * FROM VistaProductosDetalle WHERE Nombre = @buscarNombre", obj.SqlC);
-                cmd.Parameters.AddWithValue("@buscarNombre", txtBuscar.Text);
+                cmd = new SqlCommand("SELECT * FROM VistaProductosDetalle WHERE Nombre LIKE @buscarNombre", obj.SqlC);
+                cmd.Parameters.AddWithValue("@buscarNombre", "%" + txtBuscar.Text + "%");
             }
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -207,6 +225,8 @@ namespace TRAMADE
 
         private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbFiltrar.SelectedItem == null) return;
+
             switch (cmbFiltrar.SelectedItem.ToString())
             {
                 case "Orden Alfabético":
@@ -308,6 +328,41 @@ namespace TRAMADE
         {
             lblFecha.Text = DateTime.Now.ToString("dd/MM/yy");
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvInventario_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvInventario.SelectedRows.Count > 0)
+            {
+                string nombre = dgvInventario.SelectedRows[0].Cells["Nombre"].Value?.ToString();
+                lblNombreProducto.Text = nombre;
+
+                object imagenObj = dgvInventario.SelectedRows[0].Cells["imagen_producto"].Value;
+
+                if (imagenObj != null && imagenObj != DBNull.Value)
+                {
+                    byte[] imagenBytes = (byte[])imagenObj;
+                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBytes))
+                    {
+                        imgProducto.Image = Image.FromStream(ms);
+                        imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+                else
+                {
+                    imgProducto.Image = imgProducto.InitialImage;
+                }
+            }
         }
     }
 }
