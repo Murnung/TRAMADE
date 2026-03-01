@@ -40,7 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlReportes = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstReportes = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbFormato = new System.Windows.Forms.ComboBox();
@@ -175,21 +175,21 @@
             // pnlReportes
             // 
             this.pnlReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(166)))), ((int)(((byte)(222)))));
-            this.pnlReportes.Controls.Add(this.listView1);
+            this.pnlReportes.Controls.Add(this.lstReportes);
             this.pnlReportes.Controls.Add(this.label2);
             this.pnlReportes.Location = new System.Drawing.Point(791, 142);
             this.pnlReportes.Name = "pnlReportes";
             this.pnlReportes.Size = new System.Drawing.Size(500, 297);
             this.pnlReportes.TabIndex = 1;
             // 
-            // listView1
+            // lstReportes
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 68);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(494, 218);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lstReportes.HideSelection = false;
+            this.lstReportes.Location = new System.Drawing.Point(3, 68);
+            this.lstReportes.Name = "lstReportes";
+            this.lstReportes.Size = new System.Drawing.Size(494, 218);
+            this.lstReportes.TabIndex = 2;
+            this.lstReportes.UseCompatibleStateImageBehavior = false;
             // 
             // label2
             // 
@@ -336,7 +336,7 @@
         private System.Windows.Forms.ComboBox cmbFormato;
         private Krypton.Toolkit.KryptonButton btnGenerar;
         private Krypton.Toolkit.KryptonButton btnDescargar;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstReportes;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.Panel panel1;
