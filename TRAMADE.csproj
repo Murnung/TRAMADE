@@ -177,25 +177,28 @@
     <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Recursos Clientes\actualizar.jpg" />
+    <None Include="Resources\actualizar.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Recursos Clientes\image actualizar %281%29.png" />
+    <None Include="Resources\image actualizar %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Recursos Clientes\autorizar.png" />
+    <None Include="Resources\autorizar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Recursos Clientes\seguimiento1.png" />
+    <None Include="Resources\seguimiento1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Recursos Clientes\REGISTRADOS.png" />
+    <None Include="Resources\REGISTRADOS.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Recursos Clientes\ACTIVOS.png" />
+    <None Include="Resources\ACTIVOS.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Recursos Clientes\INACTIVOS.png" />
+    <None Include="Resources\INACTIVOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Recursos Clientes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
