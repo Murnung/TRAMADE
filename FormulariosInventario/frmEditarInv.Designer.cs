@@ -161,7 +161,7 @@
             // 
             // imgProducto
             // 
-<<<<<<< HEAD
+
             this.imgProducto.Image = global::TRAMADE.Properties.Resources.photo_89244411;
             this.imgProducto.Location = new System.Drawing.Point(464, 263);
             this.imgProducto.Name = "imgProducto";
@@ -169,15 +169,6 @@
             this.imgProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgProducto.TabIndex = 34;
             this.imgProducto.TabStop = false;
-=======
-            this.pbImagenProducto.Image = global::TRAMADE.Properties.Resources.photo_89244411;
-            this.pbImagenProducto.Location = new System.Drawing.Point(398, 313);
-            this.pbImagenProducto.Name = "pbImagenProducto";
-            this.pbImagenProducto.Size = new System.Drawing.Size(131, 86);
-            this.pbImagenProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbImagenProducto.TabIndex = 34;
-            this.pbImagenProducto.TabStop = false;
->>>>>>> eeea262905d2131a6e3a8a0aa73ec4c9649bd969
             // 
             // pictureBox2
             // 
