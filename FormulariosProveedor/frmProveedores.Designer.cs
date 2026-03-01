@@ -1,0 +1,553 @@
+﻿namespace TRAMADE
+{
+    partial class frmProveedores
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores));
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAñadirProveedor = new Krypton.Toolkit.KryptonButton();
+            this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
+            this.btnFiltrarActivo = new Krypton.Toolkit.KryptonButton();
+            this.btnFiltrarInactivo = new Krypton.Toolkit.KryptonButton();
+            this.dgvProveedores = new Krypton.Toolkit.KryptonDataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new Krypton.Toolkit.KryptonButton();
+            this.btnMaximizar = new Krypton.Toolkit.KryptonButton();
+            this.btnMinimizar = new Krypton.Toolkit.KryptonButton();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
+            this.flpBarraLateral = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnInicio = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnCompras = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnProveedores = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            this.flpBarraLateral.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(271, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(355, 50);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Listado de Proveedores";
+            // 
+            // btnAñadirProveedor
+            // 
+            this.btnAñadirProveedor.Location = new System.Drawing.Point(280, 184);
+            this.btnAñadirProveedor.Name = "btnAñadirProveedor";
+            this.btnAñadirProveedor.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnAñadirProveedor.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnAñadirProveedor.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAñadirProveedor.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAñadirProveedor.Size = new System.Drawing.Size(228, 50);
+            this.btnAñadirProveedor.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnAñadirProveedor.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
+            this.btnAñadirProveedor.StateCommon.Border.Rounding = 10F;
+            this.btnAñadirProveedor.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
+            this.btnAñadirProveedor.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadirProveedor.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAñadirProveedor.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAñadirProveedor.StateTracking.Border.Color1 = System.Drawing.Color.Navy;
+            this.btnAñadirProveedor.StateTracking.Border.Color2 = System.Drawing.Color.Navy;
+            this.btnAñadirProveedor.TabIndex = 13;
+            this.btnAñadirProveedor.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnAñadirProveedor.Values.Text = "Añadir Proveedor";
+            this.btnAñadirProveedor.Click += new System.EventHandler(this.btnAñadirProveedor_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.CueHint.Color1 = System.Drawing.Color.Gray;
+            this.txtBuscar.CueHint.CueHintText = "        Buscar por Razón Social, Nombre Comercial o RTN";
+            this.txtBuscar.CueHint.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(280, 284);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(547, 42);
+            this.txtBuscar.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.TabIndex = 14;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // btnFiltrarActivo
+            // 
+            this.btnFiltrarActivo.Location = new System.Drawing.Point(880, 284);
+            this.btnFiltrarActivo.Name = "btnFiltrarActivo";
+            this.btnFiltrarActivo.OverrideDefault.Back.Color1 = System.Drawing.Color.Lime;
+            this.btnFiltrarActivo.OverrideDefault.Back.Color2 = System.Drawing.Color.Lime;
+            this.btnFiltrarActivo.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnFiltrarActivo.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnFiltrarActivo.Size = new System.Drawing.Size(106, 44);
+            this.btnFiltrarActivo.StateCommon.Back.Color1 = System.Drawing.Color.Lime;
+            this.btnFiltrarActivo.StateCommon.Back.Color2 = System.Drawing.Color.Lime;
+            this.btnFiltrarActivo.StateCommon.Border.Rounding = 10F;
+            this.btnFiltrarActivo.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
+            this.btnFiltrarActivo.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrarActivo.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnFiltrarActivo.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnFiltrarActivo.StateTracking.Border.Color1 = System.Drawing.Color.Green;
+            this.btnFiltrarActivo.StateTracking.Border.Color2 = System.Drawing.Color.Green;
+            this.btnFiltrarActivo.TabIndex = 16;
+            this.btnFiltrarActivo.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnFiltrarActivo.Values.Text = "Activo";
+            this.btnFiltrarActivo.Click += new System.EventHandler(this.btnFiltrarActivo_Click);
+            // 
+            // btnFiltrarInactivo
+            // 
+            this.btnFiltrarInactivo.Location = new System.Drawing.Point(1001, 284);
+            this.btnFiltrarInactivo.Name = "btnFiltrarInactivo";
+            this.btnFiltrarInactivo.OverrideDefault.Back.Color1 = System.Drawing.Color.Red;
+            this.btnFiltrarInactivo.OverrideDefault.Back.Color2 = System.Drawing.Color.Red;
+            this.btnFiltrarInactivo.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFiltrarInactivo.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFiltrarInactivo.Size = new System.Drawing.Size(106, 44);
+            this.btnFiltrarInactivo.StateCommon.Back.Color1 = System.Drawing.Color.Red;
+            this.btnFiltrarInactivo.StateCommon.Back.Color2 = System.Drawing.Color.Red;
+            this.btnFiltrarInactivo.StateCommon.Border.Rounding = 10F;
+            this.btnFiltrarInactivo.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
+            this.btnFiltrarInactivo.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrarInactivo.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFiltrarInactivo.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnFiltrarInactivo.StateTracking.Border.Color1 = System.Drawing.Color.Maroon;
+            this.btnFiltrarInactivo.StateTracking.Border.Color2 = System.Drawing.Color.Maroon;
+            this.btnFiltrarInactivo.TabIndex = 15;
+            this.btnFiltrarInactivo.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnFiltrarInactivo.Values.Text = "Inactivo";
+            this.btnFiltrarInactivo.Click += new System.EventHandler(this.btnFiltrarInactivo_Click);
+            // 
+            // dgvProveedores
+            // 
+            this.dgvProveedores.AllowUserToAddRows = false;
+            this.dgvProveedores.AllowUserToDeleteRows = false;
+            this.dgvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProveedores.GridStyles.Style = Krypton.Toolkit.DataGridViewStyle.Sheet;
+            this.dgvProveedores.GridStyles.StyleBackground = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
+            this.dgvProveedores.GridStyles.StyleColumn = Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvProveedores.GridStyles.StyleDataCells = Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvProveedores.GridStyles.StyleRow = Krypton.Toolkit.GridStyle.Sheet;
+            this.dgvProveedores.HideOuterBorders = true;
+            this.dgvProveedores.Location = new System.Drawing.Point(280, 358);
+            this.dgvProveedores.Name = "dgvProveedores";
+            this.dgvProveedores.RowHeadersVisible = false;
+            this.dgvProveedores.RowHeadersWidth = 51;
+            this.dgvProveedores.RowTemplate.Height = 24;
+            this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProveedores.Size = new System.Drawing.Size(827, 382);
+            this.dgvProveedores.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dgvProveedores.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
+            this.dgvProveedores.StateCommon.DataCell.Border.Draw = Krypton.Toolkit.InheritBool.False;
+            this.dgvProveedores.StateCommon.DataCell.Content.Color1 = System.Drawing.Color.Black;
+            this.dgvProveedores.StateCommon.DataCell.Content.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProveedores.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(65)))));
+            this.dgvProveedores.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(65)))));
+            this.dgvProveedores.StateCommon.HeaderColumn.Border.Draw = Krypton.Toolkit.InheritBool.False;
+            this.dgvProveedores.StateCommon.HeaderColumn.Content.Color1 = System.Drawing.Color.White;
+            this.dgvProveedores.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProveedores.TabIndex = 20;
+            this.dgvProveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedores_CellDoubleClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnSalir);
+            this.panel1.Controls.Add(this.btnMaximizar);
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.btnMenu);
+            this.panel1.Controls.Add(this.lblBienvenidoUsuario);
+            this.panel1.Location = new System.Drawing.Point(9, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1171, 65);
+            this.panel1.TabIndex = 21;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(1107, 12);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(37, 38);
+            this.btnSalir.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnSalir.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnSalir.StatePressed.Back.Color1 = System.Drawing.Color.Red;
+            this.btnSalir.StatePressed.Back.Color2 = System.Drawing.Color.Red;
+            this.btnSalir.StateTracking.Back.Color1 = System.Drawing.Color.Red;
+            this.btnSalir.StateTracking.Back.Color2 = System.Drawing.Color.Red;
+            this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
+            this.btnSalir.Values.Text = "";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Location = new System.Drawing.Point(1049, 12);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(37, 38);
+            this.btnMaximizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
+            this.btnMaximizar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
+            this.btnMaximizar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
+            this.btnMaximizar.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnMaximizar.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnMaximizar.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
+            this.btnMaximizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertPressed;
+            this.btnMaximizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnMaximizar.TabIndex = 8;
+            this.btnMaximizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
+            this.btnMaximizar.Values.Text = "";
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Location = new System.Drawing.Point(992, 12);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(37, 38);
+            this.btnMinimizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
+            this.btnMinimizar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
+            this.btnMinimizar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
+            this.btnMinimizar.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnMinimizar.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnMinimizar.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
+            this.btnMinimizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertPressed;
+            this.btnMinimizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnMinimizar.TabIndex = 7;
+            this.btnMinimizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
+            this.btnMinimizar.Values.Text = "";
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(19, 14);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(55, 36);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMenu.TabIndex = 6;
+            this.btnMenu.TabStop = false;
+            // 
+            // lblBienvenidoUsuario
+            // 
+            this.lblBienvenidoUsuario.AutoSize = true;
+            this.lblBienvenidoUsuario.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenidoUsuario.Location = new System.Drawing.Point(91, 18);
+            this.lblBienvenidoUsuario.Name = "lblBienvenidoUsuario";
+            this.lblBienvenidoUsuario.Size = new System.Drawing.Size(350, 38);
+            this.lblBienvenidoUsuario.TabIndex = 5;
+            this.lblBienvenidoUsuario.Text = "Bienvenido, [Usuario]";
+            // 
+            // flpBarraLateral
+            // 
+            this.flpBarraLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.flpBarraLateral.Controls.Add(this.panel2);
+            this.flpBarraLateral.Controls.Add(this.panel3);
+            this.flpBarraLateral.Controls.Add(this.panel4);
+            this.flpBarraLateral.Controls.Add(this.panel5);
+            this.flpBarraLateral.Controls.Add(this.panel6);
+            this.flpBarraLateral.Controls.Add(this.panel7);
+            this.flpBarraLateral.Controls.Add(this.panel8);
+            this.flpBarraLateral.Location = new System.Drawing.Point(9, 74);
+            this.flpBarraLateral.Name = "flpBarraLateral";
+            this.flpBarraLateral.Size = new System.Drawing.Size(245, 716);
+            this.flpBarraLateral.TabIndex = 22;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnInicio);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(269, 54);
+            this.panel2.TabIndex = 3;
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInicio.FlatAppearance.BorderSize = 0;
+            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInicio.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInicio.Location = new System.Drawing.Point(-6, -3);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnInicio.Size = new System.Drawing.Size(248, 63);
+            this.btnInicio.TabIndex = 2;
+            this.btnInicio.Text = "Inicio";
+            this.btnInicio.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnClientes);
+            this.panel3.Location = new System.Drawing.Point(3, 63);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(245, 60);
+            this.panel3.TabIndex = 5;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnClientes.Image = global::TRAMADE.Properties.Resources.Clientes;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(-3, 0);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnClientes.Size = new System.Drawing.Size(245, 60);
+            this.btnClientes.TabIndex = 4;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.UseVisualStyleBackColor = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnVentas);
+            this.panel4.Location = new System.Drawing.Point(3, 129);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(245, 60);
+            this.panel4.TabIndex = 7;
+            // 
+            // btnVentas
+            // 
+            this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVentas.FlatAppearance.BorderSize = 0;
+            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentas.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnVentas.Image = global::TRAMADE.Properties.Resources.Ventas;
+            this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentas.Location = new System.Drawing.Point(-3, 0);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnVentas.Size = new System.Drawing.Size(245, 60);
+            this.btnVentas.TabIndex = 6;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnInventario);
+            this.panel5.Location = new System.Drawing.Point(3, 195);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(245, 60);
+            this.panel5.TabIndex = 9;
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInventario.FlatAppearance.BorderSize = 0;
+            this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventario.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnInventario.Image = global::TRAMADE.Properties.Resources.Inventario;
+            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventario.Location = new System.Drawing.Point(-3, -1);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnInventario.Size = new System.Drawing.Size(245, 60);
+            this.btnInventario.TabIndex = 8;
+            this.btnInventario.Text = "Inventario";
+            this.btnInventario.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnCompras);
+            this.panel6.Location = new System.Drawing.Point(3, 261);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(245, 60);
+            this.panel6.TabIndex = 11;
+            // 
+            // btnCompras
+            // 
+            this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompras.FlatAppearance.BorderSize = 0;
+            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompras.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCompras.Image = global::TRAMADE.Properties.Resources.Compras;
+            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.Location = new System.Drawing.Point(-3, -6);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
+            this.btnCompras.Size = new System.Drawing.Size(245, 60);
+            this.btnCompras.TabIndex = 10;
+            this.btnCompras.Text = "Compras";
+            this.btnCompras.UseVisualStyleBackColor = false;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.btnProveedores);
+            this.panel7.Location = new System.Drawing.Point(3, 327);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(242, 60);
+            this.panel7.TabIndex = 13;
+            // 
+            // btnProveedores
+            // 
+            this.btnProveedores.BackColor = System.Drawing.Color.White;
+            this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
+            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnProveedores.Image = global::TRAMADE.Properties.Resources.PRoveedores_Seleccionado_;
+            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.Location = new System.Drawing.Point(-21, -3);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
+            this.btnProveedores.Size = new System.Drawing.Size(266, 60);
+            this.btnProveedores.TabIndex = 12;
+            this.btnProveedores.Text = "    Proveedores";
+            this.btnProveedores.UseVisualStyleBackColor = false;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.button6);
+            this.panel8.Location = new System.Drawing.Point(3, 393);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(245, 60);
+            this.panel8.TabIndex = 15;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.Window;
+            this.button6.Image = global::TRAMADE.Properties.Resources.Reportes;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(-3, -6);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(245, 60);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "Reportes";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // frmProveedores
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1189, 799);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flpBarraLateral);
+            this.Controls.Add(this.dgvProveedores);
+            this.Controls.Add(this.btnFiltrarActivo);
+            this.Controls.Add(this.btnFiltrarInactivo);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.btnAñadirProveedor);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmProveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmProveedores";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            this.flpBarraLateral.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        //private System.Windows.Forms.Timer tmrTransicionLateral;
+        private System.Windows.Forms.Label label1;
+        private Krypton.Toolkit.KryptonButton btnAñadirProveedor;
+        private Krypton.Toolkit.KryptonTextBox txtBuscar;
+        private Krypton.Toolkit.KryptonButton btnFiltrarActivo;
+        private Krypton.Toolkit.KryptonButton btnFiltrarInactivo;
+        private Krypton.Toolkit.KryptonDataGridView dgvProveedores;
+        private System.Windows.Forms.Panel panel1;
+        private Krypton.Toolkit.KryptonButton btnSalir;
+        private Krypton.Toolkit.KryptonButton btnMaximizar;
+        private Krypton.Toolkit.KryptonButton btnMinimizar;
+        private System.Windows.Forms.PictureBox btnMenu;
+        private System.Windows.Forms.Label lblBienvenidoUsuario;
+        private System.Windows.Forms.FlowLayoutPanel flpBarraLateral;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnCompras;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button button6;
+    }
+}
