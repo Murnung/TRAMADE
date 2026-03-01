@@ -55,26 +55,16 @@
     <StartupObject>TRAMADE.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
-      <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
-    </Reference>
     <Reference Include="Krypton.Toolkit, Version=100.26.1.19, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>packages\Krypton.Toolkit.100.26.1.19\lib\net472\Krypton.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-=======
-    <Reference Include="Krypton.Toolkit, Version=100.26.1.19, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
-      <HintPath>packages\Krypton.Toolkit.100.26.1.19\lib\net472\Krypton.Toolkit.dll</HintPath>
-    </Reference>
->>>>>>> origin/Administrador
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -85,11 +75,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-    <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Xaml" />
-=======
->>>>>>> origin/Administrador
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,99 +88,80 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClasesAdministrador\clsUsuario.cs" />
+    <Compile Include="ClasesCompras\clsCompras.cs" />
+    <Compile Include="ClasesCompras\clsFiltrarCompras.cs" />
+    <Compile Include="ClasesCompras\clsLlenarComboFormaPago.cs" />
+    <Compile Include="ClasesCompras\clsLlenarComboProducto.cs" />
+    <Compile Include="ClasesCompras\clsLlenarComboProveedor.cs" />
+    <Compile Include="ClasesCompras\clsLlenarListBox.cs" />
+    <Compile Include="ClasesCompras\clsLlenarTextoPrecioCosto.cs" />
+    <Compile Include="ClasesCompras\clsOperacionesCompra.cs" />
     <Compile Include="clsConexion.cs" />
+    <Compile Include="clsSesion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Formularios Login, Menú\Clases\clsClientesPanel.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsGraficoInventario.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsGraficoTendencia.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsResponsive.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsUltimasCompras.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsUltimasVentas.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsVistaGeneral.cs" />
-    <Compile Include="Formularios Login, Menú\frmLogin.cs">
-=======
-    <Compile Include="FormulariosAdministrador\frmAdministrador.cs">
+    <Compile Include="FormulariosCompras\frmActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmAdministrador.Designer.cs">
-      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    <Compile Include="FormulariosCompras\frmActualizar.Designer.cs">
+      <DependentUpon>frmActualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmBitacora.cs">
+    <Compile Include="FormulariosCompras\frmAutorizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmBitacora.Designer.cs">
-      <DependentUpon>frmBitacora.cs</DependentUpon>
+    <Compile Include="FormulariosCompras\frmAutorizar.Designer.cs">
+      <DependentUpon>frmAutorizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmEditar.cs">
+    <Compile Include="FormulariosCompras\frmCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmEditar.Designer.cs">
-      <DependentUpon>frmEditar.cs</DependentUpon>
+    <Compile Include="FormulariosCompras\frmCompras.Designer.cs">
+      <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
->>>>>>> origin/Administrador
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios Login, Menú\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Formularios Login, Menú\frmMenuPrincipal.cs">
+    <Compile Include="FormulariosCompras\frmRegistrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios Login, Menú\frmMenuPrincipal.Designer.cs">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
-=======
-    <Compile Include="FormulariosAdministrador\frmNuevo.cs">
+    <Compile Include="FormulariosCompras\frmRegistrar.Designer.cs">
+      <DependentUpon>frmRegistrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosCompras\frmSeguimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmNuevo.Designer.cs">
-      <DependentUpon>frmNuevo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormulariosAdministrador\frmUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormulariosAdministrador\frmUsuarios.Designer.cs">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
->>>>>>> origin/Administrador
+    <Compile Include="FormulariosCompras\frmSeguimiento.Designer.cs">
+      <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Formularios Login, Menú\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="FormulariosCompras\frmActualizar.resx">
+      <DependentUpon>frmActualizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios Login, Menú\frmMenuPrincipal.resx">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="FormulariosAdministrador\frmAdministrador.resx">
-      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    <EmbeddedResource Include="FormulariosCompras\frmAutorizar.resx">
+      <DependentUpon>frmAutorizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosAdministrador\frmBitacora.resx">
-      <DependentUpon>frmBitacora.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosAdministrador\frmEditar.resx">
-      <DependentUpon>frmEditar.cs</DependentUpon>
+    <EmbeddedResource Include="FormulariosCompras\frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosAdministrador\frmNuevo.resx">
-      <DependentUpon>frmNuevo.cs</DependentUpon>
+    <EmbeddedResource Include="FormulariosCompras\frmRegistrar.resx">
+      <DependentUpon>frmRegistrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosAdministrador\frmUsuarios.resx">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
->>>>>>> origin/Administrador
+    <EmbeddedResource Include="FormulariosCompras\frmSeguimiento.resx">
+      <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -207,8 +174,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-=======
->>>>>>> origin/Administrador
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -238,80 +203,28 @@
     <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <None Include="Resources\Iconos\Minimizar.png" />
+    <None Include="Resources\COMPRAS.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Iconos\Maximizar.png" />
+    <None Include="Resources\DINERO.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Iconos\Cerrar.png" />
+    <None Include="Resources\MAS.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Iconos\Menu.png" />
+    <None Include="Resources\ACTUALIZAR.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Iconos\Home.png" />
+    <None Include="Resources\GESTION.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Iconos\Clientes.png" />
+    <None Include="Resources\GESTION1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Iconos\Ventas.png" />
+    <None Include="Resources\SEGUIMIENTO.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Iconos\Inventario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\Compras.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\Reportes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\Proveedores.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\Usuario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\totalproductos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\ventasrealizadas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\comprasrealizadas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\Productosagotados.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\vistaClientes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Iconos\vistaClientes2.png" />
-=======
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Usuario" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\USUARIO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\inventario.png" />
->>>>>>> origin/Administrador
+    <None Include="Resources\GES.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
