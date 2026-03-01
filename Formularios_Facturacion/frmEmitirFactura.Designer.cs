@@ -34,8 +34,8 @@
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
             this.rbCreditoEF = new Krypton.Toolkit.KryptonRadioButton();
             this.kryptonLabel16 = new Krypton.Toolkit.KryptonLabel();
-            this.rdContadoEF = new Krypton.Toolkit.KryptonRadioButton();
-            this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
+            this.rbContadoEF = new Krypton.Toolkit.KryptonRadioButton();
+            this.dgvEmitirFactura = new Krypton.Toolkit.KryptonDataGridView();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +55,10 @@
             this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
-            this.txtDireccionClienteEF = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonLabel8 = new Krypton.Toolkit.KryptonLabel();
             this.txtDNIClienteEF = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel7 = new Krypton.Toolkit.KryptonLabel();
+            this.txtDireccionClienteEF = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel8 = new Krypton.Toolkit.KryptonLabel();
             this.txtNombreClienteEF = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
@@ -85,7 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3.Panel)).BeginInit();
             this.kryptonGroup3.Panel.SuspendLayout();
             this.kryptonGroup3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmitirFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
@@ -117,6 +117,7 @@
             this.kryptonGroup4.Panel.Controls.Add(this.kryptonLabel1);
             this.kryptonGroup4.Panel.Controls.Add(this.panel3);
             this.kryptonGroup4.Panel.Controls.Add(this.kryptonPanel1);
+            this.kryptonGroup4.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroup4_Panel_Paint);
             this.kryptonGroup4.Size = new System.Drawing.Size(1069, 595);
             this.kryptonGroup4.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonGroup4.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -141,8 +142,8 @@
             // 
             this.kryptonGroup3.Panel.Controls.Add(this.rbCreditoEF);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel16);
-            this.kryptonGroup3.Panel.Controls.Add(this.rdContadoEF);
-            this.kryptonGroup3.Panel.Controls.Add(this.kryptonDataGridView1);
+            this.kryptonGroup3.Panel.Controls.Add(this.rbContadoEF);
+            this.kryptonGroup3.Panel.Controls.Add(this.dgvEmitirFactura);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonLabel20);
             this.kryptonGroup3.Panel.Controls.Add(this.lblTotalEF);
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonPictureBox2);
@@ -183,45 +184,45 @@
             this.kryptonLabel16.TabIndex = 67;
             this.kryptonLabel16.Values.Text = "Total a pagar:";
             // 
-            // rdContadoEF
+            // rbContadoEF
             // 
-            this.rdContadoEF.Enabled = false;
-            this.rdContadoEF.Location = new System.Drawing.Point(257, 225);
-            this.rdContadoEF.Name = "rdContadoEF";
-            this.rdContadoEF.Size = new System.Drawing.Size(90, 25);
-            this.rdContadoEF.TabIndex = 57;
-            this.rdContadoEF.Values.Text = "Contado";
+            this.rbContadoEF.Enabled = false;
+            this.rbContadoEF.Location = new System.Drawing.Point(257, 225);
+            this.rbContadoEF.Name = "rbContadoEF";
+            this.rbContadoEF.Size = new System.Drawing.Size(90, 25);
+            this.rbContadoEF.TabIndex = 57;
+            this.rbContadoEF.Values.Text = "Contado";
             // 
-            // kryptonDataGridView1
+            // dgvEmitirFactura
             // 
-            this.kryptonDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.kryptonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvEmitirFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmitirFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEmitirFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmitirFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Producto,
             this.Descripción,
             this.Cantidad,
             this.Precio_unitario,
             this.Subtotal});
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(25, 84);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.RowHeadersVisible = false;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(381, 116);
-            this.kryptonDataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.Background.Color2 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.LightGray;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Rounding = 1F;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Width = 1;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonDataGridView1.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
-            this.kryptonDataGridView1.TabIndex = 56;
+            this.dgvEmitirFactura.Location = new System.Drawing.Point(25, 84);
+            this.dgvEmitirFactura.Name = "dgvEmitirFactura";
+            this.dgvEmitirFactura.RowHeadersVisible = false;
+            this.dgvEmitirFactura.Size = new System.Drawing.Size(381, 116);
+            this.dgvEmitirFactura.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvEmitirFactura.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dgvEmitirFactura.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgvEmitirFactura.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.LightGray;
+            this.dgvEmitirFactura.StateCommon.DataCell.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)));
+            this.dgvEmitirFactura.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.dgvEmitirFactura.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.dgvEmitirFactura.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Transparent;
+            this.dgvEmitirFactura.StateCommon.HeaderColumn.Border.Rounding = 1F;
+            this.dgvEmitirFactura.StateCommon.HeaderColumn.Border.Width = 1;
+            this.dgvEmitirFactura.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvEmitirFactura.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.dgvEmitirFactura.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.dgvEmitirFactura.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
+            this.dgvEmitirFactura.TabIndex = 56;
             // 
             // Producto
             // 
@@ -382,26 +383,6 @@
             this.kryptonGroup1.StateCommon.Border.Rounding = 20F;
             this.kryptonGroup1.TabIndex = 53;
             // 
-            // txtDireccionClienteEF
-            // 
-            this.txtDireccionClienteEF.CueHint.CueHintText = "( ! ) Dirección del cliente";
-            this.txtDireccionClienteEF.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.txtDireccionClienteEF.Enabled = false;
-            this.txtDireccionClienteEF.Location = new System.Drawing.Point(62, 68);
-            this.txtDireccionClienteEF.Name = "txtDireccionClienteEF";
-            this.txtDireccionClienteEF.Size = new System.Drawing.Size(145, 22);
-            this.txtDireccionClienteEF.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            this.txtDireccionClienteEF.TabIndex = 17;
-            this.txtDireccionClienteEF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // kryptonLabel8
-            // 
-            this.kryptonLabel8.Location = new System.Drawing.Point(3, 68);
-            this.kryptonLabel8.Name = "kryptonLabel8";
-            this.kryptonLabel8.Size = new System.Drawing.Size(90, 25);
-            this.kryptonLabel8.TabIndex = 16;
-            this.kryptonLabel8.Values.Text = "Dirección:";
-            // 
             // txtDNIClienteEF
             // 
             this.txtDNIClienteEF.CueHint.CueHintText = "DNI/RTN del cliente";
@@ -421,6 +402,26 @@
             this.kryptonLabel7.Size = new System.Drawing.Size(90, 25);
             this.kryptonLabel7.TabIndex = 16;
             this.kryptonLabel7.Values.Text = "DNI/RTN:";
+            // 
+            // txtDireccionClienteEF
+            // 
+            this.txtDireccionClienteEF.CueHint.CueHintText = "( ! ) Dirección del cliente";
+            this.txtDireccionClienteEF.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.txtDireccionClienteEF.Enabled = false;
+            this.txtDireccionClienteEF.Location = new System.Drawing.Point(62, 68);
+            this.txtDireccionClienteEF.Name = "txtDireccionClienteEF";
+            this.txtDireccionClienteEF.Size = new System.Drawing.Size(145, 22);
+            this.txtDireccionClienteEF.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            this.txtDireccionClienteEF.TabIndex = 17;
+            this.txtDireccionClienteEF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // kryptonLabel8
+            // 
+            this.kryptonLabel8.Location = new System.Drawing.Point(3, 68);
+            this.kryptonLabel8.Name = "kryptonLabel8";
+            this.kryptonLabel8.Size = new System.Drawing.Size(90, 25);
+            this.kryptonLabel8.TabIndex = 16;
+            this.kryptonLabel8.Values.Text = "Dirección:";
             // 
             // txtNombreClienteEF
             // 
@@ -659,6 +660,7 @@
             this.Controls.Add(this.kryptonGroup4);
             this.Name = "frmEmitirFactura";
             this.Text = "frmEmitirFactura";
+            this.Load += new System.EventHandler(this.frmEmitirFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).EndInit();
             this.kryptonGroup4.Panel.ResumeLayout(false);
             this.kryptonGroup4.Panel.PerformLayout();
@@ -669,7 +671,7 @@
             this.kryptonGroup3.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3)).EndInit();
             this.kryptonGroup3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmitirFactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
@@ -697,8 +699,8 @@
         private Krypton.Toolkit.KryptonGroup kryptonGroup3;
         private Krypton.Toolkit.KryptonRadioButton rbCreditoEF;
         private Krypton.Toolkit.KryptonLabel kryptonLabel16;
-        private Krypton.Toolkit.KryptonRadioButton rdContadoEF;
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private Krypton.Toolkit.KryptonRadioButton rbContadoEF;
+        private Krypton.Toolkit.KryptonDataGridView dgvEmitirFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;

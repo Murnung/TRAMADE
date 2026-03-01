@@ -171,18 +171,20 @@ namespace TRAMADE
                 {
                     if (fila.Cells[1].Value != null)
                     {
-                        // Ahora leemos la columna 5
                         int cantidad = 0;
                         int.TryParse(fila.Cells[5].Value.ToString(), out cantidad);
 
                         if (cantidad > 0)
                         {
+                            // CAPTURAMOS EL ID (Está en la columna 0 de este grid)
+                            string id = fila.Cells[0].Value.ToString();
                             string nombre = fila.Cells[1].Value.ToString();
                             decimal precio = Convert.ToDecimal(fila.Cells[4].Value);
                             decimal subtotal = precio * cantidad;
 
-                            // Mandamos a la factura principal
-                            principal.dgvDetalleFactura.Rows.Add(nombre, "Unidad", cantidad, precio.ToString("N2"), subtotal.ToString("N2"));
+                            // IMPORTANTE: Ahora mandamos 6 datos. El primero es el ID.
+                            principal.dgvDetalleFactura.Rows.Add(id, nombre, "Unidad", cantidad, precio.ToString("N2"), subtotal.ToString("N2"));
+                            principal.CalcularTotales();
                         }
                     }
                 }

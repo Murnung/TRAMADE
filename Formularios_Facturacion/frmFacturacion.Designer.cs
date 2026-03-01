@@ -45,11 +45,6 @@
             this.btnEliminarProducto = new Krypton.Toolkit.KryptonButton();
             this.btnAggProducto = new Krypton.Toolkit.KryptonButton();
             this.dgvDetalleFactura = new Krypton.Toolkit.KryptonDataGridView();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kryptonLabel9 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonGroup2 = new Krypton.Toolkit.KryptonGroup();
             this.btnIDVendedor = new Krypton.Toolkit.KryptonButton();
@@ -87,6 +82,12 @@
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup4 = new Krypton.Toolkit.KryptonGroup();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).BeginInit();
@@ -276,6 +277,7 @@
             this.btnEliminarProducto.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnEliminarProducto.Values.Image = global::TRAMADE.Properties.Resources.Basurero_png_1_;
             this.btnEliminarProducto.Values.Text = "Eliminar producto";
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // btnAggProducto
             // 
@@ -304,6 +306,7 @@
             this.dgvDetalleFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
             this.Producto,
             this.Descripción,
             this.Cantidad,
@@ -328,31 +331,7 @@
             this.dgvDetalleFactura.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.dgvDetalleFactura.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
             this.dgvDetalleFactura.TabIndex = 50;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.Name = "Descripción";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Precio_unitario
-            // 
-            this.Precio_unitario.HeaderText = "Precio unitario";
-            this.Precio_unitario.Name = "Precio_unitario";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
+            this.dgvDetalleFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleFactura_CellValueChanged);
             // 
             // kryptonLabel9
             // 
@@ -791,6 +770,37 @@
             this.kryptonGroup4.StateCommon.Border.Width = 3;
             this.kryptonGroup4.TabIndex = 67;
             // 
+            // colID
+            // 
+            this.colID.HeaderText = "Column1";
+            this.colID.Name = "colID";
+            this.colID.Visible = false;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Precio_unitario
+            // 
+            this.Precio_unitario.HeaderText = "Precio unitario";
+            this.Precio_unitario.Name = "Precio_unitario";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            // 
             // frmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -879,11 +889,6 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel13;
         private Krypton.Toolkit.KryptonButton btnEliminarProducto;
         private Krypton.Toolkit.KryptonButton btnAggProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio_unitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private Krypton.Toolkit.KryptonLabel kryptonLabel9;
         private Krypton.Toolkit.KryptonGroup kryptonGroup2;
         private Krypton.Toolkit.KryptonButton btnIDVendedor;
@@ -921,5 +926,11 @@
         private Krypton.Toolkit.KryptonGroup kryptonGroup4;
         private Krypton.Toolkit.KryptonGroup kryptonGroup5;
         public Krypton.Toolkit.KryptonDataGridView dgvDetalleFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio_unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
     }
 }

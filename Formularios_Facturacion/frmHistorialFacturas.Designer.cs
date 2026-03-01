@@ -37,7 +37,7 @@
             this.btnBuscarFacturas = new Krypton.Toolkit.ButtonSpecAny();
             this.kryptonGroup2 = new Krypton.Toolkit.KryptonGroup();
             this.btnVerFacturaHF = new Krypton.Toolkit.KryptonButton();
-            this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
+            this.dgvHistorialFacturas = new Krypton.Toolkit.KryptonDataGridView();
             this.Numeral = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).BeginInit();
             this.kryptonGroup2.Panel.SuspendLayout();
             this.kryptonGroup2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialFacturas)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +108,7 @@
             this.btnOrdenarFacturas.StateCommon.Border.Rounding = 10F;
             this.btnOrdenarFacturas.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnOrdenarFacturas.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnOrdenarFacturas.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton4.StateCommon.Content.ShortText.Image")));
+            this.btnOrdenarFacturas.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnOrdenarFacturas.StateCommon.Content.ShortText.Image")));
             this.btnOrdenarFacturas.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnOrdenarFacturas.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.btnOrdenarFacturas.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
@@ -131,7 +131,7 @@
             this.btnCalendarioFacturas.StateCommon.Border.Rounding = 10F;
             this.btnCalendarioFacturas.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnCalendarioFacturas.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnCalendarioFacturas.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.StateCommon.Content.ShortText.Image")));
+            this.btnCalendarioFacturas.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendarioFacturas.StateCommon.Content.ShortText.Image")));
             this.btnCalendarioFacturas.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnCalendarioFacturas.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.btnCalendarioFacturas.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
@@ -146,7 +146,7 @@
             // txtBuscarFactura
             // 
             this.txtBuscarFactura.ButtonSpecs.Add(this.btnBuscarFacturas);
-            this.txtBuscarFactura.CueHint.CueHintText = "Ingrese nombre o código del producto";
+            this.txtBuscarFactura.CueHint.CueHintText = "Ingrese numero de factura o ID de cliente";
             this.txtBuscarFactura.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.txtBuscarFactura.Location = new System.Drawing.Point(18, 10);
             this.txtBuscarFactura.Name = "txtBuscarFactura";
@@ -169,7 +169,7 @@
             // kryptonGroup2.Panel
             // 
             this.kryptonGroup2.Panel.Controls.Add(this.btnVerFacturaHF);
-            this.kryptonGroup2.Panel.Controls.Add(this.kryptonDataGridView1);
+            this.kryptonGroup2.Panel.Controls.Add(this.dgvHistorialFacturas);
             this.kryptonGroup2.Size = new System.Drawing.Size(761, 217);
             this.kryptonGroup2.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonGroup2.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -195,37 +195,39 @@
             this.btnVerFacturaHF.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnVerFacturaHF.Values.Image = global::TRAMADE.Properties.Resources.ojo_png_3_;
             this.btnVerFacturaHF.Values.Text = "Ver factura";
+            this.btnVerFacturaHF.Click += new System.EventHandler(this.btnVerFacturaHF_Click);
             // 
-            // kryptonDataGridView1
+            // dgvHistorialFacturas
             // 
-            this.kryptonDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.kryptonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvHistorialFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHistorialFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvHistorialFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistorialFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numeral,
             this.NumFactura,
             this.IDVendedor,
             this.DNIRTNCliente,
             this.FechaEmision});
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(22, 12);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.RowHeadersVisible = false;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(694, 166);
-            this.kryptonDataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.Background.Color2 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.LightGray;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Rounding = 1F;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Width = 1;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonDataGridView1.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
-            this.kryptonDataGridView1.TabIndex = 54;
+            this.dgvHistorialFacturas.Location = new System.Drawing.Point(22, 12);
+            this.dgvHistorialFacturas.Name = "dgvHistorialFacturas";
+            this.dgvHistorialFacturas.RowHeadersVisible = false;
+            this.dgvHistorialFacturas.Size = new System.Drawing.Size(694, 166);
+            this.dgvHistorialFacturas.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvHistorialFacturas.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dgvHistorialFacturas.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgvHistorialFacturas.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.LightGray;
+            this.dgvHistorialFacturas.StateCommon.DataCell.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)));
+            this.dgvHistorialFacturas.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.dgvHistorialFacturas.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.dgvHistorialFacturas.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Transparent;
+            this.dgvHistorialFacturas.StateCommon.HeaderColumn.Border.Rounding = 1F;
+            this.dgvHistorialFacturas.StateCommon.HeaderColumn.Border.Width = 1;
+            this.dgvHistorialFacturas.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvHistorialFacturas.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.dgvHistorialFacturas.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.dgvHistorialFacturas.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
+            this.dgvHistorialFacturas.TabIndex = 54;
+            this.dgvHistorialFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorialFacturas_CellContentClick);
             // 
             // Numeral
             // 
@@ -286,7 +288,7 @@
             this.btnRegresarHF.StateCommon.Border.Rounding = 10F;
             this.btnRegresarHF.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnRegresarHF.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnRegresarHF.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Content.ShortText.Image")));
+            this.btnRegresarHF.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresarHF.StateCommon.Content.ShortText.Image")));
             this.btnRegresarHF.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnRegresarHF.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.btnRegresarHF.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
@@ -339,6 +341,7 @@
             this.Controls.Add(this.kryptonGroup4);
             this.Name = "frmHistorialFacturas";
             this.Text = "frmHistorialFacturas";
+            this.Load += new System.EventHandler(this.frmHistorialFacturas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup4.Panel)).EndInit();
             this.kryptonGroup4.Panel.ResumeLayout(false);
             this.kryptonGroup4.Panel.PerformLayout();
@@ -353,7 +356,7 @@
             this.kryptonGroup2.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2)).EndInit();
             this.kryptonGroup2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialFacturas)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -374,7 +377,7 @@
         private Krypton.Toolkit.KryptonGroup kryptonGroup2;
         private Krypton.Toolkit.KryptonTextBox txtBuscarFactura;
         private Krypton.Toolkit.ButtonSpecAny btnBuscarFacturas;
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private Krypton.Toolkit.KryptonDataGridView dgvHistorialFacturas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numeral;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDVendedor;
