@@ -244,7 +244,7 @@
             this.panel2.Controls.Add(this.btnInicio);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 54);
+            this.panel2.Size = new System.Drawing.Size(245, 54);
             this.panel2.TabIndex = 3;
             // 
             // btnInicio
