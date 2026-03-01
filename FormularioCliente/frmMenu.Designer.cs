@@ -82,11 +82,11 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(216, 92);
+            this.btnRegistrar.Location = new System.Drawing.Point(204, 92);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
-            this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(93)))), ((int)(((byte)(74)))));
+            this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.Size = new System.Drawing.Size(170, 61);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
@@ -103,7 +103,7 @@
             this.btnRegistrar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
-            this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(93)))), ((int)(((byte)(74)))));
+            this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(93)))), ((int)(((byte)(74)))));
             this.btnRegistrar.TabIndex = 27;
             this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
@@ -112,13 +112,13 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(404, 92);
+            this.btnActualizar.Location = new System.Drawing.Point(390, 92);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(120)))), ((int)(((byte)(134)))));
             this.btnActualizar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(120)))), ((int)(((byte)(134)))));
-            this.btnActualizar.Size = new System.Drawing.Size(170, 61);
+            this.btnActualizar.Size = new System.Drawing.Size(181, 61);
             this.btnActualizar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -133,22 +133,28 @@
             this.btnActualizar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
-            this.btnActualizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(120)))), ((int)(((byte)(134)))));
+            this.btnActualizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(120)))), ((int)(((byte)(134)))));
             this.btnActualizar.TabIndex = 28;
             this.btnActualizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnActualizar.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnActualizar.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnActualizar.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnActualizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.image_actualizar__1_;
+            this.btnActualizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.image_actualizar__1_;
+            this.btnActualizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.image_actualizar__1_;
             this.btnActualizar.Values.Text = "ACTUALIZAR CLIENTE";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAutorizar
             // 
-            this.btnAutorizar.Location = new System.Drawing.Point(602, 92);
+            this.btnAutorizar.Location = new System.Drawing.Point(588, 92);
             this.btnAutorizar.Name = "btnAutorizar";
             this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
             this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
             this.btnAutorizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
             this.btnAutorizar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
-            this.btnAutorizar.Size = new System.Drawing.Size(170, 61);
+            this.btnAutorizar.Size = new System.Drawing.Size(184, 61);
             this.btnAutorizar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
             this.btnAutorizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
             this.btnAutorizar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -163,22 +169,28 @@
             this.btnAutorizar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
             this.btnAutorizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
             this.btnAutorizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
-            this.btnAutorizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
+            this.btnAutorizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
             this.btnAutorizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
             this.btnAutorizar.TabIndex = 29;
             this.btnAutorizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnAutorizar.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnAutorizar.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnAutorizar.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnAutorizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.autorizar;
+            this.btnAutorizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.autorizar;
+            this.btnAutorizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.autorizar;
             this.btnAutorizar.Values.Text = "AUTORIZAR CLIENTE";
             this.btnAutorizar.Click += new System.EventHandler(this.btnAutorizar_Click);
             // 
             // btnSeguimiento
             // 
-            this.btnSeguimiento.Location = new System.Drawing.Point(792, 92);
+            this.btnSeguimiento.Location = new System.Drawing.Point(778, 92);
             this.btnSeguimiento.Name = "btnSeguimiento";
             this.btnSeguimiento.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
-            this.btnSeguimiento.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(167)))), ((int)(((byte)(118)))));
-            this.btnSeguimiento.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(167)))), ((int)(((byte)(118)))));
-            this.btnSeguimiento.Size = new System.Drawing.Size(177, 61);
+            this.btnSeguimiento.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.Size = new System.Drawing.Size(210, 61);
             this.btnSeguimiento.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -193,10 +205,17 @@
             this.btnSeguimiento.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
-            this.btnSeguimiento.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(167)))), ((int)(((byte)(118)))));
+            this.btnSeguimiento.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(167)))), ((int)(((byte)(118)))));
+            this.btnSeguimiento.StateTracking.Back.ColorAlign = Krypton.Toolkit.PaletteRectangleAlign.Form;
             this.btnSeguimiento.TabIndex = 30;
             this.btnSeguimiento.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnSeguimiento.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnSeguimiento.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnSeguimiento.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnSeguimiento.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.seguimiento1;
+            this.btnSeguimiento.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.seguimiento1;
+            this.btnSeguimiento.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.seguimiento1;
             this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE CLIENTE";
             this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
             // 

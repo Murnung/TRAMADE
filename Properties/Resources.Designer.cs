@@ -63,6 +63,36 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ACTIVOS {
+            get {
+                object obj = ResourceManager.GetObject("ACTIVOS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap actualizar {
+            get {
+                object obj = ResourceManager.GetObject("actualizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap autorizar {
+            get {
+                object obj = ResourceManager.GetObject("autorizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2026_02_10_192130 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2026-02-10 192130", resourceCulture);
@@ -86,6 +116,46 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap Captura_de_pantalla_2026_02_10_193854 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2026-02-10 193854", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_actualizar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("image actualizar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap INACTIVOS {
+            get {
+                object obj = ResourceManager.GetObject("INACTIVOS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REGISTRADOS {
+            get {
+                object obj = ResourceManager.GetObject("REGISTRADOS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seguimiento1 {
+            get {
+                object obj = ResourceManager.GetObject("seguimiento1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

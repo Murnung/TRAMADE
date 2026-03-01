@@ -34,7 +34,6 @@
             this.dgvAprobacion = new Krypton.Toolkit.KryptonDataGridView();
             this.btnNegar = new Krypton.Toolkit.KryptonButton();
             this.btnAutorizar = new Krypton.Toolkit.KryptonButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -59,7 +58,6 @@
             this.kryptonGroup1.Panel.Controls.Add(this.dgvAprobacion);
             this.kryptonGroup1.Panel.Controls.Add(this.btnNegar);
             this.kryptonGroup1.Panel.Controls.Add(this.btnAutorizar);
-            this.kryptonGroup1.Panel.Controls.Add(this.label2);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
             this.kryptonGroup1.Panel.Controls.Add(this.txtBuscar);
             this.kryptonGroup1.Size = new System.Drawing.Size(701, 465);
@@ -197,17 +195,6 @@
             this.btnAutorizar.Values.Text = "AUTORIZAR SELECCIONES";
             this.btnAutorizar.Click += new System.EventHandler(this.btnAutorizar_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(-4, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(817, 26);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "_________________________________________________________________________________" +
-    "______________________________________________________\r\n\r\n";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -270,7 +257,6 @@
         private Krypton.Toolkit.KryptonGroup kryptonGroup1;
         private System.Windows.Forms.Label label32;
         private Krypton.Toolkit.KryptonTextBox txtBuscar;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonButton btnAutorizar;
         private Krypton.Toolkit.KryptonButton btnNegar;

@@ -34,15 +34,15 @@
             this.dvgSeguimiento = new Krypton.Toolkit.KryptonDataGridView();
             this.kgInactivos = new Krypton.Toolkit.KryptonGroup();
             this.txtInactivos = new Krypton.Toolkit.KryptonTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.kgRegistrados = new Krypton.Toolkit.KryptonGroup();
             this.txtRegistrados = new Krypton.Toolkit.KryptonTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.kgActivos = new Krypton.Toolkit.KryptonGroup();
             this.txtActivos = new Krypton.Toolkit.KryptonTextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -171,7 +171,7 @@
             // txtInactivos
             // 
             this.txtInactivos.Enabled = false;
-            this.txtInactivos.Location = new System.Drawing.Point(53, 68);
+            this.txtInactivos.Location = new System.Drawing.Point(44, 68);
             this.txtInactivos.Name = "txtInactivos";
             this.txtInactivos.Size = new System.Drawing.Size(100, 23);
             this.txtInactivos.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
@@ -193,17 +193,6 @@
             this.txtInactivos.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtInactivos.TabIndex = 1;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 54);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Clientes Inactivos";
-            // 
             // kgRegistrados
             // 
             this.kgRegistrados.Location = new System.Drawing.Point(41, 45);
@@ -221,7 +210,7 @@
             // txtRegistrados
             // 
             this.txtRegistrados.Enabled = false;
-            this.txtRegistrados.Location = new System.Drawing.Point(48, 68);
+            this.txtRegistrados.Location = new System.Drawing.Point(50, 56);
             this.txtRegistrados.Name = "txtRegistrados";
             this.txtRegistrados.Size = new System.Drawing.Size(100, 23);
             this.txtRegistrados.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
@@ -241,18 +230,6 @@
             this.txtRegistrados.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtRegistrados.TabIndex = 1;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(5, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 54);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Clientes Registrados";
-            // 
             // kgActivos
             // 
             this.kgActivos.Location = new System.Drawing.Point(282, 49);
@@ -269,7 +246,7 @@
             // txtActivos
             // 
             this.txtActivos.Enabled = false;
-            this.txtActivos.Location = new System.Drawing.Point(46, 68);
+            this.txtActivos.Location = new System.Drawing.Point(66, 68);
             this.txtActivos.Name = "txtActivos";
             this.txtActivos.Size = new System.Drawing.Size(100, 23);
             this.txtActivos.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
@@ -290,17 +267,6 @@
             this.txtActivos.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
             this.txtActivos.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtActivos.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 54);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Clientes Activos";
             // 
             // label1
             // 
@@ -323,6 +289,43 @@
             this.txtBuscar.StateActive.Border.Rounding = 5F;
             this.txtBuscar.StateActive.Border.Width = 3;
             this.txtBuscar.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Image = global::TRAMADE.Properties.Resources.INACTIVOS;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label4.Location = new System.Drawing.Point(3, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 70);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Clientes Inactivos";
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Image = global::TRAMADE.Properties.Resources.REGISTRADOS;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label3.Location = new System.Drawing.Point(5, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(196, 81);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Clientes Registrados";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Image = global::TRAMADE.Properties.Resources.ACTIVOS;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label2.Location = new System.Drawing.Point(13, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 70);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Clientes Activos";
             // 
             // frmSeguimiento
             // 
@@ -369,12 +372,12 @@
         private System.Windows.Forms.Label label2;
         private Krypton.Toolkit.KryptonGroup kgInactivos;
         private Krypton.Toolkit.KryptonTextBox txtInactivos;
-        private System.Windows.Forms.Label label4;
         private Krypton.Toolkit.KryptonGroup kgRegistrados;
         private Krypton.Toolkit.KryptonTextBox txtRegistrados;
         private System.Windows.Forms.Label label3;
         private Krypton.Toolkit.KryptonDataGridView dvgSeguimiento;
         private Krypton.Toolkit.KryptonButton btnBuscar;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label4;
     }
 }
