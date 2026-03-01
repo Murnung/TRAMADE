@@ -94,7 +94,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::TRAMADE.Properties.Resources.vistaClientes2;
+ // this.pictureBox2.Image = global::TRAMADE.Properties.Resources.vistaClientes2;
             this.pictureBox2.Location = new System.Drawing.Point(93, 125);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(68, 67);
