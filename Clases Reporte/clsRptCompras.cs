@@ -2,12 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.DatasSet_Reportes;
 using TRAMADE.DatasSet_Reportes.dsComprasTableAdapters;
+using System.Reflection;
 
 namespace TRAMADE
 {
@@ -22,16 +24,31 @@ namespace TRAMADE
                     .Fill(ds.DataTable1, fechaInicio, fechaFin, idSucursal);
 
                 var report = new LocalReport();
-                report.ReportEmbeddedResource = "TRAMADE.Reportes.rptCompras.rdlc";
+
+                // Esto busca el archivo rptCompras.rdlc en tu proyecto de GitHub
+                string nombreRecurso = Assembly.GetExecutingAssembly()
+                    .GetManifestResourceNames()
+                    .FirstOrDefault(rn => rn.EndsWith("rptCompras.rdlc"));
+
+                if (string.IsNullOrEmpty(nombreRecurso))
+                {
+                    MessageBox.Show("Error: No se encontró el recurso rptCompras.rdlc");
+                    return null;
+                }
+
+                report.ReportEmbeddedResource = nombreRecurso;
+
+                // ESTO ES LO QUE TE FALTA Y POR ESO NO SALE:
                 report.DataSources.Add(new ReportDataSource("DataSet1", (DataTable)ds.DataTable1));
-                return report;
+
+                return report; // <--- SIN ESTO, EL REPORTE NUNCA VA A EXISTIR
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error reporte compras: " + ex.Message, "ERROR",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message);
                 return null;
             }
         }
     }
+
 }

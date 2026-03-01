@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Reporting.WinForms;
+using TRAMADE.Clases_Reporte;
 
 namespace TRAMADE.Formulario_Reporte
 {
@@ -30,7 +30,8 @@ namespace TRAMADE.Formulario_Reporte
             try
             {
                 cn.Abrir();
-                SqlDataAdapter da = new SqlDataAdapter("SELECT id_sucursal, nombre_sucursal FROM SUCURSAL", cn.SqlC);
+                SqlDataAdapter da = new SqlDataAdapter(
+                    "SELECT id_sucursal, nombre_sucursal FROM SUCURSAL", cn.SqlC);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
@@ -70,34 +71,32 @@ namespace TRAMADE.Formulario_Reporte
                 return;
             }
 
-            LocalReport report = null;
-            string descripcion = "";
-
             switch (_cmbTipoReporte.SelectedItem.ToString())
             {
                 case "Ventas por período":
-                    report = new clsRptVentas().Generar(fechaInicio, fechaFin, idSucursal);
-                    descripcion = $"Ventas | {fechaInicio:dd/MM/yyyy} - {fechaFin:dd/MM/yyyy}";
+                    AgregarALista(
+                        $"Ventas | {fechaInicio:dd/MM/yyyy} - {fechaFin:dd/MM/yyyy} | {_cmbSucursal.Text}",
+                        "Ventas por período", fechaInicio, fechaFin, idSucursal);
                     break;
                 case "Compras por período":
-                    report = new clsRptCompras().Generar(fechaInicio, fechaFin, idSucursal);
-                    descripcion = $"Compras | {fechaInicio:dd/MM/yyyy} - {fechaFin:dd/MM/yyyy}";
+                    AgregarALista(
+                        $"Compras | {fechaInicio:dd/MM/yyyy} - {fechaFin:dd/MM/yyyy} | {_cmbSucursal.Text}",
+                        "Compras por período", fechaInicio, fechaFin, idSucursal);
                     break;
                 case "Stock por sucursal":
-                    report = new clsRptStock().Generar(idSucursal);
-                    descripcion = $"Stock | {_cmbSucursal.Text}";
+                    AgregarALista(
+                        $"Stock | {_cmbSucursal.Text}",
+                        "Stock por sucursal", fechaInicio, fechaFin, idSucursal);
                     break;
                 case "Productos más vendidos":
-                    report = new clsRptProductos().Generar(fechaInicio, fechaFin, idSucursal);
-                    descripcion = $"Productos más vendidos | {fechaInicio:dd/MM/yyyy} - {fechaFin:dd/MM/yyyy}";
+                    AgregarALista(
+                        $"Productos más vendidos | {fechaInicio:dd/MM/yyyy} - {fechaFin:dd/MM/yyyy} | {_cmbSucursal.Text}",
+                        "Productos más vendidos", fechaInicio, fechaFin, idSucursal);
                     break;
             }
-
-            if (report != null)
-                AgregarALista(descripcion, report);
         }
 
-        public void AbrirReporte()
+        public void AbrirReporte(string formato)
         {
             if (_lstReportes.SelectedItems.Count == 0)
             {
@@ -106,14 +105,41 @@ namespace TRAMADE.Formulario_Reporte
                 return;
             }
 
-            LocalReport report = (LocalReport)_lstReportes.SelectedItems[0].Tag;
-            new frmVisorReporte(report).Show();
+            clsReportItem item = (clsReportItem)_lstReportes.SelectedItems[0].Tag;
+
+            LocalReport report = null;
+
+            switch (item.TipoReporte)
+            {
+                case "Ventas por período":
+                    report = new clsRptVentas().Generar(item.FechaInicio, item.FechaFin, item.IdSucursal);
+                    break;
+                case "Compras por período":
+                    report = new clsRptCompras().Generar(item.FechaInicio, item.FechaFin, item.IdSucursal);
+                    break;
+                case "Stock por sucursal":
+                    report = new clsRptStock().Generar(item.IdSucursal);
+                    break;
+                case "Productos más vendidos":
+                    report = new clsRptProductos().Generar(item.FechaInicio, item.FechaFin, item.IdSucursal);
+                    break;
+            }
+
+            if (report != null)
+                clsDescarga.Descargar(report, formato);
         }
 
-        private void AgregarALista(string descripcion, LocalReport report)
+        private void AgregarALista(string descripcion, string tipoReporte,
+            DateTime fechaInicio, DateTime fechaFin, int idSucursal)
         {
             var item = new ListViewItem(descripcion);
-            item.Tag = report;
+            item.Tag = new clsReportItem
+            {
+                TipoReporte = tipoReporte,
+                FechaInicio = fechaInicio,
+                FechaFin = fechaFin,
+                IdSucursal = idSucursal
+            };
             _lstReportes.Items.Add(item);
             item.Selected = true;
         }

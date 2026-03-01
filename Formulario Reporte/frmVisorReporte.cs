@@ -23,8 +23,12 @@ namespace TRAMADE
 
         private void frmVisorReporte_Load(object sender, EventArgs e)
         {
+            rpvNum1.LocalReport.ReportEmbeddedResource = _report.ReportEmbeddedResource;
 
-            this.rpvNum1.RefreshReport();
+            foreach (var ds in _report.DataSources)
+                rpvNum1.LocalReport.DataSources.Add(ds);
+
+            rpvNum1.RefreshReport();
         }
     }
 }

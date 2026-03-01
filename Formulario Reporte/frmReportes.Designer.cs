@@ -121,6 +121,7 @@
             this.btnGenerar.TabIndex = 9;
             this.btnGenerar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnGenerar.Values.Text = "Generar";
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // label6
             // 
@@ -236,6 +237,7 @@
             this.btnDescargar.TabIndex = 10;
             this.btnDescargar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnDescargar.Values.Text = "Descargar";
+            this.btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
             // panel1
             // 

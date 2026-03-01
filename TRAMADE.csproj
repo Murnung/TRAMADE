@@ -88,6 +88,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases Reporte\clsDescarga.cs" />
+    <Compile Include="Clases Reporte\clsReportItem.cs" />
     <Compile Include="Clases Reporte\clsRptCompras.cs" />
     <Compile Include="Clases Reporte\clsRptProductos.cs" />
     <Compile Include="Clases Reporte\clsRptStock.cs" />
@@ -170,11 +172,11 @@
     <None Include="DatasSet Reportes\dsCompras.xsc">
       <DependentUpon>dsCompras.xsd</DependentUpon>
     </None>
-    <None Include="DatasSet Reportes\dsCompras.xsd">
+    <EmbeddedResource Include="DatasSet Reportes\dsCompras.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsCompras.Designer.cs</LastGenOutput>
-    </None>
+    </EmbeddedResource>
     <None Include="DatasSet Reportes\dsCompras.xss">
       <DependentUpon>dsCompras.xsd</DependentUpon>
     </None>
