@@ -370,10 +370,10 @@
             // 
             // kryptonGroup1.Panel
             // 
-            this.kryptonGroup1.Panel.Controls.Add(this.txtDireccionClienteEF);
-            this.kryptonGroup1.Panel.Controls.Add(this.kryptonLabel8);
             this.kryptonGroup1.Panel.Controls.Add(this.txtDNIClienteEF);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonLabel7);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDireccionClienteEF);
+            this.kryptonGroup1.Panel.Controls.Add(this.kryptonLabel8);
             this.kryptonGroup1.Panel.Controls.Add(this.txtNombreClienteEF);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonLabel6);
             this.kryptonGroup1.Size = new System.Drawing.Size(243, 110);
@@ -407,7 +407,7 @@
             this.txtDNIClienteEF.CueHint.CueHintText = "DNI/RTN del cliente";
             this.txtDNIClienteEF.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.txtDNIClienteEF.Enabled = false;
-            this.txtDNIClienteEF.Location = new System.Drawing.Point(62, 37);
+            this.txtDNIClienteEF.Location = new System.Drawing.Point(62, 9);
             this.txtDNIClienteEF.Name = "txtDNIClienteEF";
             this.txtDNIClienteEF.Size = new System.Drawing.Size(145, 22);
             this.txtDNIClienteEF.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
@@ -416,7 +416,7 @@
             // 
             // kryptonLabel7
             // 
-            this.kryptonLabel7.Location = new System.Drawing.Point(3, 37);
+            this.kryptonLabel7.Location = new System.Drawing.Point(3, 9);
             this.kryptonLabel7.Name = "kryptonLabel7";
             this.kryptonLabel7.Size = new System.Drawing.Size(90, 25);
             this.kryptonLabel7.TabIndex = 16;
@@ -427,7 +427,7 @@
             this.txtNombreClienteEF.CueHint.CueHintText = "( ! ) Nombre del cliente";
             this.txtNombreClienteEF.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.txtNombreClienteEF.Enabled = false;
-            this.txtNombreClienteEF.Location = new System.Drawing.Point(62, 6);
+            this.txtNombreClienteEF.Location = new System.Drawing.Point(62, 40);
             this.txtNombreClienteEF.Name = "txtNombreClienteEF";
             this.txtNombreClienteEF.Size = new System.Drawing.Size(145, 22);
             this.txtNombreClienteEF.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
@@ -436,7 +436,7 @@
             // 
             // kryptonLabel6
             // 
-            this.kryptonLabel6.Location = new System.Drawing.Point(3, 6);
+            this.kryptonLabel6.Location = new System.Drawing.Point(3, 40);
             this.kryptonLabel6.Name = "kryptonLabel6";
             this.kryptonLabel6.Size = new System.Drawing.Size(90, 25);
             this.kryptonLabel6.TabIndex = 0;
@@ -561,7 +561,7 @@
             this.btnListoEF.StateCommon.Border.Rounding = 10F;
             this.btnListoEF.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnListoEF.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnListoEF.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton3.StateCommon.Content.ShortText.Image")));
+            this.btnListoEF.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnListoEF.StateCommon.Content.ShortText.Image")));
             this.btnListoEF.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnListoEF.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.btnListoEF.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
@@ -585,7 +585,7 @@
             this.btnGuardarEF.StateCommon.Border.Rounding = 10F;
             this.btnGuardarEF.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnGuardarEF.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnGuardarEF.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.StateCommon.Content.ShortText.Image")));
+            this.btnGuardarEF.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarEF.StateCommon.Content.ShortText.Image")));
             this.btnGuardarEF.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnGuardarEF.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.btnGuardarEF.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
@@ -608,7 +608,7 @@
             this.btnImprimirEF.StateCommon.Border.Rounding = 10F;
             this.btnImprimirEF.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnImprimirEF.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnImprimirEF.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton2.StateCommon.Content.ShortText.Image")));
+            this.btnImprimirEF.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirEF.StateCommon.Content.ShortText.Image")));
             this.btnImprimirEF.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.btnImprimirEF.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.btnImprimirEF.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;

@@ -486,7 +486,7 @@
             // 
             this.txtDNIClienteVP.CueHint.CueHintText = "DNI/RTN del cliente";
             this.txtDNIClienteVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.txtDNIClienteVP.Location = new System.Drawing.Point(62, 37);
+            this.txtDNIClienteVP.Location = new System.Drawing.Point(62, 12);
             this.txtDNIClienteVP.Name = "txtDNIClienteVP";
             this.txtDNIClienteVP.ReadOnly = true;
             this.txtDNIClienteVP.Size = new System.Drawing.Size(145, 22);
@@ -496,7 +496,7 @@
             // 
             // kryptonLabel7
             // 
-            this.kryptonLabel7.Location = new System.Drawing.Point(3, 37);
+            this.kryptonLabel7.Location = new System.Drawing.Point(3, 12);
             this.kryptonLabel7.Name = "kryptonLabel7";
             this.kryptonLabel7.Size = new System.Drawing.Size(90, 25);
             this.kryptonLabel7.TabIndex = 16;
@@ -506,7 +506,7 @@
             // 
             this.txtNombreClienteVP.CueHint.CueHintText = "( ! ) Nombre del cliente";
             this.txtNombreClienteVP.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.txtNombreClienteVP.Location = new System.Drawing.Point(62, 6);
+            this.txtNombreClienteVP.Location = new System.Drawing.Point(62, 40);
             this.txtNombreClienteVP.Name = "txtNombreClienteVP";
             this.txtNombreClienteVP.ReadOnly = true;
             this.txtNombreClienteVP.Size = new System.Drawing.Size(145, 22);
@@ -516,7 +516,7 @@
             // 
             // kryptonLabel6
             // 
-            this.kryptonLabel6.Location = new System.Drawing.Point(3, 6);
+            this.kryptonLabel6.Location = new System.Drawing.Point(3, 40);
             this.kryptonLabel6.Name = "kryptonLabel6";
             this.kryptonLabel6.Size = new System.Drawing.Size(90, 25);
             this.kryptonLabel6.TabIndex = 0;
