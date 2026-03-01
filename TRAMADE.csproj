@@ -91,7 +91,6 @@
     <Compile Include="Formularios Login, Menú\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Formularios Login, Menú\frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,4 +197,3 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
-
