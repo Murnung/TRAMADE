@@ -130,16 +130,16 @@
     <Compile Include="FormulariosCompras\frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosMenu\frmLogin.cs">
+    <Compile Include="FormulariosMenú\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulariosMenu\frmLogin.Designer.cs">
+    <Compile Include="FormulariosMenú\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosMenu\frmMenuPrincipal.cs">
+    <Compile Include="FormulariosMenú\frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulariosMenu\frmMenuPrincipal.Designer.cs">
+    <Compile Include="FormulariosMenú\frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="FormulariosCompras\frmRegistrar.cs">
@@ -168,10 +168,10 @@
     <EmbeddedResource Include="FormulariosCompras\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosMenu\frmLogin.resx">
+    <EmbeddedResource Include="FormulariosMenú\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosMenu\frmMenuPrincipal.resx">
+    <EmbeddedResource Include="FormulariosMenú\frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCompras\frmRegistrar.resx">
