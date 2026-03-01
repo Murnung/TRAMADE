@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace TRAMADE.Clases_Reporte {
+namespace TRAMADE.DataSets_Reportes {
     
     
     /// <summary>
@@ -747,7 +747,7 @@ namespace TRAMADE.Clases_Reporte {
         }
     }
 }
-namespace TRAMADE.Clases_Reporte.dsVentasTableAdapters {
+namespace TRAMADE.DataSets_Reportes.dsVentasTableAdapters {
     
     
     /// <summary>

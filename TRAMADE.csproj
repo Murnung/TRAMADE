@@ -93,6 +93,16 @@
     <Compile Include="Clases Reporte\clsRptStock.cs" />
     <Compile Include="Clases Reporte\clsRptVentas.cs" />
     <Compile Include="clsConexion.cs" />
+    <Compile Include="DatasSet Reportes\dsCompras.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatasSet Reportes\dsVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,11 +110,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases Reporte\clsReportes.cs" />
-    <Compile Include="Clases Reporte\dsVentas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsVentas.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,15 +154,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Clases Reporte\dsVentas.xsc">
+    <None Include="DatasSet Reportes\dsCompras.xsc">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DatasSet Reportes\dsCompras.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCompras.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatasSet Reportes\dsCompras.xss">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DatasSet Reportes\dsVentas.xsc">
       <DependentUpon>dsVentas.xsd</DependentUpon>
     </None>
-    <None Include="Clases Reporte\dsVentas.xsd">
+    <None Include="DatasSet Reportes\dsVentas.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsVentas.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Clases Reporte\dsVentas.xss">
+    <None Include="DatasSet Reportes\dsVentas.xss">
       <DependentUpon>dsVentas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
