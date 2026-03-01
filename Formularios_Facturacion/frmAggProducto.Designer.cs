@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBuscarProducto = new Krypton.Toolkit.KryptonTextBox();
             this.btnBuscadorAgg = new Krypton.Toolkit.ButtonSpecAny();
-            this.btnQuitarAgg = new Krypton.Toolkit.ButtonSpecAny();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalirAggProducto = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +41,9 @@
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
             this.btnSeleccionarProducto = new Krypton.Toolkit.KryptonButton();
             this.btnQuitarProducto = new Krypton.Toolkit.KryptonButton();
-            this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
+            this.dgvProductos = new Krypton.Toolkit.KryptonDataGridView();
+            this.kryptonDataGridViewImageColumn1 = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
+            this.kryptonDataGridViewImageColumn2 = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
             this.Numeral = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +52,7 @@
             this.MostrarCantidad = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SumarProducto = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
             this.RestarProducto = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
-            this.kryptonDataGridViewImageColumn1 = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
-            this.kryptonDataGridViewImageColumn2 = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
+            this.btnLimpiarBuscador = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
@@ -67,13 +67,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3.Panel)).BeginInit();
             this.kryptonGroup3.Panel.SuspendLayout();
             this.kryptonGroup3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscarProducto
             // 
             this.txtBuscarProducto.ButtonSpecs.Add(this.btnBuscadorAgg);
-            this.txtBuscarProducto.ButtonSpecs.Add(this.btnQuitarAgg);
             this.txtBuscarProducto.CueHint.CueHintText = "Ingrese nombre o código del producto";
             this.txtBuscarProducto.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.txtBuscarProducto.Location = new System.Drawing.Point(225, 138);
@@ -82,18 +81,13 @@
             this.txtBuscarProducto.StateCommon.Border.Rounding = 20F;
             this.txtBuscarProducto.TabIndex = 23;
             this.txtBuscarProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBuscarProducto.TextChanged += new System.EventHandler(this.txtBuscarProducto_TextChanged);
             // 
             // btnBuscadorAgg
             // 
             this.btnBuscadorAgg.Edge = Krypton.Toolkit.PaletteRelativeEdgeAlign.Near;
             this.btnBuscadorAgg.Image = global::TRAMADE.Properties.Resources.lupa__1_;
             this.btnBuscadorAgg.UniqueName = "1cd0ef32f05d4208949f65d35e06f9f0";
-            // 
-            // btnQuitarAgg
-            // 
-            this.btnQuitarAgg.Edge = Krypton.Toolkit.PaletteRelativeEdgeAlign.Far;
-            this.btnQuitarAgg.Image = global::TRAMADE.Properties.Resources.X__2___1_;
-            this.btnQuitarAgg.UniqueName = "df054032f49042d2845b22b92630c15d";
             // 
             // panel1
             // 
@@ -162,6 +156,9 @@
             // 
             // kryptonGroup2.Panel
             // 
+            this.kryptonGroup2.Panel.Controls.Add(this.btnLimpiarBuscador);
+            this.kryptonGroup2.Panel.Controls.Add(this.btnSeleccionarProducto);
+            this.kryptonGroup2.Panel.Controls.Add(this.btnQuitarProducto);
             this.kryptonGroup2.Panel.Controls.Add(this.kryptonGroup3);
             this.kryptonGroup2.Size = new System.Drawing.Size(777, 338);
             this.kryptonGroup2.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -175,11 +172,9 @@
             // 
             // kryptonGroup3.Panel
             // 
-            this.kryptonGroup3.Panel.Controls.Add(this.btnSeleccionarProducto);
-            this.kryptonGroup3.Panel.Controls.Add(this.btnQuitarProducto);
-            this.kryptonGroup3.Panel.Controls.Add(this.kryptonDataGridView1);
+            this.kryptonGroup3.Panel.Controls.Add(this.dgvProductos);
             this.kryptonGroup3.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroup3_Panel_Paint);
-            this.kryptonGroup3.Size = new System.Drawing.Size(733, 240);
+            this.kryptonGroup3.Size = new System.Drawing.Size(733, 232);
             this.kryptonGroup3.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.kryptonGroup3.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.kryptonGroup3.StateCommon.Border.Width = 3;
@@ -187,7 +182,7 @@
             // 
             // btnSeleccionarProducto
             // 
-            this.btnSeleccionarProducto.Location = new System.Drawing.Point(16, 178);
+            this.btnSeleccionarProducto.Location = new System.Drawing.Point(27, 309);
             this.btnSeleccionarProducto.Name = "btnSeleccionarProducto";
             this.btnSeleccionarProducto.Size = new System.Drawing.Size(150, 20);
             this.btnSeleccionarProducto.StateCommon.Back.Color1 = System.Drawing.Color.White;
@@ -207,7 +202,7 @@
             // 
             // btnQuitarProducto
             // 
-            this.btnQuitarProducto.Location = new System.Drawing.Point(190, 178);
+            this.btnQuitarProducto.Location = new System.Drawing.Point(201, 309);
             this.btnQuitarProducto.Name = "btnQuitarProducto";
             this.btnQuitarProducto.Size = new System.Drawing.Size(123, 20);
             this.btnQuitarProducto.StateCommon.Back.Color1 = System.Drawing.Color.White;
@@ -226,12 +221,12 @@
             this.btnQuitarProducto.Values.Text = "Quitar producto";
             this.btnQuitarProducto.Click += new System.EventHandler(this.kryptonButton2_Click);
             // 
-            // kryptonDataGridView1
+            // dgvProductos
             // 
-            this.kryptonDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.kryptonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numeral,
             this.Producto,
             this.Descripción,
@@ -240,59 +235,82 @@
             this.MostrarCantidad,
             this.SumarProducto,
             this.RestarProducto});
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(16, 19);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.RowHeadersVisible = false;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(694, 198);
-            this.kryptonDataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.Background.Color2 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.LightGray;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Rounding = 1F;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Width = 1;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonDataGridView1.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
-            this.kryptonDataGridView1.TabIndex = 53;
+            this.dgvProductos.Location = new System.Drawing.Point(16, 19);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersVisible = false;
+            this.dgvProductos.Size = new System.Drawing.Size(694, 198);
+            this.dgvProductos.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvProductos.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dgvProductos.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgvProductos.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.LightGray;
+            this.dgvProductos.StateCommon.DataCell.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)));
+            this.dgvProductos.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.dgvProductos.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.dgvProductos.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Transparent;
+            this.dgvProductos.StateCommon.HeaderColumn.Border.Rounding = 1F;
+            this.dgvProductos.StateCommon.HeaderColumn.Border.Width = 1;
+            this.dgvProductos.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.dgvProductos.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.dgvProductos.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
+            this.dgvProductos.TabIndex = 53;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
+            // 
+            // kryptonDataGridViewImageColumn1
+            // 
+            this.kryptonDataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.kryptonDataGridViewImageColumn1.FillWeight = 44.5951F;
+            this.kryptonDataGridViewImageColumn1.HeaderText = "-";
+            this.kryptonDataGridViewImageColumn1.Image = global::TRAMADE.Properties.Resources.resta_1_;
+            this.kryptonDataGridViewImageColumn1.Name = "kryptonDataGridViewImageColumn1";
+            this.kryptonDataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.kryptonDataGridViewImageColumn1.Width = 28;
+            // 
+            // kryptonDataGridViewImageColumn2
+            // 
+            this.kryptonDataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.kryptonDataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.kryptonDataGridViewImageColumn2.FillWeight = 40.60914F;
+            this.kryptonDataGridViewImageColumn2.HeaderText = "+";
+            this.kryptonDataGridViewImageColumn2.Image = global::TRAMADE.Properties.Resources.Suma_1_;
+            this.kryptonDataGridViewImageColumn2.Name = "kryptonDataGridViewImageColumn2";
+            this.kryptonDataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.kryptonDataGridViewImageColumn2.Width = 25;
             // 
             // Numeral
             // 
-            this.Numeral.FillWeight = 111.5152F;
+            this.Numeral.FillWeight = 78.16487F;
             this.Numeral.HeaderText = "#";
             this.Numeral.Name = "Numeral";
             // 
             // Producto
             // 
-            this.Producto.FillWeight = 156.3297F;
+            this.Producto.FillWeight = 164.9846F;
             this.Producto.HeaderText = "Producto";
             this.Producto.Name = "Producto";
             // 
             // Descripción
             // 
-            this.Descripción.FillWeight = 111.5152F;
+            this.Descripción.FillWeight = 117.6891F;
             this.Descripción.HeaderText = "Descripción";
             this.Descripción.Name = "Descripción";
             // 
             // CantidadStock
             // 
-            this.CantidadStock.FillWeight = 111.5152F;
+            this.CantidadStock.FillWeight = 117.6891F;
             this.CantidadStock.HeaderText = "Cantidad en stock";
             this.CantidadStock.Name = "CantidadStock";
             // 
             // Precio_unitario
             // 
-            this.Precio_unitario.FillWeight = 111.5152F;
+            this.Precio_unitario.FillWeight = 117.6891F;
             this.Precio_unitario.HeaderText = "Precio unitario";
             this.Precio_unitario.Name = "Precio_unitario";
             // 
             // MostrarCantidad
             // 
-            this.MostrarCantidad.FillWeight = 111.5152F;
+            this.MostrarCantidad.FillWeight = 117.6891F;
             this.MostrarCantidad.HeaderText = "Cantidad";
             this.MostrarCantidad.Name = "MostrarCantidad";
             this.MostrarCantidad.ReadOnly = true;
@@ -319,27 +337,26 @@
             this.RestarProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.RestarProducto.Width = 30;
             // 
-            // kryptonDataGridViewImageColumn1
+            // btnLimpiarBuscador
             // 
-            this.kryptonDataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.kryptonDataGridViewImageColumn1.FillWeight = 44.5951F;
-            this.kryptonDataGridViewImageColumn1.HeaderText = "-";
-            this.kryptonDataGridViewImageColumn1.Image = global::TRAMADE.Properties.Resources.resta_1_;
-            this.kryptonDataGridViewImageColumn1.Name = "kryptonDataGridViewImageColumn1";
-            this.kryptonDataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.kryptonDataGridViewImageColumn1.Width = 28;
-            // 
-            // kryptonDataGridViewImageColumn2
-            // 
-            this.kryptonDataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.kryptonDataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.kryptonDataGridViewImageColumn2.FillWeight = 40.60914F;
-            this.kryptonDataGridViewImageColumn2.HeaderText = "+";
-            this.kryptonDataGridViewImageColumn2.Image = global::TRAMADE.Properties.Resources.Suma_1_;
-            this.kryptonDataGridViewImageColumn2.Name = "kryptonDataGridViewImageColumn2";
-            this.kryptonDataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.kryptonDataGridViewImageColumn2.Width = 25;
+            this.btnLimpiarBuscador.Location = new System.Drawing.Point(612, 14);
+            this.btnLimpiarBuscador.Name = "btnLimpiarBuscador";
+            this.btnLimpiarBuscador.Size = new System.Drawing.Size(71, 35);
+            this.btnLimpiarBuscador.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnLimpiarBuscador.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnLimpiarBuscador.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.btnLimpiarBuscador.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.btnLimpiarBuscador.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
+            this.btnLimpiarBuscador.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnLimpiarBuscador.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
+            this.btnLimpiarBuscador.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnLimpiarBuscador.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
+            this.btnLimpiarBuscador.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnLimpiarBuscador.TabIndex = 54;
+            this.btnLimpiarBuscador.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnLimpiarBuscador.Values.Image = global::TRAMADE.Properties.Resources.X__2___1_;
+            this.btnLimpiarBuscador.Values.Text = "Limpiar";
+            this.btnLimpiarBuscador.Click += new System.EventHandler(this.kryptonButton2_Click_1);
             // 
             // frmAggProducto
             // 
@@ -368,7 +385,7 @@
             this.kryptonGroup3.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3)).EndInit();
             this.kryptonGroup3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,7 +394,6 @@
         #endregion
         private Krypton.Toolkit.KryptonTextBox txtBuscarProducto;
         private Krypton.Toolkit.ButtonSpecAny btnBuscadorAgg;
-        private Krypton.Toolkit.ButtonSpecAny btnQuitarAgg;
         private System.Windows.Forms.Panel panel1;
         private Krypton.Toolkit.KryptonButton btnSalirAggProducto;
         private System.Windows.Forms.Label label1;
@@ -387,7 +403,7 @@
         private Krypton.Toolkit.KryptonDataGridViewImageColumn kryptonDataGridViewImageColumn2;
         private Krypton.Toolkit.KryptonGroup kryptonGroup2;
         private Krypton.Toolkit.KryptonGroup kryptonGroup3;
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private Krypton.Toolkit.KryptonDataGridView dgvProductos;
         private Krypton.Toolkit.KryptonButton btnSeleccionarProducto;
         private Krypton.Toolkit.KryptonButton btnQuitarProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numeral;
@@ -398,5 +414,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn MostrarCantidad;
         private Krypton.Toolkit.KryptonDataGridViewImageColumn SumarProducto;
         private Krypton.Toolkit.KryptonDataGridViewImageColumn RestarProducto;
+        private Krypton.Toolkit.KryptonButton btnLimpiarBuscador;
     }
 }
