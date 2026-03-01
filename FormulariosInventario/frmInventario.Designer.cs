@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cmbFiltrar = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
@@ -35,60 +36,54 @@
             this.btnEliminar = new Krypton.Toolkit.KryptonButton();
             this.lblFecha = new System.Windows.Forms.Label();
             this.btnRegresar = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnExportarInventario = new Krypton.Toolkit.KryptonButton();
+            this.lblPagina = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Alerta = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSiguiente = new Krypton.Toolkit.KryptonButton();
             this.btnAtras = new Krypton.Toolkit.KryptonButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
+            this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.txtBuscar.Location = new System.Drawing.Point(96, 26);
+            this.txtBuscar.Location = new System.Drawing.Point(87, 25);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(161, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(193, 22);
             this.txtBuscar.TabIndex = 0;
-            this.txtBuscar.Text = "Buscar...";
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // cmbFiltrar
             // 
             this.cmbFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltrar.FormattingEnabled = true;
-            this.cmbFiltrar.Location = new System.Drawing.Point(286, 26);
+            this.cmbFiltrar.Location = new System.Drawing.Point(385, 27);
             this.cmbFiltrar.Name = "cmbFiltrar";
-            this.cmbFiltrar.Size = new System.Drawing.Size(129, 24);
+            this.cmbFiltrar.Size = new System.Drawing.Size(171, 24);
             this.cmbFiltrar.TabIndex = 1;
-            this.cmbFiltrar.Text = "Filtrar";
+            this.cmbFiltrar.SelectedIndexChanged += new System.EventHandler(this.cmbFiltrar_SelectedIndexChanged);
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnRegistrar.Location = new System.Drawing.Point(487, 26);
+            this.btnRegistrar.Location = new System.Drawing.Point(588, 26);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(81, 25);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -101,7 +96,7 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEditar.Location = new System.Drawing.Point(593, 26);
+            this.btnEditar.Location = new System.Drawing.Point(694, 26);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(81, 25);
             this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -114,7 +109,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEliminar.Location = new System.Drawing.Point(697, 26);
+            this.btnEliminar.Location = new System.Drawing.Point(798, 26);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(81, 25);
             this.btnEliminar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -128,17 +123,17 @@
             // 
             this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(875, 24);
+            this.lblFecha.Location = new System.Drawing.Point(1000, 14);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(100, 23);
             this.lblFecha.TabIndex = 5;
-            this.lblFecha.Text = "08/10/26";
+            this.lblFecha.Text = "Fecha";
             this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
             // 
             // btnRegresar
             // 
             this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnRegresar.Location = new System.Drawing.Point(35, 405);
+            this.btnRegresar.Location = new System.Drawing.Point(24, 399);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(81, 25);
             this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -147,26 +142,27 @@
             this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegresar.Values.Text = "Regresar";
             // 
-            // kryptonButton1
+            // btnExportarInventario
             // 
-            this.kryptonButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.kryptonButton1.Location = new System.Drawing.Point(620, 399);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(175, 25);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.kryptonButton1.TabIndex = 8;
-            this.kryptonButton1.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.kryptonButton1.Values.Text = "Exportar Inventario";
+            this.btnExportarInventario.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExportarInventario.Location = new System.Drawing.Point(730, 395);
+            this.btnExportarInventario.Name = "btnExportarInventario";
+            this.btnExportarInventario.Size = new System.Drawing.Size(175, 25);
+            this.btnExportarInventario.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnExportarInventario.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnExportarInventario.TabIndex = 8;
+            this.btnExportarInventario.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnExportarInventario.Values.Text = "Exportar Inventario";
+            this.btnExportarInventario.Click += new System.EventHandler(this.btnExportarInventario_Click);
             // 
-            // label1
+            // lblPagina
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(861, 405);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Página 1 de 2";
+            this.lblPagina.AutoSize = true;
+            this.lblPagina.Location = new System.Drawing.Point(976, 399);
+            this.lblPagina.Name = "lblPagina";
+            this.lblPagina.Size = new System.Drawing.Size(89, 16);
+            this.lblPagina.TabIndex = 9;
+            this.lblPagina.Text = "Página 1 de 2";
             // 
             // label2
             // 
@@ -176,102 +172,18 @@
             this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 10;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 164);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1002, 185);
-            this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
             // dgvInventario
             // 
             this.dgvInventario.AllowUserToAddRows = false;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Producto,
-            this.Proveedor,
-            this.Categoria,
-            this.Sucursal,
-            this.Precio,
-            this.Costo,
-            this.Stock,
-            this.Alerta});
             this.dgvInventario.Location = new System.Drawing.Point(24, 73);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RowHeadersVisible = false;
             this.dgvInventario.RowHeadersWidth = 51;
             this.dgvInventario.RowTemplate.Height = 24;
-            this.dgvInventario.Size = new System.Drawing.Size(954, 273);
+            this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInventario.Size = new System.Drawing.Size(1073, 273);
             this.dgvInventario.TabIndex = 12;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 60;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.MinimumWidth = 6;
-            this.Producto.Name = "Producto";
-            this.Producto.Width = 90;
-            // 
-            // Proveedor
-            // 
-            this.Proveedor.HeaderText = "Proveedor";
-            this.Proveedor.MinimumWidth = 6;
-            this.Proveedor.Name = "Proveedor";
-            this.Proveedor.Width = 90;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoría";
-            this.Categoria.MinimumWidth = 6;
-            this.Categoria.Name = "Categoria";
-            this.Categoria.Width = 90;
-            // 
-            // Sucursal
-            // 
-            this.Sucursal.HeaderText = "Sucursal";
-            this.Sucursal.MinimumWidth = 6;
-            this.Sucursal.Name = "Sucursal";
-            this.Sucursal.Width = 80;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 80;
-            // 
-            // Costo
-            // 
-            this.Costo.HeaderText = "Costo";
-            this.Costo.MinimumWidth = 6;
-            this.Costo.Name = "Costo";
-            this.Costo.Width = 80;
-            // 
-            // Stock
-            // 
-            this.Stock.HeaderText = "Pie tablar";
-            this.Stock.MinimumWidth = 6;
-            this.Stock.Name = "Stock";
-            this.Stock.Width = 80;
-            // 
-            // Alerta
-            // 
-            this.Alerta.HeaderText = "Alerta";
-            this.Alerta.MinimumWidth = 6;
-            this.Alerta.Name = "Alerta";
-            this.Alerta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Alerta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Alerta.Width = 60;
             // 
             // panel2
             // 
@@ -282,6 +194,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(332, 92);
             this.panel2.TabIndex = 13;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::TRAMADE.Properties.Resources.photo_8924441;
+            this.pictureBox4.Location = new System.Drawing.Point(32, 4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(141, 82);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
             // 
             // label3
             // 
@@ -296,7 +218,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(956, 402);
+            this.btnSiguiente.Location = new System.Drawing.Point(1071, 396);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(28, 25);
             this.btnSiguiente.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
@@ -309,7 +231,7 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(828, 401);
+            this.btnAtras.Location = new System.Drawing.Point(943, 395);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(27, 25);
             this.btnAtras.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
@@ -318,37 +240,17 @@
             this.btnAtras.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnAtras.Values.Image = global::TRAMADE.Properties.Resources.left_arrow_17909673;
             this.btnAtras.Values.Text = "";
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::TRAMADE.Properties.Resources.calendar_55281;
-            this.pictureBox3.Location = new System.Drawing.Point(841, 24);
+            this.pictureBox3.Location = new System.Drawing.Point(958, 24);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(36, 25);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.pictureBox2.Image = global::TRAMADE.Properties.Resources.icons8_búsqueda_50;
-            this.pictureBox2.Location = new System.Drawing.Point(238, 26);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 23);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::TRAMADE.Properties.Resources.photo_8924441;
-            this.pictureBox4.Location = new System.Drawing.Point(32, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(141, 82);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -358,21 +260,75 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(0, 164);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1127, 185);
+            this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(293, 25);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(27, 25);
+            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnBuscar.TabIndex = 18;
+            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnBuscar.Values.Image = global::TRAMADE.Properties.Resources.icons8_búsqueda_50;
+            this.btnBuscar.Values.Text = "kryptonButton2";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(332, 25);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(27, 25);
+            this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnRefrescar.TabIndex = 19;
+            this.btnRefrescar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRefrescar.Values.Image = global::TRAMADE.Properties.Resources.refresh_2805355;
+            this.btnRefrescar.Values.Text = "kryptonButton2";
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
+            // lblHora
+            // 
+            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHora.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(1000, 37);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(115, 23);
+            this.lblHora.TabIndex = 20;
+            this.lblHora.Text = "Hora";
+            this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 450);
+            this.ClientSize = new System.Drawing.Size(1124, 450);
+            this.Controls.Add(this.lblHora);
+            this.Controls.Add(this.btnRefrescar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.kryptonButton1);
+            this.Controls.Add(this.lblPagina);
+            this.Controls.Add(this.btnExportarInventario);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.btnEliminar);
@@ -384,14 +340,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInventario";
             this.Load += new System.EventHandler(this.frmInventario_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,27 +361,21 @@
         private Krypton.Toolkit.KryptonButton btnEliminar;
         private System.Windows.Forms.Label lblFecha;
         private Krypton.Toolkit.KryptonButton btnRegresar;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private System.Windows.Forms.Label label1;
+        private Krypton.Toolkit.KryptonButton btnExportarInventario;
+        private System.Windows.Forms.Label lblPagina;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvInventario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sucursal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
-        private System.Windows.Forms.DataGridViewImageColumn Alerta;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private Krypton.Toolkit.KryptonButton btnSiguiente;
         private Krypton.Toolkit.KryptonButton btnAtras;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private Krypton.Toolkit.KryptonButton btnBuscar;
+        private Krypton.Toolkit.KryptonButton btnRefrescar;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

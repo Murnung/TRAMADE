@@ -16,7 +16,7 @@ namespace TRAMADE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEditarInv());
+            Application.Run(new frmInventario());
         }
     }
 }

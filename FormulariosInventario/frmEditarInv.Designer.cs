@@ -33,22 +33,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbSucursal = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbCategoría = new System.Windows.Forms.ComboBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPrecioProducto = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNomProducto = new System.Windows.Forms.TextBox();
+            this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pbImagenProducto = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
+            this.btnConfirmar = new Krypton.Toolkit.KryptonButton();
+            this.btnCancelar = new Krypton.Toolkit.KryptonButton();
+            this.txtPrecioCosto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtPieTablar = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtCodigoDescuento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -57,12 +57,13 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(578, 338);
+            this.label8.Location = new System.Drawing.Point(578, 370);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(183, 72);
             this.label8.TabIndex = 33;
             this.label8.Text = "Nota: La resolución de la \r\nimagen debe de tener\r\n un mínimo de 500x500 px \r\nde r" +
     "esolución.";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // btnSubir
             // 
@@ -99,13 +100,13 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "Categoría";
             // 
-            // cmbCategoría
+            // cmbCategoria
             // 
-            this.cmbCategoría.FormattingEnabled = true;
-            this.cmbCategoría.Location = new System.Drawing.Point(86, 272);
-            this.cmbCategoría.Name = "cmbCategoría";
-            this.cmbCategoría.Size = new System.Drawing.Size(200, 24);
-            this.cmbCategoría.TabIndex = 28;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(86, 272);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(200, 24);
+            this.cmbCategoria.TabIndex = 28;
             // 
             // label5
             // 
@@ -133,12 +134,12 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "Precio del Producto";
             // 
-            // txtPrecioProducto
+            // txtPrecio
             // 
-            this.txtPrecioProducto.Location = new System.Drawing.Point(86, 443);
-            this.txtPrecioProducto.Name = "txtPrecioProducto";
-            this.txtPrecioProducto.Size = new System.Drawing.Size(200, 22);
-            this.txtPrecioProducto.TabIndex = 24;
+            this.txtPrecio.Location = new System.Drawing.Point(86, 443);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(200, 22);
+            this.txtPrecio.TabIndex = 24;
             // 
             // label3
             // 
@@ -149,12 +150,12 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "Nombre del Producto";
             // 
-            // txtNomProducto
+            // txtNombreProducto
             // 
-            this.txtNomProducto.Location = new System.Drawing.Point(86, 102);
-            this.txtNomProducto.Name = "txtNomProducto";
-            this.txtNomProducto.Size = new System.Drawing.Size(200, 22);
-            this.txtNomProducto.TabIndex = 22;
+            this.txtNombreProducto.Location = new System.Drawing.Point(86, 102);
+            this.txtNombreProducto.Name = "txtNombreProducto";
+            this.txtNombreProducto.Size = new System.Drawing.Size(200, 22);
+            this.txtNombreProducto.TabIndex = 22;
             // 
             // label1
             // 
@@ -170,9 +171,9 @@
             // pbImagenProducto
             // 
             this.pbImagenProducto.Image = global::TRAMADE.Properties.Resources.photo_89244411;
-            this.pbImagenProducto.Location = new System.Drawing.Point(399, 310);
+            this.pbImagenProducto.Location = new System.Drawing.Point(414, 310);
             this.pbImagenProducto.Name = "pbImagenProducto";
-            this.pbImagenProducto.Size = new System.Drawing.Size(131, 86);
+            this.pbImagenProducto.Size = new System.Drawing.Size(97, 86);
             this.pbImagenProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImagenProducto.TabIndex = 34;
             this.pbImagenProducto.TabStop = false;
@@ -190,7 +191,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(415, 74);
+            this.label2.Location = new System.Drawing.Point(415, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 37;
@@ -198,52 +199,56 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(418, 102);
+            this.txtStock.Location = new System.Drawing.Point(418, 185);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(200, 22);
             this.txtStock.TabIndex = 36;
             // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(683, 470);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(90, 25);
+            this.btnConfirmar.TabIndex = 43;
+            this.btnConfirmar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnConfirmar.Values.Text = "Confirmar";
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(570, 470);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 25);
+            this.btnCancelar.TabIndex = 42;
+            this.btnCancelar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnCancelar.Values.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtPrecioCosto
+            // 
+            this.txtPrecioCosto.Location = new System.Drawing.Point(418, 102);
+            this.txtPrecioCosto.Name = "txtPrecioCosto";
+            this.txtPrecioCosto.Size = new System.Drawing.Size(200, 22);
+            this.txtPrecioCosto.TabIndex = 38;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(415, 148);
+            this.label9.Location = new System.Drawing.Point(415, 74);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 16);
+            this.label9.Size = new System.Drawing.Size(103, 16);
             this.label9.TabIndex = 39;
-            this.label9.Text = "Pie Tablar";
-            // 
-            // txtPieTablar
-            // 
-            this.txtPieTablar.Location = new System.Drawing.Point(418, 176);
-            this.txtPieTablar.Name = "txtPieTablar";
-            this.txtPieTablar.Size = new System.Drawing.Size(200, 22);
-            this.txtPieTablar.TabIndex = 38;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(415, 216);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 16);
-            this.label10.TabIndex = 41;
-            this.label10.Text = "Código de Descuento";
-            // 
-            // txtCodigoDescuento
-            // 
-            this.txtCodigoDescuento.Location = new System.Drawing.Point(418, 244);
-            this.txtCodigoDescuento.Name = "txtCodigoDescuento";
-            this.txtCodigoDescuento.Size = new System.Drawing.Size(200, 22);
-            this.txtCodigoDescuento.TabIndex = 40;
+            this.label9.Text = "Precio de Costo";
             // 
             // frmEditarInv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 516);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtCodigoDescuento);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtPieTablar);
+            this.Controls.Add(this.txtPrecioCosto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.pbImagenProducto);
@@ -252,13 +257,13 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbSucursal);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cmbCategoría);
+            this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbProveedor);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtPrecioProducto);
+            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNomProducto);
+            this.Controls.Add(this.txtNombreProducto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "frmEditarInv";
@@ -279,20 +284,20 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbSucursal;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cmbCategoría;
+        private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbProveedor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPrecioProducto;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNomProducto;
+        private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtStock;
+        private Krypton.Toolkit.KryptonButton btnConfirmar;
+        private Krypton.Toolkit.KryptonButton btnCancelar;
+        private System.Windows.Forms.TextBox txtPrecioCosto;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPieTablar;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtCodigoDescuento;
     }
 }
