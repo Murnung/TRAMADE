@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace TRAMADE
 {
+    
     public partial class frmLogin : Form
     {
         public frmLogin()
@@ -24,43 +25,46 @@ namespace TRAMADE
         }
 
         clsConexion conexion = new clsConexion();
-
-         public void login (string usuario, string contraseña)
+        public void login (string usuario, string contraseña)
         {
-            try
-            {
-                conexion.Abrir();  //Abrir la conexion a la base de datos
-
-                string consulta = "SELECT * FROM VistaUsuariosLogin WHERE correo_usuario = @usuario AND password_usuario = @contra";  //Consulta con parametros
-                SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);//Nuevo comado sql que sera ejecuta contra la base de datos
-                cmd.Parameters.AddWithValue("@usuario", usuario); //Agrega un parametro llamado @usuario al comando SQL y le asigna el valor que escribio el ususario en el text box
-                cmd.Parameters.AddWithValue("@contra", contraseña); //esto remplazqa el @Usuario en SQL con el valor real 
-
-                //ejecuta y lee los resultados
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                if (dr.Read())  //Intenta lee una fila
+            
+                try
                 {
-                    MessageBox.Show("Inicio de seccion exitoso");
-                    frmMenuPrincipal objMenu = new frmMenuPrincipal();
-                    objMenu.Show();
-                    this.Hide();
+                    conexion.Abrir();
 
+                    string consulta = "SELECT * FROM VistaUsuariosLogin WHERE correo_usuario = @usuario AND password_usuario = @contra";
+                    SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
+                    cmd.Parameters.AddWithValue("@usuario", usuario);
+                    cmd.Parameters.AddWithValue("@contra", contraseña);
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                    // Guarda los datos del usuario en la sesión
+                    clsSesion.id_usuario = Convert.ToInt32(dr["id_usuario"]);
+                    clsSesion.nombre_usuario = dr["nombre_usuario"].ToString();
+
+                    MessageBox.Show("Inicio de sesión exitoso");
+                        dr.Close();
+                        conexion.Cerrar();
+
+                        frmCompras frm = new frmCompras();
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrectos");
+                        dr.Close();
+                        conexion.Cerrar();
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
+                    MessageBox.Show("Error: " + ex.Message);
                 }
-                dr.Close(); //Librea recursos del sqldatareader
-                conexion.Cerrar(); //Cierra la conexion a labase de datos
-                
-            } catch (Exception ex)
-            {
-                MessageBox.Show("Error");
             }
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
