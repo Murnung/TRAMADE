@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.ClasesCliente;
 
 namespace TRAMADE
 {
@@ -16,15 +18,20 @@ namespace TRAMADE
         {
             InitializeComponent();
         }
-
+        clsConexion ObjConexion = new clsConexion();
+        clsCliente ObjCliente = new clsCliente();
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            recargarClientes();
+        }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            frmRegistro objRegis = new frmRegistro();
+                frmRegistro objRegis = new frmRegistro();
             objRegis.Show();
         }
 
@@ -44,6 +51,30 @@ namespace TRAMADE
         {
             frmSeguimiento objSegui = new frmSeguimiento();
             objSegui.Show();
+        }
+
+        private void recargarClientes()
+        {
+            try
+            {
+                ObjConexion.Abrir();
+                string consulta = "SELECT * FROM Ultimos_Clientes";
+                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dvgUltimos.DataSource = dt;
+
+                dvgUltimos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los clientes: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
         }
     }
 }
