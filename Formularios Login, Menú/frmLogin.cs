@@ -19,8 +19,8 @@ namespace TRAMADE
             txtUsuario.Text = "Ingrese su usuario";
             txtUsuario.ForeColor = Color.Gray;
 
-            txtContraseña.Text = "Ingrese su contraseña";
-            txtContraseña.ForeColor = Color.Gray;
+            txtPassword.Text = "Ingrese su contraseña";
+            txtPassword.ForeColor = Color.Gray;
         }
 
         clsConexion conexion = new clsConexion();
@@ -41,10 +41,18 @@ namespace TRAMADE
 
                 if (dr.Read())  //Intenta lee una fila
                 {
+<<<<<<< HEAD:frmLogin.cs
                     MessageBox.Show("Inicio de sesión exitoso");
                     Form1 frm = new Form1();
                     frm.ShowDialog();
                     
+=======
+                    MessageBox.Show("Inicio de seccion exitoso");
+                    frmMenuPrincipal objMenu = new frmMenuPrincipal();
+                    objMenu.Show();
+                    this.Hide();
+
+>>>>>>> Menú:Formularios Login, Menú/frmLogin.cs
                 }
                 else
                 {
@@ -58,51 +66,27 @@ namespace TRAMADE
                 MessageBox.Show("Error");
             }
         }
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+        private void frmLogin_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == null || txtContraseña == null)
+            if (txtUsuario.Text == null || txtPassword == null)
             {
                 MessageBox.Show("Necesita llenar ambos campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 string usuario = txtUsuario.Text.Trim();  //Trim para eliminar espacios de ambos lados
-                string contra = txtContraseña.Text.Trim();
+                string contra = txtPassword.Text.Trim();
                 login(usuario, contra);
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtUsuario_Enter(object sender, EventArgs e)
+        private void txtUsuario_Enter_1(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "Ingrese su usuario")
             {
@@ -111,7 +95,7 @@ namespace TRAMADE
             }
         }
 
-        private void txtUsuario_Leave(object sender, EventArgs e)
+        private void txtUsuario_Leave_1(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "")
             {
@@ -120,27 +104,27 @@ namespace TRAMADE
             }
         }
 
-        private void txtContraseña_Enter(object sender, EventArgs e)
+        private void txtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtContraseña.Text == "Ingrese su contraseña")
+            if (txtPassword.Text == "Ingrese su contraseña")
             {
-                txtContraseña.Text = "";
-                txtContraseña.ForeColor = Color.Black;
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.Black;
             }
         }
 
-        private void txtContraseña_Leave(object sender, EventArgs e)
+        private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if (txtContraseña.Text == "")
+            if (txtPassword.Text == "")
             {
-                txtContraseña.Text = "Ingrese su contraseña";
-                txtContraseña.ForeColor = Color.Gray;
+                txtPassword.Text = "Ingrese su contraseña";
+                txtPassword.ForeColor = Color.Gray;
             }
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
