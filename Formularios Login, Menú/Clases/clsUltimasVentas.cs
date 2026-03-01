@@ -40,17 +40,13 @@ namespace TRAMADE.Formularios_Login__Menú
 
                 SqlDataAdapter da = new SqlDataAdapter(query, cn.SqlC);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                // Formatear fecha y monto
-                foreach (DataRow row in dt.Rows)
-                {
-                    row["Fecha"] = Convert.ToDateTime(row["Fecha"]).ToString("dd/MM/yyyy");
-                    row["Monto"] = $"L. {Convert.ToDecimal(row["Monto"]):N2}";
-                }
+                da.Fill(dt);                
 
                 _dgv.DataSource = dt;
                 EstiloGrid();
+                
+                _dgv.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
+                _dgv.Columns["Monto"].DefaultCellStyle.Format = "L. #,##0.00";
             }
             catch (Exception ex)
             {

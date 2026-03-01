@@ -26,31 +26,41 @@ namespace TRAMADE.Formularios_Login__Menú
             {
                 cn.Abrir();
                 string query = @"
-                    SELECT TOP 5
-                        c.id_compra      AS 'ID Compra',
-                        p.nombre_comercial_proveedor AS 'Proveedor',
-                        SUM(dc.cantidad * pr.precio_costo) AS 'Monto',
-                        c.fecha_pedido   AS 'Fecha'
-                    FROM COMPRAS c
-                    INNER JOIN PROVEEDOR p  ON c.id_proveedor  = p.id_proveedor
-                    INNER JOIN DETALLE_COMPRA dc ON c.id_compra = dc.id_compra
-                    INNER JOIN PRODUCTO pr  ON dc.id_producto  = pr.id_producto
-                    GROUP BY c.id_compra, p.nombre_comercial_proveedor, c.fecha_pedido
-                    ORDER BY c.fecha_pedido DESC";
+                SELECT TOP 5
+                    c.id_compra                      AS 'ID Compra',
+                    p.nombre_comercial_proveedor     AS 'Proveedor',
+                    SUM(dc.cantidad * pr.precio_costo) AS 'Monto',
+                    CONVERT(varchar, c.fecha_pedido, 103) AS 'Fecha'
+                FROM COMPRAS c
+                INNER JOIN PROVEEDOR p       ON c.id_proveedor  = p.id_proveedor
+                INNER JOIN DETALLE_COMPRA dc ON c.id_compra     = dc.id_compra
+                INNER JOIN PRODUCTO pr       ON dc.id_producto  = pr.id_producto
+                GROUP BY c.id_compra, p.nombre_comercial_proveedor, c.fecha_pedido
+                ORDER BY c.fecha_pedido DESC";
 
                 SqlDataAdapter da = new SqlDataAdapter(query, cn.SqlC);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                // Formatear fecha y monto
+                DataColumn montoFormateado = new DataColumn("MontoFormateado", typeof(string));
+                dt.Columns.Add(montoFormateado);
                 foreach (DataRow row in dt.Rows)
-                {
-                    row["Fecha"] = Convert.ToDateTime(row["Fecha"]).ToString("dd/MM/yyyy");
-                    row["Monto"] = $"L. {Convert.ToDecimal(row["Monto"]):N2}";
-                }
+                    row["MontoFormateado"] = $"L. {Convert.ToDecimal(row["Monto"]):N2}";
+                dt.Columns.Remove("Monto");
+                montoFormateado.ColumnName = "Monto";
+
+                // Convertir Fecha a string formateado
+                DataColumn fechaFormateada = new DataColumn("FechaFormateada", typeof(string));
+                dt.Columns.Add(fechaFormateada);
+                foreach (DataRow row in dt.Rows)
+                    row["FechaFormateada"] = Convert.ToDateTime(row["Fecha"]).ToString("dd/MM/yyyy");
+                dt.Columns.Remove("Fecha");
+                fechaFormateada.ColumnName = "Fecha";
 
                 _dgv.DataSource = dt;
                 EstiloGrid();
+
+               
             }
             catch (Exception ex)
             {

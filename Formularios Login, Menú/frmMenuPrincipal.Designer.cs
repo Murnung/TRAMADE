@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new Krypton.Toolkit.KryptonButton();
             this.btnMaximizar = new Krypton.Toolkit.KryptonButton();
@@ -65,6 +65,10 @@
             this.btnVentasRealizadas = new Krypton.Toolkit.KryptonButton();
             this.btnProductos = new Krypton.Toolkit.KryptonButton();
             this.gbClientes = new Krypton.Toolkit.KryptonGroupBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalClientes = new System.Windows.Forms.Label();
+            this.pnlBarraFondo = new System.Windows.Forms.Panel();
+            this.pnlBarraActivos = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gbGestionInven = new Krypton.Toolkit.KryptonGroupBox();
@@ -77,10 +81,6 @@
             this.gbVentasRealizadas = new Krypton.Toolkit.KryptonGroupBox();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.pnlBarraFondo = new System.Windows.Forms.Panel();
-            this.pnlBarraActivos = new System.Windows.Forms.Panel();
-            this.lblTotalClientes = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
@@ -99,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gbClientes.Panel)).BeginInit();
             this.gbClientes.Panel.SuspendLayout();
             this.gbClientes.SuspendLayout();
+            this.pnlBarraFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbGestionInven)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbGestionInven.Panel)).BeginInit();
@@ -120,7 +121,6 @@
             this.gbVentasRealizadas.Panel.SuspendLayout();
             this.gbVentasRealizadas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
-            this.pnlBarraFondo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -612,6 +612,44 @@
             this.gbClientes.StateCommon.Border.Rounding = 10F;
             this.gbClientes.TabIndex = 9;
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.White;
+            this.lblTotal.Location = new System.Drawing.Point(78, 148);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(71, 13);
+            this.lblTotal.TabIndex = 20;
+            this.lblTotal.Text = "Total Clientes";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalClientes
+            // 
+            this.lblTotalClientes.AutoSize = true;
+            this.lblTotalClientes.BackColor = System.Drawing.Color.White;
+            this.lblTotalClientes.Location = new System.Drawing.Point(98, 122);
+            this.lblTotalClientes.Name = "lblTotalClientes";
+            this.lblTotalClientes.Size = new System.Drawing.Size(35, 13);
+            this.lblTotalClientes.TabIndex = 19;
+            this.lblTotalClientes.Text = "label3";
+            this.lblTotalClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlBarraFondo
+            // 
+            this.pnlBarraFondo.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlBarraFondo.Controls.Add(this.pnlBarraActivos);
+            this.pnlBarraFondo.Location = new System.Drawing.Point(33, 185);
+            this.pnlBarraFondo.Name = "pnlBarraFondo";
+            this.pnlBarraFondo.Size = new System.Drawing.Size(161, 15);
+            this.pnlBarraFondo.TabIndex = 18;
+            // 
+            // pnlBarraActivos
+            // 
+            this.pnlBarraActivos.Location = new System.Drawing.Point(3, 2);
+            this.pnlBarraActivos.Name = "pnlBarraActivos";
+            this.pnlBarraActivos.Size = new System.Drawing.Size(152, 10);
+            this.pnlBarraActivos.TabIndex = 0;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -653,16 +691,16 @@
             // 
             // chrInventario
             // 
-            chartArea11.Name = "ChartArea1";
-            this.chrInventario.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chrInventario.Legends.Add(legend11);
+            chartArea1.Name = "ChartArea1";
+            this.chrInventario.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrInventario.Legends.Add(legend1);
             this.chrInventario.Location = new System.Drawing.Point(-4, 3);
             this.chrInventario.Name = "chrInventario";
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.chrInventario.Series.Add(series11);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chrInventario.Series.Add(series1);
             this.chrInventario.Size = new System.Drawing.Size(317, 217);
             this.chrInventario.TabIndex = 15;
             this.chrInventario.Text = "chart1";
@@ -685,16 +723,16 @@
             // 
             // chrTendencia
             // 
-            chartArea12.Name = "ChartArea1";
-            this.chrTendencia.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chrTendencia.Legends.Add(legend12);
+            chartArea2.Name = "ChartArea1";
+            this.chrTendencia.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chrTendencia.Legends.Add(legend2);
             this.chrTendencia.Location = new System.Drawing.Point(3, 3);
             this.chrTendencia.Name = "chrTendencia";
-            series12.ChartArea = "ChartArea1";
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.chrTendencia.Series.Add(series12);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chrTendencia.Series.Add(series2);
             this.chrTendencia.Size = new System.Drawing.Size(257, 217);
             this.chrTendencia.TabIndex = 17;
             this.chrTendencia.Text = "chart2";
@@ -775,44 +813,6 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Últimas Ventas Realizadas";
             // 
-            // pnlBarraFondo
-            // 
-            this.pnlBarraFondo.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlBarraFondo.Controls.Add(this.pnlBarraActivos);
-            this.pnlBarraFondo.Location = new System.Drawing.Point(33, 185);
-            this.pnlBarraFondo.Name = "pnlBarraFondo";
-            this.pnlBarraFondo.Size = new System.Drawing.Size(161, 15);
-            this.pnlBarraFondo.TabIndex = 18;
-            // 
-            // pnlBarraActivos
-            // 
-            this.pnlBarraActivos.Location = new System.Drawing.Point(3, 2);
-            this.pnlBarraActivos.Name = "pnlBarraActivos";
-            this.pnlBarraActivos.Size = new System.Drawing.Size(152, 10);
-            this.pnlBarraActivos.TabIndex = 0;
-            // 
-            // lblTotalClientes
-            // 
-            this.lblTotalClientes.AutoSize = true;
-            this.lblTotalClientes.BackColor = System.Drawing.Color.White;
-            this.lblTotalClientes.Location = new System.Drawing.Point(98, 122);
-            this.lblTotalClientes.Name = "lblTotalClientes";
-            this.lblTotalClientes.Size = new System.Drawing.Size(35, 13);
-            this.lblTotalClientes.TabIndex = 19;
-            this.lblTotalClientes.Text = "label3";
-            this.lblTotalClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.BackColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(78, 148);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(71, 13);
-            this.lblTotal.TabIndex = 20;
-            this.lblTotal.Text = "Total Clientes";
-            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -851,6 +851,7 @@
             this.gbClientes.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbClientes)).EndInit();
             this.gbClientes.ResumeLayout(false);
+            this.pnlBarraFondo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbGestionInven.Panel)).EndInit();
             this.gbGestionInven.Panel.ResumeLayout(false);
@@ -874,7 +875,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gbVentasRealizadas)).EndInit();
             this.gbVentasRealizadas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
-            this.pnlBarraFondo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
