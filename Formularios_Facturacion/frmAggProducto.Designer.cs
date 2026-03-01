@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtBuscarProducto = new Krypton.Toolkit.KryptonTextBox();
             this.btnBuscadorAgg = new Krypton.Toolkit.ButtonSpecAny();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,15 +43,13 @@
             this.dgvProductos = new Krypton.Toolkit.KryptonDataGridView();
             this.kryptonDataGridViewImageColumn1 = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
             this.kryptonDataGridViewImageColumn2 = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
-            this.Numeral = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MostrarCantidad = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.SumarProducto = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
-            this.RestarProducto = new Krypton.Toolkit.KryptonDataGridViewImageColumn();
             this.btnLimpiarBuscador = new Krypton.Toolkit.KryptonButton();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidadSeleccionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
@@ -199,6 +196,7 @@
             this.btnSeleccionarProducto.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnSeleccionarProducto.Values.Image = global::TRAMADE.Properties.Resources.Signo_de_suma_png_redimensionada_2;
             this.btnSeleccionarProducto.Values.Text = "Seleccionar producto";
+            this.btnSeleccionarProducto.Click += new System.EventHandler(this.btnSeleccionarProducto_Click);
             // 
             // btnQuitarProducto
             // 
@@ -227,14 +225,12 @@
             this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Numeral,
-            this.Producto,
-            this.Descripción,
-            this.CantidadStock,
-            this.Precio_unitario,
-            this.MostrarCantidad,
-            this.SumarProducto,
-            this.RestarProducto});
+            this.colID,
+            this.colProducto,
+            this.colDesc,
+            this.colStock,
+            this.colPrecio,
+            this.colCantidadSeleccionada});
             this.dgvProductos.Location = new System.Drawing.Point(16, 19);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersVisible = false;
@@ -255,6 +251,7 @@
             this.dgvProductos.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
             this.dgvProductos.TabIndex = 53;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
+            this.dgvProductos.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvProductos_DataError);
             // 
             // kryptonDataGridViewImageColumn1
             // 
@@ -278,65 +275,6 @@
             this.kryptonDataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.kryptonDataGridViewImageColumn2.Width = 25;
             // 
-            // Numeral
-            // 
-            this.Numeral.FillWeight = 78.16487F;
-            this.Numeral.HeaderText = "#";
-            this.Numeral.Name = "Numeral";
-            // 
-            // Producto
-            // 
-            this.Producto.FillWeight = 164.9846F;
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Descripción
-            // 
-            this.Descripción.FillWeight = 117.6891F;
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.Name = "Descripción";
-            // 
-            // CantidadStock
-            // 
-            this.CantidadStock.FillWeight = 117.6891F;
-            this.CantidadStock.HeaderText = "Cantidad en stock";
-            this.CantidadStock.Name = "CantidadStock";
-            // 
-            // Precio_unitario
-            // 
-            this.Precio_unitario.FillWeight = 117.6891F;
-            this.Precio_unitario.HeaderText = "Precio unitario";
-            this.Precio_unitario.Name = "Precio_unitario";
-            // 
-            // MostrarCantidad
-            // 
-            this.MostrarCantidad.FillWeight = 117.6891F;
-            this.MostrarCantidad.HeaderText = "Cantidad";
-            this.MostrarCantidad.Name = "MostrarCantidad";
-            this.MostrarCantidad.ReadOnly = true;
-            // 
-            // SumarProducto
-            // 
-            this.SumarProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.SumarProducto.FillWeight = 40.60914F;
-            this.SumarProducto.HeaderText = "+";
-            this.SumarProducto.Image = global::TRAMADE.Properties.Resources.Suma_1_;
-            this.SumarProducto.Name = "SumarProducto";
-            this.SumarProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SumarProducto.Width = 30;
-            // 
-            // RestarProducto
-            // 
-            this.RestarProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.RestarProducto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.RestarProducto.FillWeight = 45.48522F;
-            this.RestarProducto.HeaderText = "-";
-            this.RestarProducto.Image = global::TRAMADE.Properties.Resources.resta_1_;
-            this.RestarProducto.Name = "RestarProducto";
-            this.RestarProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.RestarProducto.Width = 30;
-            // 
             // btnLimpiarBuscador
             // 
             this.btnLimpiarBuscador.Location = new System.Drawing.Point(612, 14);
@@ -357,6 +295,44 @@
             this.btnLimpiarBuscador.Values.Image = global::TRAMADE.Properties.Resources.X__2___1_;
             this.btnLimpiarBuscador.Values.Text = "Limpiar";
             this.btnLimpiarBuscador.Click += new System.EventHandler(this.kryptonButton2_Click_1);
+            // 
+            // colID
+            // 
+            this.colID.FillWeight = 78.16487F;
+            this.colID.HeaderText = "#";
+            this.colID.Name = "colID";
+            // 
+            // colProducto
+            // 
+            this.colProducto.FillWeight = 164.9846F;
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            // 
+            // colDesc
+            // 
+            this.colDesc.FillWeight = 117.6891F;
+            this.colDesc.HeaderText = "Descripción";
+            this.colDesc.Name = "colDesc";
+            // 
+            // colStock
+            // 
+            this.colStock.FillWeight = 117.6891F;
+            this.colStock.HeaderText = "Cantidad en stock";
+            this.colStock.Name = "colStock";
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.FillWeight = 117.6891F;
+            this.colPrecio.HeaderText = "Precio unitario";
+            this.colPrecio.Name = "colPrecio";
+            // 
+            // colCantidadSeleccionada
+            // 
+            this.colCantidadSeleccionada.FillWeight = 117.6891F;
+            this.colCantidadSeleccionada.HeaderText = "Cantidad";
+            this.colCantidadSeleccionada.Name = "colCantidadSeleccionada";
+            this.colCantidadSeleccionada.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCantidadSeleccionada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // frmAggProducto
             // 
@@ -406,14 +382,12 @@
         private Krypton.Toolkit.KryptonDataGridView dgvProductos;
         private Krypton.Toolkit.KryptonButton btnSeleccionarProducto;
         private Krypton.Toolkit.KryptonButton btnQuitarProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numeral;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio_unitario;
-        private System.Windows.Forms.DataGridViewButtonColumn MostrarCantidad;
-        private Krypton.Toolkit.KryptonDataGridViewImageColumn SumarProducto;
-        private Krypton.Toolkit.KryptonDataGridViewImageColumn RestarProducto;
         private Krypton.Toolkit.KryptonButton btnLimpiarBuscador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidadSeleccionada;
     }
 }

@@ -50,18 +50,19 @@ namespace TRAMADE
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                // Leemos fila por fila y la metemos a tu DataGridView
                 while (dr.Read())
                 {
-                    // OJO: El orden de estos datos debe coincidir con las columnas de tu diseño.
-                    dgvProductos.Rows.Add(
-                        dr["id_producto"].ToString(),
-                        dr["nombre_producto"].ToString(),
-                        "N/A", // Descripción 
-                        "100", // Cantidad en stock (Temporal)
-                        dr["precio_unitario"].ToString(),
-                        "0"    // Cantidad por defecto
-                    );
+                    int indice = dgvProductos.Rows.Add();
+
+                    // Llenamos las 5 columnas de texto que quedaron
+                    dgvProductos.Rows[indice].Cells[0].Value = dr["id_producto"].ToString();
+                    dgvProductos.Rows[indice].Cells[1].Value = dr["nombre_producto"].ToString();
+                    dgvProductos.Rows[indice].Cells[2].Value = "N/A"; // Descripción
+                    dgvProductos.Rows[indice].Cells[3].Value = "100"; // Stock
+                    dgvProductos.Rows[indice].Cells[4].Value = dr["precio_unitario"].ToString();
+
+                    // Ahora la Cantidad es la columna 5 (porque borramos las imágenes)
+                    dgvProductos.Rows[indice].Cells[5].Value = "0";
                 }
 
                 dr.Close();
@@ -108,39 +109,82 @@ namespace TRAMADE
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verificamos que no le hayan dado clic a los títulos de arriba
             if (e.RowIndex >= 0)
             {
-                // === COLOCA AQUÍ TU NÚMERO DE COLUMNA DE CANTIDAD ===
-                int columnaCantidad = 6;
+                // Usamos tus números confirmados
+                int colMas = 5;
+                int colCantidad = 6;
+                int colMenos = 7;
 
-                // Agarramos el número que está escrito ahorita (empezará en 0)
-                int cantidadActual = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells[columnaCantidad].Value);
+                if (e.ColumnIndex == colMas || e.ColumnIndex == colMenos)
+                {
+                    int cantidadActual = 0;
 
-                // Si le dio clic a la columna de la IMAGEN DE SUMAR (+)
-                // === CAMBIA EL 7 POR TU COLUMNA DEL MÁS ===
-                if (e.ColumnIndex == 7)
-                {
-                    cantidadActual++;
-                }
-                // Si le dio clic a la columna de la IMAGEN DE RESTAR (-)
-                // === CAMBIA EL 5 POR TU COLUMNA DEL MENOS ===
-                else if (e.ColumnIndex == 5)
-                {
-                    if (cantidadActual > 0)
+                    // Leemos el valor
+                    var valorCelda = dgvProductos.Rows[e.RowIndex].Cells[colCantidad].Value;
+                    if (valorCelda != null)
                     {
-                        cantidadActual--; // Le restamos 1 solo si es mayor a cero
+                        int.TryParse(valorCelda.ToString(), out cantidadActual);
                     }
-                }
 
-                // Devolvemos el número actualizado a la celda para que el usuario lo vea
-                dgvProductos.Rows[e.RowIndex].Cells[columnaCantidad].Value = cantidadActual.ToString();
+                    // Matemática
+                    if (e.ColumnIndex == colMas)
+                    {
+                        cantidadActual++;
+                    }
+                    else if (e.ColumnIndex == colMenos)
+                    {
+                        if (cantidadActual > 0) cantidadActual--;
+                    }
+
+                    // Escribimos el nuevo valor
+                    dgvProductos.Rows[e.RowIndex].Cells[colCantidad].Value = cantidadActual.ToString();
+
+                    // ¡ESTO ES LO NUEVO! Obligamos a la tabla a repintarse para que veas el cambio
+                    dgvProductos.RefreshEdit();
+                    dgvProductos.EndEdit();
+                }
             }
         }
 
         private void kryptonButton2_Click_1(object sender, EventArgs e)
         {
             txtBuscarProducto.Text = "";
+        }
+
+        private void dgvProductos_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // No hacemos nada. Esto silencia el cuadro de error que te sale.
+            e.ThrowException = false;
+        }
+
+        private void btnSeleccionarProducto_Click(object sender, EventArgs e)
+        {
+            frmFacturacion principal = Application.OpenForms.OfType<frmFacturacion>().FirstOrDefault();
+
+            if (principal != null)
+            {
+                foreach (DataGridViewRow fila in dgvProductos.Rows)
+                {
+                    if (fila.Cells[1].Value != null)
+                    {
+                        // Ahora leemos la columna 5
+                        int cantidad = 0;
+                        int.TryParse(fila.Cells[5].Value.ToString(), out cantidad);
+
+                        if (cantidad > 0)
+                        {
+                            string nombre = fila.Cells[1].Value.ToString();
+                            decimal precio = Convert.ToDecimal(fila.Cells[4].Value);
+                            decimal subtotal = precio * cantidad;
+
+                            // Mandamos a la factura principal
+                            principal.dgvDetalleFactura.Rows.Add(nombre, "Unidad", cantidad, precio.ToString("N2"), subtotal.ToString("N2"));
+                        }
+                    }
+                }
+                this.Close();
+            }
         }
     }
 }

@@ -44,7 +44,7 @@
             this.kryptonLabel13 = new Krypton.Toolkit.KryptonLabel();
             this.btnEliminarProducto = new Krypton.Toolkit.KryptonButton();
             this.btnAggProducto = new Krypton.Toolkit.KryptonButton();
-            this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
+            this.dgvDetalleFactura = new Krypton.Toolkit.KryptonDataGridView();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,7 +87,7 @@
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup4 = new Krypton.Toolkit.KryptonGroup();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).BeginInit();
             this.kryptonGroup2.Panel.SuspendLayout();
@@ -298,36 +298,36 @@
             this.btnAggProducto.Values.Text = "Agregar producto";
             this.btnAggProducto.Click += new System.EventHandler(this.btnAggProducto_Click);
             // 
-            // kryptonDataGridView1
+            // dgvDetalleFactura
             // 
-            this.kryptonDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.kryptonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.kryptonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.kryptonDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDetalleFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetalleFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Producto,
             this.Descripción,
             this.Cantidad,
             this.Precio_unitario,
             this.Subtotal});
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(482, 263);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.RowHeadersVisible = false;
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(501, 158);
-            this.kryptonDataGridView1.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.Background.Color2 = System.Drawing.Color.White;
-            this.kryptonDataGridView1.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.LightGray;
-            this.kryptonDataGridView1.StateCommon.DataCell.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Rounding = 1F;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Border.Width = 1;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonDataGridView1.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kryptonDataGridView1.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
-            this.kryptonDataGridView1.TabIndex = 50;
+            this.dgvDetalleFactura.Location = new System.Drawing.Point(482, 263);
+            this.dgvDetalleFactura.Name = "dgvDetalleFactura";
+            this.dgvDetalleFactura.RowHeadersVisible = false;
+            this.dgvDetalleFactura.Size = new System.Drawing.Size(501, 158);
+            this.dgvDetalleFactura.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvDetalleFactura.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dgvDetalleFactura.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgvDetalleFactura.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.LightGray;
+            this.dgvDetalleFactura.StateCommon.DataCell.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom)));
+            this.dgvDetalleFactura.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.dgvDetalleFactura.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.dgvDetalleFactura.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.Transparent;
+            this.dgvDetalleFactura.StateCommon.HeaderColumn.Border.Rounding = 1F;
+            this.dgvDetalleFactura.StateCommon.HeaderColumn.Border.Width = 1;
+            this.dgvDetalleFactura.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDetalleFactura.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.dgvDetalleFactura.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.dgvDetalleFactura.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.Gray;
+            this.dgvDetalleFactura.TabIndex = 50;
             // 
             // Producto
             // 
@@ -811,7 +811,7 @@
             this.Controls.Add(this.kryptonLabel13);
             this.Controls.Add(this.btnEliminarProducto);
             this.Controls.Add(this.btnAggProducto);
-            this.Controls.Add(this.kryptonDataGridView1);
+            this.Controls.Add(this.dgvDetalleFactura);
             this.Controls.Add(this.kryptonLabel9);
             this.Controls.Add(this.kryptonGroup2);
             this.Controls.Add(this.kryptonLabel12);
@@ -830,7 +830,7 @@
             this.Name = "frmFacturacion";
             this.Text = "frmFacturacion";
             this.Load += new System.EventHandler(this.frmFacturacion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleFactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).EndInit();
             this.kryptonGroup2.Panel.ResumeLayout(false);
             this.kryptonGroup2.Panel.PerformLayout();
@@ -879,7 +879,6 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel13;
         private Krypton.Toolkit.KryptonButton btnEliminarProducto;
         private Krypton.Toolkit.KryptonButton btnAggProducto;
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
@@ -921,5 +920,6 @@
         private Krypton.Toolkit.KryptonGroup kryptonGroup3;
         private Krypton.Toolkit.KryptonGroup kryptonGroup4;
         private Krypton.Toolkit.KryptonGroup kryptonGroup5;
+        public Krypton.Toolkit.KryptonDataGridView dgvDetalleFactura;
     }
 }
