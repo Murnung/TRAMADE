@@ -122,9 +122,7 @@
     <Compile Include="FormulariosCompras\frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmLogin.cs" />
     <Compile Include="Formularios Login, Menú\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
