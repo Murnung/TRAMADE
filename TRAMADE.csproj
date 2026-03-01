@@ -104,6 +104,12 @@
     <Compile Include="ClasesCompras\clsLlenarListBox.cs" />
     <Compile Include="ClasesCompras\clsLlenarTextoPrecioCosto.cs" />
     <Compile Include="ClasesCompras\clsOperacionesCompra.cs" />
+    <Compile Include="ClasesProveedor\clsProveedores.cs" />
+    <Compile Include="ClasesProveedor\clsProveedores_Añadir.cs" />
+    <Compile Include="ClasesProveedor\clsProveedores_Editar.cs" />
+    <Compile Include="ClasesProveedor\clsProveedores_Perfil.cs" />
+    <Compile Include="ClasesProveedor\clsCombobox.cs" />
+    <Compile Include="ClasesProveedor\clsValidar.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsSesion.cs" />
     <Compile Include="Form1.cs">
@@ -154,6 +160,30 @@
     <Compile Include="FormulariosCompras\frmSeguimiento.Designer.cs">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulariosProveedor\frmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosProveedor\frmProveedores.Designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosProveedor\frmProveedores_Añadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosProveedor\frmProveedores_Añadir.Designer.cs">
+      <DependentUpon>frmProveedores_Añadir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosProveedor\frmProveedores_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosProveedor\frmProveedores_Editar.Designer.cs">
+      <DependentUpon>frmProveedores_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosProveedor\frmProveedores_Perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosProveedor\frmProveedores_Perfil.Designer.cs">
+      <DependentUpon>frmProveedores_Perfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -179,6 +209,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCompras\frmSeguimiento.resx">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosProveedor\frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosProveedor\frmProveedores_Añadir.resx">
+      <DependentUpon>frmProveedores_Añadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosProveedor\frmProveedores_Editar.resx">
+      <DependentUpon>frmProveedores_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosProveedor\frmProveedores_Perfil.resx">
+      <DependentUpon>frmProveedores_Perfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
