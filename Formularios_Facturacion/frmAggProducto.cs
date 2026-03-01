@@ -13,6 +13,9 @@ namespace TRAMADE
 {
     public partial class frmAggProducto : Form
     {
+        // Esto guarda: [ID del Producto, Cantidad]
+        Dictionary<string, int> cantidadesTemporales = new Dictionary<string, int>();
+
         // 1. Este es el constructor (solo inicializa los componentes)
         public frmAggProducto()
         {
@@ -184,6 +187,28 @@ namespace TRAMADE
                     }
                 }
                 this.Close();
+            }
+        }
+
+        private void dgvProductos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5 && e.RowIndex >= 0)
+            {
+                dgvProductos.BeginEdit(true); // Inicia la edición de un solo
+            }
+        }
+
+        private void dgvProductos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Si cambió la columna de cantidad (la 5) y no es el título
+            if (e.RowIndex >= 0 && e.ColumnIndex == 5)
+            {
+                string id = dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString();
+                int cantidad = 0;
+                int.TryParse(dgvProductos.Rows[e.RowIndex].Cells[5].Value.ToString(), out cantidad);
+
+                // Guardamos o actualizamos en nuestra memoria
+                cantidadesTemporales[id] = cantidad;
             }
         }
     }
