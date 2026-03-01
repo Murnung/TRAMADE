@@ -1,11 +1,13 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TRAMADE.Clases_Reporte;
+using TRAMADE.DatasSet_Reportes;
+using TRAMADE.DatasSet_Reportes.dsVentasTableAdapters;
 
 namespace TRAMADE
 {
@@ -16,12 +18,12 @@ namespace TRAMADE
             try
             {
                 dsVentas ds = new dsVentas();
-                new dsVentasTableAdapters.DataTable1TableAdapter()
+                new DatasSet_Reportes.dsVentasTableAdapters.DataTable1TableAdapter()
                     .Fill(ds.DataTable1, fechaInicio, fechaFin, idSucursal);
 
                 var report = new LocalReport();
                 report.ReportEmbeddedResource = "TRAMADE.Reportes.rptVentas.rdlc";
-                report.DataSources.Add(new ReportDataSource("DataSet1", ds.DataTable1));
+                report.DataSources.Add(new ReportDataSource("DataSet1", (DataTable)ds.DataTable1));
                 return report;
             }
             catch (Exception ex)

@@ -20,9 +20,9 @@ namespace TRAMADE.DatasSet_Reportes {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsCompras")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsProductos")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsCompras : global::System.Data.DataSet {
+    public partial class dsProductos : global::System.Data.DataSet {
         
         private DataTable1DataTable tableDataTable1;
         
@@ -30,7 +30,7 @@ namespace TRAMADE.DatasSet_Reportes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        public dsCompras() {
+        public dsProductos() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace TRAMADE.DatasSet_Reportes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        protected dsCompras(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsProductos(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace TRAMADE.DatasSet_Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsCompras cln = ((dsCompras)(base.Clone()));
+            dsProductos cln = ((dsProductos)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace TRAMADE.DatasSet_Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsCompras";
+            this.DataSetName = "dsProductos";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsCompras.xsd";
+            this.Namespace = "http://tempuri.org/dsProductos.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableDataTable1 = new DataTable1DataTable();
@@ -225,7 +225,7 @@ namespace TRAMADE.DatasSet_Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsCompras ds = new dsCompras();
+            dsProductos ds = new dsProductos();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -279,19 +279,15 @@ namespace TRAMADE.DatasSet_Reportes {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
             
-            private global::System.Data.DataColumn _columnN__Compra;
+            private global::System.Data.DataColumn columnProducto;
             
-            private global::System.Data.DataColumn columnProveedor;
+            private global::System.Data.DataColumn columnCategoría;
             
-            private global::System.Data.DataColumn columnForma_de_Pago;
+            private global::System.Data.DataColumn columnCantidad_Vendida;
+            
+            private global::System.Data.DataColumn columnTotal_Generado;
             
             private global::System.Data.DataColumn columnSucursal;
-            
-            private global::System.Data.DataColumn columnFecha_Pedido;
-            
-            private global::System.Data.DataColumn columnFecha_Entrega;
-            
-            private global::System.Data.DataColumn columnTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
@@ -328,25 +324,33 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn _N__CompraColumn {
+            public global::System.Data.DataColumn ProductoColumn {
                 get {
-                    return this._columnN__Compra;
+                    return this.columnProducto;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn ProveedorColumn {
+            public global::System.Data.DataColumn CategoríaColumn {
                 get {
-                    return this.columnProveedor;
+                    return this.columnCategoría;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn Forma_de_PagoColumn {
+            public global::System.Data.DataColumn Cantidad_VendidaColumn {
                 get {
-                    return this.columnForma_de_Pago;
+                    return this.columnCantidad_Vendida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn Total_GeneradoColumn {
+                get {
+                    return this.columnTotal_Generado;
                 }
             }
             
@@ -355,30 +359,6 @@ namespace TRAMADE.DatasSet_Reportes {
             public global::System.Data.DataColumn SucursalColumn {
                 get {
                     return this.columnSucursal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn Fecha_PedidoColumn {
-                get {
-                    return this.columnFecha_Pedido;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn Fecha_EntregaColumn {
-                get {
-                    return this.columnFecha_Entrega;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn TotalColumn {
-                get {
-                    return this.columnTotal;
                 }
             }
             
@@ -419,26 +399,17 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string Proveedor, string Forma_de_Pago, string Sucursal, System.DateTime Fecha_Pedido, System.DateTime Fecha_Entrega, decimal Total) {
+            public DataTable1Row AddDataTable1Row(string Producto, string Categoría, int Cantidad_Vendida, decimal Total_Generado, string Sucursal) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        Proveedor,
-                        Forma_de_Pago,
-                        Sucursal,
-                        Fecha_Pedido,
-                        Fecha_Entrega,
-                        Total};
+                        Producto,
+                        Categoría,
+                        Cantidad_Vendida,
+                        Total_Generado,
+                        Sucursal};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public DataTable1Row FindBy_N__Compra(int _N__Compra) {
-                return ((DataTable1Row)(this.Rows.Find(new object[] {
-                            _N__Compra})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -458,50 +429,34 @@ namespace TRAMADE.DatasSet_Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             internal void InitVars() {
-                this._columnN__Compra = base.Columns["N° Compra"];
-                this.columnProveedor = base.Columns["Proveedor"];
-                this.columnForma_de_Pago = base.Columns["Forma de Pago"];
+                this.columnProducto = base.Columns["Producto"];
+                this.columnCategoría = base.Columns["Categoría"];
+                this.columnCantidad_Vendida = base.Columns["Cantidad Vendida"];
+                this.columnTotal_Generado = base.Columns["Total Generado"];
                 this.columnSucursal = base.Columns["Sucursal"];
-                this.columnFecha_Pedido = base.Columns["Fecha Pedido"];
-                this.columnFecha_Entrega = base.Columns["Fecha Entrega"];
-                this.columnTotal = base.Columns["Total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             private void InitClass() {
-                this._columnN__Compra = new global::System.Data.DataColumn("N° Compra", typeof(int), null, global::System.Data.MappingType.Element);
-                this._columnN__Compra.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnN__Compra");
-                this._columnN__Compra.ExtendedProperties.Add("Generator_UserColumnName", "N° Compra");
-                base.Columns.Add(this._columnN__Compra);
-                this.columnProveedor = new global::System.Data.DataColumn("Proveedor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProveedor);
-                this.columnForma_de_Pago = new global::System.Data.DataColumn("Forma de Pago", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnForma_de_Pago);
+                this.columnProducto = new global::System.Data.DataColumn("Producto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProducto);
+                this.columnCategoría = new global::System.Data.DataColumn("Categoría", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoría);
+                this.columnCantidad_Vendida = new global::System.Data.DataColumn("Cantidad Vendida", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidad_Vendida);
+                this.columnTotal_Generado = new global::System.Data.DataColumn("Total Generado", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal_Generado);
                 this.columnSucursal = new global::System.Data.DataColumn("Sucursal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSucursal);
-                this.columnFecha_Pedido = new global::System.Data.DataColumn("Fecha Pedido", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_Pedido);
-                this.columnFecha_Entrega = new global::System.Data.DataColumn("Fecha Entrega", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_Entrega);
-                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this._columnN__Compra}, true));
-                this._columnN__Compra.AutoIncrement = true;
-                this._columnN__Compra.AutoIncrementSeed = -1;
-                this._columnN__Compra.AutoIncrementStep = -1;
-                this._columnN__Compra.AllowDBNull = false;
-                this._columnN__Compra.ReadOnly = true;
-                this._columnN__Compra.Unique = true;
-                this.columnProveedor.AllowDBNull = false;
-                this.columnProveedor.MaxLength = 50;
-                this.columnForma_de_Pago.AllowDBNull = false;
-                this.columnForma_de_Pago.MaxLength = 50;
+                this.columnProducto.AllowDBNull = false;
+                this.columnProducto.MaxLength = 50;
+                this.columnCategoría.AllowDBNull = false;
+                this.columnCategoría.MaxLength = 50;
+                this.columnCantidad_Vendida.ReadOnly = true;
+                this.columnTotal_Generado.ReadOnly = true;
                 this.columnSucursal.AllowDBNull = false;
                 this.columnSucursal.MaxLength = 50;
-                this.columnFecha_Pedido.AllowDBNull = false;
-                this.columnTotal.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -569,7 +524,7 @@ namespace TRAMADE.DatasSet_Reportes {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsCompras ds = new dsCompras();
+                dsProductos ds = new dsProductos();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -644,34 +599,55 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public int _N__Compra {
+            public string Producto {
                 get {
-                    return ((int)(this[this.tableDataTable1._N__CompraColumn]));
+                    return ((string)(this[this.tableDataTable1.ProductoColumn]));
                 }
                 set {
-                    this[this.tableDataTable1._N__CompraColumn] = value;
+                    this[this.tableDataTable1.ProductoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public string Proveedor {
+            public string Categoría {
                 get {
-                    return ((string)(this[this.tableDataTable1.ProveedorColumn]));
+                    return ((string)(this[this.tableDataTable1.CategoríaColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.ProveedorColumn] = value;
+                    this[this.tableDataTable1.CategoríaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public string Forma_de_Pago {
+            public int Cantidad_Vendida {
                 get {
-                    return ((string)(this[this.tableDataTable1.Forma_de_PagoColumn]));
+                    try {
+                        return ((int)(this[this.tableDataTable1.Cantidad_VendidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad Vendida\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableDataTable1.Forma_de_PagoColumn] = value;
+                    this[this.tableDataTable1.Cantidad_VendidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public decimal Total_Generado {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDataTable1.Total_GeneradoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Total Generado\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.Total_GeneradoColumn] = value;
                 }
             }
             
@@ -688,69 +664,26 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public System.DateTime Fecha_Pedido {
-                get {
-                    return ((global::System.DateTime)(this[this.tableDataTable1.Fecha_PedidoColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.Fecha_PedidoColumn] = value;
-                }
+            public bool IsCantidad_VendidaNull() {
+                return this.IsNull(this.tableDataTable1.Cantidad_VendidaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public System.DateTime Fecha_Entrega {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableDataTable1.Fecha_EntregaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha Entrega\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.Fecha_EntregaColumn] = value;
-                }
+            public void SetCantidad_VendidaNull() {
+                this[this.tableDataTable1.Cantidad_VendidaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public decimal Total {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableDataTable1.TotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Total\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.TotalColumn] = value;
-                }
+            public bool IsTotal_GeneradoNull() {
+                return this.IsNull(this.tableDataTable1.Total_GeneradoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsFecha_EntregaNull() {
-                return this.IsNull(this.tableDataTable1.Fecha_EntregaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetFecha_EntregaNull() {
-                this[this.tableDataTable1.Fecha_EntregaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsTotalNull() {
-                return this.IsNull(this.tableDataTable1.TotalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetTotalNull() {
-                this[this.tableDataTable1.TotalColumn] = global::System.Convert.DBNull;
+            public void SetTotal_GeneradoNull() {
+                this[this.tableDataTable1.Total_GeneradoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -789,7 +722,7 @@ namespace TRAMADE.DatasSet_Reportes {
         }
     }
 }
-namespace TRAMADE.DatasSet_Reportes.dsComprasTableAdapters {
+namespace TRAMADE.DatasSet_Reportes.dsProductosTableAdapters {
     
     
     /// <summary>
@@ -913,13 +846,11 @@ namespace TRAMADE.DatasSet_Reportes.dsComprasTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DataTable1";
-            tableMapping.ColumnMappings.Add("N° Compra", "N° Compra");
-            tableMapping.ColumnMappings.Add("Proveedor", "Proveedor");
-            tableMapping.ColumnMappings.Add("Forma de Pago", "Forma de Pago");
+            tableMapping.ColumnMappings.Add("Producto", "Producto");
+            tableMapping.ColumnMappings.Add("Categoría", "Categoría");
+            tableMapping.ColumnMappings.Add("Cantidad Vendida", "Cantidad Vendida");
+            tableMapping.ColumnMappings.Add("Total Generado", "Total Generado");
             tableMapping.ColumnMappings.Add("Sucursal", "Sucursal");
-            tableMapping.ColumnMappings.Add("Fecha Pedido", "Fecha Pedido");
-            tableMapping.ColumnMappings.Add("Fecha Entrega", "Fecha Entrega");
-            tableMapping.ColumnMappings.Add("Total", "Total");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -937,28 +868,24 @@ namespace TRAMADE.DatasSet_Reportes.dsComprasTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT 
-    c.id_compra                      AS 'N° Compra',
-    p.nombre_comercial_proveedor     AS 'Proveedor',
-    fp.descripcion_forma_pago        AS 'Forma de Pago',
-    s.nombre_sucursal                AS 'Sucursal',
-    c.fecha_pedido                   AS 'Fecha Pedido',
-    c.fecha_entrega                  AS 'Fecha Entrega',
-    SUM(dc.cantidad * pr.precio_costo) AS 'Total'
-FROM COMPRAS c
-INNER JOIN PROVEEDOR p        ON c.id_proveedor   = p.id_proveedor
-INNER JOIN FORMA_PAGO fp      ON c.id_forma_pago  = fp.id_forma_pago
-INNER JOIN USUARIO u          ON c.id_usuario     = u.id_usuario
-INNER JOIN SUCURSAL s         ON u.id_sucursal    = s.id_sucursal
-INNER JOIN DETALLE_COMPRA dc  ON c.id_compra      = dc.id_compra
-INNER JOIN PRODUCTO pr        ON dc.id_producto   = pr.id_producto
-WHERE c.fecha_pedido BETWEEN @FechaInicio AND @FechaFin
+    p.nombre_producto       AS 'Producto',
+    cat.nombre_categoria    AS 'Categoría',
+    SUM(fp.cantidad)        AS 'Cantidad Vendida',
+    SUM(fp.cantidad * p.precio_unitario) AS 'Total Generado',
+    s.nombre_sucursal       AS 'Sucursal'
+FROM FACTURA_PRODUCTO fp
+INNER JOIN PRODUCTO p       ON fp.id_producto = p.id_producto
+INNER JOIN CATEGORIA cat    ON p.id_categoria = cat.id_categoria
+INNER JOIN FACTURA f        ON fp.id_factura  = f.id_factura
+INNER JOIN USUARIO u        ON f.id_usuario   = u.id_usuario
+INNER JOIN SUCURSAL s       ON u.id_sucursal  = s.id_sucursal
+WHERE f.fecha_emision BETWEEN @FechaInicio AND @FechaFin
 AND (@IdSucursal = 0 OR s.id_sucursal = @IdSucursal)
-GROUP BY c.id_compra, p.nombre_comercial_proveedor, fp.descripcion_forma_pago,
-         s.nombre_sucursal, c.fecha_pedido, c.fecha_entrega
-ORDER BY c.fecha_pedido DESC";
+GROUP BY p.nombre_producto, cat.nombre_categoria, s.nombre_sucursal
+ORDER BY SUM(fp.cantidad) DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaInicio", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha Pedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaFin", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha Pedido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaInicio", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fecha_emision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaFin", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fecha_emision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSucursal", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_sucursal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -966,7 +893,7 @@ ORDER BY c.fecha_pedido DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsCompras.DataTable1DataTable dataTable, System.DateTime FechaInicio, System.DateTime FechaFin, int IdSucursal) {
+        public virtual int Fill(dsProductos.DataTable1DataTable dataTable, System.DateTime FechaInicio, System.DateTime FechaFin, int IdSucursal) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaInicio));
             this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaFin));
@@ -982,12 +909,12 @@ ORDER BY c.fecha_pedido DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsCompras.DataTable1DataTable GetData(System.DateTime FechaInicio, System.DateTime FechaFin, int IdSucursal) {
+        public virtual dsProductos.DataTable1DataTable GetData(System.DateTime FechaInicio, System.DateTime FechaFin, int IdSucursal) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(FechaInicio));
             this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaFin));
             this.Adapter.SelectCommand.Parameters[2].Value = ((int)(IdSucursal));
-            dsCompras.DataTable1DataTable dataTable = new dsCompras.DataTable1DataTable();
+            dsProductos.DataTable1DataTable dataTable = new dsProductos.DataTable1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1061,7 +988,7 @@ ORDER BY c.fecha_pedido DESC";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        private int UpdateUpdatedRows(dsCompras dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dsProductos dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1071,7 +998,7 @@ ORDER BY c.fecha_pedido DESC";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        private int UpdateInsertedRows(dsCompras dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dsProductos dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1081,7 +1008,7 @@ ORDER BY c.fecha_pedido DESC";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        private int UpdateDeletedRows(dsCompras dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dsProductos dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1115,7 +1042,7 @@ ORDER BY c.fecha_pedido DESC";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        public virtual int UpdateAll(dsCompras dataSet) {
+        public virtual int UpdateAll(dsProductos dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
