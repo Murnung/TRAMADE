@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new Krypton.Toolkit.KryptonButton();
             this.btnMaximizar = new Krypton.Toolkit.KryptonButton();
             this.btnMinimizar = new Krypton.Toolkit.KryptonButton();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
             this.flpBarraLateral = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -70,7 +69,6 @@
             this.pnlBarraFondo = new System.Windows.Forms.Panel();
             this.pnlBarraActivos = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gbGestionInven = new Krypton.Toolkit.KryptonGroupBox();
             this.chrInventario = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gbTendencia = new Krypton.Toolkit.KryptonGroupBox();
@@ -81,8 +79,9 @@
             this.gbVentasRealizadas = new Krypton.Toolkit.KryptonGroupBox();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -100,7 +99,6 @@
             this.gbClientes.Panel.SuspendLayout();
             this.gbClientes.SuspendLayout();
             this.pnlBarraFondo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbGestionInven)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbGestionInven.Panel)).BeginInit();
             this.gbGestionInven.Panel.SuspendLayout();
@@ -121,6 +119,8 @@
             this.gbVentasRealizadas.Panel.SuspendLayout();
             this.gbVentasRealizadas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,7 +151,12 @@
             this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnSalir.TabIndex = 9;
             this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-//            this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
+            this.btnSalir.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnSalir.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnSalir.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnSalir.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.Cerrar;
+            this.btnSalir.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.Cerrar;
+            this.btnSalir.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.Cerrar;
             this.btnSalir.Values.Text = "";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -174,7 +179,12 @@
             this.btnMaximizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnMaximizar.TabIndex = 8;
             this.btnMaximizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-//            this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
+            this.btnMaximizar.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnMaximizar.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnMaximizar.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnMaximizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.Maximizar;
+            this.btnMaximizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.Maximizar;
+            this.btnMaximizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.Maximizar;
             this.btnMaximizar.Values.Text = "";
             this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
@@ -197,21 +207,14 @@
             this.btnMinimizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnMinimizar.TabIndex = 7;
             this.btnMinimizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-//            this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
+            this.btnMinimizar.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnMinimizar.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnMinimizar.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnMinimizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.Minimizar;
+            this.btnMinimizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.Minimizar;
+            this.btnMinimizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.Minimizar;
             this.btnMinimizar.Values.Text = "";
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(19, 14);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(55, 36);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnMenu.TabIndex = 6;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // lblBienvenidoUsuario
             // 
@@ -219,7 +222,7 @@
             this.lblBienvenidoUsuario.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenidoUsuario.Location = new System.Drawing.Point(91, 18);
             this.lblBienvenidoUsuario.Name = "lblBienvenidoUsuario";
-            this.lblBienvenidoUsuario.Size = new System.Drawing.Size(273, 29);
+            this.lblBienvenidoUsuario.Size = new System.Drawing.Size(350, 38);
             this.lblBienvenidoUsuario.TabIndex = 5;
             this.lblBienvenidoUsuario.Text = "Bienvenido, [Usuario]";
             // 
@@ -251,7 +254,6 @@
             // 
             this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInicio.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-//            this.btnInicio.Image = global::TRAMADE.Properties.Resources.Home;
             this.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInicio.Location = new System.Drawing.Point(-3, -3);
             this.btnInicio.Name = "btnInicio";
@@ -277,7 +279,6 @@
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.SystemColors.Window;
-//            this.btnClientes.Image = global::TRAMADE.Properties.Resources.Clientes1;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(-3, 0);
             this.btnClientes.Name = "btnClientes";
@@ -303,7 +304,6 @@
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentas.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.ForeColor = System.Drawing.SystemColors.Window;
-//            this.btnVentas.Image = global::TRAMADE.Properties.Resources.Ventas;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVentas.Location = new System.Drawing.Point(-3, 0);
             this.btnVentas.Name = "btnVentas";
@@ -329,7 +329,6 @@
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.SystemColors.Window;
-//            this.btnInventario.Image = global::TRAMADE.Properties.Resources.Inventario;
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventario.Location = new System.Drawing.Point(-3, -1);
             this.btnInventario.Name = "btnInventario";
@@ -355,7 +354,6 @@
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompras.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompras.ForeColor = System.Drawing.SystemColors.Window;
-//            this.btnCompras.Image = global::TRAMADE.Properties.Resources.Compras;
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCompras.Location = new System.Drawing.Point(-3, -6);
             this.btnCompras.Name = "btnCompras";
@@ -381,7 +379,6 @@
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.SystemColors.Window;
-//            this.btnProveedores.Image = global::TRAMADE.Properties.Resources.Proveedores;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.Location = new System.Drawing.Point(-3, -6);
             this.btnProveedores.Name = "btnProveedores";
@@ -407,7 +404,6 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.Window;
-//            this.button6.Image = global::TRAMADE.Properties.Resources.Reportes;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(-3, -6);
             this.button6.Name = "button6";
@@ -431,7 +427,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label1.Location = new System.Drawing.Point(29, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 24);
+            this.label1.Size = new System.Drawing.Size(184, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vista General";
             // 
@@ -486,7 +482,12 @@
             this.btnProductosAgotados.StateTracking.Border.Rounding = 10F;
             this.btnProductosAgotados.TabIndex = 5;
             this.btnProductosAgotados.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-//            this.btnProductosAgotados.Values.Image = global::TRAMADE.Properties.Resources.Productosagotados;
+            this.btnProductosAgotados.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnProductosAgotados.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnProductosAgotados.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnProductosAgotados.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.Productosagotados;
+            this.btnProductosAgotados.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.Productosagotados;
+            this.btnProductosAgotados.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.Productosagotados;
             this.btnProductosAgotados.Values.Text = "Productos \r\nagotados";
             this.btnProductosAgotados.Click += new System.EventHandler(this.btnProductosAgotados_Click);
             // 
@@ -520,7 +521,12 @@
             this.btnComprasRealizadas.StateTracking.Border.Rounding = 10F;
             this.btnComprasRealizadas.TabIndex = 4;
             this.btnComprasRealizadas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-//            this.btnComprasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.comprasrealizadas;
+            this.btnComprasRealizadas.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnComprasRealizadas.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnComprasRealizadas.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnComprasRealizadas.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.comprasrealizadas;
+            this.btnComprasRealizadas.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.comprasrealizadas;
+            this.btnComprasRealizadas.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.comprasrealizadas;
             this.btnComprasRealizadas.Values.Text = "Compras\r\nrealizadas";
             this.btnComprasRealizadas.Click += new System.EventHandler(this.btnComprasRealizadas_Click);
             // 
@@ -554,7 +560,12 @@
             this.btnVentasRealizadas.StateTracking.Border.Rounding = 10F;
             this.btnVentasRealizadas.TabIndex = 3;
             this.btnVentasRealizadas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-//            this.btnVentasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.ventasrealizadas;
+            this.btnVentasRealizadas.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnVentasRealizadas.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnVentasRealizadas.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnVentasRealizadas.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.ventasrealizadas;
+            this.btnVentasRealizadas.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.ventasrealizadas;
+            this.btnVentasRealizadas.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.ventasrealizadas;
             this.btnVentasRealizadas.Values.Text = "  Ventas \r\nRegistradas";
             this.btnVentasRealizadas.Click += new System.EventHandler(this.btnVentasRealizadas_Click);
             // 
@@ -588,7 +599,12 @@
             this.btnProductos.StateTracking.Border.Rounding = 10F;
             this.btnProductos.TabIndex = 2;
             this.btnProductos.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-//            this.btnProductos.Values.Image = global::TRAMADE.Properties.Resources.totalproductos;
+            this.btnProductos.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnProductos.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnProductos.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnProductos.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.totalproductos;
+            this.btnProductos.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.totalproductos;
+            this.btnProductos.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.totalproductos;
             this.btnProductos.Values.Text = "   Total\r\nProductos";
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
@@ -618,7 +634,7 @@
             this.lblTotal.BackColor = System.Drawing.Color.White;
             this.lblTotal.Location = new System.Drawing.Point(78, 148);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(71, 13);
+            this.lblTotal.Size = new System.Drawing.Size(89, 16);
             this.lblTotal.TabIndex = 20;
             this.lblTotal.Text = "Total Clientes";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -629,7 +645,7 @@
             this.lblTotalClientes.BackColor = System.Drawing.Color.White;
             this.lblTotalClientes.Location = new System.Drawing.Point(98, 122);
             this.lblTotalClientes.Name = "lblTotalClientes";
-            this.lblTotalClientes.Size = new System.Drawing.Size(35, 13);
+            this.lblTotalClientes.Size = new System.Drawing.Size(44, 16);
             this.lblTotalClientes.TabIndex = 19;
             this.lblTotalClientes.Text = "label3";
             this.lblTotalClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -658,20 +674,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label2.Location = new System.Drawing.Point(69, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 24);
+            this.label2.Size = new System.Drawing.Size(115, 29);
             this.label2.TabIndex = 13;
             this.label2.Text = "Clientes";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-//            this.pictureBox2.Image = global::TRAMADE.Properties.Resources.vistaClientes2;
-            this.pictureBox2.Location = new System.Drawing.Point(81, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(68, 67);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
             // 
             // gbGestionInven
             // 
@@ -760,6 +765,7 @@
             this.dgvCompras.Location = new System.Drawing.Point(-8, 49);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
+            this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.Size = new System.Drawing.Size(426, 176);
             this.dgvCompras.TabIndex = 19;
             // 
@@ -771,7 +777,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label6.Location = new System.Drawing.Point(43, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(307, 24);
+            this.label6.Size = new System.Drawing.Size(377, 29);
             this.label6.TabIndex = 18;
             this.label6.Text = "Últimas Compras Realizadas";
             // 
@@ -798,6 +804,7 @@
             this.dgvVentas.Location = new System.Drawing.Point(-2, 48);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
+            this.dgvVentas.RowHeadersWidth = 51;
             this.dgvVentas.Size = new System.Drawing.Size(418, 176);
             this.dgvVentas.TabIndex = 21;
             // 
@@ -809,9 +816,32 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label7.Location = new System.Drawing.Point(65, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(286, 24);
+            this.label7.Size = new System.Drawing.Size(350, 29);
             this.label7.TabIndex = 20;
             this.label7.Text = "Últimas Ventas Realizadas";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Image = global::TRAMADE.Properties.Resources.vistaClientes2;
+            this.pictureBox2.Location = new System.Drawing.Point(81, 34);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(68, 67);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(19, 14);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(55, 36);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMenu.TabIndex = 6;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -832,7 +862,6 @@
             this.SizeChanged += new System.EventHandler(this.frmMenuPrincipal_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.flpBarraLateral.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -852,7 +881,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gbClientes)).EndInit();
             this.gbClientes.ResumeLayout(false);
             this.pnlBarraFondo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbGestionInven.Panel)).EndInit();
             this.gbGestionInven.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gbGestionInven)).EndInit();
@@ -875,6 +903,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gbVentasRealizadas)).EndInit();
             this.gbVentasRealizadas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ResumeLayout(false);
 
         }

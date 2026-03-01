@@ -223,6 +223,16 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Maximizar {
+            get {
+                object obj = ResourceManager.GetObject("Maximizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Menu {
             get {
                 object obj = ResourceManager.GetObject("Menu", resourceCulture);
@@ -236,6 +246,16 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap Menu1 {
             get {
                 object obj = ResourceManager.GetObject("Menu1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Minimizar {
+            get {
+                object obj = ResourceManager.GetObject("Minimizar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +326,16 @@ namespace TRAMADE.Properties {
         internal static System.Drawing.Bitmap Ventas {
             get {
                 object obj = ResourceManager.GetObject("Ventas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ventasrealizadas {
+            get {
+                object obj = ResourceManager.GetObject("ventasrealizadas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

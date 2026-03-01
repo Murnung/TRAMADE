@@ -56,7 +56,7 @@
             // btnIngresar
             // 
             this.btnIngresar.Location = new System.Drawing.Point(611, 335);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.btnIngresar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -86,7 +86,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-8, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 473);
             this.panel1.TabIndex = 11;
@@ -94,7 +94,7 @@
             // kryptonLabel1
             // 
             this.kryptonLabel1.Location = new System.Drawing.Point(116, 322);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(304, 129);
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,10 +107,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(85, 36);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Logo_de_la_empresa;
+            this.pictureBox1.Location = new System.Drawing.Point(60, 40);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 249);
+            this.pictureBox1.Size = new System.Drawing.Size(360, 306);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -119,7 +120,7 @@
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(464, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(492, 468);
             this.panel2.TabIndex = 0;
@@ -127,7 +128,7 @@
             // labelBienvenida
             // 
             this.labelBienvenida.Location = new System.Drawing.Point(581, 48);
-            this.labelBienvenida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelBienvenida.Margin = new System.Windows.Forms.Padding(4);
             this.labelBienvenida.Name = "labelBienvenida";
             this.labelBienvenida.Size = new System.Drawing.Size(273, 56);
             this.labelBienvenida.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,7 +143,7 @@
             // 
             this.txtUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtUsuario.Location = new System.Drawing.Point(575, 139);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(289, 30);
             this.txtUsuario.StateActive.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
@@ -162,7 +163,7 @@
             // 
             this.txtPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtPassword.Location = new System.Drawing.Point(575, 214);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(289, 30);
             this.txtPassword.StateActive.Border.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterLeft;
@@ -180,7 +181,7 @@
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(611, 410);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
             this.btnSalir.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
@@ -206,7 +207,7 @@
             // lkRestablecer
             // 
             this.lkRestablecer.Location = new System.Drawing.Point(785, 288);
-            this.lkRestablecer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lkRestablecer.Margin = new System.Windows.Forms.Padding(4);
             this.lkRestablecer.Name = "lkRestablecer";
             this.lkRestablecer.Size = new System.Drawing.Size(119, 25);
             this.lkRestablecer.StateCommon.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
