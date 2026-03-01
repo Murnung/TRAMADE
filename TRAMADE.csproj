@@ -237,5 +237,26 @@
   <ItemGroup>
     <None Include="Resources\GES.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Iconos\Cerrar.png" />
+    <Content Include="Resources\Iconos\Clientes.png" />
+    <Content Include="Resources\Iconos\Compras.png" />
+    <Content Include="Resources\Iconos\comprasrealizadas.png" />
+    <Content Include="Resources\Iconos\Contraseña.png" />
+    <Content Include="Resources\Iconos\Home.png" />
+    <Content Include="Resources\Iconos\Inventario.png" />
+    <Content Include="Resources\Iconos\Maximizar.png" />
+    <Content Include="Resources\Iconos\Menu.png" />
+    <Content Include="Resources\Iconos\Minimizar.png" />
+    <Content Include="Resources\Iconos\Productosagotados.png" />
+    <Content Include="Resources\Iconos\Proveedores.png" />
+    <Content Include="Resources\Iconos\Reportes.png" />
+    <Content Include="Resources\Iconos\totalproductos.png" />
+    <Content Include="Resources\Iconos\Usuario.png" />
+    <Content Include="Resources\Iconos\Ventas.png" />
+    <Content Include="Resources\Iconos\ventasrealizadas.png" />
+    <Content Include="Resources\Iconos\vistaClientes.png" />
+    <Content Include="Resources\Iconos\vistaClientes2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
