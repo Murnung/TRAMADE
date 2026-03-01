@@ -64,6 +64,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -75,13 +76,11 @@
             // 
             // kryptonGroup1
             // 
-            this.kryptonGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonGroup1.Location = new System.Drawing.Point(27, 39);
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.btnRegresar);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbCiudad);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbDepartamento);
             this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
@@ -116,7 +115,7 @@
             this.kryptonGroup1.Panel.Controls.Add(this.txtFecha);
             this.kryptonGroup1.Panel.Controls.Add(this.label5);
             this.kryptonGroup1.Panel.Controls.Add(this.label16);
-            this.kryptonGroup1.Size = new System.Drawing.Size(763, 549);
+            this.kryptonGroup1.Size = new System.Drawing.Size(804, 582);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
@@ -249,9 +248,9 @@
             // kryptonTextBox1
             // 
             this.kryptonTextBox1.Enabled = false;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(258, 3);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(238, 3);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(469, 56);
+            this.kryptonTextBox1.Size = new System.Drawing.Size(342, 56);
             this.kryptonTextBox1.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
             this.kryptonTextBox1.StateActive.Border.Color1 = System.Drawing.Color.Transparent;
             this.kryptonTextBox1.StateActive.Border.Color2 = System.Drawing.Color.Transparent;
@@ -586,14 +585,45 @@
             this.label32.TabIndex = 1;
             this.label32.Text = "TMSS.SW";
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(666, 3);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.Size = new System.Drawing.Size(100, 25);
+            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Width = 2;
+            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
+            this.btnRegresar.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.TabIndex = 43;
+            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegresar.Values.Text = "Regresar";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(908, 594);
+            this.ClientSize = new System.Drawing.Size(857, 636);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.kryptonGroup1);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRegistro";
             this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
@@ -647,5 +677,6 @@
         private Krypton.Toolkit.KryptonTextBox txtDNI;
         private Krypton.Toolkit.KryptonComboBox cmbDepartamento;
         private Krypton.Toolkit.KryptonComboBox cmbCiudad;
+        private Krypton.Toolkit.KryptonButton btnRegresar;
     }
 }

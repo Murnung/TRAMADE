@@ -62,7 +62,7 @@
             this.kryptonGroup1.Panel.Controls.Add(this.label2);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
             this.kryptonGroup1.Panel.Controls.Add(this.txtBuscar);
-            this.kryptonGroup1.Size = new System.Drawing.Size(701, 372);
+            this.kryptonGroup1.Size = new System.Drawing.Size(701, 465);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 0;
@@ -117,7 +117,7 @@
             this.dgvAprobacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAprobacion.Location = new System.Drawing.Point(38, 158);
             this.dgvAprobacion.Name = "dgvAprobacion";
-            this.dgvAprobacion.Size = new System.Drawing.Size(541, 189);
+            this.dgvAprobacion.Size = new System.Drawing.Size(638, 282);
             this.dgvAprobacion.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvAprobacion.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvAprobacion.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
@@ -245,7 +245,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 543);
             this.Controls.Add(this.kryptonGroup1);
             this.Controls.Add(this.label32);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
