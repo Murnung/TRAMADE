@@ -74,7 +74,7 @@
             this.cmbFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
             this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltrar.FormattingEnabled = true;
-            this.cmbFiltrar.Location = new System.Drawing.Point(385, 27);
+            this.cmbFiltrar.Location = new System.Drawing.Point(434, 27);
             this.cmbFiltrar.Name = "cmbFiltrar";
             this.cmbFiltrar.Size = new System.Drawing.Size(171, 24);
             this.cmbFiltrar.TabIndex = 1;
@@ -83,7 +83,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnRegistrar.Location = new System.Drawing.Point(600, 26);
+            this.btnRegistrar.Location = new System.Drawing.Point(705, 26);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(81, 25);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -96,7 +96,7 @@
             // btnEditar
             // 
             this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEditar.Location = new System.Drawing.Point(706, 26);
+            this.btnEditar.Location = new System.Drawing.Point(811, 26);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(81, 25);
             this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -109,7 +109,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEliminar.Location = new System.Drawing.Point(810, 26);
+            this.btnEliminar.Location = new System.Drawing.Point(915, 26);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(81, 25);
             this.btnEliminar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
@@ -123,7 +123,7 @@
             // 
             this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(1024, 14);
+            this.lblFecha.Location = new System.Drawing.Point(1160, 14);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(100, 23);
             this.lblFecha.TabIndex = 5;
@@ -133,7 +133,7 @@
             // btnRegresar
             // 
             this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnRegresar.Location = new System.Drawing.Point(24, 481);
+            this.btnRegresar.Location = new System.Drawing.Point(50, 484);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(81, 25);
             this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -145,7 +145,7 @@
             // btnExportarInventario
             // 
             this.btnExportarInventario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnExportarInventario.Location = new System.Drawing.Point(751, 479);
+            this.btnExportarInventario.Location = new System.Drawing.Point(858, 485);
             this.btnExportarInventario.Name = "btnExportarInventario";
             this.btnExportarInventario.Size = new System.Drawing.Size(175, 25);
             this.btnExportarInventario.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
@@ -158,7 +158,7 @@
             // lblPagina
             // 
             this.lblPagina.AutoSize = true;
-            this.lblPagina.Location = new System.Drawing.Point(985, 483);
+            this.lblPagina.Location = new System.Drawing.Point(1098, 488);
             this.lblPagina.Name = "lblPagina";
             this.lblPagina.Size = new System.Drawing.Size(89, 16);
             this.lblPagina.TabIndex = 9;
@@ -182,7 +182,7 @@
             this.dgvInventario.RowHeadersWidth = 51;
             this.dgvInventario.RowTemplate.Height = 24;
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInventario.Size = new System.Drawing.Size(1100, 329);
+            this.dgvInventario.Size = new System.Drawing.Size(1227, 327);
             this.dgvInventario.TabIndex = 12;
             this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellContentClick);
             this.dgvInventario.SelectionChanged += new System.EventHandler(this.dgvInventario_SelectionChanged);
@@ -192,7 +192,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
             this.panel2.Controls.Add(this.imgProducto);
             this.panel2.Controls.Add(this.lblNombreProducto);
-            this.panel2.Location = new System.Drawing.Point(201, 420);
+            this.panel2.Location = new System.Drawing.Point(242, 420);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(464, 104);
             this.panel2.TabIndex = 13;
@@ -221,7 +221,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(1080, 480);
+            this.btnSiguiente.Location = new System.Drawing.Point(1193, 485);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(28, 25);
             this.btnSiguiente.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
@@ -234,7 +234,7 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(952, 479);
+            this.btnAtras.Location = new System.Drawing.Point(1065, 484);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(27, 25);
             this.btnAtras.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
@@ -248,7 +248,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::TRAMADE.Properties.Resources.calendar_55281;
-            this.pictureBox3.Location = new System.Drawing.Point(958, 24);
+            this.pictureBox3.Location = new System.Drawing.Point(1080, 23);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(36, 25);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -269,7 +269,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 164);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1151, 185);
+            this.panel1.Size = new System.Drawing.Size(1289, 185);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -303,7 +303,7 @@
             // 
             this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHora.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(1024, 37);
+            this.lblHora.Location = new System.Drawing.Point(1160, 37);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(115, 23);
             this.lblHora.TabIndex = 20;
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 536);
+            this.ClientSize = new System.Drawing.Size(1284, 536);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.btnBuscar);

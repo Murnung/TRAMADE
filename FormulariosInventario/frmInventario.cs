@@ -76,6 +76,13 @@ namespace TRAMADE
             da.Fill(dt);
             dgvInventario.DataSource = dt;
 
+            dgvInventario.Columns["imagen_producto"].Visible = false;
+            dgvInventario.AllowUserToResizeColumns = false;
+            dgvInventario.AllowUserToResizeRows = false;
+            dgvInventario.ReadOnly = true;
+
+            AplicarAlertas();
+
             obj.Cerrar();
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -93,7 +100,7 @@ namespace TRAMADE
                 return;
             }
 
-            int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells[0].Value);
+            int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["ID"].Value);
 
             DialogResult confirmacion = MessageBox.Show("¿Estás seguro que deseas eliminar este producto?",
                                                         "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -146,7 +153,7 @@ namespace TRAMADE
                 return;
             }
 
-            int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells[0].Value);
+            int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["ID"].Value);
             frmEditarInv frm = new frmEditarInv(idProducto);
             frm.ShowDialog();
             CargarProductos();
@@ -190,6 +197,39 @@ namespace TRAMADE
 
         }
 
+        private void AplicarAlertas()
+        {
+            if (!dgvInventario.Columns.Contains("Alerta"))
+            {
+                DataGridViewTextBoxColumn colAlerta = new DataGridViewTextBoxColumn();
+                colAlerta.Name = "Alerta";
+                colAlerta.HeaderText = "Alerta";
+                dgvInventario.Columns.Add(colAlerta);
+            }
+
+            foreach (DataGridViewRow row in dgvInventario.Rows)
+            {
+                int stock = Convert.ToInt32(row.Cells["Stock"].Value);
+                if (stock <= 10)
+                {
+                    row.Cells["Alerta"].Value = "● Crítico";
+                    row.Cells["Alerta"].Style.ForeColor = Color.Red;
+                    row.Cells["Alerta"].Style.Font = new Font(dgvInventario.Font, FontStyle.Bold);
+                }
+                else if (stock <= 50)
+                {
+                    row.Cells["Alerta"].Value = "● Bajo";
+                    row.Cells["Alerta"].Style.ForeColor = Color.Orange;
+                    row.Cells["Alerta"].Style.Font = new Font(dgvInventario.Font, FontStyle.Bold);
+                }
+                else
+                {
+                    row.Cells["Alerta"].Value = "● Normal";
+                    row.Cells["Alerta"].Style.ForeColor = Color.Green;
+                    row.Cells["Alerta"].Style.Font = new Font(dgvInventario.Font, FontStyle.Bold);
+                }
+            }
+        }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
@@ -219,6 +259,9 @@ namespace TRAMADE
             DataTable dt = new DataTable();
             da.Fill(dt);
             dgvInventario.DataSource = dt;
+
+            dgvInventario.Columns["imagen_producto"].Visible = false;
+            AplicarAlertas();
 
             obj.Cerrar();
         }
@@ -268,13 +311,13 @@ namespace TRAMADE
             {
                 SaveFileDialog saveFile = new SaveFileDialog();
                 saveFile.Filter = "Excel Files|*.xlsx";
-                saveFile.FileName = "Inventario";
+                string fechaHoy = DateTime.Now.ToString("dd-MM-yyyy");
+                saveFile.FileName = "Inventario_" + fechaHoy;
 
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     ExcelPackage.License.SetNonCommercialPersonal("TRAMADE");
 
-                    // Traer TODOS los datos de la BD
                     clsConexion obj = new clsConexion();
                     obj.Abrir();
                     SqlCommand cmd = new SqlCommand("SELECT * FROM VistaProductosDetalle " + filtroActual, obj.SqlC);
@@ -283,26 +326,35 @@ namespace TRAMADE
                     da.Fill(dt);
                     obj.Cerrar();
 
+                    // Quitar columna imagen_producto
+                    if (dt.Columns.Contains("imagen_producto"))
+                        dt.Columns.Remove("imagen_producto");
+
                     using (ExcelPackage excel = new ExcelPackage())
                     {
                         ExcelWorksheet hoja = excel.Workbook.Worksheets.Add("Inventario");
 
-                        // Encabezados
+                        // Fecha de exportación
+                        hoja.Cells[1, 1].Value = "Fecha de exportación: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                        hoja.Cells[1, 1].Style.Font.Bold = true;
+                        hoja.Cells[1, 1, 1, dt.Columns.Count].Merge = true;
+
+                        // Encabezados en fila 2
                         for (int i = 0; i < dt.Columns.Count; i++)
                         {
-                            hoja.Cells[1, i + 1].Value = dt.Columns[i].ColumnName;
-                            hoja.Cells[1, i + 1].Style.Font.Bold = true;
-                            hoja.Cells[1, i + 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
-                            hoja.Cells[1, i + 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Brown);
-                            hoja.Cells[1, i + 1].Style.Font.Color.SetColor(System.Drawing.Color.White);
+                            hoja.Cells[2, i + 1].Value = dt.Columns[i].ColumnName;
+                            hoja.Cells[2, i + 1].Style.Font.Bold = true;
+                            hoja.Cells[2, i + 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                            hoja.Cells[2, i + 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Brown);
+                            hoja.Cells[2, i + 1].Style.Font.Color.SetColor(System.Drawing.Color.White);
                         }
 
-                        // Datos
+                        // Datos desde fila 3
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
                             for (int j = 0; j < dt.Columns.Count; j++)
                             {
-                                hoja.Cells[i + 2, j + 1].Value = dt.Rows[i][j];
+                                hoja.Cells[i + 3, j + 1].Value = dt.Rows[i][j];
                             }
                         }
 
