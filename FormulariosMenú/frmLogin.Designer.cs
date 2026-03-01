@@ -257,5 +257,6 @@
         private Krypton.Toolkit.KryptonLinkLabel lkRestablecer;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        
     }
 }
