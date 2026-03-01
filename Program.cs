@@ -16,7 +16,11 @@ namespace TRAMADE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frmMenuPrincipal());
+=======
+            Application.Run(new frmAdministrador());
+>>>>>>> origin/Administrador
         }
     }
 }
