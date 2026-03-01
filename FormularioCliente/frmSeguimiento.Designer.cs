@@ -40,7 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
-            this.dgvAprobacion = new Krypton.Toolkit.KryptonDataGridView();
+            this.dvgSeguimiento = new Krypton.Toolkit.KryptonDataGridView();
             this.btnBuscar = new Krypton.Toolkit.KryptonButton();
             this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
@@ -59,7 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kgActivos.Panel)).BeginInit();
             this.kgActivos.Panel.SuspendLayout();
             this.kgActivos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAprobacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
@@ -70,7 +70,7 @@
             // 
             this.kryptonGroup1.Panel.Controls.Add(this.label18);
             this.kryptonGroup1.Panel.Controls.Add(this.btnBuscar);
-            this.kryptonGroup1.Panel.Controls.Add(this.dgvAprobacion);
+            this.kryptonGroup1.Panel.Controls.Add(this.dvgSeguimiento);
             this.kryptonGroup1.Panel.Controls.Add(this.kgInactivos);
             this.kryptonGroup1.Panel.Controls.Add(this.kgRegistrados);
             this.kryptonGroup1.Panel.Controls.Add(this.kgActivos);
@@ -250,29 +250,29 @@
             this.txtBuscar.StateActive.Border.Width = 3;
             this.txtBuscar.TabIndex = 0;
             // 
-            // dgvAprobacion
+            // dvgSeguimiento
             // 
-            this.dgvAprobacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAprobacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAprobacion.Location = new System.Drawing.Point(41, 246);
-            this.dgvAprobacion.Name = "dgvAprobacion";
-            this.dgvAprobacion.Size = new System.Drawing.Size(641, 189);
-            this.dgvAprobacion.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.dgvAprobacion.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dgvAprobacion.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dgvAprobacion.StateCommon.HeaderColumn.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dgvAprobacion.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.HeaderRow.Border.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.TabIndex = 29;
+            this.dvgSeguimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dvgSeguimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgSeguimiento.Location = new System.Drawing.Point(41, 246);
+            this.dvgSeguimiento.Name = "dvgSeguimiento";
+            this.dvgSeguimiento.Size = new System.Drawing.Size(641, 189);
+            this.dvgSeguimiento.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dvgSeguimiento.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.dvgSeguimiento.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.dvgSeguimiento.StateCommon.HeaderColumn.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            this.dvgSeguimiento.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.HeaderRow.Border.Color2 = System.Drawing.Color.White;
+            this.dvgSeguimiento.TabIndex = 29;
             // 
             // btnBuscar
             // 
@@ -301,6 +301,7 @@
             this.btnBuscar.TabIndex = 38;
             this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnBuscar.Values.Text = "BUSCAR";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label18
             // 
@@ -323,6 +324,7 @@
             this.Controls.Add(this.kryptonGroup1);
             this.Name = "frmSeguimiento";
             this.Text = "frmSeguimiento";
+            this.Load += new System.EventHandler(this.frmSeguimiento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
             this.kryptonGroup1.Panel.ResumeLayout(false);
             this.kryptonGroup1.Panel.PerformLayout();
@@ -343,7 +345,7 @@
             this.kgActivos.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kgActivos)).EndInit();
             this.kgActivos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAprobacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,7 +364,7 @@
         private Krypton.Toolkit.KryptonGroup kgRegistrados;
         private Krypton.Toolkit.KryptonTextBox txtRegistrados;
         private System.Windows.Forms.Label label3;
-        private Krypton.Toolkit.KryptonDataGridView dgvAprobacion;
+        private Krypton.Toolkit.KryptonDataGridView dvgSeguimiento;
         private Krypton.Toolkit.KryptonButton btnBuscar;
         private System.Windows.Forms.Label label18;
     }

@@ -49,6 +49,7 @@ namespace TRAMADE
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvAprobacion.DataSource = dt;
+                dgvAprobacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 AgregarConlumnaCheck();
             }
             catch (Exception ex)
