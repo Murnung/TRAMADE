@@ -1,0 +1,718 @@
+﻿namespace TRAMADE
+{
+    partial class frmRegistro
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
+            this.cmbCiudad = new Krypton.Toolkit.KryptonComboBox();
+            this.cmbDepartamento = new Krypton.Toolkit.KryptonComboBox();
+            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
+            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
+            this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtCorreo = new Krypton.Toolkit.KryptonTextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtDireccion = new Krypton.Toolkit.KryptonTextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbTipoCliente = new Krypton.Toolkit.KryptonComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtNombre = new Krypton.Toolkit.KryptonTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtID = new Krypton.Toolkit.KryptonTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtFecha = new Krypton.Toolkit.KryptonTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
+            this.kryptonGroup1.Panel.SuspendLayout();
+            this.kryptonGroup1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // kryptonGroup1
+            // 
+            this.kryptonGroup1.Location = new System.Drawing.Point(36, 48);
+            this.kryptonGroup1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            // 
+            // kryptonGroup1.Panel
+            // 
+            this.kryptonGroup1.Panel.Controls.Add(this.btnRegresar);
+            this.kryptonGroup1.Panel.Controls.Add(this.cmbCiudad);
+            this.kryptonGroup1.Panel.Controls.Add(this.cmbDepartamento);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
+            this.kryptonGroup1.Panel.Controls.Add(this.label17);
+            this.kryptonGroup1.Panel.Controls.Add(this.label8);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtRTN);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
+            this.kryptonGroup1.Panel.Controls.Add(this.label7);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
+            this.kryptonGroup1.Panel.Controls.Add(this.label6);
+            this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox1);
+            this.kryptonGroup1.Panel.Controls.Add(this.btnRegistrar);
+            this.kryptonGroup1.Panel.Controls.Add(this.btnLimpiar);
+            this.kryptonGroup1.Panel.Controls.Add(this.label31);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtCorreo);
+            this.kryptonGroup1.Panel.Controls.Add(this.label15);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDireccion);
+            this.kryptonGroup1.Panel.Controls.Add(this.label14);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtContacto);
+            this.kryptonGroup1.Panel.Controls.Add(this.label13);
+            this.kryptonGroup1.Panel.Controls.Add(this.label12);
+            this.kryptonGroup1.Panel.Controls.Add(this.label11);
+            this.kryptonGroup1.Panel.Controls.Add(this.label10);
+            this.kryptonGroup1.Panel.Controls.Add(this.cmbTipoCliente);
+            this.kryptonGroup1.Panel.Controls.Add(this.label9);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtNombre);
+            this.kryptonGroup1.Panel.Controls.Add(this.label4);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtID);
+            this.kryptonGroup1.Panel.Controls.Add(this.label3);
+            this.kryptonGroup1.Panel.Controls.Add(this.label2);
+            this.kryptonGroup1.Panel.Controls.Add(this.label1);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtFecha);
+            this.kryptonGroup1.Panel.Controls.Add(this.label5);
+            this.kryptonGroup1.Panel.Controls.Add(this.label16);
+            this.kryptonGroup1.Size = new System.Drawing.Size(1072, 716);
+            this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
+            this.kryptonGroup1.TabIndex = 0;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(919, 4);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.Size = new System.Drawing.Size(120, 31);
+            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Width = 2;
+            this.btnRegresar.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.TabIndex = 43;
+            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegresar.Values.Text = "Regresar";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
+            // 
+            // cmbCiudad
+            // 
+            this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiudad.DropDownWidth = 123;
+            this.cmbCiudad.Location = new System.Drawing.Point(724, 537);
+            this.cmbCiudad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCiudad.Name = "cmbCiudad";
+            this.cmbCiudad.Size = new System.Drawing.Size(196, 40);
+            this.cmbCiudad.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCiudad.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.cmbCiudad.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.cmbCiudad.StateCommon.ComboBox.Border.Rounding = 10F;
+            this.cmbCiudad.StateCommon.ComboBox.Border.Width = 4;
+            this.cmbCiudad.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbCiudad.TabIndex = 32;
+            this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.cmbCiudad_SelectedIndexChanged);
+            // 
+            // cmbDepartamento
+            // 
+            this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDepartamento.DropDownWidth = 123;
+            this.cmbDepartamento.Location = new System.Drawing.Point(215, 533);
+            this.cmbDepartamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDepartamento.Name = "cmbDepartamento";
+            this.cmbDepartamento.Size = new System.Drawing.Size(196, 40);
+            this.cmbDepartamento.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDepartamento.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.cmbDepartamento.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.cmbDepartamento.StateCommon.ComboBox.Border.Rounding = 10F;
+            this.cmbDepartamento.StateCommon.ComboBox.Border.Width = 4;
+            this.cmbDepartamento.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbDepartamento.TabIndex = 31;
+            this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Enabled = false;
+            this.txtDNI.Location = new System.Drawing.Point(724, 315);
+            this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(196, 39);
+            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtDNI.StateActive.Border.Rounding = 10F;
+            this.txtDNI.StateActive.Border.Width = 4;
+            this.txtDNI.TabIndex = 30;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label17.Location = new System.Drawing.Point(520, 254);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(61, 58);
+            this.label17.TabIndex = 29;
+            this.label17.Text = "RTN";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label8.Location = new System.Drawing.Point(520, 315);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 58);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "DNI";
+            // 
+            // txtRTN
+            // 
+            this.txtRTN.Enabled = false;
+            this.txtRTN.Location = new System.Drawing.Point(724, 254);
+            this.txtRTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRTN.Name = "txtRTN";
+            this.txtRTN.Size = new System.Drawing.Size(196, 39);
+            this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtRTN.StateActive.Border.Rounding = 10F;
+            this.txtRTN.StateActive.Border.Width = 4;
+            this.txtRTN.TabIndex = 27;
+            this.txtRTN.TextChanged += new System.EventHandler(this.txtRTN_TextChanged);
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.Enabled = false;
+            this.txtRazonSocial.Location = new System.Drawing.Point(215, 304);
+            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(196, 39);
+            this.txtRazonSocial.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtRazonSocial.StateActive.Border.Rounding = 10F;
+            this.txtRazonSocial.StateActive.Border.Width = 4;
+            this.txtRazonSocial.TabIndex = 26;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label7.Location = new System.Drawing.Point(4, 304);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(133, 58);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Razón social";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(215, 482);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(196, 39);
+            this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtTelefono.StateActive.Border.Rounding = 10F;
+            this.txtTelefono.StateActive.Border.Width = 4;
+            this.txtTelefono.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label6.Location = new System.Drawing.Point(25, 482);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(193, 58);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Teléfono personal*";
+            // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Enabled = false;
+            this.kryptonTextBox1.Location = new System.Drawing.Point(344, 4);
+            this.kryptonTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(456, 67);
+            this.kryptonTextBox1.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.kryptonTextBox1.StateActive.Border.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateActive.Border.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateActive.Border.Rounding = 10F;
+            this.kryptonTextBox1.StateActive.Border.Width = 4;
+            this.kryptonTextBox1.StateActive.Content.Color1 = System.Drawing.Color.Black;
+            this.kryptonTextBox1.StateActive.Content.Font = new System.Drawing.Font("Sans Serif Collection", 8F, System.Drawing.FontStyle.Bold);
+            this.kryptonTextBox1.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.kryptonTextBox1.StateDisabled.Border.Color1 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateDisabled.Border.Color2 = System.Drawing.Color.Transparent;
+            this.kryptonTextBox1.StateDisabled.Border.Rounding = 10F;
+            this.kryptonTextBox1.StateDisabled.Border.Width = 4;
+            this.kryptonTextBox1.StateDisabled.Content.Color1 = System.Drawing.Color.Black;
+            this.kryptonTextBox1.StateDisabled.Content.Font = new System.Drawing.Font("Sans Serif Collection", 8F, System.Drawing.FontStyle.Bold);
+            this.kryptonTextBox1.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
+            this.kryptonTextBox1.TabIndex = 22;
+            this.kryptonTextBox1.Text = "Estimado usuario los campos con (*) son necesarios.";
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(760, 606);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRegistrar.Size = new System.Drawing.Size(204, 39);
+            this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegistrar.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegistrar.StateCommon.Border.Rounding = 25F;
+            this.btnRegistrar.StateCommon.Border.Width = 1;
+            this.btnRegistrar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnRegistrar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnRegistrar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRegistrar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRegistrar.TabIndex = 21;
+            this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegistrar.Values.Text = "REGISTRAR Y ENVIAR";
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(583, 606);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.Size = new System.Drawing.Size(145, 39);
+            this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.btnLimpiar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.btnLimpiar.StateCommon.Border.Rounding = 25F;
+            this.btnLimpiar.StateCommon.Border.Width = 1;
+            this.btnLimpiar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StateNormal.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StateNormal.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StatePressed.Back.Color1 = System.Drawing.Color.White;
+            this.btnLimpiar.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.btnLimpiar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.TabIndex = 20;
+            this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnLimpiar.Values.Text = "LIMPIAR";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label31.Location = new System.Drawing.Point(523, 543);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(97, 58);
+            this.label31.TabIndex = 18;
+            this.label31.Text = "Ciudad*";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(724, 412);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(196, 39);
+            this.txtCorreo.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtCorreo.StateActive.Border.Rounding = 10F;
+            this.txtCorreo.StateActive.Border.Width = 4;
+            this.txtCorreo.TabIndex = 17;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label15.Location = new System.Drawing.Point(523, 412);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(198, 58);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Correo electrónico*";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(724, 470);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(196, 39);
+            this.txtDireccion.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtDireccion.StateActive.Border.Rounding = 10F;
+            this.txtDireccion.StateActive.Border.Width = 4;
+            this.txtDireccion.TabIndex = 15;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label14.Location = new System.Drawing.Point(523, 470);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(118, 58);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Dirección*";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // txtContacto
+            // 
+            this.txtContacto.Location = new System.Drawing.Point(215, 418);
+            this.txtContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContacto.Name = "txtContacto";
+            this.txtContacto.Size = new System.Drawing.Size(196, 39);
+            this.txtContacto.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtContacto.StateActive.Border.Rounding = 10F;
+            this.txtContacto.StateActive.Border.Width = 4;
+            this.txtContacto.TabIndex = 13;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label13.Location = new System.Drawing.Point(25, 428);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(115, 58);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Contacto*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.label12.Location = new System.Drawing.Point(11, 390);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(143, 20);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Datos de Contacto";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Location = new System.Drawing.Point(-19, 358);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(952, 32);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "_________________________________________________________________________________" +
+    "______________________________________________________\r\n\r\n";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.label10.Location = new System.Drawing.Point(4, 142);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(206, 20);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Datos principales del cliente";
+            // 
+            // cmbTipoCliente
+            // 
+            this.cmbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoCliente.DropDownWidth = 123;
+            this.cmbTipoCliente.Location = new System.Drawing.Point(724, 196);
+            this.cmbTipoCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoCliente.Name = "cmbTipoCliente";
+            this.cmbTipoCliente.Size = new System.Drawing.Size(196, 40);
+            this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoCliente.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.cmbTipoCliente.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.cmbTipoCliente.StateCommon.ComboBox.Border.Rounding = 10F;
+            this.cmbTipoCliente.StateCommon.ComboBox.Border.Width = 4;
+            this.cmbTipoCliente.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbTipoCliente.TabIndex = 8;
+            this.cmbTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cmbTipoCliente_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label9.Location = new System.Drawing.Point(520, 199);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(160, 58);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Tipo de cliente*";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(215, 246);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(196, 39);
+            this.txtNombre.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtNombre.StateActive.Border.Rounding = 10F;
+            this.txtNombre.StateActive.Border.Width = 4;
+            this.txtNombre.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label4.Location = new System.Drawing.Point(520, 126);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(176, 58);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Fecha de registro";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(215, 185);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(196, 39);
+            this.txtID.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtID.StateActive.Border.Rounding = 10F;
+            this.txtID.StateActive.Border.Width = 4;
+            this.txtID.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label3.Location = new System.Drawing.Point(0, 185);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 58);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "ID de cliente ";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(-19, 94);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(952, 32);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "_________________________________________________________________________________" +
+    "______________________________________________________\r\n\r\n";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 10.6F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(3, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 62);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "REGISTRO DE NUEVO CLIENTE";
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Location = new System.Drawing.Point(724, 126);
+            this.txtFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(196, 39);
+            this.txtFecha.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtFecha.StateActive.Border.Rounding = 10F;
+            this.txtFecha.StateActive.Border.Width = 4;
+            this.txtFecha.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label5.Location = new System.Drawing.Point(-3, 242);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(195, 58);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Nombre de cliente*";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.label16.Location = new System.Drawing.Point(25, 537);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(165, 58);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "Departamento*";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(92, 14);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(140, 31);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "TMSS.SW";
+            // 
+            // frmRegistro
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.ClientSize = new System.Drawing.Size(1143, 783);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.kryptonGroup1);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmRegistro";
+            this.Text = " ";
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
+            this.kryptonGroup1.Panel.ResumeLayout(false);
+            this.kryptonGroup1.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
+            this.kryptonGroup1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private Krypton.Toolkit.KryptonGroup kryptonGroup1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private Krypton.Toolkit.KryptonTextBox txtID;
+        private System.Windows.Forms.Label label3;
+        private Krypton.Toolkit.KryptonComboBox cmbTipoCliente;
+        private System.Windows.Forms.Label label9;
+        private Krypton.Toolkit.KryptonTextBox txtNombre;
+        private System.Windows.Forms.Label label4;
+        private Krypton.Toolkit.KryptonTextBox txtFecha;
+        private System.Windows.Forms.Label label5;
+        private Krypton.Toolkit.KryptonTextBox txtCorreo;
+        private System.Windows.Forms.Label label15;
+        private Krypton.Toolkit.KryptonTextBox txtDireccion;
+        private System.Windows.Forms.Label label14;
+        private Krypton.Toolkit.KryptonTextBox txtContacto;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label31;
+        private Krypton.Toolkit.KryptonButton btnRegistrar;
+        private Krypton.Toolkit.KryptonButton btnLimpiar;
+        private System.Windows.Forms.Label label32;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox txtTelefono;
+        private System.Windows.Forms.Label label6;
+        private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private Krypton.Toolkit.KryptonTextBox txtRTN;
+        private System.Windows.Forms.Label label17;
+        private Krypton.Toolkit.KryptonTextBox txtDNI;
+        private Krypton.Toolkit.KryptonComboBox cmbDepartamento;
+        private Krypton.Toolkit.KryptonComboBox cmbCiudad;
+        private Krypton.Toolkit.KryptonButton btnRegresar;
+    }
+}
