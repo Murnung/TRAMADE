@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.ClasesInventario;
 
 namespace TRAMADE
 {
@@ -124,12 +125,27 @@ namespace TRAMADE
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            // Validaciones
+            if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStock))
+                return;
+
+            if (!clsValidaciones.ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal))
+                return;
+
+            if (!clsValidaciones.ValidarDecimal(txtPrecio))
+                return;
+
+            if (!clsValidaciones.ValidarDecimal(txtPrecioCosto))
+                return;
+
+            if (!clsValidaciones.ValidarEntero(txtStock))
+                return;
+
             clsConexion obj = new clsConexion();
             obj.Abrir();
 
             try
             {
-                // Obtener IDs
                 SqlCommand cmdCat = new SqlCommand("SELECT id_categoria FROM CATEGORIA WHERE nombre_categoria = @nombre", obj.SqlC);
                 cmdCat.Parameters.AddWithValue("@nombre", cmbCategoria.SelectedItem.ToString());
                 int idCategoria = (int)cmdCat.ExecuteScalar();
@@ -142,7 +158,6 @@ namespace TRAMADE
                 cmdSuc.Parameters.AddWithValue("@nombre", cmbSucursal.SelectedItem.ToString());
                 int idSucursal = (int)cmdSuc.ExecuteScalar();
 
-                // UPDATE PRODUCTO
                 SqlCommand cmdProd = new SqlCommand("UPDATE PRODUCTO SET nombre_producto = @nombre, id_categoria = @idCat, " +
                                                     "precio_unitario = @precio, precio_costo = @costo, imagen_producto = @imagen WHERE id_producto = @id", obj.SqlC);
                 cmdProd.Parameters.AddWithValue("@nombre", txtNombreProducto.Text);
@@ -156,25 +171,23 @@ namespace TRAMADE
                 cmdProd.Parameters.AddWithValue("@id", _idProducto);
                 cmdProd.ExecuteNonQuery();
 
-                // UPDATE PRODUCTO_PROVEEDOR
                 SqlCommand cmdPP = new SqlCommand("UPDATE PRODUCTO_PROVEEDOR SET id_proveedor = @idProv WHERE id_producto = @id", obj.SqlC);
                 cmdPP.Parameters.AddWithValue("@idProv", idProveedor);
                 cmdPP.Parameters.AddWithValue("@id", _idProducto);
                 cmdPP.ExecuteNonQuery();
 
-                // UPDATE PRODUCTO_SUCURSAL
                 SqlCommand cmdPS = new SqlCommand("UPDATE PRODUCTO_SUCURSAL SET id_sucursal = @idSuc, cantidad_stock = @stock WHERE id_producto = @id", obj.SqlC);
                 cmdPS.Parameters.AddWithValue("@idSuc", idSucursal);
-                cmdPS.Parameters.AddWithValue("@stock", txtStock.Text);
+                cmdPS.Parameters.AddWithValue("@stock", int.Parse(txtStock.Text));
                 cmdPS.Parameters.AddWithValue("@id", _idProducto);
                 cmdPS.ExecuteNonQuery();
 
-                MessageBox.Show("Producto actualizado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clsMensajes.Exito("Producto actualizado correctamente");
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clsMensajes.Error("Error: " + ex.Message);
             }
             finally
             {

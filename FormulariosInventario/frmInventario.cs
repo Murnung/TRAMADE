@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.ClasesInventario;
 
 namespace TRAMADE
 {
@@ -36,6 +37,9 @@ namespace TRAMADE
             dgvInventario.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
             dgvInventario.DefaultCellStyle.SelectionForeColor = Color.White;
 
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+
 
             CargarProductos();
 
@@ -58,22 +62,11 @@ namespace TRAMADE
 
         private void CargarProductos()
         {
-            clsConexion obj = new clsConexion();
-            obj.Abrir();
-
-            SqlCommand cmdCount = new SqlCommand("SELECT COUNT(*) FROM VistaProductosDetalle", obj.SqlC);
-            int totalRegistros = (int)cmdCount.ExecuteScalar();
+            int totalRegistros = clsProductoDAL.ContarProductos();
             totalPaginas = (int)Math.Ceiling((double)totalRegistros / registrosPorPagina);
             lblPagina.Text = "Página " + paginaActual + " de " + totalPaginas;
 
-            int offset = (paginaActual - 1) * registrosPorPagina;
-            SqlCommand cmd = new SqlCommand("SELECT * FROM VistaProductosDetalle " + filtroActual + " OFFSET @offset ROWS FETCH NEXT @cantidad ROWS ONLY", obj.SqlC);
-            cmd.Parameters.AddWithValue("@offset", offset);
-            cmd.Parameters.AddWithValue("@cantidad", registrosPorPagina);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = clsProductoDAL.ObtenerProductos(filtroActual, paginaActual, registrosPorPagina);
             dgvInventario.DataSource = dt;
 
             dgvInventario.Columns["imagen_producto"].Visible = false;
@@ -82,8 +75,6 @@ namespace TRAMADE
             dgvInventario.ReadOnly = true;
 
             AplicarAlertas();
-
-            obj.Cerrar();
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -96,51 +87,23 @@ namespace TRAMADE
         {
             if (dgvInventario.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Selecciona un producto para eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                clsMensajes.Aviso("Selecciona un producto para eliminar");
                 return;
             }
 
             int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["ID"].Value);
 
-            DialogResult confirmacion = MessageBox.Show("¿Estás seguro que deseas eliminar este producto?",
-                                                        "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (confirmacion == DialogResult.Yes)
+            if (clsMensajes.Confirmar("¿Estás seguro que deseas eliminar este producto?"))
             {
-                clsConexion obj = new clsConexion();
-                obj.Abrir();
-
                 try
                 {
-                    // Eliminar de DETALLE_COMPRA primero
-                    SqlCommand cmdDC = new SqlCommand("DELETE FROM DETALLE_COMPRA WHERE id_producto = @id", obj.SqlC);
-                    cmdDC.Parameters.AddWithValue("@id", idProducto);
-                    cmdDC.ExecuteNonQuery();
-
-                    // Eliminar de PRODUCTO_PROVEEDOR
-                    SqlCommand cmdPP = new SqlCommand("DELETE FROM PRODUCTO_PROVEEDOR WHERE id_producto = @id", obj.SqlC);
-                    cmdPP.Parameters.AddWithValue("@id", idProducto);
-                    cmdPP.ExecuteNonQuery();
-
-                    // Eliminar de PRODUCTO_SUCURSAL
-                    SqlCommand cmdPS = new SqlCommand("DELETE FROM PRODUCTO_SUCURSAL WHERE id_producto = @id", obj.SqlC);
-                    cmdPS.Parameters.AddWithValue("@id", idProducto);
-                    cmdPS.ExecuteNonQuery();
-
-                    // Eliminar de PRODUCTO
-                    SqlCommand cmdProd = new SqlCommand("DELETE FROM PRODUCTO WHERE id_producto = @id", obj.SqlC);
-                    cmdProd.Parameters.AddWithValue("@id", idProducto);
-                    cmdProd.ExecuteNonQuery();
-
-                    MessageBox.Show("Producto eliminado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clsProductoDAL.EliminarProducto(idProducto);
+                    clsMensajes.Exito("Producto eliminado correctamente");
                     CargarProductos();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    obj.Cerrar();
+                    clsMensajes.Error("Error: " + ex.Message);
                 }
             }
         }
@@ -149,7 +112,7 @@ namespace TRAMADE
         {
             if (dgvInventario.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Selecciona un producto para editar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                clsMensajes.Aviso("Selecciona un producto para editar");
                 return;
             }
 
@@ -238,32 +201,10 @@ namespace TRAMADE
                 return;
             }
 
-            clsConexion obj = new clsConexion();
-            obj.Abrir();
-
-            SqlCommand cmd;
-
-            int idBuscar;
-            if (int.TryParse(txtBuscar.Text, out idBuscar))
-            {
-                cmd = new SqlCommand("SELECT * FROM VistaProductosDetalle WHERE ID = @buscar", obj.SqlC);
-                cmd.Parameters.AddWithValue("@buscar", idBuscar);
-            }
-            else
-            {
-                cmd = new SqlCommand("SELECT * FROM VistaProductosDetalle WHERE Nombre LIKE @buscarNombre", obj.SqlC);
-                cmd.Parameters.AddWithValue("@buscarNombre", "%" + txtBuscar.Text + "%");
-            }
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = clsProductoDAL.BuscarProductos(txtBuscar.Text);
             dgvInventario.DataSource = dt;
-
             dgvInventario.Columns["imagen_producto"].Visible = false;
             AplicarAlertas();
-
-            obj.Cerrar();
         }
 
         private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
@@ -394,7 +335,11 @@ namespace TRAMADE
 
         private void dgvInventario_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvInventario.SelectedRows.Count > 0)
+            bool haySeleccion = dgvInventario.SelectedRows.Count > 0;
+            btnEditar.Enabled = haySeleccion;
+            btnEliminar.Enabled = haySeleccion;
+
+            if (haySeleccion)
             {
                 string nombre = dgvInventario.SelectedRows[0].Cells["Nombre"].Value?.ToString();
                 lblNombreProducto.Text = nombre;
@@ -412,7 +357,7 @@ namespace TRAMADE
                 }
                 else
                 {
-                    imgProducto.Image = imgProducto.InitialImage;
+                    imgProducto.Image = Properties.Resources.photo_89244411;
                 }
             }
         }

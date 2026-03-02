@@ -85,6 +85,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesInventario\clsMensajes.cs" />
+    <Compile Include="ClasesInventario\clsProducto.cs" />
+    <Compile Include="ClasesInventario\clsProductoDAL.cs" />
+    <Compile Include="ClasesInventario\clsValidaciones.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.ClasesInventario;
 
 namespace TRAMADE
 {
@@ -72,27 +73,39 @@ namespace TRAMADE
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            // Validaciones
+            if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial))
+                return;
+
+            if (!clsValidaciones.ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal))
+                return;
+
+            if (!clsValidaciones.ValidarDecimal(txtPrecio))
+                return;
+
+            if (!clsValidaciones.ValidarDecimal(txtPrecioCosto))
+                return;
+
+            if (!clsValidaciones.ValidarEntero(txtStockInicial))
+                return;
+
             clsConexion obj = new clsConexion();
             obj.Abrir();
 
             try
             {
-                // Obtener ID de Categoría
                 SqlCommand cmdCat = new SqlCommand("SELECT id_categoria FROM CATEGORIA WHERE nombre_categoria = @nombre", obj.SqlC);
                 cmdCat.Parameters.AddWithValue("@nombre", cmbCategoria.SelectedItem.ToString());
                 int idCategoria = (int)cmdCat.ExecuteScalar();
 
-                // Obtener ID de Proveedor
                 SqlCommand cmdProv = new SqlCommand("SELECT id_proveedor FROM PROVEEDOR WHERE nombre_comercial_proveedor = @nombre", obj.SqlC);
                 cmdProv.Parameters.AddWithValue("@nombre", cmbProveedor.SelectedItem.ToString());
                 int idProveedor = (int)cmdProv.ExecuteScalar();
 
-                // Obtener ID de Sucursal
                 SqlCommand cmdSuc = new SqlCommand("SELECT id_sucursal FROM SUCURSAL WHERE nombre_sucursal = @nombre", obj.SqlC);
                 cmdSuc.Parameters.AddWithValue("@nombre", cmbSucursal.SelectedItem.ToString());
                 int idSucursal = (int)cmdSuc.ExecuteScalar();
 
-                // INSERT en PRODUCTO con imagen
                 SqlCommand cmdProd = new SqlCommand("INSERT INTO PRODUCTO (nombre_producto, id_categoria, precio_unitario, precio_costo, imagen_producto) " +
                                                     "VALUES (@nombre, @idCat, @precio, @costo, @imagen); SELECT SCOPE_IDENTITY();", obj.SqlC);
                 cmdProd.Parameters.AddWithValue("@nombre", txtNombreProducto.Text);
@@ -105,27 +118,23 @@ namespace TRAMADE
                     cmdProd.Parameters.Add("@imagen", System.Data.SqlDbType.VarBinary).Value = DBNull.Value;
                 int nuevoID = Convert.ToInt32(cmdProd.ExecuteScalar());
 
-                // INSERT en PRODUCTO_PROVEEDOR
-                SqlCommand cmdPP = new SqlCommand("INSERT INTO PRODUCTO_PROVEEDOR (id_producto, id_proveedor) " +
-                                                  "VALUES (@idProd, @idProv)", obj.SqlC);
+                SqlCommand cmdPP = new SqlCommand("INSERT INTO PRODUCTO_PROVEEDOR (id_producto, id_proveedor) VALUES (@idProd, @idProv)", obj.SqlC);
                 cmdPP.Parameters.AddWithValue("@idProd", nuevoID);
                 cmdPP.Parameters.AddWithValue("@idProv", idProveedor);
                 cmdPP.ExecuteNonQuery();
 
-                // INSERT en PRODUCTO_SUCURSAL
-                SqlCommand cmdPS = new SqlCommand("INSERT INTO PRODUCTO_SUCURSAL (id_producto, id_sucursal, cantidad_stock) " +
-                                                  "VALUES (@idProd, @idSuc, @stock)", obj.SqlC);
+                SqlCommand cmdPS = new SqlCommand("INSERT INTO PRODUCTO_SUCURSAL (id_producto, id_sucursal, cantidad_stock) VALUES (@idProd, @idSuc, @stock)", obj.SqlC);
                 cmdPS.Parameters.AddWithValue("@idProd", nuevoID);
                 cmdPS.Parameters.AddWithValue("@idSuc", idSucursal);
-                cmdPS.Parameters.AddWithValue("@stock", txtStockInicial.Text);
+                cmdPS.Parameters.AddWithValue("@stock", int.Parse(txtStockInicial.Text));
                 cmdPS.ExecuteNonQuery();
 
-                MessageBox.Show("Producto registrado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clsMensajes.Exito("Producto registrado correctamente");
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clsMensajes.Error("Error: " + ex.Message);
             }
             finally
             {
