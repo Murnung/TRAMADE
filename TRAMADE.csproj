@@ -268,6 +268,51 @@
     <EmbeddedResource Include="FormulariosCliente\frmSeguimientoCliente.resx">
       <DependentUpon>frmSeguimientoCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Formularios_Facturacion\frmAggProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Facturacion\frmAggProducto.Designer.cs">
+      <DependentUpon>frmAggProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Facturacion\frmEmitirFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Facturacion\frmEmitirFactura.Designer.cs">
+      <DependentUpon>frmEmitirFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Facturacion\frmFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Facturacion\frmFacturacion.Designer.cs">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Facturacion\frmHistorialFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Facturacion\frmHistorialFacturas.Designer.cs">
+      <DependentUpon>frmHistorialFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios_Facturacion\frmVistaPrevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios_Facturacion\frmVistaPrevia.Designer.cs">
+      <DependentUpon>frmVistaPrevia.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formularios_Facturacion\frmAggProducto.resx">
+      <DependentUpon>frmAggProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Facturacion\frmEmitirFactura.resx">
+      <DependentUpon>frmEmitirFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Facturacion\frmFacturacion.resx">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Facturacion\frmHistorialFacturas.resx">
+      <DependentUpon>frmHistorialFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios_Facturacion\frmVistaPrevia.resx">
+      <DependentUpon>frmVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
