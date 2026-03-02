@@ -213,11 +213,11 @@
     <Compile Include="FormulariosCliente\frmRegistroNuevo.Designer.cs">
       <DependentUpon>frmRegistroNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosCliente\frmSeguimiento.cs">
+    <Compile Include="FormulariosCliente\frmSeguimientoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulariosCliente\frmSeguimiento.Designer.cs">
-      <DependentUpon>frmSeguimiento.cs</DependentUpon>
+    <Compile Include="FormulariosCliente\frmSeguimientoCliente.Designer.cs">
+      <DependentUpon>frmSeguimientoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -264,6 +264,7 @@
       <DependentUpon>frmAprobacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCliente\frmMenu.resx">
+<<<<<<< HEAD
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCliente\frmRegistro.resx">
@@ -361,3 +362,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
+=======
+      <DependentUpon>frmMenu.c
+>>>>>>> 19c427e5748f6114e6d5350ef7a3e6af41d2a371
