@@ -119,6 +119,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulariosCliente\frmSeguimientoCliente.cs" />
+    <Compile Include="FormulariosCliente\frmSeguimientoCliente.Designer.cs">
+      <DependentUpon>frmSeguimientoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulariosCompras\frmActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +223,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosCliente\frmSeguimientoCliente.resx">
+      <DependentUpon>frmSeguimientoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCompras\frmActualizar.resx">
       <DependentUpon>frmActualizar.cs</DependentUpon>
