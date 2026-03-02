@@ -91,9 +91,6 @@
             // 
             // gbVentasRealizadas
             // 
-            this.gbVentasRealizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbVentasRealizadas.CaptionVisible = false;
             this.gbVentasRealizadas.Location = new System.Drawing.Point(465, 451);
             // 
@@ -133,9 +130,6 @@
             // 
             // gbComprasRealizadas
             // 
-            this.gbComprasRealizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbComprasRealizadas.CaptionVisible = false;
             this.gbComprasRealizadas.Location = new System.Drawing.Point(12, 451);
             // 
@@ -175,8 +169,7 @@
             // 
             // gbTendencia
             // 
-            this.gbTendencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbTendencia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbTendencia.CaptionVisible = false;
             this.gbTendencia.Location = new System.Drawing.Point(612, 201);
@@ -194,6 +187,8 @@
             // 
             // chrTendencia
             // 
+            this.chrTendencia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chrTendencia.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -210,8 +205,7 @@
             // 
             // gbGestionInven
             // 
-            this.gbGestionInven.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbGestionInven.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbGestionInven.CaptionVisible = false;
             this.gbGestionInven.Location = new System.Drawing.Point(271, 201);
@@ -229,6 +223,8 @@
             // 
             // chrInventario
             // 
+            this.chrInventario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea2.Name = "ChartArea1";
             this.chrInventario.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -245,8 +241,7 @@
             // 
             // gbClientes
             // 
-            this.gbClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbClientes.CaptionVisible = false;
             this.gbClientes.Location = new System.Drawing.Point(12, 201);

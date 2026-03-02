@@ -76,12 +76,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1239, 65);
+            this.panel1.Size = new System.Drawing.Size(1187, 65);
             this.panel1.TabIndex = 0;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(1180, 12);
+            this.btnSalir.Location = new System.Drawing.Point(1146, 12);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(37, 38);
             this.btnSalir.StateNormal.Back.Color1 = System.Drawing.Color.White;
@@ -99,7 +99,7 @@
             // 
             // btnMaximizar
             // 
-            this.btnMaximizar.Location = new System.Drawing.Point(1122, 12);
+            this.btnMaximizar.Location = new System.Drawing.Point(1088, 12);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(37, 38);
             this.btnMaximizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
@@ -127,7 +127,7 @@
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.Location = new System.Drawing.Point(1065, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(1031, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(37, 38);
             this.btnMinimizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
@@ -208,7 +208,7 @@
             this.btnInicio.Location = new System.Drawing.Point(-3, -3);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnInicio.Size = new System.Drawing.Size(248, 63);
+            this.btnInicio.Size = new System.Drawing.Size(239, 63);
             this.btnInicio.TabIndex = 2;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             this.btnClientes.Location = new System.Drawing.Point(-3, 0);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnClientes.Size = new System.Drawing.Size(245, 60);
+            this.btnClientes.Size = new System.Drawing.Size(239, 60);
             this.btnClientes.TabIndex = 4;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
@@ -262,7 +262,7 @@
             this.btnVentas.Location = new System.Drawing.Point(-3, 0);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnVentas.Size = new System.Drawing.Size(245, 60);
+            this.btnVentas.Size = new System.Drawing.Size(239, 60);
             this.btnVentas.TabIndex = 6;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = false;
@@ -289,7 +289,7 @@
             this.btnInventario.Location = new System.Drawing.Point(-3, -1);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnInventario.Size = new System.Drawing.Size(245, 60);
+            this.btnInventario.Size = new System.Drawing.Size(239, 60);
             this.btnInventario.TabIndex = 8;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
@@ -316,7 +316,7 @@
             this.btnCompras.Location = new System.Drawing.Point(-3, -6);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Padding = new System.Windows.Forms.Padding(17, 0, 0, 0);
-            this.btnCompras.Size = new System.Drawing.Size(245, 60);
+            this.btnCompras.Size = new System.Drawing.Size(239, 60);
             this.btnCompras.TabIndex = 10;
             this.btnCompras.Text = "Compras";
             this.btnCompras.UseVisualStyleBackColor = false;
@@ -343,7 +343,7 @@
             this.btnProveedores.Location = new System.Drawing.Point(-3, -6);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.btnProveedores.Size = new System.Drawing.Size(266, 60);
+            this.btnProveedores.Size = new System.Drawing.Size(248, 60);
             this.btnProveedores.TabIndex = 12;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
@@ -370,7 +370,7 @@
             this.btnReportes.Location = new System.Drawing.Point(-3, -6);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnReportes.Size = new System.Drawing.Size(245, 60);
+            this.btnReportes.Size = new System.Drawing.Size(239, 60);
             this.btnReportes.TabIndex = 14;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = false;
@@ -379,7 +379,7 @@
             // tmrTransicionLateral
             // 
             this.tmrTransicionLateral.Enabled = true;
-            this.tmrTransicionLateral.Interval = 2;
+            this.tmrTransicionLateral.Interval = 1;
             this.tmrTransicionLateral.Tick += new System.EventHandler(this.tmrTransicionLateral_Tick);
             // 
             // pnlContenido
@@ -387,13 +387,13 @@
             this.pnlContenido.AutoScroll = true;
             this.pnlContenido.Location = new System.Drawing.Point(245, 65);
             this.pnlContenido.Name = "pnlContenido";
-            this.pnlContenido.Size = new System.Drawing.Size(994, 716);
+            this.pnlContenido.Size = new System.Drawing.Size(942, 716);
             this.pnlContenido.TabIndex = 14;
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1239, 781);
+            this.ClientSize = new System.Drawing.Size(1187, 781);
             this.ControlBox = false;
             this.Controls.Add(this.flpBarraLateral);
             this.Controls.Add(this.panel1);
