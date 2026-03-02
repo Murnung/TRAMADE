@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new Krypton.Toolkit.KryptonButton();
             this.btnMaximizar = new Krypton.Toolkit.KryptonButton();
@@ -454,7 +454,7 @@
             this.pnlContenido.Controls.Add(this.gbVistaGeneral);
             this.pnlContenido.Location = new System.Drawing.Point(245, 65);
             this.pnlContenido.Name = "pnlContenido";
-            this.pnlContenido.Size = new System.Drawing.Size(942, 716);
+            this.pnlContenido.Size = new System.Drawing.Size(926, 716);
             this.pnlContenido.TabIndex = 14;
             this.pnlContenido.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenido_Paint);
             // 
@@ -552,16 +552,16 @@
             // 
             // chrTendencia
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chrTendencia.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chrTendencia.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chrTendencia.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrTendencia.Legends.Add(legend1);
             this.chrTendencia.Location = new System.Drawing.Point(3, 3);
             this.chrTendencia.Name = "chrTendencia";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chrTendencia.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chrTendencia.Series.Add(series1);
             this.chrTendencia.Size = new System.Drawing.Size(257, 217);
             this.chrTendencia.TabIndex = 17;
             this.chrTendencia.Text = "chart2";
@@ -584,16 +584,16 @@
             // 
             // chrInventario
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chrInventario.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chrInventario.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chrInventario.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chrInventario.Legends.Add(legend2);
             this.chrInventario.Location = new System.Drawing.Point(-4, 3);
             this.chrInventario.Name = "chrInventario";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chrInventario.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chrInventario.Series.Add(series2);
             this.chrInventario.Size = new System.Drawing.Size(317, 217);
             this.chrInventario.TabIndex = 15;
             this.chrInventario.Text = "chart1";
