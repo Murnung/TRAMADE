@@ -11,10 +11,10 @@ using Microsoft.Reporting.WinForms;
 
 namespace TRAMADE
 {
-
     public partial class frmVisorReporte : Form
     {
         private readonly LocalReport _report;
+
         public frmVisorReporte(LocalReport report)
         {
             InitializeComponent();
@@ -23,12 +23,23 @@ namespace TRAMADE
 
         private void frmVisorReporte_Load(object sender, EventArgs e)
         {
-            rpvNum1.LocalReport.ReportEmbeddedResource = _report.ReportEmbeddedResource;
+            try
+            {
+                rpvNum1.LocalReport.ReportEmbeddedResource = _report.ReportEmbeddedResource;
+                rpvNum1.LocalReport.DataSources.Clear();
 
-            foreach (var ds in _report.DataSources)
-                rpvNum1.LocalReport.DataSources.Add(ds);
+                foreach (ReportDataSource ds in _report.DataSources)
+                    rpvNum1.LocalReport.DataSources.Add(
+                        new ReportDataSource(ds.Name, ds.Value as DataTable));
 
-            rpvNum1.RefreshReport();
+                rpvNum1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar reporte: " + ex.Message +
+                    "\n" + ex.InnerException?.Message, "ERROR",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

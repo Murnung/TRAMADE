@@ -1,17 +1,15 @@
-﻿using System;
-using Microsoft.Reporting.WinForms;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.IO;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace TRAMADE.Clases_Reporte
 {
     internal class clsDescarga
     {
-        public static void Descargar(LocalReport report, string formato)
+        public static void Descargar(LocalReport reportOriginal, string formato)
         {
-            // Si el reporte viene nulo o sin contenido, no podemos hacer nada
-            if (report == null) return;
+            if (reportOriginal == null) return;
 
             try
             {
@@ -19,28 +17,33 @@ namespace TRAMADE.Clases_Reporte
                 string[] streamids;
                 Warning[] warnings;
 
-                // IMPORTANTE: Usamos el 'report' que recibimos, NO creamos uno nuevo
-                byte[] bytes = report.Render(
+                string deviceInfo = formato == "PDF"
+                    ? "<DeviceInfo><OutputFormat>PDF</OutputFormat><EmbedFonts>None</EmbedFonts></DeviceInfo>"
+                    : "<DeviceInfo><OutputFormat>EXCELOPENXML</OutputFormat></DeviceInfo>";
+
+                byte[] bytes = reportOriginal.Render(
                     formato == "PDF" ? "PDF" : "EXCELOPENXML",
-                    null, out mimeType, out encoding, out extension,
+                    deviceInfo, out mimeType, out encoding, out extension,
                     out streamids, out warnings);
 
                 using (SaveFileDialog sfd = new SaveFileDialog())
                 {
                     sfd.Filter = formato == "PDF" ? "PDF|*.pdf" : "Excel|*.xlsx";
-                    sfd.FileName = $"Reporte_Compras_{DateTime.Now:yyyyMMdd}";
+                    sfd.FileName = $"Reporte_{DateTime.Now:yyyyMMdd_HHmmss}";
 
                     if (sfd.ShowDialog() == DialogResult.OK)
                     {
                         File.WriteAllBytes(sfd.FileName, bytes);
-                        MessageBox.Show("Archivo guardado con éxito.");
+                        MessageBox.Show("Archivo guardado con éxito.", "Éxito",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Esto te dirá exactamente por qué falla el motor de renderizado
-                MessageBox.Show("Error al guardar: " + ex.Message + "\n" + ex.InnerException?.Message);
+                MessageBox.Show("Error al guardar: " + ex.Message +
+                    "\n" + ex.InnerException?.Message, "ERROR",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

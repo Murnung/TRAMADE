@@ -34,6 +34,7 @@
             // rpvNum1
             // 
             this.rpvNum1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rpvNum1.LocalReport.ReportEmbeddedResource = "TRAMADE.Formulario Reporte.Reportes.rptCompras.rdlc";
             this.rpvNum1.Location = new System.Drawing.Point(0, 0);
             this.rpvNum1.Name = "rpvNum1";
             this.rpvNum1.ServerReport.BearerToken = null;

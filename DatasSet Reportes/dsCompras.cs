@@ -7,9 +7,11 @@
     }
 }
 
-namespace TRAMADE.dsComprasTableAdapters {
-    
-    
-    public partial class DataTable1TableAdapter {
+namespace TRAMADE.DatasSet_Reportes.dsComprasTableAdapters
+{
+
+
+    public partial class DataTable1TableAdapter
+    {
     }
 }
