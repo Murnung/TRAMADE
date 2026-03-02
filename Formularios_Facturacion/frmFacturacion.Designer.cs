@@ -45,6 +45,12 @@
             this.btnEliminarProducto = new Krypton.Toolkit.KryptonButton();
             this.btnAggProducto = new Krypton.Toolkit.KryptonButton();
             this.dgvDetalleFactura = new Krypton.Toolkit.KryptonDataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kryptonLabel9 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonGroup2 = new Krypton.Toolkit.KryptonGroup();
             this.btnIDVendedor = new Krypton.Toolkit.KryptonButton();
@@ -82,12 +88,6 @@
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup4 = new Krypton.Toolkit.KryptonGroup();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).BeginInit();
@@ -333,6 +333,37 @@
             this.dgvDetalleFactura.TabIndex = 50;
             this.dgvDetalleFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleFactura_CellValueChanged);
             // 
+            // colID
+            // 
+            this.colID.HeaderText = "Column1";
+            this.colID.Name = "colID";
+            this.colID.Visible = false;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Precio_unitario
+            // 
+            this.Precio_unitario.HeaderText = "Precio unitario";
+            this.Precio_unitario.Name = "Precio_unitario";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            // 
             // kryptonLabel9
             // 
             this.kryptonLabel9.Location = new System.Drawing.Point(469, 130);
@@ -383,6 +414,7 @@
             this.txtNombreVendedor.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.txtNombreVendedor.Location = new System.Drawing.Point(62, 37);
             this.txtNombreVendedor.Name = "txtNombreVendedor";
+            this.txtNombreVendedor.ReadOnly = true;
             this.txtNombreVendedor.Size = new System.Drawing.Size(145, 22);
             this.txtNombreVendedor.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtNombreVendedor.TabIndex = 17;
@@ -402,6 +434,7 @@
             this.txtIDVendedor.CueHint.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.txtIDVendedor.Location = new System.Drawing.Point(107, 6);
             this.txtIDVendedor.Name = "txtIDVendedor";
+            this.txtIDVendedor.ReadOnly = true;
             this.txtIDVendedor.Size = new System.Drawing.Size(100, 22);
             this.txtIDVendedor.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Bottom;
             this.txtIDVendedor.TabIndex = 1;
@@ -769,37 +802,6 @@
             this.kryptonGroup4.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.kryptonGroup4.StateCommon.Border.Width = 3;
             this.kryptonGroup4.TabIndex = 67;
-            // 
-            // colID
-            // 
-            this.colID.HeaderText = "Column1";
-            this.colID.Name = "colID";
-            this.colID.Visible = false;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.Name = "Descripción";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Precio_unitario
-            // 
-            this.Precio_unitario.HeaderText = "Precio unitario";
-            this.Precio_unitario.Name = "Precio_unitario";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
             // 
             // frmFacturacion
             // 
