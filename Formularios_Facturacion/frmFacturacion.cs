@@ -303,5 +303,7 @@ namespace TRAMADE
         {
             CalcularTotales(); //Por si se cambia algo en la area de productos, recalculamos los totales automáticamente.
         }
+
+        
     }
 }

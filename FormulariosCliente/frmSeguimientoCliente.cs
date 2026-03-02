@@ -76,5 +76,10 @@ namespace TRAMADE
                 txtInactivos.Text = stats.Inactivos;
             }
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
     }
 }

@@ -34,15 +34,16 @@
             this.dvgSeguimiento = new Krypton.Toolkit.KryptonDataGridView();
             this.kgInactivos = new Krypton.Toolkit.KryptonGroup();
             this.txtInactivos = new Krypton.Toolkit.KryptonTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.kgRegistrados = new Krypton.Toolkit.KryptonGroup();
             this.txtRegistrados = new Krypton.Toolkit.KryptonTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.kgActivos = new Krypton.Toolkit.KryptonGroup();
             this.txtActivos = new Krypton.Toolkit.KryptonTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -67,7 +68,7 @@
             this.kryptonGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonGroup1.Location = new System.Drawing.Point(29, 23);
+            this.kryptonGroup1.Location = new System.Drawing.Point(29, 43);
             // 
             // kryptonGroup1.Panel
             // 
@@ -79,7 +80,7 @@
             this.kryptonGroup1.Panel.Controls.Add(this.kgActivos);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
             this.kryptonGroup1.Panel.Controls.Add(this.txtBuscar);
-            this.kryptonGroup1.Size = new System.Drawing.Size(727, 485);
+            this.kryptonGroup1.Size = new System.Drawing.Size(727, 507);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 1;
@@ -137,7 +138,7 @@
             this.dvgSeguimiento.Location = new System.Drawing.Point(41, 246);
             this.dvgSeguimiento.Name = "dvgSeguimiento";
             this.dvgSeguimiento.ReadOnly = true;
-            this.dvgSeguimiento.Size = new System.Drawing.Size(641, 189);
+            this.dvgSeguimiento.Size = new System.Drawing.Size(641, 211);
             this.dvgSeguimiento.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dvgSeguimiento.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dvgSeguimiento.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
@@ -193,6 +194,17 @@
             this.txtInactivos.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtInactivos.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label4.Location = new System.Drawing.Point(3, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 70);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Clientes Inactivos";
+            // 
             // kgRegistrados
             // 
             this.kgRegistrados.Location = new System.Drawing.Point(41, 45);
@@ -229,6 +241,19 @@
             this.txtRegistrados.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.txtRegistrados.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtRegistrados.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Image = global::TRAMADE.Properties.Resources.REGISTRADOS;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label3.Location = new System.Drawing.Point(5, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(196, 81);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Clientes Registrados";
             // 
             // kgActivos
             // 
@@ -268,6 +293,18 @@
             this.txtActivos.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtActivos.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Image = global::TRAMADE.Properties.Resources.ACTIVOS;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label2.Location = new System.Drawing.Point(13, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 70);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Clientes Activos";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -290,51 +327,45 @@
             this.txtBuscar.StateActive.Border.Width = 3;
             this.txtBuscar.TabIndex = 0;
             // 
-            // label4
+            // btnRegresar
             // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-//            this.label4.Image = global::TRAMADE.Properties.Resources.INACTIVOS;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label4.Location = new System.Drawing.Point(3, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 70);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Clientes Inactivos";
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Image = global::TRAMADE.Properties.Resources.REGISTRADOS;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label3.Location = new System.Drawing.Point(5, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 81);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Clientes Registrados";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Image = global::TRAMADE.Properties.Resources.ACTIVOS;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label2.Location = new System.Drawing.Point(13, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 70);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Clientes Activos";
+            this.btnRegresar.Location = new System.Drawing.Point(685, 12);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.Size = new System.Drawing.Size(90, 25);
+            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Width = 2;
+            this.btnRegresar.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.TabIndex = 44;
+            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegresar.Values.Text = "Regresar";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // frmSeguimientoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(800, 520);
+            this.ClientSize = new System.Drawing.Size(800, 562);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.kryptonGroup1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSeguimientoCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSeguimientoCliente";
             this.Load += new System.EventHandler(this.frmSeguimientoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
@@ -379,5 +410,6 @@
         private Krypton.Toolkit.KryptonButton btnBuscar;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label4;
+        private Krypton.Toolkit.KryptonButton btnRegresar;
     }
 }

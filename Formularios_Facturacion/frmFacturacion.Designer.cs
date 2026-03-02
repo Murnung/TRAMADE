@@ -75,10 +75,6 @@
             this.lblNumeroFactura = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnInicio = new Krypton.Toolkit.KryptonButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnRegresarFacturacion = new Krypton.Toolkit.KryptonButton();
             this.btnVerFacturas = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -616,10 +612,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.btnInicio);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.btnRegresarFacturacion);
             this.panel3.Controls.Add(this.btnVerFacturas);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
@@ -627,67 +619,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(870, 100);
             this.panel3.TabIndex = 38;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(792, 62);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 21);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "  Inicio";
-            // 
-            // btnInicio
-            // 
-            this.btnInicio.Location = new System.Drawing.Point(792, 19);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(57, 50);
-            this.btnInicio.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnInicio.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnInicio.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.btnInicio.StateCommon.Border.Rounding = 10F;
-            this.btnInicio.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnInicio.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
-            this.btnInicio.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnInicio.TabIndex = 7;
-            this.btnInicio.TabStop = false;
-            this.btnInicio.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnInicio.Values.Image = global::TRAMADE.Properties.Resources.Home_png;
-            this.btnInicio.Values.Text = "kryptonButton3";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(723, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 21);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Regresar";
-            // 
-            // btnRegresarFacturacion
-            // 
-            this.btnRegresarFacturacion.Location = new System.Drawing.Point(736, 30);
-            this.btnRegresarFacturacion.Name = "btnRegresarFacturacion";
-            this.btnRegresarFacturacion.Size = new System.Drawing.Size(34, 29);
-            this.btnRegresarFacturacion.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresarFacturacion.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresarFacturacion.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresarFacturacion.StateCommon.Border.Rounding = 10F;
-            this.btnRegresarFacturacion.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.btnRegresarFacturacion.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnRegresarFacturacion.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresarFacturacion.StateCommon.Content.ShortText.Image")));
-            this.btnRegresarFacturacion.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.btnRegresarFacturacion.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnRegresarFacturacion.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresarFacturacion.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
-            this.btnRegresarFacturacion.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnRegresarFacturacion.TabIndex = 7;
-            this.btnRegresarFacturacion.TabStop = false;
-            this.btnRegresarFacturacion.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresarFacturacion.Values.Image = global::TRAMADE.Properties.Resources.REGRESAR;
-            this.btnRegresarFacturacion.Values.Text = "REGRESAR";
             // 
             // btnVerFacturas
             // 
@@ -861,10 +792,6 @@
         private Krypton.Toolkit.KryptonLabel lblNumeroFactura;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
-        private Krypton.Toolkit.KryptonButton btnInicio;
-        private System.Windows.Forms.Label label2;
-        private Krypton.Toolkit.KryptonButton btnRegresarFacturacion;
         private Krypton.Toolkit.KryptonButton btnVerFacturas;
         private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonGroup kryptonGroup3;

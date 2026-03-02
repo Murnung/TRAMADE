@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.label32 = new System.Windows.Forms.Label();
+            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -49,8 +50,7 @@
             this.kryptonGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonGroup1.Location = new System.Drawing.Point(55, 81);
-            this.kryptonGroup1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonGroup1.Location = new System.Drawing.Point(41, 66);
             // 
             // kryptonGroup1.Panel
             // 
@@ -61,7 +61,7 @@
             this.kryptonGroup1.Panel.Controls.Add(this.btnAutorizar);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
             this.kryptonGroup1.Panel.Controls.Add(this.txtBuscar);
-            this.kryptonGroup1.Size = new System.Drawing.Size(935, 572);
+            this.kryptonGroup1.Size = new System.Drawing.Size(701, 465);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 0;
@@ -72,23 +72,21 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(11, 65);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(8, 53);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(170, 58);
+            this.label18.Size = new System.Drawing.Size(132, 44);
             this.label18.TabIndex = 39;
             this.label18.Text = "Búsqueda por ID";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(616, 65);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Location = new System.Drawing.Point(462, 53);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnBuscar.Size = new System.Drawing.Size(117, 39);
+            this.btnBuscar.Size = new System.Drawing.Size(88, 32);
             this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
@@ -118,11 +116,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAprobacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAprobacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAprobacion.Location = new System.Drawing.Point(51, 194);
-            this.dgvAprobacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvAprobacion.Location = new System.Drawing.Point(38, 158);
             this.dgvAprobacion.Name = "dgvAprobacion";
             this.dgvAprobacion.RowHeadersWidth = 51;
-            this.dgvAprobacion.Size = new System.Drawing.Size(859, 352);
+            this.dgvAprobacion.Size = new System.Drawing.Size(638, 282);
             this.dgvAprobacion.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvAprobacion.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvAprobacion.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
@@ -142,14 +139,13 @@
             // 
             // btnNegar
             // 
-            this.btnNegar.Location = new System.Drawing.Point(415, 140);
-            this.btnNegar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNegar.Location = new System.Drawing.Point(311, 114);
             this.btnNegar.Name = "btnNegar";
             this.btnNegar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.btnNegar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.btnNegar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
             this.btnNegar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(59)))), ((int)(((byte)(93)))));
-            this.btnNegar.Size = new System.Drawing.Size(357, 47);
+            this.btnNegar.Size = new System.Drawing.Size(268, 38);
             this.btnNegar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.btnNegar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.btnNegar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -173,14 +169,13 @@
             // 
             // btnAutorizar
             // 
-            this.btnAutorizar.Location = new System.Drawing.Point(49, 140);
-            this.btnAutorizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAutorizar.Location = new System.Drawing.Point(37, 114);
             this.btnAutorizar.Name = "btnAutorizar";
             this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
             this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
             this.btnAutorizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(207)))), ((int)(((byte)(33)))));
             this.btnAutorizar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(207)))), ((int)(((byte)(33)))));
-            this.btnAutorizar.Size = new System.Drawing.Size(357, 47);
+            this.btnAutorizar.Size = new System.Drawing.Size(268, 38);
             this.btnAutorizar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
             this.btnAutorizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
             this.btnAutorizar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -207,19 +202,17 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 10.6F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(9, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(7, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(426, 62);
+            this.label1.Size = new System.Drawing.Size(359, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "AUTORIZACIÓN DE REGISTROS DE CLIENTES";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(195, 69);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscar.Location = new System.Drawing.Point(146, 56);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(404, 33);
+            this.txtBuscar.Size = new System.Drawing.Size(303, 29);
             this.txtBuscar.StateActive.Border.Color1 = System.Drawing.Color.Black;
             this.txtBuscar.StateActive.Border.Color2 = System.Drawing.Color.Black;
             this.txtBuscar.StateActive.Border.Rounding = 5F;
@@ -232,24 +225,52 @@
             this.label32.BackColor = System.Drawing.Color.Transparent;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(108, 25);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Location = new System.Drawing.Point(81, 20);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(140, 31);
+            this.label32.Size = new System.Drawing.Size(111, 25);
             this.label32.TabIndex = 2;
             this.label32.Text = "TMSS.SW";
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(682, 20);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.Size = new System.Drawing.Size(90, 25);
+            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Border.Width = 2;
+            this.btnRegresar.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateNormal.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StatePressed.Back.Color2 = System.Drawing.Color.Transparent;
+            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRegresar.TabIndex = 44;
+            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRegresar.Values.Text = "Regresar";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // frmAprobacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(1067, 668);
+            this.ClientSize = new System.Drawing.Size(800, 543);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.kryptonGroup1);
             this.Controls.Add(this.label32);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAprobacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAprobacion";
             this.Load += new System.EventHandler(this.frmAprobacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
@@ -274,5 +295,6 @@
         private Krypton.Toolkit.KryptonDataGridView dgvAprobacion;
         private Krypton.Toolkit.KryptonButton btnBuscar;
         private System.Windows.Forms.Label label18;
+        private Krypton.Toolkit.KryptonButton btnRegresar;
     }
 }
