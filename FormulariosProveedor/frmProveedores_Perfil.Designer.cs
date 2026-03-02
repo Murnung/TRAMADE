@@ -167,8 +167,8 @@
             this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnSalir.TabIndex = 9;
             this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-  //          this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
-    //        this.btnSalir.Values.Text = "";
+            this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
+            this.btnSalir.Values.Text = "";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnMaximizar
@@ -190,7 +190,7 @@
             this.btnMaximizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnMaximizar.TabIndex = 8;
             this.btnMaximizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
- //           this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
+            this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
             this.btnMaximizar.Values.Text = "";
             // 
             // btnMinimizar
@@ -212,7 +212,7 @@
             this.btnMinimizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnMinimizar.TabIndex = 7;
             this.btnMinimizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-  //          this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
+            this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
             this.btnMinimizar.Values.Text = "";
             // 
             // frmProveedores_Perfil
