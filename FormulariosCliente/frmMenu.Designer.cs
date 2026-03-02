@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
@@ -37,43 +35,15 @@
             this.btnSeguimiento = new Krypton.Toolkit.KryptonButton();
             this.dvgUltimos = new Krypton.Toolkit.KryptonDataGridView();
             this.label18 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
-            this.kryptonGroup1.Panel.SuspendLayout();
-            this.kryptonGroup1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgUltimos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // kryptonGroup1
-            // 
-            this.kryptonGroup1.Location = new System.Drawing.Point(-4, -4);
-            // 
-            // kryptonGroup1.Panel
-            // 
-            this.kryptonGroup1.Panel.Controls.Add(this.label1);
-            this.kryptonGroup1.Panel.Enabled = false;
-            this.kryptonGroup1.Size = new System.Drawing.Size(200, 621);
-            this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.kryptonGroup1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 72);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TSMS";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(202, 8);
+            this.label2.Location = new System.Drawing.Point(70, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(287, 81);
             this.label2.TabIndex = 1;
@@ -82,7 +52,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(204, 92);
+            this.btnRegistrar.Location = new System.Drawing.Point(72, 135);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
@@ -112,7 +82,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(390, 92);
+            this.btnActualizar.Location = new System.Drawing.Point(258, 135);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
@@ -140,15 +110,15 @@
             this.btnActualizar.Values.ImageStates.ImageCheckedNormal = null;
             this.btnActualizar.Values.ImageStates.ImageCheckedPressed = null;
             this.btnActualizar.Values.ImageStates.ImageCheckedTracking = null;
-          this.btnActualizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.image_actualizar__1_;
+            this.btnActualizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.image_actualizar__1_;
             this.btnActualizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.image_actualizar__1_;
-           this.btnActualizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.image_actualizar__1_;
+            this.btnActualizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.image_actualizar__1_;
             this.btnActualizar.Values.Text = "ACTUALIZAR CLIENTE";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAutorizar
             // 
-            this.btnAutorizar.Location = new System.Drawing.Point(588, 92);
+            this.btnAutorizar.Location = new System.Drawing.Point(456, 135);
             this.btnAutorizar.Name = "btnAutorizar";
             this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
             this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(140)))), ((int)(((byte)(92)))));
@@ -184,7 +154,7 @@
             // 
             // btnSeguimiento
             // 
-            this.btnSeguimiento.Location = new System.Drawing.Point(778, 92);
+            this.btnSeguimiento.Location = new System.Drawing.Point(646, 135);
             this.btnSeguimiento.Name = "btnSeguimiento";
             this.btnSeguimiento.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
@@ -228,10 +198,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgUltimos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dvgUltimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgUltimos.Location = new System.Drawing.Point(231, 252);
+            this.dvgUltimos.Location = new System.Drawing.Point(117, 274);
             this.dvgUltimos.Name = "dvgUltimos";
             this.dvgUltimos.ReadOnly = true;
-            this.dvgUltimos.Size = new System.Drawing.Size(468, 119);
+            this.dvgUltimos.Size = new System.Drawing.Size(772, 286);
             this.dvgUltimos.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dvgUltimos.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dvgUltimos.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -255,7 +225,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(233, 205);
+            this.label18.Location = new System.Drawing.Point(76, 227);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(141, 44);
             this.label18.TabIndex = 40;
@@ -267,6 +237,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 588);
+            this.ControlBox = false;
             this.Controls.Add(this.label18);
             this.Controls.Add(this.dvgUltimos);
             this.Controls.Add(this.btnSeguimiento);
@@ -274,15 +245,9 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.kryptonGroup1);
+            this.MaximizeBox = false;
             this.Name = "frmMenu";
-            this.Text = "frmMenu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
-            this.kryptonGroup1.Panel.ResumeLayout(false);
-            this.kryptonGroup1.Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
-            this.kryptonGroup1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgUltimos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -290,9 +255,6 @@
         }
 
         #endregion
-
-        private Krypton.Toolkit.KryptonGroup kryptonGroup1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Krypton.Toolkit.KryptonButton btnRegistrar;
         private Krypton.Toolkit.KryptonButton btnActualizar;

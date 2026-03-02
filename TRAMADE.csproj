@@ -204,6 +204,12 @@
     <Compile Include="FormulariosCompras\frmSeguimiento.Designer.cs">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulariosMenú\frmVistaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosMenú\frmVistaMenu.Designer.cs">
+      <DependentUpon>frmVistaMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulariosProveedor\frmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCompras\frmSeguimiento.resx">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosMenú\frmVistaMenu.resx">
+      <DependentUpon>frmVistaMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosProveedor\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>

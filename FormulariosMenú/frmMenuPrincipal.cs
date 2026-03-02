@@ -8,20 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.Formularios_Login__Menú;
+using TRAMADE.FormulariosMenú;
 
 namespace TRAMADE
 {
     public partial class frmMenuPrincipal : Form
     {
-        private readonly ResponsiveFormManager _responsive;
-        private clsVistaGeneral _popup;
 
-        
+
+        private readonly ResponsiveFormManager _responsive;
+
+
         public frmMenuPrincipal()
         {
             InitializeComponent();
             _responsive = new ResponsiveFormManager(this);
-            new clsClientesPanel(lblTotalClientes, pnlBarraFondo, pnlBarraActivos).Cargar();
 
         }
 
@@ -49,6 +50,7 @@ namespace TRAMADE
                     flpBarraLateral.Width = SidebarCollapsed;
                     sidebarExpand = false;
                     tmrTransicionLateral.Stop();
+
                 }
             }
             else
@@ -59,8 +61,12 @@ namespace TRAMADE
                     flpBarraLateral.Width = SidebarExpanded;
                     sidebarExpand = true;
                     tmrTransicionLateral.Stop();
+
                 }
             }
+
+            pnlContenido.Left = flpBarraLateral.Width;
+            pnlContenido.Width = this.ClientSize.Width - flpBarraLateral.Width;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -85,6 +91,7 @@ namespace TRAMADE
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
+
             _responsive.Initialize();
             _popup = new clsVistaGeneral(this);
 
@@ -116,23 +123,56 @@ namespace TRAMADE
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void AbrirFormulario(Form formulario)
         {
-            _popup.MostrarProductos(btnProductos);
-        }
-        private void btnVentasRealizadas_Click(object sender, EventArgs e)
-        {
-            _popup.MostrarVentas(btnVentasRealizadas);
+            if (pnlContenido.Controls.Count > 0)
+                pnlContenido.Controls[0].Dispose();
+
+            pnlContenido.Controls.Clear();
+
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+
+            pnlContenido.Controls.Add(formulario);
+            formulario.Show();
         }
 
-        private void btnComprasRealizadas_Click(object sender, EventArgs e)
+        private void btnInicio_Click(object sender, EventArgs e)
         {
-            _popup.MostrarCompras(btnComprasRealizadas);
+            AbrirFormulario(new frmVistaMenu());
         }
 
-        private void btnProductosAgotados_Click(object sender, EventArgs e)
+        
+        private void btnClientes_Click(object sender, EventArgs e)
         {
-            _popup.MostrarAgotados(btnProductosAgotados);
+            AbrirFormulario(new frmMenu());
+        }
+
+       
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmFacturacion());
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmInventario());
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmCompras());
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmProveedores());
+        }
+
+
+        private void btnReportes_click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmReportes());
         }
     }
 }

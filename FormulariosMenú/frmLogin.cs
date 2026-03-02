@@ -51,9 +51,10 @@ namespace TRAMADE
                         dr.Close();
                         conexion.Cerrar();
 
-                        frmCompras frm = new frmCompras();
-                        frm.ShowDialog();
-                    }
+                    this.Hide(); 
+                    frmMenuPrincipal menu = new frmMenuPrincipal();
+                    menu.Show(); 
+                }
                     else
                     {
                         MessageBox.Show("Usuario o contraseña incorrectos");
