@@ -20,7 +20,7 @@ namespace TRAMADE.ClasesCompras
     {
         private int cantidad, proveedor, producto, formaPago, estado = 7, idUsuario, idCompra;
         private DateTime entrega;
-        private string contacto, direccion, telefono, nombreProducto;
+        private string nombreProducto;
         private decimal precioCosto;
         private bool autorizar = false;
         private const decimal IVA = 0.15m;
@@ -36,9 +36,6 @@ namespace TRAMADE.ClasesCompras
         public void setProducto(int valor) { producto = valor; }
         public void setFormaPago(int valor) { formaPago = valor; }
         public void setCantidad(int valor) { cantidad = valor; }
-        public void setContacto(string valor) { contacto = valor; }
-        public void setDireccion(string valor) { direccion = valor; }
-        public void setTelefono(string valor) { telefono = valor; }
         public void setNombreProducto(string valor) { nombreProducto = valor; }
         public void setPrecio(decimal valor) { precioCosto = valor; }
         public void setEntrega(DateTime valor) { entrega = valor; }
@@ -57,9 +54,6 @@ namespace TRAMADE.ClasesCompras
         public int getIdUsuario() { return idUsuario; }
         public int getIdCompra() { return idCompra; }
         public DateTime getEntrega() { return entrega; }
-        public string getContacto() { return contacto; }
-        public string getDireccion() { return direccion; }
-        public string getTelefono() { return telefono; }
         public bool getAutorizar() { return autorizar; }
 
         //Calculos 
