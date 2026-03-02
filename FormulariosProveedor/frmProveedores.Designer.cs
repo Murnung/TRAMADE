@@ -220,7 +220,7 @@
             this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnSalir.TabIndex = 9;
             this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-   //       this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
+    //       this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
             this.btnSalir.Values.Text = "";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
