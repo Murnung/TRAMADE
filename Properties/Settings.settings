@@ -3,5 +3,9 @@
   <Profiles>
     <Profile Name="(Default)" />
   </Profiles>
-  <Settings />
+  <Settings>
+    <Setting Name="DB_TRAMADEConnectionString" Type="System.Data.SqlClient.SqlConnection" Scope="Application">
+      <Value Profile="(Default)">Data Source=db-tramade.database.windows.net;Initial Catalog=DB_TRAMADE;User ID=TMSS;Password=Elmaster8;</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

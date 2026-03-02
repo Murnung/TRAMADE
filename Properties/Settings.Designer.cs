@@ -26,5 +26,15 @@ namespace TRAMADE.Properties
                 return defaultInstance;
             }
         }
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=db-tramade.database.windows.net;Initial Catalog=DB_TRAMADE;User ID=TMSS;Password=Elmaster8;")]
+        public string DB_TRAMADEConnectionString
+        {
+            get
+            {
+                return ((string)(this["DB_TRAMADEConnectionString"]));
+            }
+        }
     }
 }
