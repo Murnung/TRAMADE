@@ -140,9 +140,9 @@
             this.btnActualizar.Values.ImageStates.ImageCheckedNormal = null;
             this.btnActualizar.Values.ImageStates.ImageCheckedPressed = null;
             this.btnActualizar.Values.ImageStates.ImageCheckedTracking = null;
-            this.btnActualizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.image_actualizar__1_;
-            this.btnActualizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.image_actualizar__1_;
-            this.btnActualizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.image_actualizar__1_;
+//          this.btnActualizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.image_actualizar__1_;
+//            this.btnActualizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.image_actualizar__1_;
+//           this.btnActualizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.image_actualizar__1_;
             this.btnActualizar.Values.Text = "ACTUALIZAR CLIENTE";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
