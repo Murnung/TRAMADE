@@ -1,6 +1,6 @@
 ﻿namespace TRAMADE
 {
-    partial class frmSeguimiento
+    partial class frmSeguimientoClienteCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -327,16 +327,16 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Clientes Activos";
             // 
-            // frmSeguimiento
+            // frmSeguimientoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(800, 520);
             this.Controls.Add(this.kryptonGroup1);
-            this.Name = "frmSeguimiento";
-            this.Text = "frmSeguimiento";
-            this.Load += new System.EventHandler(this.frmSeguimiento_Load);
+            this.Name = "frmSeguimientoCliente";
+            this.Text = "frmSeguimientoCliente";
+            this.Load += new System.EventHandler(this.frmSeguimientoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
             this.kryptonGroup1.Panel.ResumeLayout(false);
             this.kryptonGroup1.Panel.PerformLayout();
