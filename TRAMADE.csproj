@@ -95,6 +95,9 @@
     <Compile Include="Clases Reporte\clsRptStock.cs" />
     <Compile Include="Clases Reporte\clsRptVentas.cs" />
     <Compile Include="clsConexion.cs" />
+    <Compile Include="DatasSet Reportes\dsCompras.cs">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatasSet Reportes\dsCompras.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
