@@ -209,11 +209,11 @@
     <Compile Include="FormulariosCliente\frmRegistroNuevo.Designer.cs">
       <DependentUpon>frmRegistroNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosCliente\frmSeguimiento.cs">
+    <Compile Include="FormulariosCliente\frmSeguimientoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormulariosCliente\frmSeguimiento.Designer.cs">
-      <DependentUpon>frmSeguimiento.cs</DependentUpon>
+    <Compile Include="FormulariosCliente\frmSeguimientoCliente.Designer.cs">
+      <DependentUpon>frmSeguimientoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -257,100 +257,4 @@
       <DependentUpon>frmAprobacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCliente\frmMenu.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosCliente\frmRegistro.resx">
-      <DependentUpon>frmRegistro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosCliente\frmRegistroNuevo.resx">
-      <DependentUpon>frmRegistroNuevo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosCliente\frmSeguimiento.resx">
-      <DependentUpon>frmSeguimiento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <None Include="Resources\Usuario" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Captura de pantalla 2026-02-10 192130.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Captura de pantalla 2026-02-10 192130-artguru.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\COMPRAS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DINERO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MAS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ACTUALIZAR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GESTION.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GESTION1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SEGUIMIENTO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GES.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Iconos\Cerrar.png" />
-    <Content Include="Resources\Iconos\Clientes.png" />
-    <Content Include="Resources\Iconos\Compras.png" />
-    <Content Include="Resources\Iconos\comprasrealizadas.png" />
-    <Content Include="Resources\Iconos\Contraseña.png" />
-    <Content Include="Resources\Iconos\Home.png" />
-    <Content Include="Resources\Iconos\Inventario.png" />
-    <Content Include="Resources\Iconos\Maximizar.png" />
-    <Content Include="Resources\Iconos\Menu.png" />
-    <Content Include="Resources\Iconos\Minimizar.png" />
-    <Content Include="Resources\Iconos\Productosagotados.png" />
-    <Content Include="Resources\Iconos\Proveedores.png" />
-    <Content Include="Resources\Iconos\Reportes.png" />
-    <Content Include="Resources\Iconos\totalproductos.png" />
-    <Content Include="Resources\Iconos\Usuario.png" />
-    <Content Include="Resources\Iconos\Ventas.png" />
-    <Content Include="Resources\Iconos\ventasrealizadas.png" />
-    <Content Include="Resources\Iconos\vistaClientes.png" />
-    <Content Include="Resources\Iconos\vistaClientes2.png" />
-    <Content Include="Resources\inventario.png" />
-    <Content Include="Resources\Logo de la empresa.png" />
-    <Content Include="Resources\Menu.png" />
-    <Content Include="Resources\TIEMPO.png" />
-    <Content Include="Resources\USUARIO.png" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-</Project>
+      <DependentUpon>frmMenu.c
