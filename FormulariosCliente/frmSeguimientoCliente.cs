@@ -14,12 +14,12 @@ namespace TRAMADE
 {
     public partial class frmSeguimientoCliente : Form
     {
-        public frmSeguimiento()
+        public frmSeguimientoCliente()
         {
             InitializeComponent();
         }
                
-        private void frmSeguimiento_Load(object sender, EventArgs e)
+        private void frmSeguimientoCliente_Load(object sender, EventArgs e)
         {
             recargarClientes();
             ActualizarContadores();
