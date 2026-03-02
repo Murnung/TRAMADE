@@ -203,5 +203,10 @@ namespace TRAMADE
         {
 
         }
+
+        private void flpBarraLateral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
