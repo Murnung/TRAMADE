@@ -241,7 +241,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Compras;
+ //           this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Compras;
             this.pictureBox1.Location = new System.Drawing.Point(34, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(44, 29);
@@ -268,7 +268,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(149)))), ((int)(((byte)(80)))));
-            this.pictureBox2.Image = global::TRAMADE.Properties.Resources.DINERO;
+//            this.pictureBox2.Image = global::TRAMADE.Properties.Resources.DINERO;
             this.pictureBox2.Location = new System.Drawing.Point(37, 28);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(51, 37);
@@ -294,7 +294,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(122)))), ((int)(((byte)(61)))));
-            this.pictureBox3.Image = global::TRAMADE.Properties.Resources.TIEMPO;
+ //           this.pictureBox3.Image = global::TRAMADE.Properties.Resources.TIEMPO;
             this.pictureBox3.Location = new System.Drawing.Point(3, 28);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(42, 35);

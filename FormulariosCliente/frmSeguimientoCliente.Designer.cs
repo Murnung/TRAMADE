@@ -294,7 +294,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = global::TRAMADE.Properties.Resources.INACTIVOS;
+//            this.label4.Image = global::TRAMADE.Properties.Resources.INACTIVOS;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label4.Location = new System.Drawing.Point(3, 21);
             this.label4.Name = "label4";

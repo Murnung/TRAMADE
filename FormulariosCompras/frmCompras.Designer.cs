@@ -129,9 +129,9 @@
             this.btnSeguimiento.Values.ImageStates.ImageCheckedNormal = null;
             this.btnSeguimiento.Values.ImageStates.ImageCheckedPressed = null;
             this.btnSeguimiento.Values.ImageStates.ImageCheckedTracking = null;
-            this.btnSeguimiento.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.SEGUIMIENTO;
-            this.btnSeguimiento.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.SEGUIMIENTO;
-            this.btnSeguimiento.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.SEGUIMIENTO;
+//          this.btnSeguimiento.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.SEGUIMIENTO;
+//            this.btnSeguimiento.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.SEGUIMIENTO;
+//            this.btnSeguimiento.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.SEGUIMIENTO;
             this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE COMPRA";
             this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
             // 
@@ -163,9 +163,9 @@
             this.btnActualizar.Values.ImageStates.ImageCheckedNormal = null;
             this.btnActualizar.Values.ImageStates.ImageCheckedPressed = null;
             this.btnActualizar.Values.ImageStates.ImageCheckedTracking = null;
-            this.btnActualizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.ACTUALIZAR;
-            this.btnActualizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.ACTUALIZAR;
-            this.btnActualizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.ACTUALIZAR;
+  //         this.btnActualizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.ACTUALIZAR;
+  //          this.btnActualizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.ACTUALIZAR;
+  //          this.btnActualizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.ACTUALIZAR;
             this.btnActualizar.Values.Text = "ACTUALIZAR SOLICITUD ";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
@@ -203,9 +203,9 @@
             this.btnRegistrar.Values.ImageStates.ImageCheckedNormal = null;
             this.btnRegistrar.Values.ImageStates.ImageCheckedPressed = null;
             this.btnRegistrar.Values.ImageStates.ImageCheckedTracking = null;
-            this.btnRegistrar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.MAS1;
-            this.btnRegistrar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.MAS1;
-            this.btnRegistrar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.MAS1;
+        //    this.btnRegistrar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.MAS1;
+        //    this.btnRegistrar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.MAS1;
+         //   this.btnRegistrar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.MAS1;
             this.btnRegistrar.Values.Text = "REGISTRAR SOLICITUD";
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
             // 
@@ -243,10 +243,10 @@
             this.btnAutorizar.Values.ImageStates.ImageCheckedNormal = null;
             this.btnAutorizar.Values.ImageStates.ImageCheckedPressed = null;
             this.btnAutorizar.Values.ImageStates.ImageCheckedTracking = null;
-            this.btnAutorizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.GES;
-            this.btnAutorizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.GES;
-            this.btnAutorizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.GES;
-            this.btnAutorizar.Values.Text = "AUTORIZAR SOLICITUD";
+    //        this.btnAutorizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.GES;
+   //         this.btnAutorizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.GES;
+  //          this.btnAutorizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.GES;
+           this.btnAutorizar.Values.Text = "AUTORIZAR SOLICITUD";
             this.btnAutorizar.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // frmCompras

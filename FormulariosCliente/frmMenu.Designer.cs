@@ -176,9 +176,9 @@
             this.btnAutorizar.Values.ImageStates.ImageCheckedNormal = null;
             this.btnAutorizar.Values.ImageStates.ImageCheckedPressed = null;
             this.btnAutorizar.Values.ImageStates.ImageCheckedTracking = null;
-            this.btnAutorizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.autorizar;
-            this.btnAutorizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.autorizar;
-            this.btnAutorizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.autorizar;
+//            this.btnAutorizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.autorizar;
+ //           this.btnAutorizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.autorizar;
+ //           this.btnAutorizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.autorizar;
             this.btnAutorizar.Values.Text = "AUTORIZAR CLIENTE";
             this.btnAutorizar.Click += new System.EventHandler(this.btnAutorizar_Click);
             // 
@@ -213,9 +213,9 @@
             this.btnSeguimiento.Values.ImageStates.ImageCheckedNormal = null;
             this.btnSeguimiento.Values.ImageStates.ImageCheckedPressed = null;
             this.btnSeguimiento.Values.ImageStates.ImageCheckedTracking = null;
-            this.btnSeguimiento.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.seguimiento1;
-            this.btnSeguimiento.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.seguimiento1;
-            this.btnSeguimiento.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.seguimiento1;
+//            this.btnSeguimiento.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.seguimiento1;
+//            this.btnSeguimiento.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.seguimiento1;
+ //           this.btnSeguimiento.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.seguimiento1;
             this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE CLIENTE";
             this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
             // 
