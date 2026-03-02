@@ -317,6 +317,28 @@
     <Compile Include="Formularios_Facturacion\frmVistaPrevia.Designer.cs">
       <DependentUpon>frmVistaPrevia.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClasesInventario\clsMensajes.cs" />
+    <Compile Include="ClasesInventario\clsProducto.cs" />
+    <Compile Include="ClasesInventario\clsProductoDAL.cs" />
+    <Compile Include="ClasesInventario\clsValidaciones.cs" />
+    <Compile Include="FormulariosInventario\frmEditarInv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosInventario\frmEditarInv.Designer.cs">
+      <DependentUpon>frmEditarInv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosInventario\frmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosInventario\frmInventario.Designer.cs">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosInventario\frmRegistrarInv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosInventario\frmRegistrarInv.Designer.cs">
+      <DependentUpon>frmRegistrarInv.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios_Facturacion\frmAggProducto.resx">
       <DependentUpon>frmAggProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +353,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios_Facturacion\frmVistaPrevia.resx">
       <DependentUpon>frmVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosInventario\frmEditarInv.resx">
+      <DependentUpon>frmEditarInv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosInventario\frmInventario.resx">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosInventario\frmRegistrarInv.resx">
+      <DependentUpon>frmRegistrarInv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
