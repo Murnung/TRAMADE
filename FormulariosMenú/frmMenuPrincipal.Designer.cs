@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new Krypton.Toolkit.KryptonButton();
             this.btnMaximizar = new Krypton.Toolkit.KryptonButton();
@@ -455,6 +455,7 @@
             this.pnlContenido.Name = "pnlContenido";
             this.pnlContenido.Size = new System.Drawing.Size(942, 716);
             this.pnlContenido.TabIndex = 14;
+            this.pnlContenido.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContenido_Paint);
             // 
             // gbVentasRealizadas
             // 
@@ -550,16 +551,16 @@
             // 
             // chrTendencia
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chrTendencia.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chrTendencia.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chrTendencia.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chrTendencia.Legends.Add(legend3);
             this.chrTendencia.Location = new System.Drawing.Point(3, 3);
             this.chrTendencia.Name = "chrTendencia";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chrTendencia.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chrTendencia.Series.Add(series3);
             this.chrTendencia.Size = new System.Drawing.Size(257, 217);
             this.chrTendencia.TabIndex = 17;
             this.chrTendencia.Text = "chart2";
@@ -582,16 +583,16 @@
             // 
             // chrInventario
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chrInventario.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chrInventario.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chrInventario.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chrInventario.Legends.Add(legend4);
             this.chrInventario.Location = new System.Drawing.Point(-4, 3);
             this.chrInventario.Name = "chrInventario";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chrInventario.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chrInventario.Series.Add(series4);
             this.chrInventario.Size = new System.Drawing.Size(317, 217);
             this.chrInventario.TabIndex = 15;
             this.chrInventario.Text = "chart1";
@@ -730,6 +731,7 @@
             this.btnProductosAgotados.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnProductosAgotados.Values.Image = global::TRAMADE.Properties.Resources.Productosagotados;
             this.btnProductosAgotados.Values.Text = "Productos \r\nagotados";
+            this.btnProductosAgotados.Click += new System.EventHandler(this.btnProductosAgotados_Click);
             // 
             // btnComprasRealizadas
             // 
@@ -763,6 +765,7 @@
             this.btnComprasRealizadas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnComprasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.comprasrealizadas;
             this.btnComprasRealizadas.Values.Text = "Compras\r\nrealizadas";
+            this.btnComprasRealizadas.Click += new System.EventHandler(this.btnComprasRealizadas_Click);
             // 
             // btnVentasRealizadas
             // 
@@ -796,6 +799,7 @@
             this.btnVentasRealizadas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnVentasRealizadas.Values.Image = global::TRAMADE.Properties.Resources.ventasrealizadas;
             this.btnVentasRealizadas.Values.Text = "  Ventas \r\nRegistradas";
+            this.btnVentasRealizadas.Click += new System.EventHandler(this.btnVentasRealizadas_Click);
             // 
             // btnProductos
             // 
@@ -829,6 +833,7 @@
             this.btnProductos.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnProductos.Values.Image = global::TRAMADE.Properties.Resources.totalproductos;
             this.btnProductos.Values.Text = "   Total\r\nProductos";
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // label1
             // 

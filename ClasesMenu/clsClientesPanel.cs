@@ -12,7 +12,7 @@ namespace TRAMADE.Formularios_Login__Menú
 {
     internal class clsClientesPanel
     {
-        
+
         private readonly Label _lblTotal;
         private readonly Panel _pnlBarraFondo;
         private readonly Panel _pnlBarraActivos;

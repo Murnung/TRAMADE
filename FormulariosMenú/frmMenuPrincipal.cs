@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.Formularios_Login__Menú;
-using TRAMADE.FormulariosMenú;
 
 namespace TRAMADE
 {
@@ -17,12 +16,16 @@ namespace TRAMADE
 
 
         private readonly ResponsiveFormManager _responsive;
+        private clsVistaGeneral _popup;
+
 
 
         public frmMenuPrincipal()
         {
             InitializeComponent();
             _responsive = new ResponsiveFormManager(this);
+            new clsClientesPanel(lblTotalClientes, pnlBarraFondo, pnlBarraActivos).Cargar();
+
 
         }
 
@@ -63,6 +66,7 @@ namespace TRAMADE
                 }
             }
 
+
             pnlContenido.Left = flpBarraLateral.Width;
             pnlContenido.Width = this.ClientSize.Width - flpBarraLateral.Width;
         }
@@ -91,6 +95,13 @@ namespace TRAMADE
         {
 
             _responsive.Initialize();
+            _popup = new clsVistaGeneral(this);
+
+            new clsGraficoInventario(chrInventario).Cargar();
+            new clsGraficoTendencia(chrTendencia).Cargar();
+            new clsUltimasCompras(dgvCompras).Cargar();
+            new clsUltimasVentas(dgvVentas).Cargar();
+
 
         }
 
@@ -130,9 +141,29 @@ namespace TRAMADE
             formulario.Show();
         }
 
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            _popup.MostrarProductos(btnProductos);
+        }
+        private void btnVentasRealizadas_Click(object sender, EventArgs e)
+        {
+            _popup.MostrarVentas(btnVentasRealizadas);
+        }
+
+        private void btnComprasRealizadas_Click(object sender, EventArgs e)
+        {
+            _popup.MostrarCompras(btnComprasRealizadas);
+        }
+
+        private void btnProductosAgotados_Click(object sender, EventArgs e)
+        {
+            _popup.MostrarAgotados(btnProductosAgotados);
+        }
+
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new frmVistaMenu());
+        
         }
 
         
@@ -166,6 +197,11 @@ namespace TRAMADE
         private void btnReportes_click(object sender, EventArgs e)
         {
             AbrirFormulario(new frmReportes());
+        }
+
+        private void pnlContenido_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
