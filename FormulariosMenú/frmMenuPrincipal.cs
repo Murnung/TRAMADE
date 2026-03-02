@@ -50,7 +50,6 @@ namespace TRAMADE
                     flpBarraLateral.Width = SidebarCollapsed;
                     sidebarExpand = false;
                     tmrTransicionLateral.Stop();
-
                 }
             }
             else
@@ -61,7 +60,6 @@ namespace TRAMADE
                     flpBarraLateral.Width = SidebarExpanded;
                     sidebarExpand = true;
                     tmrTransicionLateral.Stop();
-
                 }
             }
 
@@ -93,17 +91,12 @@ namespace TRAMADE
         {
 
             _responsive.Initialize();
-            _popup = new clsVistaGeneral(this);
 
-            new clsGraficoInventario(chrInventario).Cargar();
-            new clsGraficoTendencia(chrTendencia).Cargar();
-            new clsUltimasCompras(dgvCompras).Cargar();
-            new clsUltimasVentas(dgvVentas).Cargar();
         }
 
         private void frmMenuPrincipal_SizeChanged(object sender, EventArgs e)
         {
-            _responsive.AdjustLayout();
+                _responsive.AdjustLayout();    
         }
 
         private void btnMaximizar_Click(object sender, EventArgs e)
@@ -132,7 +125,7 @@ namespace TRAMADE
 
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
-
+            formulario.Dock = DockStyle.Fill;
             pnlContenido.Controls.Add(formulario);
             formulario.Show();
         }

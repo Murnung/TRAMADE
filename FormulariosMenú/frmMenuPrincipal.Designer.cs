@@ -34,26 +34,27 @@
             this.btnSalir = new Krypton.Toolkit.KryptonButton();
             this.btnMaximizar = new Krypton.Toolkit.KryptonButton();
             this.btnMinimizar = new Krypton.Toolkit.KryptonButton();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
             this.flpBarraLateral = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlInicio = new System.Windows.Forms.Panel();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.pnlClientes = new System.Windows.Forms.Panel();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.pnlVentas = new System.Windows.Forms.Panel();
+            this.btnVentas = new System.Windows.Forms.Button();
             this.pnlInventario = new System.Windows.Forms.Panel();
+            this.btnInventario = new System.Windows.Forms.Button();
             this.pnlCompras = new System.Windows.Forms.Panel();
+            this.btnCompras = new System.Windows.Forms.Button();
             this.pnlProveedores = new System.Windows.Forms.Panel();
+            this.btnProveedores = new System.Windows.Forms.Button();
             this.pnlReportes = new System.Windows.Forms.Panel();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.tmrTransicionLateral = new System.Windows.Forms.Timer(this.components);
             this.pnlContenido = new System.Windows.Forms.Panel();
-            this.btnInicio = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnVentas = new System.Windows.Forms.Button();
-            this.btnInventario = new System.Windows.Forms.Button();
-            this.btnCompras = new System.Windows.Forms.Button();
-            this.btnProveedores = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
             this.pnlInicio.SuspendLayout();
             this.pnlClientes.SuspendLayout();
@@ -62,7 +63,6 @@
             this.pnlCompras.SuspendLayout();
             this.pnlProveedores.SuspendLayout();
             this.pnlReportes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,12 +76,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1171, 65);
+            this.panel1.Size = new System.Drawing.Size(1239, 65);
             this.panel1.TabIndex = 0;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(1107, 12);
+            this.btnSalir.Location = new System.Drawing.Point(1180, 12);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(37, 38);
             this.btnSalir.StateNormal.Back.Color1 = System.Drawing.Color.White;
@@ -99,7 +99,7 @@
             // 
             // btnMaximizar
             // 
-            this.btnMaximizar.Location = new System.Drawing.Point(1049, 12);
+            this.btnMaximizar.Location = new System.Drawing.Point(1122, 12);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(37, 38);
             this.btnMaximizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
@@ -127,7 +127,7 @@
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.Location = new System.Drawing.Point(992, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(1065, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(37, 38);
             this.btnMinimizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
@@ -152,6 +152,18 @@
             this.btnMinimizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.Minimizar;
             this.btnMinimizar.Values.Text = "";
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(19, 14);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(55, 36);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMenu.TabIndex = 6;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // lblBienvenidoUsuario
             // 
@@ -187,68 +199,6 @@
             this.pnlInicio.Size = new System.Drawing.Size(245, 54);
             this.pnlInicio.TabIndex = 3;
             // 
-            // pnlClientes
-            // 
-            this.pnlClientes.Controls.Add(this.btnClientes);
-            this.pnlClientes.Location = new System.Drawing.Point(3, 63);
-            this.pnlClientes.Name = "pnlClientes";
-            this.pnlClientes.Size = new System.Drawing.Size(245, 60);
-            this.pnlClientes.TabIndex = 5;
-            // 
-            // pnlVentas
-            // 
-            this.pnlVentas.Controls.Add(this.btnVentas);
-            this.pnlVentas.Location = new System.Drawing.Point(3, 129);
-            this.pnlVentas.Name = "pnlVentas";
-            this.pnlVentas.Size = new System.Drawing.Size(245, 60);
-            this.pnlVentas.TabIndex = 7;
-            // 
-            // pnlInventario
-            // 
-            this.pnlInventario.Controls.Add(this.btnInventario);
-            this.pnlInventario.Location = new System.Drawing.Point(3, 195);
-            this.pnlInventario.Name = "pnlInventario";
-            this.pnlInventario.Size = new System.Drawing.Size(245, 60);
-            this.pnlInventario.TabIndex = 9;
-            // 
-            // pnlCompras
-            // 
-            this.pnlCompras.Controls.Add(this.btnCompras);
-            this.pnlCompras.Location = new System.Drawing.Point(3, 261);
-            this.pnlCompras.Name = "pnlCompras";
-            this.pnlCompras.Size = new System.Drawing.Size(245, 60);
-            this.pnlCompras.TabIndex = 11;
-            // 
-            // pnlProveedores
-            // 
-            this.pnlProveedores.Controls.Add(this.btnProveedores);
-            this.pnlProveedores.Location = new System.Drawing.Point(3, 327);
-            this.pnlProveedores.Name = "pnlProveedores";
-            this.pnlProveedores.Size = new System.Drawing.Size(242, 60);
-            this.pnlProveedores.TabIndex = 13;
-            // 
-            // pnlReportes
-            // 
-            this.pnlReportes.Controls.Add(this.btnReportes);
-            this.pnlReportes.Location = new System.Drawing.Point(3, 393);
-            this.pnlReportes.Name = "pnlReportes";
-            this.pnlReportes.Size = new System.Drawing.Size(245, 60);
-            this.pnlReportes.TabIndex = 15;
-            // 
-            // tmrTransicionLateral
-            // 
-            this.tmrTransicionLateral.Enabled = true;
-            this.tmrTransicionLateral.Interval = 2;
-            this.tmrTransicionLateral.Tick += new System.EventHandler(this.tmrTransicionLateral_Tick);
-            // 
-            // pnlContenido
-            // 
-            this.pnlContenido.AutoScroll = true;
-            this.pnlContenido.Location = new System.Drawing.Point(245, 65);
-            this.pnlContenido.Name = "pnlContenido";
-            this.pnlContenido.Size = new System.Drawing.Size(926, 716);
-            this.pnlContenido.TabIndex = 14;
-            // 
             // btnInicio
             // 
             this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -263,6 +213,14 @@
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
+            // pnlClientes
+            // 
+            this.pnlClientes.Controls.Add(this.btnClientes);
+            this.pnlClientes.Location = new System.Drawing.Point(3, 63);
+            this.pnlClientes.Name = "pnlClientes";
+            this.pnlClientes.Size = new System.Drawing.Size(245, 60);
+            this.pnlClientes.TabIndex = 5;
             // 
             // btnClientes
             // 
@@ -283,6 +241,14 @@
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
+            // pnlVentas
+            // 
+            this.pnlVentas.Controls.Add(this.btnVentas);
+            this.pnlVentas.Location = new System.Drawing.Point(3, 129);
+            this.pnlVentas.Name = "pnlVentas";
+            this.pnlVentas.Size = new System.Drawing.Size(245, 60);
+            this.pnlVentas.TabIndex = 7;
+            // 
             // btnVentas
             // 
             this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
@@ -301,6 +267,14 @@
             this.btnVentas.Text = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
+            // pnlInventario
+            // 
+            this.pnlInventario.Controls.Add(this.btnInventario);
+            this.pnlInventario.Location = new System.Drawing.Point(3, 195);
+            this.pnlInventario.Name = "pnlInventario";
+            this.pnlInventario.Size = new System.Drawing.Size(245, 60);
+            this.pnlInventario.TabIndex = 9;
             // 
             // btnInventario
             // 
@@ -321,6 +295,14 @@
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
+            // pnlCompras
+            // 
+            this.pnlCompras.Controls.Add(this.btnCompras);
+            this.pnlCompras.Location = new System.Drawing.Point(3, 261);
+            this.pnlCompras.Name = "pnlCompras";
+            this.pnlCompras.Size = new System.Drawing.Size(245, 60);
+            this.pnlCompras.TabIndex = 11;
+            // 
             // btnCompras
             // 
             this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
@@ -339,6 +321,14 @@
             this.btnCompras.Text = "Compras";
             this.btnCompras.UseVisualStyleBackColor = false;
             this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
+            // 
+            // pnlProveedores
+            // 
+            this.pnlProveedores.Controls.Add(this.btnProveedores);
+            this.pnlProveedores.Location = new System.Drawing.Point(3, 327);
+            this.pnlProveedores.Name = "pnlProveedores";
+            this.pnlProveedores.Size = new System.Drawing.Size(242, 60);
+            this.pnlProveedores.TabIndex = 13;
             // 
             // btnProveedores
             // 
@@ -359,6 +349,14 @@
             this.btnProveedores.UseVisualStyleBackColor = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
+            // pnlReportes
+            // 
+            this.pnlReportes.Controls.Add(this.btnReportes);
+            this.pnlReportes.Location = new System.Drawing.Point(3, 393);
+            this.pnlReportes.Name = "pnlReportes";
+            this.pnlReportes.Size = new System.Drawing.Size(245, 60);
+            this.pnlReportes.TabIndex = 15;
+            // 
             // btnReportes
             // 
             this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
@@ -378,22 +376,24 @@
             this.btnReportes.UseVisualStyleBackColor = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_click);
             // 
-            // btnMenu
+            // tmrTransicionLateral
             // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(19, 14);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(55, 36);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnMenu.TabIndex = 6;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.tmrTransicionLateral.Enabled = true;
+            this.tmrTransicionLateral.Interval = 2;
+            this.tmrTransicionLateral.Tick += new System.EventHandler(this.tmrTransicionLateral_Tick);
+            // 
+            // pnlContenido
+            // 
+            this.pnlContenido.AutoScroll = true;
+            this.pnlContenido.Location = new System.Drawing.Point(245, 65);
+            this.pnlContenido.Name = "pnlContenido";
+            this.pnlContenido.Size = new System.Drawing.Size(994, 716);
+            this.pnlContenido.TabIndex = 14;
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1171, 781);
+            this.ClientSize = new System.Drawing.Size(1239, 781);
             this.ControlBox = false;
             this.Controls.Add(this.flpBarraLateral);
             this.Controls.Add(this.panel1);
@@ -404,6 +404,7 @@
             this.SizeChanged += new System.EventHandler(this.frmMenuPrincipal_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.flpBarraLateral.ResumeLayout(false);
             this.pnlInicio.ResumeLayout(false);
             this.pnlClientes.ResumeLayout(false);
@@ -412,7 +413,6 @@
             this.pnlCompras.ResumeLayout(false);
             this.pnlProveedores.ResumeLayout(false);
             this.pnlReportes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ResumeLayout(false);
 
         }

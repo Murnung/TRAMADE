@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbVentasRealizadas = new Krypton.Toolkit.KryptonGroupBox();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
@@ -91,6 +91,9 @@
             // 
             // gbVentasRealizadas
             // 
+            this.gbVentasRealizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbVentasRealizadas.CaptionVisible = false;
             this.gbVentasRealizadas.Location = new System.Drawing.Point(465, 451);
             // 
@@ -130,6 +133,9 @@
             // 
             // gbComprasRealizadas
             // 
+            this.gbComprasRealizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbComprasRealizadas.CaptionVisible = false;
             this.gbComprasRealizadas.Location = new System.Drawing.Point(12, 451);
             // 
@@ -169,6 +175,9 @@
             // 
             // gbTendencia
             // 
+            this.gbTendencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbTendencia.CaptionVisible = false;
             this.gbTendencia.Location = new System.Drawing.Point(612, 201);
             // 
@@ -185,22 +194,25 @@
             // 
             // chrTendencia
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chrTendencia.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chrTendencia.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chrTendencia.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrTendencia.Legends.Add(legend1);
             this.chrTendencia.Location = new System.Drawing.Point(3, 3);
             this.chrTendencia.Name = "chrTendencia";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chrTendencia.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chrTendencia.Series.Add(series1);
             this.chrTendencia.Size = new System.Drawing.Size(257, 217);
             this.chrTendencia.TabIndex = 17;
             this.chrTendencia.Text = "chart2";
             // 
             // gbGestionInven
             // 
+            this.gbGestionInven.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbGestionInven.CaptionVisible = false;
             this.gbGestionInven.Location = new System.Drawing.Point(271, 201);
             // 
@@ -217,22 +229,25 @@
             // 
             // chrInventario
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chrInventario.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chrInventario.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.chrInventario.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chrInventario.Legends.Add(legend2);
             this.chrInventario.Location = new System.Drawing.Point(-4, 3);
             this.chrInventario.Name = "chrInventario";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chrInventario.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chrInventario.Series.Add(series2);
             this.chrInventario.Size = new System.Drawing.Size(317, 217);
             this.chrInventario.TabIndex = 15;
             this.chrInventario.Text = "chart1";
             // 
             // gbClientes
             // 
+            this.gbClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbClientes.CaptionVisible = false;
             this.gbClientes.Location = new System.Drawing.Point(12, 201);
             // 
@@ -314,6 +329,8 @@
             // 
             // gbVistaGeneral
             // 
+            this.gbVistaGeneral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbVistaGeneral.CaptionVisible = false;
             this.gbVistaGeneral.Location = new System.Drawing.Point(12, 12);
             // 

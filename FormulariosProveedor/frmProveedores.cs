@@ -23,18 +23,6 @@ namespace TRAMADE
             RecargarProveedores();
         }
 
-        private void tmrTransicionLateral(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void RecargarProveedores()
         {
             string consulta = "select * from VistaProveedorTabla";
@@ -85,11 +73,7 @@ namespace TRAMADE
             dgvProveedores.Columns["id_proveedor"].Visible = false;
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             clsProveedores ObjProveedores = new clsProveedores();
@@ -104,6 +88,11 @@ namespace TRAMADE
                 dgvProveedores.DataSource = ObjProveedores.BuscarProveedores(txtBuscar.Text);
                 dgvProveedores.Columns["id_proveedor"].Visible = false;
             }
+        }
+
+        private void frmProveedores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
