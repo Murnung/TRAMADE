@@ -31,7 +31,7 @@ namespace TRAMADE
             cmbFormato.SelectedIndex = 0;
 
             lstReportes.Columns.Clear();
-            lstReportes.Columns.Add("Reporte", lstReportes.Width - 5);
+            lstReportes.Columns.Add("", lstReportes.Width - 5);
             lstReportes.View = View.Details;
         }
 
@@ -56,6 +56,11 @@ namespace TRAMADE
         private void btnDescargar_Click(object sender, EventArgs e)
         {
             _reportes.AbrirReporte(cmbFormato.SelectedItem.ToString());
+        }
+
+        private void lstReportes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

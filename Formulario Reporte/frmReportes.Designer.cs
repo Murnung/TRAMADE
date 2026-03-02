@@ -191,6 +191,7 @@
             this.lstReportes.Size = new System.Drawing.Size(494, 218);
             this.lstReportes.TabIndex = 2;
             this.lstReportes.UseCompatibleStateImageBehavior = false;
+            this.lstReportes.SelectedIndexChanged += new System.EventHandler(this.lstReportes_SelectedIndexChanged);
             // 
             // label2
             // 
