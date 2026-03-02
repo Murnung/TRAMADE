@@ -13,7 +13,7 @@ namespace TRAMADE
 {
     public partial class frmHistorialFacturas : Form
     {
-        bool ordenAscendente = false; // Por defecto: más nuevas primero
+        bool ordenAscendente = false; 
 
         public frmHistorialFacturas()
         {
@@ -33,12 +33,12 @@ namespace TRAMADE
                 clsConexion conexion = new clsConexion();
                 conexion.Abrir();
 
-                // 1. Primero contamos cuántas facturas hay en total para el numeral descendente
+
                 string queryContar = "SELECT COUNT(*) FROM FACTURA";
                 SqlCommand cmdContar = new SqlCommand(queryContar, conexion.SqlC);
                 int totalRegistros = (int)cmdContar.ExecuteScalar();
 
-                // 2. Consulta principal
+
                 string query = @"SELECT F.id_factura, F.numero_factura, F.id_usuario, 
                                         C.rtn_cliente, C.dni_cliente, F.fecha_emision 
                                  FROM FACTURA F
@@ -47,7 +47,7 @@ namespace TRAMADE
 
                 if (!string.IsNullOrEmpty(filtro))
                 {
-                    // Limpiamos el formato INV/2026/000X para buscar el número real
+
                     string soloNumero = filtro.Replace("INV/2026/", "").TrimStart('0');
                     if (string.IsNullOrEmpty(soloNumero)) soloNumero = "0";
 
@@ -59,7 +59,7 @@ namespace TRAMADE
                     query += " AND CAST(F.fecha_emision AS DATE) = @fecha";
                 }
 
-                // Aplicamos el orden
+            
                 query += ordenAscendente ? " ORDER BY F.numero_factura ASC" : " ORDER BY F.fecha_emision DESC";
 
                 SqlCommand cmd = new SqlCommand(query, conexion.SqlC);
@@ -78,7 +78,7 @@ namespace TRAMADE
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                // Lógica del numeral: si es DESC (más nueva arriba), empezamos desde el total
+        
                 int contador = ordenAscendente ? 1 : totalRegistros;
 
                 while (dr.Read())
@@ -89,14 +89,14 @@ namespace TRAMADE
                     if (string.IsNullOrEmpty(dni)) dni = dr["dni_cliente"].ToString();
 
                     int n = dgvHistorialFacturas.Rows.Add();
-                    dgvHistorialFacturas.Rows[n].Cells[0].Value = contador; // Numeral dinámico
+                    dgvHistorialFacturas.Rows[n].Cells[0].Value = contador; 
                     dgvHistorialFacturas.Rows[n].Cells[1].Value = facturaFormateada;
                     dgvHistorialFacturas.Rows[n].Cells[2].Value = dr["id_usuario"].ToString();
                     dgvHistorialFacturas.Rows[n].Cells[3].Value = dni;
                     dgvHistorialFacturas.Rows[n].Cells[4].Value = Convert.ToDateTime(dr["fecha_emision"]).ToString("dd/MM/yyyy HH:mm");
                     dgvHistorialFacturas.Rows[n].Tag = dr["id_factura"];
 
-                    // Si es ASC sumamos, si es DESC restamos
+            
                     if (ordenAscendente) contador++; else contador--;
                 }
 
@@ -116,13 +116,13 @@ namespace TRAMADE
 
         private void btnCalendarioFacturas_Click(object sender, EventArgs e)
         {
-            // Mostramos el valor del DateTimePicker que agregaste
+       
             CargarHistorial("", dtpCalendario.Value);
         }
 
         private void btnOrdenarFacturas_Click(object sender, EventArgs e)
         {
-            ordenAscendente = !ordenAscendente; // Cambia entre ASC y DESC
+            ordenAscendente = !ordenAscendente; 
             CargarHistorial(txtBuscarFactura.Text.Trim());
         }
 

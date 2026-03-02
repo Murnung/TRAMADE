@@ -72,7 +72,6 @@
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnListoEF = new Krypton.Toolkit.KryptonButton();
-            this.btnGuardarEF = new Krypton.Toolkit.KryptonButton();
             this.btnImprimirEF = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -195,6 +194,8 @@
             // 
             // dgvEmitirFactura
             // 
+            this.dgvEmitirFactura.AllowUserToAddRows = false;
+            this.dgvEmitirFactura.AllowUserToDeleteRows = false;
             this.dgvEmitirFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmitirFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmitirFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -206,6 +207,7 @@
             this.Subtotal});
             this.dgvEmitirFactura.Location = new System.Drawing.Point(25, 84);
             this.dgvEmitirFactura.Name = "dgvEmitirFactura";
+            this.dgvEmitirFactura.ReadOnly = true;
             this.dgvEmitirFactura.RowHeadersVisible = false;
             this.dgvEmitirFactura.Size = new System.Drawing.Size(381, 116);
             this.dgvEmitirFactura.StateCommon.Background.Color1 = System.Drawing.Color.White;
@@ -542,7 +544,6 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.panel3.Controls.Add(this.btnListoEF);
-            this.panel3.Controls.Add(this.btnGuardarEF);
             this.panel3.Controls.Add(this.btnImprimirEF);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
@@ -575,32 +576,9 @@
             this.btnListoEF.Values.Text = "REGRESAR";
             this.btnListoEF.Click += new System.EventHandler(this.btnListoEF_Click);
             // 
-            // btnGuardarEF
-            // 
-            this.btnGuardarEF.Location = new System.Drawing.Point(892, 21);
-            this.btnGuardarEF.Name = "btnGuardarEF";
-            this.btnGuardarEF.Size = new System.Drawing.Size(42, 39);
-            this.btnGuardarEF.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnGuardarEF.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnGuardarEF.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.btnGuardarEF.StateCommon.Border.Rounding = 10F;
-            this.btnGuardarEF.StateCommon.Content.Image.ImageH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.btnGuardarEF.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnGuardarEF.StateCommon.Content.ShortText.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarEF.StateCommon.Content.ShortText.Image")));
-            this.btnGuardarEF.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.btnGuardarEF.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Far;
-            this.btnGuardarEF.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnGuardarEF.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
-            this.btnGuardarEF.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnGuardarEF.TabIndex = 57;
-            this.btnGuardarEF.TabStop = false;
-            this.btnGuardarEF.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnGuardarEF.Values.Image = global::TRAMADE.Properties.Resources.Download_png;
-            this.btnGuardarEF.Values.Text = "REGRESAR";
-            // 
             // btnImprimirEF
             // 
-            this.btnImprimirEF.Location = new System.Drawing.Point(812, 21);
+            this.btnImprimirEF.Location = new System.Drawing.Point(898, 21);
             this.btnImprimirEF.Name = "btnImprimirEF";
             this.btnImprimirEF.Size = new System.Drawing.Size(41, 44);
             this.btnImprimirEF.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -740,7 +718,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private Krypton.Toolkit.KryptonButton btnListoEF;
-        private Krypton.Toolkit.KryptonButton btnGuardarEF;
         private Krypton.Toolkit.KryptonButton btnImprimirEF;
     }
 }

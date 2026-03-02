@@ -13,7 +13,7 @@ namespace TRAMADE
 {
     public partial class frmEmitirFactura : Form
     {
-        // Esta variable recibe el ID desde el formulario de Facturación
+
         public int IdFacturaRecibido;
 
         public frmEmitirFactura()
@@ -23,11 +23,14 @@ namespace TRAMADE
 
         private void frmEmitirFactura_Load(object sender, EventArgs e)
         {
-            // Cuando abre el formulario, si hay un ID, cargamos todo
+
             if (IdFacturaRecibido > 0)
             {
                 CargarDatosFactura();
             }
+
+            dgvEmitirFactura.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmitirFactura.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void CargarDatosFactura()
@@ -37,7 +40,7 @@ namespace TRAMADE
                 clsConexion conexion = new clsConexion();
                 conexion.Abrir();
 
-                // 1. MAESTRO: Seleccionamos ambos (rtn y dni) por si acaso
+
                 string queryMaestro = @"SELECT F.numero_factura, F.fecha_emision, F.fecha_vencimiento, 
                                        F.subtotal, F.impuesto, F.total, F.id_forma_pago,
                                        C.nombre_cliente, C.rtn_cliente, C.dni_cliente, C.direccion_cliente,
@@ -57,8 +60,7 @@ namespace TRAMADE
                     int numF = Convert.ToInt32(dr["numero_factura"]);
                     lblNumeroFacturaEF.Text = "INV/2026/" + numF.ToString("D4");
 
-                    // --- CORRECCIÓN DNI/RTN ---
-                    // Si rtn_cliente está vacío, intenta mostrar dni_cliente
+
                     string dni = dr["rtn_cliente"].ToString();
                     if (string.IsNullOrEmpty(dni)) dni = dr["dni_cliente"].ToString();
                     txtDNIClienteEF.Text = dni;
@@ -79,7 +81,7 @@ namespace TRAMADE
                 }
                 dr.Close();
 
-                // 2. DETALLE: Corregir distorsión del Grid
+
                 string queryDetalle = @"SELECT P.nombre_producto as Producto, 
                                        'Unidad' as Descripción, 
                                        FP.cantidad as Cantidad, 
@@ -95,12 +97,11 @@ namespace TRAMADE
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                // --- EL TRUCO PARA ELIMINAR LA DISTORSIÓN ---
-                dgvEmitirFactura.DataSource = null; // Limpiamos el origen
-                dgvEmitirFactura.Columns.Clear();   // Borramos las columnas viejas del diseño
-                dgvEmitirFactura.DataSource = dt;   // Cargamos los datos nuevos
+                
+                dgvEmitirFactura.DataSource = null; 
+                dgvEmitirFactura.Columns.Clear();  
+                dgvEmitirFactura.DataSource = dt;  
 
-                // Ajustamos el ancho automáticamente para que se vea ordenado
                 dgvEmitirFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 conexion.Cerrar();
@@ -113,11 +114,11 @@ namespace TRAMADE
 
         private void btnListoEF_Click(object sender, EventArgs e)
         {
-            // Cerramos el formulario
+
             this.Close();
         }
 
-        // Eventos vacíos por si acaso diste doble clic sin querer en el diseño
+
         private void kryptonGroup4_Panel_Paint(object sender, PaintEventArgs e) { }
     }
 }

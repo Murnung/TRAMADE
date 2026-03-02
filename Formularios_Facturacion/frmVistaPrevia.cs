@@ -26,5 +26,14 @@ namespace TRAMADE
         {
             this.Close();
         }
+
+        private void frmVistaPrevia_Load(object sender, EventArgs e)
+        {
+       
+            this.ActiveControl = null;
+
+            dgvFacturaVP.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvFacturaVP.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
     }
 }

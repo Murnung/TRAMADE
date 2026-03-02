@@ -14,18 +14,16 @@ namespace TRAMADE
     public partial class frmFacturacion : Form
     {
         int numeroFactura = 1;
-        int id_cliente_seleccionado = 0; // Esta variable guardará el ID del cliente que seleccionemos, para usarlo al guardar la factura.
-
-        // Método para buscar al cliente en la base de datos usando el DNI o RTN
+        int id_cliente_seleccionado = 0;
         private void BuscarCliente(string rtnDni)
         {
             try
             {
-                // Instanciamos la clase de conexión de tu equipo
+
                 clsConexion ObjConexion = new clsConexion();
                 ObjConexion.Abrir();
 
-                // Armamos la consulta para buscar por rtn_cliente
+
                 string consulta = "SELECT id_cliente, nombre_cliente, direccion_cliente FROM CLIENTE WHERE rtn_cliente = @rtn OR dni_cliente = @rtn";
                 SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC);
                 cmd.Parameters.AddWithValue("@rtn", rtnDni);
@@ -34,16 +32,15 @@ namespace TRAMADE
 
                 if (reader.Read())
                 {
-                    id_cliente_seleccionado = Convert.ToInt32(reader["id_cliente"]); // Guardamos el ID del cliente para usarlo al guardar la factura
+                    id_cliente_seleccionado = Convert.ToInt32(reader["id_cliente"]); 
 
-                    // Si lo encuentra, llenamos tus cajitas automáticamente
+
                     txtNombreCliente.Text = reader["nombre_cliente"].ToString();
                     txtDireccionCliente.Text = reader["direccion_cliente"].ToString();
                 }
                 else
                 {
-                    id_cliente_seleccionado = 0; // Reiniciamos el ID del cliente si no se encuentra
-                    // Si el cliente no existe, limpiamos y avisamos
+                    id_cliente_seleccionado = 0;
                     MessageBox.Show("Cliente no encontrado en la base de datos. Verifique el RTN/DNI.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNombreCliente.Text = "";
                     txtDireccionCliente.Text = "";
@@ -95,17 +92,56 @@ namespace TRAMADE
 
         private void kryptonButton12_Click(object sender, EventArgs e)
         {
-            frmVistaPrevia objVistaPrevia = new frmVistaPrevia();
-            objVistaPrevia.txtNombreClienteVP.Text = txtNombreCliente.Text;
-            objVistaPrevia.txtDNIClienteVP.Text = txtDNICliente.Text;
-            objVistaPrevia.txtDireccionClienteVP.Text = txtDireccionCliente.Text;
-            objVistaPrevia.lblNumeroFacturaVP.Text = lblNumeroFactura.Text;
-            objVistaPrevia.ShowDialog();
+            
+            if (dgvDetalleFactura.Rows.Count == 0)
+            {
+                MessageBox.Show("Agregue productos para ver la vista previa.", "Aviso");
+                return;
+            }
+
+            frmVistaPrevia objVP = new frmVistaPrevia();
+
+            objVP.txtNombreClienteVP.Text = txtNombreCliente.Text;
+            objVP.txtDNIClienteVP.Text = txtDNICliente.Text;
+            objVP.txtDireccionClienteVP.Text = txtDireccionCliente.Text;
+            objVP.lblNumeroFacturaVP.Text = lblNumeroFactura.Text;
+
+            objVP.txtIDVendedorVP.Text = txtIDVendedor.Text;
+            objVP.txtNombreVendedorVP.Text = txtNombreVendedor.Text;
+
+            objVP.lblFechaEmisionVP.Text = dtpEmision.Value.ToString("dd/MM/yyyy");
+            objVP.lblfechaVencimientoVP.Text = dtpVencimiento.Value.ToString("dd/MM/yyyy");
+
+            objVP.lblSubtotalVP.Text = lblSubtotal.Text;
+            objVP.lblImpuestoVP.Text = lblImpuesto.Text;
+            objVP.lblTotalVP.Text = lblTotal.Text;
+
+            if (rbContado.Checked) objVP.rbContadoVP.Checked = true;
+            if (rbCredito.Checked) objVP.rbCreditoVP.Checked = true;
+
+            objVP.dgvFacturaVP.Rows.Clear(); 
+
+            foreach (DataGridViewRow fila in dgvDetalleFactura.Rows)
+            {
+
+                if (fila.Cells[0].Value != null && !fila.IsNewRow)
+                {
+                    objVP.dgvFacturaVP.Rows.Add(new object[] {
+                fila.Cells[0].Value, 
+                fila.Cells[1].Value, 
+                fila.Cells[2].Value, 
+                fila.Cells[3].Value, 
+                fila.Cells[4].Value, 
+                fila.Cells[5].Value  
+            });
+                }
+            }
+
+            objVP.ShowDialog();
         }
 
         private void kryptonButton13_Click(object sender, EventArgs e)
         {
-            // 1. Validaciones
             if (dgvDetalleFactura.Rows.Count == 0)
             {
                 MessageBox.Show("No hay productos para facturar.", "Aviso");
@@ -118,21 +154,19 @@ namespace TRAMADE
 
             try
             {
-                // 2. GUARDAR MAESTRO (Ajustado a tu tabla real)
-                // Nota: Asegúrate de tener los valores para id_usuario, id_forma_pago, etc.
+               
                 string qFactura = @"INSERT INTO FACTURA (numero_factura, id_usuario, id_forma_pago, id_cliente, id_estado, id_tipo_factura, fecha_emision, fecha_vencimiento, subtotal, impuesto, total) 
                             VALUES (@num, @user, @pago, @cliente, @estado, @tipo, @fechaE, @fechaV, @sub, @isv, @total); 
                             SELECT SCOPE_IDENTITY();";
 
                 SqlCommand cmdF = new SqlCommand(qFactura, conexion.SqlC, transaccion);
 
-                // Parámetros basados en tu imagen de la tabla
                 cmdF.Parameters.AddWithValue("@num", numeroFactura);
-                cmdF.Parameters.AddWithValue("@user", int.Parse(txtIDVendedor.Text)); // El ID que ya tenés del login
-                cmdF.Parameters.AddWithValue("@pago", rbContado.Checked ? 1 : 2); // 1 para Contado, 2 para Crédito (ajustalo según tu DB)
-                cmdF.Parameters.AddWithValue("@cliente", id_cliente_seleccionado); // El ID del cliente que seleccionamos
-                cmdF.Parameters.AddWithValue("@estado", 1); // 1 = Emitida/Activa
-                cmdF.Parameters.AddWithValue("@tipo", 1); // 1 = Factura Normal
+                cmdF.Parameters.AddWithValue("@user", int.Parse(txtIDVendedor.Text));
+                cmdF.Parameters.AddWithValue("@pago", rbContado.Checked ? 1 : 2);
+                cmdF.Parameters.AddWithValue("@cliente", id_cliente_seleccionado);
+                cmdF.Parameters.AddWithValue("@estado", 1); 
+                cmdF.Parameters.AddWithValue("@tipo", 1); 
                 cmdF.Parameters.AddWithValue("@fechaE", dtpEmision.Value);
                 cmdF.Parameters.AddWithValue("@fechaV", dtpVencimiento.Value);
                 cmdF.Parameters.AddWithValue("@sub", decimal.Parse(lblSubtotal.Text.Replace("L. ", "")));
@@ -141,10 +175,8 @@ namespace TRAMADE
 
                 int idGenerado = Convert.ToInt32(cmdF.ExecuteScalar());
 
-                // 3. GUARDAR DETALLE (FACTURA_PRODUCTO)
                 foreach (DataGridViewRow fila in dgvDetalleFactura.Rows)
                 {
-                    // Validamos que la fila tenga datos y no sea la fila vacía del final
                     if (fila.Cells[0].Value != null && !fila.IsNewRow)
                     {
                         string qDetalle = "INSERT INTO FACTURA_PRODUCTO (id_factura, id_producto, cantidad) VALUES (@id, @prod, @cant)";
@@ -152,12 +184,8 @@ namespace TRAMADE
 
                         cmdD.Parameters.AddWithValue("@id", idGenerado);
 
-                        // ¡EL CAMBIO IMPORTANTE! 
-                        // fila.Cells[0] ahora tiene el ID (el número que SQL sí acepta)
                         cmdD.Parameters.AddWithValue("@prod", Convert.ToInt32(fila.Cells[0].Value));
 
-                        // La cantidad ahora sería la celda 3 (si moviste las columnas)
-                        // Ajustá los índices según cómo quedaron tus columnas en el Grid
                         cmdD.Parameters.AddWithValue("@cant", fila.Cells[3].Value);
 
                         cmdD.ExecuteNonQuery();
@@ -167,12 +195,10 @@ namespace TRAMADE
                 transaccion.Commit();
                 MessageBox.Show("Factura emitida con éxito.", "TRAMADE");
 
-                // 4. ABRIR EMISIÓN
                 frmEmitirFactura objEmitirFactura = new frmEmitirFactura();
                 objEmitirFactura.IdFacturaRecibido = idGenerado;
                 objEmitirFactura.ShowDialog();
 
-                // 5. LIMPIEZA
                 dgvDetalleFactura.Rows.Clear();
                 CalcularTotales();
             }
@@ -232,11 +258,11 @@ namespace TRAMADE
         {
             if (clsSesion.id_usuario != 0)
             {
-                // Jalamos los datos de la memoria global
+
                 txtIDVendedor.Text = clsSesion.id_usuario.ToString();
                 txtNombreVendedor.Text = clsSesion.nombre_usuario;
 
-                // Bloqueamos las cajitas para que no lo borren
+   
                 txtIDVendedor.ReadOnly = true;
                 txtNombreVendedor.ReadOnly = true;
             }
@@ -250,7 +276,7 @@ namespace TRAMADE
         {
             if (txtDNICliente.Text.Trim() != "")
             {
-                // Llamamos al método que ya tenías creado
+   
                 BuscarCliente(txtDNICliente.Text.Trim());
             }
             else
