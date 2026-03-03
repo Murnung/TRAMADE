@@ -283,7 +283,6 @@
             // 
             // cmbProveedor
             // 
-            this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProveedor.DropDownWidth = 186;
             this.cmbProveedor.Location = new System.Drawing.Point(151, 174);
             this.cmbProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -293,10 +292,10 @@
             this.cmbProveedor.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProveedor.TabIndex = 140;
             this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
+            this.cmbProveedor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbProveedor_KeyUp);
             // 
             // cmbProducto
             // 
-            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.DropDownWidth = 186;
             this.cmbProducto.Location = new System.Drawing.Point(234, 218);
             this.cmbProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -305,6 +304,7 @@
             this.cmbProducto.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cmbProducto.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProducto.TabIndex = 139;
+            this.cmbProducto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbProducto_KeyUp);
             // 
             // txtTotal
             // 

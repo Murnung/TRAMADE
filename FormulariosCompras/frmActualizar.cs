@@ -250,5 +250,45 @@ namespace TRAMADE
             btnLimpiar_Click(sender, e);
 
         }
+        bool buscando = false;
+        private void cmbProveedor_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (buscando) return;
+            buscando = true;
+
+            string texto = cmbProveedor.Text;
+
+            cmbProveedor.BeginUpdate();
+            clsLlenarComboProveedor.llenarComboProveedor(cmbProveedor, ObjConexion, texto);
+            cmbProveedor.Text = texto;
+            cmbProveedor.SelectionStart = texto.Length;
+            cmbProveedor.SelectionLength = 0;
+            cmbProveedor.EndUpdate();
+
+            cmbProveedor.DroppedDown = true;
+            Cursor.Current = Cursors.Default;
+
+            buscando = false;
+        }
+
+        private void cmbProducto_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (buscando) return;
+            buscando = true;
+
+            string texto = cmbProducto.Text;
+
+            cmbProducto.BeginUpdate();
+            clsLlenarComboProducto.llenarComboProducto(cmbProducto, ObjConexion, texto);
+            cmbProducto.Text = texto;
+            cmbProducto.SelectionStart = texto.Length;
+            cmbProducto.SelectionLength = 0;
+            cmbProducto.EndUpdate();
+
+            cmbProducto.DroppedDown = true;
+            Cursor.Current = Cursors.Default;
+
+            buscando = false;
+        }
     }
 }
