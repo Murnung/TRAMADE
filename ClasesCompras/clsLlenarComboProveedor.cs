@@ -12,20 +12,34 @@ namespace TRAMADE.ClasesCompras
     internal class clsLlenarComboProveedor
     {
         clsLlenarComboProveedor() { }
-        public static void llenarComboProveedor(Krypton.Toolkit.KryptonComboBox cmb, clsConexion conexion)
+        public static void llenarComboProveedor(Krypton.Toolkit.KryptonComboBox cmb, clsConexion conexion,string texto = "")
         {
             try
             {
                 conexion.Abrir();
-                string consulta = "SELECT * FROM VistaProveedor";
-                SqlDataAdapter adapter = new SqlDataAdapter(consulta, conexion.SqlC);
+
+                SqlCommand cmd;
+              
+                // Si no hay texto muestra todos, si hay texto filtra
+                if (string.IsNullOrEmpty(texto))
+                {
+                    cmd = new SqlCommand("SELECT * FROM VistaProveedor", conexion.SqlC);
+                }
+                else
+                {
+                    cmd = new SqlCommand("SELECT * FROM VistaProveedor WHERE nombre_comercial_proveedor LIKE @texto", conexion.SqlC);
+                    cmd.Parameters.AddWithValue("@texto", "%" + texto + "%");
+                }
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
-                adapter.Fill(dt);
+                da.Fill(dt);
 
                 cmb.DataSource = dt;
                 cmb.DisplayMember = "nombre_comercial_proveedor";
                 cmb.ValueMember = "id_proveedor";
                 cmb.SelectedIndex = -1;
+               
             }
             catch (Exception ex)
             {

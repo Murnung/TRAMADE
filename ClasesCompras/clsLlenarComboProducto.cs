@@ -13,16 +13,26 @@ namespace TRAMADE.ClasesCompras
     {
 
         clsLlenarComboProducto () { }
-        public static void llenarComboProducto(Krypton.Toolkit.KryptonComboBox cmb, clsConexion conexion)
+        public static void llenarComboProducto(Krypton.Toolkit.KryptonComboBox cmb, clsConexion conexion,string texto = "")
         {
             try
             {
                 conexion.Abrir();
-                string consulta = "SELECT id_producto, nombre_producto FROM VistaProducto";
-                SqlDataAdapter adapter = new SqlDataAdapter(consulta, conexion.SqlC);
+                SqlCommand cmd;
+
+                if (string.IsNullOrEmpty(texto))
+                {
+                    cmd = new SqlCommand("SELECT * FROM VistaProducto", conexion.SqlC);
+                }
+                else
+                {
+                    cmd = new SqlCommand("SELECT * FROM VistaProducto WHERE nombre_producto LIKE @texto COLLATE SQL_Latin1_General_CP1_CI_AS", conexion.SqlC);
+                    cmd.Parameters.AddWithValue("@texto", "%" + texto + "%");
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd); // <-- FALTABA cmd AQUÍ
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-
 
                 cmb.DataSource = dt;
                 cmb.DisplayMember = "nombre_producto";

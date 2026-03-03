@@ -92,7 +92,7 @@ namespace TRAMADE
 
         private void frmActualizar_Load(object sender, EventArgs e)
         {
-            clsLlenarComboProveedor.llenarComboProveedor(cmbProveedor, ObjConexion);
+            clsLlenarComboProveedor.llenarComboProveedor(cmbProveedor, ObjConexion,cmbProveedor.Text);
             clsLlenarComboProducto.llenarComboProducto(cmbProducto, ObjConexion);
             clsLlenarComboFormaPago.llenarComboFormaPago(cmbFormaPago, ObjConexion);
 
