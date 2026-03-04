@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores_Añadir));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new Krypton.Toolkit.KryptonButton();
-            this.btnMinimizar = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnMaximizar = new Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,9 +54,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             this.panel1.Controls.Add(this.btnSalir);
-            this.panel1.Controls.Add(this.btnMinimizar);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnMaximizar);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(812, 120);
@@ -82,28 +78,6 @@
             this.btnSalir.Values.Text = "";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Location = new System.Drawing.Point(636, 23);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(37, 38);
-            this.btnMinimizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
-            this.btnMinimizar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
-            this.btnMinimizar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
-            this.btnMinimizar.StateNormal.Back.Color1 = System.Drawing.Color.White;
-            this.btnMinimizar.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.btnMinimizar.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
-            this.btnMinimizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMinimizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMinimizar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertPressed;
-            this.btnMinimizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMinimizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMinimizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnMinimizar.TabIndex = 16;
-            this.btnMinimizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnMinimizar.Values.Image = global::TRAMADE.Properties.Resources.Minimizar;
-            this.btnMinimizar.Values.Text = "";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -114,28 +88,6 @@
             this.label1.Size = new System.Drawing.Size(274, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "Añadir Proveedor";
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Location = new System.Drawing.Point(693, 23);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(37, 38);
-            this.btnMaximizar.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
-            this.btnMaximizar.StateDisabled.Back.Color1 = System.Drawing.Color.White;
-            this.btnMaximizar.StateDisabled.Back.Color2 = System.Drawing.Color.White;
-            this.btnMaximizar.StateNormal.Back.Color1 = System.Drawing.Color.White;
-            this.btnMaximizar.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.btnMaximizar.StateNormal.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
-            this.btnMaximizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMaximizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMaximizar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertPressed;
-            this.btnMaximizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMaximizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMaximizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnMaximizar.TabIndex = 17;
-            this.btnMaximizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnMaximizar.Values.Image = global::TRAMADE.Properties.Resources.Maximizar;
-            this.btnMaximizar.Values.Text = "";
             // 
             // label2
             // 
@@ -170,7 +122,6 @@
             // txtRazonSocial
             // 
             this.txtRazonSocial.CueHint.Color1 = System.Drawing.Color.Gray;
-            this.txtRazonSocial.CueHint.CueHintText = "RAZÓN SOCIAL";
             this.txtRazonSocial.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRazonSocial.Location = new System.Drawing.Point(60, 189);
             this.txtRazonSocial.Name = "txtRazonSocial";
@@ -181,7 +132,6 @@
             // txtDireccionFiscal
             // 
             this.txtDireccionFiscal.CueHint.Color1 = System.Drawing.Color.Gray;
-            this.txtDireccionFiscal.CueHint.CueHintText = "DIRECCION FISCAL";
             this.txtDireccionFiscal.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccionFiscal.Location = new System.Drawing.Point(411, 189);
             this.txtDireccionFiscal.Name = "txtDireccionFiscal";
@@ -192,7 +142,6 @@
             // txtNombreComercial
             // 
             this.txtNombreComercial.CueHint.Color1 = System.Drawing.Color.Gray;
-            this.txtNombreComercial.CueHint.CueHintText = "NOMBRE COMERCIAL";
             this.txtNombreComercial.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreComercial.Location = new System.Drawing.Point(60, 275);
             this.txtNombreComercial.Name = "txtNombreComercial";
@@ -203,7 +152,6 @@
             // txtRtn
             // 
             this.txtRtn.CueHint.Color1 = System.Drawing.Color.Gray;
-            this.txtRtn.CueHint.CueHintText = "RTN";
             this.txtRtn.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRtn.Location = new System.Drawing.Point(411, 275);
             this.txtRtn.Name = "txtRtn";
@@ -214,7 +162,6 @@
             // txtTelefonoGeneral
             // 
             this.txtTelefonoGeneral.CueHint.Color1 = System.Drawing.Color.Gray;
-            this.txtTelefonoGeneral.CueHint.CueHintText = "TELEFÓNO GENERAL";
             this.txtTelefonoGeneral.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoGeneral.Location = new System.Drawing.Point(60, 388);
             this.txtTelefonoGeneral.Name = "txtTelefonoGeneral";
@@ -225,9 +172,8 @@
             // txtCorreoCentral
             // 
             this.txtCorreoCentral.CueHint.Color1 = System.Drawing.Color.Gray;
-            this.txtCorreoCentral.CueHint.CueHintText = "CORREO CENTRAL";
             this.txtCorreoCentral.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoCentral.Location = new System.Drawing.Point(58, 467);
+            this.txtCorreoCentral.Location = new System.Drawing.Point(48, 468);
             this.txtCorreoCentral.Name = "txtCorreoCentral";
             this.txtCorreoCentral.Size = new System.Drawing.Size(331, 34);
             this.txtCorreoCentral.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,7 +305,5 @@
         private Krypton.Toolkit.KryptonComboBox cmbClasificacion;
         private Krypton.Toolkit.KryptonComboBox cmbTerminosdePago;
         private Krypton.Toolkit.KryptonButton btnSalir;
-        private Krypton.Toolkit.KryptonButton btnMinimizar;
-        private Krypton.Toolkit.KryptonButton btnMaximizar;
     }
 }

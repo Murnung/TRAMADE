@@ -17,43 +17,37 @@ namespace TRAMADE
     {
         
         clsConexion ObjConexion = new clsConexion();
+        private const string VISTA = "SELECT * FROM VistaProveedorTabla";
+        private readonly string[] OCULTAS = { "id_proveedor" };
+
         public frmProveedores()
         {
             InitializeComponent();
+            clsDataGridView.AplicarEstilo(dgvProveedor);
             RecargarProveedores();
         }
 
         public void RecargarProveedores()
         {
-            string consulta = "select * from VistaProveedorTabla";
-            SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dgvProveedor.DataSource = dt;
-            dgvProveedor.Columns["id_proveedor"].Visible = false; // ← oculta pero existe para leerla
+            clsDataGridView.Cargar(dgvProveedor, VISTA, ObjConexion.SqlC, OCULTAS);
         }
 
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
         {
             frmProveedores_Añadir frmAñadir = new frmProveedores_Añadir();
-            frmAñadir.ShowDialog(); 
-
-            RecargarProveedores(); 
+            frmAñadir.ShowDialog();
+            RecargarProveedores();
         }
 
 
         private void btnFiltrarActivo_Click(object sender, EventArgs e)
         {
-            clsProveedores ObjProveedores = new clsProveedores();
-            dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("ACTIVO");
-            dgvProveedor.Columns["id_proveedor"].Visible = false;
+            clsDataGridView.FiltrarPorEstado(dgvProveedor, VISTA, ObjConexion.SqlC, "ACTIVO", OCULTAS);
         }
 
         private void btnFiltrarInactivo_Click(object sender, EventArgs e)
         {
-            clsProveedores ObjProveedores = new clsProveedores();
-            dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("INACTIVO");
-            dgvProveedor.Columns["id_proveedor"].Visible = false;
+            clsDataGridView.FiltrarPorEstado(dgvProveedor, VISTA, ObjConexion.SqlC, "INACTIVO", OCULTAS);
         }
 
         public void RecargarProveedoresAC()
@@ -70,7 +64,7 @@ namespace TRAMADE
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            clsProveedores ObjProveedores = new clsProveedores();
+            /*clsProveedores ObjProveedores = new clsProveedores();
 
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
@@ -81,18 +75,26 @@ namespace TRAMADE
             {
                 dgvProveedor.DataSource = ObjProveedores.BuscarProveedores(txtBuscar.Text);
                 dgvProveedor.Columns["id_proveedor"].Visible = false;
-            }
+            }*/
+
+            clsDataGridView.Buscar(dgvProveedor, txtBuscar.Text, VISTA, ObjConexion.SqlC, OCULTAS);
         }
 
         private void dgvProveedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            /*
             if (e.RowIndex >= 0)
             {
                 // Leer columna 0 que sería id_proveedor si la agregas oculta
                 int idProveedor = Convert.ToInt32(dgvProveedor.Rows[e.RowIndex].Cells[0].Value);
                 frmProveedores_Perfil frmPerfil = new frmProveedores_Perfil(idProveedor);
                 frmPerfil.Show();
-            }
+            }*/
+
+            int id = clsDataGridView.ObtenerIdDobleClick(dgvProveedor, e);
+            if (id == -1) return;
+            frmProveedores_Perfil frmPerfil = new frmProveedores_Perfil(id);
+            frmPerfil.Show();
         }
     }
 }
