@@ -86,13 +86,13 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
   </ItemGroup>
   <ItemGroup>
     <!-- Raíz -->
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsSesion.cs" />
     <Compile Include="Program.cs" />
-
     <!-- Form1 -->
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -100,7 +100,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-
     <!-- ClasesCompras -->
     <Compile Include="ClasesCompras\clsCompras.cs" />
     <Compile Include="ClasesCompras\clsFiltrarCompras.cs" />
@@ -110,10 +109,8 @@
     <Compile Include="ClasesCompras\clsLlenarListBox.cs" />
     <Compile Include="ClasesCompras\clsLlenarTextoPrecioCosto.cs" />
     <Compile Include="ClasesCompras\clsOperacionesCompra.cs" />
-
     <!-- ClasesAdministrador -->
     <Compile Include="ClasesAdministrador\clsUsuario.cs" />
-
     <!-- Formularios Login, Menú -->
     <Compile Include="Formularios Login, Menú\frmLogin.cs">
       <SubType>Form</SubType>
@@ -127,7 +124,6 @@
     <Compile Include="Formularios Login, Menú\frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
-
     <!-- Formularios Login, Menú - Clases -->
     <Compile Include="Formularios Login, Menú\Clases\clsClientesPanel.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsGraficoInventario.cs" />
@@ -136,7 +132,6 @@
     <Compile Include="Formularios Login, Menú\Clases\clsUltimasCompras.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsUltimasVentas.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsVistaGeneral.cs" />
-
     <!-- FormulariosCompras -->
     <Compile Include="FormulariosCompras\frmActualizar.cs">
       <SubType>Form</SubType>
@@ -168,7 +163,6 @@
     <Compile Include="FormulariosCompras\frmSeguimiento.Designer.cs">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </Compile>
-
     <!-- FormulariosAdministrador -->
     <Compile Include="FormulariosAdministrador\frmAdministrador.cs">
       <SubType>Form</SubType>
@@ -200,7 +194,6 @@
     <Compile Include="FormulariosAdministrador\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
-
     <!-- Properties -->
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -213,7 +206,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-
     <!-- EmbeddedResources -->
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -257,9 +249,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-
     <!-- None -->
     <None Include="App.config" />
     <None Include="packages.config" />
