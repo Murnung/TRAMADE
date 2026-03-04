@@ -104,18 +104,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios Login, Menú\Clases\clsClientesPanel.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsGraficoInventario.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsGraficoTendencia.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsResponsive.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsUltimasCompras.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsUltimasVentas.cs" />
-    <Compile Include="Formularios Login, Menú\Clases\clsVistaGeneral.cs" />
-    <Compile Include="Formularios Login, Menú\frmLogin.cs" />
-    <Compile Include="Formularios Login, Menú\frmMenuPrincipal.cs" />
-    <Compile Include="Formularios Login, Menú\frmMenuPrincipal.Designer.cs">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormulariosCompras\frmActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +122,9 @@
     <Compile Include="FormulariosCompras\frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios Login, Menú\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios Login, Menú\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
@@ -149,17 +140,10 @@
     <Compile Include="FormulariosCompras\frmSeguimiento.Designer.cs">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios Login, Menú\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios Login, Menú\frmMenuPrincipal.resx">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCompras\frmActualizar.resx">
       <DependentUpon>frmActualizar.cs</DependentUpon>
@@ -170,6 +154,9 @@
     <EmbeddedResource Include="FormulariosCompras\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Login, Menú\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCompras\frmRegistrar.resx">
       <DependentUpon>frmRegistrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,10 +166,13 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="obj\Debug\build.force" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\TRAMADE.csproj.AssemblyReference.cache" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -229,14 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GES.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="obj\Debug\TRAMADE.csproj.FileListAbsolute.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\" />
-    <Folder Include="bin\Release\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
