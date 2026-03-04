@@ -43,7 +43,7 @@ namespace TRAMADE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            /*
             // En btnGuardar antes de guardar:
             if (!clsValidar.ValidarProveedor(
             txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text,
@@ -67,7 +67,31 @@ namespace TRAMADE
 
             ObjAñadir.InsertarProveedor(ObjProveedores);
 
-            this.Close(); 
+            this.Close(); */
+
+            if (!clsValidar.ValidarProveedor(
+            txtNombreComercial.Text, txtNombreComercial,
+            txtRazonSocial.Text, txtRazonSocial,
+            txtDireccionFiscal.Text, txtDireccionFiscal,
+            txtRtn.Text, txtRtn,
+            txtTelefonoGeneral.Text, txtTelefonoGeneral,
+            txtCorreoCentral.Text, txtCorreoCentral,
+            Convert.ToInt32(cmbClasificacion.SelectedValue),
+            Convert.ToInt32(cmbTerminosdePago.SelectedValue))) return;
+
+            clsProveedores ObjProveedores = new clsProveedores(
+                clsValidar.Limpiar(txtNombreComercial.Text),
+                clsValidar.Limpiar(txtRazonSocial.Text),
+                clsValidar.Limpiar(txtDireccionFiscal.Text),
+                clsValidar.Limpiar(txtRtn.Text),
+                Convert.ToInt32(cmbClasificacion.SelectedValue),
+                Convert.ToInt32(cmbTerminosdePago.SelectedValue),
+                clsValidar.Limpiar(txtTelefonoGeneral.Text),
+                clsValidar.Limpiar(txtCorreoCentral.Text));
+
+            clsProveedores_Añadir ObjAñadir = new clsProveedores_Añadir();
+            ObjAñadir.InsertarProveedor(ObjProveedores);
+            this.Close();
         }
 
         private void cmbClasificacion_SelectedIndexChanged(object sender, EventArgs e)
