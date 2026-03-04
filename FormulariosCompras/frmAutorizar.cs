@@ -80,6 +80,15 @@ namespace TRAMADE
             dgvCompras.Columns["ID forma pago"].Visible = false;
             dgvCompras.Columns["ID estado"].Visible = false;
 
+            dgvCompras.ReadOnly = false;
+            dgvCompras.AllowUserToResizeRows = false;
+            dgvCompras.AllowUserToResizeColumns = false;
+            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCompras.EnableHeadersVisualStyles = false;
+            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
+
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)
@@ -124,6 +133,11 @@ namespace TRAMADE
                 dgvCompras.DataSource = dt;
                 AgregarColumnaCheck();
             }
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            recargarCompras();
         }
     }
 }

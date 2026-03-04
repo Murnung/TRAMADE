@@ -38,6 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new Krypton.Toolkit.KryptonButton();
+            this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
@@ -171,6 +172,8 @@
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompras.Location = new System.Drawing.Point(20, 249);
             this.dgvCompras.Name = "dgvCompras";
+            this.dgvCompras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCompras.RowHeadersVisible = false;
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
             this.dgvCompras.Size = new System.Drawing.Size(1002, 319);
@@ -203,12 +206,35 @@
             this.btnBuscar.Values.Text = "BUSCAR";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(474, 143);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescar.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescar.OverrideFocus.Back.Color2 = System.Drawing.Color.Silver;
+            this.btnRefrescar.Size = new System.Drawing.Size(106, 29);
+            this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescar.StateCommon.Border.Rounding = 10F;
+            this.btnRefrescar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnRefrescar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
+            this.btnRefrescar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescar.StateTracking.Back.Color2 = System.Drawing.Color.Silver;
+            this.btnRefrescar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnRefrescar.TabIndex = 92;
+            this.btnRefrescar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRefrescar.Values.Text = "REFRESCAR";
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
             // frmAutorizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1046, 645);
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.panel2);
@@ -239,7 +265,8 @@
         private Krypton.Toolkit.KryptonButton btnDenegar;
         private Krypton.Toolkit.KryptonTextBox txtBuscar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgvCompras;
         private Krypton.Toolkit.KryptonButton btnBuscar;
+        private System.Windows.Forms.DataGridView dgvCompras;
+        private Krypton.Toolkit.KryptonButton btnRefrescar;
     }
 }
