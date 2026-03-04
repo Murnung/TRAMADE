@@ -88,6 +88,20 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <!-- Raíz -->
+    <Compile Include="clsConexion.cs" />
+    <Compile Include="clsSesion.cs" />
+    <Compile Include="Program.cs" />
+
+    <!-- Form1 -->
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+
+    <!-- ClasesCompras -->
     <Compile Include="ClasesCompras\clsCompras.cs" />
     <Compile Include="ClasesCompras\clsFiltrarCompras.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboFormaPago.cs" />
@@ -96,14 +110,25 @@
     <Compile Include="ClasesCompras\clsLlenarListBox.cs" />
     <Compile Include="ClasesCompras\clsLlenarTextoPrecioCosto.cs" />
     <Compile Include="ClasesCompras\clsOperacionesCompra.cs" />
-    <Compile Include="clsConexion.cs" />
-    <Compile Include="clsSesion.cs" />
-    <Compile Include="Form1.cs">
+
+    <!-- ClasesAdministrador -->
+    <Compile Include="ClasesAdministrador\clsUsuario.cs" />
+
+    <!-- Formularios Login, Menú -->
+    <Compile Include="Formularios Login, Menú\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Formularios Login, Menú\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios Login, Menú\frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Login, Menú\frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+
+    <!-- Formularios Login, Menú - Clases -->
     <Compile Include="Formularios Login, Menú\Clases\clsClientesPanel.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsGraficoInventario.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsGraficoTendencia.cs" />
@@ -111,11 +136,8 @@
     <Compile Include="Formularios Login, Menú\Clases\clsUltimasCompras.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsUltimasVentas.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsVistaGeneral.cs" />
-    <Compile Include="Formularios Login, Menú\frmLogin.cs" />
-    <Compile Include="Formularios Login, Menú\frmMenuPrincipal.cs" />
-    <Compile Include="Formularios Login, Menú\frmMenuPrincipal.Designer.cs">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
-    </Compile>
+
+    <!-- FormulariosCompras -->
     <Compile Include="FormulariosCompras\frmActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,9 +156,6 @@
     <Compile Include="FormulariosCompras\frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios Login, Menú\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormulariosCompras\frmRegistrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,9 +168,53 @@
     <Compile Include="FormulariosCompras\frmSeguimiento.Designer.cs">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
-    <Compile Include="Program.cs" />
+
+    <!-- FormulariosAdministrador -->
+    <Compile Include="FormulariosAdministrador\frmAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmAdministrador.Designer.cs">
+      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmBitacora.Designer.cs">
+      <DependentUpon>frmBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmEditar.Designer.cs">
+      <DependentUpon>frmEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmNuevo.Designer.cs">
+      <DependentUpon>frmNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+
+    <!-- Properties -->
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+
+    <!-- EmbeddedResources -->
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,178 +239,45 @@
     <EmbeddedResource Include="FormulariosCompras\frmSeguimiento.resx">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmAdministrador.resx">
+      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmBitacora.resx">
+      <DependentUpon>frmBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmEditar.resx">
+      <DependentUpon>frmEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmNuevo.resx">
+      <DependentUpon>frmNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="obj\Debug\build.force" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\TRAMADE.csproj.AssemblyReference.cache" />
+
+    <!-- None -->
+    <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="packages\Krypton.Toolkit.100.26.1.19\.signature.p7s" />
-    <None Include="packages\Krypton.Toolkit.100.26.1.19\Krypton.Toolkit.100.26.1.19.nupkg" />
-    <None Include="packages\Krypton.Toolkit.100.26.1.19\License.md" />
-    <None Include="packages\Krypton.Toolkit.100.26.1.19\README.md" />
-    <None Include="packages\System.Buffers.4.5.1\.signature.p7s" />
-    <None Include="packages\System.Buffers.4.5.1\lib\netcoreapp2.0\_._" />
-    <None Include="packages\System.Buffers.4.5.1\lib\uap10.0.16299\_._" />
-    <None Include="packages\System.Buffers.4.5.1\ref\netcoreapp2.0\_._" />
-    <None Include="packages\System.Buffers.4.5.1\ref\uap10.0.16299\_._" />
-    <None Include="packages\System.Buffers.4.5.1\System.Buffers.4.5.1.nupkg" />
-    <None Include="packages\System.Memory.4.5.5\.signature.p7s" />
-    <None Include="packages\System.Memory.4.5.5\lib\netcoreapp2.1\_._" />
-    <None Include="packages\System.Memory.4.5.5\ref\netcoreapp2.1\_._" />
-    <None Include="packages\System.Memory.4.5.5\System.Memory.4.5.5.nupkg" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\.signature.p7s" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoAndroid10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoTouch10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\netcoreapp2.0\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\uap10.0.16299\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinios10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinmac20\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarintvos10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinwatchos10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoAndroid10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoTouch10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\netcoreapp2.0\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\uap10.0.16299\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinios10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinmac20\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarintvos10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinwatchos10\_._" />
-    <None Include="packages\System.Numerics.Vectors.4.5.0\System.Numerics.Vectors.4.5.0.nupkg" />
-    <None Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\.signature.p7s" />
-    <None Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\System.Runtime.CompilerServices.Unsafe.4.5.3.nupkg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-02-10 192130.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-02-10 192130-artguru.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-02-10 193854.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\COMPRAS.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\DINERO.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\MAS.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ACTUALIZAR.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\GESTION.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\GESTION1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\SEGUIMIENTO.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\GES.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="obj\Debug\TRAMADE.csproj.FileListAbsolute.txt" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\Krypton Stable.png" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net10.0-windows7.0\Krypton.Toolkit.dll" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net10.0-windows7.0\Krypton.Toolkit.xml" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net472\Krypton.Toolkit.dll" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net472\Krypton.Toolkit.xml" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net481\Krypton.Toolkit.dll" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net481\Krypton.Toolkit.xml" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net48\Krypton.Toolkit.dll" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net48\Krypton.Toolkit.xml" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net8.0-windows7.0\Krypton.Toolkit.dll" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net8.0-windows7.0\Krypton.Toolkit.xml" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net9.0-windows7.0\Krypton.Toolkit.dll" />
-    <Content Include="packages\Krypton.Toolkit.100.26.1.19\lib\net9.0-windows7.0\Krypton.Toolkit.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\LICENSE.TXT" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.dll" />
-    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.xml" />
-    <Content Include="packages\System.Buffers.4.5.1\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\System.Buffers.4.5.1\useSharedDesignerContext.txt" />
-    <Content Include="packages\System.Buffers.4.5.1\version.txt" />
-    <Content Include="packages\System.Memory.4.5.5\lib\net461\System.Memory.dll" />
-    <Content Include="packages\System.Memory.4.5.5\lib\net461\System.Memory.xml" />
-    <Content Include="packages\System.Memory.4.5.5\lib\netstandard1.1\System.Memory.dll" />
-    <Content Include="packages\System.Memory.4.5.5\lib\netstandard1.1\System.Memory.xml" />
-    <Content Include="packages\System.Memory.4.5.5\lib\netstandard2.0\System.Memory.dll" />
-    <Content Include="packages\System.Memory.4.5.5\lib\netstandard2.0\System.Memory.xml" />
-    <Content Include="packages\System.Memory.4.5.5\LICENSE.TXT" />
-    <Content Include="packages\System.Memory.4.5.5\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\System.Memory.4.5.5\useSharedDesignerContext.txt" />
-    <Content Include="packages\System.Memory.4.5.5\version.txt" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\LICENSE.TXT" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.dll" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.xml" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\useSharedDesignerContext.txt" />
-    <Content Include="packages\System.Numerics.Vectors.4.5.0\version.txt" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\LICENSE.TXT" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\net461\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\net461\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\THIRD-PARTY-NOTICES.TXT" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\useSharedDesignerContext.txt" />
-    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\version.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\" />
-    <Folder Include="bin\Release\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
