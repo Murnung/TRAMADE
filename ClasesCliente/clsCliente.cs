@@ -312,20 +312,11 @@ namespace TRAMADE.ClasesCliente
             {
                 conexion.Abrir();
 
-                string consulta = "select * from vista_aprobacion_clientes ";
+                string consulta = "select * from vista_aprobacion_clientes where [Nombre Cliente] like @nombre";
 
-                int id = 0;
-                bool filtrarPorID = int.TryParse(textoBuscar.Trim(), out id);
-                if (filtrarPorID)
-                {
-                    consulta += "Where [ID Cliente] = @id";
-                }
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC))
                 {
-                    if (filtrarPorID)
-                    {
-                        cmd.Parameters.AddWithValue("@id", id);
-                    }
+                   cmd.Parameters.AddWithValue("@nombre", "%" + textoBuscar.Trim() + "%");
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);

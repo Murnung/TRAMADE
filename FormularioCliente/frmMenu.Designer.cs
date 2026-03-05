@@ -35,8 +35,9 @@
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
             this.btnAutorizar = new Krypton.Toolkit.KryptonButton();
             this.btnSeguimiento = new Krypton.Toolkit.KryptonButton();
-            this.dvgUltimos = new Krypton.Toolkit.KryptonDataGridView();
             this.label18 = new System.Windows.Forms.Label();
+            this.dvgUltimos = new Krypton.Toolkit.KryptonDataGridView();
+            this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -219,36 +220,6 @@
             this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE CLIENTE";
             this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
             // 
-            // dvgUltimos
-            // 
-            this.dvgUltimos.AllowUserToAddRows = false;
-            this.dvgUltimos.AllowUserToDeleteRows = false;
-            this.dvgUltimos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dvgUltimos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dvgUltimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgUltimos.Location = new System.Drawing.Point(231, 252);
-            this.dvgUltimos.Name = "dvgUltimos";
-            this.dvgUltimos.ReadOnly = true;
-            this.dvgUltimos.Size = new System.Drawing.Size(468, 119);
-            this.dvgUltimos.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.dvgUltimos.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.White;
-            this.dvgUltimos.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.White;
-            this.dvgUltimos.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgUltimos.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgUltimos.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgUltimos.StateCommon.HeaderColumn.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgUltimos.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dvgUltimos.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.White;
-            this.dvgUltimos.StateCommon.HeaderRow.Border.Color2 = System.Drawing.Color.White;
-            this.dvgUltimos.TabIndex = 31;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -261,14 +232,66 @@
             this.label18.TabIndex = 40;
             this.label18.Text = "Últimos Registros";
             // 
+            // dvgUltimos
+            // 
+            this.dvgUltimos.AllowUserToAddRows = false;
+            this.dvgUltimos.AllowUserToDeleteRows = false;
+            this.dvgUltimos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dvgUltimos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dvgUltimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgUltimos.Location = new System.Drawing.Point(241, 241);
+            this.dvgUltimos.Name = "dvgUltimos";
+            this.dvgUltimos.ReadOnly = true;
+            this.dvgUltimos.Size = new System.Drawing.Size(558, 206);
+            this.dvgUltimos.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dvgUltimos.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dvgUltimos.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dvgUltimos.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dvgUltimos.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dvgUltimos.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
+            this.dvgUltimos.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
+            this.dvgUltimos.TabIndex = 42;
+            // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(401, 205);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRefrescar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRefrescar.Size = new System.Drawing.Size(130, 32);
+            this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.btnRefrescar.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.btnRefrescar.StateCommon.Border.Rounding = 25F;
+            this.btnRefrescar.StateCommon.Border.Width = 1;
+            this.btnRefrescar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnRefrescar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnRefrescar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRefrescar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRefrescar.TabIndex = 43;
+            this.btnRefrescar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRefrescar.Values.Text = "REFRESCAR";
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 588);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.dvgUltimos);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.btnSeguimiento);
             this.Controls.Add(this.btnAutorizar);
             this.Controls.Add(this.btnActualizar);
@@ -298,7 +321,8 @@
         private Krypton.Toolkit.KryptonButton btnActualizar;
         private Krypton.Toolkit.KryptonButton btnAutorizar;
         private Krypton.Toolkit.KryptonButton btnSeguimiento;
-        private Krypton.Toolkit.KryptonDataGridView dvgUltimos;
         private System.Windows.Forms.Label label18;
+        private Krypton.Toolkit.KryptonDataGridView dvgUltimos;
+        private Krypton.Toolkit.KryptonButton btnRefrescar;
     }
 }

@@ -30,24 +30,22 @@
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
-            this.dvgSeguimiento = new Krypton.Toolkit.KryptonDataGridView();
             this.kgInactivos = new Krypton.Toolkit.KryptonGroup();
             this.txtInactivos = new Krypton.Toolkit.KryptonTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.kgRegistrados = new Krypton.Toolkit.KryptonGroup();
             this.txtRegistrados = new Krypton.Toolkit.KryptonTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.kgActivos = new Krypton.Toolkit.KryptonGroup();
             this.txtActivos = new Krypton.Toolkit.KryptonTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dvgSeguimiento = new Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
             this.kryptonGroup1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kgInactivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kgInactivos.Panel)).BeginInit();
             this.kgInactivos.Panel.SuspendLayout();
@@ -60,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kgActivos.Panel)).BeginInit();
             this.kgActivos.Panel.SuspendLayout();
             this.kgActivos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
@@ -71,9 +70,8 @@
             // 
             // kryptonGroup1.Panel
             // 
-            this.kryptonGroup1.Panel.Controls.Add(this.label18);
-            this.kryptonGroup1.Panel.Controls.Add(this.btnBuscar);
             this.kryptonGroup1.Panel.Controls.Add(this.dvgSeguimiento);
+            this.kryptonGroup1.Panel.Controls.Add(this.label18);
             this.kryptonGroup1.Panel.Controls.Add(this.kgInactivos);
             this.kryptonGroup1.Panel.Controls.Add(this.kgRegistrados);
             this.kryptonGroup1.Panel.Controls.Add(this.kgActivos);
@@ -92,68 +90,9 @@
             this.label18.ForeColor = System.Drawing.Color.Black;
             this.label18.Location = new System.Drawing.Point(18, 196);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(132, 44);
+            this.label18.Size = new System.Drawing.Size(173, 44);
             this.label18.TabIndex = 40;
-            this.label18.Text = "Búsqueda por ID";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(481, 198);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnBuscar.Size = new System.Drawing.Size(88, 32);
-            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
-            this.btnBuscar.StateCommon.Border.Rounding = 25F;
-            this.btnBuscar.StateCommon.Border.Width = 1;
-            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnBuscar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnBuscar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnBuscar.TabIndex = 38;
-            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnBuscar.Values.Text = "BUSCAR";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // dvgSeguimiento
-            // 
-            this.dvgSeguimiento.AllowUserToAddRows = false;
-            this.dvgSeguimiento.AllowUserToDeleteRows = false;
-            this.dvgSeguimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dvgSeguimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dvgSeguimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgSeguimiento.Location = new System.Drawing.Point(41, 246);
-            this.dvgSeguimiento.Name = "dvgSeguimiento";
-            this.dvgSeguimiento.ReadOnly = true;
-            this.dvgSeguimiento.Size = new System.Drawing.Size(641, 189);
-            this.dvgSeguimiento.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.dvgSeguimiento.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgSeguimiento.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgSeguimiento.StateCommon.HeaderColumn.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgSeguimiento.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.HeaderRow.Border.Color2 = System.Drawing.Color.White;
-            this.dvgSeguimiento.TabIndex = 29;
+            this.label18.Text = "Búsqueda por Nombre";
             // 
             // kgInactivos
             // 
@@ -193,6 +132,18 @@
             this.txtInactivos.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtInactivos.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Image = global::TRAMADE.Properties.Resources.INACTIVOS;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label4.Location = new System.Drawing.Point(3, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 70);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Clientes Inactivos";
+            // 
             // kgRegistrados
             // 
             this.kgRegistrados.Location = new System.Drawing.Point(41, 45);
@@ -229,6 +180,19 @@
             this.txtRegistrados.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.txtRegistrados.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtRegistrados.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Image = global::TRAMADE.Properties.Resources.REGISTRADOS;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label3.Location = new System.Drawing.Point(5, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(196, 81);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Clientes Registrados";
             // 
             // kgActivos
             // 
@@ -268,6 +232,18 @@
             this.txtActivos.StateNormal.Content.Color1 = System.Drawing.Color.Black;
             this.txtActivos.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Image = global::TRAMADE.Properties.Resources.ACTIVOS;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label2.Location = new System.Drawing.Point(13, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 70);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Clientes Activos";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -281,7 +257,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(166, 201);
+            this.txtBuscar.Location = new System.Drawing.Point(197, 196);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(303, 29);
             this.txtBuscar.StateActive.Border.Color1 = System.Drawing.Color.Black;
@@ -289,43 +265,29 @@
             this.txtBuscar.StateActive.Border.Rounding = 5F;
             this.txtBuscar.StateActive.Border.Width = 3;
             this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // label4
+            // dvgSeguimiento
             // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = global::TRAMADE.Properties.Resources.INACTIVOS;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label4.Location = new System.Drawing.Point(3, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 70);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Clientes Inactivos";
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Image = global::TRAMADE.Properties.Resources.REGISTRADOS;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label3.Location = new System.Drawing.Point(5, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 81);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Clientes Registrados";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Image = global::TRAMADE.Properties.Resources.ACTIVOS;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label2.Location = new System.Drawing.Point(13, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 70);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Clientes Activos";
+            this.dvgSeguimiento.AllowUserToAddRows = false;
+            this.dvgSeguimiento.AllowUserToDeleteRows = false;
+            this.dvgSeguimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dvgSeguimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dvgSeguimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgSeguimiento.Location = new System.Drawing.Point(26, 243);
+            this.dvgSeguimiento.Name = "dvgSeguimiento";
+            this.dvgSeguimiento.ReadOnly = true;
+            this.dvgSeguimiento.Size = new System.Drawing.Size(656, 206);
+            this.dvgSeguimiento.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
+            this.dvgSeguimiento.TabIndex = 41;
             // 
             // frmSeguimiento
             // 
@@ -342,7 +304,6 @@
             this.kryptonGroup1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
             this.kryptonGroup1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kgInactivos.Panel)).EndInit();
             this.kgInactivos.Panel.ResumeLayout(false);
             this.kgInactivos.Panel.PerformLayout();
@@ -358,6 +319,7 @@
             this.kgActivos.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kgActivos)).EndInit();
             this.kgActivos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,9 +337,8 @@
         private Krypton.Toolkit.KryptonGroup kgRegistrados;
         private Krypton.Toolkit.KryptonTextBox txtRegistrados;
         private System.Windows.Forms.Label label3;
-        private Krypton.Toolkit.KryptonDataGridView dvgSeguimiento;
-        private Krypton.Toolkit.KryptonButton btnBuscar;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label4;
+        private Krypton.Toolkit.KryptonDataGridView dvgSeguimiento;
     }
 }

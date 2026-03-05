@@ -33,7 +33,7 @@ namespace TRAMADE
             if (dgvAprobacion.Columns.Contains("Seleccionar")) return;
 
             DataGridViewCheckBoxColumn Chk = new DataGridViewCheckBoxColumn();
-            Chk.HeaderText = "Seleccionar";
+            Chk.HeaderText = "Seleccionar para editar";
             Chk.Name = "Seleccionar";
             Chk.Width = 80;
             dgvAprobacion.Columns.Insert(0, Chk);
@@ -50,7 +50,18 @@ namespace TRAMADE
                 adapter.Fill(dt);
                 dgvAprobacion.DataSource = dt;
                 dgvAprobacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                AgregarConlumnaCheck();
+
+                dgvAprobacion.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                dgvAprobacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+             
+                dgvAprobacion.AllowUserToResizeRows = false;
+                dgvAprobacion.AllowUserToResizeColumns = false;
+                dgvAprobacion.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+                dgvAprobacion.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvAprobacion.EnableHeadersVisualStyles = false;
+                dgvAprobacion.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+                dgvAprobacion.DefaultCellStyle.SelectionForeColor = Color.White;
+                //AgregarConlumnaCheck();
             }
             catch (Exception ex)
             {
@@ -64,31 +75,42 @@ namespace TRAMADE
 
         private void btnAutorizar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dgvAprobacion.Rows)
-            {
-                bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
-                if (marcado)
-                {
+           
+            if (dgvAprobacion.SelectedRows.Count > 0)
+            { 
+                foreach (DataGridViewRow fila in dgvAprobacion.SelectedRows)
+                {     
                     int idCliente = Convert.ToInt32(fila.Cells["ID Cliente"].Value);
                     ObjCliente.AutorizarCliente(ObjConexion, idCliente);
                 }
+
+                MessageBox.Show("Clientes seleccionados autorizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                recargarClientes();
             }
-            MessageBox.Show("Clientes autorizados correctamente.");
+            else
+            {
+                MessageBox.Show("Por favor, seleccione al menos una fila desde el encabezado (barra izquierda).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             recargarClientes();
         }
 
         private void btnNegar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dgvAprobacion.Rows)
+            if (dgvAprobacion.SelectedRows.Count > 0)
             {
-                bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
-                if (marcado)
+                foreach (DataGridViewRow fila in dgvAprobacion.SelectedRows)
                 {
                     int idCliente = Convert.ToInt32(fila.Cells["ID Cliente"].Value);
                     ObjCliente.DenegarCliente(ObjConexion, idCliente);
                 }
+
+                MessageBox.Show("Clientes seleccionados autorizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                recargarClientes();
             }
-            MessageBox.Show("Clientes denegados correctamente.");
+            else
+            {
+                MessageBox.Show("Por favor, seleccione al menos una fila desde el encabezado (barra izquierda).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             recargarClientes();
         }
 
@@ -101,6 +123,15 @@ namespace TRAMADE
                 AgregarConlumnaCheck();
             }
            
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = ObjCliente.BuscarCliente(ObjConexion, txtBuscar.Text);
+            if (dt != null)
+            {
+                dgvAprobacion.DataSource = dt;
+            }
         }
     }
 }

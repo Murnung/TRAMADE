@@ -38,7 +38,17 @@ namespace TRAMADE
                 adapter.Fill(dt);
                 dvgSeguimiento.DataSource = dt;
 
+                dvgSeguimiento.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
                 dvgSeguimiento.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dvgSeguimiento.ReadOnly = true;
+                dvgSeguimiento.AllowUserToResizeRows = false;
+                dvgSeguimiento.AllowUserToResizeColumns = false;
+                dvgSeguimiento.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+                dvgSeguimiento.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dvgSeguimiento.EnableHeadersVisualStyles = false;
+                dvgSeguimiento.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+                dvgSeguimiento.DefaultCellStyle.SelectionForeColor = Color.White;
+
 
             }
             catch (Exception ex)
@@ -56,14 +66,7 @@ namespace TRAMADE
 
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            DataTable dt = ObjCliente.BuscarCliente(ObjConexion, txtBuscar.Text);
-            if (dt != null)
-            {
-                dvgSeguimiento.DataSource = dt;   
-            }
-        }
+        
 
         private void ActualizarContadores()
         {
@@ -74,6 +77,15 @@ namespace TRAMADE
                 txtRegistrados.Text = stats.Total;
                 txtActivos.Text = stats.Activos;
                 txtInactivos.Text = stats.Inactivos;
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = ObjCliente.BuscarCliente(ObjConexion, txtBuscar.Text);
+            if (dt != null)
+            {
+                dvgSeguimiento.DataSource = dt;
             }
         }
     }

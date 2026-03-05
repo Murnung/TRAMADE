@@ -64,7 +64,16 @@ namespace TRAMADE
                 adapter.Fill(dt);
                 dvgUltimos.DataSource = dt;
 
+                dvgUltimos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
                 dvgUltimos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dvgUltimos.ReadOnly = true;
+                dvgUltimos.AllowUserToResizeRows = false;
+                dvgUltimos.AllowUserToResizeColumns = false;
+                dvgUltimos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+                dvgUltimos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dvgUltimos.EnableHeadersVisualStyles = false;
+                dvgUltimos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+                dvgUltimos.DefaultCellStyle.SelectionForeColor = Color.White;
 
             }
             catch (Exception ex)
@@ -75,6 +84,11 @@ namespace TRAMADE
             {
                 ObjConexion.Cerrar();
             }
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            recargarClientes();
         }
     }
 }
