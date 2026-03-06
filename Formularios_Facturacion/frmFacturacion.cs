@@ -13,9 +13,9 @@ namespace TRAMADE
 {
     public partial class frmFacturacion : Form
     {
-        int numeroFactura = 1;
-        int id_cliente_seleccionado = 0;
-        private void BuscarCliente(string rtnDni)
+        int numeroFactura = 1; 
+        int id_cliente_seleccionado = 0; 
+        private void BuscarCliente(string rtnDni) 
         {
             try
             {
