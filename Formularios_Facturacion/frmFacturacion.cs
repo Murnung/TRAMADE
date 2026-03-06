@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,30 +12,28 @@ namespace TRAMADE
 {
     public partial class frmFacturacion : Form
     {
-        int numeroFactura = 1; 
-        int id_cliente_seleccionado = 0; 
-        private void BuscarCliente(string rtnDni) 
+        int numeroFactura = 1;
+        int id_cliente_seleccionado = 0;
+
+        public frmFacturacion()
+        {
+            InitializeComponent();
+        }
+
+        // --- AHORA BUSCAMOS USANDO LA CLASE ---
+        private void BuscarCliente(string rtnDni)
         {
             try
             {
+                // Instanciamos la clase que acabas de crear
+                clsClienteF objCliente = new clsClienteF();
 
-                clsConexion ObjConexion = new clsConexion();
-                ObjConexion.Abrir();
-
-
-                string consulta = "SELECT id_cliente, nombre_cliente, direccion_cliente FROM CLIENTE WHERE rtn_cliente = @rtn OR dni_cliente = @rtn";
-                SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC);
-                cmd.Parameters.AddWithValue("@rtn", rtnDni);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
+                // Si la clase encuentra al cliente (devuelve true)
+                if (objCliente.BuscarClienteDNI(rtnDni))
                 {
-                    id_cliente_seleccionado = Convert.ToInt32(reader["id_cliente"]); 
-
-
-                    txtNombreCliente.Text = reader["nombre_cliente"].ToString();
-                    txtDireccionCliente.Text = reader["direccion_cliente"].ToString();
+                    id_cliente_seleccionado = objCliente.id_cliente;
+                    txtNombreCliente.Text = objCliente.nombre_cliente;
+                    txtDireccionCliente.Text = objCliente.direccion_cliente;
                 }
                 else
                 {
@@ -45,22 +42,13 @@ namespace TRAMADE
                     txtNombreCliente.Text = "";
                     txtDireccionCliente.Text = "";
                 }
-
-                reader.Close();
-                ObjConexion.Cerrar();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al buscar cliente: " + ex.Message);
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 
-        public frmFacturacion()
-        {
-            InitializeComponent();
-        }
-
-        //METODO PARA CALCULAR LOS TOTALES DE LA FACTURA
         public void CalcularTotales()
         {
             decimal subtotalGeneral = 0;
@@ -69,7 +57,6 @@ namespace TRAMADE
 
             foreach (DataGridViewRow fila in dgvDetalleFactura.Rows)
             {
-                
                 if (fila.Cells[5].Value != null)
                 {
                     subtotalGeneral += Convert.ToDecimal(fila.Cells[5].Value);
@@ -90,9 +77,9 @@ namespace TRAMADE
             objAggProducto.ShowDialog();
         }
 
+        // --- VISTA PREVIA (Queda igual porque es pura UI) ---
         private void kryptonButton12_Click(object sender, EventArgs e)
         {
-            
             if (dgvDetalleFactura.Rows.Count == 0)
             {
                 MessageBox.Show("Agregue productos para ver la vista previa.", "Aviso");
@@ -100,18 +87,14 @@ namespace TRAMADE
             }
 
             frmVistaPrevia objVP = new frmVistaPrevia();
-
             objVP.txtNombreClienteVP.Text = txtNombreCliente.Text;
             objVP.txtDNIClienteVP.Text = txtDNICliente.Text;
             objVP.txtDireccionClienteVP.Text = txtDireccionCliente.Text;
             objVP.lblNumeroFacturaVP.Text = lblNumeroFactura.Text;
-
             objVP.txtIDVendedorVP.Text = txtIDVendedor.Text;
             objVP.txtNombreVendedorVP.Text = txtNombreVendedor.Text;
-
             objVP.lblFechaEmisionVP.Text = dtpEmision.Value.ToString("dd/MM/yyyy");
             objVP.lblfechaVencimientoVP.Text = dtpVencimiento.Value.ToString("dd/MM/yyyy");
-
             objVP.lblSubtotalVP.Text = lblSubtotal.Text;
             objVP.lblImpuestoVP.Text = lblImpuesto.Text;
             objVP.lblTotalVP.Text = lblTotal.Text;
@@ -119,27 +102,26 @@ namespace TRAMADE
             if (rbContado.Checked) objVP.rbContadoVP.Checked = true;
             if (rbCredito.Checked) objVP.rbCreditoVP.Checked = true;
 
-            objVP.dgvFacturaVP.Rows.Clear(); 
+            objVP.dgvFacturaVP.Rows.Clear();
 
             foreach (DataGridViewRow fila in dgvDetalleFactura.Rows)
             {
-
                 if (fila.Cells[0].Value != null && !fila.IsNewRow)
                 {
                     objVP.dgvFacturaVP.Rows.Add(new object[] {
-                fila.Cells[0].Value, 
-                fila.Cells[1].Value, 
-                fila.Cells[2].Value, 
-                fila.Cells[3].Value, 
-                fila.Cells[4].Value, 
-                fila.Cells[5].Value  
-            });
+                        fila.Cells[0].Value,
+                        fila.Cells[1].Value,
+                        fila.Cells[2].Value,
+                        fila.Cells[3].Value,
+                        fila.Cells[4].Value,
+                        fila.Cells[5].Value
+                    });
                 }
             }
-
             objVP.ShowDialog();
         }
 
+        // --- AHORA GUARDAMOS USANDO LA CLASE (Adiós SQL aquí) ---
         private void kryptonButton13_Click(object sender, EventArgs e)
         {
             if (dgvDetalleFactura.Rows.Count == 0)
@@ -148,68 +130,60 @@ namespace TRAMADE
                 return;
             }
 
-            clsConexion conexion = new clsConexion();
-            conexion.Abrir();
-            SqlTransaction transaccion = conexion.SqlC.BeginTransaction();
+            if (id_cliente_seleccionado == 0)
+            {
+                MessageBox.Show("Por favor seleccione un cliente válido.", "Aviso");
+                return;
+            }
 
             try
             {
-               
-                string qFactura = @"INSERT INTO FACTURA (numero_factura, id_usuario, id_forma_pago, id_cliente, id_estado, id_tipo_factura, fecha_emision, fecha_vencimiento, subtotal, impuesto, total) 
-                            VALUES (@num, @user, @pago, @cliente, @estado, @tipo, @fechaE, @fechaV, @sub, @isv, @total); 
-                            SELECT SCOPE_IDENTITY();";
+                // 1. Preparamos la "Caja" (La clase clsFactura)
+                clsFacturaF nuevaFactura = new clsFacturaF();
 
-                SqlCommand cmdF = new SqlCommand(qFactura, conexion.SqlC, transaccion);
+                // 2. Metemos los datos de la pantalla a la clase
+                nuevaFactura.numero_factura = numeroFactura;
+                nuevaFactura.id_usuario = int.Parse(txtIDVendedor.Text);
+                nuevaFactura.id_forma_pago = rbContado.Checked ? 1 : 2;
+                nuevaFactura.id_cliente = id_cliente_seleccionado;
+                nuevaFactura.fecha_emision = dtpEmision.Value;
+                nuevaFactura.fecha_vencimiento = dtpVencimiento.Value;
+                nuevaFactura.subtotal = decimal.Parse(lblSubtotal.Text.Replace("L. ", "").Trim());
+                nuevaFactura.impuesto = decimal.Parse(lblImpuesto.Text.Replace("L. ", "").Trim());
+                nuevaFactura.total = decimal.Parse(lblTotal.Text.Replace("L. ", "").Trim());
 
-                cmdF.Parameters.AddWithValue("@num", numeroFactura);
-                cmdF.Parameters.AddWithValue("@user", int.Parse(txtIDVendedor.Text));
-                cmdF.Parameters.AddWithValue("@pago", rbContado.Checked ? 1 : 2);
-                cmdF.Parameters.AddWithValue("@cliente", id_cliente_seleccionado);
-                cmdF.Parameters.AddWithValue("@estado", 1); 
-                cmdF.Parameters.AddWithValue("@tipo", 1); 
-                cmdF.Parameters.AddWithValue("@fechaE", dtpEmision.Value);
-                cmdF.Parameters.AddWithValue("@fechaV", dtpVencimiento.Value);
-                cmdF.Parameters.AddWithValue("@sub", decimal.Parse(lblSubtotal.Text.Replace("L. ", "")));
-                cmdF.Parameters.AddWithValue("@isv", decimal.Parse(lblImpuesto.Text.Replace("L. ", "")));
-                cmdF.Parameters.AddWithValue("@total", decimal.Parse(lblTotal.Text.Replace("L. ", "")));
-
-                int idGenerado = Convert.ToInt32(cmdF.ExecuteScalar());
-
+                // 3. Metemos los productos del Grid a la lista de la clase
                 foreach (DataGridViewRow fila in dgvDetalleFactura.Rows)
                 {
                     if (fila.Cells[0].Value != null && !fila.IsNewRow)
                     {
-                        string qDetalle = "INSERT INTO FACTURA_PRODUCTO (id_factura, id_producto, cantidad) VALUES (@id, @prod, @cant)";
-                        SqlCommand cmdD = new SqlCommand(qDetalle, conexion.SqlC, transaccion);
+                        clsDetalleFactura detalle = new clsDetalleFactura();
+                        detalle.id_producto = Convert.ToInt32(fila.Cells[0].Value);
+                        detalle.cantidad = Convert.ToDecimal(fila.Cells[3].Value);
 
-                        cmdD.Parameters.AddWithValue("@id", idGenerado);
-
-                        cmdD.Parameters.AddWithValue("@prod", Convert.ToInt32(fila.Cells[0].Value));
-
-                        cmdD.Parameters.AddWithValue("@cant", fila.Cells[3].Value);
-
-                        cmdD.ExecuteNonQuery();
+                        nuevaFactura.Detalles.Add(detalle);
                     }
                 }
 
-                transaccion.Commit();
-                MessageBox.Show("Factura emitida con éxito.", "TRAMADE");
+                // 4. Le decimos a la clase: ¡Guardate!
+                int idGenerado = nuevaFactura.GuardarFacturaTransaccion();
 
-                frmEmitirFactura objEmitirFactura = new frmEmitirFactura();
-                objEmitirFactura.IdFacturaRecibido = idGenerado;
-                objEmitirFactura.ShowDialog();
+                // 5. Si nos devuelve un ID mayor a 0, fue un éxito
+                if (idGenerado > 0)
+                {
+                    MessageBox.Show("Factura emitida con éxito.", "TRAMADE");
 
-                dgvDetalleFactura.Rows.Clear();
-                CalcularTotales();
+                    frmEmitirFactura objEmitirFactura = new frmEmitirFactura();
+                    objEmitirFactura.IdFacturaRecibido = idGenerado;
+                    objEmitirFactura.ShowDialog();
+
+                    dgvDetalleFactura.Rows.Clear();
+                    CalcularTotales();
+                }
             }
             catch (Exception ex)
             {
-                if (transaccion != null) transaccion.Rollback();
-                MessageBox.Show("Error al emitir factura: " + ex.Message);
-            }
-            finally
-            {
-                conexion.Cerrar();
+                MessageBox.Show(ex.Message, "Error al Emitir");
             }
         }
 
@@ -227,7 +201,7 @@ namespace TRAMADE
             txtIDVendedor.Text = "";
             txtNombreVendedor.Text = "";
             dtpEmision.Value = DateTime.Now;
-            dtpVencimiento  .Value = DateTime.Now;
+            dtpVencimiento.Value = DateTime.Now;
             rbContado.Checked = false;
             rbCredito.Checked = false;
         }
@@ -239,30 +213,17 @@ namespace TRAMADE
             lblNumeroFactura.Text = "INV/2026/" + numeroFactura.ToString("D4");
         }
 
-        private void txtDNICliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDNICliente_Leave(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void frmFacturacion_Load(object sender, EventArgs e)
-        {
-
-        }
+        // Eventos vacíos
+        private void txtDNICliente_TextChanged(object sender, EventArgs e) { }
+        private void txtDNICliente_Leave(object sender, EventArgs e) { }
+        private void frmFacturacion_Load(object sender, EventArgs e) { }
 
         private void btnIDVendedor_Click(object sender, EventArgs e)
         {
             if (clsSesion.id_usuario != 0)
             {
-
                 txtIDVendedor.Text = clsSesion.id_usuario.ToString();
                 txtNombreVendedor.Text = clsSesion.nombre_usuario;
-
-   
                 txtIDVendedor.ReadOnly = true;
                 txtNombreVendedor.ReadOnly = true;
             }
@@ -276,7 +237,6 @@ namespace TRAMADE
         {
             if (txtDNICliente.Text.Trim() != "")
             {
-   
                 BuscarCliente(txtDNICliente.Text.Trim());
             }
             else
@@ -290,7 +250,6 @@ namespace TRAMADE
             if (dgvDetalleFactura.CurrentRow != null)
             {
                 dgvDetalleFactura.Rows.Remove(dgvDetalleFactura.CurrentRow);
-
                 CalcularTotales();
             }
             else
@@ -301,7 +260,7 @@ namespace TRAMADE
 
         private void dgvDetalleFactura_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            CalcularTotales(); //Por si se cambia algo en la area de productos, recalculamos los totales automáticamente.
+            CalcularTotales();
         }
     }
 }

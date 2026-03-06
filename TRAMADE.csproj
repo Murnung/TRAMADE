@@ -71,6 +71,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases_Facturacion\clsClienteF.cs" />
+    <Compile Include="Clases_Facturacion\clsFacturaF.cs" />
+    <Compile Include="Formularios_Facturacion\clsEmitirFacturaF.cs" />
+    <Compile Include="Formularios_Facturacion\clsHistorialFacturaF.cs" />
+    <Compile Include="Formularios_Facturacion\clsProductoF.cs" />
     <Compile Include="Formularios_Facturacion\frmAggProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,8 +237,6 @@
   <ItemGroup>
     <None Include="Resources\Ordenar pns.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clases_Facturacion\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
