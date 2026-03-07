@@ -62,13 +62,13 @@ namespace TRAMADE.ClasesCompras
                 cmdCompra.Parameters.AddWithValue("@id_compra", getIdCompra());
                 cmdCompra.Parameters.AddWithValue("@id_proveedor", getProveedor());
                 cmdCompra.Parameters.AddWithValue("@id_forma_pago", getFormaPago());
-                cmdCompra.Parameters.AddWithValue("@id_estado", getEstado());
                 cmdCompra.Parameters.AddWithValue("@id_usuario", getIdUsuario());
                 cmdCompra.Parameters.AddWithValue("@fecha_entrega",
                     getEntrega() == DateTime.MinValue ? (object)DBNull.Value : getEntrega());
-                cmdCompra.Parameters.AddWithValue("@autorizada", getAutorizar());
 
                 object resultado = cmdCompra.ExecuteScalar();
+
+
                 if (Convert.ToInt32(resultado) <= 0) return false;
 
                 // Eliminar detalles antiguos y reinsertar

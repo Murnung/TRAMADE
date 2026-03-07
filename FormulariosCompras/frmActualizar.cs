@@ -150,6 +150,7 @@ namespace TRAMADE
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
+            
             ObjOp.eliminarProducto(lstProductos);
             txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
 
@@ -223,7 +224,12 @@ namespace TRAMADE
                 MessageBox.Show("Ingrese una solicitud de compra primero","ERROR",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+           
+            if (lstProductos.Items.Count == 0)
+            {
+                MessageBox.Show("Debe de existir al menos un producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             try
             {
                 // Asignación de datos
@@ -240,7 +246,7 @@ namespace TRAMADE
                 if (resultadoFinal)
                 {
                     MessageBox.Show("¡COMPRA ACTUALIZADA EXITOSAMENTE!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // btnLimpiar_Click(sender, e);
+                    btnLimpiar_Click(sender, e);
                 }
                 else
                 {
