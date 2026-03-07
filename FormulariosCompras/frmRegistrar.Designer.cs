@@ -37,10 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -50,8 +48,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btnQuitar = new Krypton.Toolkit.KryptonButton();
             this.lstProductos = new Krypton.Toolkit.KryptonListBox();
-            this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
-            this.txtDireccion = new Krypton.Toolkit.KryptonTextBox();
             this.txtPrecio = new Krypton.Toolkit.KryptonTextBox();
             this.txtSubtotal = new Krypton.Toolkit.KryptonTextBox();
             this.txtImpuesto = new Krypton.Toolkit.KryptonTextBox();
@@ -62,8 +58,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.cmbFormaPago = new Krypton.Toolkit.KryptonComboBox();
             this.dtEntrega = new Krypton.Toolkit.KryptonDateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).BeginInit();
@@ -129,9 +123,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Controls.Add(this.btnRegistrar);
-            this.panel2.Location = new System.Drawing.Point(-20, 556);
+            this.panel2.Location = new System.Drawing.Point(-20, 537);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 56);
+            this.panel2.Size = new System.Drawing.Size(834, 59);
             this.panel2.TabIndex = 22;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -212,17 +206,6 @@
             this.label5.TabIndex = 27;
             this.label5.Text = "Fecha de entrega";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(430, 211);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 22);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Contacto";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -241,16 +224,6 @@
             this.label6.Size = new System.Drawing.Size(93, 22);
             this.label6.TabIndex = 33;
             this.label6.Text = "Proveedor";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 211);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 22);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Dirección";
             // 
             // label10
             // 
@@ -276,7 +249,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(303, 418);
+            this.label12.Location = new System.Drawing.Point(284, 418);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 22);
             this.label12.TabIndex = 37;
@@ -286,7 +259,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(309, 360);
+            this.label13.Location = new System.Drawing.Point(290, 359);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 22);
             this.label13.TabIndex = 38;
@@ -296,7 +269,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(315, 475);
+            this.label15.Location = new System.Drawing.Point(290, 475);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 22);
             this.label15.TabIndex = 39;
@@ -304,7 +277,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(494, 291);
+            this.btnAgregar.Location = new System.Drawing.Point(483, 227);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.OverrideDefault.Back.Color1 = System.Drawing.Color.LightSkyBlue;
             this.btnAgregar.OverrideDefault.Back.Color2 = System.Drawing.Color.LightSkyBlue;
@@ -327,7 +300,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(20, 250);
+            this.label16.Location = new System.Drawing.Point(20, 234);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(192, 22);
             this.label16.TabIndex = 54;
@@ -335,7 +308,7 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(686, 291);
+            this.btnQuitar.Location = new System.Drawing.Point(687, 226);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.OverrideDefault.Back.Color1 = System.Drawing.Color.LightSkyBlue;
             this.btnQuitar.OverrideDefault.Back.Color2 = System.Drawing.Color.LightSkyBlue;
@@ -356,28 +329,12 @@
             // 
             // lstProductos
             // 
-            this.lstProductos.Location = new System.Drawing.Point(494, 326);
+            this.lstProductos.Location = new System.Drawing.Point(483, 269);
             this.lstProductos.Name = "lstProductos";
-            this.lstProductos.Size = new System.Drawing.Size(299, 205);
+            this.lstProductos.Size = new System.Drawing.Size(310, 262);
             this.lstProductos.StateCommon.Border.Rounding = 10F;
             this.lstProductos.TabIndex = 70;
             this.lstProductos.SelectedIndexChanged += new System.EventHandler(this.lstProductos_SelectedIndexChanged);
-            // 
-            // txtContacto
-            // 
-            this.txtContacto.Location = new System.Drawing.Point(599, 211);
-            this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(190, 31);
-            this.txtContacto.StateCommon.Border.Rounding = 5F;
-            this.txtContacto.TabIndex = 74;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(145, 202);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(190, 31);
-            this.txtDireccion.StateCommon.Border.Rounding = 5F;
-            this.txtDireccion.TabIndex = 75;
             // 
             // txtPrecio
             // 
@@ -389,7 +346,7 @@
             // 
             // txtSubtotal
             // 
-            this.txtSubtotal.Location = new System.Drawing.Point(391, 359);
+            this.txtSubtotal.Location = new System.Drawing.Point(372, 359);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(94, 31);
             this.txtSubtotal.StateCommon.Border.Rounding = 5F;
@@ -397,7 +354,7 @@
             // 
             // txtImpuesto
             // 
-            this.txtImpuesto.Location = new System.Drawing.Point(391, 418);
+            this.txtImpuesto.Location = new System.Drawing.Point(372, 418);
             this.txtImpuesto.Name = "txtImpuesto";
             this.txtImpuesto.Size = new System.Drawing.Size(94, 31);
             this.txtImpuesto.StateCommon.Border.Rounding = 5F;
@@ -405,7 +362,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(391, 475);
+            this.txtTotal.Location = new System.Drawing.Point(372, 475);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(94, 31);
             this.txtTotal.StateCommon.Border.Rounding = 5F;
@@ -415,7 +372,7 @@
             // 
             this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.DropDownWidth = 186;
-            this.cmbProducto.Location = new System.Drawing.Point(230, 250);
+            this.cmbProducto.Location = new System.Drawing.Point(230, 226);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(190, 30);
             this.cmbProducto.StateCommon.ComboBox.Border.Rounding = 5F;
@@ -494,32 +451,12 @@
             this.dtEntrega.StateCommon.Border.Rounding = 5F;
             this.dtEntrega.TabIndex = 116;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(430, 250);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 22);
-            this.label4.TabIndex = 117;
-            this.label4.Text = "Telefono";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(597, 254);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(190, 31);
-            this.txtTelefono.StateCommon.Border.Rounding = 5F;
-            this.txtTelefono.TabIndex = 118;
-            // 
             // frmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(816, 608);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(816, 592);
             this.Controls.Add(this.dtEntrega);
             this.Controls.Add(this.cmbFormaPago);
             this.Controls.Add(this.label17);
@@ -530,8 +467,6 @@
             this.Controls.Add(this.txtImpuesto);
             this.Controls.Add(this.txtSubtotal);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtDireccion);
-            this.Controls.Add(this.txtContacto);
             this.Controls.Add(this.lstProductos);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.label16);
@@ -541,10 +476,8 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -574,10 +507,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -590,8 +521,6 @@
         private Krypton.Toolkit.KryptonButton btnLimpiar;
         private Krypton.Toolkit.KryptonListBox lstProductos;
         private Krypton.Toolkit.KryptonButton btnRegresar;
-        private Krypton.Toolkit.KryptonTextBox txtContacto;
-        private Krypton.Toolkit.KryptonTextBox txtDireccion;
         private Krypton.Toolkit.KryptonTextBox txtPrecio;
         private Krypton.Toolkit.KryptonTextBox txtSubtotal;
         private Krypton.Toolkit.KryptonTextBox txtImpuesto;
@@ -602,7 +531,5 @@
         private System.Windows.Forms.Label label17;
         private Krypton.Toolkit.KryptonComboBox cmbFormaPago;
         private Krypton.Toolkit.KryptonDateTimePicker dtEntrega;
-        private System.Windows.Forms.Label label4;
-        private Krypton.Toolkit.KryptonTextBox txtTelefono;
     }
 }

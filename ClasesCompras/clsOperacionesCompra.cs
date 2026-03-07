@@ -29,9 +29,6 @@ namespace TRAMADE.ClasesCompras
                 cmdCompra.Parameters.AddWithValue("@id_usuario", getIdUsuario());
                 cmdCompra.Parameters.AddWithValue("@fecha_entrega",
                     getEntrega() == DateTime.MinValue ? (object)DBNull.Value : getEntrega());
-                cmdCompra.Parameters.AddWithValue("@direccion_entrega", getDireccion());
-                cmdCompra.Parameters.AddWithValue("@contacto_entrega", getContacto());
-                cmdCompra.Parameters.AddWithValue("@telefono_entrega", getTelefono());
 
                 object resultado = cmdCompra.ExecuteScalar();
                 if (resultado == null) return false;
@@ -70,9 +67,6 @@ namespace TRAMADE.ClasesCompras
                 cmdCompra.Parameters.AddWithValue("@fecha_entrega",
                     getEntrega() == DateTime.MinValue ? (object)DBNull.Value : getEntrega());
                 cmdCompra.Parameters.AddWithValue("@autorizada", getAutorizar());
-                cmdCompra.Parameters.AddWithValue("@direccion_entrega", getDireccion());
-                cmdCompra.Parameters.AddWithValue("@contacto_entrega", getContacto());
-                cmdCompra.Parameters.AddWithValue("@telefono_entrega", getTelefono());
 
                 object resultado = cmdCompra.ExecuteScalar();
                 if (Convert.ToInt32(resultado) <= 0) return false;

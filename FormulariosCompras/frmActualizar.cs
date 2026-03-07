@@ -54,17 +54,11 @@ namespace TRAMADE
                     if (reader["fecha_entrega"] != DBNull.Value)
                         dtEntrega.Value = Convert.ToDateTime(reader["fecha_entrega"]);
 
-                    txtDireccion.Text = reader["direccion_entrega"].ToString();
-                    txtContacto.Text = reader["contacto_entrega"].ToString();
-                    txtTelefono.Text = reader["telefono_entrega"].ToString();
 
+                    dtEntrega.Enabled = true;
                     cmbProveedor.Enabled = true;
                     cmbProducto.Enabled = true;
                     cmbFormaPago.Enabled = true;
-                    txtContacto.Enabled = true;
-                    txtTelefono.Enabled = true;
-                    txtDireccion.Enabled = true;
-                    dtEntrega.Enabled = true;
                     nudCantidad.Enabled = true;
 
                     reader.Close();
@@ -106,9 +100,6 @@ namespace TRAMADE
             cmbProducto.Enabled = false;
             cmbFormaPago.Enabled = false;
 
-            txtContacto.Enabled = false;
-            txtTelefono.Enabled = false;
-            txtDireccion.Enabled = false;
             txtPrecio.Enabled = false;
             txtSubtotal.Enabled = false;
             txtImpuesto.Enabled = false;
@@ -212,9 +203,6 @@ namespace TRAMADE
         {
             txtbBuscar.Clear();
             dtEntrega.Value = DateTime.Now;
-            txtContacto.Clear();
-            txtDireccion.Clear();
-            txtTelefono.Clear();
             cmbProducto.SelectedIndex = -1;
             cmbFormaPago.SelectedIndex = -1;
             cmbProveedor.SelectedIndex = -1;
@@ -244,9 +232,6 @@ namespace TRAMADE
                 ObjOp.setProveedor(Convert.ToInt32(cmbProveedor.SelectedValue));
                 ObjOp.setFormaPago(Convert.ToInt32(cmbFormaPago.SelectedValue));
                 ObjOp.setCantidad(Convert.ToInt32(nudCantidad.Value));
-                ObjOp.setContacto(txtContacto.Text.Trim());
-                ObjOp.setDireccion(txtDireccion.Text.Trim());
-                ObjOp.setTelefono(txtTelefono.Text.Trim());
                 ObjOp.setEntrega(dtEntrega.Value);
                 
 

@@ -156,9 +156,6 @@ namespace TRAMADE
         {
         
             dtEntrega.Value = DateTime.Now;
-            txtContacto.Clear();
-            txtDireccion.Clear();
-            txtTelefono.Clear();
             cmbProducto.SelectedIndex = -1;
             cmbFormaPago.SelectedIndex = -1;
             cmbProveedor.SelectedIndex = -1;
@@ -193,9 +190,6 @@ namespace TRAMADE
                 ObjOp.setProveedor(Convert.ToInt32(cmbProveedor.SelectedValue));
                 ObjOp.setFormaPago(Convert.ToInt32(cmbFormaPago.SelectedValue));
                 ObjOp.setCantidad(Convert.ToInt32(nudCantidad.Value));
-                ObjOp.setContacto(txtContacto.Text.Trim());
-                ObjOp.setDireccion(txtDireccion.Text.Trim());
-                ObjOp.setTelefono(txtTelefono.Text.Trim());
                 ObjOp.setEntrega(dtEntrega.Value);
                 
 
