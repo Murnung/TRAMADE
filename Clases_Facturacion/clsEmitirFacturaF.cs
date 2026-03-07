@@ -6,7 +6,6 @@ namespace TRAMADE
 {
     public class clsEmitirFacturaF
     {
-        // Propiedades para los datos generales de la factura
         public int numero_factura { get; set; }
         public string dni_rtn_cliente { get; set; }
         public string nombre_cliente { get; set; }
@@ -20,7 +19,6 @@ namespace TRAMADE
         public decimal total { get; set; }
         public int id_forma_pago { get; set; }
 
-        // 1. MÉTODO PARA TRAER LOS DATOS GENERALES
         public bool CargarMaestro(int idFactura)
         {
             bool encontrado = false;
@@ -47,9 +45,22 @@ namespace TRAMADE
                 {
                     numero_factura = Convert.ToInt32(dr["numero_factura"]);
 
-                    // Lógica del DNI/RTN
-                    dni_rtn_cliente = dr["rtn_cliente"].ToString();
-                    if (string.IsNullOrEmpty(dni_rtn_cliente)) dni_rtn_cliente = dr["dni_cliente"].ToString();
+                    // LÓGICA INTELIGENTE PARA MOSTRAR EL DNI O RTN REAL
+                    string rtn_bd = dr["rtn_cliente"].ToString();
+                    string dni_bd = dr["dni_cliente"].ToString();
+
+                    if (!string.IsNullOrEmpty(rtn_bd) && !rtn_bd.StartsWith("SN-"))
+                    {
+                        dni_rtn_cliente = rtn_bd; // Mostramos el RTN real
+                    }
+                    else if (!string.IsNullOrEmpty(dni_bd) && !dni_bd.StartsWith("SN-"))
+                    {
+                        dni_rtn_cliente = dni_bd; // Mostramos el DNI real
+                    }
+                    else
+                    {
+                        dni_rtn_cliente = "S/N"; // Ninguno es real, mostramos S/N
+                    }
 
                     nombre_cliente = dr["nombre_cliente"].ToString();
                     direccion_cliente = dr["direccion_cliente"].ToString();
@@ -77,7 +88,6 @@ namespace TRAMADE
             return encontrado;
         }
 
-        // 2. MÉTODO PARA TRAER LA TABLA DE PRODUCTOS (Devuelve un DataTable)
         public DataTable CargarDetalles(int idFactura)
         {
             DataTable dt = new DataTable();

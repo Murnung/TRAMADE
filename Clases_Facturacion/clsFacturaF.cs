@@ -27,6 +27,30 @@ namespace TRAMADE
         // ¡EL TRUCO! Una lista que guardará todos los productos de esta factura
         public List<clsDetalleFactura> Detalles { get; set; } = new List<clsDetalleFactura>();
 
+        // Método que obtiene el siguiente número de factura
+        public int ObtenerSiguienteNumeroFactura()
+        {
+            int siguiente = 1;
+            clsConexion conexion = new clsConexion();
+            conexion.Abrir();
+            try
+            {
+                // Busca el número máximo. Si no hay nada (ISNULL), toma 0. Y le suma 1.
+                string query = "SELECT ISNULL(MAX(numero_factura), 0) + 1 FROM FACTURA";
+                SqlCommand cmd = new SqlCommand(query, conexion.SqlC);
+                siguiente = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el número de factura: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+            return siguiente;
+        }
+
         // Método que guarda TODO en SQL
         public int GuardarFacturaTransaccion()
         {

@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Clases_Facturacion\clsConexion.cs" />
     <Compile Include="Clases_Facturacion\clsSesion.cs" />
+    <Compile Include="Clases_Facturacion\clsValidacionesF.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -20,15 +20,49 @@ namespace TRAMADE
             InitializeComponent();
         }
 
-        // --- AHORA BUSCAMOS USANDO LA CLASE ---
+        private void GenerarCorrelativo()
+        {
+            try
+            {
+                clsFacturaF objFactura = new clsFacturaF();
+                numeroFactura = objFactura.ObtenerSiguienteNumeroFactura();
+                lblNumeroFactura.Text = "INV/2026/" + numeroFactura.ToString("D4");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error al generar correlativo");
+            }
+        }
+
+        // --- NUEVO MÉTODO: CARGA EL VENDEDOR AUTOMÁTICAMENTE ---
+        private void CargarVendedorAuto()
+        {
+            if (clsSesion.id_usuario != 0) // Si hay un usuario logueado en el sistema
+            {
+                txtIDVendedor.Text = clsSesion.id_usuario.ToString();
+                txtNombreVendedor.Text = clsSesion.nombre_usuario;
+                txtIDVendedor.ReadOnly = true;
+                txtNombreVendedor.ReadOnly = true;
+            }
+        }
+
+        private void frmFacturacion_Load(object sender, EventArgs e)
+        {
+            GenerarCorrelativo();
+
+            // LLAMAMOS AL VENDEDOR DE FORMA AUTOMÁTICA AL ABRIR
+            CargarVendedorAuto();
+
+            dtpVencimiento.Value = dtpEmision.Value.AddMonths(1);
+            dtpEmision.ValueChanged += (s, args) => { dtpVencimiento.Value = dtpEmision.Value.AddMonths(1); };
+        }
+
         private void BuscarCliente(string rtnDni)
         {
             try
             {
-                // Instanciamos la clase que acabas de crear
                 clsClienteF objCliente = new clsClienteF();
 
-                // Si la clase encuentra al cliente (devuelve true)
                 if (objCliente.BuscarClienteDNI(rtnDni))
                 {
                     id_cliente_seleccionado = objCliente.id_cliente;
@@ -77,18 +111,17 @@ namespace TRAMADE
             objAggProducto.ShowDialog();
         }
 
-        // --- VISTA PREVIA (Queda igual porque es pura UI) ---
         private void kryptonButton12_Click(object sender, EventArgs e)
         {
-            if (dgvDetalleFactura.Rows.Count == 0)
-            {
-                MessageBox.Show("Agregue productos para ver la vista previa.", "Aviso");
-                return;
-            }
+            if (clsValidacionesF.ValidarGridVacio(dgvDetalleFactura.Rows.Count, "Agregue productos para ver la vista previa.")) return;
 
             frmVistaPrevia objVP = new frmVistaPrevia();
             objVP.txtNombreClienteVP.Text = txtNombreCliente.Text;
-            objVP.txtDNIClienteVP.Text = txtDNICliente.Text;
+
+            string dniMostrar = txtDNICliente.Text.Trim();
+            if (string.IsNullOrEmpty(dniMostrar) || dniMostrar.StartsWith("SN-")) dniMostrar = "S/N";
+            objVP.txtDNIClienteVP.Text = dniMostrar;
+
             objVP.txtDireccionClienteVP.Text = txtDireccionCliente.Text;
             objVP.lblNumeroFacturaVP.Text = lblNumeroFactura.Text;
             objVP.txtIDVendedorVP.Text = txtIDVendedor.Text;
@@ -121,27 +154,48 @@ namespace TRAMADE
             objVP.ShowDialog();
         }
 
-        // --- AHORA GUARDAMOS USANDO LA CLASE (Adiós SQL aquí) ---
         private void kryptonButton13_Click(object sender, EventArgs e)
         {
-            if (dgvDetalleFactura.Rows.Count == 0)
+            int productosReales = 0;
+            foreach (DataGridViewRow fila in dgvDetalleFactura.Rows)
             {
-                MessageBox.Show("No hay productos para facturar.", "Aviso");
+                if (fila.Cells[0].Value != null && !fila.IsNewRow)
+                {
+                    productosReales++;
+                }
+            }
+
+            string error = clsValidacionesF.ValidarEmisionFactura(
+                txtNombreCliente.Text.Trim(),
+                txtDireccionCliente.Text.Trim(),
+                txtIDVendedor.Text.Trim(),
+                dtpEmision.Value,
+                dtpVencimiento.Value,
+                productosReales,
+                rbContado.Checked,
+                rbCredito.Checked,
+                txtDNICliente.Text.Trim()
+            );
+
+            if (error != "")
+            {
+                MessageBox.Show(error, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (id_cliente_seleccionado == 0)
-            {
-                MessageBox.Show("Por favor seleccione un cliente válido.", "Aviso");
-                return;
-            }
+            if (!clsValidacionesF.PedirConfirmacion("¿Está seguro que desea emitir y guardar esta factura?")) return;
 
             try
             {
-                // 1. Preparamos la "Caja" (La clase clsFactura)
+                if (id_cliente_seleccionado == 0)
+                {
+                    clsClienteF objClienteR = new clsClienteF();
+                    int idVendedor = int.Parse(txtIDVendedor.Text);
+                    id_cliente_seleccionado = objClienteR.InsertarClienteRapido(txtNombreCliente.Text.Trim(), txtDireccionCliente.Text.Trim(), idVendedor, txtDNICliente.Text.Trim());
+                }
+
                 clsFacturaF nuevaFactura = new clsFacturaF();
 
-                // 2. Metemos los datos de la pantalla a la clase
                 nuevaFactura.numero_factura = numeroFactura;
                 nuevaFactura.id_usuario = int.Parse(txtIDVendedor.Text);
                 nuevaFactura.id_forma_pago = rbContado.Checked ? 1 : 2;
@@ -152,7 +206,6 @@ namespace TRAMADE
                 nuevaFactura.impuesto = decimal.Parse(lblImpuesto.Text.Replace("L. ", "").Trim());
                 nuevaFactura.total = decimal.Parse(lblTotal.Text.Replace("L. ", "").Trim());
 
-                // 3. Metemos los productos del Grid a la lista de la clase
                 foreach (DataGridViewRow fila in dgvDetalleFactura.Rows)
                 {
                     if (fila.Cells[0].Value != null && !fila.IsNewRow)
@@ -165,10 +218,8 @@ namespace TRAMADE
                     }
                 }
 
-                // 4. Le decimos a la clase: ¡Guardate!
                 int idGenerado = nuevaFactura.GuardarFacturaTransaccion();
 
-                // 5. Si nos devuelve un ID mayor a 0, fue un éxito
                 if (idGenerado > 0)
                 {
                     MessageBox.Show("Factura emitida con éxito.", "TRAMADE");
@@ -179,6 +230,19 @@ namespace TRAMADE
 
                     dgvDetalleFactura.Rows.Clear();
                     CalcularTotales();
+
+                    txtNombreCliente.Text = "";
+                    txtDNICliente.Text = "";
+                    txtDireccionCliente.Text = "";
+                    id_cliente_seleccionado = 0;
+
+                    rbContado.Checked = false;
+                    rbCredito.Checked = false;
+
+                    dtpEmision.Value = DateTime.Now;
+                    dtpVencimiento.Value = DateTime.Now.AddMonths(1);
+
+                    GenerarCorrelativo();
                 }
             }
             catch (Exception ex)
@@ -198,63 +262,56 @@ namespace TRAMADE
             txtNombreCliente.Text = "";
             txtDNICliente.Text = "";
             txtDireccionCliente.Text = "";
-            txtIDVendedor.Text = "";
-            txtNombreVendedor.Text = "";
+
+            // Ya NO limpiamos los datos del vendedor aquí
+            CargarVendedorAuto();
+
             dtpEmision.Value = DateTime.Now;
-            dtpVencimiento.Value = DateTime.Now;
+            dtpVencimiento.Value = DateTime.Now.AddMonths(1);
+
             rbContado.Checked = false;
             rbCredito.Checked = false;
+            id_cliente_seleccionado = 0;
+
+            dgvDetalleFactura.Rows.Clear();
+            CalcularTotales();
+
+            GenerarCorrelativo();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             btnLimpiar.PerformClick();
-            numeroFactura++;
-            lblNumeroFactura.Text = "INV/2026/" + numeroFactura.ToString("D4");
         }
 
-        // Eventos vacíos
         private void txtDNICliente_TextChanged(object sender, EventArgs e) { }
         private void txtDNICliente_Leave(object sender, EventArgs e) { }
-        private void frmFacturacion_Load(object sender, EventArgs e) { }
 
+        // El botón sigue existiendo por si alguna vez ocupan recargarlo a mano, pero ya se hace solo
         private void btnIDVendedor_Click(object sender, EventArgs e)
         {
-            if (clsSesion.id_usuario != 0)
-            {
-                txtIDVendedor.Text = clsSesion.id_usuario.ToString();
-                txtNombreVendedor.Text = clsSesion.nombre_usuario;
-                txtIDVendedor.ReadOnly = true;
-                txtNombreVendedor.ReadOnly = true;
-            }
-            else
-            {
-                MessageBox.Show("No se detectó ningún usuario logueado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            CargarVendedorAuto();
         }
 
         private void btnDNICliente_Click(object sender, EventArgs e)
         {
-            if (txtDNICliente.Text.Trim() != "")
+            if (clsValidacionesF.ValidarCampoVacio(txtDNICliente.Text, "Por favor, escriba un DNI o RTN antes de buscar.")) return;
+
+            if (!clsValidacionesF.EsDniRtnValido(txtDNICliente.Text))
             {
-                BuscarCliente(txtDNICliente.Text.Trim());
+                MessageBox.Show("Formato incorrecto. No use espacios en blanco. El DNI debe tener exactamente 13 números y el RTN 14 números.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
-            {
-                MessageBox.Show("Por favor, escriba un DNI o RTN antes de buscar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+
+            BuscarCliente(txtDNICliente.Text.Trim());
         }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            if (dgvDetalleFactura.CurrentRow != null)
+            if (clsValidacionesF.ValidarFilaSeleccionada(dgvDetalleFactura.CurrentRow, "Por favor, seleccione un producto de la lista para eliminarlo."))
             {
                 dgvDetalleFactura.Rows.Remove(dgvDetalleFactura.CurrentRow);
                 CalcularTotales();
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un producto de la lista para eliminarlo.", "Aviso");
             }
         }
 

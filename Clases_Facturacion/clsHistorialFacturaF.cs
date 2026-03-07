@@ -6,14 +6,12 @@ namespace TRAMADE
 {
     public class clsHistorialFacturaF
     {
-        // Propiedades que llenarán tu DataGridView
         public int id_factura { get; set; }
         public string factura_formateada { get; set; }
         public string id_usuario { get; set; }
         public string dni_rtn_cliente { get; set; }
         public string fecha_emision { get; set; }
 
-        // 1. MÉTODO PARA CONTAR EL TOTAL DE FACTURAS (Para tu lógica del numeral)
         public int ObtenerTotalRegistros()
         {
             int total = 0;
@@ -36,7 +34,6 @@ namespace TRAMADE
             return total;
         }
 
-        // 2. MÉTODO PARA TRAER EL HISTORIAL FILTRADO
         public List<clsHistorialFacturaF> ObtenerHistorial(string filtro, DateTime? fecha, bool ordenAscendente)
         {
             List<clsHistorialFacturaF> lista = new List<clsHistorialFacturaF>();
@@ -63,7 +60,6 @@ namespace TRAMADE
                     query += " AND CAST(F.fecha_emision AS DATE) = @fecha";
                 }
 
-                // Aplicamos el orden
                 query += ordenAscendente ? " ORDER BY F.numero_factura ASC" : " ORDER BY F.fecha_emision DESC";
 
                 SqlCommand cmd = new SqlCommand(query, conexion.SqlC);
@@ -84,24 +80,34 @@ namespace TRAMADE
 
                 while (dr.Read())
                 {
-                    // Llenamos las propiedades de nuestra clase
                     clsHistorialFacturaF hist = new clsHistorialFacturaF();
 
                     hist.id_factura = Convert.ToInt32(dr["id_factura"]);
 
-                    // Ya le damos el formato desde aquí para que el Form no trabaje de más
                     int numF = Convert.ToInt32(dr["numero_factura"]);
                     hist.factura_formateada = "INV/2026/" + numF.ToString("D4");
 
                     hist.id_usuario = dr["id_usuario"].ToString();
 
-                    string dni = dr["rtn_cliente"].ToString();
-                    if (string.IsNullOrEmpty(dni)) dni = dr["dni_cliente"].ToString();
-                    hist.dni_rtn_cliente = dni;
+                    // LÓGICA INTELIGENTE PARA EL HISTORIAL
+                    string rtn_bd = dr["rtn_cliente"].ToString();
+                    string dni_bd = dr["dni_cliente"].ToString();
+
+                    if (!string.IsNullOrEmpty(rtn_bd) && !rtn_bd.StartsWith("SN-"))
+                    {
+                        hist.dni_rtn_cliente = rtn_bd;
+                    }
+                    else if (!string.IsNullOrEmpty(dni_bd) && !dni_bd.StartsWith("SN-"))
+                    {
+                        hist.dni_rtn_cliente = dni_bd;
+                    }
+                    else
+                    {
+                        hist.dni_rtn_cliente = "S/N";
+                    }
 
                     hist.fecha_emision = Convert.ToDateTime(dr["fecha_emision"]).ToString("dd/MM/yyyy HH:mm");
 
-                    // Metemos el objeto a la lista
                     lista.Add(hist);
                 }
                 dr.Close();
