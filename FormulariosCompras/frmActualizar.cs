@@ -29,11 +29,7 @@ namespace TRAMADE
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string busqueda = txtbBuscar.Text.Trim();
-            if (string.IsNullOrEmpty(busqueda))
-            {
-                MessageBox.Show("Ingrese el id de la solicitud de compra");
-                return;
-            }
+            if (!clsValidacioesCompras.validarBuscarId(busqueda)) return;
 
             try
             {
@@ -150,7 +146,7 @@ namespace TRAMADE
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            
+            if (!clsValidacioesCompras.validarListBox(lstProductos)) return;
             ObjOp.eliminarProducto(lstProductos);
             txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
 
@@ -158,11 +154,9 @@ namespace TRAMADE
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (cmbProducto.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione un producto primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            if (!clsValidacioesCompras.validarComboProducto(cmbProducto)) return;
+            
+
             DataRowView drv = (DataRowView)cmbProducto.SelectedItem;
 
             ObjOp.setProducto(Convert.ToInt32(cmbProducto.SelectedValue));
@@ -214,22 +208,24 @@ namespace TRAMADE
             txtTotal.Clear();
             ObjOp.limpiarLista();
 
+            dtEntrega.Enabled = false;
+            cmbProveedor.Enabled = false;
+            cmbProducto.Enabled = false;
+            cmbFormaPago.Enabled = false;
+            nudCantidad.Enabled = false;
+
+            compraIdSeleccionado = 0;
+
+
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
 
-           if (compraIdSeleccionado == 0)
-            {
-                MessageBox.Show("Ingrese una solicitud de compra primero","ERROR",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-           
-            if (lstProductos.Items.Count == 0)
-            {
-                MessageBox.Show("Debe de existir al menos un producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            if (!clsValidacioesCompras.validarIdSeleccionado(compraIdSeleccionado)) return;
+            if (!clsValidacioesCompras.validarListBox(lstProductos)) return;
+            if (!clsValidacioesCompras.validarFechaEntrega(dtEntrega.Value)) return;
+
             try
             {
                 // Asignación de datos

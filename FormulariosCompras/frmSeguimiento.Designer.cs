@@ -50,6 +50,8 @@
             this.btnBuscar = new Krypton.Toolkit.KryptonButton();
             this.dtHasta = new Krypton.Toolkit.KryptonDateTimePicker();
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
@@ -152,7 +154,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(343, 319);
+            this.label3.Location = new System.Drawing.Point(421, 322);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 79;
@@ -161,15 +163,16 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(431, 315);
+            this.txtBuscar.Location = new System.Drawing.Point(509, 315);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(283, 33);
             this.txtBuscar.StateCommon.Border.Rounding = 10F;
             this.txtBuscar.TabIndex = 81;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dtDesde
             // 
-            this.dtDesde.Location = new System.Drawing.Point(31, 278);
+            this.dtDesde.Location = new System.Drawing.Point(107, 280);
             this.dtDesde.Name = "dtDesde";
             this.dtDesde.Size = new System.Drawing.Size(278, 29);
             this.dtDesde.StateCommon.Border.Rounding = 5F;
@@ -306,7 +309,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(735, 319);
+            this.btnBuscar.Location = new System.Drawing.Point(832, 315);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -332,7 +335,7 @@
             // 
             // dtHasta
             // 
-            this.dtHasta.Location = new System.Drawing.Point(31, 319);
+            this.dtHasta.Location = new System.Drawing.Point(107, 319);
             this.dtHasta.Name = "dtHasta";
             this.dtHasta.Size = new System.Drawing.Size(278, 29);
             this.dtHasta.StateCommon.Border.Rounding = 5F;
@@ -340,7 +343,7 @@
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(880, 319);
+            this.btnRefrescar.Location = new System.Drawing.Point(987, 315);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnRefrescar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
@@ -360,12 +363,32 @@
             this.btnRefrescar.Values.Text = "REFRESCAR";
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 285);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 16);
+            this.label7.TabIndex = 93;
+            this.label7.Text = "DESDE";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(28, 322);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 16);
+            this.label8.TabIndex = 94;
+            this.label8.Text = "HASTA";
+            // 
             // frmSeguimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1210, 720);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.dtHasta);
             this.Controls.Add(this.btnBuscar);
@@ -434,5 +457,7 @@
         private Krypton.Toolkit.KryptonButton btnBuscar;
         private Krypton.Toolkit.KryptonDateTimePicker dtHasta;
         private Krypton.Toolkit.KryptonButton btnRefrescar;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

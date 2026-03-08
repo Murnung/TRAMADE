@@ -103,16 +103,34 @@ namespace TRAMADE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObjFc.FiltrarFechas(ObjConexion, dtDesde, dtHasta, txtBuscar.Text);
-            if (dt != null)
+            // Si hay texto en el buscador, busca por ID
+            if (!string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
-                dgvCompras.DataSource = dt;
+                if (!clsValidacioesCompras.validarBuscarId(txtBuscar.Text.Trim())) return;
+                DataTable dt = ObjFc.BuscarCompra(ObjConexion, txtBuscar.Text);
+                if (dt != null)
+                    dgvCompras.DataSource = dt;
             }
+            else
+            {
+                // Si no hay texto, busca por fechas
+                if (!clsValidacioesCompras.validarFechaFiltro(dtDesde.Value, dtHasta.Value)) return;
+                DataTable dt = ObjFc.FiltrarFechas(ObjConexion, dtDesde, dtHasta, txtBuscar.Text);
+                if (dt != null)
+                    dgvCompras.DataSource = dt;
+            }
+            
         }
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             recargarCompras();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+                recargarCompras(); //limpia y recarga cuando se borra el ID
         }
     }
 }

@@ -28,7 +28,7 @@ namespace TRAMADE
 
         private void frmRegistrar_Load(object sender, EventArgs e)
         {
-            btnRegistrar.Enabled = false;
+          
             cmbProveedor.SelectedIndex = -1;
             clsLlenarComboProducto.llenarComboProducto(cmbProducto,ObjConexion);
             clsLlenarComboProveedor.llenarComboProveedor(cmbProveedor, ObjConexion);
@@ -67,12 +67,8 @@ namespace TRAMADE
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            
-            if (cmbProducto.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione un producto primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            if (!clsValidacioesCompras.validarComboProducto(cmbProducto)) return;
+
             DataRowView drv = (DataRowView)cmbProducto.SelectedItem;
 
             ObjOp.setProducto(Convert.ToInt32(drv["id_producto"]));
@@ -171,17 +167,9 @@ namespace TRAMADE
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             // Validaciones
-            if (cmbProveedor.SelectedValue == null || cmbProducto.SelectedValue == null)
-            {
-                MessageBox.Show("Seleccione un proveedor y un producto.");
-                return;
-            }
-
-            if (cmbFormaPago.SelectedValue == null)
-            {
-                MessageBox.Show("Seleccione una forma de pago.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            if (!clsValidacioesCompras.validar_todosLosCampos(cmbProducto, cmbProveedor, cmbFormaPago)) return;
+            if (!clsValidacioesCompras.validarFechaEntrega(dtEntrega.Value)) return;
+            if (!clsValidacioesCompras.validarListBox(lstProductos)) return;
 
             try
             {
@@ -211,7 +199,7 @@ namespace TRAMADE
                 MessageBox.Show("Error en el formulario: " + ex.Message);
             }
             btnLimpiar_Click(sender, e);
-            btnRegistrar.Enabled = false;
+            
         }
 
         private void calcularTotales()
@@ -233,6 +221,7 @@ namespace TRAMADE
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
+            if (!clsValidacioesCompras.validarListBox(lstProductos)) return;
             ObjOp.eliminarProducto(lstProductos);
             txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
         }
