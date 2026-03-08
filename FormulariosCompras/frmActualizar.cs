@@ -221,7 +221,7 @@ namespace TRAMADE
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
+            //Validacines 
             if (!clsValidacioesCompras.validarIdSeleccionado(compraIdSeleccionado)) return;
             if (!clsValidacioesCompras.validarListBox(lstProductos)) return;
             if (!clsValidacioesCompras.validarFechaEntrega(dtEntrega.Value)) return;
