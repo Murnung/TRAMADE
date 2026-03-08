@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -49,11 +52,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.chtProductosMasComprados = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chtComprasPendientes = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtProveedores = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasRecientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtProductosMasComprados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtComprasPendientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtProveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +78,7 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 800);
+            this.panel1.Size = new System.Drawing.Size(176, 860);
             this.panel1.TabIndex = 4;
             // 
             // label14
@@ -99,7 +104,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.Location = new System.Drawing.Point(1142, 0);
+            this.panel4.Location = new System.Drawing.Point(1187, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 94);
             this.panel4.TabIndex = 6;
@@ -115,12 +120,12 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(187, 81);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1152, 105);
+            this.panel2.Size = new System.Drawing.Size(1197, 105);
             this.panel2.TabIndex = 5;
             // 
             // btnSeguimiento
             // 
-            this.btnSeguimiento.Location = new System.Drawing.Point(822, 27);
+            this.btnSeguimiento.Location = new System.Drawing.Point(873, 27);
             this.btnSeguimiento.Name = "btnSeguimiento";
             this.btnSeguimiento.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
@@ -150,14 +155,14 @@
             // 
             // btnAutorizar
             // 
-            this.btnAutorizar.Location = new System.Drawing.Point(548, 27);
+            this.btnAutorizar.Location = new System.Drawing.Point(586, 27);
             this.btnAutorizar.Name = "btnAutorizar";
             this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
             this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
             this.btnAutorizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnAutorizar.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
             this.btnAutorizar.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnAutorizar.Size = new System.Drawing.Size(268, 52);
+            this.btnAutorizar.Size = new System.Drawing.Size(281, 52);
             this.btnAutorizar.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
             this.btnAutorizar.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
             this.btnAutorizar.StateCommon.Border.Rounding = 10F;
@@ -181,14 +186,14 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(288, 27);
+            this.btnActualizar.Location = new System.Drawing.Point(298, 27);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizar.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnActualizar.Size = new System.Drawing.Size(254, 52);
+            this.btnActualizar.Size = new System.Drawing.Size(271, 52);
             this.btnActualizar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StateCommon.Border.Rounding = 10F;
@@ -260,26 +265,26 @@
             this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.Location = new System.Drawing.Point(2, 94);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1149, 10);
+            this.panel3.Size = new System.Drawing.Size(1197, 10);
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // dgvComprasRecientes
             // 
             this.dgvComprasRecientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComprasRecientes.Location = new System.Drawing.Point(328, 434);
+            this.dgvComprasRecientes.Location = new System.Drawing.Point(200, 530);
             this.dgvComprasRecientes.Name = "dgvComprasRecientes";
             this.dgvComprasRecientes.RowHeadersVisible = false;
             this.dgvComprasRecientes.RowHeadersWidth = 51;
             this.dgvComprasRecientes.RowTemplate.Height = 24;
-            this.dgvComprasRecientes.Size = new System.Drawing.Size(791, 319);
+            this.dgvComprasRecientes.Size = new System.Drawing.Size(791, 301);
             this.dgvComprasRecientes.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(332, 406);
+            this.label3.Location = new System.Drawing.Point(195, 491);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(249, 25);
             this.label3.TabIndex = 8;
@@ -287,42 +292,58 @@
             // 
             // chtProductosMasComprados
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chtProductosMasComprados.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chtProductosMasComprados.Legends.Add(legend9);
-            this.chtProductosMasComprados.Location = new System.Drawing.Point(328, 205);
+            chartArea1.Name = "ChartArea1";
+            this.chtProductosMasComprados.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtProductosMasComprados.Legends.Add(legend1);
+            this.chtProductosMasComprados.Location = new System.Drawing.Point(190, 201);
             this.chtProductosMasComprados.Name = "chtProductosMasComprados";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chtProductosMasComprados.Series.Add(series9);
-            this.chtProductosMasComprados.Size = new System.Drawing.Size(360, 198);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtProductosMasComprados.Series.Add(series1);
+            this.chtProductosMasComprados.Size = new System.Drawing.Size(403, 269);
             this.chtProductosMasComprados.TabIndex = 9;
             this.chtProductosMasComprados.Text = "chart1";
             // 
             // chtComprasPendientes
             // 
-            chartArea10.Name = "ChartArea1";
-            this.chtComprasPendientes.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chtComprasPendientes.Legends.Add(legend10);
-            this.chtComprasPendientes.Location = new System.Drawing.Point(752, 205);
+            chartArea2.Name = "ChartArea1";
+            this.chtComprasPendientes.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtComprasPendientes.Legends.Add(legend2);
+            this.chtComprasPendientes.Location = new System.Drawing.Point(1022, 201);
             this.chtComprasPendientes.Name = "chtComprasPendientes";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.chtComprasPendientes.Series.Add(series10);
-            this.chtComprasPendientes.Size = new System.Drawing.Size(358, 198);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chtComprasPendientes.Series.Add(series2);
+            this.chtComprasPendientes.Size = new System.Drawing.Size(366, 269);
             this.chtComprasPendientes.TabIndex = 10;
             this.chtComprasPendientes.Text = "chart2";
+            // 
+            // chtProveedores
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chtProveedores.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chtProveedores.Legends.Add(legend3);
+            this.chtProveedores.Location = new System.Drawing.Point(612, 201);
+            this.chtProveedores.Name = "chtProveedores";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chtProveedores.Series.Add(series3);
+            this.chtProveedores.Size = new System.Drawing.Size(389, 269);
+            this.chtProveedores.TabIndex = 11;
             // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1343, 786);
+            this.ClientSize = new System.Drawing.Size(1408, 843);
+            this.Controls.Add(this.chtProveedores);
             this.Controls.Add(this.chtComprasPendientes);
             this.Controls.Add(this.chtProductosMasComprados);
             this.Controls.Add(this.label3);
@@ -341,6 +362,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprasRecientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtProductosMasComprados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtComprasPendientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtProveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,5 +385,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtProductosMasComprados;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtComprasPendientes;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtProveedores;
     }
 }

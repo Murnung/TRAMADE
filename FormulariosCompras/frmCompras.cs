@@ -90,6 +90,8 @@ namespace TRAMADE
             grafico.Cargar();
             var graficoProductos = new clsGraficoProductosCompras(chtProductosMasComprados, ObjConexion);
             graficoProductos.Cargar();
+            var graficoProveedores = new clsGraficoProveedoresCompras(chtProveedores, ObjConexion);
+            graficoProveedores.Cargar();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
