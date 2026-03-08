@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -35,12 +41,19 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSeguimiento = new Krypton.Toolkit.KryptonButton();
+            this.btnAutorizar = new Krypton.Toolkit.KryptonButton();
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
             this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAutorizar = new Krypton.Toolkit.KryptonButton();
+            this.dgvComprasRecientes = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComprasRecientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +73,7 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 591);
+            this.panel1.Size = new System.Drawing.Size(176, 800);
             this.panel1.TabIndex = 4;
             // 
             // label14
@@ -134,6 +147,37 @@
             this.btnSeguimiento.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.SEGUIMIENTO;
             this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE COMPRA";
             this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
+            // 
+            // btnAutorizar
+            // 
+            this.btnAutorizar.Location = new System.Drawing.Point(548, 27);
+            this.btnAutorizar.Name = "btnAutorizar";
+            this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnAutorizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAutorizar.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnAutorizar.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnAutorizar.Size = new System.Drawing.Size(268, 52);
+            this.btnAutorizar.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
+            this.btnAutorizar.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnAutorizar.StateCommon.Border.Rounding = 10F;
+            this.btnAutorizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnAutorizar.StateCommon.Content.ShortText.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnAutorizar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutorizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAutorizar.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnAutorizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnAutorizar.StateTracking.Border.Rounding = 10F;
+            this.btnAutorizar.TabIndex = 9;
+            this.btnAutorizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnAutorizar.Values.ImageStates.ImageCheckedNormal = null;
+            this.btnAutorizar.Values.ImageStates.ImageCheckedPressed = null;
+            this.btnAutorizar.Values.ImageStates.ImageCheckedTracking = null;
+            this.btnAutorizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.GES;
+            this.btnAutorizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.GES;
+            this.btnAutorizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.GES;
+            this.btnAutorizar.Values.Text = "AUTORIZAR SOLICITUD";
+            this.btnAutorizar.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // btnActualizar
             // 
@@ -218,43 +262,69 @@
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // btnAutorizar
+            // dgvComprasRecientes
             // 
-            this.btnAutorizar.Location = new System.Drawing.Point(548, 27);
-            this.btnAutorizar.Name = "btnAutorizar";
-            this.btnAutorizar.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnAutorizar.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnAutorizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAutorizar.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnAutorizar.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnAutorizar.Size = new System.Drawing.Size(268, 52);
-            this.btnAutorizar.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnAutorizar.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnAutorizar.StateCommon.Border.Rounding = 10F;
-            this.btnAutorizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnAutorizar.StateCommon.Content.ShortText.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.btnAutorizar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAutorizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAutorizar.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnAutorizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnAutorizar.StateTracking.Border.Rounding = 10F;
-            this.btnAutorizar.TabIndex = 9;
-            this.btnAutorizar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnAutorizar.Values.ImageStates.ImageCheckedNormal = null;
-            this.btnAutorizar.Values.ImageStates.ImageCheckedPressed = null;
-            this.btnAutorizar.Values.ImageStates.ImageCheckedTracking = null;
-            this.btnAutorizar.Values.ImageStates.ImageNormal = global::TRAMADE.Properties.Resources.GES;
-            this.btnAutorizar.Values.ImageStates.ImagePressed = global::TRAMADE.Properties.Resources.GES;
-            this.btnAutorizar.Values.ImageStates.ImageTracking = global::TRAMADE.Properties.Resources.GES;
-            this.btnAutorizar.Values.Text = "AUTORIZAR SOLICITUD";
-            this.btnAutorizar.Click += new System.EventHandler(this.kryptonButton1_Click);
+            this.dgvComprasRecientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComprasRecientes.Location = new System.Drawing.Point(212, 455);
+            this.dgvComprasRecientes.Name = "dgvComprasRecientes";
+            this.dgvComprasRecientes.RowHeadersVisible = false;
+            this.dgvComprasRecientes.RowHeadersWidth = 51;
+            this.dgvComprasRecientes.RowTemplate.Height = 24;
+            this.dgvComprasRecientes.Size = new System.Drawing.Size(932, 319);
+            this.dgvComprasRecientes.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(220, 417);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(249, 25);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "COMPRAS RECIENTES";
+            // 
+            // chart1
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(606, 206);
+            this.chart1.Name = "chart1";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(342, 182);
+            this.chart1.TabIndex = 9;
+            this.chart1.Text = "chart1";
+            // 
+            // chart2
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
+            this.chart2.Location = new System.Drawing.Point(225, 206);
+            this.chart2.Name = "chart2";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart2.Series.Add(series4);
+            this.chart2.Size = new System.Drawing.Size(342, 182);
+            this.chart2.TabIndex = 10;
+            this.chart2.Text = "chart2";
             // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1343, 586);
+            this.ClientSize = new System.Drawing.Size(1343, 786);
+            this.Controls.Add(this.chart2);
+            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dgvComprasRecientes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -266,6 +336,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComprasRecientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +357,9 @@
         private Krypton.Toolkit.KryptonButton btnSeguimiento;
         private System.Windows.Forms.Label label14;
         private Krypton.Toolkit.KryptonButton btnAutorizar;
+        private System.Windows.Forms.DataGridView dgvComprasRecientes;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }

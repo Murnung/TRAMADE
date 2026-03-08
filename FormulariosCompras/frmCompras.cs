@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace TRAMADE
             InitializeComponent();
            
         }
+        clsConexion ObjConexion = new clsConexion();
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -43,10 +45,41 @@ namespace TRAMADE
         {
 
         }
+        private void recargarCompras()
+        {
+
+            try
+            {
+                ObjConexion.Abrir();
+                string consulta = "SELECT * FROM VistaComprasRecientes";
+                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dgvComprasRecientes.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al recargar: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+        }
 
         private void frmCompras_Load(object sender, EventArgs e)
         {
+            recargarCompras();
 
+
+            dgvComprasRecientes.ReadOnly = true;
+            dgvComprasRecientes.AllowUserToResizeRows = false;
+            dgvComprasRecientes.AllowUserToResizeColumns = false;
+            dgvComprasRecientes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+            dgvComprasRecientes.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvComprasRecientes.EnableHeadersVisualStyles = false;
+            dgvComprasRecientes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+            dgvComprasRecientes.DefaultCellStyle.SelectionForeColor = Color.White;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
