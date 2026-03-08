@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace TRAMADE
 {
@@ -45,6 +46,49 @@ namespace TRAMADE
         {
 
         }
+        private void CargarGraficoCompras()
+        {
+            chtComprasPendientes.Series.Clear();
+
+            Series serie = new Series("COMPRAS PENDIENTES");
+            serie.ChartType = SeriesChartType.Pie;
+
+            try
+            {
+                ObjConexion.Abrir();
+                string query = "SELECT ComprasPendientes, ComprasAutorizadas FROM VistaGraficoComprasPendientes";
+                SqlCommand cmd = new SqlCommand(query, ObjConexion.SqlC);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    int pendientes = Convert.ToInt32(dr["ComprasPendientes"]);
+                    int autorizadas = Convert.ToInt32(dr["ComprasAutorizadas"]);
+
+                    serie.Points.AddXY("Compras pendientes", pendientes);
+                    serie.Points.AddXY("Compras autorizadas", autorizadas);
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar gráfico: " + ex.Message);
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+
+            
+
+            serie.Points[0].Color = Color.OrangeRed;  // Pendientes
+            serie.Points[1].Color = Color.SteelBlue;  // Autorizadas
+
+            chtComprasPendientes.Series.Add(serie);
+            chtComprasPendientes.Titles.Clear();
+            chtComprasPendientes.Titles.Add("Estado de Compras");
+        }
         private void recargarCompras()
         {
 
@@ -71,7 +115,7 @@ namespace TRAMADE
         {
             recargarCompras();
 
-
+            //Configuracion visual 
             dgvComprasRecientes.ReadOnly = true;
             dgvComprasRecientes.AllowUserToResizeRows = false;
             dgvComprasRecientes.AllowUserToResizeColumns = false;
@@ -80,6 +124,10 @@ namespace TRAMADE
             dgvComprasRecientes.EnableHeadersVisualStyles = false;
             dgvComprasRecientes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
             dgvComprasRecientes.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            //Graficas circulares
+
+            CargarGraficoCompras();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
