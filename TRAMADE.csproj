@@ -93,6 +93,7 @@
     <Compile Include="ClasesCompras\clsFiltrarCompras.cs" />
     <Compile Include="ClasesCompras\clsGraficoProductosCompras.cs" />
     <Compile Include="ClasesCompras\clsGraficosCompras.cs" />
+    <Compile Include="ClasesCompras\clsIndicadores.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboFormaPago.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboProducto.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboProveedor.cs" />

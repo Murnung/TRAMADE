@@ -52,6 +52,9 @@
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.lblSolicitudesRegistradas = new System.Windows.Forms.Label();
+            this.lblValorTotalPendiente = new System.Windows.Forms.Label();
+            this.lblTiempoRespuestaPromedio = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
@@ -207,11 +210,11 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(122)))), ((int)(((byte)(61)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(51, 37);
+            this.label6.Location = new System.Drawing.Point(62, 37);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(242, 18);
+            this.label6.Size = new System.Drawing.Size(219, 18);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Tiempo de respuesta promedio";
+            this.label6.Text = "Tiempo de espera promedio";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dgvCompras
@@ -235,8 +238,10 @@
             // 
             // kryptonGroupBox2.Panel
             // 
+            this.kryptonGroupBox2.Panel.Controls.Add(this.lblSolicitudesRegistradas);
             this.kryptonGroupBox2.Panel.Controls.Add(this.pictureBox1);
             this.kryptonGroupBox2.Panel.Controls.Add(this.label4);
+            this.kryptonGroupBox2.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox2_Panel_Paint);
             this.kryptonGroupBox2.Size = new System.Drawing.Size(326, 109);
             this.kryptonGroupBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.kryptonGroupBox2.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
@@ -261,6 +266,7 @@
             // 
             // kryptonGroupBox1.Panel
             // 
+            this.kryptonGroupBox1.Panel.Controls.Add(this.lblValorTotalPendiente);
             this.kryptonGroupBox1.Panel.Controls.Add(this.pictureBox2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.label5);
             this.kryptonGroupBox1.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox1_Panel_Paint);
@@ -288,6 +294,7 @@
             // 
             // kryptonGroupBox3.Panel
             // 
+            this.kryptonGroupBox3.Panel.Controls.Add(this.lblTiempoRespuestaPromedio);
             this.kryptonGroupBox3.Panel.Controls.Add(this.pictureBox3);
             this.kryptonGroupBox3.Panel.Controls.Add(this.label6);
             this.kryptonGroupBox3.Size = new System.Drawing.Size(342, 109);
@@ -381,6 +388,39 @@
             this.label8.TabIndex = 94;
             this.label8.Text = "HASTA";
             // 
+            // lblSolicitudesRegistradas
+            // 
+            this.lblSolicitudesRegistradas.AutoSize = true;
+            this.lblSolicitudesRegistradas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
+            this.lblSolicitudesRegistradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSolicitudesRegistradas.Location = new System.Drawing.Point(127, 64);
+            this.lblSolicitudesRegistradas.Name = "lblSolicitudesRegistradas";
+            this.lblSolicitudesRegistradas.Size = new System.Drawing.Size(52, 18);
+            this.lblSolicitudesRegistradas.TabIndex = 91;
+            this.lblSolicitudesRegistradas.Text = "label9";
+            // 
+            // lblValorTotalPendiente
+            // 
+            this.lblValorTotalPendiente.AutoSize = true;
+            this.lblValorTotalPendiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(149)))), ((int)(((byte)(80)))));
+            this.lblValorTotalPendiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorTotalPendiente.Location = new System.Drawing.Point(125, 64);
+            this.lblValorTotalPendiente.Name = "lblValorTotalPendiente";
+            this.lblValorTotalPendiente.Size = new System.Drawing.Size(52, 18);
+            this.lblValorTotalPendiente.TabIndex = 91;
+            this.lblValorTotalPendiente.Text = "label9";
+            // 
+            // lblTiempoRespuestaPromedio
+            // 
+            this.lblTiempoRespuestaPromedio.AutoSize = true;
+            this.lblTiempoRespuestaPromedio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(122)))), ((int)(((byte)(61)))));
+            this.lblTiempoRespuestaPromedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoRespuestaPromedio.Location = new System.Drawing.Point(130, 64);
+            this.lblTiempoRespuestaPromedio.Name = "lblTiempoRespuestaPromedio";
+            this.lblTiempoRespuestaPromedio.Size = new System.Drawing.Size(52, 18);
+            this.lblTiempoRespuestaPromedio.TabIndex = 92;
+            this.lblTiempoRespuestaPromedio.Text = "label9";
+            // 
             // frmSeguimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -459,5 +499,8 @@
         private Krypton.Toolkit.KryptonButton btnRefrescar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblSolicitudesRegistradas;
+        private System.Windows.Forms.Label lblValorTotalPendiente;
+        private System.Windows.Forms.Label lblTiempoRespuestaPromedio;
     }
 }

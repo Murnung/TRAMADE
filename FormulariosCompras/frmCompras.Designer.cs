@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -122,19 +122,19 @@
             // 
             this.btnSeguimiento.Location = new System.Drawing.Point(822, 27);
             this.btnSeguimiento.Name = "btnSeguimiento";
-            this.btnSeguimiento.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnSeguimiento.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnSeguimiento.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSeguimiento.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnSeguimiento.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSeguimiento.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnSeguimiento.Size = new System.Drawing.Size(308, 52);
-            this.btnSeguimiento.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnSeguimiento.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnSeguimiento.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
             this.btnSeguimiento.StateCommon.Border.Rounding = 10F;
             this.btnSeguimiento.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnSeguimiento.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeguimiento.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSeguimiento.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnSeguimiento.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(130)))), ((int)(((byte)(92)))));
+            this.btnSeguimiento.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSeguimiento.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnSeguimiento.StateTracking.Border.Rounding = 10F;
             this.btnSeguimiento.TabIndex = 10;
@@ -183,23 +183,23 @@
             // 
             this.btnActualizar.Location = new System.Drawing.Point(288, 27);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnActualizar.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnActualizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnActualizar.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnActualizar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizar.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnActualizar.Size = new System.Drawing.Size(254, 52);
-            this.btnActualizar.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnActualizar.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnActualizar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StateCommon.Border.Rounding = 10F;
             this.btnActualizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnActualizar.StateCommon.Content.ShortText.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
             this.btnActualizar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.StatePressed.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnActualizar.StatePressed.Back.Color2 = System.Drawing.Color.White;
+            this.btnActualizar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
             this.btnActualizar.StatePressed.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
-            this.btnActualizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnActualizar.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnActualizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.btnActualizar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnActualizar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnActualizar.StateTracking.Border.Rounding = 10F;
             this.btnActualizar.TabIndex = 8;
@@ -218,15 +218,15 @@
             this.btnRegistrar.ButtonStyle = Krypton.Toolkit.ButtonStyle.Alternate;
             this.btnRegistrar.Location = new System.Drawing.Point(3, 27);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.OverrideDefault.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnRegistrar.OverrideFocus.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertTracking;
             this.btnRegistrar.Size = new System.Drawing.Size(279, 52);
-            this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnRegistrar.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.BottomRight;
             this.btnRegistrar.StateCommon.Border.Rounding = 10F;
             this.btnRegistrar.StateCommon.Content.Image.ImageColorMap = System.Drawing.SystemColors.ButtonFace;
@@ -236,12 +236,14 @@
             this.btnRegistrar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegistrar.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegistrar.StateNormal.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnRegistrar.StateNormal.Back.Color2 = System.Drawing.Color.Teal;
-            this.btnRegistrar.StatePressed.Back.Color1 = System.Drawing.Color.Cyan;
-            this.btnRegistrar.StatePressed.Back.Color2 = System.Drawing.Color.Cyan;
-            this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.Teal;
-            this.btnRegistrar.StateTracking.Back.Color2 = System.Drawing.Color.Teal;
+            this.btnRegistrar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StatePressed.Back.Color2 = System.Drawing.Color.DarkOrange;
+            this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnRegistrar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRegistrar.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnRegistrar.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnRegistrar.TabIndex = 7;
             this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegistrar.Values.ImageStates.ImageCheckedNormal = null;
@@ -285,32 +287,32 @@
             // 
             // chtProductosMasComprados
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chtProductosMasComprados.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chtProductosMasComprados.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.chtProductosMasComprados.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chtProductosMasComprados.Legends.Add(legend9);
             this.chtProductosMasComprados.Location = new System.Drawing.Point(328, 205);
             this.chtProductosMasComprados.Name = "chtProductosMasComprados";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chtProductosMasComprados.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chtProductosMasComprados.Series.Add(series9);
             this.chtProductosMasComprados.Size = new System.Drawing.Size(360, 198);
             this.chtProductosMasComprados.TabIndex = 9;
             this.chtProductosMasComprados.Text = "chart1";
             // 
             // chtComprasPendientes
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chtComprasPendientes.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chtComprasPendientes.Legends.Add(legend2);
+            chartArea10.Name = "ChartArea1";
+            this.chtComprasPendientes.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chtComprasPendientes.Legends.Add(legend10);
             this.chtComprasPendientes.Location = new System.Drawing.Point(752, 205);
             this.chtComprasPendientes.Name = "chtComprasPendientes";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chtComprasPendientes.Series.Add(series2);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chtComprasPendientes.Series.Add(series10);
             this.chtComprasPendientes.Size = new System.Drawing.Size(358, 198);
             this.chtComprasPendientes.TabIndex = 10;
             this.chtComprasPendientes.Text = "chart2";

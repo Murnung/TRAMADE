@@ -92,6 +92,9 @@ namespace TRAMADE
             dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
             dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
 
+            clsIndicadores.totalSolicitudesRegistradas(ObjConexion, lblSolicitudesRegistradas);
+            clsIndicadores.totalValorPendiente(ObjConexion, lblValorTotalPendiente);
+            clsIndicadores.tiempoEsperaPromedio(ObjConexion, lblTiempoRespuestaPromedio);
         }
 
 
@@ -131,6 +134,11 @@ namespace TRAMADE
         {
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))
                 recargarCompras(); //limpia y recarga cuando se borra el ID
+        }
+
+        private void kryptonGroupBox2_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
