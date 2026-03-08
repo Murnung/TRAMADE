@@ -135,8 +135,19 @@ namespace TRAMADE.ClasesCompras
 
             return true;
 
-
-       
         }
+
+        //Validacion para fila seleccionada
+        public static bool validarFilaSeleccionada(DataGridView dgv)
+        {
+            foreach (DataGridViewRow fila in dgv.Rows)
+            {
+                if (Convert.ToBoolean(fila.Cells["Seleccionar"].Value))
+                    return true;
+            }
+            MessageBox.Show("Debe seleccionar al menos una compra", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
+
     }
 }

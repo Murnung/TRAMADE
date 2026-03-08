@@ -93,6 +93,7 @@ namespace TRAMADE
 
         private void btnAutorizar_Click(object sender, EventArgs e)
         {
+            if (!clsValidacioesCompras.validarFilaSeleccionada(dgvCompras)) return;
             foreach (DataGridViewRow fila in dgvCompras.Rows)
             {
                 bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
@@ -110,7 +111,9 @@ namespace TRAMADE
 
         private void btnDenegar_Click(object sender, EventArgs e)
         {
+            if (!clsValidacioesCompras.validarFilaSeleccionada(dgvCompras)) return;
             foreach (DataGridViewRow fila in dgvCompras.Rows)
+
             {
                 bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
 
