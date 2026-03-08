@@ -91,6 +91,8 @@
   <ItemGroup>
     <Compile Include="ClasesCompras\clsCompras.cs" />
     <Compile Include="ClasesCompras\clsFiltrarCompras.cs" />
+    <Compile Include="ClasesCompras\clsGraficoProductosCompras.cs" />
+    <Compile Include="ClasesCompras\clsGraficosCompras.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboFormaPago.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboProducto.cs" />
     <Compile Include="ClasesCompras\clsLlenarComboProveedor.cs" />

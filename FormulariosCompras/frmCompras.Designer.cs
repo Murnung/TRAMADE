@@ -295,7 +295,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chtProductosMasComprados.Series.Add(series1);
-            this.chtProductosMasComprados.Size = new System.Drawing.Size(342, 182);
+            this.chtProductosMasComprados.Size = new System.Drawing.Size(360, 198);
             this.chtProductosMasComprados.TabIndex = 9;
             this.chtProductosMasComprados.Text = "chart1";
             // 
@@ -311,7 +311,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chtComprasPendientes.Series.Add(series2);
-            this.chtComprasPendientes.Size = new System.Drawing.Size(342, 182);
+            this.chtComprasPendientes.Size = new System.Drawing.Size(358, 198);
             this.chtComprasPendientes.TabIndex = 10;
             this.chtComprasPendientes.Text = "chart2";
             // 
