@@ -167,17 +167,10 @@ namespace TRAMADE
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             // Validaciones
-            if (cmbProveedor.SelectedValue == null || cmbProducto.SelectedValue == null)
-            {
-                MessageBox.Show("Seleccione un proveedor y un producto.");
-                return;
-            }
+            if (!clsValidacionesCompras.validar_todosLosCampos(cmbProducto, cmbProveedor, cmbFormaPago)) return;
+            if (!clsValidacionesCompras.validarFechaEntrega(dtEntrega.Value)) return;
+            if (!clsValidacionesCompras.validarListBox(lstProductos)) return;
 
-            if (cmbFormaPago.SelectedValue == null)
-            {
-                MessageBox.Show("Seleccione una forma de pago.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
             try
             {
@@ -229,6 +222,7 @@ namespace TRAMADE
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
+            if (!clsValidacionesCompras.validarListBox(lstProductos)) return;
             ObjOp.eliminarProducto(lstProductos);
             txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
         }
