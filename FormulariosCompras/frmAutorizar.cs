@@ -80,10 +80,20 @@ namespace TRAMADE
             dgvCompras.Columns["ID forma pago"].Visible = false;
             dgvCompras.Columns["ID estado"].Visible = false;
 
+            dgvCompras.ReadOnly = false;
+            dgvCompras.AllowUserToResizeRows = false;
+            dgvCompras.AllowUserToResizeColumns = false;
+            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCompras.EnableHeadersVisualStyles = false;
+            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
+
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)
         {
+            if (!clsValidacionesCompras.validarFilaSeleccionada(dgvCompras)) return;
             foreach (DataGridViewRow fila in dgvCompras.Rows)
             {
                 bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
@@ -101,6 +111,8 @@ namespace TRAMADE
 
         private void btnDenegar_Click(object sender, EventArgs e)
         {
+            if (!clsValidacionesCompras.validarFilaSeleccionada(dgvCompras)) return;
+
             foreach (DataGridViewRow fila in dgvCompras.Rows)
             {
                 bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
@@ -118,12 +130,14 @@ namespace TRAMADE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (!clsValidacionesCompras.validarBuscarId(txtBuscar.Text.Trim())) return;
             DataTable dt = ObjFc.BuscarCompra(ObjConexion, txtBuscar.Text);
             if (dt != null)
             {
                 dgvCompras.DataSource = dt;
                 AgregarColumnaCheck();
             }
+
         }
     }
 }

@@ -83,6 +83,15 @@ namespace TRAMADE
             dgvCompras.Columns["ID forma pago"].Visible = false;
             dgvCompras.Columns["ID estado"].Visible = false;
 
+            dgvCompras.ReadOnly = true;
+            dgvCompras.AllowUserToResizeRows = false;
+            dgvCompras.AllowUserToResizeColumns = false;
+            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCompras.EnableHeadersVisualStyles = false;
+            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
+
         }
 
 
@@ -94,11 +103,24 @@ namespace TRAMADE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObjFc.FiltrarFechas(ObjConexion, dtDesde, dtHasta, txtBuscar.Text);
-            if (dt != null)
+            // Si hay texto en el buscador, busca por ID
+            if (!string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
-                dgvCompras.DataSource = dt;
+                if (!clsValidacionesCompras.validarBuscarId(txtBuscar.Text.Trim())) return;
+                DataTable dt = ObjFc.BuscarCompra(ObjConexion, txtBuscar.Text);
+                if (dt != null)
+                    dgvCompras.DataSource = dt;
             }
+            else
+            {
+                // Si no hay texto, busca por fechas
+                if (!clsValidacionesCompras.validarFechaFiltro(dtDesde.Value, dtHasta.Value)) return;
+                DataTable dt = ObjFc.FiltrarFechas(ObjConexion, dtDesde, dtHasta, txtBuscar.Text);
+                if (dt != null)
+                    dgvCompras.DataSource = dt;
+            }
+
+
         }
     }
 }
