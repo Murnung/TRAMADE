@@ -28,7 +28,7 @@ namespace TRAMADE
 
         private void frmRegistrar_Load(object sender, EventArgs e)
         {
-            btnRegistrar.Enabled = false;
+        
             cmbProveedor.SelectedIndex = -1;
             clsLlenarComboProducto.llenarComboProducto(cmbProducto,ObjConexion);
             clsLlenarComboProveedor.llenarComboProveedor(cmbProveedor, ObjConexion);
@@ -83,7 +83,6 @@ namespace TRAMADE
 
             txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
 
-            btnRegistrar.Enabled = true;
             nudCantidad.Value = 1;
 
         }
@@ -200,7 +199,7 @@ namespace TRAMADE
                 MessageBox.Show("Error en el formulario: " + ex.Message);
             }
             btnLimpiar_Click(sender, e);
-            btnRegistrar.Enabled = false;
+       
         }
 
         private void calcularTotales()

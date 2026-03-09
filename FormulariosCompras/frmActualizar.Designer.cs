@@ -76,7 +76,7 @@
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(808, 69);
+            this.panel1.Size = new System.Drawing.Size(818, 69);
             this.panel1.TabIndex = 0;
             // 
             // btnRegresar
@@ -266,7 +266,7 @@
             0,
             0});
             this.nudCantidad.Minimum = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});

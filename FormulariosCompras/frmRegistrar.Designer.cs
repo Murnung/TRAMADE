@@ -407,7 +407,7 @@
             0,
             0});
             this.nudCantidad.Minimum = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});

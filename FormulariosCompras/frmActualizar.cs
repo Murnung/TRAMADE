@@ -29,6 +29,7 @@ namespace TRAMADE
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string busqueda = txtbBuscar.Text.Trim();
+            if (!clsValidacionesCompras.validarBuscarId(busqueda)) return;
             if (string.IsNullOrEmpty(busqueda))
             {
                 MessageBox.Show("Ingrese el id de la solicitud de compra");
@@ -243,7 +244,7 @@ namespace TRAMADE
                 if (resultadoFinal)
                 {
                     MessageBox.Show("¡COMPRA ACTUALIZADA EXITOSAMENTE!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // btnLimpiar_Click(sender, e);
+                    btnLimpiar_Click(sender, e);
                 }
                 else
                 {

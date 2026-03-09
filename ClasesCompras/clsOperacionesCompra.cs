@@ -55,44 +55,45 @@ namespace TRAMADE.ClasesCompras
         {
             try
             {
-                conexion.Abrir();
+                
+                    conexion.Abrir();
 
-                SqlCommand cmdCompra = new SqlCommand("PA_ACTUALIZAR_COMPRA", conexion.SqlC);
-                cmdCompra.CommandType = CommandType.StoredProcedure;
-                cmdCompra.Parameters.AddWithValue("@id_compra", getIdCompra());
-                cmdCompra.Parameters.AddWithValue("@id_proveedor", getProveedor());
-                cmdCompra.Parameters.AddWithValue("@id_forma_pago", getFormaPago());
-                cmdCompra.Parameters.AddWithValue("@id_estado", getEstado());
-                cmdCompra.Parameters.AddWithValue("@id_usuario", getIdUsuario());
-                cmdCompra.Parameters.AddWithValue("@fecha_entrega",
-                    getEntrega() == DateTime.MinValue ? (object)DBNull.Value : getEntrega());
-                cmdCompra.Parameters.AddWithValue("@autorizada", getAutorizar());
+                    SqlCommand cmdCompra = new SqlCommand("PA_ACTUALIZAR_COMPRA", conexion.SqlC);
+                    cmdCompra.CommandType = CommandType.StoredProcedure;
+                    cmdCompra.Parameters.AddWithValue("@id_compra", getIdCompra());
+                    cmdCompra.Parameters.AddWithValue("@id_proveedor", getProveedor());
+                    cmdCompra.Parameters.AddWithValue("@id_forma_pago", getFormaPago());
+                    cmdCompra.Parameters.AddWithValue("@id_usuario", getIdUsuario());
+                    cmdCompra.Parameters.AddWithValue("@fecha_entrega",
+                        getEntrega() == DateTime.MinValue ? (object)DBNull.Value : getEntrega());
+
+                    object resultado = cmdCompra.ExecuteScalar();
 
 
-                int filasAfectadas = cmdCompra.ExecuteNonQuery();
-                if (filasAfectadas <= 0) return false;
+                    if (Convert.ToInt32(resultado) <= 0) return false;
 
-                // Eliminar detalles antiguos y reinsertar
-                SqlCommand cmdEliminar = new SqlCommand("PA_ELIMINAR_DETALLE_COMPRA", conexion.SqlC);
-                cmdEliminar.CommandType = CommandType.StoredProcedure;
-                cmdEliminar.Parameters.AddWithValue("@id_compra", getIdCompra());
-                cmdEliminar.ExecuteNonQuery();
+                    // Eliminar detalles antiguos y reinsertar
+                    SqlCommand cmdEliminar = new SqlCommand("PA_ELIMINAR_DETALLE_COMPRA", conexion.SqlC);
+                    cmdEliminar.CommandType = CommandType.StoredProcedure;
+                    cmdEliminar.Parameters.AddWithValue("@id_compra", getIdCompra());
+                    cmdEliminar.ExecuteNonQuery();
 
-                InsertarDetallesYProveedor(conexion, getIdCompra());
+                    InsertarDetallesYProveedor(conexion, getIdCompra());
 
-                limpiarLista(); // heredado de clsLlenarListBox
-                return true;
+                    limpiarLista(); // heredado de clsLlenarListBox
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error crítico al actualizar: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    conexion.Cerrar();
+                }
+
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error crítico al actualizar: " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                conexion.Cerrar();
-            }
-        }
 
         // MÉTODO PRIVADO COMPARTIDO ENTRE INSERTAR Y ACTUALIZAR 
         private void InsertarDetallesYProveedor(clsConexion conexion, int idCompraParam)
