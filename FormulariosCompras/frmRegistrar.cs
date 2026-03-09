@@ -67,12 +67,8 @@ namespace TRAMADE
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            
-            if (cmbProducto.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione un producto primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+
+            if (!clsValidacionesCompras.validarComboProducto(cmbProducto)) return;
             DataRowView drv = (DataRowView)cmbProducto.SelectedItem;
 
             ObjOp.setProducto(Convert.ToInt32(drv["id_producto"]));
