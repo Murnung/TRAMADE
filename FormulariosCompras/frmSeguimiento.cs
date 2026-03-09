@@ -92,6 +92,11 @@ namespace TRAMADE
             dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
             dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
 
+            clsIndicadoresCompras.totalSolicitudesRegistradas(ObjConexion, lblSolicitudesRegistradas);
+            clsIndicadoresCompras.totalValorPendiente(ObjConexion, lblValorTotal);
+            clsIndicadoresCompras.tiempoEsperaPromedio(ObjConexion, lblTiempoPromedio);
+
+
         }
 
 
