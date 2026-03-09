@@ -133,6 +133,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesCompras\clsValidacionesCompras.cs" />
     <Compile Include="ClasesMenu\clsClientesPanel.cs" />
     <Compile Include="ClasesMenu\clsGraficoInventario.cs" />
     <Compile Include="ClasesMenu\clsGraficoTendencia.cs" />
