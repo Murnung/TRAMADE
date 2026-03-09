@@ -127,5 +127,10 @@ namespace TRAMADE
 
 
         }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            recargarCompras();
+        }
     }
 }
