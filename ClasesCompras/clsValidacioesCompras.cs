@@ -19,7 +19,7 @@ namespace TRAMADE.ClasesCompras
             {
                 MessageBox.Show("Ingrese una solicitud de compra primero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-            }
+             }
             return true;
         }
 
