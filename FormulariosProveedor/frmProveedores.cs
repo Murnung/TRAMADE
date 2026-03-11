@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.Formulario_Proveedores;
 using TRAMADE.Formulario_Proveedores.Clases;
+using TRAMADE.ClasesProveedor;
 
 namespace TRAMADE
 {
@@ -87,7 +88,7 @@ namespace TRAMADE
                 dgvProveedores.Columns["id_proveedor"].Visible = false;
             }*/
 
-            lsProveedores ObjProveedores = new clsProveedores();
+            clsProveedores ObjProveedores = new clsProveedores();
 
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))
                 RecargarProveedores();

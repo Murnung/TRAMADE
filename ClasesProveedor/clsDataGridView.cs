@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TRAMADE.ClasesProveedor
+namespace TRAMADE.Formulario_Proveedores.Clases
 {
     internal class clsDataGridView
     {

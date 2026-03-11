@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRAMADE.ClasesProveedor;
 using TRAMADE.Formulario_Proveedores;
 using TRAMADE.Formulario_Proveedores.Clases;
 
@@ -22,6 +23,9 @@ namespace TRAMADE
             InitializeComponent();
             // En el constructor reemplazar llenarCombo por:
             clsCombobox.LlenarCombosProveedor(cmbClasificacion, cmbTerminosdePago, ObjConexion);
+            clsToolTip.AplicarTooltipsProveedor(txtRazonSocial, txtNombreComercial, txtDireccionFiscal,
+                                         txtRtn, txtTelefonoGeneral, txtCorreoCentral,
+                                         cmbClasificacion, cmbTerminosdePago);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -44,7 +48,7 @@ namespace TRAMADE
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            // En btnGuardar antes de guardar:
+            /*// En btnGuardar antes de guardar:
             if (!clsValidar.ValidarProveedor(
             txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text,
             txtRtn.Text, txtTelefonoGeneral.Text, txtCorreoCentral.Text,
@@ -67,7 +71,32 @@ namespace TRAMADE
 
             ObjAñadir.InsertarProveedor(ObjProveedores);
 
-            this.Close(); 
+            this.Close(); */
+
+
+            if (!clsValidar.ValidarProveedor(
+            txtNombreComercial.Text, txtNombreComercial,
+            txtRazonSocial.Text, txtRazonSocial,
+            txtDireccionFiscal.Text, txtDireccionFiscal,
+            txtRtn.Text, txtRtn,
+            txtTelefonoGeneral.Text, txtTelefonoGeneral,
+            txtCorreoCentral.Text, txtCorreoCentral,
+            Convert.ToInt32(cmbClasificacion.SelectedValue),
+            Convert.ToInt32(cmbTerminosdePago.SelectedValue))) return;
+
+            clsProveedores ObjProveedores = new clsProveedores(
+                clsValidar.Limpiar(txtNombreComercial.Text),
+                clsValidar.Limpiar(txtRazonSocial.Text),
+                clsValidar.Limpiar(txtDireccionFiscal.Text),
+                clsValidar.Limpiar(txtRtn.Text),
+                Convert.ToInt32(cmbClasificacion.SelectedValue),
+                Convert.ToInt32(cmbTerminosdePago.SelectedValue),
+                clsValidar.Limpiar(txtTelefonoGeneral.Text),
+                clsValidar.Limpiar(txtCorreoCentral.Text));
+
+            clsProveedores_Añadir ObjAñadir = new clsProveedores_Añadir();
+            ObjAñadir.InsertarProveedor(ObjProveedores);
+            this.Close();
         }
 
         private void cmbClasificacion_SelectedIndexChanged(object sender, EventArgs e)
