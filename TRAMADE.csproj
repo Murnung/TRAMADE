@@ -64,6 +64,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario Proveedores\Clases\clsDataGridView.cs" />
+    <Compile Include="Formulario Proveedores\Clases\clsToolTip.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>

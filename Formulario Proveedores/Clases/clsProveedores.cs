@@ -115,6 +115,55 @@ namespace TRAMADE.Formulario_Proveedores.Clases
             return dt;
         }
 
+        // ─── CAMBIAR ESTADO DESDE EL DGV ─────────────────────────────
+        public bool CambiarEstado(int idProveedor, bool activar)
+        {
+            clsConexion ObjConexion = new clsConexion();
+            try
+            {
+                ObjConexion.Abrir();
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE PROVEEDOR SET id_estado = @estado WHERE id_proveedor = @id",
+                    ObjConexion.SqlC);
+                cmd.Parameters.AddWithValue("@estado", activar ? 1 : 2);
+                cmd.Parameters.AddWithValue("@id", idProveedor);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cambiar estado: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+        }
 
+        // ─── OBTENER ESTADO ACTUAL DEL PROVEEDOR ─────────────────────
+        public bool EstaActivo(int idProveedor)
+        {
+            clsConexion ObjConexion = new clsConexion();
+            try
+            {
+                ObjConexion.Abrir();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT id_estado FROM PROVEEDOR WHERE id_proveedor = @id",
+                    ObjConexion.SqlC);
+                cmd.Parameters.AddWithValue("@id", idProveedor);
+                int estado = Convert.ToInt32(cmd.ExecuteScalar());
+                return estado == 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener estado: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+        }
     }
 }

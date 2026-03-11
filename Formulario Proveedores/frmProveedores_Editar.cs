@@ -25,6 +25,9 @@ namespace TRAMADE
             // En el constructor reemplazar llenarCombo por:
             clsCombobox.LlenarCombosProveedor(cmbClasificacion, cmbTerminosdePago, ObjConexion);
             ObjEditar.CargarDatosActuales(_idProveedor, txtRazonSocial, txtNombreComercial, txtDireccionFiscal, txtRtn, txtTelefonoGeneral, txtCorreoCentral, cmbClasificacion, cmbTerminosdePago);
+            clsToolTip.AplicarTooltipsProveedor(txtRazonSocial, txtNombreComercial, txtDireccionFiscal,
+                                         txtRtn, txtTelefonoGeneral, txtCorreoCentral,
+                                         cmbClasificacion, cmbTerminosdePago);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -64,6 +67,17 @@ namespace TRAMADE
                 frmProv.RecargarProveedores();
 
             this.Close();*/
+
+            /*if (!clsValidar.ValidarProveedor(
+            txtNombreComercial.Text, txtNombreComercial,
+            txtRazonSocial.Text, txtRazonSocial,
+            txtDireccionFiscal.Text, txtDireccionFiscal,
+            txtRtn.Text, txtRtn,
+            txtTelefonoGeneral.Text, txtTelefonoGeneral,
+            txtCorreoCentral.Text, txtCorreoCentral,
+            Convert.ToInt32(cmbClasificacion.SelectedValue),
+            Convert.ToInt32(cmbTerminosdePago.SelectedValue),
+            _idProveedor)) return;*/
 
             if (!clsValidar.ValidarProveedor(
             txtNombreComercial.Text, txtNombreComercial,

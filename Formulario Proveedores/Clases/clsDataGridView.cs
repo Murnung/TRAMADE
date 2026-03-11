@@ -30,16 +30,14 @@ namespace TRAMADE.Formulario_Proveedores
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Poppins", 10f, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgv.ColumnHeadersHeight = 40;
+            dgv.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.True;  // ← nueva
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize; // ← cambiada
             dgv.RowHeadersVisible = false;
 
             // ─── FILAS ────────────────────────────────────────────────
             dgv.DefaultCellStyle.Font = new Font("Poppins", 9f, FontStyle.Regular);
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 240, 233);
-            dgv.AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
             dgv.RowTemplate.Height = 35;
 
             // ─── SELECCIÓN ────────────────────────────────────────────
@@ -49,10 +47,17 @@ namespace TRAMADE.Formulario_Proveedores
             // ─── BORDES Y GRILLA ──────────────────────────────────────
             dgv.BorderStyle = BorderStyle.None;
             dgv.GridColor = Color.FromArgb(220, 210, 195);
-            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single;
 
             // ─── COLUMNAS AUTO-AJUSTE ─────────────────────────────────
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        // ─── OCULTAR COLUMNA POR NOMBRE ──────────────────────────────
+        public static void OcultarColumna(DataGridView dgv, string nombreColumna)
+        {
+            if (dgv.Columns[nombreColumna] != null)
+                dgv.Columns[nombreColumna].Visible = false;
         }
 
         // ─── CARGAR DATOS DESDE VISTA O CONSULTA ─────────────────────
@@ -89,14 +94,12 @@ namespace TRAMADE.Formulario_Proveedores
 
             try
             {
-                // Construye un WHERE dinámico buscando en todas las columnas visibles
                 SqlDataAdapter adapter = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
 
                 DataView dv = dt.DefaultView;
 
-                // Armar filtro por todas las columnas tipo string
                 string filtro = string.Empty;
                 foreach (DataColumn col in dt.Columns)
                 {
@@ -131,7 +134,7 @@ namespace TRAMADE.Formulario_Proveedores
                 adapter.Fill(dt);
 
                 DataView dv = dt.DefaultView;
-                dv.RowFilter = $"estado = '{estado}'"; // ajusta el nombre de columna si difiere
+                dv.RowFilter = $"estado = '{estado}'";
 
                 dgv.DataSource = dv.ToTable();
 
@@ -160,6 +163,6 @@ namespace TRAMADE.Formulario_Proveedores
             if (e.RowIndex < 0) return -1;
             return Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[columnaId].Value);
         }
-
     }
+
 }

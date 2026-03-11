@@ -29,7 +29,11 @@ namespace TRAMADE
 
         public void RecargarProveedores()
         {
-            clsDataGridView.Cargar(dgvProveedor, VISTA, ObjConexion.SqlC, OCULTAS);
+            /*clsDataGridView.Cargar(dgvProveedor, VISTA, ObjConexion.SqlC, OCULTAS);*/
+            clsProveedores ObjProveedores = new clsProveedores();
+            dgvProveedor.DataSource = ObjProveedores.ObtenerProveedores();
+            clsDataGridView.AplicarEstilo(dgvProveedor);
+            clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
         }
 
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
@@ -42,24 +46,21 @@ namespace TRAMADE
 
         private void btnFiltrarActivo_Click(object sender, EventArgs e)
         {
-            clsDataGridView.FiltrarPorEstado(dgvProveedor, VISTA, ObjConexion.SqlC, "ACTIVO", OCULTAS);
+            /*clsDataGridView.FiltrarPorEstado(dgvProveedor, VISTA, ObjConexion.SqlC, "ACTIVO", OCULTAS);*/
+
+            clsProveedores ObjProveedores = new clsProveedores();
+            dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("ACTIVO");
+            clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
         }
 
         private void btnFiltrarInactivo_Click(object sender, EventArgs e)
         {
-            clsDataGridView.FiltrarPorEstado(dgvProveedor, VISTA, ObjConexion.SqlC, "INACTIVO", OCULTAS);
-        }
+            /*clsDataGridView.FiltrarPorEstado(dgvProveedor, VISTA, ObjConexion.SqlC, "INACTIVO", OCULTAS);*/
 
-        public void RecargarProveedoresAC()
-        {
             clsProveedores ObjProveedores = new clsProveedores();
-            dgvProveedor.DataSource = ObjProveedores.ObtenerProveedores();
-            dgvProveedor.Columns["id_proveedor"].Visible = false;
-        }
+            dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("INACTIVO");
+            clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -77,7 +78,17 @@ namespace TRAMADE
                 dgvProveedor.Columns["id_proveedor"].Visible = false;
             }*/
 
-            clsDataGridView.Buscar(dgvProveedor, txtBuscar.Text, VISTA, ObjConexion.SqlC, OCULTAS);
+            /*clsDataGridView.Buscar(dgvProveedor, txtBuscar.Text, VISTA, ObjConexion.SqlC, OCULTAS);*/
+
+            clsProveedores ObjProveedores = new clsProveedores();
+
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+                RecargarProveedores();
+            else
+            {
+                dgvProveedor.DataSource = ObjProveedores.BuscarProveedores(txtBuscar.Text);
+                clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
+            }
         }
 
         private void dgvProveedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -91,10 +102,42 @@ namespace TRAMADE
                 frmPerfil.Show();
             }*/
 
-            int id = clsDataGridView.ObtenerIdDobleClick(dgvProveedor, e);
+            /*int id = clsDataGridView.ObtenerIdDobleClick(dgvProveedor, e);
             if (id == -1) return;
             frmProveedores_Perfil frmPerfil = new frmProveedores_Perfil(id);
-            frmPerfil.Show();
+            frmPerfil.Show();*/
+
+            if (e.RowIndex < 0) return;
+
+            int idProveedor = Convert.ToInt32(dgvProveedor.Rows[e.RowIndex].Cells["id_proveedor"].Value);
+
+            // ─── Doble clic en columna Estado → cambiar estado ────────
+            if (dgvProveedor.Columns[e.ColumnIndex].Name == "Estado")
+            {
+                clsProveedores ObjProveedores = new clsProveedores();
+                bool estaActivo = ObjProveedores.EstaActivo(idProveedor);
+
+                string mensaje = estaActivo
+                    ? "¿Desea desactivar este proveedor?"
+                    : "¿Desea activar este proveedor?";
+
+                DialogResult confirmacion = MessageBox.Show(mensaje, "Confirmar",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    ObjProveedores.CambiarEstado(idProveedor, !estaActivo);
+                    RecargarProveedores();
+                }
+            }
+            else
+            {
+                // ─── Doble clic en cualquier otra columna → abrir perfil ──
+                frmProveedores_Perfil frmPerfil = new frmProveedores_Perfil(idProveedor);
+                frmPerfil.FormClosed += (s, ev) => RecargarProveedores();
+                frmPerfil.Show();
+            }
+
         }
     }
 }
