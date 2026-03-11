@@ -35,6 +35,7 @@
             this.btnFiltrarActivo = new Krypton.Toolkit.KryptonButton();
             this.btnFiltrarInactivo = new Krypton.Toolkit.KryptonButton();
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
+            this.lblInstrucciones = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 43);
+            this.label1.Location = new System.Drawing.Point(95, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(336, 32);
             this.label1.TabIndex = 4;
@@ -50,7 +51,7 @@
             // 
             // btnAñadirProveedor
             // 
-            this.btnAñadirProveedor.Location = new System.Drawing.Point(24, 122);
+            this.btnAñadirProveedor.Location = new System.Drawing.Point(104, 126);
             this.btnAñadirProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAñadirProveedor.Name = "btnAñadirProveedor";
             this.btnAñadirProveedor.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(72)))), ((int)(((byte)(229)))));
@@ -77,7 +78,7 @@
             this.txtBuscar.CueHint.Color1 = System.Drawing.Color.Gray;
             this.txtBuscar.CueHint.CueHintText = "        Buscar por Razón Social, Nombre Comercial o RTN";
             this.txtBuscar.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(24, 222);
+            this.txtBuscar.Location = new System.Drawing.Point(104, 226);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(547, 34);
@@ -87,7 +88,7 @@
             // 
             // btnFiltrarActivo
             // 
-            this.btnFiltrarActivo.Location = new System.Drawing.Point(624, 222);
+            this.btnFiltrarActivo.Location = new System.Drawing.Point(704, 226);
             this.btnFiltrarActivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltrarActivo.Name = "btnFiltrarActivo";
             this.btnFiltrarActivo.OverrideDefault.Back.Color1 = System.Drawing.Color.Lime;
@@ -111,7 +112,7 @@
             // 
             // btnFiltrarInactivo
             // 
-            this.btnFiltrarInactivo.Location = new System.Drawing.Point(745, 222);
+            this.btnFiltrarInactivo.Location = new System.Drawing.Point(825, 226);
             this.btnFiltrarInactivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltrarInactivo.Name = "btnFiltrarInactivo";
             this.btnFiltrarInactivo.OverrideDefault.Back.Color1 = System.Drawing.Color.Red;
@@ -136,19 +137,30 @@
             // dgvProveedor
             // 
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedor.Location = new System.Drawing.Point(25, 292);
+            this.dgvProveedor.Location = new System.Drawing.Point(105, 296);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.RowHeadersWidth = 51;
             this.dgvProveedor.RowTemplate.Height = 24;
-            this.dgvProveedor.Size = new System.Drawing.Size(850, 362);
+            this.dgvProveedor.Size = new System.Drawing.Size(889, 362);
             this.dgvProveedor.TabIndex = 17;
             this.dgvProveedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedorCellDoubleClick);
+            // 
+            // lblInstrucciones
+            // 
+            this.lblInstrucciones.AutoSize = true;
+            this.lblInstrucciones.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstrucciones.Location = new System.Drawing.Point(305, 717);
+            this.lblInstrucciones.Name = "lblInstrucciones";
+            this.lblInstrucciones.Size = new System.Drawing.Size(17, 30);
+            this.lblInstrucciones.TabIndex = 18;
+            this.lblInstrucciones.Text = ".";
             // 
             // frmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 715);
+            this.ClientSize = new System.Drawing.Size(1223, 792);
+            this.Controls.Add(this.lblInstrucciones);
             this.Controls.Add(this.dgvProveedor);
             this.Controls.Add(this.btnFiltrarActivo);
             this.Controls.Add(this.btnFiltrarInactivo);
@@ -176,5 +188,6 @@
         private Krypton.Toolkit.KryptonButton btnFiltrarActivo;
         private Krypton.Toolkit.KryptonButton btnFiltrarInactivo;
         private System.Windows.Forms.DataGridView dgvProveedor;
+        private System.Windows.Forms.Label lblInstrucciones;
     }
 }

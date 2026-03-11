@@ -47,33 +47,6 @@ namespace TRAMADE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            /*// En btnGuardar antes de guardar:
-            if (!clsValidar.ValidarProveedor(
-            txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text,
-            txtRtn.Text, txtTelefonoGeneral.Text, txtCorreoCentral.Text,
-            Convert.ToInt32(cmbClasificacion.SelectedValue),
-            Convert.ToInt32(cmbTerminosdePago.SelectedValue))) return; // ← sin idProveedorActual
-
-            clsProveedores ObjProveedores = new clsProveedores(
-                clsValidar.Limpiar(txtNombreComercial.Text),
-                clsValidar.Limpiar(txtRazonSocial.Text),
-                clsValidar.Limpiar(txtDireccionFiscal.Text),
-                clsValidar.Limpiar(txtRtn.Text),
-                Convert.ToInt32(cmbClasificacion.SelectedValue),
-                Convert.ToInt32(cmbTerminosdePago.SelectedValue),
-                clsValidar.Limpiar(txtTelefonoGeneral.Text),
-                clsValidar.Limpiar(txtCorreoCentral.Text));
-
-            clsProveedores_Añadir ObjAñadir = new clsProveedores_Añadir();
-
-            //clsProveedores ObjProveedores = new clsProveedores(txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text, txtRtn.Text, Convert.ToInt32(cmbClasificacion.SelectedValue), Convert.ToInt32(cmbTerminosdePago.SelectedValue), txtTelefonoGeneral.Text, txtCorreoCentral.Text);
-
-            ObjAñadir.InsertarProveedor(ObjProveedores);
-
-            this.Close(); */
-
-
             if (!clsValidar.ValidarProveedor(
             txtNombreComercial.Text, txtNombreComercial,
             txtRazonSocial.Text, txtRazonSocial,

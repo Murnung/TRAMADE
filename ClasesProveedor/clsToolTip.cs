@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace TRAMADE.ClasesProveedor
 {
     internal class clsToolTip
     {
-        // ─── TOOLTIPS PARA AÑADIR Y EDITAR PROVEEDOR ─────────────────
         public static void AplicarTooltipsProveedor(
             KryptonTextBox txtRazonSocial,
             KryptonTextBox txtNombreComercial,
@@ -20,37 +21,22 @@ namespace TRAMADE.ClasesProveedor
             KryptonComboBox cmbClasificacion,
             KryptonComboBox cmbTerminosdePago)
         {
-            txtRazonSocial.ToolTipValues.Description = "Nombre legal registrado ante el SAR.\nEj: Maderas del Norte S.A. de C.V.";
-            txtRazonSocial.ToolTipValues.Heading = "Razón Social";
-            txtRazonSocial.ToolTipValues.EnableToolTips = true;
+            ToolTip tip = new ToolTip();
+            tip.AutoPopDelay = 5000;
+            tip.InitialDelay = 500;
+            tip.ReshowDelay = 200;
+            tip.BackColor = Color.FromArgb(210, 180, 140);
+            tip.ForeColor = Color.FromArgb(50, 30, 10);
+            //tip.IsBalloon = true;
 
-            txtNombreComercial.ToolTipValues.Description = "Nombre con el que opera o es conocido el proveedor.\nEj: Maderas del Norte";
-            txtNombreComercial.ToolTipValues.Heading = "Nombre Comercial";
-            txtNombreComercial.ToolTipValues.EnableToolTips = true;
-
-            txtDireccionFiscal.ToolTipValues.Description = "Ej: Col. Las Palmas, Tegucigalpa";
-            txtDireccionFiscal.ToolTipValues.Heading = "Dirección Fiscal";
-            txtDireccionFiscal.ToolTipValues.EnableToolTips = true;
-
-            txtRtn.ToolTipValues.Description = "Ej: 05011994000123  (14 dígitos: municipio + año + secuencial)";
-            txtRtn.ToolTipValues.Heading = "RTN";
-            txtRtn.ToolTipValues.EnableToolTips = true;
-
-            txtTelefonoGeneral.ToolTipValues.Description = "Ej: 22345678  (8 dígitos, inicia con 2, 3, 8 o 9)";
-            txtTelefonoGeneral.ToolTipValues.Heading = "Teléfono General";
-            txtTelefonoGeneral.ToolTipValues.EnableToolTips = true;
-
-            txtCorreoCentral.ToolTipValues.Description = "Ej: contacto@maderasnorte.com";
-            txtCorreoCentral.ToolTipValues.Heading = "Correo Central";
-            txtCorreoCentral.ToolTipValues.EnableToolTips = true;
-
-            cmbClasificacion.ToolTipValues.Description = "Seleccione si el proveedor es de MADERA o VARIOS";
-            cmbClasificacion.ToolTipValues.Heading = "Clasificación";
-            cmbClasificacion.ToolTipValues.EnableToolTips = true;
-
-            cmbTerminosdePago.ToolTipValues.Description = "Seleccione el plazo de pago según la clasificación";
-            cmbTerminosdePago.ToolTipValues.Heading = "Términos de Pago";
-            cmbTerminosdePago.ToolTipValues.EnableToolTips = true;
+            tip.SetToolTip(txtRazonSocial.Controls[0], "Razón Social\nNombre legal registrado ante el SAR.\nEj: Maderas del Norte S.A. de C.V.");
+            tip.SetToolTip(txtNombreComercial.Controls[0], "Nombre Comercial\nNombre con el que opera el proveedor.\nEj: Maderas del Norte");
+            tip.SetToolTip(txtDireccionFiscal.Controls[0], "Dirección Fiscal\nEj: Col. Las Palmas, Tegucigalpa");
+            tip.SetToolTip(txtRtn.Controls[0], "RTN\nEj: 05011994000123\n(14 dígitos: municipio + año + secuencial)");
+            tip.SetToolTip(txtTelefonoGeneral.Controls[0], "Teléfono General\nEj: 22345678\n(8 dígitos, inicia con 2, 3, 8 o 9)");
+            tip.SetToolTip(txtCorreoCentral.Controls[0], "Correo Central\nEj: contacto@maderasnorte.com");
+            tip.SetToolTip(cmbClasificacion.Controls[0], "Clasificación\nSeleccione si el proveedor es de MADERA o VARIOS");
+            tip.SetToolTip(cmbTerminosdePago.Controls[0], "Términos de Pago\nSeleccione el plazo de pago según la clasificación");
         }
     }
 }

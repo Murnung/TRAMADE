@@ -24,18 +24,12 @@ namespace TRAMADE
         {
             InitializeComponent();
             clsDataGridView.AplicarEstilo(dgvProveedor);
+            lblInstrucciones.Text = clsProveedores.InstruccionesDGV();
             RecargarProveedores();
         }
 
         public void RecargarProveedores()
         {
-            /*string consulta = "select * from VistaProveedorTabla";
-            SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dgvProveedores.DataSource = dt;
-            dgvProveedores.Columns["id_proveedor"].Visible = false; // ← oculta pero existe para leerla*/
-
             clsProveedores ObjProveedores = new clsProveedores();
             dgvProveedor.DataSource = ObjProveedores.ObtenerProveedores();
             clsDataGridView.AplicarEstilo(dgvProveedor);
@@ -52,10 +46,6 @@ namespace TRAMADE
 
         private void btnFiltrarActivo_Click(object sender, EventArgs e)
         {
-            /*clsProveedores ObjProveedores = new clsProveedores();
-            dgvProveedores.DataSource = ObjProveedores.FiltrarPorEstado("ACTIVO");
-            dgvProveedores.Columns["id_proveedor"].Visible = false;*/
-
             clsProveedores ObjProveedores = new clsProveedores();
             dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("ACTIVO");
             clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
@@ -63,10 +53,6 @@ namespace TRAMADE
 
         private void btnFiltrarInactivo_Click(object sender, EventArgs e)
         {
-            /*clsProveedores ObjProveedores = new clsProveedores();
-            dgvProveedores.DataSource = ObjProveedores.FiltrarPorEstado("INACTIVO");
-            dgvProveedores.Columns["id_proveedor"].Visible = false;*/
-
             clsProveedores ObjProveedores = new clsProveedores();
             dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("INACTIVO");
             clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
@@ -75,19 +61,6 @@ namespace TRAMADE
         
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            /*clsProveedores ObjProveedores = new clsProveedores();
-
-            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
-            {
-                // Si está vacío mostrar todos
-                RecargarProveedores();
-            }
-            else
-            {
-                dgvProveedores.DataSource = ObjProveedores.BuscarProveedores(txtBuscar.Text);
-                dgvProveedores.Columns["id_proveedor"].Visible = false;
-            }*/
-
             clsProveedores ObjProveedores = new clsProveedores();
 
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))

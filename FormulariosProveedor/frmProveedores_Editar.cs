@@ -22,8 +22,6 @@ namespace TRAMADE
         {
             InitializeComponent();
             _idProveedor = idProveedor; // ← asignar el ID
-
-            // En el constructor reemplazar llenarCombo por:
             clsCombobox.LlenarCombosProveedor(cmbClasificacion, cmbTerminosdePago, ObjConexion);
             ObjEditar.CargarDatosActuales(_idProveedor, txtRazonSocial, txtNombreComercial, txtDireccionFiscal, txtRtn, txtTelefonoGeneral, txtCorreoCentral, cmbClasificacion, cmbTerminosdePago);
             clsToolTip.AplicarTooltipsProveedor(txtRazonSocial, txtNombreComercial, txtDireccionFiscal,
@@ -33,41 +31,6 @@ namespace TRAMADE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            /*// En btnGuardar antes de guardar:
-            if (!clsValidar.ValidarProveedor(
-            txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text,
-            txtRtn.Text, txtTelefonoGeneral.Text, txtCorreoCentral.Text,
-            Convert.ToInt32(cmbClasificacion.SelectedValue),
-            Convert.ToInt32(cmbTerminosdePago.SelectedValue),
-            _idProveedor)) return; // ← pasar el ID del proveedor que se está editando
-
-            clsProveedores ObjProveedores = new clsProveedores(
-                clsValidar.Limpiar(txtNombreComercial.Text),
-                clsValidar.Limpiar(txtRazonSocial.Text),
-                clsValidar.Limpiar(txtDireccionFiscal.Text),
-                clsValidar.Limpiar(txtRtn.Text),
-                Convert.ToInt32(cmbClasificacion.SelectedValue),
-                Convert.ToInt32(cmbTerminosdePago.SelectedValue),
-                clsValidar.Limpiar(txtTelefonoGeneral.Text),
-                clsValidar.Limpiar(txtCorreoCentral.Text));
-
-            ObjProveedores.id_proveedor = _idProveedor;
-
-            ObjEditar.ActualizarProveedor(ObjProveedores);
-
-            // ─── Recargar ListBox en frmProveedores_Perfil ───────────────
-            frmProveedores_Perfil frmPerfil = Application.OpenForms["frmProveedores_Perfil"] as frmProveedores_Perfil;
-            if (frmPerfil != null)
-                frmPerfil.RecargarPerfil();
-
-            // ─── Recargar DGV en frmProveedores ──────────────────────────
-            frmProveedores frmProv = Application.OpenForms["frmProveedores"] as frmProveedores;
-            if (frmProv != null)
-                frmProv.RecargarProveedores();
-
-            this.Close();*/
-
             if (!clsValidar.ValidarProveedor(
             txtNombreComercial.Text, txtNombreComercial,
             txtRazonSocial.Text, txtRazonSocial,
