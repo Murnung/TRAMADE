@@ -39,6 +39,14 @@ namespace TRAMADE
 
         }
 
+        public async Task AbrirAsync()
+        {
+            if (SqlC.State == ConnectionState.Closed || SqlC.State == ConnectionState.Broken)
+            {
+                await SqlC.OpenAsync();
+            }
+        }
+
         public void Cerrar()
         {
             try

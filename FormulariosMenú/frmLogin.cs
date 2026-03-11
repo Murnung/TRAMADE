@@ -27,30 +27,23 @@ namespace TRAMADE
         private void frmLogin_Load(object sender, EventArgs e) { }
 
         clsConexion conexion = new clsConexion();
-        public void login (string usuario, string contraseña)
+        public async Task login(string usuario, string contraseña)
         {
             int intentos = 3;
-            int espera = 2000; // 2 segundos entre intentos
+            int espera = 2000;
 
             for (int i = 0; i < intentos; i++)
             {
                 try
                 {
-                    conexion.Abrir();
-
-                    // Verificar que la conexión realmente esté abierta
-                    if (conexion.SqlC.State != System.Data.ConnectionState.Open)
-                    {
-                        System.Threading.Thread.Sleep(espera);
-                        continue; // Reintenta
-                    }
+                    await conexion.AbrirAsync();
 
                     string consulta = "SELECT * FROM VistaUsuariosLogin WHERE correo_usuario = @usuario AND password_usuario = @contra";
                     SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
                     cmd.Parameters.AddWithValue("@usuario", usuario);
                     cmd.Parameters.AddWithValue("@contra", contraseña);
 
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SqlDataReader dr = await cmd.ExecuteReaderAsync();
 
                     if (dr.Read())
                     {
@@ -70,15 +63,14 @@ namespace TRAMADE
                         conexion.Cerrar();
                         MessageBox.Show("Usuario o contraseña incorrectos");
                     }
-                    return; // Salir del loop si todo fue bien
-
+                    return;
                 }
                 catch (Exception ex)
                 {
                     conexion.Cerrar();
                     if (i < intentos - 1)
                     {
-                        System.Threading.Thread.Sleep(espera); // Espera antes de reintentar
+                        await Task.Delay(espera);
                     }
                     else
                     {
@@ -87,23 +79,27 @@ namespace TRAMADE
                 }
             }
 
+
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
+        private async void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == null || txtPassword == null)
+            if (txtUsuario.Text == "Ingrese su usuario" || txtUsuario.Text == "" ||
+                txtPassword.Text == "Ingrese su contraseña" || txtPassword.Text == "")
             {
                 MessageBox.Show("Necesita llenar ambos campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string usuario = txtUsuario.Text.Trim();  //Trim para eliminar espacios de ambos lados
+                btnIngresar.Enabled = false; // Evita doble clic mientras carga
+                string usuario = txtUsuario.Text.Trim();
                 string contra = txtPassword.Text.Trim();
-                login(usuario, contra);
+                await login(usuario, contra);
+                btnIngresar.Enabled = true;
             }
         }
 
