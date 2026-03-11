@@ -29,7 +29,6 @@ namespace TRAMADE
 
         public void RecargarProveedores()
         {
-            /*clsDataGridView.Cargar(dgvProveedor, VISTA, ObjConexion.SqlC, OCULTAS);*/
             clsProveedores ObjProveedores = new clsProveedores();
             dgvProveedor.DataSource = ObjProveedores.ObtenerProveedores();
             clsDataGridView.AplicarEstilo(dgvProveedor);
@@ -46,8 +45,6 @@ namespace TRAMADE
 
         private void btnFiltrarActivo_Click(object sender, EventArgs e)
         {
-            /*clsDataGridView.FiltrarPorEstado(dgvProveedor, VISTA, ObjConexion.SqlC, "ACTIVO", OCULTAS);*/
-
             clsProveedores ObjProveedores = new clsProveedores();
             dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("ACTIVO");
             clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
@@ -55,8 +52,6 @@ namespace TRAMADE
 
         private void btnFiltrarInactivo_Click(object sender, EventArgs e)
         {
-            /*clsDataGridView.FiltrarPorEstado(dgvProveedor, VISTA, ObjConexion.SqlC, "INACTIVO", OCULTAS);*/
-
             clsProveedores ObjProveedores = new clsProveedores();
             dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("INACTIVO");
             clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
@@ -65,21 +60,6 @@ namespace TRAMADE
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            /*clsProveedores ObjProveedores = new clsProveedores();
-
-            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
-            {
-                // Si está vacío mostrar todos
-                RecargarProveedores();
-            }
-            else
-            {
-                dgvProveedor.DataSource = ObjProveedores.BuscarProveedores(txtBuscar.Text);
-                dgvProveedor.Columns["id_proveedor"].Visible = false;
-            }*/
-
-            /*clsDataGridView.Buscar(dgvProveedor, txtBuscar.Text, VISTA, ObjConexion.SqlC, OCULTAS);*/
-
             clsProveedores ObjProveedores = new clsProveedores();
 
             if (string.IsNullOrWhiteSpace(txtBuscar.Text))
@@ -93,20 +73,6 @@ namespace TRAMADE
 
         private void dgvProveedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
-            if (e.RowIndex >= 0)
-            {
-                // Leer columna 0 que sería id_proveedor si la agregas oculta
-                int idProveedor = Convert.ToInt32(dgvProveedor.Rows[e.RowIndex].Cells[0].Value);
-                frmProveedores_Perfil frmPerfil = new frmProveedores_Perfil(idProveedor);
-                frmPerfil.Show();
-            }*/
-
-            /*int id = clsDataGridView.ObtenerIdDobleClick(dgvProveedor, e);
-            if (id == -1) return;
-            frmProveedores_Perfil frmPerfil = new frmProveedores_Perfil(id);
-            frmPerfil.Show();*/
-
             if (e.RowIndex < 0) return;
 
             int idProveedor = Convert.ToInt32(dgvProveedor.Rows[e.RowIndex].Cells["id_proveedor"].Value);

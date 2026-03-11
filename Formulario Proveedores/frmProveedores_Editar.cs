@@ -32,53 +32,6 @@ namespace TRAMADE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            /*
-            // En btnGuardar antes de guardar:
-            if (!clsValidar.ValidarProveedor(
-            txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text,
-            txtRtn.Text, txtTelefonoGeneral.Text, txtCorreoCentral.Text,
-            Convert.ToInt32(cmbClasificacion.SelectedValue),
-            Convert.ToInt32(cmbTerminosdePago.SelectedValue),
-            _idProveedor)) return; // ← pasar el ID del proveedor que se está editando
-
-            clsProveedores ObjProveedores = new clsProveedores(
-                clsValidar.Limpiar(txtNombreComercial.Text),
-                clsValidar.Limpiar(txtRazonSocial.Text),
-                clsValidar.Limpiar(txtDireccionFiscal.Text),
-                clsValidar.Limpiar(txtRtn.Text),
-                Convert.ToInt32(cmbClasificacion.SelectedValue),
-                Convert.ToInt32(cmbTerminosdePago.SelectedValue),
-                clsValidar.Limpiar(txtTelefonoGeneral.Text),
-                clsValidar.Limpiar(txtCorreoCentral.Text));
-
-            ObjProveedores.id_proveedor = _idProveedor;
-
-            ObjEditar.ActualizarProveedor(ObjProveedores);
-
-            // ─── Recargar ListBox en frmProveedores_Perfil ───────────────
-            frmProveedores_Perfil frmPerfil = Application.OpenForms["frmProveedores_Perfil"] as frmProveedores_Perfil;
-            if (frmPerfil != null)
-                frmPerfil.RecargarPerfil();
-
-            // ─── Recargar DGV en frmProveedores ──────────────────────────
-            frmProveedores frmProv = Application.OpenForms["frmProveedores"] as frmProveedores;
-            if (frmProv != null)
-                frmProv.RecargarProveedores();
-
-            this.Close();*/
-
-            /*if (!clsValidar.ValidarProveedor(
-            txtNombreComercial.Text, txtNombreComercial,
-            txtRazonSocial.Text, txtRazonSocial,
-            txtDireccionFiscal.Text, txtDireccionFiscal,
-            txtRtn.Text, txtRtn,
-            txtTelefonoGeneral.Text, txtTelefonoGeneral,
-            txtCorreoCentral.Text, txtCorreoCentral,
-            Convert.ToInt32(cmbClasificacion.SelectedValue),
-            Convert.ToInt32(cmbTerminosdePago.SelectedValue),
-            _idProveedor)) return;*/
-
             if (!clsValidar.ValidarProveedor(
             txtNombreComercial.Text, txtNombreComercial,
             txtRazonSocial.Text, txtRazonSocial,
