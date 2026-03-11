@@ -27,7 +27,6 @@ namespace TRAMADE.ClasesProveedor
             tip.ReshowDelay = 200;
             tip.BackColor = Color.FromArgb(210, 180, 140);
             tip.ForeColor = Color.FromArgb(50, 30, 10);
-            //tip.IsBalloon = true;
 
             tip.SetToolTip(txtRazonSocial.Controls[0], "Razón Social\nNombre legal registrado ante el SAR.\nEj: Maderas del Norte S.A. de C.V.");
             tip.SetToolTip(txtNombreComercial.Controls[0], "Nombre Comercial\nNombre con el que opera el proveedor.\nEj: Maderas del Norte");
