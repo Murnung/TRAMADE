@@ -153,11 +153,13 @@
     <Compile Include="ClasesCompras\clsLlenarListBox.cs" />
     <Compile Include="ClasesCompras\clsLlenarTextoPrecioCosto.cs" />
     <Compile Include="ClasesCompras\clsOperacionesCompra.cs" />
+    <Compile Include="ClasesProveedor\clsDataGridView.cs" />
     <Compile Include="ClasesProveedor\clsProveedores.cs" />
     <Compile Include="ClasesProveedor\clsProveedores_Añadir.cs" />
     <Compile Include="ClasesProveedor\clsProveedores_Editar.cs" />
     <Compile Include="ClasesProveedor\clsProveedores_Perfil.cs" />
     <Compile Include="ClasesProveedor\clsCombobox.cs" />
+    <Compile Include="ClasesProveedor\clsToolTip.cs" />
     <Compile Include="ClasesProveedor\clsValidar.cs" />
     <Compile Include="ClasesCliente\clsCliente.cs" />
     <Compile Include="clsConexion.cs" />
