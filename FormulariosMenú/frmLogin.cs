@@ -29,10 +29,21 @@ namespace TRAMADE
         clsConexion conexion = new clsConexion();
         public void login (string usuario, string contraseña)
         {
-            
+            int intentos = 3;
+            int espera = 2000; // 2 segundos entre intentos
+
+            for (int i = 0; i < intentos; i++)
+            {
                 try
                 {
                     conexion.Abrir();
+
+                    // Verificar que la conexión realmente esté abierta
+                    if (conexion.SqlC.State != System.Data.ConnectionState.Open)
+                    {
+                        System.Threading.Thread.Sleep(espera);
+                        continue; // Reintenta
+                    }
 
                     string consulta = "SELECT * FROM VistaUsuariosLogin WHERE correo_usuario = @usuario AND password_usuario = @contra";
                     SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
@@ -43,30 +54,40 @@ namespace TRAMADE
 
                     if (dr.Read())
                     {
-                    // Guarda los datos del usuario en la sesión
-                    clsSesion.id_usuario = Convert.ToInt32(dr["id_usuario"]);
-                    clsSesion.nombre_usuario = dr["nombre_usuario"].ToString();
-
-                    MessageBox.Show("Inicio de sesión exitoso");
+                        clsSesion.id_usuario = Convert.ToInt32(dr["id_usuario"]);
+                        clsSesion.nombre_usuario = dr["nombre_usuario"].ToString();
                         dr.Close();
                         conexion.Cerrar();
 
-                    this.Hide(); 
-                    frmMenuPrincipal menu = new frmMenuPrincipal();
-                    menu.Show(); 
-                }
+                        MessageBox.Show("Inicio de sesión exitoso");
+                        this.Hide();
+                        frmMenuPrincipal menu = new frmMenuPrincipal();
+                        menu.Show();
+                    }
                     else
                     {
-                        MessageBox.Show("Usuario o contraseña incorrectos");
                         dr.Close();
                         conexion.Cerrar();
+                        MessageBox.Show("Usuario o contraseña incorrectos");
                     }
+                    return; // Salir del loop si todo fue bien
+
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    conexion.Cerrar();
+                    if (i < intentos - 1)
+                    {
+                        System.Threading.Thread.Sleep(espera); // Espera antes de reintentar
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al conectar: " + ex.Message);
+                    }
                 }
             }
+
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 

@@ -11,7 +11,11 @@ namespace TRAMADE
 {
     internal class clsConexion
     {
-        string conexion = "Data Source=db-tramade.database.windows.net;Initial Catalog=DB_TRAMADE;User ID=TMSS;Password=Elmaster8;";
+        string conexion = "Data Source=db-tramade.database.windows.net;" +
+                          "Initial Catalog=DB_TRAMADE;" +
+                          "User ID=TMSS;" +
+                          "Password=Elmaster8;" +
+                          "Connect Timeout=30;";
 
         public SqlConnection SqlC = new SqlConnection();
         public clsConexion()
