@@ -138,6 +138,12 @@
     <Compile Include="ClasesCompras\clsGraficoProveedoresCompras.cs" />
     <Compile Include="ClasesCompras\clsIndicadoresCompras.cs" />
     <Compile Include="ClasesCompras\clsValidacionesCompras.cs" />
+    <Compile Include="ClasesFacturacion\clsClienteF.cs" />
+    <Compile Include="ClasesFacturacion\clsEmitirFacturaF.cs" />
+    <Compile Include="ClasesFacturacion\clsFacturaF.cs" />
+    <Compile Include="ClasesFacturacion\clsHistorialFacturaF.cs" />
+    <Compile Include="ClasesFacturacion\clsProductoF.cs" />
+    <Compile Include="ClasesFacturacion\clsValidacionesF.cs" />
     <Compile Include="ClasesMenu\clsClientesPanel.cs" />
     <Compile Include="ClasesMenu\clsGraficoInventario.cs" />
     <Compile Include="ClasesMenu\clsGraficoTendencia.cs" />
@@ -569,8 +575,6 @@
     <Content Include="SqlServerTypes\x86\msvcr120.dll" />
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ClasesFacturacion\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
