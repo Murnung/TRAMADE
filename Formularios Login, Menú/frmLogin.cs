@@ -28,7 +28,7 @@ namespace TRAMADE
 
         VideoCapture grabber;
         CascadeClassifier face;
-        LBPHFaceRecognizer recognizer = new LBPHFaceRecognizer(1, 8, 8, 8, 120);
+        LBPHFaceRecognizer recognizer = new LBPHFaceRecognizer(1, 8, 8, 8, 80);
 
         List<Mat> imagenesEntrenamiento = new List<Mat>();
         List<int> etiquetasIds = new List<int>();
@@ -40,7 +40,7 @@ namespace TRAMADE
         bool recognizerEntrenado = false;
         System.Windows.Forms.Timer timerCamara = new System.Windows.Forms.Timer();
 
-        const double UMBRAL = 120.0;
+        const double UMBRAL = 80.0;
 
         // ── LOGIN ──────────────────────────────────────────────────
         public void login(string usuario, string contraseña)
