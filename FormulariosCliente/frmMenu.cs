@@ -76,5 +76,10 @@ namespace TRAMADE
                 ObjConexion.Cerrar();
             }
         }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            recargarClientes();
+        }
     }
 }

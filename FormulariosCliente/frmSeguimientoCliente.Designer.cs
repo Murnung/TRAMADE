@@ -329,30 +329,34 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(685, 12);
+            this.btnRegresar.Location = new System.Drawing.Point(693, 11);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnRegresar.Size = new System.Drawing.Size(90, 25);
+            this.btnRegresar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
+            this.btnRegresar.Size = new System.Drawing.Size(80, 24);
             this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Border.Width = 2;
-            this.btnRegresar.StateDisabled.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateDisabled.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateNormal.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StatePressed.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StatePressed.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnRegresar.TabIndex = 44;
+            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.StateCommon.Border.Rounding = 10F;
+            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
+            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
+            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
+            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnRegresar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnRegresar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegresar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegresar.TabIndex = 73;
             this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "Regresar";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.btnRegresar.Values.Text = "REGRESAR";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
             // 
             // frmSeguimientoCliente
             // 

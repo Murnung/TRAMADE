@@ -35,6 +35,7 @@
             this.btnSeguimiento = new Krypton.Toolkit.KryptonButton();
             this.dvgUltimos = new Krypton.Toolkit.KryptonDataGridView();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.dvgUltimos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,6 +232,35 @@
             this.label18.TabIndex = 40;
             this.label18.Text = "Últimos Registros";
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(223, 227);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRefrescar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRefrescar.Size = new System.Drawing.Size(130, 32);
+            this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.btnRefrescar.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.btnRefrescar.StateCommon.Border.Rounding = 25F;
+            this.btnRefrescar.StateCommon.Border.Width = 1;
+            this.btnRefrescar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnRefrescar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnRefrescar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
+            this.btnRefrescar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRefrescar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
+            this.btnRefrescar.TabIndex = 44;
+            this.btnRefrescar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnRefrescar.Values.Text = "REFRESCAR";
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +268,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 588);
             this.ControlBox = false;
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.dvgUltimos);
             this.Controls.Add(this.btnSeguimiento);
@@ -262,5 +293,6 @@
         private Krypton.Toolkit.KryptonButton btnSeguimiento;
         private Krypton.Toolkit.KryptonDataGridView dvgUltimos;
         private System.Windows.Forms.Label label18;
+        private Krypton.Toolkit.KryptonButton btnRefrescar;
     }
 }
