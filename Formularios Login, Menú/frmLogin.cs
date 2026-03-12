@@ -4,7 +4,6 @@ using Emgu.CV.Face;
 using Emgu.CV.Structure;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -28,10 +27,9 @@ namespace TRAMADE
         clsDBCon dbc = new clsDBCon();
 
         VideoCapture grabber;
-        CascadeClassifier face = new CascadeClassifier(
-     Path.Combine(Application.StartupPath, "haarcascade_frontalface_default.xml"));
-        EigenFaceRecognizer recognizer = new EigenFaceRecognizer(); 
-        Mat currentFrame = new Mat();
+        CascadeClassifier face;
+        // ✅ Umbral muy alto para no rechazar
+        LBPHFaceRecognizer recognizer = new LBPHFaceRecognizer(1, 8, 8, 8, 1000);
         List<Mat> imagenesEntrenamiento = new List<Mat>();
         List<int> etiquetasIds = new List<int>();
         List<string> nombresUsuarios = new List<string>();
@@ -39,7 +37,7 @@ namespace TRAMADE
         bool recognizerEntrenado = false;
         System.Windows.Forms.Timer timerCamara = new System.Windows.Forms.Timer();
 
-        //  LOGIN 
+        // ── LOGIN ──────────────────────────────────────────────────
         public void login(string usuario, string contraseña)
         {
             try
@@ -73,50 +71,74 @@ namespace TRAMADE
             }
         }
 
-        // LOAD 
+        // ── LOAD ───────────────────────────────────────────────────
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            string xmlPath = Path.Combine(Application.StartupPath,
+                "haarcascade_frontalface_default.xml");
+
+            if (!File.Exists(xmlPath))
+            {
+                MessageBox.Show("No se encontró: " + xmlPath, "Error XML");
+                return;
+            }
+
+            face = new CascadeClassifier(xmlPath);
             cargarRostros();
             iniciarCamara();
         }
 
-        //  CARGAR ROSTROS DESDE BD 
+        // ── CARGAR ROSTROS ─────────────────────────────────────────
         public void cargarRostros()
         {
             try
             {
                 dbc.ObtenerBytesImagen();
 
+                Dictionary<string, int> mapaUsuarios = new Dictionary<string, int>();
+                int idActual = 0;
+
                 for (int i = 0; i < dbc.totalUsuarios; i++)
                 {
-                    Bitmap bmp = new Bitmap(dbc.convertirByteAImg(i));
+                    string nombreUsuario = dbc.nombre[i];
 
-                    // Convertir a Mat en escala de grises 100x100
+                    if (!mapaUsuarios.ContainsKey(nombreUsuario))
+                    {
+                        mapaUsuarios[nombreUsuario] = idActual;
+                        nombresUsuarios.Add(nombreUsuario);
+                        idActual++;
+                    }
+
+                    Bitmap bmp = new Bitmap(dbc.convertirByteAImg(i));
                     Mat img = new Mat();
                     Mat gris = new Mat();
-                    CvInvoke.Imdecode(ImageToByteArray(bmp), Emgu.CV.CvEnum.ImreadModes.AnyColor, img);
+                    CvInvoke.Imdecode(ImageToByteArray(bmp),
+                        ImreadModes.AnyColor, img);
                     CvInvoke.CvtColor(img, gris, ColorConversion.Bgr2Gray);
+                    CvInvoke.EqualizeHist(gris, gris); // ✅ mismo preprocesamiento que la cámara
                     CvInvoke.Resize(gris, gris, new System.Drawing.Size(100, 100));
 
                     imagenesEntrenamiento.Add(gris);
-                    etiquetasIds.Add(i);
-                    nombresUsuarios.Add(dbc.nombre[i]);
+                    etiquetasIds.Add(mapaUsuarios[nombreUsuario]);
+                    img.Dispose();
+                    bmp.Dispose();
                 }
 
-                // Entrenar el reconocedor si hay imágenes
                 if (imagenesEntrenamiento.Count > 0)
                 {
-                    recognizer.Train(imagenesEntrenamiento.ToArray(), etiquetasIds.ToArray());
+                    recognizer.Train(imagenesEntrenamiento.ToArray(),
+                        etiquetasIds.ToArray());
                     recognizerEntrenado = true;
+                    MessageBox.Show($"Entrenamiento OK: {imagenesEntrenamiento.Count} imágenes, {nombresUsuarios.Count} usuarios");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // Sin rostros, solo funciona login normal
+                MessageBox.Show("Error cargando rostros: " + ex.Message);
             }
         }
 
-        // INICIAR CÁMARA 
+        // ── INICIAR CÁMARA ─────────────────────────────────────────
         private void iniciarCamara()
         {
             try
@@ -129,7 +151,7 @@ namespace TRAMADE
                     return;
                 }
 
-                timerCamara.Interval = 33; // ~30 FPS
+                timerCamara.Interval = 33;
                 timerCamara.Tick += new EventHandler(frameGrabber);
                 timerCamara.Start();
             }
@@ -139,40 +161,43 @@ namespace TRAMADE
             }
         }
 
-        // PROCESAR FRAMES 
+        // ── PROCESAR FRAMES ────────────────────────────────────────
         private void frameGrabber(object sender, EventArgs e)
         {
             try
             {
                 Mat frame = new Mat();
                 grabber.Read(frame);
-
                 if (frame.IsEmpty) return;
 
                 Mat gris = new Mat();
                 CvInvoke.CvtColor(frame, gris, ColorConversion.Bgr2Gray);
                 CvInvoke.EqualizeHist(gris, gris);
 
-                // Detectar rostros
                 Rectangle[] rostrosDetectados = face.DetectMultiScale(
-                    gris, 1.2, 10, new System.Drawing.Size(20, 20));
+                    gris, 1.1, 3, new System.Drawing.Size(30, 30));
 
                 foreach (Rectangle r in rostrosDetectados)
                 {
-                    // Dibujar rectángulo verde
                     CvInvoke.Rectangle(frame, r, new MCvScalar(0, 255, 0), 2);
 
                     if (recognizerEntrenado)
                     {
-                        // Recortar y redimensionar el rostro
                         Mat rostro = new Mat(gris, r);
-                        CvInvoke.Resize(rostro, rostro, new System.Drawing.Size(100, 100));
+                        CvInvoke.Resize(rostro, rostro,
+                            new System.Drawing.Size(100, 100));
 
-                        // Reconocer
-                        FaceRecognizer.PredictionResult resultado = recognizer.Predict(rostro);
+                        FaceRecognizer.PredictionResult resultado =
+                            recognizer.Predict(rostro);
+                        rostro.Dispose();
 
-                        // Umbral de confianza (menor = más parecido)
-                        if (resultado.Distance < 5000)
+                        // ── TEMPORAL: ver distancia ──────────────
+                        lblEstado.ForeColor = Color.Orange;
+                        lblEstado.Text = $"Dist: {resultado.Distance:F0} Label: {resultado.Label}";
+                        // ─────────────────────────────────────────
+
+                        // ✅ Umbral ajustado a 200
+                        if (resultado.Distance < 150)
                         {
                             nombreReconocido = nombresUsuarios[resultado.Label];
                             CvInvoke.PutText(frame, nombreReconocido,
@@ -191,34 +216,23 @@ namespace TRAMADE
                     }
                 }
 
-                // Actualizar label estado
-                if (rostrosDetectados.Length == 0)
-                {
-                    lblEstado.ForeColor = Color.Gray;
-                    lblEstado.Text = "Mirando a la cámara...";
-                }
-                else if (!string.IsNullOrEmpty(nombreReconocido))
-                {
-                    lblEstado.ForeColor = Color.Green;
-                    lblEstado.Text = "✔ Reconocido: " + nombreReconocido;
-                }
-                else
-                {
-                    lblEstado.ForeColor = Color.Red;
-                    lblEstado.Text = "✘ Rostro no reconocido";
-                }
-
                 // Mostrar en picCamara
-                Bitmap bitmapFrame = new Bitmap(frame.Width, frame.Height,
-                frame.Width * 3,
-                System.Drawing.Imaging.PixelFormat.Format24bppRgb,
-                frame.DataPointer);
-                            picCamara.Image = (Bitmap)bitmapFrame.Clone();
+                Image<Bgr, byte> imgConvertida = frame.ToImage<Bgr, byte>();
+                Bitmap bitmapFrame = imgConvertida.ToBitmap();
+
+                if (picCamara.Image != null)
+                    picCamara.Image.Dispose();
+
+                picCamara.Image = (Bitmap)bitmapFrame.Clone();
+                bitmapFrame.Dispose();
+                imgConvertida.Dispose();
+                gris.Dispose();
+                frame.Dispose();
             }
             catch { }
         }
 
-        // BOTÓN INGRESAR 
+        // ── BOTÓN INGRESAR ─────────────────────────────────────────
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "" || txtPassword.Text == "")
@@ -230,20 +244,17 @@ namespace TRAMADE
 
             if (string.IsNullOrEmpty(nombreReconocido))
             {
-                MessageBox.Show("No se reconoció ningún rostro. Asegúrese de estar frente a la cámara.",
-                    "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se reconoció ningún rostro. " +
+                    "Asegúrese de estar frente a la cámara.",
+                    "Acceso denegado", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
-            string usuario = txtUsuario.Text.Trim();
-            string contra = txtPassword.Text.Trim();
-
-           
-
-            login(usuario, contra);
+            login(txtUsuario.Text.Trim(), txtPassword.Text.Trim());
         }
 
-        // EVENTOS TEXTBOX 
+        // ── EVENTOS TEXTBOX ────────────────────────────────────────
         private void txtUsuario_Enter_1(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "Ingrese su usuario")
@@ -280,27 +291,24 @@ namespace TRAMADE
             }
         }
 
-        //BOTÓN SALIR 
+        // ── BOTÓN SALIR ────────────────────────────────────────────
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // CERRAR FORMULARIO 
+        // ── CERRAR FORMULARIO ──────────────────────────────────────
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
             {
-                Mat frame = new Mat();
-                grabber.Read(frame);
-                if (frame.IsEmpty) return;
-
-                // ... resto de tu código de detección
-
-                picCamara.Image = frame.ToBitmap();
+                timerCamara.Stop();
+                if (grabber != null) grabber.Dispose();
             }
             catch { }
         }
+
+        // ── AUXILIAR ───────────────────────────────────────────────
         private byte[] ImageToByteArray(System.Drawing.Image img)
         {
             using (MemoryStream ms = new MemoryStream())

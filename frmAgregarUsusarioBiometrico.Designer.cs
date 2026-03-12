@@ -70,7 +70,7 @@
             this.kryptonLabel1.StateNormal.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.kryptonLabel1.TabIndex = 17;
             this.kryptonLabel1.Values.Text = "Agregar usurios";
-            this.kryptonLabel1.Click += new System.EventHandler(this.kryptonLabel1_Click);
+           // this.kryptonLabel1.Click += new System.EventHandler(this.kryptonLabel1_Click);
             // 
             // panel2
             // 
@@ -117,7 +117,7 @@
             this.lblEstado.Size = new System.Drawing.Size(44, 16);
             this.lblEstado.TabIndex = 15;
             this.lblEstado.Text = "label1";
-            this.lblEstado.Click += new System.EventHandler(this.lblEstado_Click);
+           // this.lblEstado.Click += new System.EventHandler(this.lblEstado_Click);
             // 
             // lbl
             // 

@@ -45,10 +45,10 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
             try
             {
                 cn.Abrir();
-                string consulta = @"SELECT id_usuario, nombre_usuario, imagen_facial 
-                                    FROM USUARIO 
-                                    WHERE id_estado = 1 
-                                    AND imagen_facial IS NOT NULL";
+                string consulta = @"SELECT u.id_usuario, u.nombre_usuario, i.imagen_facial 
+                            FROM IMAGEN_FACIAL i
+                            INNER JOIN USUARIO u ON i.id_usuario = u.id_usuario
+                            WHERE u.id_estado = 1";
                 SqlDataAdapter adapter = new SqlDataAdapter(consulta, cn.SqlC);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -139,6 +139,29 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
             finally
             {
                 conexion.Cerrar();
+            }
+        }
+
+        // Insertar imagen adicional (no reemplaza, agrega)
+        public bool insertarImagenFacial(int idUsuario, byte[] imagen)
+        {
+            try
+            {
+                cn.Abrir();
+                SqlCommand comando = new SqlCommand("PA_INSERTAR_IMAGEN_FACIAL", cn.SqlC);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id_usuario", idUsuario);
+                comando.Parameters.Add("@imagen_facial", SqlDbType.VarBinary, -1).Value = imagen;
+                int resultado = comando.ExecuteNonQuery();
+                return resultado > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al insertar imagen: " + ex.Message);
+            }
+            finally
+            {
+                cn.Cerrar();
             }
         }
     }

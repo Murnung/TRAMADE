@@ -1,17 +1,11 @@
 ﻿using Emgu.CV;
-using Emgu.CV.Structure;
 using Emgu.CV.CvEnum;
+using Emgu.CV.Structure;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using TRAMADE.Formularios_Login__Menú.Clases;
-using System.IO;
 
 namespace TRAMADE
 {
@@ -24,21 +18,14 @@ namespace TRAMADE
         CascadeClassifier detector;
         System.Windows.Forms.Timer timerCamara = new System.Windows.Forms.Timer();
 
-        Bitmap imagenCapturada = null;
         bool rostroDetectado = false;
+        bool capturandoAuto = false;
+        int fotosCapturadas = 0;
+        int totalFotos = 20;
+
         public frmAgregarUsusarioBiometrico()
         {
             InitializeComponent();
-        }
-
-        private void lblEstado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kryptonLabel1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void frmAgregarUsusarioBiometrico_Load(object sender, EventArgs e)
@@ -46,37 +33,39 @@ namespace TRAMADE
             clsDBCon.llenarComboUsuarios(cmbUsuarios, conexion);
             iniciarCamara();
             btnGuardar.Enabled = false;
-            lblEstado.Text = "Esperando.....";
+            btnCapturar.Enabled = false;
+            lblEstado.Text = "Seleccione un usuario para comenzar";
         }
 
-        //Inciar camara
+        // ── INICIAR CÁMARA ─────────────────────────────────────────
         private void iniciarCamara()
         {
             try
             {
-                detector = new CascadeClassifier(Path.Combine(Application.StartupPath, "haarcascade_frontalface_default.xml"));
-                grabber = new VideoCapture();
+                detector = new CascadeClassifier(
+                    Path.Combine(Application.StartupPath,
+                    "haarcascade_frontalface_default.xml"));
+
+                grabber = new VideoCapture(0);
 
                 if (!grabber.IsOpened)
                 {
-                    MessageBox.Show("No se pudo abrir la cámara");
+                    MessageBox.Show("No se pudo abrir la cámara.");
                     return;
                 }
 
                 timerCamara.Interval = 33;
                 timerCamara.Tick += new EventHandler(procesarFrame);
                 timerCamara.Start();
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cámara no disponible " + ex.Message);
+                MessageBox.Show("Cámara no disponible: " + ex.Message);
             }
         }
 
-        //Procesar frames
-        private void procesarFrame(Object sender, EventArgs e)
+        // ── PROCESAR FRAMES ────────────────────────────────────────
+        private void procesarFrame(object sender, EventArgs e)
         {
             try
             {
@@ -88,37 +77,99 @@ namespace TRAMADE
                 CvInvoke.CvtColor(frame, gris, ColorConversion.Bgr2Gray);
                 CvInvoke.EqualizeHist(gris, gris);
 
-                Rectangle[] rostros = detector.DetectMultiScale(gris, 1.2, 10, new Size(80, 80));
+                Rectangle[] rostros = detector.DetectMultiScale(
+                    gris, 1.2, 10, new Size(80, 80));
 
                 rostroDetectado = rostros.Length > 0;
 
                 foreach (Rectangle r in rostros)
                     CvInvoke.Rectangle(frame, r, new MCvScalar(0, 255, 0), 2);
 
-                //Actualizar label estado
-                if (rostroDetectado)
+                // Captura automática si está activa
+                if (capturandoAuto && rostroDetectado && fotosCapturadas < totalFotos)
                 {
-                    lblEstado.ForeColor = Color.Green;
-                    lblEstado.Text = "✔ Rostro detectado — listo para capturar";
-                }
-                else
-                {
-                    lblEstado.ForeColor = Color.Red;
-                    lblEstado.Text = "✘ No se detecta rostro";
+                    guardarFoto(frame);
                 }
 
-                //Mostrar en picCamara
-                Bitmap bmp = new Bitmap(
-                    frame.Width, frame.Height,
-                    frame.Width * 3,
-                    System.Drawing.Imaging.PixelFormat.Format24bppRgb,
-                    frame.DataPointer);
-                picCamara.Image = (Bitmap)bmp.Clone();
+                // Actualizar label
+                if (!capturandoAuto)
+                {
+                    if (rostroDetectado)
+                    {
+                        lblEstado.ForeColor = Color.Green;
+                        lblEstado.Text = "✔ Rostro detectado — presione Capturar";
+                        btnCapturar.Enabled = cmbUsuarios.SelectedIndex != -1;
+                    }
+                    else
+                    {
+                        lblEstado.ForeColor = Color.Red;
+                        lblEstado.Text = "✘ No se detecta rostro";
+                        btnCapturar.Enabled = false;
+                    }
+                }
+
+                // ✅ Conversión segura
+                Image<Bgr, byte> imgConvertida = frame.ToImage<Bgr, byte>();
+                Bitmap bmp = imgConvertida.ToBitmap();
+                Bitmap copia = (Bitmap)bmp.Clone();
+
+                if (picCamara.Image != null)
+                    picCamara.Image.Dispose();
+
+                picCamara.Image = copia;
                 bmp.Dispose();
+                imgConvertida.Dispose();
+                gris.Dispose();
+                frame.Dispose();
             }
-            catch{ }
+            catch { }
         }
 
+        // ── GUARDAR FOTO AUTOMÁTICA ────────────────────────────────
+        private void guardarFoto(Mat frame)
+        {
+            try
+            {
+                int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
+
+                // ✅ Conversión segura
+                Image<Bgr, byte> imgConvertida = frame.ToImage<Bgr, byte>();
+                Bitmap bmp = imgConvertida.ToBitmap();
+                Bitmap copia = (Bitmap)bmp.Clone();
+                bmp.Dispose();
+                imgConvertida.Dispose();
+
+                byte[] imagenBytes;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    copia.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                    imagenBytes = ms.ToArray();
+                }
+                copia.Dispose();
+
+                dbc.insertarImagenFacial(idUsuario, imagenBytes);
+                fotosCapturadas++;
+
+                lblEstado.ForeColor = Color.Blue;
+                lblEstado.Text = $"📷 Capturando... {fotosCapturadas}/{totalFotos}";
+
+                if (fotosCapturadas >= totalFotos)
+                {
+                    capturandoAuto = false;
+                    btnCapturar.Enabled = false;
+                    btnGuardar.Enabled = true;
+                    lblEstado.ForeColor = Color.Green;
+                    lblEstado.Text = $"✔ {totalFotos} fotos guardadas correctamente";
+                }
+            }
+            catch (Exception ex)
+            {
+                capturandoAuto = false;
+                MessageBox.Show("Error al guardar foto: " + ex.Message);
+            }
+        }
+
+        // ── BOTÓN CAPTURAR ─────────────────────────────────────────
         private void btnCapturar_Click(object sender, EventArgs e)
         {
             if (cmbUsuarios.SelectedIndex == -1)
@@ -130,94 +181,54 @@ namespace TRAMADE
 
             if (!rostroDetectado)
             {
-                MessageBox.Show("No se detecta ningún rostro. " +
-                    "Asegúrese de estar frente a la cámara.",
+                MessageBox.Show("No se detecta rostro. Póngase frente a la cámara.",
                     "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            try
-            {
-                Mat frame = new Mat();
-                grabber.Read(frame);
-
-                imagenCapturada = new Bitmap(
-                    frame.Width, frame.Height,
-                    frame.Width * 3,
-                    System.Drawing.Imaging.PixelFormat.Format24bppRgb,
-                    frame.DataPointer);
-                imagenCapturada = (Bitmap)imagenCapturada.Clone();
-
-                picCamara.Image = imagenCapturada;
-                timerCamara.Stop();
-
-                btnGuardar.Enabled = true;
-                lblEstado.ForeColor = Color.Blue;
-                lblEstado.Text = "📷 Foto capturada — presione Guardar";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al capturar: " + ex.Message);
-            }
+            fotosCapturadas = 0;
+            capturandoAuto = true;
+            btnCapturar.Enabled = false;
+            lblEstado.ForeColor = Color.Blue;
+            lblEstado.Text = "📷 Iniciando captura automática...";
         }
 
+        // ── BOTÓN GUARDAR ──────────────────────────────────────────
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (imagenCapturada == null)
+            MessageBox.Show(
+                $"Registro completado. Se guardaron {totalFotos} fotos de '{cmbUsuarios.Text}'.",
+                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            fotosCapturadas = 0;
+            capturandoAuto = false;
+            btnGuardar.Enabled = false;
+            btnCapturar.Enabled = false;
+            cmbUsuarios.SelectedIndex = -1;
+            lblEstado.ForeColor = Color.Gray;
+            lblEstado.Text = "Seleccione un usuario para comenzar";
+        }
+
+        // ── COMBO USUARIO CHANGED ──────────────────────────────────
+        private void cmbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbUsuarios.SelectedIndex != -1)
             {
-                MessageBox.Show("Primero capture una imagen.");
-                return;
-            }
-
-            try
-            {
-                int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
-                string nombreUsuario = cmbUsuarios.Text;
-
-                // Convertir imagen a bytes
-                byte[] imagenBytes;
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    imagenCapturada.Save(ms,
-                        System.Drawing.Imaging.ImageFormat.Bmp);
-                    imagenBytes = ms.ToArray();
-                }
-
-                bool guardado = dbc.guardarImagen(idUsuario, imagenBytes);
-
-                if (guardado)
-                {
-                    MessageBox.Show(
-                        $"Rostro de '{nombreUsuario}' guardado correctamente.",
-                        "Éxito", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                    // Resetear para siguiente registro
-                    imagenCapturada = null;
-                    btnGuardar.Enabled = false;
-                    cmbUsuarios.SelectedIndex = -1;
-                    timerCamara.Start();
-                    lblEstado.ForeColor = Color.Gray;
-                    lblEstado.Text = "Esperando...";
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo guardar la imagen.",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar: " + ex.Message);
+                btnCapturar.Enabled = rostroDetectado;
+                lblEstado.ForeColor = Color.Gray;
+                lblEstado.Text = "Listo — póngase frente a la cámara y presione Capturar";
             }
         }
 
+        // ── BOTÓN CERRAR ───────────────────────────────────────────
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void frmAgregarUsusarioBiometrico_FormClosing(object sender, FormClosingEventArgs e)
+        // ── CERRAR FORMULARIO ──────────────────────────────────────
+        private void frmAgregarUsusarioBiometrico_FormClosing(object sender,
+            FormClosingEventArgs e)
         {
             try
             {
