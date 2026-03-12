@@ -288,6 +288,7 @@
             this.txtDNI.StateActive.Border.Width = 4;
             this.txtDNI.TabIndex = 31;
             this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // txtRTN
             // 
@@ -298,6 +299,7 @@
             this.txtRTN.StateActive.Border.Rounding = 10F;
             this.txtRTN.StateActive.Border.Width = 4;
             this.txtRTN.TabIndex = 29;
+            this.txtRTN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // label7
             // 
@@ -627,6 +629,7 @@
             this.txtTelefono.StateActive.Border.Rounding = 10F;
             this.txtTelefono.StateActive.Border.Width = 4;
             this.txtTelefono.TabIndex = 76;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // frmRegistroNuevo
             // 
