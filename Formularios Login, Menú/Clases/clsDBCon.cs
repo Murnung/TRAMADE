@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace TRAMADE.Formularios_Login__Menú.Clases
 {
@@ -113,6 +114,31 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
             finally
             {
                 cn.Cerrar();
+            }
+        }
+        //llenar combo box
+        internal static void llenarComboUsuarios(Krypton.Toolkit.KryptonComboBox cmb, clsConexion conexion)
+        {
+            try
+            {
+                conexion.Abrir();
+                string consulta = "SELECT id_usuario, nombre_usuario FROM USUARIO WHERE id_estado = 1";
+                SqlDataAdapter adapter = new SqlDataAdapter(consulta, conexion.SqlC);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                cmb.DataSource = dt;
+                cmb.DisplayMember = "nombre_usuario";
+                cmb.ValueMember = "id_usuario";
+                cmb.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar usuarios: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
             }
         }
     }

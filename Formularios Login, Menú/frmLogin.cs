@@ -238,12 +238,7 @@ namespace TRAMADE
             string usuario = txtUsuario.Text.Trim();
             string contra = txtPassword.Text.Trim();
 
-            if (!nombreReconocido.Equals(usuario, StringComparison.OrdinalIgnoreCase))
-            {
-                MessageBox.Show("El rostro no corresponde al usuario ingresado.",
-                    "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+           
 
             login(usuario, contra);
         }
