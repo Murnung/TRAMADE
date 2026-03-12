@@ -569,5 +569,8 @@
     <Content Include="SqlServerTypes\x86\msvcr120.dll" />
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClasesFacturacion\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
