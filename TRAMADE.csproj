@@ -170,6 +170,7 @@
     <Compile Include="ClasesCliente\clsCliente.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsSesion.cs" />
+    <Compile Include="ClasesCliente\clsValidarClientes.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
