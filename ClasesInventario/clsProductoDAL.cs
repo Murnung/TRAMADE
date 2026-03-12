@@ -64,18 +64,27 @@ namespace TRAMADE.ClasesInventario
             obj.Abrir();
             try
             {
+                // Eliminar de DETALLE_COMPRA
                 SqlCommand cmdDC = new SqlCommand("DELETE FROM DETALLE_COMPRA WHERE id_producto = @id", obj.SqlC);
                 cmdDC.Parameters.AddWithValue("@id", idProducto);
                 cmdDC.ExecuteNonQuery();
 
+                // Eliminar de FACTURA_PRODUCTO
+                SqlCommand cmdFP = new SqlCommand("DELETE FROM FACTURA_PRODUCTO WHERE id_producto = @id", obj.SqlC);
+                cmdFP.Parameters.AddWithValue("@id", idProducto);
+                cmdFP.ExecuteNonQuery();
+
+                // Eliminar de PRODUCTO_PROVEEDOR
                 SqlCommand cmdPP = new SqlCommand("DELETE FROM PRODUCTO_PROVEEDOR WHERE id_producto = @id", obj.SqlC);
                 cmdPP.Parameters.AddWithValue("@id", idProducto);
                 cmdPP.ExecuteNonQuery();
 
+                // Eliminar de PRODUCTO_SUCURSAL
                 SqlCommand cmdPS = new SqlCommand("DELETE FROM PRODUCTO_SUCURSAL WHERE id_producto = @id", obj.SqlC);
                 cmdPS.Parameters.AddWithValue("@id", idProducto);
                 cmdPS.ExecuteNonQuery();
 
+                // Eliminar de PRODUCTO
                 SqlCommand cmdProd = new SqlCommand("DELETE FROM PRODUCTO WHERE id_producto = @id", obj.SqlC);
                 cmdProd.Parameters.AddWithValue("@id", idProducto);
                 cmdProd.ExecuteNonQuery();
@@ -106,5 +115,7 @@ namespace TRAMADE.ClasesInventario
             cmd.Parameters.AddWithValue("@nombre", nombre);
             return (int)cmd.ExecuteScalar();
         }
+
+
     }
 }

@@ -75,6 +75,12 @@ namespace TRAMADE
             dgvInventario.ReadOnly = true;
 
             AplicarAlertas();
+
+            if (dgvInventario.Rows.Count == 0)
+            {
+                clsMensajes.Aviso("No hay productos registrados");
+            }
+
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -178,18 +184,22 @@ namespace TRAMADE
                     row.Cells["Alerta"].Value = "● Crítico";
                     row.Cells["Alerta"].Style.ForeColor = Color.Red;
                     row.Cells["Alerta"].Style.Font = new Font(dgvInventario.Font, FontStyle.Bold);
+                    // Resaltar toda la fila
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 220, 220);
                 }
                 else if (stock <= 50)
                 {
                     row.Cells["Alerta"].Value = "● Bajo";
                     row.Cells["Alerta"].Style.ForeColor = Color.Orange;
                     row.Cells["Alerta"].Style.Font = new Font(dgvInventario.Font, FontStyle.Bold);
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 220);
                 }
                 else
                 {
                     row.Cells["Alerta"].Value = "● Normal";
                     row.Cells["Alerta"].Style.ForeColor = Color.Green;
                     row.Cells["Alerta"].Style.Font = new Font(dgvInventario.Font, FontStyle.Bold);
+                    row.DefaultCellStyle.BackColor = Color.White;
                 }
             }
         }
@@ -205,6 +215,11 @@ namespace TRAMADE
             dgvInventario.DataSource = dt;
             dgvInventario.Columns["imagen_producto"].Visible = false;
             AplicarAlertas();
+
+            if (dgvInventario.Rows.Count == 0)
+            {
+                clsMensajes.Aviso("No se encontraron resultados para: " + txtBuscar.Text);
+            }
         }
 
         private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)

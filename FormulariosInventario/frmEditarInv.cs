@@ -38,7 +38,7 @@ namespace TRAMADE
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                cmbProveedor.Items.Add(dr["nombre_comercial_proveedor"].ToString());
+                cmbProveedorNuevo.Items.Add(dr["nombre_comercial_proveedor"].ToString());
             }
             obj.Cerrar();
         }
@@ -85,7 +85,6 @@ namespace TRAMADE
                 txtPrecioCosto.Text = dr["Costo"].ToString();
                 txtStock.Text = dr["Stock"].ToString();
                 cmbCategoria.SelectedItem = dr["Categoría"].ToString();
-                cmbProveedor.SelectedItem = dr["Proveedor"].ToString();
                 cmbSucursal.SelectedItem = dr["Sucursal"].ToString();
 
                 object imagenObj = dr["imagen_producto"];
@@ -98,6 +97,29 @@ namespace TRAMADE
                         imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
                     }
                 }
+            }
+            dr.Close();
+            obj.Cerrar();
+
+            // Cargar proveedores del producto en el ListBox
+            CargarProveedoresDelProducto();
+        }
+
+        private void CargarProveedoresDelProducto()
+        {
+            lstProveedores.Items.Clear();
+            clsConexion obj = new clsConexion();
+            obj.Abrir();
+
+            SqlCommand cmd = new SqlCommand("SELECT PV.nombre_comercial_proveedor FROM PROVEEDOR PV " +
+                                            "INNER JOIN PRODUCTO_PROVEEDOR PP ON PV.id_proveedor = PP.id_proveedor " +
+                                            "WHERE PP.id_producto = @id", obj.SqlC);
+            cmd.Parameters.AddWithValue("@id", _idProducto);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                lstProveedores.Items.Add(dr["nombre_comercial_proveedor"].ToString());
             }
 
             obj.Cerrar();
@@ -129,7 +151,7 @@ namespace TRAMADE
             if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStock))
                 return;
 
-            if (!clsValidaciones.ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal))
+            if (!clsValidaciones.ValidarComboBox(cmbCategoria, cmbSucursal))
                 return;
 
             if (!clsValidaciones.ValidarDecimal(txtPrecio))
@@ -141,23 +163,33 @@ namespace TRAMADE
             if (!clsValidaciones.ValidarEntero(txtStock))
                 return;
 
+            if (!clsValidaciones.ValidarCostoMenorPrecio(txtPrecio, txtPrecioCosto))
+                return;
+
+            if (!clsValidaciones.ValidarPositivo(txtPrecio))
+                return;
+
+            if (!clsValidaciones.ValidarPositivo(txtPrecioCosto))
+                return;
+
+            if (!clsValidaciones.ValidarPositivo(txtStock))
+                return;
+
+            if (lstProveedores.Items.Count == 0)
+            {
+                clsMensajes.Aviso("El producto debe tener al menos un proveedor");
+                return;
+            }
+
             clsConexion obj = new clsConexion();
             obj.Abrir();
 
             try
             {
-                SqlCommand cmdCat = new SqlCommand("SELECT id_categoria FROM CATEGORIA WHERE nombre_categoria = @nombre", obj.SqlC);
-                cmdCat.Parameters.AddWithValue("@nombre", cmbCategoria.SelectedItem.ToString());
-                int idCategoria = (int)cmdCat.ExecuteScalar();
+                int idCategoria = clsProductoDAL.ObtenerIdCategoria(obj.SqlC, cmbCategoria.SelectedItem.ToString());
+                int idSucursal = clsProductoDAL.ObtenerIdSucursal(obj.SqlC, cmbSucursal.SelectedItem.ToString());
 
-                SqlCommand cmdProv = new SqlCommand("SELECT id_proveedor FROM PROVEEDOR WHERE nombre_comercial_proveedor = @nombre", obj.SqlC);
-                cmdProv.Parameters.AddWithValue("@nombre", cmbProveedor.SelectedItem.ToString());
-                int idProveedor = (int)cmdProv.ExecuteScalar();
-
-                SqlCommand cmdSuc = new SqlCommand("SELECT id_sucursal FROM SUCURSAL WHERE nombre_sucursal = @nombre", obj.SqlC);
-                cmdSuc.Parameters.AddWithValue("@nombre", cmbSucursal.SelectedItem.ToString());
-                int idSucursal = (int)cmdSuc.ExecuteScalar();
-
+                // UPDATE PRODUCTO
                 SqlCommand cmdProd = new SqlCommand("UPDATE PRODUCTO SET nombre_producto = @nombre, id_categoria = @idCat, " +
                                                     "precio_unitario = @precio, precio_costo = @costo, imagen_producto = @imagen WHERE id_producto = @id", obj.SqlC);
                 cmdProd.Parameters.AddWithValue("@nombre", txtNombreProducto.Text);
@@ -171,11 +203,7 @@ namespace TRAMADE
                 cmdProd.Parameters.AddWithValue("@id", _idProducto);
                 cmdProd.ExecuteNonQuery();
 
-                SqlCommand cmdPP = new SqlCommand("UPDATE PRODUCTO_PROVEEDOR SET id_proveedor = @idProv WHERE id_producto = @id", obj.SqlC);
-                cmdPP.Parameters.AddWithValue("@idProv", idProveedor);
-                cmdPP.Parameters.AddWithValue("@id", _idProducto);
-                cmdPP.ExecuteNonQuery();
-
+                // UPDATE PRODUCTO_SUCURSAL
                 SqlCommand cmdPS = new SqlCommand("UPDATE PRODUCTO_SUCURSAL SET id_sucursal = @idSuc, cantidad_stock = @stock WHERE id_producto = @id", obj.SqlC);
                 cmdPS.Parameters.AddWithValue("@idSuc", idSucursal);
                 cmdPS.Parameters.AddWithValue("@stock", int.Parse(txtStock.Text));
@@ -207,6 +235,161 @@ namespace TRAMADE
                 imgProducto.Image = Image.FromFile(openFile.FileName);
                 imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbProveedorNuevo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+            if (cmbProveedorNuevo.SelectedIndex == -1)
+            {
+                clsMensajes.Aviso("Selecciona un proveedor para agregar");
+                return;
+            }
+
+            string nombreProveedor = cmbProveedorNuevo.SelectedItem.ToString();
+
+            if (lstProveedores.Items.Contains(nombreProveedor))
+            {
+                clsMensajes.Aviso("Este proveedor ya está asignado al producto");
+                return;
+            }
+
+            clsConexion obj = new clsConexion();
+            obj.Abrir();
+
+            try
+            {
+                int idProveedor = clsProductoDAL.ObtenerIdProveedor(obj.SqlC, nombreProveedor);
+                SqlCommand cmd = new SqlCommand("INSERT INTO PRODUCTO_PROVEEDOR (id_producto, id_proveedor) VALUES (@idProd, @idProv)", obj.SqlC);
+                cmd.Parameters.AddWithValue("@idProd", _idProducto);
+                cmd.Parameters.AddWithValue("@idProv", idProveedor);
+                cmd.ExecuteNonQuery();
+
+                clsMensajes.Exito("Proveedor agregado correctamente");
+                CargarProveedoresDelProducto();
+            }
+            catch (Exception ex)
+            {
+                clsMensajes.Error("Error: " + ex.Message);
+            }
+            finally
+            {
+                obj.Cerrar();
+            }
+        }
+
+        private void btnQuitarProveedor_Click(object sender, EventArgs e)
+        {
+            if (lstProveedores.SelectedIndex == -1)
+            {
+                clsMensajes.Aviso("Selecciona un proveedor para quitar");
+                return;
+            }
+
+            if (lstProveedores.Items.Count == 1)
+            {
+                clsMensajes.Aviso("El producto debe tener al menos un proveedor");
+                return;
+            }
+
+            if (clsMensajes.Confirmar("¿Estás seguro que deseas quitar este proveedor?"))
+            {
+                string nombreProveedor = lstProveedores.SelectedItem.ToString();
+                clsConexion obj = new clsConexion();
+                obj.Abrir();
+
+                try
+                {
+                    int idProveedor = clsProductoDAL.ObtenerIdProveedor(obj.SqlC, nombreProveedor);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM PRODUCTO_PROVEEDOR WHERE id_producto = @idProd AND id_proveedor = @idProv", obj.SqlC);
+                    cmd.Parameters.AddWithValue("@idProd", _idProducto);
+                    cmd.Parameters.AddWithValue("@idProv", idProveedor);
+                    cmd.ExecuteNonQuery();
+
+                    clsMensajes.Exito("Proveedor quitado correctamente");
+                    CargarProveedoresDelProducto();
+                }
+                catch (Exception ex)
+                {
+                    clsMensajes.Error("Error: " + ex.Message);
+                }
+                finally
+                {
+                    obj.Cerrar();
+                }
+            }
+        }
+
+        private void lstProveedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstProveedores.SelectedIndex == -1) return;
+
+            string nombreProveedor = lstProveedores.SelectedItem.ToString();
+
+            clsConexion obj = new clsConexion();
+            obj.Abrir();
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM VistaProductosDetalle WHERE ID = @id AND Proveedor = @proveedor", obj.SqlC);
+            cmd.Parameters.AddWithValue("@id", _idProducto);
+            cmd.Parameters.AddWithValue("@proveedor", nombreProveedor);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                txtNombreProducto.Text = dr["Nombre"].ToString();
+                txtPrecio.Text = dr["Precio Uni"].ToString();
+                txtPrecioCosto.Text = dr["Costo"].ToString();
+                txtStock.Text = dr["Stock"].ToString();
+                cmbCategoria.SelectedItem = dr["Categoría"].ToString();
+                cmbSucursal.SelectedItem = dr["Sucursal"].ToString();
+
+                object imagenObj = dr["imagen_producto"];
+                if (imagenObj != null && imagenObj != DBNull.Value)
+                {
+                    imagenBytes = (byte[])imagenObj;
+                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBytes))
+                    {
+                        imgProducto.Image = Image.FromStream(ms);
+                        imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+            }
+
+            obj.Cerrar();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,50 @@ namespace TRAMADE.ClasesInventario
             if (!int.TryParse(campo.Text, out resultado))
             {
                 MessageBox.Show("El campo '" + campo.Name + "' debe ser un número entero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                campo.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidarCostoMenorPrecio(TextBox txtPrecio, TextBox txtCosto)
+        {
+            decimal precio, costo;
+            decimal.TryParse(txtPrecio.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out precio);
+            decimal.TryParse(txtCosto.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out costo);
+
+            if (costo >= precio)
+            {
+                MessageBox.Show("El precio de costo no puede ser mayor o igual al precio de venta", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCosto.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidarProductoExiste(string nombreProducto)
+        {
+            clsConexion obj = new clsConexion();
+            obj.Abrir();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM PRODUCTO WHERE nombre_producto = @nombre", obj.SqlC);
+            cmd.Parameters.AddWithValue("@nombre", nombreProducto);
+            int count = (int)cmd.ExecuteScalar();
+            obj.Cerrar();
+
+            if (count > 0)
+            {
+                MessageBox.Show("El producto '" + nombreProducto + "' ya existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        public static bool ValidarPositivo(TextBox campo)
+        {
+            decimal resultado;
+            decimal.TryParse(campo.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out resultado);
+            if (resultado <= 0)
+            {
+                MessageBox.Show("El campo '" + campo.Name + "' debe ser mayor a cero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 campo.Focus();
                 return false;
             }

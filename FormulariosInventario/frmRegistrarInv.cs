@@ -89,6 +89,21 @@ namespace TRAMADE
             if (!clsValidaciones.ValidarEntero(txtStockInicial))
                 return;
 
+            if (!clsValidaciones.ValidarCostoMenorPrecio(txtPrecio, txtPrecioCosto))
+                return;
+
+            if (!clsValidaciones.ValidarProductoExiste(txtNombreProducto.Text))
+                return;
+
+            if (!clsValidaciones.ValidarPositivo(txtPrecio))
+                return;
+
+            if (!clsValidaciones.ValidarPositivo(txtPrecioCosto))
+                return;
+
+            if (!clsValidaciones.ValidarPositivo(txtStockInicial))
+                return;
+
             clsConexion obj = new clsConexion();
             obj.Abrir();
 
