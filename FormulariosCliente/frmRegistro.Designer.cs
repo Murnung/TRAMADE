@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
             this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             this.cmbCiudad = new Krypton.Toolkit.KryptonComboBox();
             this.cmbDepartamento = new Krypton.Toolkit.KryptonComboBox();
-            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
@@ -64,7 +64,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
+            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -80,12 +80,12 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
             this.kryptonGroup1.Panel.Controls.Add(this.txtRTN);
             this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
             this.kryptonGroup1.Panel.Controls.Add(this.btnRegresar);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbCiudad);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbDepartamento);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
             this.kryptonGroup1.Panel.Controls.Add(this.label17);
             this.kryptonGroup1.Panel.Controls.Add(this.label8);
             this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
@@ -120,6 +120,20 @@
             this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 0;
+            // 
+            // txtRTN
+            // 
+            this.txtRTN.Enabled = false;
+            this.txtRTN.Location = new System.Drawing.Point(543, 206);
+            this.txtRTN.MaxLength = 14;
+            this.txtRTN.Name = "txtRTN";
+            this.txtRTN.ShortcutsEnabled = false;
+            this.txtRTN.Size = new System.Drawing.Size(147, 35);
+            this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtRTN.StateActive.Border.Rounding = 10F;
+            this.txtRTN.StateActive.Border.Width = 4;
+            this.txtRTN.TabIndex = 76;
+            this.txtRTN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // txtTelefono
             // 
@@ -196,17 +210,6 @@
             this.cmbDepartamento.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbDepartamento.TabIndex = 31;
             this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Enabled = false;
-            this.txtDNI.Location = new System.Drawing.Point(543, 256);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(147, 35);
-            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtDNI.StateActive.Border.Rounding = 10F;
-            this.txtDNI.StateActive.Border.Width = 4;
-            this.txtDNI.TabIndex = 30;
             // 
             // label17
             // 
@@ -607,19 +610,19 @@
             this.label32.TabIndex = 1;
             this.label32.Text = "TMSS.SW";
             // 
-            // txtRTN
+            // txtDNI
             // 
-            this.txtRTN.Enabled = false;
-            this.txtRTN.Location = new System.Drawing.Point(543, 206);
-            this.txtRTN.MaxLength = 14;
-            this.txtRTN.Name = "txtRTN";
-            this.txtRTN.ShortcutsEnabled = false;
-            this.txtRTN.Size = new System.Drawing.Size(147, 35);
-            this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtRTN.StateActive.Border.Rounding = 10F;
-            this.txtRTN.StateActive.Border.Width = 4;
-            this.txtRTN.TabIndex = 76;
-            this.txtRTN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
+            this.txtDNI.Enabled = false;
+            this.txtDNI.Location = new System.Drawing.Point(543, 256);
+            this.txtDNI.MaxLength = 13;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.ShortcutsEnabled = false;
+            this.txtDNI.Size = new System.Drawing.Size(147, 35);
+            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtDNI.StateActive.Border.Rounding = 10F;
+            this.txtDNI.StateActive.Border.Width = 4;
+            this.txtDNI.TabIndex = 77;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // frmRegistro
             // 
@@ -680,11 +683,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label17;
-        private Krypton.Toolkit.KryptonTextBox txtDNI;
         private Krypton.Toolkit.KryptonComboBox cmbDepartamento;
         private Krypton.Toolkit.KryptonComboBox cmbCiudad;
         private Krypton.Toolkit.KryptonButton btnRegresar;
         private Krypton.Toolkit.KryptonTextBox txtTelefono;
         private Krypton.Toolkit.KryptonTextBox txtRTN;
+        private Krypton.Toolkit.KryptonTextBox txtDNI;
     }
 }
