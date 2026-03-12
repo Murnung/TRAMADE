@@ -49,10 +49,7 @@ namespace TRAMADE
 
         }
 
-        private void kryptonLabel2_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void label15_Click(object sender, EventArgs e)
         {
@@ -205,11 +202,7 @@ namespace TRAMADE
             }
         }
 
-        private void txtRTN_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void cmbCiudad_SelectedIndexChanged(object sender, EventArgs e)
         {
 
