@@ -33,9 +33,9 @@
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
             this.btnAutorizar = new Krypton.Toolkit.KryptonButton();
             this.btnSeguimiento = new Krypton.Toolkit.KryptonButton();
-            this.dvgUltimos = new Krypton.Toolkit.KryptonDataGridView();
             this.label18 = new System.Windows.Forms.Label();
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
+            this.dvgUltimos = new Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dvgUltimos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,36 +190,6 @@
             this.btnSeguimiento.Values.Text = "SEGUIMIENTO DE CLIENTE";
             this.btnSeguimiento.Click += new System.EventHandler(this.btnSeguimiento_Click);
             // 
-            // dvgUltimos
-            // 
-            this.dvgUltimos.AllowUserToAddRows = false;
-            this.dvgUltimos.AllowUserToDeleteRows = false;
-            this.dvgUltimos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dvgUltimos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dvgUltimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgUltimos.Location = new System.Drawing.Point(117, 274);
-            this.dvgUltimos.Name = "dvgUltimos";
-            this.dvgUltimos.ReadOnly = true;
-            this.dvgUltimos.Size = new System.Drawing.Size(772, 286);
-            this.dvgUltimos.StateCommon.Background.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.dvgUltimos.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.White;
-            this.dvgUltimos.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.White;
-            this.dvgUltimos.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgUltimos.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgUltimos.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgUltimos.StateCommon.HeaderColumn.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dvgUltimos.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dvgUltimos.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dvgUltimos.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.White;
-            this.dvgUltimos.StateCommon.HeaderRow.Border.Color2 = System.Drawing.Color.White;
-            this.dvgUltimos.TabIndex = 31;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -261,6 +231,28 @@
             this.btnRefrescar.Values.Text = "REFRESCAR";
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
+            // dvgUltimos
+            // 
+            this.dvgUltimos.AllowUserToAddRows = false;
+            this.dvgUltimos.AllowUserToDeleteRows = false;
+            this.dvgUltimos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dvgUltimos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dvgUltimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgUltimos.Location = new System.Drawing.Point(84, 274);
+            this.dvgUltimos.Name = "dvgUltimos";
+            this.dvgUltimos.ReadOnly = true;
+            this.dvgUltimos.Size = new System.Drawing.Size(558, 206);
+            this.dvgUltimos.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dvgUltimos.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dvgUltimos.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dvgUltimos.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dvgUltimos.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dvgUltimos.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
+            this.dvgUltimos.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
+            this.dvgUltimos.TabIndex = 45;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,9 +260,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 588);
             this.ControlBox = false;
+            this.Controls.Add(this.dvgUltimos);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.dvgUltimos);
             this.Controls.Add(this.btnSeguimiento);
             this.Controls.Add(this.btnAutorizar);
             this.Controls.Add(this.btnActualizar);
@@ -291,8 +283,8 @@
         private Krypton.Toolkit.KryptonButton btnActualizar;
         private Krypton.Toolkit.KryptonButton btnAutorizar;
         private Krypton.Toolkit.KryptonButton btnSeguimiento;
-        private Krypton.Toolkit.KryptonDataGridView dvgUltimos;
         private System.Windows.Forms.Label label18;
         private Krypton.Toolkit.KryptonButton btnRefrescar;
+        private Krypton.Toolkit.KryptonDataGridView dvgUltimos;
     }
 }
