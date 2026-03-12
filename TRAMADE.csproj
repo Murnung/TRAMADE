@@ -141,11 +141,11 @@
     <Compile Include="FormularioCliente\frmRegistroNuevo.Designer.cs">
       <DependentUpon>frmRegistroNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioCliente\frmSeguimiento.cs">
+    <Compile Include="FormularioCliente\frmSeguimientoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioCliente\frmSeguimiento.Designer.cs">
-      <DependentUpon>frmSeguimiento.cs</DependentUpon>
+    <Compile Include="FormularioCliente\frmSeguimientoCliente.Designer.cs">
+      <DependentUpon>frmSeguimientoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="FormularioCliente\frmRegistroNuevo.resx">
       <DependentUpon>frmRegistroNuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioCliente\frmSeguimiento.resx">
-      <DependentUpon>frmSeguimiento.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioCliente\frmSeguimientoCliente.resx">
+      <DependentUpon>frmSeguimientoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

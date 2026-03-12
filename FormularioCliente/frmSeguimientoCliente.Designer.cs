@@ -1,6 +1,6 @@
 ﻿namespace TRAMADE
 {
-    partial class frmSeguimiento
+    partial class frmSeguimientoCliente
     {
         /// <summary>
         /// Required designer variable.

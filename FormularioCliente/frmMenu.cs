@@ -49,7 +49,7 @@ namespace TRAMADE
 
         private void btnSeguimiento_Click(object sender, EventArgs e)
         {
-            frmSeguimiento objSegui = new frmSeguimiento();
+            frmSeguimientoCliente objSegui = new frmSeguimientoCliente();
             objSegui.Show();
         }
 

@@ -12,9 +12,9 @@ using TRAMADE.ClasesCliente;
 
 namespace TRAMADE
 {
-    public partial class frmSeguimiento : Form
+    public partial class frmSeguimientoCliente : Form
     {
-        public frmSeguimiento()
+        public frmSeguimientoCliente()
         {
             InitializeComponent();
         }
