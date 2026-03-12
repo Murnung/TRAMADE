@@ -28,14 +28,19 @@ namespace TRAMADE
 
         VideoCapture grabber;
         CascadeClassifier face;
-        // ✅ Umbral muy alto para no rechazar
-        LBPHFaceRecognizer recognizer = new LBPHFaceRecognizer(1, 8, 8, 8, 1000);
+        LBPHFaceRecognizer recognizer = new LBPHFaceRecognizer(1, 8, 8, 8, 120);
+
         List<Mat> imagenesEntrenamiento = new List<Mat>();
         List<int> etiquetasIds = new List<int>();
-        List<string> nombresUsuarios = new List<string>();
+
+        // ✅ Diccionario label → nombre (corrección del bug principal)
+        Dictionary<int, string> mapaLabelNombre = new Dictionary<int, string>();
+
         string nombreReconocido = "";
         bool recognizerEntrenado = false;
         System.Windows.Forms.Timer timerCamara = new System.Windows.Forms.Timer();
+
+        const double UMBRAL = 120.0;
 
         // ── LOGIN ──────────────────────────────────────────────────
         public void login(string usuario, string contraseña)
@@ -43,7 +48,9 @@ namespace TRAMADE
             try
             {
                 conexion.Abrir();
-                string consulta = "SELECT * FROM VistaUsuariosLogin WHERE correo_usuario = @usuario AND password_usuario = @contra";
+                string consulta = "SELECT * FROM VistaUsuariosLogin " +
+                                  "WHERE correo_usuario = @usuario " +
+                                  "AND password_usuario = @contra";
                 SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@contra", contraseña);
@@ -95,8 +102,18 @@ namespace TRAMADE
             {
                 dbc.ObtenerBytesImagen();
 
+                if (dbc.totalUsuarios == 0)
+                {
+                    MessageBox.Show("No hay imágenes registradas en la base de datos.");
+                    return;
+                }
+
                 Dictionary<string, int> mapaUsuarios = new Dictionary<string, int>();
                 int idActual = 0;
+
+                imagenesEntrenamiento.Clear();
+                etiquetasIds.Clear();
+                mapaLabelNombre.Clear();
 
                 for (int i = 0; i < dbc.totalUsuarios; i++)
                 {
@@ -105,23 +122,35 @@ namespace TRAMADE
                     if (!mapaUsuarios.ContainsKey(nombreUsuario))
                     {
                         mapaUsuarios[nombreUsuario] = idActual;
-                        nombresUsuarios.Add(nombreUsuario);
+                        // ✅ Guardar relación label → nombre
+                        mapaLabelNombre[idActual] = nombreUsuario;
                         idActual++;
                     }
 
-                    Bitmap bmp = new Bitmap(dbc.convertirByteAImg(i));
-                    Mat img = new Mat();
-                    Mat gris = new Mat();
-                    CvInvoke.Imdecode(ImageToByteArray(bmp),
-                        ImreadModes.AnyColor, img);
-                    CvInvoke.CvtColor(img, gris, ColorConversion.Bgr2Gray);
-                    CvInvoke.EqualizeHist(gris, gris); // ✅ mismo preprocesamiento que la cámara
-                    CvInvoke.Resize(gris, gris, new System.Drawing.Size(100, 100));
+                    try
+                    {
+                        Bitmap bmp = new Bitmap(dbc.convertirByteAImg(i));
+                        Mat gris = new Mat();
 
-                    imagenesEntrenamiento.Add(gris);
-                    etiquetasIds.Add(mapaUsuarios[nombreUsuario]);
-                    img.Dispose();
-                    bmp.Dispose();
+                        // ✅ Cargar directo en escala de grises
+                        // (las imágenes se guardaron en gris desde frmAgregarUsuario)
+                        CvInvoke.Imdecode(ImageToByteArray(bmp),
+                            ImreadModes.Grayscale, gris);
+
+                        if (gris.IsEmpty)
+                        {
+                            bmp.Dispose();
+                            continue;
+                        }
+
+                        CvInvoke.EqualizeHist(gris, gris);
+                        CvInvoke.Resize(gris, gris, new System.Drawing.Size(100, 100));
+
+                        imagenesEntrenamiento.Add(gris);
+                        etiquetasIds.Add(mapaUsuarios[nombreUsuario]);
+                        bmp.Dispose();
+                    }
+                    catch { }
                 }
 
                 if (imagenesEntrenamiento.Count > 0)
@@ -129,7 +158,13 @@ namespace TRAMADE
                     recognizer.Train(imagenesEntrenamiento.ToArray(),
                         etiquetasIds.ToArray());
                     recognizerEntrenado = true;
-                    MessageBox.Show($"Entrenamiento OK: {imagenesEntrenamiento.Count} imágenes, {nombresUsuarios.Count} usuarios");
+                    MessageBox.Show(
+                        $"Entrenamiento OK: {imagenesEntrenamiento.Count} imágenes, " +
+                        $"{mapaLabelNombre.Count} usuarios registrados.");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo entrenar: ninguna imagen es válida.");
                 }
             }
             catch (Exception ex)
@@ -191,32 +226,44 @@ namespace TRAMADE
                             recognizer.Predict(rostro);
                         rostro.Dispose();
 
-                        // ── TEMPORAL: ver distancia ──────────────
-                        lblEstado.ForeColor = Color.Orange;
-                        lblEstado.Text = $"Dist: {resultado.Distance:F0} Label: {resultado.Label}";
-                        // ─────────────────────────────────────────
-
-                        // ✅ Umbral ajustado a 200
-                        if (resultado.Distance < 150)
+                        // ✅ Lookup seguro por diccionario + umbral consistente
+                        if (resultado.Distance < UMBRAL
+                            && mapaLabelNombre.ContainsKey(resultado.Label))
                         {
-                            nombreReconocido = nombresUsuarios[resultado.Label];
+                            nombreReconocido = mapaLabelNombre[resultado.Label];
+
                             CvInvoke.PutText(frame, nombreReconocido,
                                 new System.Drawing.Point(r.X, r.Y - 5),
                                 FontFace.HersheyTriplex, 0.5,
                                 new MCvScalar(0, 255, 0), 1);
+
+                            lblEstado.ForeColor = Color.Green;
+                            lblEstado.Text =
+                                $"✔ {nombreReconocido}  (dist: {resultado.Distance:F0})";
                         }
                         else
                         {
                             nombreReconocido = "";
+
                             CvInvoke.PutText(frame, "Desconocido",
                                 new System.Drawing.Point(r.X, r.Y - 5),
                                 FontFace.HersheyTriplex, 0.5,
                                 new MCvScalar(0, 0, 255), 1);
+
+                            lblEstado.ForeColor = Color.Red;
+                            lblEstado.Text =
+                                $"✘ Desconocido  (dist: {resultado.Distance:F0})";
                         }
                     }
                 }
 
-                // Mostrar en picCamara
+                if (rostrosDetectados.Length == 0)
+                {
+                    nombreReconocido = "";
+                    lblEstado.ForeColor = Color.Gray;
+                    lblEstado.Text = "Sin rostro detectado";
+                }
+
                 Image<Bgr, byte> imgConvertida = frame.ToImage<Bgr, byte>();
                 Bitmap bitmapFrame = imgConvertida.ToBitmap();
 
@@ -235,7 +282,8 @@ namespace TRAMADE
         // ── BOTÓN INGRESAR ─────────────────────────────────────────
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "" || txtPassword.Text == "")
+            if (txtUsuario.Text == "" || txtUsuario.Text == "Ingrese su usuario" ||
+                txtPassword.Text == "" || txtPassword.Text == "Ingrese su contraseña")
             {
                 MessageBox.Show("Necesita llenar ambos campos", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

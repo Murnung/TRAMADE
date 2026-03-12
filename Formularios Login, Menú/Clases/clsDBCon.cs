@@ -16,7 +16,7 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
         public List<byte[]> rostros = new List<byte[]>();
         public int totalUsuarios;
 
-        // Guarda la imagen facial usando el PA
+        // ── GUARDAR IMAGEN (reemplaza) ─────────────────────────────
         public bool guardarImagen(int idUsuario, byte[] imagen)
         {
             try
@@ -39,16 +39,19 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
             }
         }
 
-        // Carga usuarios activos con imagen facial registrada
+        // ── OBTENER IMÁGENES PARA ENTRENAMIENTO ────────────────────
         public DataTable ObtenerBytesImagen()
         {
             try
             {
                 cn.Abrir();
+                // ✅ ORDER BY para que imágenes del mismo usuario queden juntas
                 string consulta = @"SELECT u.id_usuario, u.nombre_usuario, i.imagen_facial 
-                            FROM IMAGEN_FACIAL i
-                            INNER JOIN USUARIO u ON i.id_usuario = u.id_usuario
-                            WHERE u.id_estado = 1";
+                                    FROM IMAGEN_FACIAL i
+                                    INNER JOIN USUARIO u ON i.id_usuario = u.id_usuario
+                                    WHERE u.id_estado = 1
+                                    ORDER BY u.id_usuario";
+
                 SqlDataAdapter adapter = new SqlDataAdapter(consulta, cn.SqlC);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -77,7 +80,7 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
             }
         }
 
-        // Convierte imagen a bytes y llama al PA
+        // ── CONVERTIR IMAGEN A BINARY ──────────────────────────────
         public void convertirImgABinary(int idUsuario, Image img)
         {
             using (Bitmap bmp = new Bitmap(img))
@@ -88,14 +91,14 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
             }
         }
 
-        // Convierte bytes de BD a Image
+        // ── CONVERTIR BYTES A IMAGE ────────────────────────────────
         public Image convertirByteAImg(int con)
         {
             MemoryStream ms = new MemoryStream(rostros[con]);
             return Image.FromStream(ms);
         }
 
-        // Registra inicio de sesión
+        // ── REGISTRAR INICIO DE SESIÓN ─────────────────────────────
         public void registrarInicioSesion(int idUsuario)
         {
             try
@@ -116,13 +119,16 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
                 cn.Cerrar();
             }
         }
-        //llenar combo box
-        internal static void llenarComboUsuarios(Krypton.Toolkit.KryptonComboBox cmb, clsConexion conexion)
+
+        // ── LLENAR COMBO USUARIOS ──────────────────────────────────
+        internal static void llenarComboUsuarios(Krypton.Toolkit.KryptonComboBox cmb,
+            clsConexion conexion)
         {
             try
             {
                 conexion.Abrir();
-                string consulta = "SELECT id_usuario, nombre_usuario FROM USUARIO WHERE id_estado = 1";
+                string consulta = "SELECT id_usuario, nombre_usuario " +
+                                  "FROM USUARIO WHERE id_estado = 1";
                 SqlDataAdapter adapter = new SqlDataAdapter(consulta, conexion.SqlC);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -142,7 +148,7 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
             }
         }
 
-        // Insertar imagen adicional (no reemplaza, agrega)
+        // ── INSERTAR IMAGEN FACIAL (agrega, no reemplaza) ──────────
         public bool insertarImagenFacial(int idUsuario, byte[] imagen)
         {
             try
@@ -158,6 +164,28 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
             catch (Exception ex)
             {
                 throw new Exception("Error al insertar imagen: " + ex.Message);
+            }
+            finally
+            {
+                cn.Cerrar();
+            }
+        }
+
+        // ── ELIMINAR IMÁGENES DE UN USUARIO ───────────────────────
+        public bool eliminarImagenesUsuario(int idUsuario)
+        {
+            try
+            {
+                cn.Abrir();
+                SqlCommand comando = new SqlCommand("PA_ELIMINAR_IMAGENES_USUARIO", cn.SqlC);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id_usuario", idUsuario);
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar imágenes: " + ex.Message);
             }
             finally
             {

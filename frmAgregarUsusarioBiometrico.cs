@@ -42,10 +42,16 @@ namespace TRAMADE
         {
             try
             {
-                detector = new CascadeClassifier(
-                    Path.Combine(Application.StartupPath,
-                    "haarcascade_frontalface_default.xml"));
+                string xmlPath = Path.Combine(Application.StartupPath,
+                    "haarcascade_frontalface_default.xml");
 
+                if (!File.Exists(xmlPath))
+                {
+                    MessageBox.Show("No se encontró el clasificador: " + xmlPath);
+                    return;
+                }
+
+                detector = new CascadeClassifier(xmlPath);
                 grabber = new VideoCapture(0);
 
                 if (!grabber.IsOpened)
@@ -85,13 +91,12 @@ namespace TRAMADE
                 foreach (Rectangle r in rostros)
                     CvInvoke.Rectangle(frame, r, new MCvScalar(0, 255, 0), 2);
 
-                // Captura automática si está activa
+                // ✅ Pasar gris + rectángulo del rostro (NO el frame completo)
                 if (capturandoAuto && rostroDetectado && fotosCapturadas < totalFotos)
                 {
-                    guardarFoto(frame);
+                    guardarFoto(gris, rostros[0]);
                 }
 
-                // Actualizar label
                 if (!capturandoAuto)
                 {
                     if (rostroDetectado)
@@ -108,7 +113,6 @@ namespace TRAMADE
                     }
                 }
 
-                // ✅ Conversión segura
                 Image<Bgr, byte> imgConvertida = frame.ToImage<Bgr, byte>();
                 Bitmap bmp = imgConvertida.ToBitmap();
                 Bitmap copia = (Bitmap)bmp.Clone();
@@ -125,27 +129,32 @@ namespace TRAMADE
             catch { }
         }
 
-        // ── GUARDAR FOTO AUTOMÁTICA ────────────────────────────────
-        private void guardarFoto(Mat frame)
+        // ── GUARDAR FOTO — solo el recorte del rostro ──────────────
+        private void guardarFoto(Mat frameGris, Rectangle rectRostro)
         {
             try
             {
                 int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
 
-                // ✅ Conversión segura
-                Image<Bgr, byte> imgConvertida = frame.ToImage<Bgr, byte>();
-                Bitmap bmp = imgConvertida.ToBitmap();
-                Bitmap copia = (Bitmap)bmp.Clone();
-                bmp.Dispose();
-                imgConvertida.Dispose();
+                // ✅ Recortar solo la cara
+                Mat rostroRecortado = new Mat(frameGris, rectRostro);
+                Mat rostroFinal = new Mat();
+
+                // ✅ Mismo tamaño que usa frmLogin para comparar
+                CvInvoke.Resize(rostroRecortado, rostroFinal,
+                    new System.Drawing.Size(100, 100));
 
                 byte[] imagenBytes;
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    copia.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                    Image<Gray, byte> imgGris = rostroFinal.ToImage<Gray, byte>();
+                    imgGris.ToBitmap().Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
                     imagenBytes = ms.ToArray();
+                    imgGris.Dispose();
                 }
-                copia.Dispose();
+
+                rostroRecortado.Dispose();
+                rostroFinal.Dispose();
 
                 dbc.insertarImagenFacial(idUsuario, imagenBytes);
                 fotosCapturadas++;
@@ -185,6 +194,10 @@ namespace TRAMADE
                     "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            // ✅ Limpiar imágenes anteriores del usuario antes de re-registrar
+            int idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
+            dbc.eliminarImagenesUsuario(idUsuario);
 
             fotosCapturadas = 0;
             capturandoAuto = true;
