@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -102,43 +103,21 @@ namespace TRAMADE
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text) ||
-                string.IsNullOrEmpty(txtFecha.Text) ||
-                string.IsNullOrEmpty(txtContacto.Text) ||
-                string.IsNullOrEmpty(txtTelefono.Text) ||
-                string.IsNullOrEmpty(txtCorreo.Text) ||
-                string.IsNullOrEmpty(txtDireccion.Text))
-                
-            {
-                MessageBox.Show("Por favor, complete todos los campos.");
-                return;
-            }
+            bool esValido = clsValidarClientes.ValidarTodoElFormulario
+                (
+                 txtNombre.Text, txtNombre,
+                 cmbTipoCliente.Text,
+                 txtDNI.Text, txtDNI,
+                 txtRTN.Text, txtRTN,
+                 txtRazonSocial.Text, txtRazonSocial,
+                 txtTelefono.Text, txtTelefono,
+                 txtCorreo.Text, txtCorreo,
+                 txtDireccion.Text, txtDireccion,
+                 cmbDepartamento.SelectedValue,
+                 cmbCiudad.SelectedValue
+                );
 
-            if (cmbTipoCliente.Text == "PERSONA JURÍDICA")
-            {
-                if (string.IsNullOrEmpty(txtRTN.Text) || string.IsNullOrEmpty(txtRazonSocial.Text))
-                {
-                    MessageBox.Show("Para empresas, el RTN y la Razón Social son obligatorios.");
-                    return;
-                }
-            }
-            
-
-            if (cmbTipoCliente.Text == "PERSONA NATURAL")
-            {
-                if (string.IsNullOrEmpty(txtDNI.Text))
-                {
-                    MessageBox.Show("El número de Identidad (DNI) es obligatorio para personas naturales.");
-                    return;
-                }
-            }
-
-            if (cmbDepartamento.SelectedValue == null || cmbCiudad == null)
-            {
-                MessageBox.Show("Por favor, seleccione un departamento y una ciudad.");
-                return;
-            }
-
+            if (!esValido) return;
             try
             {
 
@@ -158,27 +137,25 @@ namespace TRAMADE
                 DateTime fechaActual = DateTime.Now;
                 ObjCliente.setFechaRegistro(fechaActual);
 
-                if (cmbTipoCliente.SelectedValue != null)
-                    ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
+                /* if (cmbTipoCliente.SelectedValue != null)
+                     ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
 
-                if (cmbDepartamento.SelectedValue != null)
-                    ObjCliente.setDepartamento(cmbDepartamento.SelectedValue.ToString());
+                 if (cmbDepartamento.SelectedValue != null)
+                     ObjCliente.setDepartamento(cmbDepartamento.SelectedValue.ToString());
 
-                if (cmbCiudad.SelectedValue != null)
-                    ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());
+                 if (cmbCiudad.SelectedValue != null)
+                     ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());*/
+                ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
+                ObjCliente.setDepartamento(cmbDepartamento.SelectedValue.ToString());
+                ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());
+       
 
-
-                bool Resultado = ObjCliente.InsertarCliente(ObjConexion);
-
-                if (Resultado)
+                if (ObjCliente.InsertarCliente(ObjConexion))
                 {
                     MessageBox.Show("Cliente registrado exitosamente.");
                     btnLimpiar_Click(sender, e);
                 }
-                else
-                {
-                    MessageBox.Show("El Cliente no se pudo registrar.");
-                }
+           
             }
             catch (Exception ex)
             {
@@ -250,11 +227,12 @@ namespace TRAMADE
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
 
+        }
+        private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            clsValidar.SoloNumeros_KeyPress(e);
         }
     }
 }

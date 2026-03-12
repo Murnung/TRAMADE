@@ -41,6 +41,7 @@ namespace TRAMADE
 
                 if (dr.Read())  //Intenta lee una fila
                 {
+                    clsSesion.id_usuario = Convert.ToInt32(dr["id_usuario"]);
                     MessageBox.Show("Inicio de sesion exitoso");
                     frmMenu frm = new frmMenu();
                     frm.ShowDialog();

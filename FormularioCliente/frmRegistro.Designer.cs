@@ -192,6 +192,7 @@
             this.txtDNI.StateActive.Border.Rounding = 10F;
             this.txtDNI.StateActive.Border.Width = 4;
             this.txtDNI.TabIndex = 30;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // label17
             // 
@@ -230,6 +231,7 @@
             this.txtRTN.StateActive.Border.Width = 4;
             this.txtRTN.TabIndex = 27;
             this.txtRTN.TextChanged += new System.EventHandler(this.txtRTN_TextChanged);
+            this.txtRTN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // txtRazonSocial
             // 
@@ -265,7 +267,7 @@
             this.txtTelefono.StateActive.Border.Rounding = 10F;
             this.txtTelefono.StateActive.Border.Width = 4;
             this.txtTelefono.TabIndex = 24;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // label6
             // 
