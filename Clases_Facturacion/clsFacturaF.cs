@@ -54,57 +54,80 @@ namespace TRAMADE
         // Método que guarda TODO en SQL
         public int GuardarFacturaTransaccion()
         {
-            int idGenerado = 0;
-            clsConexion conexion = new clsConexion();
-            conexion.Abrir();
-            SqlTransaction transaccion = conexion.SqlC.BeginTransaction();
+            int idFacturaGenerado = 0;
+            clsConexion objConexion = new clsConexion();
+            objConexion.Abrir();
+
+            SqlTransaction transaccion = null;
 
             try
             {
-                // 1. GUARDAR MAESTRO
-                string qFactura = @"INSERT INTO FACTURA (numero_factura, id_usuario, id_forma_pago, id_cliente, id_estado, id_tipo_factura, fecha_emision, fecha_vencimiento, subtotal, impuesto, total) 
-                                    VALUES (@num, @user, @pago, @cliente, 1, 1, @fechaE, @fechaV, @sub, @isv, @total); 
-                                    SELECT SCOPE_IDENTITY();";
+                transaccion = objConexion.SqlC.BeginTransaction();
 
-                SqlCommand cmdF = new SqlCommand(qFactura, conexion.SqlC, transaccion);
-                cmdF.Parameters.AddWithValue("@num", numero_factura);
-                cmdF.Parameters.AddWithValue("@user", id_usuario);
-                cmdF.Parameters.AddWithValue("@pago", id_forma_pago);
-                cmdF.Parameters.AddWithValue("@cliente", id_cliente);
-                cmdF.Parameters.AddWithValue("@fechaE", fecha_emision);
-                cmdF.Parameters.AddWithValue("@fechaV", fecha_vencimiento);
-                cmdF.Parameters.AddWithValue("@sub", subtotal);
-                cmdF.Parameters.AddWithValue("@isv", impuesto);
-                cmdF.Parameters.AddWithValue("@total", total);
+                // 1. INSERTAR LA FACTURA (Ahora SÍ incluimos el id_tipo_factura = 1)
+                string queryFactura = @"INSERT INTO FACTURA 
+                                      (numero_factura, id_usuario, id_forma_pago, id_cliente, 
+                                       fecha_emision, fecha_vencimiento, subtotal, impuesto, total, id_tipo_factura) 
+                                      VALUES 
+                                      (@num, @user, @pago, @cliente, 
+                                       @emision, @vence, @sub, @imp, @tot, 1);
+                                      SELECT SCOPE_IDENTITY();";
 
-                idGenerado = Convert.ToInt32(cmdF.ExecuteScalar());
+                SqlCommand cmdFactura = new SqlCommand(queryFactura, objConexion.SqlC, transaccion);
+                cmdFactura.Parameters.AddWithValue("@num", numero_factura);
+                cmdFactura.Parameters.AddWithValue("@user", id_usuario);
+                cmdFactura.Parameters.AddWithValue("@pago", id_forma_pago);
+                cmdFactura.Parameters.AddWithValue("@cliente", id_cliente);
+                cmdFactura.Parameters.AddWithValue("@emision", fecha_emision);
+                cmdFactura.Parameters.AddWithValue("@vence", fecha_vencimiento);
+                cmdFactura.Parameters.AddWithValue("@sub", subtotal);
+                cmdFactura.Parameters.AddWithValue("@imp", impuesto);
+                cmdFactura.Parameters.AddWithValue("@tot", total);
 
-                // 2. GUARDAR DETALLE
-                foreach (var item in Detalles)
+                idFacturaGenerado = Convert.ToInt32(cmdFactura.ExecuteScalar());
+
+                // 2. INSERTAR LOS PRODUCTOS Y DESCONTAR INVENTARIO (Detalle)
+                foreach (var detalle in Detalles)
                 {
-                    string qDetalle = "INSERT INTO FACTURA_PRODUCTO (id_factura, id_producto, cantidad) VALUES (@id, @prod, @cant)";
-                    SqlCommand cmdD = new SqlCommand(qDetalle, conexion.SqlC, transaccion);
-                    cmdD.Parameters.AddWithValue("@id", idGenerado);
-                    cmdD.Parameters.AddWithValue("@prod", item.id_producto);
-                    cmdD.Parameters.AddWithValue("@cant", item.cantidad);
-                    cmdD.ExecuteNonQuery();
+                    // A) Insertamos en FACTURA_PRODUCTO
+                    string queryDetalle = @"INSERT INTO FACTURA_PRODUCTO 
+                                          (id_factura, id_producto, cantidad) 
+                                          VALUES (@idFac, @idProd, @cant)";
+
+                    SqlCommand cmdDetalle = new SqlCommand(queryDetalle, objConexion.SqlC, transaccion);
+                    cmdDetalle.Parameters.AddWithValue("@idFac", idFacturaGenerado);
+                    cmdDetalle.Parameters.AddWithValue("@idProd", detalle.id_producto);
+                    cmdDetalle.Parameters.AddWithValue("@cant", detalle.cantidad);
+                    cmdDetalle.ExecuteNonQuery();
+
+                    // B) ¡EL DESCUENTO AUTOMÁTICO! Actualizamos PRODUCTO_SUCURSAL
+                    string queryDescuento = @"UPDATE PRODUCTO_SUCURSAL 
+                                              SET cantidad_stock = cantidad_stock - @cantVendida 
+                                              WHERE id_producto = @idProdDesc";
+
+                    SqlCommand cmdDescuento = new SqlCommand(queryDescuento, objConexion.SqlC, transaccion);
+                    cmdDescuento.Parameters.AddWithValue("@cantVendida", detalle.cantidad);
+                    cmdDescuento.Parameters.AddWithValue("@idProdDesc", detalle.id_producto);
+                    cmdDescuento.ExecuteNonQuery();
                 }
 
-                // Si todo sale bien, confirmamos a la BD
+                // 3. Confirmamos los cambios en la BD
                 transaccion.Commit();
             }
             catch (Exception ex)
             {
-                transaccion.Rollback();
-                throw new Exception("Error al guardar en BD: " + ex.Message);
+                if (transaccion != null)
+                {
+                    transaccion.Rollback();
+                }
+                throw new Exception("Error al guardar factura y descontar stock: " + ex.Message);
             }
             finally
             {
-                conexion.Cerrar();
+                objConexion.Cerrar();
             }
 
-            // Devolvemos el ID de la factura que se acaba de crear
-            return idGenerado;
+            return idFacturaGenerado;
         }
     }
 }

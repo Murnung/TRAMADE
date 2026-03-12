@@ -37,8 +37,8 @@ namespace TRAMADE
                     dgvProductos.Rows[indice].Cells[1].Value = prod.nombre_producto;
                     dgvProductos.Rows[indice].Cells[2].Value = "N/A"; // Tu descripción
 
-                    // AVISO: Cambiá este "100" por prod.existencia_producto cuando lo conectés real a la BD
-                    dgvProductos.Rows[indice].Cells[3].Value = "100";
+                    // MAGIA: Ahora usa el stock real de la tabla PRODUCTO_SUCURSAL
+                    dgvProductos.Rows[indice].Cells[3].Value = prod.existencia_producto.ToString();
 
                     dgvProductos.Rows[indice].Cells[4].Value = prod.precio_unitario.ToString();
 
