@@ -89,21 +89,6 @@ namespace TRAMADE
             if (!clsValidaciones.ValidarEntero(txtStockInicial))
                 return;
 
-            if (!clsValidaciones.ValidarCostoMenorPrecio(txtPrecio, txtPrecioCosto))
-                return;
-
-            if (!clsValidaciones.ValidarProductoExiste(txtNombreProducto.Text))
-                return;
-
-            if (!clsValidaciones.ValidarPositivo(txtPrecio))
-                return;
-
-            if (!clsValidaciones.ValidarPositivo(txtPrecioCosto))
-                return;
-
-            if (!clsValidaciones.ValidarPositivo(txtStockInicial))
-                return;
-
             clsConexion obj = new clsConexion();
             obj.Abrir();
 
@@ -191,6 +176,11 @@ namespace TRAMADE
                 imgProducto.Image = Image.FromFile(openFile.FileName);
                 imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
