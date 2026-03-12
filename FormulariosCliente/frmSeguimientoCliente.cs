@@ -38,7 +38,18 @@ namespace TRAMADE
                 adapter.Fill(dt);
                 dvgSeguimiento.DataSource = dt;
 
-                dvgSeguimiento.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dvgSeguimiento.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                dvgSeguimiento.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dvgSeguimiento.ReadOnly = true;
+                dvgSeguimiento.AllowUserToResizeRows = false;
+                dvgSeguimiento.AllowUserToResizeColumns = false;
+                dvgSeguimiento.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+                dvgSeguimiento.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dvgSeguimiento.EnableHeadersVisualStyles = false;
+                dvgSeguimiento.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+                dvgSeguimiento.DefaultCellStyle.SelectionForeColor = Color.White;
+
+
 
             }
             catch (Exception ex)
@@ -51,19 +62,7 @@ namespace TRAMADE
             }
         }
        
-        private void kryptonLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            DataTable dt = ObjCliente.BuscarCliente(ObjConexion, txtBuscar.Text);
-            if (dt != null)
-            {
-                dvgSeguimiento.DataSource = dt;   
-            }
-        }
+       
 
         private void ActualizarContadores()
         {
@@ -77,7 +76,16 @@ namespace TRAMADE
             }
         }
 
- 
+
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = ObjCliente.BuscarCliente(ObjConexion, txtBuscar.Text);
+            if (dt != null)
+            {
+                dvgSeguimiento.DataSource = dt;
+            }
+        }
 
         private void btnRegresar_Click_1(object sender, EventArgs e)
         {

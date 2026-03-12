@@ -28,16 +28,7 @@ namespace TRAMADE
 
         clsConexion ObjConexion = new clsConexion();
         clsCliente ObjCliente = new clsCliente();
-        public void AgregarConlumnaCheck()
-        {
-            if (dgvAprobacion.Columns.Contains("Seleccionar")) return;
-
-            DataGridViewCheckBoxColumn Chk = new DataGridViewCheckBoxColumn();
-            Chk.HeaderText = "Seleccionar";
-            Chk.Name = "Seleccionar";
-            Chk.Width = 80;
-            dgvAprobacion.Columns.Insert(0, Chk);
-        }
+  
 
         private void recargarClientes()
         {
@@ -49,10 +40,11 @@ namespace TRAMADE
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvAprobacion.DataSource = dt;
+             
                 dgvAprobacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 dgvAprobacion.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-                dgvAprobacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvAprobacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                 dgvAprobacion.AllowUserToResizeRows = false;
                 dgvAprobacion.AllowUserToResizeColumns = false;
@@ -74,31 +66,41 @@ namespace TRAMADE
 
         private void btnAutorizar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dgvAprobacion.Rows)
+            if (dgvAprobacion.SelectedRows.Count > 0)
             {
-                bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
-                if (marcado)
+                foreach (DataGridViewRow fila in dgvAprobacion.SelectedRows)
                 {
                     int idCliente = Convert.ToInt32(fila.Cells["ID Cliente"].Value);
                     ObjCliente.AutorizarCliente(ObjConexion, idCliente);
                 }
+
+                MessageBox.Show("Clientes seleccionados autorizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                recargarClientes();
             }
-            MessageBox.Show("Clientes autorizados correctamente.");
+            else
+            {
+                MessageBox.Show("Por favor, seleccione al menos una fila desde el encabezado (barra izquierda).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             recargarClientes();
         }
 
         private void btnNegar_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dgvAprobacion.Rows)
+            if (dgvAprobacion.SelectedRows.Count > 0)
             {
-                bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
-                if (marcado)
+                foreach (DataGridViewRow fila in dgvAprobacion.SelectedRows)
                 {
                     int idCliente = Convert.ToInt32(fila.Cells["ID Cliente"].Value);
                     ObjCliente.DenegarCliente(ObjConexion, idCliente);
                 }
+
+                MessageBox.Show("Clientes seleccionados autorizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                recargarClientes();
             }
-            MessageBox.Show("Clientes denegados correctamente.");
+            else
+            {
+                MessageBox.Show("Por favor, seleccione al menos una fila desde el encabezado (barra izquierda).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             recargarClientes();
         }
 

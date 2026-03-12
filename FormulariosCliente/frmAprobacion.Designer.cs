@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.dgvAprobacion = new Krypton.Toolkit.KryptonDataGridView();
             this.label18 = new System.Windows.Forms.Label();
             this.btnNegar = new Krypton.Toolkit.KryptonButton();
             this.btnAutorizar = new Krypton.Toolkit.KryptonButton();
@@ -36,7 +37,6 @@
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.btnRegresar = new Krypton.Toolkit.KryptonButton();
-            this.dgvAprobacion = new Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -63,6 +63,27 @@
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 0;
+            // 
+            // dgvAprobacion
+            // 
+            this.dgvAprobacion.AllowUserToAddRows = false;
+            this.dgvAprobacion.AllowUserToDeleteRows = false;
+            this.dgvAprobacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAprobacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAprobacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAprobacion.Location = new System.Drawing.Point(37, 158);
+            this.dgvAprobacion.Name = "dgvAprobacion";
+            this.dgvAprobacion.Size = new System.Drawing.Size(576, 282);
+            this.dgvAprobacion.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
+            this.dgvAprobacion.TabIndex = 44;
             // 
             // label18
             // 
@@ -201,27 +222,6 @@
             this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegresar.Values.Text = "REGRESAR";
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
-            // 
-            // dgvAprobacion
-            // 
-            this.dgvAprobacion.AllowUserToAddRows = false;
-            this.dgvAprobacion.AllowUserToDeleteRows = false;
-            this.dgvAprobacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAprobacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAprobacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAprobacion.Location = new System.Drawing.Point(37, 158);
-            this.dgvAprobacion.Name = "dgvAprobacion";
-            this.dgvAprobacion.Size = new System.Drawing.Size(639, 282);
-            this.dgvAprobacion.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.Background.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
-            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
-            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.TabIndex = 44;
             // 
             // frmAprobacion
             // 
