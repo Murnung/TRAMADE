@@ -143,6 +143,12 @@
     <Compile Include="Formularios Login, Menú\frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregarUsusarioBiometrico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarUsusarioBiometrico.Designer.cs">
+      <DependentUpon>frmAgregarUsusarioBiometrico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
