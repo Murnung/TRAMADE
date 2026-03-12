@@ -55,6 +55,8 @@ namespace TRAMADE
             cmbTipoCliente.SelectedIndex = -1;
             cmbTipoCliente.SelectedItem = null;
             cmbDepartamento.SelectedItem = null;
+            cmbCiudad.DataSource = null;
+            cmbCiudad.Items.Clear();
             txtContacto.Text = "";
             txtTelefono.Text = "";
             txtCorreo.Text = "";
@@ -203,42 +205,29 @@ namespace TRAMADE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-            if (string.IsNullOrEmpty(txtNombre.Text) ||
-                string.IsNullOrEmpty(txtContacto.Text) ||
-                string.IsNullOrEmpty(txtTelefono.Text) ||
-                string.IsNullOrEmpty(txtCorreo.Text) ||
-                string.IsNullOrEmpty(txtDireccion.Text))
+            if (!int.TryParse(txtID.Text, out int idActual))
             {
-                MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("ID de cliente no válido.");
                 return;
             }
 
-           
-            if (cmbTipoCliente.Text == "PERSONA JURÍDICA") 
-            {
-                if (string.IsNullOrEmpty(txtRTN.Text) || string.IsNullOrEmpty(txtRazonSocial.Text))
-                {
-                    MessageBox.Show("Para empresas, el RTN y la Razón Social son obligatorios.");
-                    return;
-                }
-            }
 
-             if (cmbTipoCliente.Text == "PERSONA NATURAL")
-            {
-                if (string.IsNullOrEmpty(txtDNI.Text))
-                {
-                    MessageBox.Show("El número de Identidad (DNI) es obligatorio para personas naturales.");
-                    return;
-                }
-            }
+            bool esValido = clsValidarClientes.ValidarTodoElFormulario
+                (
+                 txtNombre.Text, txtNombre,
+                 cmbTipoCliente.Text,
+                 txtDNI.Text, txtDNI,
+                 txtRTN.Text, txtRTN,
+                 txtRazonSocial.Text, txtRazonSocial,
+                 txtTelefono.Text, txtTelefono,
+                 txtCorreo.Text, txtCorreo,
+                 txtDireccion.Text, txtDireccion,
+                 cmbDepartamento.SelectedValue,
+                 cmbCiudad.SelectedValue,
+                 idActual
+                );
 
-            
-            if (cmbDepartamento.SelectedValue == null || cmbCiudad.SelectedValue == null)
-            {
-                MessageBox.Show("Por favor, seleccione un departamento y una ciudad.");
-                return;
-            }
+            if (!esValido) return;
 
             try
             {
@@ -279,6 +268,12 @@ namespace TRAMADE
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            clsValidar.SoloNumeros_KeyPress(e);
         }
     }
 }

@@ -38,11 +38,8 @@
             this.btnBuscar = new Krypton.Toolkit.KryptonButton();
             this.label8 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
-            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
-            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new Krypton.Toolkit.KryptonButton();
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
@@ -67,6 +64,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
+            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
+            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -82,6 +82,9 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtRTN);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
             this.kryptonGroup1.Panel.Controls.Add(this.btnRegresar);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbTipoCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbCiudad);
@@ -91,11 +94,8 @@
             this.kryptonGroup1.Panel.Controls.Add(this.btnBuscar);
             this.kryptonGroup1.Panel.Controls.Add(this.label8);
             this.kryptonGroup1.Panel.Controls.Add(this.label17);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtRTN);
             this.kryptonGroup1.Panel.Controls.Add(this.label7);
             this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
             this.kryptonGroup1.Panel.Controls.Add(this.label6);
             this.kryptonGroup1.Panel.Controls.Add(this.btnGuardar);
             this.kryptonGroup1.Panel.Controls.Add(this.btnLimpiar);
@@ -274,27 +274,6 @@
             this.label17.TabIndex = 32;
             this.label17.Text = "RTN";
             // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(543, 240);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(180, 35);
-            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtDNI.StateActive.Border.Rounding = 10F;
-            this.txtDNI.StateActive.Border.Width = 4;
-            this.txtDNI.TabIndex = 31;
-            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
-            // 
-            // txtRTN
-            // 
-            this.txtRTN.Location = new System.Drawing.Point(543, 194);
-            this.txtRTN.Name = "txtRTN";
-            this.txtRTN.Size = new System.Drawing.Size(180, 35);
-            this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtRTN.StateActive.Border.Rounding = 10F;
-            this.txtRTN.StateActive.Border.Width = 4;
-            this.txtRTN.TabIndex = 29;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -316,16 +295,6 @@
             this.txtRazonSocial.StateActive.Border.Rounding = 10F;
             this.txtRazonSocial.StateActive.Border.Width = 4;
             this.txtRazonSocial.TabIndex = 27;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 392);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(208, 35);
-            this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtTelefono.StateActive.Border.Rounding = 10F;
-            this.txtTelefono.StateActive.Border.Width = 4;
-            this.txtTelefono.TabIndex = 25;
             // 
             // label6
             // 
@@ -622,6 +591,44 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(161, 392);
+            this.txtTelefono.MaxLength = 8;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ShortcutsEnabled = false;
+            this.txtTelefono.Size = new System.Drawing.Size(208, 35);
+            this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtTelefono.StateActive.Border.Rounding = 10F;
+            this.txtTelefono.StateActive.Border.Width = 4;
+            this.txtTelefono.TabIndex = 43;
+            // 
+            // txtRTN
+            // 
+            this.txtRTN.Enabled = false;
+            this.txtRTN.Location = new System.Drawing.Point(543, 199);
+            this.txtRTN.MaxLength = 14;
+            this.txtRTN.Name = "txtRTN";
+            this.txtRTN.ShortcutsEnabled = false;
+            this.txtRTN.Size = new System.Drawing.Size(180, 35);
+            this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtRTN.StateActive.Border.Rounding = 10F;
+            this.txtRTN.StateActive.Border.Width = 4;
+            this.txtRTN.TabIndex = 44;
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Enabled = false;
+            this.txtDNI.Location = new System.Drawing.Point(543, 247);
+            this.txtDNI.MaxLength = 13;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.ShortcutsEnabled = false;
+            this.txtDNI.Size = new System.Drawing.Size(180, 35);
+            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtDNI.StateActive.Border.Rounding = 10F;
+            this.txtDNI.StateActive.Border.Width = 4;
+            this.txtDNI.TabIndex = 45;
+            // 
             // frmRegistroNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -670,13 +677,10 @@
         private Krypton.Toolkit.KryptonTextBox txtFecha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label16;
-        private Krypton.Toolkit.KryptonTextBox txtTelefono;
         private System.Windows.Forms.Label label6;
         private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
         private System.Windows.Forms.Label label7;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private Krypton.Toolkit.KryptonTextBox txtRTN;
-        private Krypton.Toolkit.KryptonTextBox txtDNI;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label8;
         private Krypton.Toolkit.KryptonTextBox txtBuscar;
@@ -686,5 +690,8 @@
         private Krypton.Toolkit.KryptonComboBox cmbCiudad;
         private Krypton.Toolkit.KryptonComboBox cmbTipoCliente;
         private Krypton.Toolkit.KryptonButton btnRegresar;
+        private Krypton.Toolkit.KryptonTextBox txtTelefono;
+        private Krypton.Toolkit.KryptonTextBox txtRTN;
+        private Krypton.Toolkit.KryptonTextBox txtDNI;
     }
 }

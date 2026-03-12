@@ -114,7 +114,8 @@ namespace TRAMADE
                  txtCorreo.Text, txtCorreo,
                  txtDireccion.Text, txtDireccion,
                  cmbDepartamento.SelectedValue,
-                 cmbCiudad.SelectedValue
+                 cmbCiudad.SelectedValue,
+                 0
                 );
 
             if (!esValido) return;
@@ -139,21 +140,24 @@ namespace TRAMADE
                 ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
                 ObjCliente.setDepartamento(cmbDepartamento.SelectedValue.ToString());
                 ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());
-       
 
-                if (ObjCliente.InsertarCliente(ObjConexion))
+                bool Resultado = ObjCliente.InsertarCliente(ObjConexion);
+                if (Resultado)
                 {
-                    MessageBox.Show("Cliente registrado exitosamente.");
-                    btnLimpiar_Click(sender, e);              
+                    MessageBox.Show("¡Datos del cliente actualizados exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnLimpiar_Click(sender, e);
                 }
-           
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar la información del cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar el cliente: " + ex.Message);
+                MessageBox.Show("Error crítico al actualizar: " + ex.Message, "Error de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            
+
+
         }
 
         private void cmbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)

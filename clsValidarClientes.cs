@@ -47,7 +47,8 @@ namespace TRAMADE
             string tel, Control cTel,
             string correo, Control cCorreo,
             string direccion, Control cDir,
-            object depto, object ciudad
+            object depto, object ciudad,
+            int idActual = 0
             )
             
         {
