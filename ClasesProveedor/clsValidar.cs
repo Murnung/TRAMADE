@@ -290,6 +290,16 @@ namespace TRAMADE
             return valor?.Trim() ?? string.Empty;
         }
 
+        public static bool SoloNumeros_KeyPress(KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return false;
+            }
+            return true;
+        }
+
         // ─── VALIDAR PROVEEDOR COMPLETO ───────────────────────────────
         public static bool ValidarProveedor(
             string nombre, Control ctrlNombre,

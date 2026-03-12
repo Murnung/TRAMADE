@@ -25,11 +25,10 @@ namespace TRAMADE
 
         private void frmRegistro_Load(object sender, EventArgs e)
         {
-            txtNombre.Focus();
             clsCliente.llenarcomboDepartamento(cmbDepartamento, ObjConexion);
             clsCliente.llenarcomboTipoCliente(cmbTipoCliente, ObjConexion);
 
-           
+
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtFecha.ReadOnly = true;
 
@@ -39,6 +38,9 @@ namespace TRAMADE
 
             txtDNI.Enabled = false;
             txtDNI.BackColor = Color.LightGray;
+
+            txtNombre.Focus();
+
 
         }
 
@@ -98,47 +100,27 @@ namespace TRAMADE
             txtRazonSocial.BackColor = Color.LightGray;
 
             txtNombre.Focus();
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text) ||
-                string.IsNullOrEmpty(txtFecha.Text) ||
-                string.IsNullOrEmpty(txtContacto.Text) ||
-                string.IsNullOrEmpty(txtTelefono.Text) ||
-                string.IsNullOrEmpty(txtCorreo.Text) ||
-                string.IsNullOrEmpty(txtDireccion.Text))
-                
-            {
-                MessageBox.Show("Por favor, complete todos los campos.");
-                return;
-            }
+            bool esValido = clsValidarClientes.ValidarTodoElFormulario
+                (
+                 txtNombre.Text, txtNombre,
+                 cmbTipoCliente.Text,
+                 txtDNI.Text, txtDNI,
+                 txtRTN.Text, txtRTN,
+                 txtRazonSocial.Text, txtRazonSocial,
+                 txtTelefono.Text, txtTelefono,
+                 txtCorreo.Text, txtCorreo,
+                 txtDireccion.Text, txtDireccion,
+                 cmbDepartamento.SelectedValue,
+                 cmbCiudad.SelectedValue,
+                 0
+                );
 
-            if (cmbTipoCliente.Text == "PERSONA JURÍDICA")
-            {
-                if (string.IsNullOrEmpty(txtRTN.Text) || string.IsNullOrEmpty(txtRazonSocial.Text))
-                {
-                    MessageBox.Show("Para empresas, el RTN y la Razón Social son obligatorios.");
-                    return;
-                }
-            }
-            
-
-            if (cmbTipoCliente.Text == "PERSONA NATURAL")
-            {
-                if (string.IsNullOrEmpty(txtDNI.Text))
-                {
-                    MessageBox.Show("El número de Identidad (DNI) es obligatorio para personas naturales.");
-                    return;
-                }
-            }
-
-            if (cmbDepartamento.SelectedValue == null || cmbCiudad == null)
-            {
-                MessageBox.Show("Por favor, seleccione un departamento y una ciudad.");
-                return;
-            }
-
+            if (!esValido) return;
             try
             {
 
@@ -146,46 +128,38 @@ namespace TRAMADE
                 ObjCliente.setIdUsuario(clsSesion.id_usuario);
                 ObjCliente.setNombre(txtNombre.Text);
                 ObjCliente.setRazonSocial(txtRazonSocial.Text);
-               
+
                 ObjCliente.setContacto(txtContacto.Text);
                 ObjCliente.setTelefono(txtTelefono.Text);
                 ObjCliente.setCorreo(txtCorreo.Text);
                 ObjCliente.setDireccion(txtDireccion.Text);
 
-             
+
                 ObjCliente.setRTN(txtRTN.Text);
                 ObjCliente.setDNI(txtDNI.Text);
                 DateTime fechaActual = DateTime.Now;
                 ObjCliente.setFechaRegistro(fechaActual);
-
-                if (cmbTipoCliente.SelectedValue != null)
-                    ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
-
-                if (cmbDepartamento.SelectedValue != null)
-                    ObjCliente.setDepartamento(cmbDepartamento.SelectedValue.ToString());
-
-                if (cmbCiudad.SelectedValue != null)
-                    ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());
-
+                ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
+                ObjCliente.setDepartamento(cmbDepartamento.SelectedValue.ToString());
+                ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());
 
                 bool Resultado = ObjCliente.InsertarCliente(ObjConexion);
-
                 if (Resultado)
                 {
-                    MessageBox.Show("Cliente registrado exitosamente.");
+                    MessageBox.Show("¡Datos del cliente actualizados exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnLimpiar_Click(sender, e);
                 }
                 else
                 {
-                    MessageBox.Show("El Cliente no se pudo registrar.");
+                    MessageBox.Show("No se pudo actualizar la información del cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al registrar el cliente: " + ex.Message);
+                MessageBox.Show("Error crítico al actualizar: " + ex.Message, "Error de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            
+
+
         }
 
         private void cmbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -241,9 +215,14 @@ namespace TRAMADE
 
         }
 
-       
+        private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
-        
+            clsValidar.SoloNumeros_KeyPress(e);
+        }
+
+
+
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
