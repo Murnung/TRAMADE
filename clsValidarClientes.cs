@@ -20,12 +20,12 @@ namespace TRAMADE
             if (!columnasPermitidas.Contains(columna))
                 throw new ArgumentException("Nombre de columna no permitido.", nameof(columna));
 
-            clsConexion con = new clsConexion();
+            clsConexion ObjConexion = new clsConexion();
             try
             {
-                con.Abrir();
+                ObjConexion.Abrir();
                 string sql = $"SELECT COUNT(*) FROM CLIENTE WHERE {columna} = @valor";
-                SqlCommand cmd = new SqlCommand(sql, con.SqlC);
+                SqlCommand cmd = new SqlCommand(sql, ObjConexion.SqlC);
                 cmd.Parameters.AddWithValue("@valor", valor.Trim());
                 if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
@@ -35,7 +35,7 @@ namespace TRAMADE
                 }
                 return true;
             }
-            finally { con.Cerrar(); }
+            finally { ObjConexion.Cerrar(); }
         }
 
         public static bool ValidarTodoElFormulario(
@@ -47,18 +47,37 @@ namespace TRAMADE
             string tel, Control cTel,
             string correo, Control cCorreo,
             string direccion, Control cDir,
-            object depto, object ciudad)
+            object depto, object ciudad
+            )
+            
         {
-            // Validaciones básicas de la clase Padre
+            // Nombre
             if (!NullOVacio(nombre, "Nombre", cNombre)) return false;
+            if (!SinEspaciosExtremos(nombre, "Nombre", cNombre)) return false;
+            if (!SinDobleEspacio(nombre, "Nombre", cNombre)) return false;
+            if (!SinSoloEspeciales(nombre, "Nombre", cNombre)) return false;
+            if (!LongitudMinima(nombre, "Nombre", 3, cNombre)) return false;
+            if (!LongitudMaxima(nombre, "Nombre", 50, cNombre)) return false;
+
+            //Dirección
             if (!NullOVacio(direccion, "Dirección", cDir)) return false;
+            if (!SinEspaciosExtremos(direccion, "Dirección", cDir)) return false;
+            if (!SinDobleEspacio(direccion, "Dirección", cDir)) return false;
+            if (!LongitudMinima(direccion, "Dirección", 5, cDir)) return false;
+            // Teléfono
+            if (!NullOVacio(tel, "Teléfono", cTel)) return false;
             if (!Telefono(tel, cTel)) return false;
+            //Correo
+            if (!NullOVacio(correo, "Correo Electrónico", cCorreo)) return false;
+            if (!SinEspaciosExtremos(correo, "Correo Electrónico", cCorreo)) return false;
+            if (!Correo(correo, cCorreo)) return false;
+
 
             // Lógica por Tipo de Cliente
             if (tipo == "PERSONA NATURAL")
             {
                 if (!DNI(dni, cDni)) return false; // Llama a la base
-                if (!ExisteDatoDuplicado(dni, "identidad_cliente", "DNI", cDni)) return false;
+                if (!ExisteDatoDuplicado(dni, "dni_cliente", "DNI", cDni)) return false;
             }
             else
             {

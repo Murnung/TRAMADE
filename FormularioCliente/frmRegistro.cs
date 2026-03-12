@@ -136,15 +136,6 @@ namespace TRAMADE
                 ObjCliente.setDNI(txtDNI.Text);
                 DateTime fechaActual = DateTime.Now;
                 ObjCliente.setFechaRegistro(fechaActual);
-
-                /* if (cmbTipoCliente.SelectedValue != null)
-                     ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
-
-                 if (cmbDepartamento.SelectedValue != null)
-                     ObjCliente.setDepartamento(cmbDepartamento.SelectedValue.ToString());
-
-                 if (cmbCiudad.SelectedValue != null)
-                     ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());*/
                 ObjCliente.setTipoCliente(cmbTipoCliente.SelectedValue.ToString());
                 ObjCliente.setDepartamento(cmbDepartamento.SelectedValue.ToString());
                 ObjCliente.setCiudad(cmbCiudad.SelectedValue.ToString());
@@ -153,7 +144,7 @@ namespace TRAMADE
                 if (ObjCliente.InsertarCliente(ObjConexion))
                 {
                     MessageBox.Show("Cliente registrado exitosamente.");
-                    btnLimpiar_Click(sender, e);
+                    btnLimpiar_Click(sender, e);              
                 }
            
             }
