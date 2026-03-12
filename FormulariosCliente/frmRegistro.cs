@@ -143,7 +143,7 @@ namespace TRAMADE
                 bool Resultado = ObjCliente.InsertarCliente(ObjConexion);
                 if (Resultado)
                 {
-                    MessageBox.Show("¡Datos del cliente actualizados exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("¡Cliente registrado exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnLimpiar_Click(sender, e);
                 }
                 else
