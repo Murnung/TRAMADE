@@ -63,10 +63,10 @@ namespace TRAMADE
         // ─── VALIDAR DNI (13 DÍGITOS) ────────────────────────────────
         public static bool DNI(string valor, Control campo = null)
         {
-            string rtn = valor.Trim();
+            string dni = valor.Trim();
 
             // Solo números y exactamente 13 dígitos
-            if (!Regex.IsMatch(rtn, @"^\d{13}$"))
+            if (!Regex.IsMatch(dni, @"^\d{13}$"))
             {
                 MessageBox.Show("El DNI debe contener solo números y tener exactamente 13 dígitos.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -75,7 +75,7 @@ namespace TRAMADE
             }
 
             // Primeros 4 dígitos: código municipio Honduras (0101 al 1818)
-            int codigoMunicipio = Convert.ToInt32(rtn.Substring(0, 4));
+            int codigoMunicipio = Convert.ToInt32(dni.Substring(0, 4));
             if (codigoMunicipio < 101 || codigoMunicipio > 1899)
             {
                 MessageBox.Show("Los primeros 4 dígitos del DNI deben corresponder a un código de municipio válido (ej: 0101 - 1818).",
@@ -85,7 +85,7 @@ namespace TRAMADE
             }
 
             // Dígitos 5-8: año de registro (1900 al año actual)
-            int anioRegistro = Convert.ToInt32(rtn.Substring(4, 4));
+            int anioRegistro = Convert.ToInt32(dni.Substring(4, 4));
             int anioActual = DateTime.Now.Year;
             if (anioRegistro < 1900 || anioRegistro > anioActual)
             {
@@ -96,10 +96,10 @@ namespace TRAMADE
             }
 
             // Últimos 6 dígitos: secuencial, no puede ser 000000
-            string secuencial = rtn.Substring(8, 6);
+            string secuencial = dni.Substring(8, 5);
             if (secuencial == "000000")
             {
-                MessageBox.Show("Los últimos 6 dígitos del DNI no pueden ser todos ceros.",
+                MessageBox.Show("Los últimos 5 dígitos del DNI no pueden ser todos ceros.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
   
                 return false;
