@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.ClasesInventario;
 
+
 namespace TRAMADE
 {
     public partial class frmInventario : Form
     {
-        string connectionString = "Server=db-tramade;Database=DB_TRAMADE;Integrated Security=True;";
         int paginaActual = 1;
         int registrosPorPagina = 20;
         int totalPaginas;
@@ -132,7 +132,7 @@ namespace TRAMADE
 
         }
 
-        private void kryptonButton2_Click(object sender, EventArgs e)
+        private void btnSiguiente_Click(object sender, EventArgs e)
         {
             if (paginaActual < totalPaginas)
             {
@@ -178,20 +178,24 @@ namespace TRAMADE
                     row.Cells["Alerta"].Value = "● Crítico";
                     row.Cells["Alerta"].Style.ForeColor = Color.Red;
                     row.Cells["Alerta"].Style.Font = new Font(dgvInventario.Font, FontStyle.Bold);
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 220, 220);
                 }
                 else if (stock <= 50)
                 {
                     row.Cells["Alerta"].Value = "● Bajo";
                     row.Cells["Alerta"].Style.ForeColor = Color.Orange;
                     row.Cells["Alerta"].Style.Font = new Font(dgvInventario.Font, FontStyle.Bold);
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 220);
                 }
                 else
                 {
                     row.Cells["Alerta"].Value = "● Normal";
                     row.Cells["Alerta"].Style.ForeColor = Color.Green;
                     row.Cells["Alerta"].Style.Font = new Font(dgvInventario.Font, FontStyle.Bold);
+                    row.DefaultCellStyle.BackColor = Color.White;
                 }
             }
+             
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -205,6 +209,9 @@ namespace TRAMADE
             dgvInventario.DataSource = dt;
             dgvInventario.Columns["imagen_producto"].Visible = false;
             AplicarAlertas();
+
+            if (dgvInventario.Rows.Count == 0)
+                clsMensajes.Aviso("No se encontraron resultados para: " + txtBuscar.Text);
         }
 
         private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
@@ -360,6 +367,11 @@ namespace TRAMADE
                     imgProducto.Image = Properties.Resources.photo_89244411;
                 }
             }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

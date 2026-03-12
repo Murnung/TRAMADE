@@ -1,4 +1,4 @@
-ï»¿namespace TRAMADE
+namespace TRAMADE
 {
     partial class frmInventario
     {
@@ -62,7 +62,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.txtBuscar.BackColor = System.Drawing.Color.Silver;
             this.txtBuscar.Location = new System.Drawing.Point(87, 25);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(193, 22);
@@ -71,7 +71,7 @@
             // 
             // cmbFiltrar
             // 
-            this.cmbFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.cmbFiltrar.BackColor = System.Drawing.Color.Silver;
             this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltrar.FormattingEnabled = true;
             this.cmbFiltrar.Location = new System.Drawing.Point(434, 27);
@@ -86,8 +86,8 @@
             this.btnRegistrar.Location = new System.Drawing.Point(705, 26);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(81, 25);
-            this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.Silver;
             this.btnRegistrar.TabIndex = 2;
             this.btnRegistrar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegistrar.Values.Text = "Registrar";
@@ -99,8 +99,8 @@
             this.btnEditar.Location = new System.Drawing.Point(811, 26);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(81, 25);
-            this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.btnEditar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnEditar.StateCommon.Back.Color2 = System.Drawing.Color.Silver;
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnEditar.Values.Text = "Editar";
@@ -112,8 +112,8 @@
             this.btnEliminar.Location = new System.Drawing.Point(915, 26);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(81, 25);
-            this.btnEliminar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnEliminar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnEliminar.StateCommon.Back.Color1 = System.Drawing.Color.IndianRed;
+            this.btnEliminar.StateCommon.Back.Color2 = System.Drawing.Color.IndianRed;
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnEliminar.Values.Text = "Eliminar";
@@ -136,11 +136,12 @@
             this.btnRegresar.Location = new System.Drawing.Point(50, 484);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(81, 25);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Silver;
             this.btnRegresar.TabIndex = 7;
             this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRegresar.Values.Text = "Regresar";
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnExportarInventario
             // 
@@ -148,8 +149,8 @@
             this.btnExportarInventario.Location = new System.Drawing.Point(858, 485);
             this.btnExportarInventario.Name = "btnExportarInventario";
             this.btnExportarInventario.Size = new System.Drawing.Size(175, 25);
-            this.btnExportarInventario.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.btnExportarInventario.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnExportarInventario.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnExportarInventario.StateCommon.Back.Color2 = System.Drawing.Color.Silver;
             this.btnExportarInventario.TabIndex = 8;
             this.btnExportarInventario.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnExportarInventario.Values.Text = "Exportar Inventario";
@@ -162,7 +163,7 @@
             this.lblPagina.Name = "lblPagina";
             this.lblPagina.Size = new System.Drawing.Size(89, 16);
             this.lblPagina.TabIndex = 9;
-            this.lblPagina.Text = "PÃ¡gina 1 de 2";
+            this.lblPagina.Text = "Página 1 de 2";
             // 
             // label2
             // 
@@ -189,7 +190,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.imgProducto);
             this.panel2.Controls.Add(this.lblNombreProducto);
             this.panel2.Location = new System.Drawing.Point(242, 420);
@@ -212,7 +213,7 @@
             // 
             this.lblNombreProducto.AutoSize = true;
             this.lblNombreProducto.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(141)))), ((int)(((byte)(144)))));
+            this.lblNombreProducto.ForeColor = System.Drawing.Color.Gray;
             this.lblNombreProducto.Location = new System.Drawing.Point(186, 28);
             this.lblNombreProducto.Name = "lblNombreProducto";
             this.lblNombreProducto.Size = new System.Drawing.Size(122, 46);
@@ -230,7 +231,7 @@
             this.btnSiguiente.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnSiguiente.Values.Image = global::TRAMADE.Properties.Resources.right_arrow_17910491;
             this.btnSiguiente.Values.Text = "";
-            this.btnSiguiente.Click += new System.EventHandler(this.kryptonButton2_Click);
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAtras
             // 
@@ -265,7 +266,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.panel1.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 164);
             this.panel1.Name = "panel1";
@@ -278,11 +279,11 @@
             this.btnBuscar.Location = new System.Drawing.Point(293, 25);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(27, 25);
-            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.Silver;
             this.btnBuscar.TabIndex = 18;
             this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnBuscar.Values.Image = global::TRAMADE.Properties.Resources.icons8_bÃºsqueda_50;
+            this.btnBuscar.Values.Image = global::TRAMADE.Properties.Resources.icons8_búsqueda_50;
             this.btnBuscar.Values.Text = "kryptonButton2";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -291,8 +292,8 @@
             this.btnRefrescar.Location = new System.Drawing.Point(332, 25);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(27, 25);
-            this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
-            this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(212)))));
+            this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.Color.Silver;
             this.btnRefrescar.TabIndex = 19;
             this.btnRefrescar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnRefrescar.Values.Image = global::TRAMADE.Properties.Resources.refresh_2805355;
