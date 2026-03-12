@@ -30,14 +30,13 @@
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnBuscar = new Krypton.Toolkit.KryptonButton();
-            this.dgvAprobacion = new Krypton.Toolkit.KryptonDataGridView();
             this.btnNegar = new Krypton.Toolkit.KryptonButton();
             this.btnAutorizar = new Krypton.Toolkit.KryptonButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.btnRegresar = new Krypton.Toolkit.KryptonButton();
+            this.dgvAprobacion = new Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -54,9 +53,8 @@
             // 
             // kryptonGroup1.Panel
             // 
-            this.kryptonGroup1.Panel.Controls.Add(this.label18);
-            this.kryptonGroup1.Panel.Controls.Add(this.btnBuscar);
             this.kryptonGroup1.Panel.Controls.Add(this.dgvAprobacion);
+            this.kryptonGroup1.Panel.Controls.Add(this.label18);
             this.kryptonGroup1.Panel.Controls.Add(this.btnNegar);
             this.kryptonGroup1.Panel.Controls.Add(this.btnAutorizar);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
@@ -74,68 +72,9 @@
             this.label18.ForeColor = System.Drawing.Color.Black;
             this.label18.Location = new System.Drawing.Point(8, 53);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(132, 44);
+            this.label18.Size = new System.Drawing.Size(171, 44);
             this.label18.TabIndex = 39;
-            this.label18.Text = "Búsqueda por ID";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(462, 53);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnBuscar.Size = new System.Drawing.Size(88, 32);
-            this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
-            this.btnBuscar.StateCommon.Border.Rounding = 25F;
-            this.btnBuscar.StateCommon.Border.Width = 1;
-            this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnBuscar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnBuscar.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnBuscar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnBuscar.TabIndex = 37;
-            this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnBuscar.Values.Text = "BUSCAR";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // dgvAprobacion
-            // 
-            this.dgvAprobacion.AllowUserToAddRows = false;
-            this.dgvAprobacion.AllowUserToDeleteRows = false;
-            this.dgvAprobacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAprobacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAprobacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAprobacion.Location = new System.Drawing.Point(38, 158);
-            this.dgvAprobacion.Name = "dgvAprobacion";
-            this.dgvAprobacion.RowHeadersWidth = 51;
-            this.dgvAprobacion.Size = new System.Drawing.Size(638, 282);
-            this.dgvAprobacion.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.dgvAprobacion.StateCommon.DataCell.Back.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.DataCell.Back.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.DataCell.Border.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.DataCell.Border.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dgvAprobacion.StateCommon.HeaderColumn.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dgvAprobacion.StateCommon.HeaderColumn.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            this.dgvAprobacion.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("Segoe MDL2 Assets", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.HeaderRow.Border.Color1 = System.Drawing.Color.White;
-            this.dgvAprobacion.StateCommon.HeaderRow.Border.Color2 = System.Drawing.Color.White;
-            this.dgvAprobacion.TabIndex = 24;
+            this.label18.Text = "Búsqueda por nombre";
             // 
             // btnNegar
             // 
@@ -210,7 +149,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(146, 56);
+            this.txtBuscar.Location = new System.Drawing.Point(185, 56);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(303, 29);
             this.txtBuscar.StateActive.Border.Color1 = System.Drawing.Color.Black;
@@ -218,6 +157,7 @@
             this.txtBuscar.StateActive.Border.Rounding = 5F;
             this.txtBuscar.StateActive.Border.Width = 3;
             this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label32
             // 
@@ -262,6 +202,27 @@
             this.btnRegresar.Values.Text = "REGRESAR";
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
             // 
+            // dgvAprobacion
+            // 
+            this.dgvAprobacion.AllowUserToAddRows = false;
+            this.dgvAprobacion.AllowUserToDeleteRows = false;
+            this.dgvAprobacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAprobacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAprobacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAprobacion.Location = new System.Drawing.Point(37, 158);
+            this.dgvAprobacion.Name = "dgvAprobacion";
+            this.dgvAprobacion.Size = new System.Drawing.Size(639, 282);
+            this.dgvAprobacion.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dgvAprobacion.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
+            this.dgvAprobacion.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
+            this.dgvAprobacion.TabIndex = 44;
+            // 
             // frmAprobacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,9 +257,8 @@
         private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonButton btnAutorizar;
         private Krypton.Toolkit.KryptonButton btnNegar;
-        private Krypton.Toolkit.KryptonDataGridView dgvAprobacion;
-        private Krypton.Toolkit.KryptonButton btnBuscar;
         private System.Windows.Forms.Label label18;
         private Krypton.Toolkit.KryptonButton btnRegresar;
+        private Krypton.Toolkit.KryptonDataGridView dgvAprobacion;
     }
 }

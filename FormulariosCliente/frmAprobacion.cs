@@ -50,7 +50,17 @@ namespace TRAMADE
                 adapter.Fill(dt);
                 dgvAprobacion.DataSource = dt;
                 dgvAprobacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                AgregarConlumnaCheck();
+
+                dgvAprobacion.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                dgvAprobacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                dgvAprobacion.AllowUserToResizeRows = false;
+                dgvAprobacion.AllowUserToResizeColumns = false;
+                dgvAprobacion.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+                dgvAprobacion.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvAprobacion.EnableHeadersVisualStyles = false;
+                dgvAprobacion.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+                dgvAprobacion.DefaultCellStyle.SelectionForeColor = Color.White;
             }
             catch (Exception ex)
             {
@@ -92,22 +102,19 @@ namespace TRAMADE
             recargarClientes();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            DataTable dt = ObjCliente.BuscarCliente(ObjConexion, txtBuscar.Text);
-            if (dt != null)
-            {
-                dgvAprobacion.DataSource = dt;
-                AgregarConlumnaCheck();
-            }
-           
-        }
-
-      
 
         private void btnRegresar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = ObjCliente.BuscarCliente(ObjConexion, txtBuscar.Text);
+            if (dt != null)
+            {
+                dgvAprobacion.DataSource = dt;
+            }
+        }
+
     }
 }
