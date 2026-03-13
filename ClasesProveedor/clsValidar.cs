@@ -708,6 +708,18 @@ namespace TRAMADE
             return true;
         }
 
+        // ─── VALIDAR SIN TRES LETRAS IGUALES SEGUIDAS ─────────────────
+        public static bool SinTresLetrasIguales(string valor, string nombreCampo)
+        {
+            if (Regex.IsMatch(valor.Trim(), @"(.)\1\1"))
+            {
+                MessageBox.Show($"El campo '{nombreCampo}' contiene caracteres repetidos inválidos.",
+                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
         // ─── VALIDAR PROVEEDOR COMPLETO ───────────────────────────────
         public static bool ValidarProveedor(
             string nombre, string razon, string direccion,
@@ -720,6 +732,7 @@ namespace TRAMADE
             if (!SinEspaciosExtremos(nombre, "Nombre Comercial")) return false;
             if (!SinDobleEspacio(nombre, "Nombre Comercial")) return false;
             if (!SinSoloEspeciales(nombre, "Nombre Comercial")) return false;
+            if (!SinTresLetrasIguales(nombre, "Nombre Comercial")) return false;
             if (!LongitudMinima(nombre, "Nombre Comercial", 3)) return false;
             if (!LongitudMaxima(nombre, "Nombre Comercial", 50)) return false;
 
@@ -728,6 +741,7 @@ namespace TRAMADE
             if (!SinEspaciosExtremos(razon, "Razón Social")) return false;
             if (!SinDobleEspacio(razon, "Razón Social")) return false;
             if (!SinSoloEspeciales(razon, "Razón Social")) return false;
+            if (!SinTresLetrasIguales(razon, "Razón Social")) return false;
             if (!LongitudMinima(razon, "Razón Social", 3)) return false;
             if (!LongitudMaxima(razon, "Razón Social", 50)) return false;
 
@@ -735,6 +749,7 @@ namespace TRAMADE
             if (!NullOVacio(direccion, "Dirección")) return false;
             if (!SinEspaciosExtremos(direccion, "Dirección")) return false;
             if (!SinDobleEspacio(direccion, "Dirección")) return false;
+            if (!SinTresLetrasIguales(direccion, "Dirección")) return false;
             if (!LongitudMinima(direccion, "Dirección", 5)) return false;
 
             // ─── RTN ──────────────────────────────────────────────────
