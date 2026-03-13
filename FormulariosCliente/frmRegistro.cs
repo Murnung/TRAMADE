@@ -220,6 +220,10 @@ namespace TRAMADE
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+            frmMenu objMenu = new frmMenu();
+            objMenu.recargarGraficaEstadoCli();
+            objMenu.recargarGraficaDepa();
+            objMenu.recargarClientes();
         }
     }
 }

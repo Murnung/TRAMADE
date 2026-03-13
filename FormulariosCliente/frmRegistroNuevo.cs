@@ -272,6 +272,10 @@ namespace TRAMADE
         private void btnRegresar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+            frmMenu objMenu = new frmMenu();
+            objMenu.recargarGraficaEstadoCli();
+            objMenu.recargarGraficaDepa();
+            objMenu.recargarClientes();
         }
 
         private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)

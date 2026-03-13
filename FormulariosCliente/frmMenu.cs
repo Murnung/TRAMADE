@@ -29,7 +29,7 @@ namespace TRAMADE
         private void frmMenu_Load(object sender, EventArgs e)
         {
             recargarClientes();
-            //recargarGraficaEstadoCli();
+            recargarGraficaEstadoCli();
             recargarGraficaDepa();
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace TRAMADE
             objSegui.Show();
         }
 
-        private void recargarClientes()
+        public void recargarClientes()
         {
             try
             {
@@ -88,7 +88,7 @@ namespace TRAMADE
             }
         }
 
-        private void recargarGraficaDepa()
+        public void recargarGraficaDepa()
         {
             try
             {
@@ -131,7 +131,7 @@ namespace TRAMADE
             }
         }
 
-        /*private void recargarGraficaEstadoCli()
+        public void recargarGraficaEstadoCli()
         {
             try
             {
@@ -160,6 +160,7 @@ namespace TRAMADE
 
                 Color verdeActivo = Color.FromArgb(107, 184, 80);
                 Color rojoInactivo = Color.FromArgb(233, 28, 62);
+                Color amarilloPendiente = Color.FromArgb(255, 193, 7);
 
                 foreach (DataRow r in dtEstados.Rows)
                 {
@@ -172,26 +173,34 @@ namespace TRAMADE
                         serie.Points[p].Color = verdeActivo;
                     if (estado.Contains("INACTIVO") || estado.Contains("NEGADO"))
                         serie.Points[p].Color = rojoInactivo;
-
+                    if (estado.Contains("PENDIENTE") || estado.Contains("ESPERA"))
+                    {
+                        serie.Points[p].Color = amarilloPendiente;
+                    }
                     serie.Points[p].Label = "#PERCENT{P0}";
                     serie.Points[p].LegendText = "#VALX";
                     serie.Points[p].LabelForeColor = Color.White;
+                    if (serie.Points[p].Color == rojoInactivo)
+                        serie.Points[p].LabelForeColor = Color.White;
+                    else
+                        serie.Points[p].LabelForeColor = Color.Black;
                 }
 
                 serie["PieLabelStyle"] = "Inside";
                 serie.BorderColor = Color.White;
                 serie.BorderWidth = 2;
+                serie["PieDrawingStyle"] = "SoftEdge";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar gráfica de estados: " + ex.Message);
             }
-        }*/
+        }
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             recargarClientes();
             recargarGraficaDepa();
-            //recargarGraficaEstadoCli();
+            recargarGraficaEstadoCli();
         }
     }
 }

@@ -75,7 +75,7 @@
             this.dgvAprobacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAprobacion.Location = new System.Drawing.Point(37, 158);
             this.dgvAprobacion.Name = "dgvAprobacion";
-            this.dgvAprobacion.Size = new System.Drawing.Size(576, 282);
+            this.dgvAprobacion.Size = new System.Drawing.Size(639, 282);
             this.dgvAprobacion.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvAprobacion.StateCommon.Background.Color2 = System.Drawing.Color.White;
             this.dgvAprobacion.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
