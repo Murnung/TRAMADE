@@ -320,6 +320,7 @@
             this.chtDepas.Legends.Add(legend2);
             this.chtDepas.Location = new System.Drawing.Point(252, 355);
             this.chtDepas.Name = "chtDepas";
+            this.chtDepas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
