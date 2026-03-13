@@ -59,6 +59,9 @@ namespace TRAMADE.Formularios_Login__Menú
         {
             foreach (Control ctrl in controls)
             {
+                // ✅ Ignorar el MdiClient
+                if (ctrl is MdiClient) continue;
+
                 _originalLayout[ctrl] = new ControlInfo
                 {
                     X = ctrl.Location.X,
@@ -67,7 +70,6 @@ namespace TRAMADE.Formularios_Login__Menú
                     Height = ctrl.Size.Height,
                     FontSize = ctrl.Font.Size
                 };
-
                 if (ctrl.HasChildren)
                     SaveLayout(ctrl.Controls);
             }
@@ -77,23 +79,21 @@ namespace TRAMADE.Formularios_Login__Menú
         {
             foreach (Control ctrl in controls)
             {
+                // ✅ Ignorar el MdiClient
+                if (ctrl is MdiClient) continue;
+
                 if (!_originalLayout.TryGetValue(ctrl, out ControlInfo info)) continue;
-
                 ctrl.SuspendLayout();
-
                 ctrl.Location = new Point(
                     (int)(info.X * scaleX),
                     (int)(info.Y * scaleY));
-
                 ctrl.Size = new Size(
                     (int)(info.Width * scaleX),
                     (int)(info.Height * scaleY));
 
-                // Escala la fuente proporcionalmente (usa el menor de los dos factores)
                 float fontScale = Math.Min(scaleX, scaleY);
-                float newSize = Math.Max(5f, info.FontSize * fontScale); // mínimo 5pt
+                float newSize = Math.Max(5f, info.FontSize * fontScale);
                 ctrl.Font = new Font(ctrl.Font.FontFamily, newSize, ctrl.Font.Style);
-
                 ctrl.ResumeLayout();
 
                 if (ctrl.HasChildren)

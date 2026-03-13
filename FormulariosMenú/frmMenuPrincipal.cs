@@ -8,67 +8,95 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.Formularios_Login__Menú;
+using TRAMADE.Formularios_Login__Menú.Clases;
 
 namespace TRAMADE
 {
+
     public partial class frmMenuPrincipal : Form
     {
-
-
-        private readonly ResponsiveFormManager _responsive;
-        private clsVistaGeneral _popup;
-
+        Form1 dashboard;
+        frmCompras compras;
+        frmProveedores proveedores;
+        frmInventario inventario;
+        frmMenu clientes;
+        frmReportes reportes;   
+        frmFacturacion facturacion;
 
 
         public frmMenuPrincipal()
         {
             InitializeComponent();
-            _responsive = new ResponsiveFormManager(this);
-            new clsClientesPanel(lblTotalClientes, pnlBarraFondo, pnlBarraActivos).Cargar();
-
-
+            mdiProp();
         }
 
-        private const int SIDEBAR_COLLAPSED = 85;
-        private const int SIDEBAR_EXPANDED = 245;
-        private const int FORM_ORIGINAL_WIDTH = 1187;
 
         bool sidebarExpand = true;
 
-        private float ScaleX => (float)this.ClientSize.Width / FORM_ORIGINAL_WIDTH;
+        private void mdiProp()
+        {
+            this.SetBevel(false);
+            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.FromArgb(232, 234, 237);
+        }
 
-        private int SidebarCollapsed => (int)(SIDEBAR_COLLAPSED * ScaleX);
-        private int SidebarExpanded => (int)(SIDEBAR_EXPANDED * ScaleX);
 
+        private void CerrarFormulariosHijos()
+        {
+            foreach (Form hijo in this.MdiChildren)
+                hijo.Close();
+        }
+
+        private void AbrirFormulario(Form formulario)
+        {
+            CerrarFormulariosHijos();
+            formulario.MdiParent = this;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Text = "";
+
+            // Forzar que llene todo el área MDI
+            MdiClient mdiArea = Controls.OfType<MdiClient>().FirstOrDefault();
+            if (mdiArea != null)
+            {
+                formulario.Show();
+                formulario.Location = new Point(0, 0);
+                formulario.Size = mdiArea.ClientSize;
+            }
+            else
+            {
+                formulario.WindowState = FormWindowState.Maximized;
+                formulario.Show();
+            }
+        }
 
         private void tmrTransicionLateral_Tick(object sender, EventArgs e)
         {
-            int step = Math.Max(1, (int)(5 * ScaleX));
 
             if (sidebarExpand)
             {
-                flpBarraLateral.Width -= step;
-                if (flpBarraLateral.Width <= SidebarCollapsed)
+                flpBarraLateral.Width -= 5;
+                if (flpBarraLateral.Width <= 50)
                 {
-                    flpBarraLateral.Width = SidebarCollapsed;
                     sidebarExpand = false;
                     tmrTransicionLateral.Stop();
                 }
             }
             else
             {
-                flpBarraLateral.Width += step;
-                if (flpBarraLateral.Width >= SidebarExpanded)
+                flpBarraLateral.Width += 5;
+                if (flpBarraLateral.Width >= 239)
                 {
-                    flpBarraLateral.Width = SidebarExpanded;
                     sidebarExpand = true;
                     tmrTransicionLateral.Stop();
+
+                    pnlDashboard.Width = flpBarraLateral.Width;
+                    pnlClientes.Width = flpBarraLateral.Width;
+                    pnlCompras.Width = flpBarraLateral.Width;
+                    pnlInventario.Width = flpBarraLateral.Width;
+                    pnlProveedores.Width = flpBarraLateral.Width;
+                    pnlReportes.Width = flpBarraLateral.Width;
+                    pnlVentas.Width = flpBarraLateral.Width;
                 }
             }
-
-
-            pnlContenido.Left = flpBarraLateral.Width;
-            pnlContenido.Width = this.ClientSize.Width - flpBarraLateral.Width;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -76,137 +104,78 @@ namespace TRAMADE
             tmrTransicionLateral.Start();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
-        private void kryptonButton2_Click(object sender, EventArgs e)
-        {
+        private void kryptonButton2_Click(object sender, EventArgs e) { }
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void label4_Click(object sender, EventArgs e) { }
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-
-            _responsive.Initialize();
-            _popup = new clsVistaGeneral(this);
-
-            new clsGraficoInventario(chrInventario).Cargar();
-            new clsGraficoTendencia(chrTendencia).Cargar();
-            new clsUltimasCompras(dgvCompras).Cargar();
-            new clsUltimasVentas(dgvVentas).Cargar();
-
-
+            this.WindowState = FormWindowState.Maximized;
+            AbrirFormulario(new Form1());
         }
 
         private void frmMenuPrincipal_SizeChanged(object sender, EventArgs e)
         {
-                _responsive.AdjustLayout();    
-        }
-
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
+            MdiClient mdiArea = Controls.OfType<MdiClient>().FirstOrDefault();
+            if (mdiArea != null)
             {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
+                foreach (Form hijo in MdiChildren)
+                {
+                    hijo.Location = new Point(0, 0);
+                    hijo.Size = mdiArea.ClientSize;
+                }
             }
         }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void AbrirFormulario(Form formulario)
-        {
-            if (pnlContenido.Controls.Count > 0)
-                pnlContenido.Controls[0].Dispose();
-
-            pnlContenido.Controls.Clear();
-
-            formulario.TopLevel = false;
-            formulario.FormBorderStyle = FormBorderStyle.None;
-            formulario.Dock = DockStyle.Fill;
-            pnlContenido.Controls.Add(formulario);
-            formulario.Show();
-        }
-
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            _popup.MostrarProductos(btnProductos);
-        }
-        private void btnVentasRealizadas_Click(object sender, EventArgs e)
-        {
-            _popup.MostrarVentas(btnVentasRealizadas);
-        }
-
-        private void btnComprasRealizadas_Click(object sender, EventArgs e)
-        {
-            _popup.MostrarCompras(btnComprasRealizadas);
-        }
-
-        private void btnProductosAgotados_Click(object sender, EventArgs e)
-        {
-            _popup.MostrarAgotados(btnProductosAgotados);
-        }
-
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-        
+            AbrirFormulario(new Form1());
         }
 
         
+
         private void btnClientes_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new frmMenu());
         }
 
        
+
         private void btnVentas_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new frmFacturacion());
         }
+
+        
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new frmInventario());
         }
 
+        
+
         private void btnCompras_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new frmCompras());
         }
+
+        
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new frmProveedores());
         }
 
+        
 
-        private void btnReportes_click(object sender, EventArgs e)
+        private void btnReportes_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new frmReportes());
         }
 
-        private void pnlContenido_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flpBarraLateral_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
     }
 }

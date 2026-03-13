@@ -46,7 +46,6 @@
             this.cmbFormato = new System.Windows.Forms.ComboBox();
             this.btnDescargar = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlServicios.SuspendLayout();
@@ -242,37 +241,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel1.Controls.Add(this.btnRegresar);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(775, 92);
             this.panel1.TabIndex = 11;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(623, 33);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
-            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
-            this.btnRegresar.OverrideDefault.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.btnRegresar.OverrideDefault.Border.Rounding = 10F;
-            this.btnRegresar.Size = new System.Drawing.Size(131, 35);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
-            this.btnRegresar.StateCommon.Border.Rounding = 10F;
-            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnRegresar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(200)))), ((int)(((byte)(99)))));
-            this.btnRegresar.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(200)))), ((int)(((byte)(99)))));
-            this.btnRegresar.StateNormal.Border.Rounding = 10F;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
-            this.btnRegresar.StateTracking.Border.Rounding = 10F;
-            this.btnRegresar.TabIndex = 10;
-            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "Regresar";
             // 
             // label8
             // 
@@ -288,7 +262,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Tramade_logo_png;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(112, 105);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -301,6 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(774, 689);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDescargar);
             this.Controls.Add(this.cmbFormato);
@@ -344,7 +319,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Krypton.Toolkit.KryptonButton btnRegresar;
         private System.Windows.Forms.ComboBox cmbTipoReporte;
         private System.Windows.Forms.ComboBox cmbSucursal;
     }

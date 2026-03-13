@@ -722,7 +722,9 @@
             this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.kryptonGroup3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFacturacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmFacturacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleFactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup2.Panel)).EndInit();

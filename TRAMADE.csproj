@@ -159,6 +159,10 @@
     <Compile Include="ClasesCompras\clsLlenarListBox.cs" />
     <Compile Include="ClasesCompras\clsLlenarTextoPrecioCosto.cs" />
     <Compile Include="ClasesCompras\clsOperacionesCompra.cs" />
+    <Compile Include="ClasesMenu\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClasesMenu\mdiProperties.cs" />
     <Compile Include="ClasesProveedor\clsDataGridView.cs" />
     <Compile Include="ClasesProveedor\clsProveedores.cs" />
     <Compile Include="ClasesProveedor\clsProveedores_Añadir.cs" />

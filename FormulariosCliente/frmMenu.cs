@@ -18,6 +18,7 @@ namespace TRAMADE
         public frmMenu()
         {
             InitializeComponent();
+            ControlBox = false;
         }
         clsConexion ObjConexion = new clsConexion();
         clsCliente ObjCliente = new clsCliente();
