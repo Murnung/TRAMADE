@@ -45,14 +45,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbFormato = new System.Windows.Forms.ComboBox();
             this.btnDescargar = new Krypton.Toolkit.KryptonButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new Krypton.Toolkit.KryptonButton();
             this.pnlServicios.SuspendLayout();
             this.pnlReportes.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlServicios
@@ -68,16 +63,16 @@
             this.pnlServicios.Controls.Add(this.label4);
             this.pnlServicios.Controls.Add(this.label3);
             this.pnlServicios.Controls.Add(this.label1);
-            this.pnlServicios.Location = new System.Drawing.Point(75, 116);
+            this.pnlServicios.Location = new System.Drawing.Point(30, 38);
             this.pnlServicios.Name = "pnlServicios";
-            this.pnlServicios.Size = new System.Drawing.Size(608, 251);
+            this.pnlServicios.Size = new System.Drawing.Size(697, 251);
             this.pnlServicios.TabIndex = 0;
             // 
             // cmbSucursal
             // 
             this.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSucursal.FormattingEnabled = true;
-            this.cmbSucursal.Location = new System.Drawing.Point(440, 75);
+            this.cmbSucursal.Location = new System.Drawing.Point(458, 72);
             this.cmbSucursal.Name = "cmbSucursal";
             this.cmbSucursal.Size = new System.Drawing.Size(153, 21);
             this.cmbSucursal.TabIndex = 14;
@@ -86,7 +81,7 @@
             // 
             this.cmbTipoReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoReporte.FormattingEnabled = true;
-            this.cmbTipoReporte.Location = new System.Drawing.Point(440, 145);
+            this.cmbTipoReporte.Location = new System.Drawing.Point(458, 142);
             this.cmbTipoReporte.Name = "cmbTipoReporte";
             this.cmbTipoReporte.Size = new System.Drawing.Size(153, 21);
             this.cmbTipoReporte.TabIndex = 13;
@@ -107,7 +102,7 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(243, 204);
+            this.btnGenerar.Location = new System.Drawing.Point(270, 201);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(87)))), ((int)(((byte)(163)))));
             this.btnGenerar.OverrideDefault.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
@@ -127,7 +122,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(304, 145);
+            this.label6.Location = new System.Drawing.Point(322, 142);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 19);
             this.label6.TabIndex = 4;
@@ -137,7 +132,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(356, 75);
+            this.label5.Location = new System.Drawing.Point(374, 72);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 19);
             this.label5.TabIndex = 3;
@@ -167,7 +162,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(245, 12);
+            this.label1.Location = new System.Drawing.Point(265, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 29);
             this.label1.TabIndex = 0;
@@ -178,7 +173,7 @@
             this.pnlReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(166)))), ((int)(((byte)(222)))));
             this.pnlReportes.Controls.Add(this.lstReportes);
             this.pnlReportes.Controls.Add(this.label2);
-            this.pnlReportes.Location = new System.Drawing.Point(75, 387);
+            this.pnlReportes.Location = new System.Drawing.Point(30, 309);
             this.pnlReportes.Name = "pnlReportes";
             this.pnlReportes.Size = new System.Drawing.Size(448, 297);
             this.pnlReportes.TabIndex = 1;
@@ -206,7 +201,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(529, 412);
+            this.label7.Location = new System.Drawing.Point(519, 334);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(208, 20);
             this.label7.TabIndex = 2;
@@ -216,14 +211,14 @@
             // 
             this.cmbFormato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormato.FormattingEnabled = true;
-            this.cmbFormato.Location = new System.Drawing.Point(533, 445);
+            this.cmbFormato.Location = new System.Drawing.Point(523, 366);
             this.cmbFormato.Name = "cmbFormato";
             this.cmbFormato.Size = new System.Drawing.Size(91, 21);
             this.cmbFormato.TabIndex = 9;
             // 
             // btnDescargar
             // 
-            this.btnDescargar.Location = new System.Drawing.Point(570, 511);
+            this.btnDescargar.Location = new System.Drawing.Point(546, 432);
             this.btnDescargar.Name = "btnDescargar";
             this.btnDescargar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(87)))), ((int)(((byte)(163)))));
             this.btnDescargar.OverrideDefault.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
@@ -239,40 +234,9 @@
             this.btnDescargar.Values.Text = "Descargar";
             this.btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(775, 92);
-            this.panel1.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("MS Reference Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(259, 21);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(265, 60);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Reportes ";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Tramade_logo_png;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(570, 562);
+            this.btnEliminar.Location = new System.Drawing.Point(546, 483);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
             this.btnEliminar.OverrideDefault.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
@@ -296,7 +260,6 @@
             this.ClientSize = new System.Drawing.Size(774, 689);
             this.ControlBox = false;
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDescargar);
             this.Controls.Add(this.cmbFormato);
             this.Controls.Add(this.label7);
@@ -311,9 +274,6 @@
             this.pnlServicios.PerformLayout();
             this.pnlReportes.ResumeLayout(false);
             this.pnlReportes.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,9 +296,6 @@
         private System.Windows.Forms.ListView lstReportes;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.DateTimePicker dtpDesde;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cmbTipoReporte;
         private System.Windows.Forms.ComboBox cmbSucursal;
         private Krypton.Toolkit.KryptonButton btnEliminar;

@@ -74,10 +74,7 @@
             this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             this.lblNumeroFactura = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btnVerFacturas = new Krypton.Toolkit.KryptonButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.kryptonGroup3 = new Krypton.Toolkit.KryptonGroup();
             this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleFactura)).BeginInit();
@@ -89,8 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
             this.kryptonGroup1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3.Panel)).BeginInit();
             this.kryptonGroup3.Panel.SuspendLayout();
@@ -102,7 +97,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(189, 514);
+            this.btnNuevo.Location = new System.Drawing.Point(194, 464);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(90, 25);
             this.btnNuevo.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -119,7 +114,7 @@
             // 
             // btnEmitirFactura
             // 
-            this.btnEmitirFactura.Location = new System.Drawing.Point(612, 514);
+            this.btnEmitirFactura.Location = new System.Drawing.Point(617, 464);
             this.btnEmitirFactura.Name = "btnEmitirFactura";
             this.btnEmitirFactura.Size = new System.Drawing.Size(115, 25);
             this.btnEmitirFactura.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -136,7 +131,7 @@
             // 
             // btnVistaPrevia
             // 
-            this.btnVistaPrevia.Location = new System.Drawing.Point(466, 514);
+            this.btnVistaPrevia.Location = new System.Drawing.Point(471, 464);
             this.btnVistaPrevia.Name = "btnVistaPrevia";
             this.btnVistaPrevia.Size = new System.Drawing.Size(98, 25);
             this.btnVistaPrevia.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -153,7 +148,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(324, 514);
+            this.btnLimpiar.Location = new System.Drawing.Point(329, 464);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(90, 25);
             this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -170,7 +165,7 @@
             // 
             // kryptonLabel16
             // 
-            this.kryptonLabel16.Location = new System.Drawing.Point(637, 474);
+            this.kryptonLabel16.Location = new System.Drawing.Point(642, 424);
             this.kryptonLabel16.Name = "kryptonLabel16";
             this.kryptonLabel16.Size = new System.Drawing.Size(90, 25);
             this.kryptonLabel16.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
@@ -181,7 +176,7 @@
             // 
             // lblTotal
             // 
-            this.lblTotal.Location = new System.Drawing.Point(734, 474);
+            this.lblTotal.Location = new System.Drawing.Point(739, 424);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(90, 25);
             this.lblTotal.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
@@ -192,7 +187,7 @@
             // 
             // lblImpuesto
             // 
-            this.lblImpuesto.Location = new System.Drawing.Point(734, 451);
+            this.lblImpuesto.Location = new System.Drawing.Point(739, 401);
             this.lblImpuesto.Name = "lblImpuesto";
             this.lblImpuesto.Size = new System.Drawing.Size(45, 20);
             this.lblImpuesto.TabIndex = 59;
@@ -200,7 +195,7 @@
             // 
             // lblSubtotal
             // 
-            this.lblSubtotal.Location = new System.Drawing.Point(734, 430);
+            this.lblSubtotal.Location = new System.Drawing.Point(739, 380);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(90, 25);
             this.lblSubtotal.TabIndex = 58;
@@ -208,7 +203,7 @@
             // 
             // kryptonLabel15
             // 
-            this.kryptonLabel15.Location = new System.Drawing.Point(637, 451);
+            this.kryptonLabel15.Location = new System.Drawing.Point(642, 401);
             this.kryptonLabel15.Name = "kryptonLabel15";
             this.kryptonLabel15.Size = new System.Drawing.Size(91, 25);
             this.kryptonLabel15.TabIndex = 57;
@@ -216,7 +211,7 @@
             // 
             // kryptonLabel14
             // 
-            this.kryptonLabel14.Location = new System.Drawing.Point(667, 430);
+            this.kryptonLabel14.Location = new System.Drawing.Point(672, 380);
             this.kryptonLabel14.Name = "kryptonLabel14";
             this.kryptonLabel14.Size = new System.Drawing.Size(90, 25);
             this.kryptonLabel14.TabIndex = 56;
@@ -224,7 +219,7 @@
             // 
             // rbCredito
             // 
-            this.rbCredito.Location = new System.Drawing.Point(363, 479);
+            this.rbCredito.Location = new System.Drawing.Point(368, 429);
             this.rbCredito.Name = "rbCredito";
             this.rbCredito.Size = new System.Drawing.Size(63, 20);
             this.rbCredito.TabIndex = 55;
@@ -232,7 +227,7 @@
             // 
             // rbContado
             // 
-            this.rbContado.Location = new System.Drawing.Point(363, 451);
+            this.rbContado.Location = new System.Drawing.Point(368, 401);
             this.rbContado.Name = "rbContado";
             this.rbContado.Size = new System.Drawing.Size(90, 25);
             this.rbContado.TabIndex = 54;
@@ -240,7 +235,7 @@
             // 
             // kryptonLabel13
             // 
-            this.kryptonLabel13.Location = new System.Drawing.Point(339, 430);
+            this.kryptonLabel13.Location = new System.Drawing.Point(344, 380);
             this.kryptonLabel13.Name = "kryptonLabel13";
             this.kryptonLabel13.Size = new System.Drawing.Size(189, 25);
             this.kryptonLabel13.TabIndex = 53;
@@ -248,7 +243,7 @@
             // 
             // btnEliminarProducto
             // 
-            this.btnEliminarProducto.Location = new System.Drawing.Point(705, 389);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(710, 339);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(123, 20);
             this.btnEliminarProducto.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -269,7 +264,7 @@
             // 
             // btnAggProducto
             // 
-            this.btnAggProducto.Location = new System.Drawing.Point(353, 391);
+            this.btnAggProducto.Location = new System.Drawing.Point(358, 341);
             this.btnAggProducto.Name = "btnAggProducto";
             this.btnAggProducto.Size = new System.Drawing.Size(123, 20);
             this.btnAggProducto.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -300,7 +295,7 @@
             this.Cantidad,
             this.Precio_unitario,
             this.Subtotal});
-            this.dgvDetalleFactura.Location = new System.Drawing.Point(339, 256);
+            this.dgvDetalleFactura.Location = new System.Drawing.Point(344, 206);
             this.dgvDetalleFactura.Name = "dgvDetalleFactura";
             this.dgvDetalleFactura.RowHeadersVisible = false;
             this.dgvDetalleFactura.Size = new System.Drawing.Size(501, 158);
@@ -354,7 +349,7 @@
             // 
             // kryptonLabel9
             // 
-            this.kryptonLabel9.Location = new System.Drawing.Point(326, 123);
+            this.kryptonLabel9.Location = new System.Drawing.Point(331, 73);
             this.kryptonLabel9.Name = "kryptonLabel9";
             this.kryptonLabel9.Size = new System.Drawing.Size(171, 52);
             this.kryptonLabel9.StateCommon.ShortText.Color1 = System.Drawing.Color.DarkGray;
@@ -364,7 +359,7 @@
             // 
             // kryptonGroup2
             // 
-            this.kryptonGroup2.Location = new System.Drawing.Point(32, 376);
+            this.kryptonGroup2.Location = new System.Drawing.Point(37, 326);
             // 
             // kryptonGroup2.Panel
             // 
@@ -438,7 +433,7 @@
             // 
             // kryptonLabel12
             // 
-            this.kryptonLabel12.Location = new System.Drawing.Point(32, 345);
+            this.kryptonLabel12.Location = new System.Drawing.Point(37, 295);
             this.kryptonLabel12.Name = "kryptonLabel12";
             this.kryptonLabel12.Size = new System.Drawing.Size(120, 25);
             this.kryptonLabel12.TabIndex = 47;
@@ -446,7 +441,7 @@
             // 
             // kryptonGroup1
             // 
-            this.kryptonGroup1.Location = new System.Drawing.Point(36, 212);
+            this.kryptonGroup1.Location = new System.Drawing.Point(41, 162);
             // 
             // kryptonGroup1.Panel
             // 
@@ -540,7 +535,7 @@
             // 
             // kryptonLabel5
             // 
-            this.kryptonLabel5.Location = new System.Drawing.Point(36, 181);
+            this.kryptonLabel5.Location = new System.Drawing.Point(41, 131);
             this.kryptonLabel5.Name = "kryptonLabel5";
             this.kryptonLabel5.Size = new System.Drawing.Size(104, 25);
             this.kryptonLabel5.TabIndex = 45;
@@ -550,7 +545,7 @@
             // 
             this.dtpVencimiento.CalendarTodayDate = new System.DateTime(2026, 2, 21, 0, 0, 0, 0);
             this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVencimiento.Location = new System.Drawing.Point(748, 177);
+            this.dtpVencimiento.Location = new System.Drawing.Point(753, 127);
             this.dtpVencimiento.Name = "dtpVencimiento";
             this.dtpVencimiento.Size = new System.Drawing.Size(92, 20);
             this.dtpVencimiento.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -561,7 +556,7 @@
             // 
             this.dtpEmision.CalendarTodayDate = new System.DateTime(2026, 2, 21, 0, 0, 0, 0);
             this.dtpEmision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEmision.Location = new System.Drawing.Point(748, 146);
+            this.dtpEmision.Location = new System.Drawing.Point(753, 96);
             this.dtpEmision.Name = "dtpEmision";
             this.dtpEmision.Size = new System.Drawing.Size(92, 20);
             this.dtpEmision.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
@@ -570,7 +565,7 @@
             // 
             // kryptonLabel4
             // 
-            this.kryptonLabel4.Location = new System.Drawing.Point(592, 172);
+            this.kryptonLabel4.Location = new System.Drawing.Point(597, 122);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.Size = new System.Drawing.Size(153, 25);
             this.kryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
@@ -580,7 +575,7 @@
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(616, 146);
+            this.kryptonLabel3.Location = new System.Drawing.Point(621, 96);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(129, 25);
             this.kryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
@@ -590,7 +585,7 @@
             // 
             // lblNumeroFactura
             // 
-            this.lblNumeroFactura.Location = new System.Drawing.Point(146, 146);
+            this.lblNumeroFactura.Location = new System.Drawing.Point(151, 96);
             this.lblNumeroFactura.Name = "lblNumeroFactura";
             this.lblNumeroFactura.Size = new System.Drawing.Size(163, 29);
             this.lblNumeroFactura.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
@@ -601,7 +596,7 @@
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(36, 150);
+            this.kryptonLabel1.Location = new System.Drawing.Point(41, 100);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(116, 25);
             this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
@@ -609,23 +604,14 @@
             this.kryptonLabel1.TabIndex = 39;
             this.kryptonLabel1.Values.Text = "Número de factura:";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel3.Controls.Add(this.btnVerFacturas);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(-2, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(870, 100);
-            this.panel3.TabIndex = 38;
-            // 
             // btnVerFacturas
             // 
-            this.btnVerFacturas.Location = new System.Drawing.Point(475, 35);
+            this.btnVerFacturas.Location = new System.Drawing.Point(329, 12);
             this.btnVerFacturas.Name = "btnVerFacturas";
+            this.btnVerFacturas.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnVerFacturas.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.btnVerFacturas.Size = new System.Drawing.Size(199, 29);
-            this.btnVerFacturas.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnVerFacturas.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.btnVerFacturas.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.btnVerFacturas.StateCommon.Border.Color1 = System.Drawing.Color.Black;
             this.btnVerFacturas.StateCommon.Border.Color2 = System.Drawing.Color.Black;
@@ -633,7 +619,8 @@
             this.btnVerFacturas.StateCommon.Border.Width = 2;
             this.btnVerFacturas.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnVerFacturas.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerFacturas.StateNormal.Back.Color1 = System.Drawing.Color.Transparent;
+            this.btnVerFacturas.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnVerFacturas.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.btnVerFacturas.StatePressed.Back.Color1 = System.Drawing.Color.Sienna;
             this.btnVerFacturas.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnVerFacturas.TabIndex = 7;
@@ -643,34 +630,14 @@
             this.btnVerFacturas.Values.UACShieldIconSize = Krypton.Toolkit.IconSize.Medium;
             this.btnVerFacturas.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(80, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 24);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "MÓDULO DE FACTURACIÓN";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Tramade_logo_png;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // kryptonGroup3
             // 
-            this.kryptonGroup3.Location = new System.Drawing.Point(7, 109);
+            this.kryptonGroup3.Location = new System.Drawing.Point(12, 59);
             // 
             // kryptonGroup3.Panel
             // 
             this.kryptonGroup3.Panel.Controls.Add(this.kryptonGroup5);
+            this.kryptonGroup3.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroup3_Panel_Paint);
             this.kryptonGroup3.Size = new System.Drawing.Size(861, 448);
             this.kryptonGroup3.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonGroup3.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -691,8 +658,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 551);
+            this.ClientSize = new System.Drawing.Size(881, 524);
             this.ControlBox = false;
+            this.Controls.Add(this.btnVerFacturas);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEmitirFactura);
             this.Controls.Add(this.btnVistaPrevia);
@@ -720,7 +688,6 @@
             this.Controls.Add(this.kryptonLabel3);
             this.Controls.Add(this.lblNumeroFactura);
             this.Controls.Add(this.kryptonLabel1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.kryptonGroup3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFacturacion";
@@ -737,9 +704,6 @@
             this.kryptonGroup1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
             this.kryptonGroup1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3.Panel)).EndInit();
             this.kryptonGroup3.Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup3)).EndInit();
@@ -753,8 +717,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Krypton.Toolkit.KryptonButton btnNuevo;
         private Krypton.Toolkit.KryptonButton btnEmitirFactura;
         private Krypton.Toolkit.KryptonButton btnVistaPrevia;
@@ -793,9 +755,7 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private Krypton.Toolkit.KryptonLabel lblNumeroFactura;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private System.Windows.Forms.Panel panel3;
         private Krypton.Toolkit.KryptonButton btnVerFacturas;
-        private System.Windows.Forms.Label label1;
         private Krypton.Toolkit.KryptonGroup kryptonGroup3;
         private Krypton.Toolkit.KryptonGroup kryptonGroup5;
         public Krypton.Toolkit.KryptonDataGridView dgvDetalleFactura;

@@ -319,5 +319,10 @@ namespace TRAMADE
         {
             CalcularTotales();
         }
+
+        private void kryptonGroup3_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
