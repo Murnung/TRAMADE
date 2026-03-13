@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.ClasesCliente;
+using TRAMADE.ClasesCompras;
 
 namespace TRAMADE
 {
@@ -89,6 +90,7 @@ namespace TRAMADE
         {
             
             string busqueda = txtBuscar.Text.Trim();
+            if (!clsValidacionesCompras.validarBuscarId(busqueda)) return;
             if (string.IsNullOrEmpty(busqueda))
             {
                 MessageBox.Show("Por favor, ingrese el ID del cliente.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
