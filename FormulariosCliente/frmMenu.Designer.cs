@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label2 = new System.Windows.Forms.Label();
             this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
             this.btnActualizar = new Krypton.Toolkit.KryptonButton();
@@ -36,7 +39,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             this.dvgUltimos = new Krypton.Toolkit.KryptonDataGridView();
+            this.chtDepas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dvgUltimos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtDepas)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -243,7 +248,7 @@
             this.dvgUltimos.Location = new System.Drawing.Point(84, 274);
             this.dvgUltimos.Name = "dvgUltimos";
             this.dvgUltimos.ReadOnly = true;
-            this.dvgUltimos.Size = new System.Drawing.Size(558, 206);
+            this.dvgUltimos.Size = new System.Drawing.Size(455, 205);
             this.dvgUltimos.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dvgUltimos.StateCommon.Background.Color2 = System.Drawing.Color.White;
             this.dvgUltimos.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
@@ -253,6 +258,25 @@
             this.dvgUltimos.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
             this.dvgUltimos.TabIndex = 45;
             // 
+            // chtDepas
+            // 
+            this.chtDepas.BackSecondaryColor = System.Drawing.Color.White;
+            this.chtDepas.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chtDepas.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtDepas.Legends.Add(legend1);
+            this.chtDepas.Location = new System.Drawing.Point(582, 274);
+            this.chtDepas.Name = "chtDepas";
+            this.chtDepas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtDepas.Series.Add(series1);
+            this.chtDepas.Size = new System.Drawing.Size(319, 205);
+            this.chtDepas.TabIndex = 46;
+            this.chtDepas.Text = "chart2";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +284,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 588);
             this.ControlBox = false;
+            this.Controls.Add(this.chtDepas);
             this.Controls.Add(this.dvgUltimos);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.label18);
@@ -272,6 +297,7 @@
             this.Name = "frmMenu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgUltimos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtDepas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +312,6 @@
         private System.Windows.Forms.Label label18;
         private Krypton.Toolkit.KryptonButton btnRefrescar;
         private Krypton.Toolkit.KryptonDataGridView dvgUltimos;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtDepas;
     }
 }
