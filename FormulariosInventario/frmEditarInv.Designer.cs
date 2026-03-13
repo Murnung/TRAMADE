@@ -34,7 +34,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbAgregarProveedor = new System.Windows.Forms.ComboBox();
+            this.cmbProveedorNuevo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,10 +48,10 @@
             this.btnCancelar = new Krypton.Toolkit.KryptonButton();
             this.txtPrecioCosto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstProveedores = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnQuitar = new Krypton.Toolkit.KryptonButton();
-            this.btnAgregar = new Krypton.Toolkit.KryptonButton();
+            this.btnQuitarProveedor = new Krypton.Toolkit.KryptonButton();
+            this.btnAgregarProveedor = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.imgProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -111,19 +111,19 @@
             this.label5.TabIndex = 27;
             this.label5.Text = "Proveedores";
             // 
-            // cmbAgregarProveedor
+            // cmbProveedorNuevo
             // 
-            this.cmbAgregarProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAgregarProveedor.FormattingEnabled = true;
-            this.cmbAgregarProveedor.Location = new System.Drawing.Point(86, 301);
-            this.cmbAgregarProveedor.Name = "cmbAgregarProveedor";
-            this.cmbAgregarProveedor.Size = new System.Drawing.Size(200, 24);
-            this.cmbAgregarProveedor.TabIndex = 26;
+            this.cmbProveedorNuevo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProveedorNuevo.FormattingEnabled = true;
+            this.cmbProveedorNuevo.Location = new System.Drawing.Point(86, 301);
+            this.cmbProveedorNuevo.Name = "cmbProveedorNuevo";
+            this.cmbProveedorNuevo.Size = new System.Drawing.Size(200, 24);
+            this.cmbProveedorNuevo.TabIndex = 26;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(83, 554);
+            this.label4.Location = new System.Drawing.Point(418, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 16);
             this.label4.TabIndex = 25;
@@ -131,7 +131,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(86, 582);
+            this.txtPrecio.Location = new System.Drawing.Point(421, 102);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(200, 22);
             this.txtPrecio.TabIndex = 24;
@@ -161,7 +161,6 @@
             this.label1.Size = new System.Drawing.Size(190, 28);
             this.label1.TabIndex = 20;
             this.label1.Text = "Editar Producto";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // imgProducto
             // 
@@ -182,11 +181,12 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(418, 246);
+            this.label2.Location = new System.Drawing.Point(418, 221);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 37;
@@ -194,14 +194,14 @@
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(421, 274);
+            this.txtStock.Location = new System.Drawing.Point(421, 249);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(200, 22);
             this.txtStock.TabIndex = 36;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(683, 587);
+            this.btnConfirmar.Location = new System.Drawing.Point(684, 540);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(90, 25);
             this.btnConfirmar.TabIndex = 43;
@@ -211,7 +211,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(570, 587);
+            this.btnCancelar.Location = new System.Drawing.Point(571, 540);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(90, 25);
             this.btnCancelar.TabIndex = 42;
@@ -221,7 +221,7 @@
             // 
             // txtPrecioCosto
             // 
-            this.txtPrecioCosto.Location = new System.Drawing.Point(421, 191);
+            this.txtPrecioCosto.Location = new System.Drawing.Point(421, 176);
             this.txtPrecioCosto.Name = "txtPrecioCosto";
             this.txtPrecioCosto.Size = new System.Drawing.Size(200, 22);
             this.txtPrecioCosto.TabIndex = 38;
@@ -229,20 +229,20 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(418, 163);
+            this.label9.Location = new System.Drawing.Point(418, 148);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 16);
             this.label9.TabIndex = 39;
             this.label9.Text = "Precio de Costo";
             // 
-            // listBox1
+            // lstProveedores
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(86, 178);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(200, 84);
-            this.listBox1.TabIndex = 44;
+            this.lstProveedores.FormattingEnabled = true;
+            this.lstProveedores.ItemHeight = 16;
+            this.lstProveedores.Location = new System.Drawing.Point(86, 178);
+            this.lstProveedores.Name = "lstProveedores";
+            this.lstProveedores.Size = new System.Drawing.Size(200, 84);
+            this.lstProveedores.TabIndex = 44;
             // 
             // label8
             // 
@@ -253,33 +253,35 @@
             this.label8.TabIndex = 45;
             this.label8.Text = "Nuevo Proveedor";
             // 
-            // btnQuitar
+            // btnQuitarProveedor
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(86, 331);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(83, 25);
-            this.btnQuitar.TabIndex = 46;
-            this.btnQuitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnQuitar.Values.Text = "Quitar";
+            this.btnQuitarProveedor.Location = new System.Drawing.Point(86, 331);
+            this.btnQuitarProveedor.Name = "btnQuitarProveedor";
+            this.btnQuitarProveedor.Size = new System.Drawing.Size(83, 25);
+            this.btnQuitarProveedor.TabIndex = 46;
+            this.btnQuitarProveedor.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnQuitarProveedor.Values.Text = "Quitar";
+            this.btnQuitarProveedor.Click += new System.EventHandler(this.btnQuitarProveedor_Click_1);
             // 
-            // btnAgregar
+            // btnAgregarProveedor
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(203, 331);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(83, 25);
-            this.btnAgregar.TabIndex = 47;
-            this.btnAgregar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnAgregar.Values.Text = "Agregar";
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(203, 331);
+            this.btnAgregarProveedor.Name = "btnAgregarProveedor";
+            this.btnAgregarProveedor.Size = new System.Drawing.Size(83, 25);
+            this.btnAgregarProveedor.TabIndex = 47;
+            this.btnAgregarProveedor.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnAgregarProveedor.Values.Text = "Agregar";
+            this.btnAgregarProveedor.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmEditarInv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 637);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.btnQuitar);
+            this.ClientSize = new System.Drawing.Size(807, 581);
+            this.Controls.Add(this.btnAgregarProveedor);
+            this.Controls.Add(this.btnQuitarProveedor);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstProveedores);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label9);
@@ -293,7 +295,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.cmbAgregarProveedor);
+            this.Controls.Add(this.cmbProveedorNuevo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label3);
@@ -319,7 +321,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbAgregarProveedor;
+        private System.Windows.Forms.ComboBox cmbProveedorNuevo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label3;
@@ -332,9 +334,9 @@
         private Krypton.Toolkit.KryptonButton btnCancelar;
         private System.Windows.Forms.TextBox txtPrecioCosto;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstProveedores;
         private System.Windows.Forms.Label label8;
-        private Krypton.Toolkit.KryptonButton btnQuitar;
-        private Krypton.Toolkit.KryptonButton btnAgregar;
+        private Krypton.Toolkit.KryptonButton btnQuitarProveedor;
+        private Krypton.Toolkit.KryptonButton btnAgregarProveedor;
     }
 }

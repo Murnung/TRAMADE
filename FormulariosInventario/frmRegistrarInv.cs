@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.IO;
 using System.Windows.Forms;
 using TRAMADE.ClasesInventario;
 
@@ -14,24 +10,29 @@ namespace TRAMADE
 {
     public partial class frmRegistrarInv : Form
     {
-
         byte[] imagenBytes;
+
         public frmRegistrarInv()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void frmRegistrarInv_Load(object sender, EventArgs e)
         {
-
-
+            CargarProveedores();
+            CargarCategorias();
+            CargarSucursales();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+        private void txtStockInicial_TextChanged(object sender, EventArgs e) 
+        { 
+        
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e) 
+        {
+        
+        }
         private void CargarProveedores()
         {
             clsConexion obj = new clsConexion();
@@ -39,9 +40,7 @@ namespace TRAMADE
             SqlCommand cmd = new SqlCommand("SELECT nombre_comercial_proveedor FROM PROVEEDOR", obj.SqlC);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
-            {
                 cmbProveedor.Items.Add(dr["nombre_comercial_proveedor"].ToString());
-            }
             obj.Cerrar();
         }
 
@@ -52,9 +51,7 @@ namespace TRAMADE
             SqlCommand cmd = new SqlCommand("SELECT nombre_categoria FROM CATEGORIA", obj.SqlC);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
-            {
                 cmbCategoria.Items.Add(dr["nombre_categoria"].ToString());
-            }
             obj.Cerrar();
         }
 
@@ -65,15 +62,26 @@ namespace TRAMADE
             SqlCommand cmd = new SqlCommand("SELECT nombre_sucursal FROM SUCURSAL", obj.SqlC);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
-            {
                 cmbSucursal.Items.Add(dr["nombre_sucursal"].ToString());
-            }
             obj.Cerrar();
+        }
+
+        private void btnSubir_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
+            openFile.Title = "Seleccionar imagen del producto";
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                imagenBytes = File.ReadAllBytes(openFile.FileName);
+                imgProducto.Image = Image.FromFile(openFile.FileName);
+                imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            // Validaciones
             if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial))
                 return;
 
@@ -89,29 +97,36 @@ namespace TRAMADE
             if (!clsValidaciones.ValidarEntero(txtStockInicial))
                 return;
 
+            if (!clsValidaciones.ValidarPositivo(txtPrecio))
+                return;
+
+            if (!clsValidaciones.ValidarPositivo(txtPrecioCosto))
+                return;
+
+            if (!clsValidaciones.ValidarPositivo(txtStockInicial))
+                return;
+
+            if (!clsValidaciones.ValidarCostoMenorPrecio(txtPrecio, txtPrecioCosto))
+                return;
+
+            if (!clsValidaciones.ValidarProductoExiste(txtNombreProducto.Text))
+                return;
+
             clsConexion obj = new clsConexion();
             obj.Abrir();
 
             try
             {
-                SqlCommand cmdCat = new SqlCommand("SELECT id_categoria FROM CATEGORIA WHERE nombre_categoria = @nombre", obj.SqlC);
-                cmdCat.Parameters.AddWithValue("@nombre", cmbCategoria.SelectedItem.ToString());
-                int idCategoria = (int)cmdCat.ExecuteScalar();
-
-                SqlCommand cmdProv = new SqlCommand("SELECT id_proveedor FROM PROVEEDOR WHERE nombre_comercial_proveedor = @nombre", obj.SqlC);
-                cmdProv.Parameters.AddWithValue("@nombre", cmbProveedor.SelectedItem.ToString());
-                int idProveedor = (int)cmdProv.ExecuteScalar();
-
-                SqlCommand cmdSuc = new SqlCommand("SELECT id_sucursal FROM SUCURSAL WHERE nombre_sucursal = @nombre", obj.SqlC);
-                cmdSuc.Parameters.AddWithValue("@nombre", cmbSucursal.SelectedItem.ToString());
-                int idSucursal = (int)cmdSuc.ExecuteScalar();
+                int idCategoria = clsProductoDAL.ObtenerIdCategoria(obj.SqlC, cmbCategoria.SelectedItem.ToString());
+                int idProveedor = clsProductoDAL.ObtenerIdProveedor(obj.SqlC, cmbProveedor.SelectedItem.ToString());
+                int idSucursal = clsProductoDAL.ObtenerIdSucursal(obj.SqlC, cmbSucursal.SelectedItem.ToString());
 
                 SqlCommand cmdProd = new SqlCommand("INSERT INTO PRODUCTO (nombre_producto, id_categoria, precio_unitario, precio_costo, imagen_producto) " +
                                                     "VALUES (@nombre, @idCat, @precio, @costo, @imagen); SELECT SCOPE_IDENTITY();", obj.SqlC);
                 cmdProd.Parameters.AddWithValue("@nombre", txtNombreProducto.Text);
                 cmdProd.Parameters.AddWithValue("@idCat", idCategoria);
-                cmdProd.Parameters.AddWithValue("@precio", decimal.Parse(txtPrecio.Text, System.Globalization.CultureInfo.InvariantCulture));
-                cmdProd.Parameters.AddWithValue("@costo", decimal.Parse(txtPrecioCosto.Text, System.Globalization.CultureInfo.InvariantCulture));
+                cmdProd.Parameters.AddWithValue("@precio", decimal.Parse(txtPrecio.Text, CultureInfo.InvariantCulture));
+                cmdProd.Parameters.AddWithValue("@costo", decimal.Parse(txtPrecioCosto.Text, CultureInfo.InvariantCulture));
                 if (imagenBytes != null)
                     cmdProd.Parameters.Add("@imagen", System.Data.SqlDbType.VarBinary).Value = imagenBytes;
                 else
@@ -142,40 +157,9 @@ namespace TRAMADE
             }
         }
 
-        private void txtStockInicial_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmRegistrarInv_Load(object sender, EventArgs e)
-        {
-            CargarProveedores();
-            CargarCategorias();
-            CargarSucursales();
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnSubir_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp";
-            openFile.Title = "Seleccionar imagen del producto";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                imagenBytes = System.IO.File.ReadAllBytes(openFile.FileName);
-                imgProducto.Image = Image.FromFile(openFile.FileName);
-                imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
-            }
         }
     }
 }

@@ -1,16 +1,11 @@
 ﻿using OfficeOpenXml;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using TRAMADE.ClasesInventario;
-
 
 namespace TRAMADE
 {
@@ -40,12 +35,7 @@ namespace TRAMADE
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
 
-
             CargarProductos();
-
-            //Para que no se muestre la columna de imagen en el DGV pero sí
-            //esté disponible para mostrarla en el PictureBox
-            dgvInventario.Columns["imagen_producto"].Visible = false;
 
             cmbFiltrar.Items.Add("Orden Alfabético");
             cmbFiltrar.Items.Add("Categoría");
@@ -54,9 +44,6 @@ namespace TRAMADE
             cmbFiltrar.Items.Add("Mayor Stock");
             cmbFiltrar.Items.Add("Menor Stock");
 
-
-            lblFecha.Text = DateTime.Now.ToString("dd/MM/yy");
-            lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
             timer1.Start();
         }
 
@@ -68,96 +55,15 @@ namespace TRAMADE
 
             DataTable dt = clsProductoDAL.ObtenerProductos(filtroActual, paginaActual, registrosPorPagina);
             dgvInventario.DataSource = dt;
-
             dgvInventario.Columns["imagen_producto"].Visible = false;
             dgvInventario.AllowUserToResizeColumns = false;
             dgvInventario.AllowUserToResizeRows = false;
             dgvInventario.ReadOnly = true;
 
             AplicarAlertas();
-        }
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            frmRegistrarInv frm = new frmRegistrarInv();
-            frm.ShowDialog();
-            CargarProductos(); // Recarga el DGV después de registrar
-        }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dgvInventario.SelectedRows.Count == 0)
-            {
-                clsMensajes.Aviso("Selecciona un producto para eliminar");
-                return;
-            }
-
-            int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["ID"].Value);
-
-            if (clsMensajes.Confirmar("¿Estás seguro que deseas eliminar este producto?"))
-            {
-                try
-                {
-                    clsProductoDAL.EliminarProducto(idProducto);
-                    clsMensajes.Exito("Producto eliminado correctamente");
-                    CargarProductos();
-                }
-                catch (Exception ex)
-                {
-                    clsMensajes.Error("Error: " + ex.Message);
-                }
-            }
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (dgvInventario.SelectedRows.Count == 0)
-            {
-                clsMensajes.Aviso("Selecciona un producto para editar");
-                return;
-            }
-
-            int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["ID"].Value);
-            frmEditarInv frm = new frmEditarInv(idProducto);
-            frm.ShowDialog();
-            CargarProductos();
-        }
-
-        private void lblFecha_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnSiguiente_Click(object sender, EventArgs e)
-        {
-            if (paginaActual < totalPaginas)
-            {
-                paginaActual++;
-                CargarProductos();
-            }
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAtras_Click(object sender, EventArgs e)
-        {
-            if (paginaActual > 1)
-            {
-                paginaActual--;
-                CargarProductos();
-            }
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-
+            if (dgvInventario.Rows.Count == 0)
+                clsMensajes.Aviso("No hay productos registrados");
         }
 
         private void AplicarAlertas()
@@ -195,8 +101,82 @@ namespace TRAMADE
                     row.DefaultCellStyle.BackColor = Color.White;
                 }
             }
-             
         }
+
+        private void dgvInventario_SelectionChanged(object sender, EventArgs e)
+        {
+            bool haySeleccion = dgvInventario.SelectedRows.Count > 0;
+            btnEditar.Enabled = haySeleccion;
+            btnEliminar.Enabled = haySeleccion;
+
+            if (haySeleccion)
+            {
+                string nombre = dgvInventario.SelectedRows[0].Cells["Nombre"].Value?.ToString();
+                lblNombreProducto.Text = nombre;
+
+                object imagenObj = dgvInventario.SelectedRows[0].Cells["imagen_producto"].Value;
+                if (imagenObj != null && imagenObj != DBNull.Value)
+                {
+                    byte[] imagenBytes = (byte[])imagenObj;
+                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBytes))
+                    {
+                        imgProducto.Image = Image.FromStream(ms);
+                        imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+                else
+                {
+                    imgProducto.Image = Properties.Resources.photo_8924441;
+                }
+            }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            frmRegistrarInv frm = new frmRegistrarInv();
+            frm.ShowDialog();
+            CargarProductos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvInventario.SelectedRows.Count == 0)
+            {
+                clsMensajes.Aviso("Selecciona un producto para editar");
+                return;
+            }
+
+            int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["ID"].Value);
+            frmEditarInv frm = new frmEditarInv(idProducto);
+            frm.ShowDialog();
+            CargarProductos();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvInventario.SelectedRows.Count == 0)
+            {
+                clsMensajes.Aviso("Selecciona un producto para eliminar");
+                return;
+            }
+
+            int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["ID"].Value);
+
+            if (clsMensajes.Confirmar("¿Estás seguro que deseas eliminar este producto?"))
+            {
+                try
+                {
+                    clsProductoDAL.EliminarProducto(idProducto);
+                    clsMensajes.Exito("Producto eliminado correctamente");
+                    CargarProductos();
+                }
+                catch (Exception ex)
+                {
+                    clsMensajes.Error("Error: " + ex.Message);
+                }
+            }
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
@@ -212,6 +192,15 @@ namespace TRAMADE
 
             if (dgvInventario.Rows.Count == 0)
                 clsMensajes.Aviso("No se encontraron resultados para: " + txtBuscar.Text);
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            cmbFiltrar.SelectedIndex = -1;
+            filtroActual = "ORDER BY ID ASC";
+            paginaActual = 1;
+            CargarProductos();
         }
 
         private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
@@ -244,13 +233,22 @@ namespace TRAMADE
             CargarProductos();
         }
 
-        private void btnRefrescar_Click(object sender, EventArgs e)
+        private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            txtBuscar.Text = "";
-            cmbFiltrar.SelectedIndex = -1;
-            filtroActual = "ORDER BY ID ASC";
-            paginaActual = 1;
-            CargarProductos();
+            if (paginaActual < totalPaginas)
+            {
+                paginaActual++;
+                CargarProductos();
+            }
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            if (paginaActual > 1)
+            {
+                paginaActual--;
+                CargarProductos();
+            }
         }
 
         private void btnExportarInventario_Click(object sender, EventArgs e)
@@ -259,8 +257,7 @@ namespace TRAMADE
             {
                 SaveFileDialog saveFile = new SaveFileDialog();
                 saveFile.Filter = "Excel Files|*.xlsx";
-                string fechaHoy = DateTime.Now.ToString("dd-MM-yyyy");
-                saveFile.FileName = "Inventario_" + fechaHoy;
+                saveFile.FileName = "Inventario_" + DateTime.Now.ToString("dd-MM-yyyy");
 
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
@@ -274,7 +271,6 @@ namespace TRAMADE
                     da.Fill(dt);
                     obj.Cerrar();
 
-                    // Quitar columna imagen_producto
                     if (dt.Columns.Contains("imagen_producto"))
                         dt.Columns.Remove("imagen_producto");
 
@@ -282,46 +278,39 @@ namespace TRAMADE
                     {
                         ExcelWorksheet hoja = excel.Workbook.Worksheets.Add("Inventario");
 
-                        // Fecha de exportación
                         hoja.Cells[1, 1].Value = "Fecha de exportación: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
                         hoja.Cells[1, 1].Style.Font.Bold = true;
                         hoja.Cells[1, 1, 1, dt.Columns.Count].Merge = true;
 
-                        // Encabezados en fila 2
                         for (int i = 0; i < dt.Columns.Count; i++)
                         {
                             hoja.Cells[2, i + 1].Value = dt.Columns[i].ColumnName;
                             hoja.Cells[2, i + 1].Style.Font.Bold = true;
                             hoja.Cells[2, i + 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
-                            hoja.Cells[2, i + 1].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Brown);
-                            hoja.Cells[2, i + 1].Style.Font.Color.SetColor(System.Drawing.Color.White);
+                            hoja.Cells[2, i + 1].Style.Fill.BackgroundColor.SetColor(Color.Brown);
+                            hoja.Cells[2, i + 1].Style.Font.Color.SetColor(Color.White);
                         }
 
-                        // Datos desde fila 3
                         for (int i = 0; i < dt.Rows.Count; i++)
-                        {
                             for (int j = 0; j < dt.Columns.Count; j++)
-                            {
                                 hoja.Cells[i + 3, j + 1].Value = dt.Rows[i][j];
-                            }
-                        }
 
                         hoja.Cells.AutoFitColumns();
                         excel.SaveAs(new System.IO.FileInfo(saveFile.FileName));
                     }
 
-                    MessageBox.Show("Inventario exportado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clsMensajes.Exito("Inventario exportado correctamente");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clsMensajes.Error("Error: " + ex.Message);
             }
         }
 
-        private void lblHora_Click(object sender, EventArgs e)
+        private void btnRegresar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -330,48 +319,11 @@ namespace TRAMADE
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvInventario_SelectionChanged(object sender, EventArgs e)
-        {
-            bool haySeleccion = dgvInventario.SelectedRows.Count > 0;
-            btnEditar.Enabled = haySeleccion;
-            btnEliminar.Enabled = haySeleccion;
-
-            if (haySeleccion)
-            {
-                string nombre = dgvInventario.SelectedRows[0].Cells["Nombre"].Value?.ToString();
-                lblNombreProducto.Text = nombre;
-
-                object imagenObj = dgvInventario.SelectedRows[0].Cells["imagen_producto"].Value;
-
-                if (imagenObj != null && imagenObj != DBNull.Value)
-                {
-                    byte[] imagenBytes = (byte[])imagenObj;
-                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBytes))
-                    {
-                        imgProducto.Image = Image.FromStream(ms);
-                        imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
-                    }
-                }
-                else
-                {
-                    imgProducto.Image = Properties.Resources.photo_89244411;
-                }
-            }
-        }
-
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void txtBuscar_TextChanged(object sender, EventArgs e) { }
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void panel2_Paint(object sender, PaintEventArgs e) { }
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
+        private void lblFecha_Click(object sender, EventArgs e) { }
+        private void lblHora_Click(object sender, EventArgs e) { }
     }
 }

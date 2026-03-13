@@ -73,7 +73,7 @@
             this.label1.Size = new System.Drawing.Size(227, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Registrar Producto";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          //  this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -228,7 +228,7 @@
             this.label9.Size = new System.Drawing.Size(78, 16);
             this.label9.TabIndex = 21;
             this.label9.Text = "Stock Inicial";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+//            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txtStockInicial
             // 

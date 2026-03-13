@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TRAMADE.ClasesInventario
 {
@@ -67,6 +63,10 @@ namespace TRAMADE.ClasesInventario
                 SqlCommand cmdDC = new SqlCommand("DELETE FROM DETALLE_COMPRA WHERE id_producto = @id", obj.SqlC);
                 cmdDC.Parameters.AddWithValue("@id", idProducto);
                 cmdDC.ExecuteNonQuery();
+
+                SqlCommand cmdFP = new SqlCommand("DELETE FROM FACTURA_PRODUCTO WHERE id_producto = @id", obj.SqlC);
+                cmdFP.Parameters.AddWithValue("@id", idProducto);
+                cmdFP.ExecuteNonQuery();
 
                 SqlCommand cmdPP = new SqlCommand("DELETE FROM PRODUCTO_PROVEEDOR WHERE id_producto = @id", obj.SqlC);
                 cmdPP.Parameters.AddWithValue("@id", idProducto);
