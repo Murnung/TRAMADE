@@ -363,6 +363,34 @@ namespace TRAMADE.ClasesCliente
             }
         }
 
+        public DataTable ObtenerPorcentajeEstados(clsConexion conexion)
+        {
+            DataTable dt = new DataTable();
+            string sql = " PA_PorcentajeEstados ";
+            try
+            {
+                conexion.Abrir();
+                SqlDataAdapter da = new SqlDataAdapter(sql, conexion.SqlC);
+                da.Fill(dt);
+            }
+            finally { conexion.Cerrar(); }
+            return dt;
+        }
+
+        public DataTable ObtenerTopDepartamentos(clsConexion conexion)
+        {
+            DataTable dt = new DataTable();
+            string sql = "PA_TopDepartamentos";
+            try
+            {
+                conexion.Abrir();
+                SqlDataAdapter da = new SqlDataAdapter(sql, conexion.SqlC);
+                da.Fill(dt);
+            }
+            finally { conexion.Cerrar(); }
+            return dt;
+        }
+
 
     }
 }

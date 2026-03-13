@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,11 +44,15 @@
             this.label18 = new System.Windows.Forms.Label();
             this.dvgUltimos = new Krypton.Toolkit.KryptonDataGridView();
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
+            this.chtClientes = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtDepas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
             this.kryptonGroup1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgUltimos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtDepas)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
@@ -226,7 +236,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(233, 205);
+            this.label18.Location = new System.Drawing.Point(379, 219);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(141, 44);
             this.label18.TabIndex = 40;
@@ -241,10 +251,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgUltimos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dvgUltimos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgUltimos.Location = new System.Drawing.Point(241, 241);
+            this.dvgUltimos.Location = new System.Drawing.Point(537, 197);
             this.dvgUltimos.Name = "dvgUltimos";
             this.dvgUltimos.ReadOnly = true;
-            this.dvgUltimos.Size = new System.Drawing.Size(558, 206);
+            this.dvgUltimos.Size = new System.Drawing.Size(344, 152);
             this.dvgUltimos.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dvgUltimos.StateCommon.Background.Color2 = System.Drawing.Color.White;
             this.dvgUltimos.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
@@ -256,7 +266,7 @@
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(401, 205);
+            this.btnRefrescar.Location = new System.Drawing.Point(390, 288);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRefrescar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -283,12 +293,48 @@
             this.btnRefrescar.Values.Text = "REFRESCAR";
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
+            // chtClientes
+            // 
+            this.chtClientes.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.chtClientes.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtClientes.Legends.Add(legend1);
+            this.chtClientes.Location = new System.Drawing.Point(624, 355);
+            this.chtClientes.Name = "chtClientes";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtClientes.Series.Add(series1);
+            this.chtClientes.Size = new System.Drawing.Size(245, 205);
+            this.chtClientes.TabIndex = 44;
+            this.chtClientes.Text = "chart1";
+            // 
+            // chtDepas
+            // 
+            this.chtDepas.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea2.Name = "ChartArea1";
+            this.chtDepas.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtDepas.Legends.Add(legend2);
+            this.chtDepas.Location = new System.Drawing.Point(307, 355);
+            this.chtDepas.Name = "chtDepas";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chtDepas.Series.Add(series2);
+            this.chtDepas.Size = new System.Drawing.Size(264, 205);
+            this.chtDepas.TabIndex = 45;
+            this.chtDepas.Text = "chart2";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 588);
+            this.Controls.Add(this.chtDepas);
+            this.Controls.Add(this.chtClientes);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.dvgUltimos);
             this.Controls.Add(this.label18);
@@ -307,6 +353,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
             this.kryptonGroup1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgUltimos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtDepas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +372,7 @@
         private System.Windows.Forms.Label label18;
         private Krypton.Toolkit.KryptonDataGridView dvgUltimos;
         private Krypton.Toolkit.KryptonButton btnRefrescar;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtClientes;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtDepas;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using TRAMADE.ClasesCliente;
 
 namespace TRAMADE
@@ -28,6 +29,7 @@ namespace TRAMADE
         private void frmMenu_Load(object sender, EventArgs e)
         {
             recargarClientes();
+            recargarGraficas();
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -86,9 +88,67 @@ namespace TRAMADE
             }
         }
 
+
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             recargarClientes();
+            recargarGraficas();
+        }
+
+        private void recargarGraficas()
+        {
+            try
+            {
+                // Top 5 departamentos con más clientes
+                DataTable dtDepas = ObjCliente.ObtenerTopDepartamentos(ObjConexion);
+
+                chtDepas.ChartAreas[0].AxisX.IsReversed = true;
+                chtDepas.Series.Clear();
+                chtDepas.Titles.Clear();
+                chtDepas.Titles.Add("Top 5 Departamentos con más Clientes");
+
+                Series serieDepas = chtDepas.Series.Add("Registros");
+                serieDepas.ChartType = SeriesChartType.Bar; 
+                serieDepas.XValueMember = "nombre_departamento";
+                serieDepas.YValueMembers = "Total";
+                serieDepas.IsValueShownAsLabel = true;
+
+                chtDepas.DataSource = dtDepas;
+                chtDepas.DataBind();
+
+
+                //Clientes por estado de aprobación
+                DataTable dtEstados = ObjCliente.ObtenerPorcentajeEstados(ObjConexion);
+
+                chtClientes.Series.Clear();
+                Series serie = chtClientes.Series.Add("Estados");
+                serie.ChartType = SeriesChartType.Pie;
+
+                Color verdeActivo = Color.FromArgb(107, 184, 80);
+                Color rojoInactivo = Color.FromArgb(233, 28, 62);
+
+
+                foreach (DataRow r in dtEstados.Rows)
+                {
+                    string estado = r["Estado"].ToString().ToUpper();
+                    double valor = Convert.ToDouble(r["Cantidad"]);
+
+                    int p = serie.Points.AddXY(estado, valor);
+
+                    if (estado.Contains("ACTIVO") || estado.Contains("AUTORIZADO"))
+                        serie.Points[p].Color = verdeActivo;
+
+                    if (estado.Contains("INACTIVO") || estado.Contains("NEGADO"))
+                        serie.Points[p].Color = rojoInactivo;
+
+                    serie.Points[p].Label = "#PERCENT{P0}";
+                    serie.Points[p].LegendText = "#VALX (#VALY)";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar las gráficas: " + ex.Message);
+            }
         }
     }
 }
