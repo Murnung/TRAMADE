@@ -163,5 +163,28 @@ namespace TRAMADE.Formulario_Proveedores.Clases
             if (e.RowIndex < 0) return -1;
             return Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[columnaId].Value);
         }
+
+        public static void AgregarColumnaCheckbox(DataGridView dgv)
+        {
+            if (!dgv.Columns.Contains("Seleccionar"))
+            {
+                DataGridViewCheckBoxColumn chkCol = new DataGridViewCheckBoxColumn();
+                chkCol.Name = "Seleccionar";
+                chkCol.HeaderText = "✔";
+                chkCol.Width = 40;
+                chkCol.ReadOnly = false;
+                chkCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgv.Columns.Add(chkCol);
+            }
+
+
+            // ─── Permitir edición solo en checkbox ────────────────────
+            dgv.ReadOnly = false;
+            foreach (DataGridViewColumn col in dgv.Columns)
+            {
+                if (col.Name != "Seleccionar")
+                    col.ReadOnly = true;
+            }
+        }
     }
 }

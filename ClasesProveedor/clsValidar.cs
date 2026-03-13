@@ -26,7 +26,6 @@ namespace TRAMADE
             {
                 MessageBox.Show($"El campo '{nombreCampo}' no puede estar vacío.", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
             return true;
@@ -39,7 +38,6 @@ namespace TRAMADE
             {
                 MessageBox.Show($"El campo '{nombreCampo}' debe tener al menos {minimo} caracteres.", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
             return true;
@@ -52,7 +50,6 @@ namespace TRAMADE
             {
                 MessageBox.Show($"El campo '{nombreCampo}' no puede tener más de {maximo} caracteres.", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
             return true;
@@ -68,7 +65,6 @@ namespace TRAMADE
             {
                 MessageBox.Show("El RTN debe contener solo números y tener exactamente 14 dígitos.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
 
@@ -78,7 +74,6 @@ namespace TRAMADE
             {
                 MessageBox.Show("Los primeros 4 dígitos del RTN deben corresponder a un código de municipio válido (ej: 0101 - 1818).",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
 
@@ -89,7 +84,6 @@ namespace TRAMADE
             {
                 MessageBox.Show($"Los dígitos 5 al 8 del RTN deben ser un año válido entre 1900 y {anioActual}.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
 
@@ -99,7 +93,6 @@ namespace TRAMADE
             {
                 MessageBox.Show("Los últimos 6 dígitos del RTN no pueden ser todos ceros.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
 
@@ -115,7 +108,6 @@ namespace TRAMADE
             {
                 MessageBox.Show("El teléfono debe contener solo números y tener exactamente 8 dígitos.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
 
@@ -123,7 +115,6 @@ namespace TRAMADE
             {
                 MessageBox.Show("El teléfono debe iniciar con 2, 3, 8 o 9.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
 
@@ -137,7 +128,6 @@ namespace TRAMADE
             {
                 MessageBox.Show("El correo electrónico no tiene un formato válido.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
             return true;
@@ -174,7 +164,6 @@ namespace TRAMADE
                 {
                     MessageBox.Show("El RTN ingresado ya está registrado en otro proveedor.", "Validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    LimpiarControl(campo);
                     return false;
                 }
                 return true;
@@ -209,7 +198,6 @@ namespace TRAMADE
                 {
                     MessageBox.Show("El correo ingresado ya está registrado en otro proveedor.", "Validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    LimpiarControl(campo);
                     return false;
                 }
                 return true;
@@ -252,7 +240,6 @@ namespace TRAMADE
             {
                 MessageBox.Show($"El campo '{nombreCampo}' no puede contener espacios dobles.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
             return true;
@@ -265,7 +252,6 @@ namespace TRAMADE
             {
                 MessageBox.Show($"El campo '{nombreCampo}' no puede iniciar ni terminar con espacios.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
             return true;
@@ -278,7 +264,6 @@ namespace TRAMADE
             {
                 MessageBox.Show($"El campo '{nombreCampo}' no puede contener solo caracteres especiales.",
                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LimpiarControl(campo);
                 return false;
             }
             return true;

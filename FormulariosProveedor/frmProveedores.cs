@@ -16,16 +16,18 @@ namespace TRAMADE
 {
     public partial class frmProveedores : Form
     {
-        
-        clsConexion ObjConexion = new clsConexion();
-        private const string VISTA = "SELECT * FROM VistaProveedorTabla";
-        private readonly string[] OCULTAS = { "id_proveedor" };
         public frmProveedores()
         {
             InitializeComponent();
             clsDataGridView.AplicarEstilo(dgvProveedor);
             lblInstrucciones.Text = clsProveedores.InstruccionesDGV();
             RecargarProveedores();
+
+            dgvProveedor.CellBeginEdit += (s, ev) =>  
+            {
+                if (dgvProveedor.Columns[ev.ColumnIndex].Name != "Seleccionar")
+                    ev.Cancel = true;
+            };
         }
 
         public void RecargarProveedores()
@@ -34,6 +36,7 @@ namespace TRAMADE
             dgvProveedor.DataSource = ObjProveedores.ObtenerProveedores();
             clsDataGridView.AplicarEstilo(dgvProveedor);
             clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
+            clsDataGridView.AgregarColumnaCheckbox(dgvProveedor); 
         }
 
         private void btnAñadirProveedor_Click(object sender, EventArgs e)
@@ -46,10 +49,6 @@ namespace TRAMADE
 
         private void btnFiltrarActivo_Click(object sender, EventArgs e)
         {
-            /*clsProveedores ObjProveedores = new clsProveedores();
-            dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("ACTIVO");
-            clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");*/
-
             clsProveedores ObjProveedores = new clsProveedores();
             ObjProveedores.CambiarEstadoMasivo_Activo(dgvProveedor);
             RecargarProveedores();
@@ -57,12 +56,8 @@ namespace TRAMADE
 
         private void btnFiltrarInactivo_Click(object sender, EventArgs e)
         {
-            /*clsProveedores ObjProveedores = new clsProveedores();
-            dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("INACTIVO");
-            clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");*/
-
             clsProveedores ObjProveedores = new clsProveedores();
-            ObjProveedores.CambiarEstadoMasivo_Activo(dgvProveedor);
+            ObjProveedores.CambiarEstadoMasivo_Inactivo(dgvProveedor);
             RecargarProveedores();
         }
 
@@ -88,36 +83,13 @@ namespace TRAMADE
         private void dgvProveedorCellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
+            if (dgvProveedor.Columns[e.ColumnIndex].Name == "Seleccionar") return;
 
             int idProveedor = Convert.ToInt32(dgvProveedor.Rows[e.RowIndex].Cells["id_proveedor"].Value);
 
-            // ─── Doble clic en columna Estado → cambiar estado ────────
-            if (dgvProveedor.Columns[e.ColumnIndex].Name == "Estado")
-            {
-                clsProveedores ObjProveedores = new clsProveedores();
-                bool estaActivo = ObjProveedores.EstaActivo(idProveedor);
-
-                string mensaje = estaActivo
-                    ? "¿Desea desactivar este proveedor?"
-                    : "¿Desea activar este proveedor?";
-
-                DialogResult confirmacion = MessageBox.Show(mensaje, "Confirmar",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (confirmacion == DialogResult.Yes)
-                {
-                    ObjProveedores.CambiarEstado(idProveedor, !estaActivo);
-                    RecargarProveedores();
-                }
-            }
-            else
-            {
-                // ─── Doble clic en cualquier otra columna → abrir perfil ──
-                frmProveedores_Perfil frmPerfil = new frmProveedores_Perfil(idProveedor);
-                frmPerfil.FormClosed += (s, ev) => RecargarProveedores();
-                frmPerfil.Show();
-            }
-
+            frmProveedores_Perfil frmPerfil = new frmProveedores_Perfil(idProveedor);
+            frmPerfil.FormClosed += (s, ev) => RecargarProveedores();
+            frmPerfil.Show();
         }
     }
 }

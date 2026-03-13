@@ -38,7 +38,7 @@ namespace TRAMADE
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                cmbProveedor.Items.Add(dr["nombre_comercial_proveedor"].ToString());
+                //cmbProveedor.Items.Add(dr["nombre_comercial_proveedor"].ToString());
             }
             obj.Cerrar();
         }
@@ -85,7 +85,7 @@ namespace TRAMADE
                 txtPrecioCosto.Text = dr["Costo"].ToString();
                 txtStock.Text = dr["Stock"].ToString();
                 cmbCategoria.SelectedItem = dr["Categoría"].ToString();
-                cmbProveedor.SelectedItem = dr["Proveedor"].ToString();
+                //cmbProveedor.SelectedItem = dr["Proveedor"].ToString();
                 cmbSucursal.SelectedItem = dr["Sucursal"].ToString();
 
                 object imagenObj = dr["imagen_producto"];
@@ -129,8 +129,8 @@ namespace TRAMADE
             if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStock))
                 return;
 
-            if (!clsValidaciones.ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal))
-                return;
+            //if (!clsValidaciones.ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal))
+               // return;
 
             if (!clsValidaciones.ValidarDecimal(txtPrecio))
                 return;
@@ -151,7 +151,7 @@ namespace TRAMADE
                 int idCategoria = (int)cmdCat.ExecuteScalar();
 
                 SqlCommand cmdProv = new SqlCommand("SELECT id_proveedor FROM PROVEEDOR WHERE nombre_comercial_proveedor = @nombre", obj.SqlC);
-                cmdProv.Parameters.AddWithValue("@nombre", cmbProveedor.SelectedItem.ToString());
+                //cmdProv.Parameters.AddWithValue("@nombre", cmbProveedor.SelectedItem.ToString());
                 int idProveedor = (int)cmdProv.ExecuteScalar();
 
                 SqlCommand cmdSuc = new SqlCommand("SELECT id_sucursal FROM SUCURSAL WHERE nombre_sucursal = @nombre", obj.SqlC);
