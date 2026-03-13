@@ -54,6 +54,8 @@ namespace TRAMADE
                     flpBarraLateral.Width = SidebarCollapsed;
                     sidebarExpand = false;
                     tmrTransicionLateral.Stop();
+
+                    
                 }
             }
             else
@@ -64,6 +66,14 @@ namespace TRAMADE
                     flpBarraLateral.Width = SidebarExpanded;
                     sidebarExpand = true;
                     tmrTransicionLateral.Stop();
+
+                    pnlDashboard.Width = flpBarraLateral.Width;
+                    pnlClientes.Width = flpBarraLateral.Width;
+                    pnlCompras.Width = flpBarraLateral.Width;
+                    pnlInventario.Width = flpBarraLateral.Width;
+                    pnlProveedores.Width = flpBarraLateral.Width;
+                    pnlReportes.Width = flpBarraLateral.Width;
+                    pnlVentas.Width = flpBarraLateral.Width;
                 }
             }
         }

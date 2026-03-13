@@ -37,31 +37,31 @@
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
             this.flpBarraLateral = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlDashboard = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlClientes = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlVentas = new System.Windows.Forms.Panel();
             this.btnVentas = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlInventario = new System.Windows.Forms.Panel();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnlCompras = new System.Windows.Forms.Panel();
             this.btnCompras = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlProveedores = new System.Windows.Forms.Panel();
             this.btnProveedores = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.pnlReportes = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.tmrTransicionLateral = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.pnlDashboard.SuspendLayout();
+            this.pnlClientes.SuspendLayout();
+            this.pnlVentas.SuspendLayout();
+            this.pnlInventario.SuspendLayout();
+            this.pnlCompras.SuspendLayout();
+            this.pnlProveedores.SuspendLayout();
+            this.pnlReportes.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -167,26 +167,26 @@
             // flpBarraLateral
             // 
             this.flpBarraLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.flpBarraLateral.Controls.Add(this.panel2);
-            this.flpBarraLateral.Controls.Add(this.panel3);
-            this.flpBarraLateral.Controls.Add(this.panel4);
-            this.flpBarraLateral.Controls.Add(this.panel5);
-            this.flpBarraLateral.Controls.Add(this.panel6);
-            this.flpBarraLateral.Controls.Add(this.panel7);
-            this.flpBarraLateral.Controls.Add(this.panel8);
+            this.flpBarraLateral.Controls.Add(this.pnlDashboard);
+            this.flpBarraLateral.Controls.Add(this.pnlClientes);
+            this.flpBarraLateral.Controls.Add(this.pnlVentas);
+            this.flpBarraLateral.Controls.Add(this.pnlInventario);
+            this.flpBarraLateral.Controls.Add(this.pnlCompras);
+            this.flpBarraLateral.Controls.Add(this.pnlProveedores);
+            this.flpBarraLateral.Controls.Add(this.pnlReportes);
             this.flpBarraLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpBarraLateral.Location = new System.Drawing.Point(0, 65);
             this.flpBarraLateral.Name = "flpBarraLateral";
             this.flpBarraLateral.Size = new System.Drawing.Size(245, 716);
             this.flpBarraLateral.TabIndex = 1;
             // 
-            // panel2
+            // pnlDashboard
             // 
-            this.panel2.Controls.Add(this.btnInicio);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(245, 54);
-            this.panel2.TabIndex = 3;
+            this.pnlDashboard.Controls.Add(this.btnInicio);
+            this.pnlDashboard.Location = new System.Drawing.Point(3, 3);
+            this.pnlDashboard.Name = "pnlDashboard";
+            this.pnlDashboard.Size = new System.Drawing.Size(245, 54);
+            this.pnlDashboard.TabIndex = 3;
             // 
             // btnInicio
             // 
@@ -203,13 +203,13 @@
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
-            // panel3
+            // pnlClientes
             // 
-            this.panel3.Controls.Add(this.btnClientes);
-            this.panel3.Location = new System.Drawing.Point(3, 63);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(245, 60);
-            this.panel3.TabIndex = 5;
+            this.pnlClientes.Controls.Add(this.btnClientes);
+            this.pnlClientes.Location = new System.Drawing.Point(3, 63);
+            this.pnlClientes.Name = "pnlClientes";
+            this.pnlClientes.Size = new System.Drawing.Size(245, 60);
+            this.pnlClientes.TabIndex = 5;
             // 
             // btnClientes
             // 
@@ -229,13 +229,13 @@
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
             // 
-            // panel4
+            // pnlVentas
             // 
-            this.panel4.Controls.Add(this.btnVentas);
-            this.panel4.Location = new System.Drawing.Point(3, 129);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(245, 60);
-            this.panel4.TabIndex = 7;
+            this.pnlVentas.Controls.Add(this.btnVentas);
+            this.pnlVentas.Location = new System.Drawing.Point(3, 129);
+            this.pnlVentas.Name = "pnlVentas";
+            this.pnlVentas.Size = new System.Drawing.Size(245, 60);
+            this.pnlVentas.TabIndex = 7;
             // 
             // btnVentas
             // 
@@ -255,13 +255,13 @@
             this.btnVentas.Text = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = false;
             // 
-            // panel5
+            // pnlInventario
             // 
-            this.panel5.Controls.Add(this.btnInventario);
-            this.panel5.Location = new System.Drawing.Point(3, 195);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(245, 60);
-            this.panel5.TabIndex = 9;
+            this.pnlInventario.Controls.Add(this.btnInventario);
+            this.pnlInventario.Location = new System.Drawing.Point(3, 195);
+            this.pnlInventario.Name = "pnlInventario";
+            this.pnlInventario.Size = new System.Drawing.Size(245, 60);
+            this.pnlInventario.TabIndex = 9;
             // 
             // btnInventario
             // 
@@ -281,13 +281,13 @@
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
             // 
-            // panel6
+            // pnlCompras
             // 
-            this.panel6.Controls.Add(this.btnCompras);
-            this.panel6.Location = new System.Drawing.Point(3, 261);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(245, 60);
-            this.panel6.TabIndex = 11;
+            this.pnlCompras.Controls.Add(this.btnCompras);
+            this.pnlCompras.Location = new System.Drawing.Point(3, 261);
+            this.pnlCompras.Name = "pnlCompras";
+            this.pnlCompras.Size = new System.Drawing.Size(245, 60);
+            this.pnlCompras.TabIndex = 11;
             // 
             // btnCompras
             // 
@@ -307,13 +307,13 @@
             this.btnCompras.Text = "Compras";
             this.btnCompras.UseVisualStyleBackColor = false;
             // 
-            // panel7
+            // pnlProveedores
             // 
-            this.panel7.Controls.Add(this.btnProveedores);
-            this.panel7.Location = new System.Drawing.Point(3, 327);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(242, 60);
-            this.panel7.TabIndex = 13;
+            this.pnlProveedores.Controls.Add(this.btnProveedores);
+            this.pnlProveedores.Location = new System.Drawing.Point(3, 327);
+            this.pnlProveedores.Name = "pnlProveedores";
+            this.pnlProveedores.Size = new System.Drawing.Size(242, 60);
+            this.pnlProveedores.TabIndex = 13;
             // 
             // btnProveedores
             // 
@@ -333,13 +333,13 @@
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
             // 
-            // panel8
+            // pnlReportes
             // 
-            this.panel8.Controls.Add(this.button6);
-            this.panel8.Location = new System.Drawing.Point(3, 393);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(245, 60);
-            this.panel8.TabIndex = 15;
+            this.pnlReportes.Controls.Add(this.button6);
+            this.pnlReportes.Location = new System.Drawing.Point(3, 393);
+            this.pnlReportes.Name = "pnlReportes";
+            this.pnlReportes.Size = new System.Drawing.Size(245, 60);
+            this.pnlReportes.TabIndex = 15;
             // 
             // button6
             // 
@@ -381,13 +381,13 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.flpBarraLateral.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
+            this.pnlDashboard.ResumeLayout(false);
+            this.pnlClientes.ResumeLayout(false);
+            this.pnlVentas.ResumeLayout(false);
+            this.pnlInventario.ResumeLayout(false);
+            this.pnlCompras.ResumeLayout(false);
+            this.pnlProveedores.ResumeLayout(false);
+            this.pnlReportes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,19 +399,19 @@
         private System.Windows.Forms.PictureBox btnMenu;
         private System.Windows.Forms.FlowLayoutPanel flpBarraLateral;
         private System.Windows.Forms.Button btnInicio;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlDashboard;
         private System.Windows.Forms.Button btnClientes;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlClientes;
         private System.Windows.Forms.Button btnVentas;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlVentas;
         private System.Windows.Forms.Button btnInventario;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnlInventario;
         private System.Windows.Forms.Button btnCompras;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnlCompras;
         private System.Windows.Forms.Button btnProveedores;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnlProveedores;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel pnlReportes;
         private Krypton.Toolkit.KryptonButton btnSalir;
         private Krypton.Toolkit.KryptonButton btnMaximizar;
         private Krypton.Toolkit.KryptonButton btnMinimizar;

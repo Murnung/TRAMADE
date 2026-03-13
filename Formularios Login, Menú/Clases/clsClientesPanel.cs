@@ -30,43 +30,25 @@ namespace TRAMADE.Formularios_Login__Menú
             try
             {
                 cn.Abrir();
-
-                // Total clientes
-                //int total = ToInt(EjecutarScalar(cn, "SELECT COUNT(*) FROM CLIENTE"));
-
-                // Activos (id_estado = activo) e Inactivos
-                /*int activos = ToInt(EjecutarScalar(cn,
+                int total = ToInt(EjecutarScalar(cn, "SELECT COUNT(*) FROM CLIENTE"));
+                int activos = ToInt(EjecutarScalar(cn,
                     @"SELECT COUNT(*) FROM CLIENTE c
-                      INNER JOIN ESTADO e ON c.id_estado = e.id_estado
-                      INNER JOIN TIPO_ESTADO t ON e.id_tipo_estado = t.id_tipo_estado
-                      WHERE t.descripcion_tipo_estado = 'Activo'"));*/
+              INNER JOIN ESTADO e ON c.id_estado = e.id_estado
+              INNER JOIN TIPO_ESTADO t ON e.id_tipo_estado = t.id_tipo_estado
+              WHERE t.descripcion_tipo_estado = 'Activo'"));
+                int inactivos = total - activos;
+                int porcentaje = total > 0 ? (int)((activos * 100.0) / total) : 0;
 
-                //int inactivos = total - activos;
-
-                // Porcentaje de activos
-                //int porcentaje = total > 0 ? (int)((activos * 100.0) / total) : 0;
-
-                // Actualizar label
-                int total = 100;
-                int activos = 80;
-                int inactivos = 20;
-                int porcentaje = 80;
                 _lblTotal.Text = total.ToString("N0");
 
-
-
-                // Actualizar progress bar
                 _pnlBarraFondo.BackColor = Color.FromArgb(220, 220, 220);
                 _pnlBarraActivos.Width = (int)(_pnlBarraFondo.Width * porcentaje / 100.0);
                 _pnlBarraActivos.Height = _pnlBarraFondo.Height;
                 _pnlBarraActivos.Location = new Point(0, 0);
-
-                // Color según porcentaje
                 _pnlBarraActivos.BackColor = porcentaje >= 70 ? Color.FromArgb(72, 199, 174) :
                                              porcentaje >= 40 ? Color.FromArgb(255, 193, 68) :
-                                                               Color.FromArgb(220, 53, 69);
+                                                                Color.FromArgb(220, 53, 69);
 
-                // Tooltip con detalle
                 var tooltip = new ToolTip();
                 tooltip.SetToolTip(_pnlBarraFondo, $"Activos: {activos} | Inactivos: {inactivos} | {porcentaje}%");
                 tooltip.SetToolTip(_pnlBarraActivos, $"Activos: {activos} | Inactivos: {inactivos} | {porcentaje}%");
@@ -76,11 +58,7 @@ namespace TRAMADE.Formularios_Login__Menú
                 MessageBox.Show("Error clientes: " + ex.Message, "ERROR",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                cn.Cerrar();
-            }
-
+            finally { cn.Cerrar(); }
         }
 
         private string EjecutarScalar(clsConexion cn, string query)
