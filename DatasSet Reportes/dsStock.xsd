@@ -50,27 +50,27 @@ ORDER BY s.nombre_sucursal, p.nombre_producto</CommandText>
   <xs:element name="dsStock" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsStock" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsStock">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1">
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto">
+              <xs:element name="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Categoría" msprop:Generator_UserColumnName="Categoría" msprop:Generator_ColumnPropNameInTable="CategoríaColumn" msprop:Generator_ColumnPropNameInRow="Categoría" msprop:Generator_ColumnVarNameInTable="columnCategoría">
+              <xs:element name="Categoría" msprop:Generator_ColumnPropNameInTable="CategoríaColumn" msprop:Generator_ColumnPropNameInRow="Categoría" msprop:Generator_UserColumnName="Categoría" msprop:Generator_ColumnVarNameInTable="columnCategoría">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Precio_x0020_Venta" msprop:Generator_UserColumnName="Precio Venta" msprop:Generator_ColumnPropNameInTable="Precio_VentaColumn" msprop:Generator_ColumnPropNameInRow="Precio_Venta" msprop:Generator_ColumnVarNameInTable="columnPrecio_Venta" type="xs:decimal" />
-              <xs:element name="Precio_x0020_Costo" msprop:Generator_UserColumnName="Precio Costo" msprop:Generator_ColumnPropNameInTable="Precio_CostoColumn" msprop:Generator_ColumnPropNameInRow="Precio_Costo" msprop:Generator_ColumnVarNameInTable="columnPrecio_Costo" type="xs:decimal" />
-              <xs:element name="Stock" msprop:Generator_UserColumnName="Stock" msprop:Generator_ColumnPropNameInTable="StockColumn" msprop:Generator_ColumnPropNameInRow="Stock" msprop:Generator_ColumnVarNameInTable="columnStock" type="xs:int" />
-              <xs:element name="Sucursal" msprop:Generator_UserColumnName="Sucursal" msprop:Generator_ColumnPropNameInTable="SucursalColumn" msprop:Generator_ColumnPropNameInRow="Sucursal" msprop:Generator_ColumnVarNameInTable="columnSucursal">
+              <xs:element name="Precio_x0020_Venta" msprop:Generator_ColumnPropNameInTable="Precio_VentaColumn" msprop:Generator_ColumnPropNameInRow="Precio_Venta" msprop:Generator_UserColumnName="Precio Venta" msprop:Generator_ColumnVarNameInTable="columnPrecio_Venta" type="xs:decimal" />
+              <xs:element name="Precio_x0020_Costo" msprop:Generator_ColumnPropNameInTable="Precio_CostoColumn" msprop:Generator_ColumnPropNameInRow="Precio_Costo" msprop:Generator_UserColumnName="Precio Costo" msprop:Generator_ColumnVarNameInTable="columnPrecio_Costo" type="xs:decimal" />
+              <xs:element name="Stock" msprop:Generator_ColumnPropNameInTable="StockColumn" msprop:Generator_ColumnPropNameInRow="Stock" msprop:Generator_UserColumnName="Stock" msprop:Generator_ColumnVarNameInTable="columnStock" type="xs:int" />
+              <xs:element name="Sucursal" msprop:Generator_ColumnPropNameInTable="SucursalColumn" msprop:Generator_ColumnPropNameInRow="Sucursal" msprop:Generator_UserColumnName="Sucursal" msprop:Generator_ColumnVarNameInTable="columnSucursal">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

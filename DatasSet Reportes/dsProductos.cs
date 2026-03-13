@@ -36,3 +36,12 @@ namespace TRAMADE.DatasSet_Reportes.dsProductosTableAdapters
     {
     }
 }
+
+namespace TRAMADE.DatasSet_Reportes.dsProductosTableAdapters
+{
+
+
+    public partial class DataTable1TableAdapter
+    {
+    }
+}

@@ -53,7 +53,7 @@ namespace TRAMADE
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Text = "";
 
-            // Forzar que llene todo el área MDI
+            
             MdiClient mdiArea = Controls.OfType<MdiClient>().FirstOrDefault();
             if (mdiArea != null)
             {
@@ -112,7 +112,6 @@ namespace TRAMADE
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
             AbrirFormulario(new Form1());
         }
 
@@ -197,14 +196,14 @@ namespace TRAMADE
 
             if (confirm == DialogResult.Yes)
             {
-                // ✅ Limpiar sesión activa
+                
                 clsSesion.id_usuario = 0;
                 clsSesion.nombre_usuario = string.Empty;
 
-                // ✅ Cerrar todos los formularios hijos
+                
                 CerrarFormulariosHijos();
 
-                // ✅ Abrir login y cerrar menú
+                
                 frmLogin login = new frmLogin();
                 login.Show();
                 this.Close();

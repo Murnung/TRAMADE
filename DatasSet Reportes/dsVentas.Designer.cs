@@ -279,8 +279,6 @@ namespace TRAMADE.DatasSet_Reportes {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
             
-            private global::System.Data.DataColumn _columnN__Factura;
-            
             private global::System.Data.DataColumn columnCliente;
             
             private global::System.Data.DataColumn columnVendedor;
@@ -290,6 +288,8 @@ namespace TRAMADE.DatasSet_Reportes {
             private global::System.Data.DataColumn columnFecha;
             
             private global::System.Data.DataColumn columnTotal;
+            
+            private global::System.Data.DataColumn columnNFactura;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
@@ -322,14 +322,6 @@ namespace TRAMADE.DatasSet_Reportes {
             protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn _N__FacturaColumn {
-                get {
-                    return this._columnN__Factura;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -374,6 +366,14 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn NFacturaColumn {
+                get {
+                    return this.columnNFactura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -412,12 +412,12 @@ namespace TRAMADE.DatasSet_Reportes {
             public DataTable1Row AddDataTable1Row(string Cliente, string Vendedor, string Sucursal, System.DateTime Fecha, decimal Total) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         Cliente,
                         Vendedor,
                         Sucursal,
                         Fecha,
-                        Total};
+                        Total,
+                        null};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -425,9 +425,9 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public DataTable1Row FindBy_N__Factura(int _N__Factura) {
+            public DataTable1Row FindByNFactura(int NFactura) {
                 return ((DataTable1Row)(this.Rows.Find(new object[] {
-                            _N__Factura})));
+                            NFactura})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -447,21 +447,17 @@ namespace TRAMADE.DatasSet_Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             internal void InitVars() {
-                this._columnN__Factura = base.Columns["N° Factura"];
                 this.columnCliente = base.Columns["Cliente"];
                 this.columnVendedor = base.Columns["Vendedor"];
                 this.columnSucursal = base.Columns["Sucursal"];
                 this.columnFecha = base.Columns["Fecha"];
                 this.columnTotal = base.Columns["Total"];
+                this.columnNFactura = base.Columns["NFactura"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             private void InitClass() {
-                this._columnN__Factura = new global::System.Data.DataColumn("N° Factura", typeof(int), null, global::System.Data.MappingType.Element);
-                this._columnN__Factura.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnN__Factura");
-                this._columnN__Factura.ExtendedProperties.Add("Generator_UserColumnName", "N° Factura");
-                base.Columns.Add(this._columnN__Factura);
                 this.columnCliente = new global::System.Data.DataColumn("Cliente", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCliente);
                 this.columnVendedor = new global::System.Data.DataColumn("Vendedor", typeof(string), null, global::System.Data.MappingType.Element);
@@ -472,14 +468,10 @@ namespace TRAMADE.DatasSet_Reportes {
                 base.Columns.Add(this.columnFecha);
                 this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
+                this.columnNFactura = new global::System.Data.DataColumn("NFactura", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNFactura);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this._columnN__Factura}, true));
-                this._columnN__Factura.AutoIncrement = true;
-                this._columnN__Factura.AutoIncrementSeed = -1;
-                this._columnN__Factura.AutoIncrementStep = -1;
-                this._columnN__Factura.AllowDBNull = false;
-                this._columnN__Factura.ReadOnly = true;
-                this._columnN__Factura.Unique = true;
+                                this.columnNFactura}, true));
                 this.columnCliente.AllowDBNull = false;
                 this.columnCliente.MaxLength = 50;
                 this.columnVendedor.AllowDBNull = false;
@@ -488,6 +480,12 @@ namespace TRAMADE.DatasSet_Reportes {
                 this.columnSucursal.MaxLength = 50;
                 this.columnFecha.AllowDBNull = false;
                 this.columnTotal.ReadOnly = true;
+                this.columnNFactura.AutoIncrement = true;
+                this.columnNFactura.AutoIncrementSeed = -1;
+                this.columnNFactura.AutoIncrementStep = -1;
+                this.columnNFactura.AllowDBNull = false;
+                this.columnNFactura.ReadOnly = true;
+                this.columnNFactura.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -630,17 +628,6 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public int _N__Factura {
-                get {
-                    return ((int)(this[this.tableDataTable1._N__FacturaColumn]));
-                }
-                set {
-                    this[this.tableDataTable1._N__FacturaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public string Cliente {
                 get {
                     return ((string)(this[this.tableDataTable1.ClienteColumn]));
@@ -696,6 +683,17 @@ namespace TRAMADE.DatasSet_Reportes {
                 }
                 set {
                     this[this.tableDataTable1.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int NFactura {
+                get {
+                    return ((int)(this[this.tableDataTable1.NFacturaColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.NFacturaColumn] = value;
                 }
             }
             
@@ -871,12 +869,12 @@ namespace TRAMADE.DatasSet_Reportes.dsVentasTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DataTable1";
-            tableMapping.ColumnMappings.Add("N° Factura", "N° Factura");
             tableMapping.ColumnMappings.Add("Cliente", "Cliente");
             tableMapping.ColumnMappings.Add("Vendedor", "Vendedor");
             tableMapping.ColumnMappings.Add("Sucursal", "Sucursal");
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
             tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("NFactura", "NFactura");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -894,7 +892,7 @@ namespace TRAMADE.DatasSet_Reportes.dsVentasTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT 
-    f.id_factura        AS 'N° Factura',
+    f.id_factura        AS 'NFactura',
     c.nombre_cliente    AS 'Cliente',
     u.nombre_usuario    AS 'Vendedor',
     s.nombre_sucursal   AS 'Sucursal',

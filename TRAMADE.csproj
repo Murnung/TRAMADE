@@ -175,6 +175,12 @@
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsSesion.cs" />
     <Compile Include="ClasesCliente\clsValidarClientes.cs" />
+    <Compile Include="DatasSet Reportes\dsProductos.cs">
+      <DependentUpon>dsProductos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatasSet Reportes\dsVentas.cs">
+      <DependentUpon>dsVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,12 +404,18 @@
     </Compile>
     <Compile Include="DatasSet Reportes\dsProductos.Designer.cs">
       <DependentUpon>dsProductos.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="DatasSet Reportes\dsStock.Designer.cs">
       <DependentUpon>dsStock.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="DatasSet Reportes\dsVentas.Designer.cs">
       <DependentUpon>dsVentas.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Formulario Reporte\frmReportes.cs">
       <SubType>Form</SubType>

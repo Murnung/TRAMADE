@@ -9,14 +9,14 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_TRAMADEConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DB_TRAMADEConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT 
     p.nombre_producto       AS 'Producto',
     cat.nombre_categoria    AS 'Categoría',
-    SUM(fp.cantidad)        AS 'Cantidad Vendida',
-    SUM(fp.cantidad * p.precio_unitario) AS 'Total Generado',
+    SUM(fp.cantidad)        AS 'CantidadVendida',
+    SUM(fp.cantidad * p.precio_unitario) AS 'TotalGenerado',
     s.nombre_sucursal       AS 'Sucursal'
 FROM FACTURA_PRODUCTO fp
 INNER JOIN PRODUCTO p       ON fp.id_producto = p.id_producto
@@ -40,9 +40,9 @@ ORDER BY SUM(fp.cantidad) DESC</CommandText>
             <Mappings>
               <Mapping SourceColumn="Producto" DataSetColumn="Producto" />
               <Mapping SourceColumn="Categoría" DataSetColumn="Categoría" />
-              <Mapping SourceColumn="Cantidad Vendida" DataSetColumn="Cantidad Vendida" />
-              <Mapping SourceColumn="Total Generado" DataSetColumn="Total Generado" />
               <Mapping SourceColumn="Sucursal" DataSetColumn="Sucursal" />
+              <Mapping SourceColumn="CantidadVendida" DataSetColumn="CantidadVendida" />
+              <Mapping SourceColumn="TotalGenerado" DataSetColumn="TotalGenerado" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -51,35 +51,35 @@ ORDER BY SUM(fp.cantidad) DESC</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dsProductos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="dsProductos" msprop:Generator_DataSetName="dsProductos">
+  <xs:element name="dsProductos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsProductos" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsProductos">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+        <xs:element name="DataTable1" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Producto" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnVarNameInTable="columnProducto" msprop:Generator_UserColumnName="Producto">
+              <xs:element name="Producto" msprop:Generator_UserColumnName="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Categoría" msprop:Generator_ColumnPropNameInRow="Categoría" msprop:Generator_ColumnPropNameInTable="CategoríaColumn" msprop:Generator_ColumnVarNameInTable="columnCategoría" msprop:Generator_UserColumnName="Categoría">
+              <xs:element name="Categoría" msprop:Generator_UserColumnName="Categoría" msprop:Generator_ColumnPropNameInTable="CategoríaColumn" msprop:Generator_ColumnPropNameInRow="Categoría" msprop:Generator_ColumnVarNameInTable="columnCategoría">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Cantidad_x0020_Vendida" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Cantidad_Vendida" msprop:Generator_ColumnPropNameInTable="Cantidad_VendidaColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad_Vendida" msprop:Generator_UserColumnName="Cantidad Vendida" type="xs:int" minOccurs="0" />
-              <xs:element name="Total_x0020_Generado" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Total_Generado" msprop:Generator_ColumnPropNameInTable="Total_GeneradoColumn" msprop:Generator_ColumnVarNameInTable="columnTotal_Generado" msprop:Generator_UserColumnName="Total Generado" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Sucursal" msprop:Generator_ColumnPropNameInRow="Sucursal" msprop:Generator_ColumnPropNameInTable="SucursalColumn" msprop:Generator_ColumnVarNameInTable="columnSucursal" msprop:Generator_UserColumnName="Sucursal">
+              <xs:element name="Sucursal" msprop:Generator_UserColumnName="Sucursal" msprop:Generator_ColumnPropNameInTable="SucursalColumn" msprop:Generator_ColumnPropNameInRow="Sucursal" msprop:Generator_ColumnVarNameInTable="columnSucursal">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="CantidadVendida" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="CantidadVendida" msprop:Generator_ColumnPropNameInTable="CantidadVendidaColumn" msprop:Generator_ColumnVarNameInTable="columnCantidadVendida" msprop:Generator_UserColumnName="CantidadVendida" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalGenerado" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="TotalGenerado" msprop:Generator_ColumnPropNameInTable="TotalGeneradoColumn" msprop:Generator_ColumnVarNameInTable="columnTotalGenerado" msprop:Generator_UserColumnName="TotalGenerado" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

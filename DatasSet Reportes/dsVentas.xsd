@@ -9,11 +9,11 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_TRAMADEConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DB_TRAMADEConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT 
-    f.id_factura        AS 'N° Factura',
+    f.id_factura        AS 'NFactura',
     c.nombre_cliente    AS 'Cliente',
     u.nombre_usuario    AS 'Vendedor',
     s.nombre_sucursal   AS 'Sucursal',
@@ -40,12 +40,12 @@ ORDER BY f.fecha_emision DESC</CommandText>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="N° Factura" DataSetColumn="N° Factura" />
               <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
               <Mapping SourceColumn="Vendedor" DataSetColumn="Vendedor" />
               <Mapping SourceColumn="Sucursal" DataSetColumn="Sucursal" />
               <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="NFactura" DataSetColumn="NFactura" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -54,36 +54,36 @@ ORDER BY f.fecha_emision DESC</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dsVentas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="dsVentas" msprop:Generator_DataSetName="dsVentas">
+  <xs:element name="dsVentas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsVentas" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsVentas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+        <xs:element name="DataTable1" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="N_x00B0__x0020_Factura" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="_N__Factura" msprop:Generator_ColumnPropNameInTable="_N__FacturaColumn" msprop:Generator_ColumnVarNameInTable="_columnN__Factura" msprop:Generator_UserColumnName="N° Factura" type="xs:int" />
-              <xs:element name="Cliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_UserColumnName="Cliente">
+              <xs:element name="Cliente" msprop:Generator_UserColumnName="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Vendedor" msprop:Generator_ColumnPropNameInRow="Vendedor" msprop:Generator_ColumnPropNameInTable="VendedorColumn" msprop:Generator_ColumnVarNameInTable="columnVendedor" msprop:Generator_UserColumnName="Vendedor">
+              <xs:element name="Vendedor" msprop:Generator_UserColumnName="Vendedor" msprop:Generator_ColumnPropNameInTable="VendedorColumn" msprop:Generator_ColumnPropNameInRow="Vendedor" msprop:Generator_ColumnVarNameInTable="columnVendedor">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Sucursal" msprop:Generator_ColumnPropNameInRow="Sucursal" msprop:Generator_ColumnPropNameInTable="SucursalColumn" msprop:Generator_ColumnVarNameInTable="columnSucursal" msprop:Generator_UserColumnName="Sucursal">
+              <xs:element name="Sucursal" msprop:Generator_UserColumnName="Sucursal" msprop:Generator_ColumnPropNameInTable="SucursalColumn" msprop:Generator_ColumnPropNameInRow="Sucursal" msprop:Generator_ColumnVarNameInTable="columnSucursal">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Fecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
-              <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" type="xs:dateTime" />
+              <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NFactura" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="NFactura" msprop:Generator_ColumnPropNameInTable="NFacturaColumn" msprop:Generator_ColumnVarNameInTable="columnNFactura" msprop:Generator_UserColumnName="NFactura" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -91,7 +91,7 @@ ORDER BY f.fecha_emision DESC</CommandText>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DataTable1" />
-      <xs:field xpath="mstns:N_x00B0__x0020_Factura" />
+      <xs:field xpath="mstns:NFactura" />
     </xs:unique>
   </xs:element>
 </xs:schema>

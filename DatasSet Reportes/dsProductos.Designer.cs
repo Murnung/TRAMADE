@@ -283,11 +283,11 @@ namespace TRAMADE.DatasSet_Reportes {
             
             private global::System.Data.DataColumn columnCategoría;
             
-            private global::System.Data.DataColumn columnCantidad_Vendida;
-            
-            private global::System.Data.DataColumn columnTotal_Generado;
-            
             private global::System.Data.DataColumn columnSucursal;
+            
+            private global::System.Data.DataColumn columnCantidadVendida;
+            
+            private global::System.Data.DataColumn columnTotalGenerado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
@@ -340,25 +340,25 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn Cantidad_VendidaColumn {
-                get {
-                    return this.columnCantidad_Vendida;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn Total_GeneradoColumn {
-                get {
-                    return this.columnTotal_Generado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public global::System.Data.DataColumn SucursalColumn {
                 get {
                     return this.columnSucursal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn CantidadVendidaColumn {
+                get {
+                    return this.columnCantidadVendida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn TotalGeneradoColumn {
+                get {
+                    return this.columnTotalGenerado;
                 }
             }
             
@@ -399,14 +399,14 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string Producto, string Categoría, int Cantidad_Vendida, decimal Total_Generado, string Sucursal) {
+            public DataTable1Row AddDataTable1Row(string Producto, string Categoría, string Sucursal, int CantidadVendida, decimal TotalGenerado) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Producto,
                         Categoría,
-                        Cantidad_Vendida,
-                        Total_Generado,
-                        Sucursal};
+                        Sucursal,
+                        CantidadVendida,
+                        TotalGenerado};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -431,9 +431,9 @@ namespace TRAMADE.DatasSet_Reportes {
             internal void InitVars() {
                 this.columnProducto = base.Columns["Producto"];
                 this.columnCategoría = base.Columns["Categoría"];
-                this.columnCantidad_Vendida = base.Columns["Cantidad Vendida"];
-                this.columnTotal_Generado = base.Columns["Total Generado"];
                 this.columnSucursal = base.Columns["Sucursal"];
+                this.columnCantidadVendida = base.Columns["CantidadVendida"];
+                this.columnTotalGenerado = base.Columns["TotalGenerado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -443,20 +443,20 @@ namespace TRAMADE.DatasSet_Reportes {
                 base.Columns.Add(this.columnProducto);
                 this.columnCategoría = new global::System.Data.DataColumn("Categoría", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCategoría);
-                this.columnCantidad_Vendida = new global::System.Data.DataColumn("Cantidad Vendida", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad_Vendida);
-                this.columnTotal_Generado = new global::System.Data.DataColumn("Total Generado", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Generado);
                 this.columnSucursal = new global::System.Data.DataColumn("Sucursal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSucursal);
+                this.columnCantidadVendida = new global::System.Data.DataColumn("CantidadVendida", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadVendida);
+                this.columnTotalGenerado = new global::System.Data.DataColumn("TotalGenerado", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalGenerado);
                 this.columnProducto.AllowDBNull = false;
                 this.columnProducto.MaxLength = 50;
                 this.columnCategoría.AllowDBNull = false;
                 this.columnCategoría.MaxLength = 50;
-                this.columnCantidad_Vendida.ReadOnly = true;
-                this.columnTotal_Generado.ReadOnly = true;
                 this.columnSucursal.AllowDBNull = false;
                 this.columnSucursal.MaxLength = 50;
+                this.columnCantidadVendida.ReadOnly = true;
+                this.columnTotalGenerado.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -621,38 +621,6 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public int Cantidad_Vendida {
-                get {
-                    try {
-                        return ((int)(this[this.tableDataTable1.Cantidad_VendidaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad Vendida\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.Cantidad_VendidaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public decimal Total_Generado {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableDataTable1.Total_GeneradoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Total Generado\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.Total_GeneradoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public string Sucursal {
                 get {
                     return ((string)(this[this.tableDataTable1.SucursalColumn]));
@@ -664,26 +632,58 @@ namespace TRAMADE.DatasSet_Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsCantidad_VendidaNull() {
-                return this.IsNull(this.tableDataTable1.Cantidad_VendidaColumn);
+            public int CantidadVendida {
+                get {
+                    try {
+                        return ((int)(this[this.tableDataTable1.CantidadVendidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CantidadVendida\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.CantidadVendidaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetCantidad_VendidaNull() {
-                this[this.tableDataTable1.Cantidad_VendidaColumn] = global::System.Convert.DBNull;
+            public decimal TotalGenerado {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDataTable1.TotalGeneradoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalGenerado\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.TotalGeneradoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsTotal_GeneradoNull() {
-                return this.IsNull(this.tableDataTable1.Total_GeneradoColumn);
+            public bool IsCantidadVendidaNull() {
+                return this.IsNull(this.tableDataTable1.CantidadVendidaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetTotal_GeneradoNull() {
-                this[this.tableDataTable1.Total_GeneradoColumn] = global::System.Convert.DBNull;
+            public void SetCantidadVendidaNull() {
+                this[this.tableDataTable1.CantidadVendidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsTotalGeneradoNull() {
+                return this.IsNull(this.tableDataTable1.TotalGeneradoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetTotalGeneradoNull() {
+                this[this.tableDataTable1.TotalGeneradoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -848,9 +848,9 @@ namespace TRAMADE.DatasSet_Reportes.dsProductosTableAdapters {
             tableMapping.DataSetTable = "DataTable1";
             tableMapping.ColumnMappings.Add("Producto", "Producto");
             tableMapping.ColumnMappings.Add("Categoría", "Categoría");
-            tableMapping.ColumnMappings.Add("Cantidad Vendida", "Cantidad Vendida");
-            tableMapping.ColumnMappings.Add("Total Generado", "Total Generado");
             tableMapping.ColumnMappings.Add("Sucursal", "Sucursal");
+            tableMapping.ColumnMappings.Add("CantidadVendida", "CantidadVendida");
+            tableMapping.ColumnMappings.Add("TotalGenerado", "TotalGenerado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -870,8 +870,8 @@ namespace TRAMADE.DatasSet_Reportes.dsProductosTableAdapters {
             this._commandCollection[0].CommandText = @"SELECT 
     p.nombre_producto       AS 'Producto',
     cat.nombre_categoria    AS 'Categoría',
-    SUM(fp.cantidad)        AS 'Cantidad Vendida',
-    SUM(fp.cantidad * p.precio_unitario) AS 'Total Generado',
+    SUM(fp.cantidad)        AS 'CantidadVendida',
+    SUM(fp.cantidad * p.precio_unitario) AS 'TotalGenerado',
     s.nombre_sucursal       AS 'Sucursal'
 FROM FACTURA_PRODUCTO fp
 INNER JOIN PRODUCTO p       ON fp.id_producto = p.id_producto
