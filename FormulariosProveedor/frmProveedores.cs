@@ -46,16 +46,24 @@ namespace TRAMADE
 
         private void btnFiltrarActivo_Click(object sender, EventArgs e)
         {
-            clsProveedores ObjProveedores = new clsProveedores();
+            /*clsProveedores ObjProveedores = new clsProveedores();
             dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("ACTIVO");
-            clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
+            clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");*/
+
+            clsProveedores ObjProveedores = new clsProveedores();
+            ObjProveedores.CambiarEstadoMasivo_Activo(dgvProveedor);
+            RecargarProveedores();
         }
 
         private void btnFiltrarInactivo_Click(object sender, EventArgs e)
         {
-            clsProveedores ObjProveedores = new clsProveedores();
+            /*clsProveedores ObjProveedores = new clsProveedores();
             dgvProveedor.DataSource = ObjProveedores.FiltrarPorEstado("INACTIVO");
-            clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");
+            clsDataGridView.OcultarColumna(dgvProveedor, "id_proveedor");*/
+
+            clsProveedores ObjProveedores = new clsProveedores();
+            ObjProveedores.CambiarEstadoMasivo_Activo(dgvProveedor);
+            RecargarProveedores();
         }
 
         

@@ -47,13 +47,19 @@ namespace TRAMADE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!clsValidar.ValidarProveedor(
+            /*if (!clsValidar.ValidarProveedor(
             txtNombreComercial.Text, txtNombreComercial,
             txtRazonSocial.Text, txtRazonSocial,
             txtDireccionFiscal.Text, txtDireccionFiscal,
             txtRtn.Text, txtRtn,
             txtTelefonoGeneral.Text, txtTelefonoGeneral,
             txtCorreoCentral.Text, txtCorreoCentral,
+            Convert.ToInt32(cmbClasificacion.SelectedValue),
+            Convert.ToInt32(cmbTerminosdePago.SelectedValue))) return;*/
+
+            if (!clsValidar.ValidarProveedor(
+            txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text,
+            txtRtn.Text, txtTelefonoGeneral.Text, txtCorreoCentral.Text,
             Convert.ToInt32(cmbClasificacion.SelectedValue),
             Convert.ToInt32(cmbTerminosdePago.SelectedValue))) return;
 
