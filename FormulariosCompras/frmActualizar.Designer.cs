@@ -283,6 +283,7 @@
             // 
             // cmbProveedor
             // 
+            this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProveedor.DropDownWidth = 186;
             this.cmbProveedor.Location = new System.Drawing.Point(151, 174);
             this.cmbProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -296,6 +297,7 @@
             // 
             // cmbProducto
             // 
+            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.DropDownWidth = 186;
             this.cmbProducto.Location = new System.Drawing.Point(234, 218);
             this.cmbProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
