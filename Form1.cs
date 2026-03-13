@@ -25,6 +25,7 @@ namespace TRAMADE
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.ControlBox = false;
             _popup = new clsVistaGeneral(this);
 
             new clsGraficoInventario(chrInventario).Cargar();
@@ -61,6 +62,11 @@ namespace TRAMADE
         private void btnProductosAgotados_Click(object sender, EventArgs e)
         {
             _popup.MostrarAgotados(btnProductosAgotados);
+        }
+
+        private void dgvCompras_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

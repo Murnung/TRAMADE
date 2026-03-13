@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.Formularios_Login__Menú;
+using TRAMADE.Formularios_Login__Menú.Clases;
 
 namespace TRAMADE
 {
+
     public partial class frmMenuPrincipal : Form
     {
+        Form1 dashboard;
+
         private readonly ResponsiveFormManager _responsive;
 
         public frmMenuPrincipal()
         {
             InitializeComponent();
             _responsive = new ResponsiveFormManager(this);
+            mdiProp();
         }
 
         private const int SIDEBAR_COLLAPSED = 85;
@@ -26,6 +31,12 @@ namespace TRAMADE
         private const int FORM_ORIGINAL_WIDTH = 1187;
 
         bool sidebarExpand = true;
+
+        private void mdiProp()
+        {
+            this.SetBevel(false);
+            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.FromArgb(232,234,237);
+        }
 
         private float ScaleX => (float)this.ClientSize.Width / FORM_ORIGINAL_WIDTH;
         private int SidebarCollapsed => (int)(SIDEBAR_COLLAPSED * ScaleX);
@@ -96,8 +107,18 @@ namespace TRAMADE
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            Form1 frmLol = new Form1();
-            frmLol.Show(); // Agregué el .Show() para que haga algo
+            if(dashboard == null)
+            {
+                dashboard = new Form1();
+                dashboard.FormClosed += Dashboard_FormClosed;
+                dashboard.MdiParent = this;
+                dashboard.Show();
+            }
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dashboard = null;
         }
     }
 }

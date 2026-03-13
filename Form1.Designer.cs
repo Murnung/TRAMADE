@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbVentasRealizadas = new Krypton.Toolkit.KryptonGroupBox();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
@@ -98,7 +98,7 @@
             // 
             this.gbVentasRealizadas.Panel.Controls.Add(this.dgvVentas);
             this.gbVentasRealizadas.Panel.Controls.Add(this.label7);
-            this.gbVentasRealizadas.Size = new System.Drawing.Size(418, 232);
+            this.gbVentasRealizadas.Size = new System.Drawing.Size(432, 232);
             this.gbVentasRealizadas.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.gbVentasRealizadas.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.gbVentasRealizadas.StateCommon.Border.Rounding = 10F;
@@ -109,7 +109,7 @@
             this.dgvVentas.AllowUserToAddRows = false;
             this.dgvVentas.AllowUserToDeleteRows = false;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Location = new System.Drawing.Point(-2, 48);
+            this.dgvVentas.Location = new System.Drawing.Point(3, 49);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.Size = new System.Drawing.Size(418, 176);
@@ -136,7 +136,7 @@
             // 
             this.gbComprasRealizadas.Panel.Controls.Add(this.dgvCompras);
             this.gbComprasRealizadas.Panel.Controls.Add(this.label6);
-            this.gbComprasRealizadas.Size = new System.Drawing.Size(418, 232);
+            this.gbComprasRealizadas.Size = new System.Drawing.Size(432, 232);
             this.gbComprasRealizadas.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.gbComprasRealizadas.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.gbComprasRealizadas.StateCommon.Border.Rounding = 10F;
@@ -147,11 +147,12 @@
             this.dgvCompras.AllowUserToAddRows = false;
             this.dgvCompras.AllowUserToDeleteRows = false;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompras.Location = new System.Drawing.Point(-8, 49);
+            this.dgvCompras.Location = new System.Drawing.Point(3, 45);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
             this.dgvCompras.Size = new System.Drawing.Size(426, 176);
             this.dgvCompras.TabIndex = 19;
+            this.dgvCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompras_CellContentClick);
             // 
             // label6
             // 
@@ -183,16 +184,16 @@
             // 
             // chrTendencia
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chrTendencia.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chrTendencia.Legends.Add(legend3);
+            chartArea7.Name = "ChartArea1";
+            this.chrTendencia.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chrTendencia.Legends.Add(legend7);
             this.chrTendencia.Location = new System.Drawing.Point(3, 3);
             this.chrTendencia.Name = "chrTendencia";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chrTendencia.Series.Add(series3);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chrTendencia.Series.Add(series7);
             this.chrTendencia.Size = new System.Drawing.Size(257, 217);
             this.chrTendencia.TabIndex = 17;
             this.chrTendencia.Text = "chart2";
@@ -215,16 +216,16 @@
             // 
             // chrInventario
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chrInventario.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chrInventario.Legends.Add(legend4);
+            chartArea8.Name = "ChartArea1";
+            this.chrInventario.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chrInventario.Legends.Add(legend8);
             this.chrInventario.Location = new System.Drawing.Point(-4, 3);
             this.chrInventario.Name = "chrInventario";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chrInventario.Series.Add(series4);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chrInventario.Series.Add(series8);
             this.chrInventario.Size = new System.Drawing.Size(317, 217);
             this.chrInventario.TabIndex = 15;
             this.chrInventario.Text = "chart1";
@@ -483,13 +484,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 691);
+            this.ClientSize = new System.Drawing.Size(952, 703);
+            this.ControlBox = false;
             this.Controls.Add(this.gbVentasRealizadas);
             this.Controls.Add(this.gbComprasRealizadas);
             this.Controls.Add(this.gbTendencia);
             this.Controls.Add(this.gbGestionInven);
             this.Controls.Add(this.gbClientes);
             this.Controls.Add(this.gbVistaGeneral);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";

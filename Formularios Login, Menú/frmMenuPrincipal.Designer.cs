@@ -372,6 +372,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.flpBarraLateral);
             this.Controls.Add(this.panel1);
+            this.IsMdiContainer = true;
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);

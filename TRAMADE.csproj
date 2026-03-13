@@ -133,6 +133,7 @@
     <Compile Include="Formularios Login, Menú\Clases\clsUltimasCompras.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsUltimasVentas.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsVistaGeneral.cs" />
+    <Compile Include="Formularios Login, Menú\Clases\mdiProperties.cs" />
     <Compile Include="Formularios Login, Menú\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
