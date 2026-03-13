@@ -306,24 +306,25 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chtClientes.Series.Add(series1);
-            this.chtClientes.Size = new System.Drawing.Size(245, 205);
+            this.chtClientes.Size = new System.Drawing.Size(315, 205);
             this.chtClientes.TabIndex = 44;
             this.chtClientes.Text = "chart1";
             // 
             // chtDepas
             // 
             this.chtDepas.BackSecondaryColor = System.Drawing.Color.White;
+            this.chtDepas.BorderlineColor = System.Drawing.Color.Transparent;
             chartArea2.Name = "ChartArea1";
             this.chtDepas.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chtDepas.Legends.Add(legend2);
-            this.chtDepas.Location = new System.Drawing.Point(307, 355);
+            this.chtDepas.Location = new System.Drawing.Point(252, 355);
             this.chtDepas.Name = "chtDepas";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chtDepas.Series.Add(series2);
-            this.chtDepas.Size = new System.Drawing.Size(264, 205);
+            this.chtDepas.Size = new System.Drawing.Size(319, 205);
             this.chtDepas.TabIndex = 45;
             this.chtDepas.Text = "chart2";
             // 
