@@ -189,5 +189,26 @@ namespace TRAMADE
             pnlReportes.Width = 239;
             pnlVentas.Width = 239;
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("¿Estás seguro de que deseas cerrar sesión?",
+        "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.Yes)
+            {
+                // ✅ Limpiar sesión activa
+                clsSesion.id_usuario = 0;
+                clsSesion.nombre_usuario = string.Empty;
+
+                // ✅ Cerrar todos los formularios hijos
+                CerrarFormulariosHijos();
+
+                // ✅ Abrir login y cerrar menú
+                frmLogin login = new frmLogin();
+                login.Show();
+                this.Close();
+            }
+        }
     }
 }

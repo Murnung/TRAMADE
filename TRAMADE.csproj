@@ -551,6 +551,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Iconos\Cerrar.png" />
+    <None Include="Resources\Iconos\cerrarsesion.png" />
     <Content Include="Resources\Iconos\Clientes.png" />
     <Content Include="Resources\Iconos\Compras.png" />
     <Content Include="Resources\Iconos\comprasrealizadas.png" />

@@ -31,26 +31,27 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.lblBienvenidoUsuario = new System.Windows.Forms.Label();
             this.flpBarraLateral = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDashboard = new System.Windows.Forms.Panel();
-            this.btnInicio = new System.Windows.Forms.Button();
             this.pnlClientes = new System.Windows.Forms.Panel();
-            this.btnClientes = new System.Windows.Forms.Button();
             this.pnlVentas = new System.Windows.Forms.Panel();
-            this.btnVentas = new System.Windows.Forms.Button();
             this.pnlInventario = new System.Windows.Forms.Panel();
-            this.btnInventario = new System.Windows.Forms.Button();
             this.pnlCompras = new System.Windows.Forms.Panel();
-            this.btnCompras = new System.Windows.Forms.Button();
             this.pnlProveedores = new System.Windows.Forms.Panel();
-            this.btnProveedores = new System.Windows.Forms.Button();
             this.pnlReportes = new System.Windows.Forms.Panel();
-            this.btnReportes = new System.Windows.Forms.Button();
             this.tmrTransicionLateral = new System.Windows.Forms.Timer(this.components);
+            this.pnlCerrar = new System.Windows.Forms.Panel();
+            this.btnInicio = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.btnCompras = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.flpBarraLateral.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
             this.pnlClientes.SuspendLayout();
@@ -59,6 +60,8 @@
             this.pnlCompras.SuspendLayout();
             this.pnlProveedores.SuspendLayout();
             this.pnlReportes.SuspendLayout();
+            this.pnlCerrar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,18 +74,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1171, 65);
             this.panel1.TabIndex = 0;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(19, 14);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(55, 36);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnMenu.TabIndex = 6;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // lblBienvenidoUsuario
             // 
@@ -104,6 +95,7 @@
             this.flpBarraLateral.Controls.Add(this.pnlCompras);
             this.flpBarraLateral.Controls.Add(this.pnlProveedores);
             this.flpBarraLateral.Controls.Add(this.pnlReportes);
+            this.flpBarraLateral.Controls.Add(this.pnlCerrar);
             this.flpBarraLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpBarraLateral.Location = new System.Drawing.Point(0, 65);
             this.flpBarraLateral.Name = "flpBarraLateral";
@@ -117,6 +109,68 @@
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(236, 54);
             this.pnlDashboard.TabIndex = 3;
+            // 
+            // pnlClientes
+            // 
+            this.pnlClientes.Controls.Add(this.btnClientes);
+            this.pnlClientes.Location = new System.Drawing.Point(3, 63);
+            this.pnlClientes.Name = "pnlClientes";
+            this.pnlClientes.Size = new System.Drawing.Size(236, 60);
+            this.pnlClientes.TabIndex = 5;
+            // 
+            // pnlVentas
+            // 
+            this.pnlVentas.Controls.Add(this.btnVentas);
+            this.pnlVentas.Location = new System.Drawing.Point(3, 129);
+            this.pnlVentas.Name = "pnlVentas";
+            this.pnlVentas.Size = new System.Drawing.Size(236, 60);
+            this.pnlVentas.TabIndex = 7;
+            // 
+            // pnlInventario
+            // 
+            this.pnlInventario.Controls.Add(this.btnInventario);
+            this.pnlInventario.Location = new System.Drawing.Point(3, 195);
+            this.pnlInventario.Name = "pnlInventario";
+            this.pnlInventario.Size = new System.Drawing.Size(236, 60);
+            this.pnlInventario.TabIndex = 9;
+            // 
+            // pnlCompras
+            // 
+            this.pnlCompras.Controls.Add(this.btnCompras);
+            this.pnlCompras.Location = new System.Drawing.Point(3, 261);
+            this.pnlCompras.Name = "pnlCompras";
+            this.pnlCompras.Size = new System.Drawing.Size(236, 60);
+            this.pnlCompras.TabIndex = 11;
+            // 
+            // pnlProveedores
+            // 
+            this.pnlProveedores.Controls.Add(this.btnProveedores);
+            this.pnlProveedores.Location = new System.Drawing.Point(3, 327);
+            this.pnlProveedores.Name = "pnlProveedores";
+            this.pnlProveedores.Size = new System.Drawing.Size(233, 60);
+            this.pnlProveedores.TabIndex = 13;
+            // 
+            // pnlReportes
+            // 
+            this.pnlReportes.Controls.Add(this.btnReportes);
+            this.pnlReportes.Location = new System.Drawing.Point(3, 393);
+            this.pnlReportes.Name = "pnlReportes";
+            this.pnlReportes.Size = new System.Drawing.Size(236, 60);
+            this.pnlReportes.TabIndex = 15;
+            // 
+            // tmrTransicionLateral
+            // 
+            this.tmrTransicionLateral.Interval = 1;
+            this.tmrTransicionLateral.Tick += new System.EventHandler(this.tmrTransicionLateral_Tick);
+            // 
+            // pnlCerrar
+            // 
+            this.pnlCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlCerrar.Controls.Add(this.btnCerrarSesion);
+            this.pnlCerrar.Location = new System.Drawing.Point(3, 459);
+            this.pnlCerrar.Name = "pnlCerrar";
+            this.pnlCerrar.Size = new System.Drawing.Size(250, 60);
+            this.pnlCerrar.TabIndex = 16;
             // 
             // btnInicio
             // 
@@ -132,14 +186,6 @@
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
-            // 
-            // pnlClientes
-            // 
-            this.pnlClientes.Controls.Add(this.btnClientes);
-            this.pnlClientes.Location = new System.Drawing.Point(3, 63);
-            this.pnlClientes.Name = "pnlClientes";
-            this.pnlClientes.Size = new System.Drawing.Size(236, 60);
-            this.pnlClientes.TabIndex = 5;
             // 
             // btnClientes
             // 
@@ -160,14 +206,6 @@
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // pnlVentas
-            // 
-            this.pnlVentas.Controls.Add(this.btnVentas);
-            this.pnlVentas.Location = new System.Drawing.Point(3, 129);
-            this.pnlVentas.Name = "pnlVentas";
-            this.pnlVentas.Size = new System.Drawing.Size(236, 60);
-            this.pnlVentas.TabIndex = 7;
-            // 
             // btnVentas
             // 
             this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
@@ -186,14 +224,6 @@
             this.btnVentas.Text = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            // 
-            // pnlInventario
-            // 
-            this.pnlInventario.Controls.Add(this.btnInventario);
-            this.pnlInventario.Location = new System.Drawing.Point(3, 195);
-            this.pnlInventario.Name = "pnlInventario";
-            this.pnlInventario.Size = new System.Drawing.Size(236, 60);
-            this.pnlInventario.TabIndex = 9;
             // 
             // btnInventario
             // 
@@ -214,14 +244,6 @@
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
-            // pnlCompras
-            // 
-            this.pnlCompras.Controls.Add(this.btnCompras);
-            this.pnlCompras.Location = new System.Drawing.Point(3, 261);
-            this.pnlCompras.Name = "pnlCompras";
-            this.pnlCompras.Size = new System.Drawing.Size(236, 60);
-            this.pnlCompras.TabIndex = 11;
-            // 
             // btnCompras
             // 
             this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
@@ -240,14 +262,6 @@
             this.btnCompras.Text = "Compras";
             this.btnCompras.UseVisualStyleBackColor = false;
             this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
-            // 
-            // pnlProveedores
-            // 
-            this.pnlProveedores.Controls.Add(this.btnProveedores);
-            this.pnlProveedores.Location = new System.Drawing.Point(3, 327);
-            this.pnlProveedores.Name = "pnlProveedores";
-            this.pnlProveedores.Size = new System.Drawing.Size(233, 60);
-            this.pnlProveedores.TabIndex = 13;
             // 
             // btnProveedores
             // 
@@ -268,14 +282,6 @@
             this.btnProveedores.UseVisualStyleBackColor = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
-            // pnlReportes
-            // 
-            this.pnlReportes.Controls.Add(this.btnReportes);
-            this.pnlReportes.Location = new System.Drawing.Point(3, 393);
-            this.pnlReportes.Name = "pnlReportes";
-            this.pnlReportes.Size = new System.Drawing.Size(236, 60);
-            this.pnlReportes.TabIndex = 15;
-            // 
             // btnReportes
             // 
             this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
@@ -295,10 +301,36 @@
             this.btnReportes.UseVisualStyleBackColor = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
-            // tmrTransicionLateral
+            // btnCerrarSesion
             // 
-            this.tmrTransicionLateral.Interval = 1;
-            this.tmrTransicionLateral.Tick += new System.EventHandler(this.tmrTransicionLateral_Tick);
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCerrarSesion.Image = global::TRAMADE.Properties.Resources.cerrarsesion;
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, -6);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(276, 66);
+            this.btnCerrarSesion.TabIndex = 14;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(19, 14);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(55, 36);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMenu.TabIndex = 6;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -315,7 +347,6 @@
             this.SizeChanged += new System.EventHandler(this.frmMenuPrincipal_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.flpBarraLateral.ResumeLayout(false);
             this.pnlDashboard.ResumeLayout(false);
             this.pnlClientes.ResumeLayout(false);
@@ -324,6 +355,8 @@
             this.pnlCompras.ResumeLayout(false);
             this.pnlProveedores.ResumeLayout(false);
             this.pnlReportes.ResumeLayout(false);
+            this.pnlCerrar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,5 +382,7 @@
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Panel pnlReportes;
         private System.Windows.Forms.Timer tmrTransicionLateral;
+        private System.Windows.Forms.Panel pnlCerrar;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

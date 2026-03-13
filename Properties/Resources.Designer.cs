@@ -193,6 +193,16 @@ namespace TRAMADE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cerrarsesion {
+            get {
+                object obj = ResourceManager.GetObject("cerrarsesion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Check_png_3_ {
             get {
                 object obj = ResourceManager.GetObject("Check_png_3_", resourceCulture);

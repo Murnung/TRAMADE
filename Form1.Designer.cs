@@ -92,7 +92,7 @@
             // gbGestionInven
             // 
             this.gbGestionInven.CaptionVisible = false;
-            this.gbGestionInven.Location = new System.Drawing.Point(293, 201);
+            this.gbGestionInven.Location = new System.Drawing.Point(294, 222);
             // 
             // gbGestionInven.Panel
             // 
@@ -124,7 +124,7 @@
             // gbClientes
             // 
             this.gbClientes.CaptionVisible = false;
-            this.gbClientes.Location = new System.Drawing.Point(34, 201);
+            this.gbClientes.Location = new System.Drawing.Point(35, 222);
             // 
             // gbClientes.Panel
             // 
@@ -205,7 +205,7 @@
             // gbVistaGeneral
             // 
             this.gbVistaGeneral.CaptionVisible = false;
-            this.gbVistaGeneral.Location = new System.Drawing.Point(34, 12);
+            this.gbVistaGeneral.Location = new System.Drawing.Point(35, 33);
             // 
             // gbVistaGeneral.Panel
             // 
@@ -374,7 +374,7 @@
             // gbTendencia
             // 
             this.gbTendencia.CaptionVisible = false;
-            this.gbTendencia.Location = new System.Drawing.Point(634, 201);
+            this.gbTendencia.Location = new System.Drawing.Point(635, 222);
             // 
             // gbTendencia.Panel
             // 
@@ -406,7 +406,7 @@
             // gbVentasRealizadas
             // 
             this.gbVentasRealizadas.CaptionVisible = false;
-            this.gbVentasRealizadas.Location = new System.Drawing.Point(487, 451);
+            this.gbVentasRealizadas.Location = new System.Drawing.Point(488, 472);
             // 
             // gbVentasRealizadas.Panel
             // 
@@ -444,7 +444,7 @@
             // gbComprasRealizadas
             // 
             this.gbComprasRealizadas.CaptionVisible = false;
-            this.gbComprasRealizadas.Location = new System.Drawing.Point(34, 451);
+            this.gbComprasRealizadas.Location = new System.Drawing.Point(35, 472);
             // 
             // gbComprasRealizadas.Panel
             // 
