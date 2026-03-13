@@ -11,7 +11,7 @@ namespace TRAMADE
 {
     internal class clsValidar
     {
-        /*// ─── LIMPIAR CONTROL AL FALLAR ────────────────────────────────
+        // ─── LIMPIAR CONTROL AL FALLAR ────────────────────────────────
         private static void LimpiarControl(Control campo)
         {
             if (campo == null) return;
@@ -349,6 +349,18 @@ namespace TRAMADE
             return true;
         }
 
+        // ─── VALIDAR SIN TRES LETRAS IGUALES SEGUIDAS ─────────────────
+        public static bool SinTresLetrasIguales(string valor, string nombreCampo)
+        {
+            if (Regex.IsMatch(valor.Trim(), @"(.)\1\1"))
+            {
+                MessageBox.Show($"El campo '{nombreCampo}' contiene caracteres repetidos inválidos.",
+                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
         // ─── VALIDAR PROVEEDOR COMPLETO ───────────────────────────────
         public static bool ValidarProveedor(
             string nombre, Control ctrlNombre,
@@ -365,6 +377,7 @@ namespace TRAMADE
             if (!SinEspaciosExtremos(nombre, "Nombre Comercial", ctrlNombre)) return false;
             if (!SinDobleEspacio(nombre, "Nombre Comercial", ctrlNombre)) return false;
             if (!SinSoloEspeciales(nombre, "Nombre Comercial", ctrlNombre)) return false;
+            if (!SinTresLetrasIguales(nombre, "Nombre Comercial")) return false;  // ← nueva
             if (!LongitudMinima(nombre, "Nombre Comercial", 3, ctrlNombre)) return false;
             if (!LongitudMaxima(nombre, "Nombre Comercial", 50, ctrlNombre)) return false;
 
@@ -373,6 +386,7 @@ namespace TRAMADE
             if (!SinEspaciosExtremos(razon, "Razón Social", ctrlRazon)) return false;
             if (!SinDobleEspacio(razon, "Razón Social", ctrlRazon)) return false;
             if (!SinSoloEspeciales(razon, "Razón Social", ctrlRazon)) return false;
+            if (!SinTresLetrasIguales(razon, "Razón Social")) return false;
             if (!LongitudMinima(razon, "Razón Social", 3, ctrlRazon)) return false;
             if (!LongitudMaxima(razon, "Razón Social", 50, ctrlRazon)) return false;
 
@@ -380,6 +394,7 @@ namespace TRAMADE
             if (!NullOVacio(direccion, "Dirección", ctrlDireccion)) return false;
             if (!SinEspaciosExtremos(direccion, "Dirección", ctrlDireccion)) return false;
             if (!SinDobleEspacio(direccion, "Dirección", ctrlDireccion)) return false;
+            if (!SinTresLetrasIguales(direccion, "Dirección")) return false;
             if (!LongitudMinima(direccion, "Dirección", 5, ctrlDireccion)) return false;
 
             // ─── RTN ──────────────────────────────────────────────────
@@ -403,8 +418,10 @@ namespace TRAMADE
             if (!ClasificacionTerminos(idClasificacion, idTerminos)) return false;
 
             return true;
-        }*/
+        }
 
+
+        /*
         // ─── VALIDAR CAMPO VACÍO ──────────────────────────────────────
         public static bool NullOVacio(string valor, string nombreCampo)
         {
@@ -773,6 +790,6 @@ namespace TRAMADE
             if (!ClasificacionTerminos(idClasificacion, idTerminos)) return false;
 
             return true;
-        }
+        }*/
     }
 }

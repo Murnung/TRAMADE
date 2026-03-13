@@ -37,8 +37,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.chtProveedores = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chtComprasPendientes = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -53,7 +51,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtComprasPendientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtProductosMasComprados)).BeginInit();
@@ -61,31 +58,10 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(3, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 821);
-            this.panel1.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(19, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(122, 42);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "TSMS";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 81);
+            this.label2.Location = new System.Drawing.Point(65, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 6;
@@ -97,7 +73,7 @@
             this.chtProveedores.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chtProveedores.Legends.Add(legend1);
-            this.chtProveedores.Location = new System.Drawing.Point(617, 193);
+            this.chtProveedores.Location = new System.Drawing.Point(498, 193);
             this.chtProveedores.Name = "chtProveedores";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -112,7 +88,7 @@
             this.chtComprasPendientes.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chtComprasPendientes.Legends.Add(legend2);
-            this.chtComprasPendientes.Location = new System.Drawing.Point(1021, 193);
+            this.chtComprasPendientes.Location = new System.Drawing.Point(902, 193);
             this.chtComprasPendientes.Name = "chtComprasPendientes";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -128,7 +104,7 @@
             this.chtProductosMasComprados.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.chtProductosMasComprados.Legends.Add(legend3);
-            this.chtProductosMasComprados.Location = new System.Drawing.Point(195, 193);
+            this.chtProductosMasComprados.Location = new System.Drawing.Point(76, 193);
             this.chtProductosMasComprados.Name = "chtProductosMasComprados";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
@@ -142,7 +118,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(187, 483);
+            this.label3.Location = new System.Drawing.Point(68, 483);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(249, 25);
             this.label3.TabIndex = 15;
@@ -151,7 +127,7 @@
             // dgvComprasRecientes
             // 
             this.dgvComprasRecientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComprasRecientes.Location = new System.Drawing.Point(192, 522);
+            this.dgvComprasRecientes.Location = new System.Drawing.Point(73, 522);
             this.dgvComprasRecientes.Name = "dgvComprasRecientes";
             this.dgvComprasRecientes.RowHeadersVisible = false;
             this.dgvComprasRecientes.RowHeadersWidth = 51;
@@ -168,7 +144,7 @@
             this.panel2.Controls.Add(this.btnRegistrar);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(195, 71);
+            this.panel2.Location = new System.Drawing.Point(76, 71);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1197, 105);
             this.panel2.TabIndex = 13;
@@ -330,7 +306,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(185, 13);
+            this.label1.Location = new System.Drawing.Point(66, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(410, 38);
             this.label1.TabIndex = 12;
@@ -341,7 +317,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1417, 858);
+            this.ClientSize = new System.Drawing.Size(1365, 858);
             this.ControlBox = false;
             this.Controls.Add(this.chtProveedores);
             this.Controls.Add(this.chtComprasPendientes);
@@ -351,15 +327,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCompras";
             this.Load += new System.EventHandler(this.frmCompras_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtComprasPendientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtProductosMasComprados)).EndInit();
@@ -371,9 +344,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtProveedores;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtComprasPendientes;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtProductosMasComprados;
