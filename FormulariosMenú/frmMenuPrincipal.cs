@@ -74,7 +74,7 @@ namespace TRAMADE
             if (sidebarExpand)
             {
                 flpBarraLateral.Width -= 5;
-                if (flpBarraLateral.Width <= 50)
+                if (flpBarraLateral.Width <= 84)
                 {
                     sidebarExpand = false;
                     tmrTransicionLateral.Stop();
@@ -176,6 +176,18 @@ namespace TRAMADE
             AbrirFormulario(new frmReportes());
         }
 
-        
+        private void frmMenuPrincipal_Shown(object sender, EventArgs e)
+        {
+            flpBarraLateral.Width = 239;
+            sidebarExpand = true;
+
+            pnlDashboard.Width = 239;
+            pnlClientes.Width = 239;
+            pnlCompras.Width = 239;
+            pnlInventario.Width = 239;
+            pnlProveedores.Width = 239;
+            pnlReportes.Width = 239;
+            pnlVentas.Width = 239;
+        }
     }
 }

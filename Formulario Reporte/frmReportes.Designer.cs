@@ -48,6 +48,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new Krypton.Toolkit.KryptonButton();
             this.pnlServicios.SuspendLayout();
             this.pnlReportes.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -222,7 +223,7 @@
             // 
             // btnDescargar
             // 
-            this.btnDescargar.Location = new System.Drawing.Point(537, 511);
+            this.btnDescargar.Location = new System.Drawing.Point(570, 511);
             this.btnDescargar.Name = "btnDescargar";
             this.btnDescargar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(87)))), ((int)(((byte)(163)))));
             this.btnDescargar.OverrideDefault.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
@@ -269,6 +270,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(570, 562);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnEliminar.OverrideDefault.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.btnEliminar.OverrideDefault.Border.Rounding = 10F;
+            this.btnEliminar.Size = new System.Drawing.Size(131, 35);
+            this.btnEliminar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnEliminar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.btnEliminar.StateCommon.Border.Rounding = 10F;
+            this.btnEliminar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnEliminar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.TabIndex = 12;
+            this.btnEliminar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnEliminar.Values.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +295,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(774, 689);
             this.ControlBox = false;
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDescargar);
             this.Controls.Add(this.cmbFormato);
@@ -321,5 +341,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cmbTipoReporte;
         private System.Windows.Forms.ComboBox cmbSucursal;
+        private Krypton.Toolkit.KryptonButton btnEliminar;
     }
 }

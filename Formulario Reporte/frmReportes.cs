@@ -44,8 +44,22 @@ namespace TRAMADE
                 return;
             }
 
+            if (cmbTipoReporte.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un tipo de reporte.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dtpDesde.Value.Date > dtpHasta.Value.Date)
+            {
+                MessageBox.Show("La fecha de inicio no puede ser mayor a la fecha final.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             _reportes.Generar(dtpDesde.Value, dtpHasta.Value,
-                Convert.ToInt32(cmbSucursal.SelectedValue));    
+                Convert.ToInt32(cmbSucursal.SelectedValue));
         }
 
         private void lstReportes_DoubleClick(object sender, EventArgs e)
@@ -55,7 +69,30 @@ namespace TRAMADE
 
         private void btnDescargar_Click(object sender, EventArgs e)
         {
+            if (cmbFormato.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un formato de descarga.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             _reportes.AbrirReporte(cmbFormato.SelectedItem.ToString());
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (lstReportes.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecciona un reporte de la lista para eliminar.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var confirm = MessageBox.Show("¿Deseas eliminar el reporte seleccionado?", "Confirmar",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.Yes)
+                lstReportes.SelectedItems[0].Remove();
         }
     }
 }

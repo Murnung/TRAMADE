@@ -297,7 +297,6 @@
             // 
             // tmrTransicionLateral
             // 
-            this.tmrTransicionLateral.Enabled = true;
             this.tmrTransicionLateral.Interval = 1;
             this.tmrTransicionLateral.Tick += new System.EventHandler(this.tmrTransicionLateral_Tick);
             // 
@@ -312,6 +311,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TRAMADE SMSS";
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
+            this.Shown += new System.EventHandler(this.frmMenuPrincipal_Shown);
             this.SizeChanged += new System.EventHandler(this.frmMenuPrincipal_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
