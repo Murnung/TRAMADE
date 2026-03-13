@@ -32,12 +32,12 @@ namespace TRAMADE.Formularios_Login__Menú
                 cn.Abrir();
                 int total = ToInt(EjecutarScalar(cn, "SELECT COUNT(*) FROM CLIENTE"));
                 int activos = ToInt(EjecutarScalar(cn,
-                    @"SELECT COUNT(*) FROM CLIENTE c
-              INNER JOIN ESTADO e ON c.id_estado = e.id_estado
-              INNER JOIN TIPO_ESTADO t ON e.id_tipo_estado = t.id_tipo_estado
-              WHERE t.descripcion_tipo_estado = 'Activo'"));
+                @"SELECT COUNT(*) FROM CLIENTE c
+                  INNER JOIN ESTADO e ON c.id_estado = e.id_estado
+                  WHERE UPPER(e.descripcion_estado) = 'ACTIVO'"));
                 int inactivos = total - activos;
                 int porcentaje = total > 0 ? (int)((activos * 100.0) / total) : 0;
+
 
                 _lblTotal.Text = total.ToString("N0");
 

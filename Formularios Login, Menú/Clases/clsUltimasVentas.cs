@@ -26,27 +26,32 @@ namespace TRAMADE.Formularios_Login__Menú
             {
                 cn.Abrir();
                 string query = @"
-                    SELECT TOP 5
-                        f.id_factura     AS 'ID Venta',
-                        c.nombre_cliente AS 'Cliente',
-                        SUM(fp.cantidad * p.precio_unitario) AS 'Monto',
-                        f.fecha_emision  AS 'Fecha'
-                    FROM FACTURA f
-                    INNER JOIN CLIENTE c          ON f.id_cliente   = c.id_cliente
-                    INNER JOIN FACTURA_PRODUCTO fp ON f.id_factura  = fp.id_factura
-                    INNER JOIN PRODUCTO p          ON fp.id_producto = p.id_producto
-                    GROUP BY f.id_factura, c.nombre_cliente, f.fecha_emision
-                    ORDER BY f.fecha_emision DESC";
+            SELECT TOP 5
+                f.id_factura                         AS 'ID Venta',
+                c.nombre_cliente                     AS 'Cliente',
+                CONVERT(varchar, f.fecha_emision, 103) AS 'Fecha',
+                SUM(fp.cantidad * p.precio_unitario) AS 'Monto'
+            FROM FACTURA f
+            INNER JOIN CLIENTE c           ON f.id_cliente   = c.id_cliente
+            INNER JOIN FACTURA_PRODUCTO fp ON f.id_factura   = fp.id_factura
+            INNER JOIN PRODUCTO p          ON fp.id_producto = p.id_producto
+            GROUP BY f.id_factura, c.nombre_cliente, f.fecha_emision
+            ORDER BY f.fecha_emision DESC";
 
                 SqlDataAdapter da = new SqlDataAdapter(query, cn.SqlC);
                 DataTable dt = new DataTable();
-                da.Fill(dt);                
+                da.Fill(dt);
+
+                // Formatear Monto
+                DataColumn montoFormateado = new DataColumn("MontoFormateado", typeof(string));
+                dt.Columns.Add(montoFormateado);
+                foreach (DataRow row in dt.Rows)
+                    row["MontoFormateado"] = $"L. {Convert.ToDecimal(row["Monto"]):N2}";
+                dt.Columns.Remove("Monto");
+                montoFormateado.ColumnName = "Monto";
 
                 _dgv.DataSource = dt;
                 EstiloGrid();
-                
-                _dgv.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
-                _dgv.Columns["Monto"].DefaultCellStyle.Format = "L. #,##0.00";
             }
             catch (Exception ex)
             {
