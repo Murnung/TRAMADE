@@ -14,15 +14,11 @@ namespace TRAMADE
     public partial class frmMenuPrincipal : Form
     {
         private readonly ResponsiveFormManager _responsive;
-        private clsVistaGeneral _popup;
 
-        
         public frmMenuPrincipal()
         {
             InitializeComponent();
             _responsive = new ResponsiveFormManager(this);
-            new clsClientesPanel(lblTotalClientes, pnlBarraFondo, pnlBarraActivos).Cargar();
-
         }
 
         private const int SIDEBAR_COLLAPSED = 85;
@@ -32,10 +28,8 @@ namespace TRAMADE
         bool sidebarExpand = true;
 
         private float ScaleX => (float)this.ClientSize.Width / FORM_ORIGINAL_WIDTH;
-
         private int SidebarCollapsed => (int)(SIDEBAR_COLLAPSED * ScaleX);
         private int SidebarExpanded => (int)(SIDEBAR_EXPANDED * ScaleX);
-
 
         private void tmrTransicionLateral_Tick(object sender, EventArgs e)
         {
@@ -73,25 +67,13 @@ namespace TRAMADE
             Application.Exit();
         }
 
-        private void kryptonButton2_Click(object sender, EventArgs e)
-        {
+        private void kryptonButton2_Click(object sender, EventArgs e) { }
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void label4_Click(object sender, EventArgs e) { }
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
             _responsive.Initialize();
-            _popup = new clsVistaGeneral(this);
-
-            new clsGraficoInventario(chrInventario).Cargar();
-            new clsGraficoTendencia(chrTendencia).Cargar();
-            new clsUltimasCompras(dgvCompras).Cargar();
-            new clsUltimasVentas(dgvVentas).Cargar();
         }
 
         private void frmMenuPrincipal_SizeChanged(object sender, EventArgs e)
@@ -102,13 +84,9 @@ namespace TRAMADE
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Maximized)
-            {
                 this.WindowState = FormWindowState.Normal;
-            }
             else
-            {
                 this.WindowState = FormWindowState.Maximized;
-            }
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -116,23 +94,10 @@ namespace TRAMADE
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void btnInicio_Click(object sender, EventArgs e)
         {
-            _popup.MostrarProductos(btnProductos);
-        }
-        private void btnVentasRealizadas_Click(object sender, EventArgs e)
-        {
-            _popup.MostrarVentas(btnVentasRealizadas);
-        }
-
-        private void btnComprasRealizadas_Click(object sender, EventArgs e)
-        {
-            _popup.MostrarCompras(btnComprasRealizadas);
-        }
-
-        private void btnProductosAgotados_Click(object sender, EventArgs e)
-        {
-            _popup.MostrarAgotados(btnProductosAgotados);
+            Form1 frmLol = new Form1();
+            frmLol.Show(); // Agregué el .Show() para que haga algo
         }
     }
 }
