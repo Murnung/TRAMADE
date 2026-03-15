@@ -68,15 +68,15 @@ namespace TRAMADE
 
             txtRTN.Text = "";
             txtRTN.Enabled = false;
-            txtRTN.BackColor = Color.LightGray;
+            txtRTN.BackColor = Color.Gray;
 
             txtDNI.Text = "";
             txtDNI.Enabled = false;
-            txtDNI.BackColor = Color.LightGray;
+            txtDNI.BackColor = Color.Gray;
 
             txtRazonSocial.Text = "";
             txtRazonSocial.Enabled = false;
-            txtRazonSocial.BackColor = Color.LightGray;
+            txtRazonSocial.BackColor = Color.Gray;
         }
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
@@ -187,17 +187,17 @@ namespace TRAMADE
 
                 txtDNI.Enabled = false;
                 txtDNI.Text = "";
-                txtDNI.BackColor = Color.LightGray;
+                txtDNI.BackColor = Color.Gray;
             }
             if (cmbTipoCliente.Text == "PERSONA NATURAL")
             {
                 txtRTN.Enabled = false;
                 txtRTN.Text = "";
-                txtRTN.BackColor = Color.LightGray;
+                txtRTN.BackColor = Color.Gray;
 
                 txtRazonSocial.Enabled = false;
                 txtRazonSocial.Text = "";
-                txtRazonSocial.BackColor = Color.LightGray;
+                txtRazonSocial.BackColor = Color.Gray;
 
                 txtDNI.Enabled = true;
                 txtDNI.BackColor = Color.White;
@@ -270,15 +270,6 @@ namespace TRAMADE
         }
 
 
-
-        private void btnRegresar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-            frmMenu objMenu = new frmMenu();
-            objMenu.recargarGraficaEstadoCli();
-            objMenu.recargarGraficaDepa();
-            objMenu.recargarClientes();
-        }
 
         private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
