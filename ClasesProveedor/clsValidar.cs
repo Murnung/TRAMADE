@@ -97,6 +97,12 @@ namespace TRAMADE
             }
 
             return true;
+
+            {
+                MessageBox.Show("El RTN debe corresponder a una empresa registrada hace al menos 18 años.",
+                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
         }
 
         // ─── VALIDAR TELÉFONO (inicia con 2, 3, 8 o 9 — exactamente 8 dígitos) ──
@@ -346,6 +352,30 @@ namespace TRAMADE
             return true;
         }
 
+        // ─── BLOQUEAR TECLAS EN TELÉFONO AL LLEGAR A 8 DÍGITOS ───────
+        public static void TelefonoMaximo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (sender is Krypton.Toolkit.KryptonTextBox ktb)
+            {
+                if (!char.IsControl(e.KeyChar) && ktb.Text.Length >= 8)
+                    e.Handled = true;
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                    e.Handled = true;
+            }
+        }
+
+        // ─── VALIDAR SIN CUATRO NÚMEROS IGUALES SEGUIDOS ──────────────
+        public static bool SinCuatroNumerosIguales(string valor, string nombreCampo)
+        {
+            if (Regex.IsMatch(valor.Trim(), @"(\d)\1{3}"))
+            {
+                MessageBox.Show($"El campo '{nombreCampo}' no puede contener cuatro números iguales seguidos.",
+                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
         // ─── VALIDAR PROVEEDOR COMPLETO ───────────────────────────────
         public static bool ValidarProveedor(
             string nombre, Control ctrlNombre,
@@ -390,6 +420,7 @@ namespace TRAMADE
             // ─── Teléfono ─────────────────────────────────────────────
             if (!NullOVacio(telefono, "Teléfono", ctrlTelefono)) return false;
             if (!Telefono(telefono, ctrlTelefono)) return false;
+            if (!SinCuatroNumerosIguales(telefono, "Teléfono")) return false;
 
             // ─── Correo ───────────────────────────────────────────────
             if (!NullOVacio(correo, "Correo Electrónico", ctrlCorreo)) return false;

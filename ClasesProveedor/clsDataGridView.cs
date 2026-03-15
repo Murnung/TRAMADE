@@ -170,11 +170,12 @@ namespace TRAMADE.Formulario_Proveedores.Clases
             {
                 DataGridViewCheckBoxColumn chkCol = new DataGridViewCheckBoxColumn();
                 chkCol.Name = "Seleccionar";
-                chkCol.HeaderText = "✔";
+                chkCol.HeaderText = "Seleccionar";
                 chkCol.Width = 40;
                 chkCol.ReadOnly = false;
                 chkCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dgv.Columns.Add(chkCol);
+                dgv.Columns["Seleccionar"].DisplayIndex = 0;
             }
 
 

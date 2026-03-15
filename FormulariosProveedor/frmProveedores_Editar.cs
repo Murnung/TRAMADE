@@ -27,6 +27,7 @@ namespace TRAMADE
             clsToolTip.AplicarTooltipsProveedor(txtRazonSocial, txtNombreComercial, txtDireccionFiscal,
                                          txtRtn, txtTelefonoGeneral, txtCorreoCentral,
                                          cmbClasificacion, cmbTerminosdePago);
+            txtTelefonoGeneral.KeyPress += clsValidar.TelefonoMaximo_KeyPress;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

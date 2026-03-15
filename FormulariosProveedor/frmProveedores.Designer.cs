@@ -96,8 +96,8 @@
             this.btnFiltrarActivo.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnFiltrarActivo.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnFiltrarActivo.Size = new System.Drawing.Size(107, 44);
-            this.btnFiltrarActivo.StateCommon.Back.Color1 = System.Drawing.Color.Lime;
-            this.btnFiltrarActivo.StateCommon.Back.Color2 = System.Drawing.Color.Lime;
+            this.btnFiltrarActivo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
+            this.btnFiltrarActivo.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(137)))), ((int)(((byte)(19)))));
             this.btnFiltrarActivo.StateCommon.Border.Rounding = 10F;
             this.btnFiltrarActivo.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
             this.btnFiltrarActivo.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,8 +120,8 @@
             this.btnFiltrarInactivo.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnFiltrarInactivo.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnFiltrarInactivo.Size = new System.Drawing.Size(107, 44);
-            this.btnFiltrarInactivo.StateCommon.Back.Color1 = System.Drawing.Color.Red;
-            this.btnFiltrarInactivo.StateCommon.Back.Color2 = System.Drawing.Color.Red;
+            this.btnFiltrarInactivo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
+            this.btnFiltrarInactivo.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.btnFiltrarInactivo.StateCommon.Border.Rounding = 10F;
             this.btnFiltrarInactivo.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
             this.btnFiltrarInactivo.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
