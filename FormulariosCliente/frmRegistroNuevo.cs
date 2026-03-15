@@ -90,10 +90,9 @@ namespace TRAMADE
         {
             
             string busqueda = txtBuscar.Text.Trim();
-            if (!clsValidacionesCompras.validarBuscarId(busqueda)) return;
             if (string.IsNullOrEmpty(busqueda))
             {
-                MessageBox.Show("Por favor, ingrese el ID del cliente.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese el DNI/RTN del cliente.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -102,7 +101,7 @@ namespace TRAMADE
                 string consulta = @"SELECT C.*, CI.id_departamento 
                     FROM CLIENTE C
                     INNER JOIN CIUDAD CI ON C.id_ciudad = CI.id_ciudad
-                    WHERE C.id_cliente = @busqueda"; 
+                    WHERE C.rtn_cliente = @busqueda or C.dni_cliente = @busqueda"; 
                 SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC);
                 cmd.Parameters.AddWithValue("@busqueda", busqueda);
 
@@ -275,6 +274,11 @@ namespace TRAMADE
         {
 
             clsValidar.SoloNumeros_KeyPress(e);
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

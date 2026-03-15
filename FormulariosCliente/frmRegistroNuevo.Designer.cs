@@ -183,12 +183,15 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(171, 10);
+            this.txtBuscar.MaxLength = 14;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(230, 35);
             this.txtBuscar.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtBuscar.StateActive.Border.Rounding = 10F;
             this.txtBuscar.StateActive.Border.Width = 4;
             this.txtBuscar.TabIndex = 37;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // btnBuscar
             // 
