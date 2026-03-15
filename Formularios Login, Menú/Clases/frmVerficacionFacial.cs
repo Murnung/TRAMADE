@@ -184,10 +184,6 @@ namespace TRAMADE
                             string correoDetectado = mapaLabelCorreo[resultado.Label];
                             string nombreDetectado = mapaLabelNombre[resultado.Label];
 
-                            CvInvoke.PutText(frame, nombreDetectado,
-                                new System.Drawing.Point(r.X, r.Y - 5),
-                                FontFace.HersheyTriplex, 0.5,
-                                new MCvScalar(0, 255, 0), 1);
 
                             if (correoDetectado.ToLower() == correoEsperado.ToLower())
                             {
@@ -210,10 +206,7 @@ namespace TRAMADE
                         }
                         else
                         {
-                            CvInvoke.PutText(frame, "Desconocido",
-                                new System.Drawing.Point(r.X, r.Y - 5),
-                                FontFace.HersheyTriplex, 0.5,
-                                new MCvScalar(0, 0, 255), 1);
+                           
 
                             lblMensaje.ForeColor = Color.Red;
                             lblMensaje.Text = "✘ Rostro no reconocido";
