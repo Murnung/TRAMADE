@@ -190,7 +190,7 @@ namespace TRAMADE
                 serie["PieLabelStyle"] = "Inside";
                 serie.BorderColor = Color.White;
                 serie.BorderWidth = 2;
-                serie["PieDrawingStyle"] = "SoftEdge";
+        
             }
             catch (Exception ex)
             {
