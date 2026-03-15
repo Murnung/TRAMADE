@@ -32,26 +32,22 @@
             this.btnIngresar = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.labelBienvenida = new Krypton.Toolkit.KryptonLabel();
             this.txtUsuario = new Krypton.Toolkit.KryptonTextBox();
             this.txtPassword = new Krypton.Toolkit.KryptonTextBox();
             this.btnSalir = new Krypton.Toolkit.KryptonButton();
             this.lkRestablecer = new Krypton.Toolkit.KryptonLinkLabel();
-            this.picCamara = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblEstado = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelBienvenida = new Krypton.Toolkit.KryptonLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCamara)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(661, 516);
+            this.label3.Location = new System.Drawing.Point(439, 256);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(225, 22);
             this.label3.TabIndex = 8;
@@ -59,7 +55,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(725, 555);
+            this.btnIngresar.Location = new System.Drawing.Point(503, 295);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -92,12 +88,12 @@
             this.panel1.Location = new System.Drawing.Point(-8, -2);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(467, 718);
+            this.panel1.Size = new System.Drawing.Size(406, 718);
             this.panel1.TabIndex = 11;
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(88, 432);
+            this.kryptonLabel1.Location = new System.Drawing.Point(55, 307);
             this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(304, 129);
@@ -109,17 +105,6 @@
             this.kryptonLabel1.TabIndex = 17;
             this.kryptonLabel1.Values.Text = "TRAMADE \r\n    S.A";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Logo_de_la_empresa;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 69);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(411, 364);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(464, 4);
@@ -128,24 +113,10 @@
             this.panel2.Size = new System.Drawing.Size(492, 468);
             this.panel2.TabIndex = 0;
             // 
-            // labelBienvenida
-            // 
-            this.labelBienvenida.Location = new System.Drawing.Point(697, 13);
-            this.labelBienvenida.Margin = new System.Windows.Forms.Padding(4);
-            this.labelBienvenida.Name = "labelBienvenida";
-            this.labelBienvenida.Size = new System.Drawing.Size(273, 56);
-            this.labelBienvenida.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBienvenida.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.labelBienvenida.StateNormal.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.labelBienvenida.StateNormal.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.labelBienvenida.StateNormal.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.labelBienvenida.TabIndex = 12;
-            this.labelBienvenida.Values.Text = "Bienvenido";
-            // 
             // txtUsuario
             // 
             this.txtUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtUsuario.Location = new System.Drawing.Point(697, 430);
+            this.txtUsuario.Location = new System.Drawing.Point(482, 151);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(289, 30);
@@ -165,7 +136,7 @@
             // txtPassword
             // 
             this.txtPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtPassword.Location = new System.Drawing.Point(697, 475);
+            this.txtPassword.Location = new System.Drawing.Point(482, 196);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(289, 30);
@@ -183,7 +154,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(725, 617);
+            this.btnSalir.Location = new System.Drawing.Point(503, 357);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(32)))), ((int)(((byte)(25)))));
@@ -209,7 +180,7 @@
             // 
             // lkRestablecer
             // 
-            this.lkRestablecer.Location = new System.Drawing.Point(893, 513);
+            this.lkRestablecer.Location = new System.Drawing.Point(671, 253);
             this.lkRestablecer.Margin = new System.Windows.Forms.Padding(4);
             this.lkRestablecer.Name = "lkRestablecer";
             this.lkRestablecer.Size = new System.Drawing.Size(119, 25);
@@ -221,50 +192,44 @@
             this.lkRestablecer.TabIndex = 16;
             this.lkRestablecer.Values.Text = "Restablecer";
             // 
-            // picCamara
+            // pictureBox1
             // 
-            this.picCamara.Location = new System.Drawing.Point(600, 67);
-            this.picCamara.Name = "picCamara";
-            this.picCamara.Size = new System.Drawing.Size(507, 305);
-            this.picCamara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCamara.TabIndex = 17;
-            this.picCamara.TabStop = false;
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Logo_de_la_empresa;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(325, 284);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+     //       this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
+            // labelBienvenida
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(709, 404);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 22);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Mire a la camara por favor";
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblEstado.Location = new System.Drawing.Point(709, 375);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(261, 22);
-            this.lblEstado.TabIndex = 19;
-            this.lblEstado.Text = "Mire a la camara por favor";
+            this.labelBienvenida.Location = new System.Drawing.Point(498, 53);
+            this.labelBienvenida.Margin = new System.Windows.Forms.Padding(4);
+            this.labelBienvenida.Name = "labelBienvenida";
+            this.labelBienvenida.Size = new System.Drawing.Size(273, 56);
+            this.labelBienvenida.StateCommon.ShortText.Font = new System.Drawing.Font("MS Reference Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBienvenida.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelBienvenida.StateNormal.LongText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelBienvenida.StateNormal.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelBienvenida.StateNormal.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.labelBienvenida.TabIndex = 21;
+            this.labelBienvenida.Values.Text = "Bienvenido";
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.ClientSize = new System.Drawing.Size(1250, 717);
-            this.Controls.Add(this.lblEstado);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.picCamara);
+            this.ClientSize = new System.Drawing.Size(893, 488);
+            this.Controls.Add(this.labelBienvenida);
             this.Controls.Add(this.lkRestablecer);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.labelBienvenida);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -272,12 +237,11 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
-            this.Load += new System.EventHandler(this.frmLogin_Load);
+    //        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
+     //       this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCamara)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,7 +251,6 @@
         private System.Windows.Forms.Label label3;
         private Krypton.Toolkit.KryptonButton btnIngresar;
         private System.Windows.Forms.Panel panel1;
-        private Krypton.Toolkit.KryptonLabel labelBienvenida;
         private System.Windows.Forms.Panel panel2;
         private Krypton.Toolkit.KryptonTextBox txtUsuario;
         private Krypton.Toolkit.KryptonTextBox txtPassword;
@@ -295,8 +258,6 @@
         private Krypton.Toolkit.KryptonLinkLabel lkRestablecer;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox picCamara;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblEstado;
+        private Krypton.Toolkit.KryptonLabel labelBienvenida;
     }
 }

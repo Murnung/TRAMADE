@@ -12,6 +12,7 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
     {
         clsConexion cn = new clsConexion();
         public string[] nombre;
+        public string[] correo;
         public byte[] rostro;
         public List<byte[]> rostros = new List<byte[]>();
         public int totalUsuarios;
@@ -46,7 +47,7 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
             {
                 cn.Abrir();
                 // ✅ ORDER BY para que imágenes del mismo usuario queden juntas
-                string consulta = @"SELECT u.id_usuario, u.nombre_usuario, i.imagen_facial 
+                string consulta = @"SELECT u.id_usuario, u.nombre_usuario,u.correo_usuario, i.imagen_facial 
                                     FROM IMAGEN_FACIAL i
                                     INNER JOIN USUARIO u ON i.id_usuario = u.id_usuario
                                     WHERE u.id_estado = 1
@@ -58,11 +59,13 @@ namespace TRAMADE.Formularios_Login__Menú.Clases
 
                 int count = dt.Rows.Count;
                 nombre = new string[count];
+                correo = new string[count];
                 rostros.Clear();
 
                 for (int i = 0; i < count; i++)
                 {
                     nombre[i] = dt.Rows[i]["nombre_usuario"].ToString();
+                    correo[i] = dt.Rows[i]["correo_usuario"].ToString();
                     rostro = (byte[])dt.Rows[i]["imagen_facial"];
                     rostros.Add(rostro);
                 }

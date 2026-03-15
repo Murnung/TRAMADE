@@ -133,6 +133,12 @@
     <Compile Include="Formularios Login, Menú\Clases\clsUltimasCompras.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsUltimasVentas.cs" />
     <Compile Include="Formularios Login, Menú\Clases\clsVistaGeneral.cs" />
+    <Compile Include="Formularios Login, Menú\Clases\frmVerficacionFacial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios Login, Menú\Clases\frmVerficacionFacial.Designer.cs">
+      <DependentUpon>frmVerficacionFacial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios Login, Menú\Clases\mdiProperties.cs" />
     <Compile Include="Formularios Login, Menú\frmLogin.cs">
       <SubType>Form</SubType>
@@ -156,6 +162,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios Login, Menú\Clases\frmVerficacionFacial.resx">
+      <DependentUpon>frmVerficacionFacial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios Login, Menú\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
