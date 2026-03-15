@@ -176,13 +176,13 @@
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label18.Location = new System.Drawing.Point(33, 10);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(132, 44);
+            this.label18.Size = new System.Drawing.Size(177, 44);
             this.label18.TabIndex = 38;
-            this.label18.Text = "Búsqueda por ID";
+            this.label18.Text = "Búsqueda por DNI/RTN";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(171, 10);
+            this.txtBuscar.Location = new System.Drawing.Point(216, 10);
             this.txtBuscar.MaxLength = 14;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(230, 35);
@@ -195,7 +195,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(409, 13);
+            this.btnBuscar.Location = new System.Drawing.Point(455, 13);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));

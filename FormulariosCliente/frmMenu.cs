@@ -91,7 +91,7 @@ namespace TRAMADE
 
         public void recargarGraficaDepa()
         {
-            try
+           try
             {
                 chtDepas.Series.Clear();
                 chtDepas.Titles.Clear();
