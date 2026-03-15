@@ -148,5 +148,39 @@ namespace TRAMADE.ClasesCompras
             MessageBox.Show("Debe seleccionar al menos una compra", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
         }
+        // Validación para modificar cantidad
+        public static bool validarModificarCantidad(int idSeleccionado, KryptonListBox lst, int cantidad)
+        {
+            if (idSeleccionado == 0)
+            {
+                MessageBox.Show("Primero busca una compra.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (lst.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecciona un producto de la lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (cantidad <= 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor a 0.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+        // Validación para combo box sin resultado
+        public static bool validarComboSinResultado(KryptonComboBox cmb, string nombreCampo)
+        {
+            if (cmb.SelectedIndex == -1 || cmb.SelectedValue == null)
+            {
+                MessageBox.Show($"No se encontró ningún {nombreCampo} con ese criterio de búsqueda.",
+                    "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
     }
 }

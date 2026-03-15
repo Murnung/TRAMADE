@@ -59,6 +59,7 @@
             this.btnBuscar = new Krypton.Toolkit.KryptonButton();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnModificarCantidad = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFormaPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProveedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).BeginInit();
@@ -220,7 +221,6 @@
             // 
             // cmbProveedor
             // 
-            this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProveedor.DropDownWidth = 186;
             this.cmbProveedor.Location = new System.Drawing.Point(164, 124);
             this.cmbProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -233,7 +233,6 @@
             // 
             // cmbProducto
             // 
-            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.DropDownWidth = 186;
             this.cmbProducto.Location = new System.Drawing.Point(249, 173);
             this.cmbProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -461,6 +460,7 @@
             // 
             // kryptonGroupBox1.Panel
             // 
+            this.kryptonGroupBox1.Panel.Controls.Add(this.btnModificarCantidad);
             this.kryptonGroupBox1.Panel.Controls.Add(this.label4);
             this.kryptonGroupBox1.Panel.Controls.Add(this.label2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.btnLimpiar);
@@ -496,6 +496,7 @@
             this.kryptonGroupBox1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroupBox1.StateCommon.Border.Rounding = 10F;
             this.kryptonGroupBox1.TabIndex = 145;
+            this.kryptonGroupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox1_Paint);
             // 
             // label4
             // 
@@ -508,6 +509,29 @@
             this.label4.TabIndex = 145;
             this.label4.Text = "_________________________________________________________________________________" +
     "______________________________________________________\r\n\r\n";
+            // 
+            // btnModificarCantidad
+            // 
+            this.btnModificarCantidad.Location = new System.Drawing.Point(23, 390);
+            this.btnModificarCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarCantidad.Name = "btnModificarCantidad";
+            this.btnModificarCantidad.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificarCantidad.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificarCantidad.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificarCantidad.OverrideFocus.Back.Color2 = System.Drawing.Color.Silver;
+            this.btnModificarCantidad.Size = new System.Drawing.Size(250, 30);
+            this.btnModificarCantidad.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificarCantidad.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificarCantidad.StateCommon.Border.Rounding = 10F;
+            this.btnModificarCantidad.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
+            this.btnModificarCantidad.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
+            this.btnModificarCantidad.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificarCantidad.StateTracking.Back.Color2 = System.Drawing.Color.Silver;
+            this.btnModificarCantidad.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
+            this.btnModificarCantidad.TabIndex = 146;
+            this.btnModificarCantidad.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnModificarCantidad.Values.Text = "MODIFICAR CANTIDAD";
+            this.btnModificarCantidad.Click += new System.EventHandler(this.btnModificarCantidad_Click);
             // 
             // frmActualizar
             // 
@@ -566,5 +590,6 @@
         private Krypton.Toolkit.KryptonButton btnBuscar;
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox1;
         private System.Windows.Forms.Label label4;
+        private Krypton.Toolkit.KryptonButton btnModificarCantidad;
     }
 }
