@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.txtFecha = new Krypton.Toolkit.KryptonTextBox();
+            this.cmbTipoCliente = new Krypton.Toolkit.KryptonComboBox();
+            this.cmbCiudad = new Krypton.Toolkit.KryptonComboBox();
+            this.txtDireccion = new Krypton.Toolkit.KryptonTextBox();
+            this.txtCorreo = new Krypton.Toolkit.KryptonTextBox();
+            this.cmbDepartamento = new Krypton.Toolkit.KryptonComboBox();
+            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
+            this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
+            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
+            this.txtNombre = new Krypton.Toolkit.KryptonTextBox();
+            this.txtID = new Krypton.Toolkit.KryptonTextBox();
+            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
             this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,31 +63,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
-            this.txtID = new Krypton.Toolkit.KryptonTextBox();
-            this.txtNombre = new Krypton.Toolkit.KryptonTextBox();
-            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
-            this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
-            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
-            this.cmbDepartamento = new Krypton.Toolkit.KryptonComboBox();
-            this.txtCorreo = new Krypton.Toolkit.KryptonTextBox();
-            this.txtDireccion = new Krypton.Toolkit.KryptonTextBox();
-            this.cmbCiudad = new Krypton.Toolkit.KryptonComboBox();
-            this.cmbTipoCliente = new Krypton.Toolkit.KryptonComboBox();
-            this.txtFecha = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
             this.kryptonGroup1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
             // 
-            this.kryptonGroup1.Location = new System.Drawing.Point(27, 39);
+            this.kryptonGroup1.Location = new System.Drawing.Point(30, 30);
             // 
             // kryptonGroup1.Panel
             // 
@@ -118,6 +117,108 @@
             this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 0;
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Location = new System.Drawing.Point(543, 108);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(147, 23);
+            this.txtFecha.TabIndex = 89;
+            // 
+            // cmbTipoCliente
+            // 
+            this.cmbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoCliente.DropDownWidth = 123;
+            this.cmbTipoCliente.Location = new System.Drawing.Point(543, 171);
+            this.cmbTipoCliente.Name = "cmbTipoCliente";
+            this.cmbTipoCliente.Size = new System.Drawing.Size(147, 23);
+            this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoCliente.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbTipoCliente.TabIndex = 88;
+            // 
+            // cmbCiudad
+            // 
+            this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiudad.DropDownWidth = 123;
+            this.cmbCiudad.Location = new System.Drawing.Point(543, 441);
+            this.cmbCiudad.Name = "cmbCiudad";
+            this.cmbCiudad.Size = new System.Drawing.Size(147, 23);
+            this.cmbCiudad.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCiudad.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbCiudad.TabIndex = 87;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(543, 382);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(147, 23);
+            this.txtDireccion.TabIndex = 86;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(543, 335);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ShortcutsEnabled = false;
+            this.txtCorreo.Size = new System.Drawing.Size(147, 23);
+            this.txtCorreo.TabIndex = 85;
+            // 
+            // cmbDepartamento
+            // 
+            this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDepartamento.DropDownWidth = 123;
+            this.cmbDepartamento.Location = new System.Drawing.Point(161, 448);
+            this.cmbDepartamento.Name = "cmbDepartamento";
+            this.cmbDepartamento.Size = new System.Drawing.Size(147, 23);
+            this.cmbDepartamento.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDepartamento.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbDepartamento.TabIndex = 84;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(161, 394);
+            this.txtTelefono.MaxLength = 8;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ShortcutsEnabled = false;
+            this.txtTelefono.Size = new System.Drawing.Size(147, 23);
+            this.txtTelefono.TabIndex = 83;
+            // 
+            // txtContacto
+            // 
+            this.txtContacto.Location = new System.Drawing.Point(161, 348);
+            this.txtContacto.Name = "txtContacto";
+            this.txtContacto.Size = new System.Drawing.Size(147, 23);
+            this.txtContacto.TabIndex = 82;
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.Location = new System.Drawing.Point(161, 247);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(147, 23);
+            this.txtRazonSocial.TabIndex = 81;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(161, 197);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(147, 23);
+            this.txtNombre.TabIndex = 80;
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(161, 150);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(147, 23);
+            this.txtID.TabIndex = 79;
+            // 
+            // txtRTN
+            // 
+            this.txtRTN.Location = new System.Drawing.Point(543, 218);
+            this.txtRTN.MaxLength = 14;
+            this.txtRTN.Name = "txtRTN";
+            this.txtRTN.ShortcutsEnabled = false;
+            this.txtRTN.Size = new System.Drawing.Size(147, 23);
+            this.txtRTN.TabIndex = 78;
             // 
             // txtDNI
             // 
@@ -430,126 +531,12 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(69, 11);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(111, 25);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "TMSS.SW";
-            // 
-            // txtRTN
-            // 
-            this.txtRTN.Location = new System.Drawing.Point(543, 218);
-            this.txtRTN.MaxLength = 14;
-            this.txtRTN.Name = "txtRTN";
-            this.txtRTN.ShortcutsEnabled = false;
-            this.txtRTN.Size = new System.Drawing.Size(147, 23);
-            this.txtRTN.TabIndex = 78;
-            // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(161, 150);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(147, 23);
-            this.txtID.TabIndex = 79;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(161, 197);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(147, 23);
-            this.txtNombre.TabIndex = 80;
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(161, 247);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(147, 23);
-            this.txtRazonSocial.TabIndex = 81;
-            // 
-            // txtContacto
-            // 
-            this.txtContacto.Location = new System.Drawing.Point(161, 348);
-            this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(147, 23);
-            this.txtContacto.TabIndex = 82;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 394);
-            this.txtTelefono.MaxLength = 8;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.ShortcutsEnabled = false;
-            this.txtTelefono.Size = new System.Drawing.Size(147, 23);
-            this.txtTelefono.TabIndex = 83;
-            // 
-            // cmbDepartamento
-            // 
-            this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDepartamento.DropDownWidth = 123;
-            this.cmbDepartamento.Location = new System.Drawing.Point(161, 448);
-            this.cmbDepartamento.Name = "cmbDepartamento";
-            this.cmbDepartamento.Size = new System.Drawing.Size(147, 23);
-            this.cmbDepartamento.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDepartamento.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cmbDepartamento.TabIndex = 84;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(543, 335);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.ShortcutsEnabled = false;
-            this.txtCorreo.Size = new System.Drawing.Size(147, 23);
-            this.txtCorreo.TabIndex = 85;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(543, 382);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(147, 23);
-            this.txtDireccion.TabIndex = 86;
-            // 
-            // cmbCiudad
-            // 
-            this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCiudad.DropDownWidth = 123;
-            this.cmbCiudad.Location = new System.Drawing.Point(543, 441);
-            this.cmbCiudad.Name = "cmbCiudad";
-            this.cmbCiudad.Size = new System.Drawing.Size(147, 23);
-            this.cmbCiudad.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCiudad.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cmbCiudad.TabIndex = 87;
-            // 
-            // cmbTipoCliente
-            // 
-            this.cmbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoCliente.DropDownWidth = 123;
-            this.cmbTipoCliente.Location = new System.Drawing.Point(543, 171);
-            this.cmbTipoCliente.Name = "cmbTipoCliente";
-            this.cmbTipoCliente.Size = new System.Drawing.Size(147, 23);
-            this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoCliente.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cmbTipoCliente.TabIndex = 88;
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(543, 108);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(147, 23);
-            this.txtFecha.TabIndex = 89;
-            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(857, 636);
-            this.Controls.Add(this.label32);
             this.Controls.Add(this.kryptonGroup1);
             this.ForeColor = System.Drawing.Color.Black;
             this.MaximizeBox = false;
@@ -561,11 +548,10 @@
             this.kryptonGroup1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
             this.kryptonGroup1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -588,7 +574,6 @@
         private System.Windows.Forms.Label label31;
         private Krypton.Toolkit.KryptonButton btnRegistrar;
         private Krypton.Toolkit.KryptonButton btnLimpiar;
-        private System.Windows.Forms.Label label32;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
