@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
             this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
             this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.btnRegresar = new Krypton.Toolkit.KryptonButton();
@@ -64,7 +65,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -76,7 +76,8 @@
             // 
             // kryptonGroup1
             // 
-            this.kryptonGroup1.Location = new System.Drawing.Point(27, 39);
+            this.kryptonGroup1.Location = new System.Drawing.Point(36, 48);
+            this.kryptonGroup1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             // 
             // kryptonGroup1.Panel
             // 
@@ -115,20 +116,36 @@
             this.kryptonGroup1.Panel.Controls.Add(this.txtFecha);
             this.kryptonGroup1.Panel.Controls.Add(this.label5);
             this.kryptonGroup1.Panel.Controls.Add(this.label16);
-            this.kryptonGroup1.Size = new System.Drawing.Size(804, 582);
+            this.kryptonGroup1.Size = new System.Drawing.Size(1072, 716);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 0;
             // 
+            // txtDNI
+            // 
+            this.txtDNI.Enabled = false;
+            this.txtDNI.Location = new System.Drawing.Point(724, 315);
+            this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDNI.MaxLength = 13;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.ShortcutsEnabled = false;
+            this.txtDNI.Size = new System.Drawing.Size(196, 39);
+            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.txtDNI.StateActive.Border.Rounding = 10F;
+            this.txtDNI.StateActive.Border.Width = 4;
+            this.txtDNI.TabIndex = 77;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
+            // 
             // txtRTN
             // 
             this.txtRTN.Enabled = false;
-            this.txtRTN.Location = new System.Drawing.Point(543, 206);
+            this.txtRTN.Location = new System.Drawing.Point(724, 254);
+            this.txtRTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRTN.MaxLength = 14;
             this.txtRTN.Name = "txtRTN";
             this.txtRTN.ShortcutsEnabled = false;
-            this.txtRTN.Size = new System.Drawing.Size(147, 35);
+            this.txtRTN.Size = new System.Drawing.Size(196, 39);
             this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtRTN.StateActive.Border.Rounding = 10F;
             this.txtRTN.StateActive.Border.Width = 4;
@@ -137,11 +154,12 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 391);
+            this.txtTelefono.Location = new System.Drawing.Point(215, 481);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.ShortcutsEnabled = false;
-            this.txtTelefono.Size = new System.Drawing.Size(147, 35);
+            this.txtTelefono.Size = new System.Drawing.Size(196, 39);
             this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtTelefono.StateActive.Border.Rounding = 10F;
             this.txtTelefono.StateActive.Border.Width = 4;
@@ -150,8 +168,8 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(700, 2);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegresar.Location = new System.Drawing.Point(933, 2);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
@@ -159,7 +177,7 @@
             this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
             this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.Size = new System.Drawing.Size(80, 24);
+            this.btnRegresar.Size = new System.Drawing.Size(107, 30);
             this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
             this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
@@ -183,9 +201,10 @@
             // 
             this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCiudad.DropDownWidth = 123;
-            this.cmbCiudad.Location = new System.Drawing.Point(543, 436);
+            this.cmbCiudad.Location = new System.Drawing.Point(724, 537);
+            this.cmbCiudad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbCiudad.Name = "cmbCiudad";
-            this.cmbCiudad.Size = new System.Drawing.Size(147, 35);
+            this.cmbCiudad.Size = new System.Drawing.Size(196, 40);
             this.cmbCiudad.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCiudad.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.cmbCiudad.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -199,9 +218,10 @@
             // 
             this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartamento.DropDownWidth = 123;
-            this.cmbDepartamento.Location = new System.Drawing.Point(161, 433);
+            this.cmbDepartamento.Location = new System.Drawing.Point(215, 533);
+            this.cmbDepartamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbDepartamento.Name = "cmbDepartamento";
-            this.cmbDepartamento.Size = new System.Drawing.Size(147, 35);
+            this.cmbDepartamento.Size = new System.Drawing.Size(196, 40);
             this.cmbDepartamento.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartamento.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.cmbDepartamento.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -217,9 +237,10 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label17.Location = new System.Drawing.Point(390, 206);
+            this.label17.Location = new System.Drawing.Point(520, 254);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(47, 44);
+            this.label17.Size = new System.Drawing.Size(61, 58);
             this.label17.TabIndex = 29;
             this.label17.Text = "RTN";
             // 
@@ -229,18 +250,20 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label8.Location = new System.Drawing.Point(390, 256);
+            this.label8.Location = new System.Drawing.Point(520, 315);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 44);
+            this.label8.Size = new System.Drawing.Size(59, 58);
             this.label8.TabIndex = 28;
             this.label8.Text = "DNI";
             // 
             // txtRazonSocial
             // 
             this.txtRazonSocial.Enabled = false;
-            this.txtRazonSocial.Location = new System.Drawing.Point(161, 247);
+            this.txtRazonSocial.Location = new System.Drawing.Point(215, 304);
+            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(147, 35);
+            this.txtRazonSocial.Size = new System.Drawing.Size(196, 39);
             this.txtRazonSocial.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtRazonSocial.StateActive.Border.Rounding = 10F;
             this.txtRazonSocial.StateActive.Border.Width = 4;
@@ -252,9 +275,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label7.Location = new System.Drawing.Point(3, 247);
+            this.label7.Location = new System.Drawing.Point(4, 304);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 44);
+            this.label7.Size = new System.Drawing.Size(133, 58);
             this.label7.TabIndex = 25;
             this.label7.Text = "Razón social";
             // 
@@ -264,18 +288,20 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label6.Location = new System.Drawing.Point(19, 392);
+            this.label6.Location = new System.Drawing.Point(25, 482);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 44);
+            this.label6.Size = new System.Drawing.Size(193, 58);
             this.label6.TabIndex = 23;
             this.label6.Text = "Teléfono personal*";
             // 
             // kryptonTextBox1
             // 
             this.kryptonTextBox1.Enabled = false;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(258, 3);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(344, 4);
+            this.kryptonTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(342, 56);
+            this.kryptonTextBox1.Size = new System.Drawing.Size(456, 67);
             this.kryptonTextBox1.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(187)))), ((int)(((byte)(217)))));
             this.kryptonTextBox1.StateActive.Border.Color1 = System.Drawing.Color.Transparent;
             this.kryptonTextBox1.StateActive.Border.Color2 = System.Drawing.Color.Transparent;
@@ -296,13 +322,14 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(570, 492);
+            this.btnRegistrar.Location = new System.Drawing.Point(760, 606);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
             this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(74)))), ((int)(((byte)(214)))));
-            this.btnRegistrar.Size = new System.Drawing.Size(153, 32);
+            this.btnRegistrar.Size = new System.Drawing.Size(204, 39);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
@@ -326,11 +353,12 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(437, 492);
+            this.btnLimpiar.Location = new System.Drawing.Point(583, 606);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLimpiar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnLimpiar.Size = new System.Drawing.Size(109, 32);
+            this.btnLimpiar.Size = new System.Drawing.Size(145, 39);
             this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btnLimpiar.StateCommon.Border.Color1 = System.Drawing.Color.Black;
@@ -356,17 +384,19 @@
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label31.Location = new System.Drawing.Point(392, 441);
+            this.label31.Location = new System.Drawing.Point(523, 543);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(75, 44);
+            this.label31.Size = new System.Drawing.Size(97, 58);
             this.label31.TabIndex = 18;
             this.label31.Text = "Ciudad*";
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(543, 335);
+            this.txtCorreo.Location = new System.Drawing.Point(724, 412);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(147, 35);
+            this.txtCorreo.Size = new System.Drawing.Size(196, 39);
             this.txtCorreo.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtCorreo.StateActive.Border.Rounding = 10F;
             this.txtCorreo.StateActive.Border.Width = 4;
@@ -378,18 +408,20 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label15.Location = new System.Drawing.Point(392, 335);
+            this.label15.Location = new System.Drawing.Point(523, 412);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(154, 44);
+            this.label15.Size = new System.Drawing.Size(198, 58);
             this.label15.TabIndex = 16;
             this.label15.Text = "Correo electrónico*";
             this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(543, 382);
+            this.txtDireccion.Location = new System.Drawing.Point(724, 470);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(147, 35);
+            this.txtDireccion.Size = new System.Drawing.Size(196, 39);
             this.txtDireccion.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtDireccion.StateActive.Border.Rounding = 10F;
             this.txtDireccion.StateActive.Border.Width = 4;
@@ -402,18 +434,20 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label14.Location = new System.Drawing.Point(392, 382);
+            this.label14.Location = new System.Drawing.Point(523, 470);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(91, 44);
+            this.label14.Size = new System.Drawing.Size(118, 58);
             this.label14.TabIndex = 14;
             this.label14.Text = "Dirección*";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // txtContacto
             // 
-            this.txtContacto.Location = new System.Drawing.Point(161, 340);
+            this.txtContacto.Location = new System.Drawing.Point(215, 418);
+            this.txtContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(147, 35);
+            this.txtContacto.Size = new System.Drawing.Size(196, 39);
             this.txtContacto.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtContacto.StateActive.Border.Rounding = 10F;
             this.txtContacto.StateActive.Border.Width = 4;
@@ -425,9 +459,10 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label13.Location = new System.Drawing.Point(19, 348);
+            this.label13.Location = new System.Drawing.Point(25, 428);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(90, 44);
+            this.label13.Size = new System.Drawing.Size(115, 58);
             this.label13.TabIndex = 12;
             this.label13.Text = "Contacto*";
             // 
@@ -436,9 +471,10 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label12.Location = new System.Drawing.Point(8, 317);
+            this.label12.Location = new System.Drawing.Point(11, 390);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(118, 16);
+            this.label12.Size = new System.Drawing.Size(143, 20);
             this.label12.TabIndex = 11;
             this.label12.Text = "Datos de Contacto";
             // 
@@ -449,9 +485,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(-14, 291);
+            this.label11.Location = new System.Drawing.Point(-19, 358);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(817, 26);
+            this.label11.Size = new System.Drawing.Size(952, 32);
             this.label11.TabIndex = 10;
             this.label11.Text = "_________________________________________________________________________________" +
     "______________________________________________________\r\n\r\n";
@@ -461,9 +498,10 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.label10.Location = new System.Drawing.Point(3, 115);
+            this.label10.Location = new System.Drawing.Point(4, 142);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(176, 16);
+            this.label10.Size = new System.Drawing.Size(206, 20);
             this.label10.TabIndex = 9;
             this.label10.Text = "Datos principales del cliente";
             // 
@@ -471,9 +509,10 @@
             // 
             this.cmbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoCliente.DropDownWidth = 123;
-            this.cmbTipoCliente.Location = new System.Drawing.Point(543, 159);
+            this.cmbTipoCliente.Location = new System.Drawing.Point(724, 196);
+            this.cmbTipoCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbTipoCliente.Name = "cmbTipoCliente";
-            this.cmbTipoCliente.Size = new System.Drawing.Size(147, 35);
+            this.cmbTipoCliente.Size = new System.Drawing.Size(196, 40);
             this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoCliente.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.cmbTipoCliente.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -489,17 +528,19 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label9.Location = new System.Drawing.Point(390, 162);
+            this.label9.Location = new System.Drawing.Point(520, 199);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(126, 44);
+            this.label9.Size = new System.Drawing.Size(160, 58);
             this.label9.TabIndex = 7;
             this.label9.Text = "Tipo de cliente*";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(161, 200);
+            this.txtNombre.Location = new System.Drawing.Point(215, 246);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(147, 35);
+            this.txtNombre.Size = new System.Drawing.Size(196, 39);
             this.txtNombre.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtNombre.StateActive.Border.Rounding = 10F;
             this.txtNombre.StateActive.Border.Width = 4;
@@ -511,17 +552,19 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label4.Location = new System.Drawing.Point(390, 102);
+            this.label4.Location = new System.Drawing.Point(520, 126);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 44);
+            this.label4.Size = new System.Drawing.Size(176, 58);
             this.label4.TabIndex = 5;
             this.label4.Text = "Fecha de registro";
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(161, 150);
+            this.txtID.Location = new System.Drawing.Point(215, 185);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(147, 35);
+            this.txtID.Size = new System.Drawing.Size(196, 39);
             this.txtID.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtID.StateActive.Border.Rounding = 10F;
             this.txtID.StateActive.Border.Width = 4;
@@ -533,9 +576,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label3.Location = new System.Drawing.Point(0, 150);
+            this.label3.Location = new System.Drawing.Point(0, 185);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 44);
+            this.label3.Size = new System.Drawing.Size(136, 58);
             this.label3.TabIndex = 3;
             this.label3.Text = "ID de cliente ";
             // 
@@ -546,9 +590,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(-14, 76);
+            this.label2.Location = new System.Drawing.Point(-19, 94);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(817, 26);
+            this.label2.Size = new System.Drawing.Size(952, 32);
             this.label2.TabIndex = 2;
             this.label2.Text = "_________________________________________________________________________________" +
     "______________________________________________________\r\n\r\n";
@@ -559,17 +604,19 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 10.6F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(2, 39);
+            this.label1.Location = new System.Drawing.Point(3, 48);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(250, 51);
+            this.label1.Size = new System.Drawing.Size(298, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRO DE NUEVO CLIENTE";
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(543, 102);
+            this.txtFecha.Location = new System.Drawing.Point(724, 126);
+            this.txtFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(147, 35);
+            this.txtFecha.Size = new System.Drawing.Size(196, 39);
             this.txtFecha.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtFecha.StateActive.Border.Rounding = 10F;
             this.txtFecha.StateActive.Border.Width = 4;
@@ -581,9 +628,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label5.Location = new System.Drawing.Point(-2, 197);
+            this.label5.Location = new System.Drawing.Point(-3, 242);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 44);
+            this.label5.Size = new System.Drawing.Size(195, 58);
             this.label5.TabIndex = 5;
             this.label5.Text = "Nombre de cliente*";
             // 
@@ -593,9 +641,10 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label16.Location = new System.Drawing.Point(19, 436);
+            this.label16.Location = new System.Drawing.Point(25, 537);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(127, 44);
+            this.label16.Size = new System.Drawing.Size(165, 58);
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
             // 
@@ -604,36 +653,24 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(69, 11);
+            this.label32.Location = new System.Drawing.Point(92, 14);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(111, 25);
+            this.label32.Size = new System.Drawing.Size(140, 31);
             this.label32.TabIndex = 1;
             this.label32.Text = "TMSS.SW";
             // 
-            // txtDNI
-            // 
-            this.txtDNI.Enabled = false;
-            this.txtDNI.Location = new System.Drawing.Point(543, 256);
-            this.txtDNI.MaxLength = 13;
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.ShortcutsEnabled = false;
-            this.txtDNI.Size = new System.Drawing.Size(147, 35);
-            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtDNI.StateActive.Border.Rounding = 10F;
-            this.txtDNI.StateActive.Border.Width = 4;
-            this.txtDNI.TabIndex = 77;
-            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
-            // 
             // frmRegistro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(857, 636);
+            this.ClientSize = new System.Drawing.Size(1143, 783);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.kryptonGroup1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";

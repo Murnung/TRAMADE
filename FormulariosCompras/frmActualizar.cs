@@ -299,5 +299,20 @@ namespace TRAMADE
 
             buscando = false;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtEntrega_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

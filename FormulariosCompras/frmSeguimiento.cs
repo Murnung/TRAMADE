@@ -34,6 +34,22 @@ namespace TRAMADE
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvCompras.DataSource = dt;
+
+                dgvCompras.Columns["ID proveedor"].Visible = false;
+                dgvCompras.Columns["ID producto"].Visible = false;
+                dgvCompras.Columns["ID forma pago"].Visible = false;
+                dgvCompras.Columns["ID estado"].Visible = false;
+
+                dgvCompras.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvCompras.ReadOnly = true;
+                dgvCompras.AllowUserToResizeRows = false;
+                dgvCompras.AllowUserToResizeColumns = false;
+                dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+                dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvCompras.EnableHeadersVisualStyles = false;
+                dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+                dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
             }
             catch (Exception ex)
             {
@@ -78,19 +94,9 @@ namespace TRAMADE
         private void frmSeguimiento_Load(object sender, EventArgs e)
         {
             recargarCompras();
-            dgvCompras.Columns["ID proveedor"].Visible = false;
-            dgvCompras.Columns["ID producto"].Visible = false;
-            dgvCompras.Columns["ID forma pago"].Visible = false;
-            dgvCompras.Columns["ID estado"].Visible = false;
+           
 
-            dgvCompras.ReadOnly = true;
-            dgvCompras.AllowUserToResizeRows = false;
-            dgvCompras.AllowUserToResizeColumns = false;
-            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
-            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvCompras.EnableHeadersVisualStyles = false;
-            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
-            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
+            
 
             clsIndicadoresCompras.totalSolicitudesRegistradas(ObjConexion, lblSolicitudesRegistradas);
             clsIndicadoresCompras.totalValorPendiente(ObjConexion, lblValorTotal);

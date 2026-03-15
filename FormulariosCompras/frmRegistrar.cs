@@ -303,5 +303,10 @@ namespace TRAMADE
             buscando = false;
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

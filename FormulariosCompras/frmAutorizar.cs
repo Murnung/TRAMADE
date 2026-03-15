@@ -80,7 +80,8 @@ namespace TRAMADE
             dgvCompras.Columns["ID forma pago"].Visible = false;
             dgvCompras.Columns["ID estado"].Visible = false;
 
-            dgvCompras.ReadOnly = false;
+            dgvCompras.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCompras.AllowUserToResizeRows = false;
             dgvCompras.AllowUserToResizeColumns = false;
             dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
@@ -143,6 +144,11 @@ namespace TRAMADE
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             recargarCompras();
+        }
+
+        private void kryptonGroupBox1_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
