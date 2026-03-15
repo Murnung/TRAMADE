@@ -311,23 +311,22 @@
             // 
             // cmbProducto
             // 
-            this.cmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProducto.DropDownWidth = 186;
             this.cmbProducto.Location = new System.Drawing.Point(253, 171);
             this.cmbProducto.Name = "cmbProducto";
-            this.cmbProducto.Size = new System.Drawing.Size(190, 30);
+            this.cmbProducto.Size = new System.Drawing.Size(190, 26);
             this.cmbProducto.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProducto.TabIndex = 81;
             this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
+            this.cmbProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProducto_KeyDown);
             this.cmbProducto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbProducto_KeyUp);
             // 
             // cmbProveedor
             // 
-            this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProveedor.DropDownWidth = 186;
             this.cmbProveedor.Location = new System.Drawing.Point(145, 106);
             this.cmbProveedor.Name = "cmbProveedor";
-            this.cmbProveedor.Size = new System.Drawing.Size(190, 30);
+            this.cmbProveedor.Size = new System.Drawing.Size(190, 26);
             this.cmbProveedor.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProveedor.TabIndex = 82;
             this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
@@ -379,7 +378,7 @@
             this.cmbFormaPago.DropDownWidth = 186;
             this.cmbFormaPago.Location = new System.Drawing.Point(253, 211);
             this.cmbFormaPago.Name = "cmbFormaPago";
-            this.cmbFormaPago.Size = new System.Drawing.Size(190, 30);
+            this.cmbFormaPago.Size = new System.Drawing.Size(190, 26);
             this.cmbFormaPago.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbFormaPago.TabIndex = 114;
             this.cmbFormaPago.SelectedIndexChanged += new System.EventHandler(this.cmbFormaPago_SelectedIndexChanged);

@@ -229,6 +229,7 @@
             this.cmbProveedor.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProveedor.TabIndex = 140;
             this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
+            this.cmbProveedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProveedor_KeyDown);
             this.cmbProveedor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbProveedor_KeyUp);
             // 
             // cmbProducto
@@ -240,6 +241,7 @@
             this.cmbProducto.Size = new System.Drawing.Size(189, 26);
             this.cmbProducto.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProducto.TabIndex = 139;
+            this.cmbProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbProducto_KeyDown);
             this.cmbProducto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cmbProducto_KeyUp);
             // 
             // txtTotal
