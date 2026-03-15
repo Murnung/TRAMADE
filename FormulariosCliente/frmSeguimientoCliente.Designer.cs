@@ -42,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -67,8 +66,7 @@
             this.kryptonGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonGroup1.Location = new System.Drawing.Point(39, 55);
-            this.kryptonGroup1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kryptonGroup1.Location = new System.Drawing.Point(29, 45);
             // 
             // kryptonGroup1.Panel
             // 
@@ -79,7 +77,7 @@
             this.kryptonGroup1.Panel.Controls.Add(this.kgActivos);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
             this.kryptonGroup1.Panel.Controls.Add(this.txtBuscar);
-            this.kryptonGroup1.Size = new System.Drawing.Size(969, 624);
+            this.kryptonGroup1.Size = new System.Drawing.Size(727, 507);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 1;
@@ -93,12 +91,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dvgSeguimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dvgSeguimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgSeguimiento.Location = new System.Drawing.Point(35, 319);
-            this.dvgSeguimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dvgSeguimiento.Location = new System.Drawing.Point(26, 259);
             this.dvgSeguimiento.Name = "dvgSeguimiento";
             this.dvgSeguimiento.ReadOnly = true;
             this.dvgSeguimiento.RowHeadersWidth = 51;
-            this.dvgSeguimiento.Size = new System.Drawing.Size(882, 259);
+            this.dvgSeguimiento.Size = new System.Drawing.Size(657, 206);
             this.dvgSeguimiento.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dvgSeguimiento.StateCommon.Background.Color2 = System.Drawing.Color.White;
             this.dvgSeguimiento.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
@@ -114,23 +111,21 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(24, 241);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(18, 196);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(220, 58);
+            this.label18.Size = new System.Drawing.Size(171, 44);
             this.label18.TabIndex = 40;
             this.label18.Text = "Búsqueda por nombre";
             // 
             // kgInactivos
             // 
-            this.kgInactivos.Location = new System.Drawing.Point(660, 60);
-            this.kgInactivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kgInactivos.Location = new System.Drawing.Point(495, 49);
             // 
             // kgInactivos.Panel
             // 
             this.kgInactivos.Panel.Controls.Add(this.txtInactivos);
             this.kgInactivos.Panel.Controls.Add(this.label4);
-            this.kgInactivos.Size = new System.Drawing.Size(249, 148);
+            this.kgInactivos.Size = new System.Drawing.Size(187, 120);
             this.kgInactivos.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.kgInactivos.StateCommon.Border.Rounding = 25F;
             this.kgInactivos.TabIndex = 28;
@@ -138,10 +133,9 @@
             // txtInactivos
             // 
             this.txtInactivos.Enabled = false;
-            this.txtInactivos.Location = new System.Drawing.Point(59, 84);
-            this.txtInactivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtInactivos.Location = new System.Drawing.Point(44, 68);
             this.txtInactivos.Name = "txtInactivos";
-            this.txtInactivos.Size = new System.Drawing.Size(133, 27);
+            this.txtInactivos.Size = new System.Drawing.Size(100, 23);
             this.txtInactivos.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.txtInactivos.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
             this.txtInactivos.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(28)))), ((int)(((byte)(62)))));
@@ -166,23 +160,21 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label4.Location = new System.Drawing.Point(4, 26);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(3, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(228, 86);
+            this.label4.Size = new System.Drawing.Size(171, 70);
             this.label4.TabIndex = 0;
             this.label4.Text = "Clientes Inactivos";
             // 
             // kgRegistrados
             // 
-            this.kgRegistrados.Location = new System.Drawing.Point(55, 55);
-            this.kgRegistrados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kgRegistrados.Location = new System.Drawing.Point(41, 45);
             // 
             // kgRegistrados.Panel
             // 
             this.kgRegistrados.Panel.Controls.Add(this.txtRegistrados);
             this.kgRegistrados.Panel.Controls.Add(this.label3);
-            this.kgRegistrados.Size = new System.Drawing.Size(280, 153);
+            this.kgRegistrados.Size = new System.Drawing.Size(210, 124);
             this.kgRegistrados.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.kgRegistrados.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.kgRegistrados.StateCommon.Border.Rounding = 25F;
@@ -191,10 +183,9 @@
             // txtRegistrados
             // 
             this.txtRegistrados.Enabled = false;
-            this.txtRegistrados.Location = new System.Drawing.Point(67, 69);
-            this.txtRegistrados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRegistrados.Location = new System.Drawing.Point(50, 56);
             this.txtRegistrados.Name = "txtRegistrados";
-            this.txtRegistrados.Size = new System.Drawing.Size(133, 27);
+            this.txtRegistrados.Size = new System.Drawing.Size(100, 23);
             this.txtRegistrados.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(183)))), ((int)(((byte)(215)))));
             this.txtRegistrados.StateActive.Border.Color1 = System.Drawing.Color.Transparent;
             this.txtRegistrados.StateActive.Border.Color2 = System.Drawing.Color.Transparent;
@@ -219,23 +210,21 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Image = global::TRAMADE.Properties.Resources.REGISTRADOS;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label3.Location = new System.Drawing.Point(7, 17);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(5, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(261, 100);
+            this.label3.Size = new System.Drawing.Size(196, 81);
             this.label3.TabIndex = 0;
             this.label3.Text = "Clientes Registrados";
             // 
             // kgActivos
             // 
-            this.kgActivos.Location = new System.Drawing.Point(376, 60);
-            this.kgActivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kgActivos.Location = new System.Drawing.Point(282, 49);
             // 
             // kgActivos.Panel
             // 
             this.kgActivos.Panel.Controls.Add(this.txtActivos);
             this.kgActivos.Panel.Controls.Add(this.label2);
-            this.kgActivos.Size = new System.Drawing.Size(249, 148);
+            this.kgActivos.Size = new System.Drawing.Size(187, 120);
             this.kgActivos.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
             this.kgActivos.StateCommon.Border.Rounding = 25F;
             this.kgActivos.TabIndex = 26;
@@ -243,10 +232,9 @@
             // txtActivos
             // 
             this.txtActivos.Enabled = false;
-            this.txtActivos.Location = new System.Drawing.Point(88, 84);
-            this.txtActivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtActivos.Location = new System.Drawing.Point(66, 68);
             this.txtActivos.Name = "txtActivos";
-            this.txtActivos.Size = new System.Drawing.Size(133, 27);
+            this.txtActivos.Size = new System.Drawing.Size(100, 23);
             this.txtActivos.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
             this.txtActivos.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
             this.txtActivos.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(80)))));
@@ -272,10 +260,9 @@
             this.label2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = global::TRAMADE.Properties.Resources.ACTIVOS;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label2.Location = new System.Drawing.Point(17, 26);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(13, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 86);
+            this.label2.Size = new System.Drawing.Size(155, 70);
             this.label2.TabIndex = 0;
             this.label2.Text = "Clientes Activos";
             // 
@@ -284,19 +271,17 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 10.6F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(9, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(7, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 62);
+            this.label1.Size = new System.Drawing.Size(234, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "SEGUIMIENTO DE CLIENTES";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(260, 241);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscar.Location = new System.Drawing.Point(195, 196);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(404, 33);
+            this.txtBuscar.Size = new System.Drawing.Size(303, 29);
             this.txtBuscar.StateActive.Border.Color1 = System.Drawing.Color.Black;
             this.txtBuscar.StateActive.Border.Color2 = System.Drawing.Color.Black;
             this.txtBuscar.StateActive.Border.Rounding = 5F;
@@ -304,48 +289,14 @@
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(924, 14);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.Size = new System.Drawing.Size(107, 30);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Rounding = 10F;
-            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnRegresar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.TabIndex = 73;
-            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "REGRESAR";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
-            // 
             // frmSeguimientoCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(1067, 692);
-            this.ControlBox = false;
-            this.Controls.Add(this.btnRegresar);
+            this.ClientSize = new System.Drawing.Size(800, 562);
             this.Controls.Add(this.kryptonGroup1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "frmSeguimientoCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSeguimientoCliente";
@@ -390,7 +341,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label4;
-        private Krypton.Toolkit.KryptonButton btnRegresar;
         private Krypton.Toolkit.KryptonDataGridView dvgSeguimiento;
     }
 }

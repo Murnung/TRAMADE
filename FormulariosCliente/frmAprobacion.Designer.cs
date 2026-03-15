@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -192,48 +191,15 @@
             this.label32.TabIndex = 2;
             this.label32.Text = "TMSS.SW";
             // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(699, 11);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.Size = new System.Drawing.Size(80, 24);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Rounding = 10F;
-            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnRegresar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.TabIndex = 73;
-            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "REGRESAR";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
-            // 
             // frmAprobacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(800, 543);
-            this.ControlBox = false;
-            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.kryptonGroup1);
             this.Controls.Add(this.label32);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "frmAprobacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAprobacion";
@@ -258,7 +224,6 @@
         private Krypton.Toolkit.KryptonButton btnAutorizar;
         private Krypton.Toolkit.KryptonButton btnNegar;
         private System.Windows.Forms.Label label18;
-        private Krypton.Toolkit.KryptonButton btnRegresar;
         private Krypton.Toolkit.KryptonDataGridView dgvAprobacion;
     }
 }

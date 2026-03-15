@@ -146,15 +146,6 @@ namespace TRAMADE
             }
         }
 
-
-        private void btnRegresar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-            frmMenu objMenu = new frmMenu();
-            objMenu.recargarGraficaEstadoCli();
-            objMenu.recargarGraficaDepa();
-            objMenu.recargarClientes();
-        }
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = ObjCliente.BuscarCliente(ObjConexion, txtBuscar.Text);
