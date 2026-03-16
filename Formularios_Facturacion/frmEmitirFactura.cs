@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace TRAMADE
 {
-    public partial class frmEmitirFactura : Form
+    public partial class frmEmitirFactura : Form 
     {
         public int IdFacturaRecibido;
 
-        public frmEmitirFactura()
+        public frmEmitirFactura() // Constructor
         {
             InitializeComponent();
         }
 
-        private void frmEmitirFactura_Load(object sender, EventArgs e)
+        private void frmEmitirFactura_Load(object sender, EventArgs e) // Evento Load del formulario
         {
             if (IdFacturaRecibido > 0)
             {
@@ -30,18 +30,17 @@ namespace TRAMADE
             dgvEmitirFactura.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        // --- AHORA LLENAMOS TODO USANDO LA CLASE ---
         private void CargarDatosFactura()
         {
             try
             {
-                // 1. Instanciamos la nueva clase
+                // Se crea una instancia de la clase de negocio para cargar los datos
                 clsEmitirFacturaF objFactura = new clsEmitirFacturaF();
 
-                // 2. Cargamos los datos generales (Maestro)
+                // Se cargan los datos maestros de la factura (Cliente, Vendedor, Fechas, Totales) 
                 if (objFactura.CargarMaestro(IdFacturaRecibido))
                 {
-                    // Lógica visual: formatiar números y monedas
+                    // Se asignan los datos a los controles del formulario
                     lblNumeroFacturaEF.Text = "INV/2026/" + objFactura.numero_factura.ToString("D4");
 
                     txtDNIClienteEF.Text = objFactura.dni_rtn_cliente;
@@ -62,7 +61,7 @@ namespace TRAMADE
                     else if (objFactura.id_forma_pago == 2) rbCreditoEF.Checked = true;
                 }
 
-                // 3. Cargamos la tabla de productos (Detalle)
+                // Se cargan la tabla de productos (Detalle)
                 dgvEmitirFactura.DataSource = null;
                 dgvEmitirFactura.Columns.Clear();
                 dgvEmitirFactura.DataSource = objFactura.CargarDetalles(IdFacturaRecibido);

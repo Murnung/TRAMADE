@@ -13,7 +13,6 @@ namespace TRAMADE
 
     public class clsFacturaF
     {
-        // Propiedades de la Factura Maestro
         public int numero_factura { get; set; }
         public int id_usuario { get; set; }
         public int id_forma_pago { get; set; }
@@ -24,7 +23,7 @@ namespace TRAMADE
         public decimal impuesto { get; set; }
         public decimal total { get; set; }
 
-        // ¡EL TRUCO! Una lista que guardará todos los productos de esta factura
+        // Esta lista guardará cada producto que el usuario agregue a la factura, con su cantidad
         public List<clsDetalleFactura> Detalles { get; set; } = new List<clsDetalleFactura>();
 
         // Método que obtiene el siguiente número de factura
@@ -64,7 +63,7 @@ namespace TRAMADE
             {
                 transaccion = objConexion.SqlC.BeginTransaction();
 
-                // 1. INSERTAR LA FACTURA (Ahora SÍ incluimos el id_tipo_factura = 1)
+                // Inserta todo a la factura
                 string queryFactura = @"INSERT INTO FACTURA 
                                       (numero_factura, id_usuario, id_forma_pago, id_cliente, 
                                        fecha_emision, fecha_vencimiento, subtotal, impuesto, total, id_tipo_factura) 
@@ -100,7 +99,6 @@ namespace TRAMADE
                     cmdDetalle.Parameters.AddWithValue("@cant", detalle.cantidad);
                     cmdDetalle.ExecuteNonQuery();
 
-                    // B) ¡EL DESCUENTO AUTOMÁTICO! Actualizamos PRODUCTO_SUCURSAL
                     string queryDescuento = @"UPDATE PRODUCTO_SUCURSAL 
                                               SET cantidad_stock = cantidad_stock - @cantVendida 
                                               WHERE id_producto = @idProdDesc";

@@ -52,10 +52,9 @@ namespace TRAMADE
 
             try
             {
-                // Generamos códigos únicos usando los milisegundos de la hora actual
+                // Generamos un número único basado en el tiempo para evitar colisiones en la base de datos
                 string ticks = DateTime.Now.Ticks.ToString().Substring(8);
 
-                // Estos son los códigos de relleno para engañar a la base de datos
                 string dniParaBD = "SN-D" + ticks;
                 string rtnParaBD = "SN-R" + ticks;
                 string telParaBD = "SN-T" + ticks;
@@ -69,7 +68,6 @@ namespace TRAMADE
                     if (documentoIdentidad.Length == 14) rtnParaBD = documentoIdentidad; // Se va al RTN
                 }
 
-                // AHORA SÍ: Le mandamos @rtn en vez de dejarlo vacío ('')
                 string query = @"INSERT INTO CLIENTE 
                                 (nombre_cliente, direccion_cliente, rtn_cliente, dni_cliente, 
                                  id_usuario, id_clasificacion_cliente, id_estado, 
