@@ -89,7 +89,6 @@ namespace TRAMADE
 
                     hist.id_usuario = dr["id_usuario"].ToString();
 
-                    // LÓGICA INTELIGENTE PARA EL HISTORIAL
                     string rtn_bd = dr["rtn_cliente"].ToString();
                     string dni_bd = dr["dni_cliente"].ToString();
 

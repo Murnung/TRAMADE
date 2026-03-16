@@ -24,7 +24,7 @@ namespace TRAMADE
             CargarHistorial();
         }
 
-        // --- AHORA CARGAMOS USANDO LA CLASE ---
+        
         private void CargarHistorial(string filtro = "", DateTime? fecha = null)
         {
             try
@@ -65,8 +65,6 @@ namespace TRAMADE
             }
         }
 
-        // Todos tus eventos de botones y filtros siguen funcionando igual
-        // porque solo llaman a CargarHistorial()
 
         private void txtBuscarFactura_TextChanged(object sender, EventArgs e)
         {

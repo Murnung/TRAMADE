@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +49,7 @@
             this.btnBuscar = new Krypton.Toolkit.KryptonButton();
             this.dtHasta = new Krypton.Toolkit.KryptonDateTimePicker();
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
-            this.panel1.SuspendLayout();
+            this.kryptonGroupBox4 = new Krypton.Toolkit.KryptonGroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
@@ -70,75 +66,18 @@
             this.kryptonGroupBox3.Panel.SuspendLayout();
             this.kryptonGroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4.Panel)).BeginInit();
+            this.kryptonGroupBox4.Panel.SuspendLayout();
+            this.kryptonGroupBox4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel1.Controls.Add(this.btnRegresar);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(0, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1301, 66);
-            this.panel1.TabIndex = 28;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(1075, 18);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.Size = new System.Drawing.Size(107, 30);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Rounding = 10F;
-            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnRegresar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.TabIndex = 72;
-            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "REGRESAR";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(11, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(122, 42);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "TSMS";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.panel2.Location = new System.Drawing.Point(0, 694);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1235, 36);
-            this.panel2.TabIndex = 76;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 66);
+            this.label2.Location = new System.Drawing.Point(21, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(605, 32);
             this.label2.TabIndex = 77;
@@ -147,8 +86,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 254);
+            this.label1.Location = new System.Drawing.Point(36, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 78;
@@ -157,8 +97,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(343, 319);
+            this.label3.Location = new System.Drawing.Point(352, 265);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 79;
@@ -167,7 +108,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(431, 315);
+            this.txtBuscar.Location = new System.Drawing.Point(440, 261);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(283, 33);
@@ -176,7 +117,7 @@
             // 
             // dtDesde
             // 
-            this.dtDesde.Location = new System.Drawing.Point(31, 278);
+            this.dtDesde.Location = new System.Drawing.Point(40, 224);
             this.dtDesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtDesde.Name = "dtDesde";
             this.dtDesde.Size = new System.Drawing.Size(277, 29);
@@ -223,20 +164,23 @@
             // 
             this.dgvCompras.AllowUserToAddRows = false;
             this.dgvCompras.AllowUserToDeleteRows = false;
+            this.dgvCompras.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompras.Location = new System.Drawing.Point(29, 354);
+            this.dgvCompras.Location = new System.Drawing.Point(38, 300);
             this.dgvCompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
+            this.dgvCompras.RowHeadersVisible = false;
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
-            this.dgvCompras.Size = new System.Drawing.Size(1163, 318);
+            this.dgvCompras.Size = new System.Drawing.Size(1198, 354);
             this.dgvCompras.TabIndex = 85;
             // 
             // kryptonGroupBox2
             // 
             this.kryptonGroupBox2.CaptionVisible = false;
-            this.kryptonGroupBox2.Location = new System.Drawing.Point(59, 126);
+            this.kryptonGroupBox2.Location = new System.Drawing.Point(68, 72);
             this.kryptonGroupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // kryptonGroupBox2.Panel
@@ -276,7 +220,7 @@
             // kryptonGroupBox1
             // 
             this.kryptonGroupBox1.CaptionVisible = false;
-            this.kryptonGroupBox1.Location = new System.Drawing.Point(425, 126);
+            this.kryptonGroupBox1.Location = new System.Drawing.Point(457, 72);
             this.kryptonGroupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // kryptonGroupBox1.Panel
@@ -317,7 +261,7 @@
             // kryptonGroupBox3
             // 
             this.kryptonGroupBox3.CaptionVisible = false;
-            this.kryptonGroupBox3.Location = new System.Drawing.Point(796, 126);
+            this.kryptonGroupBox3.Location = new System.Drawing.Point(858, 72);
             this.kryptonGroupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // kryptonGroupBox3.Panel
@@ -356,7 +300,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(735, 315);
+            this.btnBuscar.Location = new System.Drawing.Point(744, 261);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -383,7 +327,7 @@
             // 
             // dtHasta
             // 
-            this.dtHasta.Location = new System.Drawing.Point(31, 319);
+            this.dtHasta.Location = new System.Drawing.Point(40, 265);
             this.dtHasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtHasta.Name = "dtHasta";
             this.dtHasta.Size = new System.Drawing.Size(277, 29);
@@ -392,7 +336,7 @@
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(880, 315);
+            this.btnRefrescar.Location = new System.Drawing.Point(889, 261);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnRefrescar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
@@ -413,35 +357,43 @@
             this.btnRefrescar.Values.Text = "";
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
+            // kryptonGroupBox4
+            // 
+            this.kryptonGroupBox4.CaptionVisible = false;
+            this.kryptonGroupBox4.Location = new System.Drawing.Point(28, 32);
+            // 
+            // kryptonGroupBox4.Panel
+            // 
+            this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonGroupBox2);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.btnRefrescar);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.label2);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.dtHasta);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.label1);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.btnBuscar);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.label3);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonGroupBox3);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.txtBuscar);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonGroupBox1);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.dtDesde);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.dgvCompras);
+            this.kryptonGroupBox4.Size = new System.Drawing.Size(1271, 676);
+            this.kryptonGroupBox4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.kryptonGroupBox4.StateCommon.Border.Rounding = 10F;
+            this.kryptonGroupBox4.TabIndex = 93;
+            // 
             // frmSeguimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1211, 720);
-            this.ControlBox = false;
-            this.Controls.Add(this.btnRefrescar);
-            this.Controls.Add(this.dtHasta);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.kryptonGroupBox3);
-            this.Controls.Add(this.kryptonGroupBox1);
-            this.Controls.Add(this.kryptonGroupBox2);
-            this.Controls.Add(this.dgvCompras);
-            this.Controls.Add(this.dtDesde);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
+            this.ClientSize = new System.Drawing.Size(1338, 736);
+            this.Controls.Add(this.kryptonGroupBox4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSeguimiento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSeguimiento";
             this.Load += new System.EventHandler(this.frmSeguimiento_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).EndInit();
             this.kryptonGroupBox2.Panel.ResumeLayout(false);
@@ -461,17 +413,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3)).EndInit();
             this.kryptonGroupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4.Panel)).EndInit();
+            this.kryptonGroupBox4.Panel.ResumeLayout(false);
+            this.kryptonGroupBox4.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4)).EndInit();
+            this.kryptonGroupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private Krypton.Toolkit.KryptonButton btnRegresar;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -493,5 +444,6 @@
         private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.Label lblTiempoPromedio;
         private Krypton.Toolkit.KryptonButton btnRefrescar;
+        private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox4;
     }
 }

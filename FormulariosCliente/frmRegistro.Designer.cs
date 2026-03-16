@@ -29,90 +29,87 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
-            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
-            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
+            this.txtFecha = new Krypton.Toolkit.KryptonTextBox();
+            this.cmbTipoCliente = new Krypton.Toolkit.KryptonComboBox();
             this.cmbCiudad = new Krypton.Toolkit.KryptonComboBox();
+            this.txtDireccion = new Krypton.Toolkit.KryptonTextBox();
+            this.txtCorreo = new Krypton.Toolkit.KryptonTextBox();
             this.cmbDepartamento = new Krypton.Toolkit.KryptonComboBox();
+            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
+            this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
+            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
+            this.txtNombre = new Krypton.Toolkit.KryptonTextBox();
+            this.txtID = new Krypton.Toolkit.KryptonTextBox();
+            this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
+            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             this.btnRegistrar = new Krypton.Toolkit.KryptonButton();
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
             this.label31 = new System.Windows.Forms.Label();
-            this.txtCorreo = new Krypton.Toolkit.KryptonTextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtDireccion = new Krypton.Toolkit.KryptonTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.cmbTipoCliente = new Krypton.Toolkit.KryptonComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtNombre = new Krypton.Toolkit.KryptonTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtID = new Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFecha = new Krypton.Toolkit.KryptonTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
             this.kryptonGroup1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
             // 
-            this.kryptonGroup1.Location = new System.Drawing.Point(27, 39);
+            this.kryptonGroup1.Location = new System.Drawing.Point(30, 30);
             // 
             // kryptonGroup1.Panel
             // 
-            this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtRTN);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
-            this.kryptonGroup1.Panel.Controls.Add(this.btnRegresar);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtFecha);
+            this.kryptonGroup1.Panel.Controls.Add(this.cmbTipoCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbCiudad);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDireccion);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtCorreo);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbDepartamento);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtContacto);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtNombre);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtID);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtRTN);
+            this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
             this.kryptonGroup1.Panel.Controls.Add(this.label17);
             this.kryptonGroup1.Panel.Controls.Add(this.label8);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
             this.kryptonGroup1.Panel.Controls.Add(this.label7);
             this.kryptonGroup1.Panel.Controls.Add(this.label6);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox1);
             this.kryptonGroup1.Panel.Controls.Add(this.btnRegistrar);
             this.kryptonGroup1.Panel.Controls.Add(this.btnLimpiar);
             this.kryptonGroup1.Panel.Controls.Add(this.label31);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtCorreo);
             this.kryptonGroup1.Panel.Controls.Add(this.label15);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtDireccion);
             this.kryptonGroup1.Panel.Controls.Add(this.label14);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtContacto);
             this.kryptonGroup1.Panel.Controls.Add(this.label13);
             this.kryptonGroup1.Panel.Controls.Add(this.label12);
             this.kryptonGroup1.Panel.Controls.Add(this.label11);
             this.kryptonGroup1.Panel.Controls.Add(this.label10);
-            this.kryptonGroup1.Panel.Controls.Add(this.cmbTipoCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.label9);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtNombre);
             this.kryptonGroup1.Panel.Controls.Add(this.label4);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtID);
             this.kryptonGroup1.Panel.Controls.Add(this.label3);
             this.kryptonGroup1.Panel.Controls.Add(this.label2);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtFecha);
             this.kryptonGroup1.Panel.Controls.Add(this.label5);
             this.kryptonGroup1.Panel.Controls.Add(this.label16);
             this.kryptonGroup1.Size = new System.Drawing.Size(804, 582);
@@ -121,95 +118,118 @@
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 0;
             // 
-            // txtRTN
+            // txtFecha
             // 
-            this.txtRTN.Enabled = false;
-            this.txtRTN.Location = new System.Drawing.Point(543, 206);
-            this.txtRTN.MaxLength = 14;
-            this.txtRTN.Name = "txtRTN";
-            this.txtRTN.ShortcutsEnabled = false;
-            this.txtRTN.Size = new System.Drawing.Size(147, 35);
-            this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtRTN.StateActive.Border.Rounding = 10F;
-            this.txtRTN.StateActive.Border.Width = 4;
-            this.txtRTN.TabIndex = 76;
-            this.txtRTN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
+            this.txtFecha.Location = new System.Drawing.Point(543, 108);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(147, 23);
+            this.txtFecha.TabIndex = 89;
             // 
-            // txtTelefono
+            // cmbTipoCliente
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 391);
-            this.txtTelefono.MaxLength = 8;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.ShortcutsEnabled = false;
-            this.txtTelefono.Size = new System.Drawing.Size(147, 35);
-            this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtTelefono.StateActive.Border.Rounding = 10F;
-            this.txtTelefono.StateActive.Border.Width = 4;
-            this.txtTelefono.TabIndex = 75;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(700, 2);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.Size = new System.Drawing.Size(80, 24);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Rounding = 10F;
-            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnRegresar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.TabIndex = 74;
-            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "REGRESAR";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.cmbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoCliente.DropDownWidth = 123;
+            this.cmbTipoCliente.Location = new System.Drawing.Point(543, 171);
+            this.cmbTipoCliente.Name = "cmbTipoCliente";
+            this.cmbTipoCliente.Size = new System.Drawing.Size(147, 23);
+            this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoCliente.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbTipoCliente.TabIndex = 88;
             // 
             // cmbCiudad
             // 
             this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCiudad.DropDownWidth = 123;
-            this.cmbCiudad.Location = new System.Drawing.Point(543, 436);
+            this.cmbCiudad.Location = new System.Drawing.Point(543, 441);
             this.cmbCiudad.Name = "cmbCiudad";
-            this.cmbCiudad.Size = new System.Drawing.Size(147, 35);
+            this.cmbCiudad.Size = new System.Drawing.Size(147, 23);
             this.cmbCiudad.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCiudad.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbCiudad.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbCiudad.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.cmbCiudad.StateCommon.ComboBox.Border.Width = 4;
             this.cmbCiudad.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cmbCiudad.TabIndex = 32;
-            this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.cmbCiudad_SelectedIndexChanged);
+            this.cmbCiudad.TabIndex = 87;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(543, 382);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(147, 23);
+            this.txtDireccion.TabIndex = 86;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(543, 335);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ShortcutsEnabled = false;
+            this.txtCorreo.Size = new System.Drawing.Size(147, 23);
+            this.txtCorreo.TabIndex = 85;
             // 
             // cmbDepartamento
             // 
             this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartamento.DropDownWidth = 123;
-            this.cmbDepartamento.Location = new System.Drawing.Point(161, 433);
+            this.cmbDepartamento.Location = new System.Drawing.Point(161, 448);
             this.cmbDepartamento.Name = "cmbDepartamento";
-            this.cmbDepartamento.Size = new System.Drawing.Size(147, 35);
+            this.cmbDepartamento.Size = new System.Drawing.Size(147, 23);
             this.cmbDepartamento.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDepartamento.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbDepartamento.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbDepartamento.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.cmbDepartamento.StateCommon.ComboBox.Border.Width = 4;
             this.cmbDepartamento.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cmbDepartamento.TabIndex = 31;
-            this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
+            this.cmbDepartamento.TabIndex = 84;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(161, 394);
+            this.txtTelefono.MaxLength = 8;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ShortcutsEnabled = false;
+            this.txtTelefono.Size = new System.Drawing.Size(147, 23);
+            this.txtTelefono.TabIndex = 83;
+            // 
+            // txtContacto
+            // 
+            this.txtContacto.Location = new System.Drawing.Point(161, 348);
+            this.txtContacto.Name = "txtContacto";
+            this.txtContacto.Size = new System.Drawing.Size(147, 23);
+            this.txtContacto.TabIndex = 82;
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.Location = new System.Drawing.Point(161, 247);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(147, 23);
+            this.txtRazonSocial.TabIndex = 81;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(161, 197);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(147, 23);
+            this.txtNombre.TabIndex = 80;
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(161, 150);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(147, 23);
+            this.txtID.TabIndex = 79;
+            // 
+            // txtRTN
+            // 
+            this.txtRTN.Location = new System.Drawing.Point(543, 218);
+            this.txtRTN.MaxLength = 14;
+            this.txtRTN.Name = "txtRTN";
+            this.txtRTN.ShortcutsEnabled = false;
+            this.txtRTN.Size = new System.Drawing.Size(147, 23);
+            this.txtRTN.TabIndex = 78;
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Enabled = false;
+            this.txtDNI.Location = new System.Drawing.Point(543, 256);
+            this.txtDNI.MaxLength = 13;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.ShortcutsEnabled = false;
+            this.txtDNI.Size = new System.Drawing.Size(147, 23);
+            this.txtDNI.TabIndex = 77;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // label17
             // 
@@ -235,17 +255,6 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "DNI";
             // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Enabled = false;
-            this.txtRazonSocial.Location = new System.Drawing.Point(161, 247);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(147, 35);
-            this.txtRazonSocial.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtRazonSocial.StateActive.Border.Rounding = 10F;
-            this.txtRazonSocial.StateActive.Border.Width = 4;
-            this.txtRazonSocial.TabIndex = 26;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -264,7 +273,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label6.Location = new System.Drawing.Point(19, 392);
+            this.label6.Location = new System.Drawing.Point(3, 392);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(149, 44);
             this.label6.TabIndex = 23;
@@ -362,16 +371,6 @@
             this.label31.TabIndex = 18;
             this.label31.Text = "Ciudad*";
             // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(543, 335);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(147, 35);
-            this.txtCorreo.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtCorreo.StateActive.Border.Rounding = 10F;
-            this.txtCorreo.StateActive.Border.Width = 4;
-            this.txtCorreo.TabIndex = 17;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -384,17 +383,6 @@
             this.label15.TabIndex = 16;
             this.label15.Text = "Correo electrónico*";
             this.label15.Click += new System.EventHandler(this.label15_Click);
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(543, 382);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(147, 35);
-            this.txtDireccion.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtDireccion.StateActive.Border.Rounding = 10F;
-            this.txtDireccion.StateActive.Border.Width = 4;
-            this.txtDireccion.TabIndex = 15;
-            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // label14
             // 
@@ -409,23 +397,13 @@
             this.label14.Text = "Dirección*";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
-            // txtContacto
-            // 
-            this.txtContacto.Location = new System.Drawing.Point(161, 340);
-            this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(147, 35);
-            this.txtContacto.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtContacto.StateActive.Border.Rounding = 10F;
-            this.txtContacto.StateActive.Border.Width = 4;
-            this.txtContacto.TabIndex = 13;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label13.Location = new System.Drawing.Point(19, 348);
+            this.label13.Location = new System.Drawing.Point(3, 348);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 44);
             this.label13.TabIndex = 12;
@@ -467,22 +445,6 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "Datos principales del cliente";
             // 
-            // cmbTipoCliente
-            // 
-            this.cmbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoCliente.DropDownWidth = 123;
-            this.cmbTipoCliente.Location = new System.Drawing.Point(543, 159);
-            this.cmbTipoCliente.Name = "cmbTipoCliente";
-            this.cmbTipoCliente.Size = new System.Drawing.Size(147, 35);
-            this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoCliente.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbTipoCliente.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbTipoCliente.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.cmbTipoCliente.StateCommon.ComboBox.Border.Width = 4;
-            this.cmbTipoCliente.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cmbTipoCliente.TabIndex = 8;
-            this.cmbTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cmbTipoCliente_SelectedIndexChanged);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -495,16 +457,6 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "Tipo de cliente*";
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(161, 200);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(147, 35);
-            this.txtNombre.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtNombre.StateActive.Border.Rounding = 10F;
-            this.txtNombre.StateActive.Border.Width = 4;
-            this.txtNombre.TabIndex = 6;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -516,16 +468,6 @@
             this.label4.Size = new System.Drawing.Size(137, 44);
             this.label4.TabIndex = 5;
             this.label4.Text = "Fecha de registro";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(161, 150);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(147, 35);
-            this.txtID.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtID.StateActive.Border.Rounding = 10F;
-            this.txtID.StateActive.Border.Width = 4;
-            this.txtID.TabIndex = 4;
             // 
             // label3
             // 
@@ -565,16 +507,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRO DE NUEVO CLIENTE";
             // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(543, 102);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(147, 35);
-            this.txtFecha.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtFecha.StateActive.Border.Rounding = 10F;
-            this.txtFecha.StateActive.Border.Width = 4;
-            this.txtFecha.TabIndex = 6;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -593,36 +525,11 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Sans Serif Collection", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.label16.Location = new System.Drawing.Point(19, 436);
+            this.label16.Location = new System.Drawing.Point(3, 436);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(127, 44);
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(69, 11);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(111, 25);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "TMSS.SW";
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Enabled = false;
-            this.txtDNI.Location = new System.Drawing.Point(543, 256);
-            this.txtDNI.MaxLength = 13;
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.ShortcutsEnabled = false;
-            this.txtDNI.Size = new System.Drawing.Size(147, 35);
-            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtDNI.StateActive.Border.Rounding = 10F;
-            this.txtDNI.StateActive.Border.Width = 4;
-            this.txtDNI.TabIndex = 77;
-            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // frmRegistro
             // 
@@ -630,10 +537,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(857, 636);
-            this.Controls.Add(this.label32);
             this.Controls.Add(this.kryptonGroup1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "frmRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
@@ -642,11 +548,10 @@
             this.kryptonGroup1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
             this.kryptonGroup1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -655,19 +560,12 @@
         private Krypton.Toolkit.KryptonGroup kryptonGroup1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Krypton.Toolkit.KryptonTextBox txtID;
         private System.Windows.Forms.Label label3;
-        private Krypton.Toolkit.KryptonComboBox cmbTipoCliente;
         private System.Windows.Forms.Label label9;
-        private Krypton.Toolkit.KryptonTextBox txtNombre;
         private System.Windows.Forms.Label label4;
-        private Krypton.Toolkit.KryptonTextBox txtFecha;
         private System.Windows.Forms.Label label5;
-        private Krypton.Toolkit.KryptonTextBox txtCorreo;
         private System.Windows.Forms.Label label15;
-        private Krypton.Toolkit.KryptonTextBox txtDireccion;
         private System.Windows.Forms.Label label14;
-        private Krypton.Toolkit.KryptonTextBox txtContacto;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -676,18 +574,23 @@
         private System.Windows.Forms.Label label31;
         private Krypton.Toolkit.KryptonButton btnRegistrar;
         private Krypton.Toolkit.KryptonButton btnLimpiar;
-        private System.Windows.Forms.Label label32;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private System.Windows.Forms.Label label6;
-        private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label17;
-        private Krypton.Toolkit.KryptonComboBox cmbDepartamento;
-        private Krypton.Toolkit.KryptonComboBox cmbCiudad;
-        private Krypton.Toolkit.KryptonButton btnRegresar;
-        private Krypton.Toolkit.KryptonTextBox txtTelefono;
-        private Krypton.Toolkit.KryptonTextBox txtRTN;
         private Krypton.Toolkit.KryptonTextBox txtDNI;
+        private Krypton.Toolkit.KryptonTextBox txtRTN;
+        private Krypton.Toolkit.KryptonTextBox txtID;
+        private Krypton.Toolkit.KryptonTextBox txtNombre;
+        private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
+        private Krypton.Toolkit.KryptonTextBox txtContacto;
+        private Krypton.Toolkit.KryptonTextBox txtTelefono;
+        private Krypton.Toolkit.KryptonComboBox cmbDepartamento;
+        private Krypton.Toolkit.KryptonTextBox txtCorreo;
+        private Krypton.Toolkit.KryptonTextBox txtDireccion;
+        private Krypton.Toolkit.KryptonComboBox cmbCiudad;
+        private Krypton.Toolkit.KryptonComboBox cmbTipoCliente;
+        private Krypton.Toolkit.KryptonTextBox txtFecha;
     }
 }

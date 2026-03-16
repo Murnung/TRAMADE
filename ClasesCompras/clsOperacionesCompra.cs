@@ -223,5 +223,31 @@ namespace TRAMADE.ClasesCompras
                 conexion.Cerrar();
             }
         }
+        //METODO PARA ACTULIZAR CANTIDAD EN DETALLE COMPRA
+        public bool modificarCantidad(clsConexion conexion, int idCompra, int idProducto, int cantidad)
+        {
+            try
+            {
+                conexion.Abrir();
+                SqlCommand cmd = new SqlCommand("PA_MODIFICAR_CANTIDAD_DETALLE", conexion.SqlC);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_compra", idCompra);
+                cmd.Parameters.AddWithValue("@id_producto", idProducto);
+                cmd.Parameters.AddWithValue("@cantidad", cantidad);
+
+                int filas = cmd.ExecuteNonQuery();
+                return filas > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar cantidad: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
     }
+
 }

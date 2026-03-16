@@ -20,24 +20,41 @@ namespace TRAMADE.ClasesCompras
                 conexion.Abrir();
                 SqlCommand cmd;
 
-                if (string.IsNullOrEmpty(texto))
+                if (string.IsNullOrWhiteSpace(texto))
                 {
                     cmd = new SqlCommand("SELECT * FROM VistaProducto", conexion.SqlC);
                 }
                 else
                 {
-                    cmd = new SqlCommand("SELECT * FROM VistaProducto WHERE nombre_producto LIKE @texto COLLATE SQL_Latin1_General_CP1_CI_AS", conexion.SqlC);
-                    cmd.Parameters.AddWithValue("@texto", "%" + texto + "%");
+                    cmd = new SqlCommand("SELECT * FROM VistaProducto WHERE nombre_producto LIKE @texto", conexion.SqlC);
+                    cmd.Parameters.AddWithValue("@texto", "%" + texto.Trim() + "%");
                 }
 
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd); // <-- FALTABA cmd AQUÍ
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
-                adapter.Fill(dt);
+                da.Fill(dt);
 
-                cmb.DataSource = dt;
-                cmb.DisplayMember = "nombre_producto";
-                cmb.ValueMember = "id_producto";
-                cmb.SelectedIndex = -1;
+                string textoGuardado = texto;
+
+                cmb.BeginInvoke(new Action(() =>
+                {
+                    cmb.DataSource = null;
+                    cmb.DisplayMember = "";
+                    cmb.ValueMember = "";
+                    cmb.Items.Clear();
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        cmb.DataSource = dt;
+                        cmb.DisplayMember = "nombre_producto";
+                        cmb.ValueMember = "id_producto";
+                        cmb.SelectedIndex = -1;
+                    }
+
+                    cmb.Text = textoGuardado;
+                    cmb.SelectionStart = textoGuardado.Length;
+                    cmb.SelectionLength = 0;
+                }));
             }
             catch (Exception ex)
             {
@@ -47,6 +64,7 @@ namespace TRAMADE.ClasesCompras
             {
                 conexion.Cerrar();
             }
+
         }
 
     }

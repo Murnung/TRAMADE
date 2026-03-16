@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.dvgSeguimiento = new Krypton.Toolkit.KryptonDataGridView();
             this.label18 = new System.Windows.Forms.Label();
             this.kgInactivos = new Krypton.Toolkit.KryptonGroup();
             this.txtInactivos = new Krypton.Toolkit.KryptonTextBox();
@@ -41,12 +42,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new Krypton.Toolkit.KryptonTextBox();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
-            this.dvgSeguimiento = new Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
             this.kryptonGroup1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kgInactivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kgInactivos.Panel)).BeginInit();
             this.kgInactivos.Panel.SuspendLayout();
@@ -59,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kgActivos.Panel)).BeginInit();
             this.kgActivos.Panel.SuspendLayout();
             this.kgActivos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
@@ -67,7 +66,7 @@
             this.kryptonGroup1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonGroup1.Location = new System.Drawing.Point(29, 43);
+            this.kryptonGroup1.Location = new System.Drawing.Point(29, 45);
             // 
             // kryptonGroup1.Panel
             // 
@@ -82,6 +81,29 @@
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 1;
+            // 
+            // dvgSeguimiento
+            // 
+            this.dvgSeguimiento.AllowUserToAddRows = false;
+            this.dvgSeguimiento.AllowUserToDeleteRows = false;
+            this.dvgSeguimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dvgSeguimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dvgSeguimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgSeguimiento.Location = new System.Drawing.Point(26, 259);
+            this.dvgSeguimiento.Name = "dvgSeguimiento";
+            this.dvgSeguimiento.ReadOnly = true;
+            this.dvgSeguimiento.RowHeadersWidth = 51;
+            this.dvgSeguimiento.Size = new System.Drawing.Size(657, 206);
+            this.dvgSeguimiento.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.Background.Color2 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
+            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
+            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
+            this.dvgSeguimiento.TabIndex = 42;
             // 
             // label18
             // 
@@ -137,6 +159,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Image = global::TRAMADE.Properties.Resources.INACTIVOS;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label4.Location = new System.Drawing.Point(3, 21);
             this.label4.Name = "label4";
@@ -267,69 +290,14 @@
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(693, 11);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.Size = new System.Drawing.Size(80, 24);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Rounding = 10F;
-            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnRegresar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.TabIndex = 73;
-            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "REGRESAR";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
-            // 
-            // dvgSeguimiento
-            // 
-            this.dvgSeguimiento.AllowUserToAddRows = false;
-            this.dvgSeguimiento.AllowUserToDeleteRows = false;
-            this.dvgSeguimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dvgSeguimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dvgSeguimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgSeguimiento.Location = new System.Drawing.Point(26, 259);
-            this.dvgSeguimiento.Name = "dvgSeguimiento";
-            this.dvgSeguimiento.ReadOnly = true;
-            this.dvgSeguimiento.Size = new System.Drawing.Size(656, 206);
-            this.dvgSeguimiento.StateCommon.Background.Color1 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.Background.Color2 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
-            this.dvgSeguimiento.StateCommon.HeaderColumn.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(114)))), ((int)(((byte)(71)))));
-            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color1 = System.Drawing.Color.White;
-            this.dvgSeguimiento.StateCommon.HeaderRow.Back.Color2 = System.Drawing.Color.White;
-            this.dvgSeguimiento.TabIndex = 42;
-            // 
             // frmSeguimientoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(800, 562);
-            this.ControlBox = false;
-            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.kryptonGroup1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "frmSeguimientoCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSeguimientoCliente";
@@ -339,6 +307,7 @@
             this.kryptonGroup1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
             this.kryptonGroup1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kgInactivos.Panel)).EndInit();
             this.kgInactivos.Panel.ResumeLayout(false);
             this.kgInactivos.Panel.PerformLayout();
@@ -354,7 +323,6 @@
             this.kgActivos.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kgActivos)).EndInit();
             this.kgActivos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgSeguimiento)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -374,7 +342,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label4;
-        private Krypton.Toolkit.KryptonButton btnRegresar;
         private Krypton.Toolkit.KryptonDataGridView dvgSeguimiento;
     }
 }

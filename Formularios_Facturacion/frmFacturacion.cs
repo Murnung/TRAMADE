@@ -12,15 +12,15 @@ namespace TRAMADE
 {
     public partial class frmFacturacion : Form
     {
-        int numeroFactura = 1;
-        int id_cliente_seleccionado = 0;
+        int numeroFactura = 1; // inicializamos en 1, pero se actualizará al cargar el formulario
+        int id_cliente_seleccionado = 0; // Variable para almacenar el ID del cliente seleccionado
 
         public frmFacturacion()
         {
             InitializeComponent();
         }
 
-        private void GenerarCorrelativo()
+        private void GenerarCorrelativo() // MÉTODO PARA GENERAR EL NUMERO DE LA FACTURA
         {
             try
             {
@@ -34,7 +34,7 @@ namespace TRAMADE
             }
         }
 
-        // --- NUEVO MÉTODO: CARGA EL VENDEDOR AUTOMÁTICAMENTE ---
+        // MÉTODO PARA CARGAR AUTOMÁTICAMENTE LOS DATOS DEL VENDEDOR LOGUEADO
         private void CargarVendedorAuto()
         {
             if (clsSesion.id_usuario != 0) // Si hay un usuario logueado en el sistema
@@ -57,7 +57,7 @@ namespace TRAMADE
             dtpEmision.ValueChanged += (s, args) => { dtpVencimiento.Value = dtpEmision.Value.AddMonths(1); };
         }
 
-        private void BuscarCliente(string rtnDni)
+        private void BuscarCliente(string rtnDni) // MÉTODO PARA BUSCAR EL CLIENTE POR RTN O DNI
         {
             try
             {
@@ -83,7 +83,7 @@ namespace TRAMADE
             }
         }
 
-        public void CalcularTotales()
+        public void CalcularTotales() // MÉTODO PARA CALCULAR EL SUBTOTAL, IMPUESTO Y TOTAL A PAGAR
         {
             decimal subtotalGeneral = 0;
             decimal impuesto = 0;
@@ -105,13 +105,13 @@ namespace TRAMADE
             lblTotal.Text = "L. " + totalAPagar.ToString("N2");
         }
 
-        private void btnAggProducto_Click(object sender, EventArgs e)
+        private void btnAggProducto_Click(object sender, EventArgs e) // ABRIR EL FORMULARIO PARA AGREGAR PRODUCTOS A LA FACTURA
         {
             frmAggProducto objAggProducto = new frmAggProducto();
             objAggProducto.ShowDialog();
         }
 
-        private void kryptonButton12_Click(object sender, EventArgs e)
+        private void kryptonButton12_Click(object sender, EventArgs e) // ABRIR LA VISTA PREVIA DE LA FACTURA
         {
             if (clsValidacionesF.ValidarGridVacio(dgvDetalleFactura.Rows.Count, "Agregue productos para ver la vista previa.")) return;
 
@@ -137,7 +137,7 @@ namespace TRAMADE
 
             objVP.dgvFacturaVP.Rows.Clear();
 
-            foreach (DataGridViewRow fila in dgvDetalleFactura.Rows)
+            foreach (DataGridViewRow fila in dgvDetalleFactura.Rows) // Solo agregamos filas que tengan un producto seleccionado (evitando filas vacías o la fila de nueva entrada)
             {
                 if (fila.Cells[0].Value != null && !fila.IsNewRow)
                 {
@@ -154,7 +154,7 @@ namespace TRAMADE
             objVP.ShowDialog();
         }
 
-        private void kryptonButton13_Click(object sender, EventArgs e)
+        private void kryptonButton13_Click(object sender, EventArgs e) // BOTÓN PARA EMITIR Y GUARDAR LA FACTURA EN LA BASE DE DATOS
         {
             int productosReales = 0;
             foreach (DataGridViewRow fila in dgvDetalleFactura.Rows)
@@ -165,7 +165,7 @@ namespace TRAMADE
                 }
             }
 
-            string error = clsValidacionesF.ValidarEmisionFactura(
+            string error = clsValidacionesF.ValidarEmisionFactura( // Validamos todos los datos antes de intentar emitir la factura
                 txtNombreCliente.Text.Trim(),
                 txtDireccionCliente.Text.Trim(),
                 txtIDVendedor.Text.Trim(),
@@ -177,7 +177,7 @@ namespace TRAMADE
                 txtDNICliente.Text.Trim()
             );
 
-            if (error != "")
+            if (error != "") // Si la función devuelve un mensaje de error, lo mostramos y detenemos el proceso de emisión
             {
                 MessageBox.Show(error, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -218,7 +218,7 @@ namespace TRAMADE
                     }
                 }
 
-                int idGenerado = nuevaFactura.GuardarFacturaTransaccion();
+                int idGenerado = nuevaFactura.GuardarFacturaTransaccion(); // Guardamos la factura y obtenemos el ID generado
 
                 if (idGenerado > 0)
                 {
@@ -251,7 +251,7 @@ namespace TRAMADE
             }
         }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
+        private void kryptonButton1_Click(object sender, EventArgs e) // ABRIR EL HISTORIAL DE FACTURAS
         {
             frmHistorialFacturas objHistorialFacturas = new frmHistorialFacturas();
             objHistorialFacturas.ShowDialog();
@@ -263,7 +263,7 @@ namespace TRAMADE
             txtDNICliente.Text = "";
             txtDireccionCliente.Text = "";
 
-            // Ya NO limpiamos los datos del vendedor aquí
+            
             CargarVendedorAuto();
 
             dtpEmision.Value = DateTime.Now;
@@ -279,7 +279,7 @@ namespace TRAMADE
             GenerarCorrelativo();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e) // BOTÓN PARA INICIAR UNA NUEVA FACTURA, SIMILAR A LIMPIAR PERO CON CONFIRMACIÓN
         {
             btnLimpiar.PerformClick();
         }
@@ -287,13 +287,13 @@ namespace TRAMADE
         private void txtDNICliente_TextChanged(object sender, EventArgs e) { }
         private void txtDNICliente_Leave(object sender, EventArgs e) { }
 
-        // El botón sigue existiendo por si alguna vez ocupan recargarlo a mano, pero ya se hace solo
+        
         private void btnIDVendedor_Click(object sender, EventArgs e)
         {
             CargarVendedorAuto();
         }
 
-        private void btnDNICliente_Click(object sender, EventArgs e)
+        private void btnDNICliente_Click(object sender, EventArgs e) // BOTÓN PARA BUSCAR EL CLIENTE POR DNI O RTN, CON VALIDACIONES ANTES DE REALIZAR LA BÚSQUEDA
         {
             if (clsValidacionesF.ValidarCampoVacio(txtDNICliente.Text, "Por favor, escriba un DNI o RTN antes de buscar.")) return;
 
@@ -306,7 +306,7 @@ namespace TRAMADE
             BuscarCliente(txtDNICliente.Text.Trim());
         }
 
-        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        private void btnEliminarProducto_Click(object sender, EventArgs e) // BOTÓN PARA ELIMINAR EL PRODUCTO SELECCIONADO EN EL DETALLE DE LA FACTURA
         {
             if (clsValidacionesF.ValidarFilaSeleccionada(dgvDetalleFactura.CurrentRow, "Por favor, seleccione un producto de la lista para eliminarlo."))
             {

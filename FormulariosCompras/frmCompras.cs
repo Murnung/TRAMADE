@@ -56,6 +56,17 @@ namespace TRAMADE
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dgvComprasRecientes.DataSource = dt;
+
+                dgvComprasRecientes.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                dgvComprasRecientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvComprasRecientes.ReadOnly = true;
+                dgvComprasRecientes.AllowUserToResizeRows = false;
+                dgvComprasRecientes.AllowUserToResizeColumns = false;
+                dgvComprasRecientes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+                dgvComprasRecientes.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvComprasRecientes.EnableHeadersVisualStyles = false;
+                dgvComprasRecientes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+                dgvComprasRecientes.DefaultCellStyle.SelectionForeColor = Color.White;
             }
             catch (Exception ex)
             {
@@ -71,16 +82,7 @@ namespace TRAMADE
         private void frmCompras_Load(object sender, EventArgs e)
         {
             recargarCompras();
-
-            //Configuracion visual 
-            dgvComprasRecientes.ReadOnly = true;
-            dgvComprasRecientes.AllowUserToResizeRows = false;
-            dgvComprasRecientes.AllowUserToResizeColumns = false;
-            dgvComprasRecientes.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
-            dgvComprasRecientes.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvComprasRecientes.EnableHeadersVisualStyles = false;
-            dgvComprasRecientes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
-            dgvComprasRecientes.DefaultCellStyle.SelectionForeColor = Color.White;
+            
 
             //Graficas
 
@@ -171,6 +173,16 @@ namespace TRAMADE
         {
             frmSeguimiento ObjSeguimiento = new frmSeguimiento();
             ObjSeguimiento.Show();
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            recargarCompras();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace TRAMADE
         public int id_producto { get; set; }
         public string nombre_producto { get; set; }
         public decimal precio_unitario { get; set; }
-        public int existencia_producto { get; set; } // <-- AQUÍ GUARDAMOS EL STOCK REAL
+        public int existencia_producto { get; set; }
 
         public List<clsProductoF> ObtenerProductos(string filtro = "")
         {
@@ -19,8 +19,6 @@ namespace TRAMADE
 
             try
             {
-                // Le quitamos el estado_producto porque no existe en tu base de datos
-                // y le dejamos WHERE 1=1 para que el buscador funcione bien
                 string query = @"SELECT P.id_producto, P.nombre_producto, P.precio_unitario, PS.cantidad_stock 
                                  FROM PRODUCTO P
                                  INNER JOIN PRODUCTO_SUCURSAL PS ON P.id_producto = PS.id_producto

@@ -91,7 +91,7 @@ namespace TRAMADE
 
         public void recargarGraficaDepa()
         {
-            try
+           try
             {
                 chtDepas.Series.Clear();
                 chtDepas.Titles.Clear();
@@ -190,7 +190,7 @@ namespace TRAMADE
                 serie["PieLabelStyle"] = "Inside";
                 serie.BorderColor = Color.White;
                 serie.BorderWidth = 2;
-                serie["PieDrawingStyle"] = "SoftEdge";
+        
             }
             catch (Exception ex)
             {

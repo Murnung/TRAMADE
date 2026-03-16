@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
-            this.btnRegresar = new Krypton.Toolkit.KryptonButton();
+            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.cmbTipoCliente = new Krypton.Toolkit.KryptonComboBox();
             this.cmbCiudad = new Krypton.Toolkit.KryptonComboBox();
             this.cmbDepartamento = new Krypton.Toolkit.KryptonComboBox();
@@ -66,7 +66,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -83,7 +82,6 @@
             // kryptonGroup1.Panel
             // 
             this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
-            this.kryptonGroup1.Panel.Controls.Add(this.btnRegresar);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbTipoCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbCiudad);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbDepartamento);
@@ -125,36 +123,15 @@
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 1;
             // 
-            // btnRegresar
+            // txtTelefono
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(659, 10);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.OverrideDefault.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.OverrideFocus.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.OverrideFocus.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.Size = new System.Drawing.Size(80, 24);
-            this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
-            this.btnRegresar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateCommon.Border.Rounding = 10F;
-            this.btnRegresar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnRegresar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
-            this.btnRegresar.StateTracking.Back.Color1 = System.Drawing.Color.Goldenrod;
-            this.btnRegresar.StateTracking.Back.Color2 = System.Drawing.Color.Gold;
-            this.btnRegresar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnRegresar.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.btnRegresar.StateTracking.Content.ShortText.Color1 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.StateTracking.Content.ShortText.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegresar.TabIndex = 73;
-            this.btnRegresar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnRegresar.Values.Text = "REGRESAR";
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click_1);
+            this.txtTelefono.Location = new System.Drawing.Point(161, 392);
+            this.txtTelefono.MaxLength = 8;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ShortcutsEnabled = false;
+            this.txtTelefono.Size = new System.Drawing.Size(208, 23);
+            this.txtTelefono.TabIndex = 76;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // cmbTipoCliente
             // 
@@ -162,12 +139,8 @@
             this.cmbTipoCliente.DropDownWidth = 123;
             this.cmbTipoCliente.Location = new System.Drawing.Point(543, 150);
             this.cmbTipoCliente.Name = "cmbTipoCliente";
-            this.cmbTipoCliente.Size = new System.Drawing.Size(180, 35);
+            this.cmbTipoCliente.Size = new System.Drawing.Size(180, 23);
             this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoCliente.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbTipoCliente.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbTipoCliente.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.cmbTipoCliente.StateCommon.ComboBox.Border.Width = 4;
             this.cmbTipoCliente.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbTipoCliente.TabIndex = 41;
             this.cmbTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cmbTipoCliente_SelectedIndexChanged_1);
@@ -178,12 +151,8 @@
             this.cmbCiudad.DropDownWidth = 123;
             this.cmbCiudad.Location = new System.Drawing.Point(543, 383);
             this.cmbCiudad.Name = "cmbCiudad";
-            this.cmbCiudad.Size = new System.Drawing.Size(195, 35);
+            this.cmbCiudad.Size = new System.Drawing.Size(195, 23);
             this.cmbCiudad.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCiudad.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbCiudad.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbCiudad.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.cmbCiudad.StateCommon.ComboBox.Border.Width = 4;
             this.cmbCiudad.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbCiudad.TabIndex = 40;
             // 
@@ -193,12 +162,8 @@
             this.cmbDepartamento.DropDownWidth = 123;
             this.cmbDepartamento.Location = new System.Drawing.Point(161, 439);
             this.cmbDepartamento.Name = "cmbDepartamento";
-            this.cmbDepartamento.Size = new System.Drawing.Size(208, 35);
+            this.cmbDepartamento.Size = new System.Drawing.Size(208, 23);
             this.cmbDepartamento.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDepartamento.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbDepartamento.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.cmbDepartamento.StateCommon.ComboBox.Border.Rounding = 10F;
-            this.cmbDepartamento.StateCommon.ComboBox.Border.Width = 4;
             this.cmbDepartamento.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbDepartamento.TabIndex = 39;
             this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
@@ -211,23 +176,26 @@
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.label18.Location = new System.Drawing.Point(33, 10);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(132, 44);
+            this.label18.Size = new System.Drawing.Size(177, 44);
             this.label18.TabIndex = 38;
-            this.label18.Text = "Búsqueda por ID";
+            this.label18.Text = "Búsqueda por DNI/RTN";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(171, 10);
+            this.txtBuscar.Location = new System.Drawing.Point(216, 10);
+            this.txtBuscar.MaxLength = 14;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(230, 35);
             this.txtBuscar.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.txtBuscar.StateActive.Border.Rounding = 10F;
             this.txtBuscar.StateActive.Border.Width = 4;
             this.txtBuscar.TabIndex = 37;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(409, 13);
+            this.btnBuscar.Location = new System.Drawing.Point(455, 13);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -281,11 +249,10 @@
             // txtDNI
             // 
             this.txtDNI.Location = new System.Drawing.Point(543, 240);
+            this.txtDNI.MaxLength = 13;
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(180, 35);
-            this.txtDNI.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtDNI.StateActive.Border.Rounding = 10F;
-            this.txtDNI.StateActive.Border.Width = 4;
+            this.txtDNI.ShortcutsEnabled = false;
+            this.txtDNI.Size = new System.Drawing.Size(180, 23);
             this.txtDNI.TabIndex = 31;
             this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
@@ -293,11 +260,10 @@
             // txtRTN
             // 
             this.txtRTN.Location = new System.Drawing.Point(543, 194);
+            this.txtRTN.MaxLength = 14;
             this.txtRTN.Name = "txtRTN";
-            this.txtRTN.Size = new System.Drawing.Size(180, 35);
-            this.txtRTN.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtRTN.StateActive.Border.Rounding = 10F;
-            this.txtRTN.StateActive.Border.Width = 4;
+            this.txtRTN.ShortcutsEnabled = false;
+            this.txtRTN.Size = new System.Drawing.Size(180, 23);
             this.txtRTN.TabIndex = 29;
             this.txtRTN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
             // 
@@ -317,10 +283,7 @@
             // 
             this.txtRazonSocial.Location = new System.Drawing.Point(161, 219);
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(147, 35);
-            this.txtRazonSocial.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtRazonSocial.StateActive.Border.Rounding = 10F;
-            this.txtRazonSocial.StateActive.Border.Width = 4;
+            this.txtRazonSocial.Size = new System.Drawing.Size(147, 23);
             this.txtRazonSocial.TabIndex = 27;
             // 
             // label6
@@ -408,10 +371,8 @@
             // 
             this.txtCorreo.Location = new System.Drawing.Point(543, 331);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(195, 35);
-            this.txtCorreo.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtCorreo.StateActive.Border.Rounding = 10F;
-            this.txtCorreo.StateActive.Border.Width = 4;
+            this.txtCorreo.ShortcutsEnabled = false;
+            this.txtCorreo.Size = new System.Drawing.Size(195, 23);
             this.txtCorreo.TabIndex = 17;
             // 
             // label15
@@ -430,10 +391,7 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(543, 427);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(195, 35);
-            this.txtDireccion.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtDireccion.StateActive.Border.Rounding = 10F;
-            this.txtDireccion.StateActive.Border.Width = 4;
+            this.txtDireccion.Size = new System.Drawing.Size(195, 23);
             this.txtDireccion.TabIndex = 15;
             this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
@@ -454,10 +412,7 @@
             // 
             this.txtContacto.Location = new System.Drawing.Point(161, 340);
             this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(208, 35);
-            this.txtContacto.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtContacto.StateActive.Border.Rounding = 10F;
-            this.txtContacto.StateActive.Border.Width = 4;
+            this.txtContacto.Size = new System.Drawing.Size(208, 23);
             this.txtContacto.TabIndex = 13;
             // 
             // label13
@@ -521,10 +476,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(161, 175);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(147, 35);
-            this.txtNombre.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtNombre.StateActive.Border.Rounding = 10F;
-            this.txtNombre.StateActive.Border.Width = 4;
+            this.txtNombre.Size = new System.Drawing.Size(147, 23);
             this.txtNombre.TabIndex = 6;
             // 
             // label4
@@ -544,10 +496,7 @@
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(161, 134);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(147, 35);
-            this.txtID.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtID.StateActive.Border.Rounding = 10F;
-            this.txtID.StateActive.Border.Width = 4;
+            this.txtID.Size = new System.Drawing.Size(147, 23);
             this.txtID.TabIndex = 4;
             // 
             // label3
@@ -588,10 +537,7 @@
             // 
             this.txtFecha.Location = new System.Drawing.Point(543, 112);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(180, 35);
-            this.txtFecha.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtFecha.StateActive.Border.Rounding = 10F;
-            this.txtFecha.StateActive.Border.Width = 4;
+            this.txtFecha.Size = new System.Drawing.Size(180, 23);
             this.txtFecha.TabIndex = 6;
             // 
             // label5
@@ -618,28 +564,14 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
             // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(161, 392);
-            this.txtTelefono.MaxLength = 8;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.ShortcutsEnabled = false;
-            this.txtTelefono.Size = new System.Drawing.Size(208, 35);
-            this.txtTelefono.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.txtTelefono.StateActive.Border.Rounding = 10F;
-            this.txtTelefono.StateActive.Border.Width = 4;
-            this.txtTelefono.TabIndex = 76;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoloNumeros_KeyPress);
-            // 
             // frmRegistroNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(859, 588);
-            this.ControlBox = false;
             this.Controls.Add(this.kryptonGroup1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "frmRegistroNuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
@@ -695,7 +627,6 @@
         private Krypton.Toolkit.KryptonComboBox cmbDepartamento;
         private Krypton.Toolkit.KryptonComboBox cmbCiudad;
         private Krypton.Toolkit.KryptonComboBox cmbTipoCliente;
-        private Krypton.Toolkit.KryptonButton btnRegresar;
         private Krypton.Toolkit.KryptonTextBox txtTelefono;
     }
 }

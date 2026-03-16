@@ -17,10 +17,32 @@ namespace TRAMADE
         public frmActualizar()
         {
             InitializeComponent();
+            timerProveedor.Tick += (s, ev) =>
+            {
+                timerProveedor.Stop();
+                if (cmbProveedor.Items.Count > 0)
+                {
+                    cmbProveedor.DroppedDown = true;
+                    Cursor.Current = Cursors.Default;
+                }
+            };
+
+            timerProducto.Tick += (s, ev) =>
+            {
+                timerProducto.Stop();
+                if (cmbProducto.Items.Count > 0)
+                {
+                    cmbProducto.DroppedDown = true;
+                    Cursor.Current = Cursors.Default;
+                }
+            };
         }
         clsConexion ObjConexion = new clsConexion();
         clsOperacionesCompra ObjOp = new clsOperacionesCompra();
         int compraIdSeleccionado = 0;
+
+        Timer timerProveedor = new Timer() { Interval = 100 };
+        Timer timerProducto = new Timer() { Interval = 100 };
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,6 +83,7 @@ namespace TRAMADE
                     cmbFormaPago.Enabled = true;
                     dtEntrega.Enabled = true;
                     nudCantidad.Enabled = true;
+                    btnModificarCantidad.Enabled = true;
 
                     reader.Close();
 
@@ -68,7 +91,7 @@ namespace TRAMADE
 
                     // Cargar productos al ListBox
                     ObjOp.cargarProductosPorCompra(compraIdSeleccionado, ObjConexion);
-
+                    lstProductos.SelectedIndex = -1;
                     txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
                 }
                 else
@@ -106,6 +129,7 @@ namespace TRAMADE
             txtTotal.Enabled = false;
             dtEntrega.Enabled = false;
             nudCantidad.Enabled = false;
+            btnModificarCantidad.Enabled = false;
             btnLimpiar_Click(sender, e);
             ObjOp.vincularListBox(lstProductos);
 
@@ -156,6 +180,11 @@ namespace TRAMADE
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (!clsValidacionesCompras.validarComboProducto(cmbProducto)) return;
+
+            if (cmbProducto.SelectedIndex == -1 && cmbProducto.Items.Count > 0)
+                cmbProducto.SelectedIndex = 0;
+
+            if (cmbProducto.SelectedItem == null) return;
 
             DataRowView drv = (DataRowView)cmbProducto.SelectedItem;
 
@@ -222,11 +251,17 @@ namespace TRAMADE
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            // Si perdió la selección buscarla
+            if (cmbProveedor.SelectedIndex == -1 && cmbProveedor.Items.Count > 0)
+                cmbProveedor.SelectedIndex = 0;
 
-            //Validacines 
+            // Validaciones ← Solo proveedor y forma de pago
             if (!clsValidacionesCompras.validarIdSeleccionado(compraIdSeleccionado)) return;
-            if (!clsValidacionesCompras.validarListBox(lstProductos)) return;
+            if (!clsValidacionesCompras.validarComboProveedor(cmbProveedor)) return;
+            if (!clsValidacionesCompras.validarComboFormaPago(cmbFormaPago)) return;
             if (!clsValidacionesCompras.validarFechaEntrega(dtEntrega.Value)) return;
+            if (!clsValidacionesCompras.validarListBox(lstProductos)) return;
+            if (!clsValidacionesCompras.validarComboSinResultado(cmbProveedor, "proveedor")) return;
 
             try
             {
@@ -262,42 +297,133 @@ namespace TRAMADE
         bool buscando = false;
         private void cmbProveedor_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up ||
+         e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape) return;
+
             if (buscando) return;
             buscando = true;
 
-            string texto = cmbProveedor.Text;
+            try
+            {
+                string texto = cmbProveedor.Text; 
+                clsLlenarComboProveedor.llenarComboProveedor(cmbProveedor, ObjConexion, texto);
 
-            cmbProveedor.BeginUpdate();
-            clsLlenarComboProveedor.llenarComboProveedor(cmbProveedor, ObjConexion, texto);
-            cmbProveedor.Text = texto;
-            cmbProveedor.SelectionStart = texto.Length;
-            cmbProveedor.SelectionLength = 0;
-            cmbProveedor.EndUpdate();
-
-            cmbProveedor.DroppedDown = true;
-            Cursor.Current = Cursors.Default;
-
-            buscando = false;
+                if (!string.IsNullOrWhiteSpace(texto))
+                    timerProveedor.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                buscando = false;
+            }
         }
 
         private void cmbProducto_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up ||
+        e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape) return;
+
             if (buscando) return;
             buscando = true;
 
-            string texto = cmbProducto.Text;
+            try
+            {
+                string texto = cmbProducto.Text; 
+                clsLlenarComboProducto.llenarComboProducto(cmbProducto, ObjConexion, texto);
 
-            cmbProducto.BeginUpdate();
-            clsLlenarComboProducto.llenarComboProducto(cmbProducto, ObjConexion, texto);
-            cmbProducto.Text = texto;
-            cmbProducto.SelectionStart = texto.Length;
-            cmbProducto.SelectionLength = 0;
-            cmbProducto.EndUpdate();
+                if (!string.IsNullOrWhiteSpace(texto))
+                    timerProducto.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                buscando = false;
+            }
+        }
 
-            cmbProducto.DroppedDown = true;
-            Cursor.Current = Cursors.Default;
+        private void label2_Click(object sender, EventArgs e)
+        {
 
-            buscando = false;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtEntrega_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificarCantidad_Click(object sender, EventArgs e)
+        {
+            int nuevaCantidad = Convert.ToInt32(nudCantidad.Value);
+
+            if (!clsValidacionesCompras.validarModificarCantidad(compraIdSeleccionado, lstProductos, nuevaCantidad)) return;
+
+            DataRow fila = ObjOp.obtenerFila(lstProductos.SelectedIndex);
+            int idProducto = Convert.ToInt32(fila["idProducto"]);
+
+            bool resultado = ObjOp.modificarCantidad(ObjConexion, compraIdSeleccionado, idProducto, nuevaCantidad);
+
+            if (resultado)
+            {
+                MessageBox.Show("Cantidad actualizada correctamente.", "Éxito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                fila["cantidad"] = nuevaCantidad;
+                txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo actualizar la cantidad.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void kryptonGroupBox1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbProducto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                try
+                {
+                    string texto = cmbProducto.Text ?? "";
+                    int cursor = cmbProducto.SelectionStart;
+
+                    if (texto.Length > 0 && cursor > 0 && cursor <= texto.Length && texto[cursor - 1] == ' ')
+                        e.SuppressKeyPress = true;
+                }
+                catch { }
+            }
+
+        }
+
+        private void cmbProveedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                try
+                {
+                    string texto = cmbProveedor.Text ?? "";
+                    int cursor = cmbProveedor.SelectionStart;
+
+                    if (texto.Length > 0 && cursor > 0 && cursor <= texto.Length && texto[cursor - 1] == ' ')
+                        e.SuppressKeyPress = true;
+                }
+                catch { }
+            }
         }
     }
 }

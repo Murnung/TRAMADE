@@ -68,15 +68,15 @@ namespace TRAMADE
 
             txtRTN.Text = "";
             txtRTN.Enabled = false;
-            txtRTN.BackColor = Color.LightGray;
+            txtRTN.BackColor = Color.Gray;
 
             txtDNI.Text = "";
             txtDNI.Enabled = false;
-            txtDNI.BackColor = Color.LightGray;
+            txtDNI.BackColor = Color.Gray;
 
             txtRazonSocial.Text = "";
             txtRazonSocial.Enabled = false;
-            txtRazonSocial.BackColor = Color.LightGray;
+            txtRazonSocial.BackColor = Color.Gray;
         }
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
@@ -90,10 +90,9 @@ namespace TRAMADE
         {
             
             string busqueda = txtBuscar.Text.Trim();
-            if (!clsValidacionesCompras.validarBuscarId(busqueda)) return;
             if (string.IsNullOrEmpty(busqueda))
             {
-                MessageBox.Show("Por favor, ingrese el ID del cliente.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese el DNI/RTN del cliente.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -102,7 +101,7 @@ namespace TRAMADE
                 string consulta = @"SELECT C.*, CI.id_departamento 
                     FROM CLIENTE C
                     INNER JOIN CIUDAD CI ON C.id_ciudad = CI.id_ciudad
-                    WHERE C.id_cliente = @busqueda"; 
+                    WHERE C.rtn_cliente = @busqueda or C.dni_cliente = @busqueda"; 
                 SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC);
                 cmd.Parameters.AddWithValue("@busqueda", busqueda);
 
@@ -187,17 +186,17 @@ namespace TRAMADE
 
                 txtDNI.Enabled = false;
                 txtDNI.Text = "";
-                txtDNI.BackColor = Color.LightGray;
+                txtDNI.BackColor = Color.Gray;
             }
             if (cmbTipoCliente.Text == "PERSONA NATURAL")
             {
                 txtRTN.Enabled = false;
                 txtRTN.Text = "";
-                txtRTN.BackColor = Color.LightGray;
+                txtRTN.BackColor = Color.Gray;
 
                 txtRazonSocial.Enabled = false;
                 txtRazonSocial.Text = "";
-                txtRazonSocial.BackColor = Color.LightGray;
+                txtRazonSocial.BackColor = Color.Gray;
 
                 txtDNI.Enabled = true;
                 txtDNI.BackColor = Color.White;
@@ -271,19 +270,15 @@ namespace TRAMADE
 
 
 
-        private void btnRegresar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-            frmMenu objMenu = new frmMenu();
-            objMenu.recargarGraficaEstadoCli();
-            objMenu.recargarGraficaDepa();
-            objMenu.recargarClientes();
-        }
-
         private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
 
             clsValidar.SoloNumeros_KeyPress(e);
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
