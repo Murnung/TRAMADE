@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRAMADE.ClasesCliente;
 using TRAMADE.ClasesCompras;
+using TRAMADE.Formulario_Proveedores;
 
 namespace TRAMADE
 {
@@ -33,7 +34,7 @@ namespace TRAMADE
             txtID.BackColor = Color.LightGray;
             clsCliente.llenarcomboDepartamento(cmbDepartamento, ObjConexion);
             clsCliente.llenarcomboTipoCliente(cmbTipoCliente, ObjConexion);
-
+            clsCombobox.LlenarRazonSocial(cmbRazonSocial);
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -74,9 +75,9 @@ namespace TRAMADE
             txtDNI.Enabled = false;
             txtDNI.BackColor = Color.Gray;
 
-            txtRazonSocial.Text = "";
-            txtRazonSocial.Enabled = false;
-            txtRazonSocial.BackColor = Color.Gray;
+            cmbRazonSocial.SelectedIndex = -1;
+            cmbRazonSocial.Enabled = false;
+            cmbRazonSocial.BackColor = Color.Gray;
         }
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
@@ -127,7 +128,8 @@ namespace TRAMADE
                     txtDireccion.Text = row["direccion_cliente"].ToString();
                     txtDNI.Text = row["dni_cliente"].ToString();
                     txtRTN.Text = row["rtn_cliente"].ToString();
-                    txtRazonSocial.Text = row["razon_social"].ToString();
+                    cmbRazonSocial.Text = row["razon_social"].ToString();
+                   
 
                     cmbTipoCliente.SelectedValue = row["id_clasificacion_cliente"];
 
@@ -181,8 +183,8 @@ namespace TRAMADE
                 txtRTN.Enabled = true;
                 txtRTN.BackColor = Color.White;
 
-                txtRazonSocial.Enabled = true;
-                txtRazonSocial.BackColor = Color.White;
+                cmbRazonSocial.Enabled = true;
+                cmbRazonSocial.BackColor = Color.White;
 
                 txtDNI.Enabled = false;
                 txtDNI.Text = "";
@@ -194,9 +196,9 @@ namespace TRAMADE
                 txtRTN.Text = "";
                 txtRTN.BackColor = Color.Gray;
 
-                txtRazonSocial.Enabled = false;
-                txtRazonSocial.Text = "";
-                txtRazonSocial.BackColor = Color.Gray;
+                cmbRazonSocial.Enabled = false;
+                cmbRazonSocial.SelectedIndex = -1;
+                cmbRazonSocial.BackColor = Color.Gray;
 
                 txtDNI.Enabled = true;
                 txtDNI.BackColor = Color.White;
@@ -220,7 +222,7 @@ namespace TRAMADE
                  cmbTipoCliente.Text,
                  txtDNI.Text, txtDNI,
                  txtRTN.Text, txtRTN,
-                 txtRazonSocial.Text, txtRazonSocial,
+                 cmbRazonSocial.Text, cmbRazonSocial,
                  txtTelefono.Text, txtTelefono,
                  txtCorreo.Text, txtCorreo,
                  txtDireccion.Text, txtDireccion,
@@ -238,7 +240,7 @@ namespace TRAMADE
 
                 ObjCliente.setIdUsuario(clsSesion.id_usuario);
                 ObjCliente.setNombre(txtNombre.Text);
-                ObjCliente.setRazonSocial(txtRazonSocial.Text);
+                ObjCliente.setRazonSocial(cmbRazonSocial.Text);
                 ObjCliente.setContacto(txtContacto.Text);
                 ObjCliente.setTelefono(txtTelefono.Text);
                 ObjCliente.setCorreo(txtCorreo.Text);

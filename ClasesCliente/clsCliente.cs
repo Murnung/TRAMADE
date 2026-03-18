@@ -204,7 +204,7 @@ namespace TRAMADE.ClasesCliente
                 cmdCliente.Parameters.AddWithValue("@id_clasificacion_cliente", Convert.ToInt32(tipoCliente));
                 cmdCliente.Parameters.AddWithValue("@id_ciudad", Convert.ToInt32(ciudad));
 
-                cmdCliente.Parameters.AddWithValue("@id_usuario", 2);
+                cmdCliente.Parameters.AddWithValue("@id_usuario", idUsuario);
                 cmdCliente.ExecuteNonQuery();
                 return true;
             }
@@ -242,7 +242,7 @@ namespace TRAMADE.ClasesCliente
                 cmdCliente.Parameters.AddWithValue("@id_ciudad", Convert.ToInt32(ciudad));
 
 
-                cmdCliente.Parameters.AddWithValue("@id_usuario", 2);
+                cmdCliente.Parameters.AddWithValue("@id_usuario", idUsuario);
 
                 cmdCliente.ExecuteNonQuery();
                 return true;

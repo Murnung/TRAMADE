@@ -41,7 +41,6 @@
             this.txtDNI = new Krypton.Toolkit.KryptonTextBox();
             this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new Krypton.Toolkit.KryptonButton();
             this.btnLimpiar = new Krypton.Toolkit.KryptonButton();
@@ -66,6 +65,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.cmbRazonSocial = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -73,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
@@ -81,6 +82,7 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.cmbRazonSocial);
             this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbTipoCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbCiudad);
@@ -93,7 +95,6 @@
             this.kryptonGroup1.Panel.Controls.Add(this.txtDNI);
             this.kryptonGroup1.Panel.Controls.Add(this.txtRTN);
             this.kryptonGroup1.Panel.Controls.Add(this.label7);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
             this.kryptonGroup1.Panel.Controls.Add(this.label6);
             this.kryptonGroup1.Panel.Controls.Add(this.btnGuardar);
             this.kryptonGroup1.Panel.Controls.Add(this.btnLimpiar);
@@ -278,13 +279,6 @@
             this.label7.Size = new System.Drawing.Size(103, 44);
             this.label7.TabIndex = 28;
             this.label7.Text = "Razón social";
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(161, 219);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(147, 23);
-            this.txtRazonSocial.TabIndex = 27;
             // 
             // label6
             // 
@@ -564,6 +558,16 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
             // 
+            // cmbRazonSocial
+            // 
+            this.cmbRazonSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRazonSocial.DropDownWidth = 147;
+            this.cmbRazonSocial.Location = new System.Drawing.Point(161, 219);
+            this.cmbRazonSocial.Name = "cmbRazonSocial";
+            this.cmbRazonSocial.Size = new System.Drawing.Size(147, 22);
+            this.cmbRazonSocial.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbRazonSocial.TabIndex = 91;
+            // 
             // frmRegistroNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +588,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -614,7 +619,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label6;
-        private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
         private System.Windows.Forms.Label label7;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Krypton.Toolkit.KryptonTextBox txtRTN;
@@ -628,5 +632,6 @@
         private Krypton.Toolkit.KryptonComboBox cmbCiudad;
         private Krypton.Toolkit.KryptonComboBox cmbTipoCliente;
         private Krypton.Toolkit.KryptonTextBox txtTelefono;
+        private Krypton.Toolkit.KryptonComboBox cmbRazonSocial;
     }
 }

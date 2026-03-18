@@ -37,7 +37,6 @@
             this.cmbDepartamento = new Krypton.Toolkit.KryptonComboBox();
             this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.txtContacto = new Krypton.Toolkit.KryptonTextBox();
-            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
             this.txtNombre = new Krypton.Toolkit.KryptonTextBox();
             this.txtID = new Krypton.Toolkit.KryptonTextBox();
             this.txtRTN = new Krypton.Toolkit.KryptonTextBox();
@@ -63,6 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.cmbRazonSocial = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -70,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
@@ -78,6 +79,7 @@
             // 
             // kryptonGroup1.Panel
             // 
+            this.kryptonGroup1.Panel.Controls.Add(this.cmbRazonSocial);
             this.kryptonGroup1.Panel.Controls.Add(this.txtFecha);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbTipoCliente);
             this.kryptonGroup1.Panel.Controls.Add(this.cmbCiudad);
@@ -86,7 +88,6 @@
             this.kryptonGroup1.Panel.Controls.Add(this.cmbDepartamento);
             this.kryptonGroup1.Panel.Controls.Add(this.txtTelefono);
             this.kryptonGroup1.Panel.Controls.Add(this.txtContacto);
-            this.kryptonGroup1.Panel.Controls.Add(this.txtRazonSocial);
             this.kryptonGroup1.Panel.Controls.Add(this.txtNombre);
             this.kryptonGroup1.Panel.Controls.Add(this.txtID);
             this.kryptonGroup1.Panel.Controls.Add(this.txtRTN);
@@ -135,6 +136,7 @@
             this.cmbTipoCliente.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoCliente.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbTipoCliente.TabIndex = 88;
+            this.cmbTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cmbTipoCliente_SelectedIndexChanged);
             // 
             // cmbCiudad
             // 
@@ -172,6 +174,7 @@
             this.cmbDepartamento.StateActive.ComboBox.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartamento.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbDepartamento.TabIndex = 84;
+            this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
             // 
             // txtTelefono
             // 
@@ -188,13 +191,6 @@
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(147, 23);
             this.txtContacto.TabIndex = 82;
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(161, 247);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(147, 23);
-            this.txtRazonSocial.TabIndex = 81;
             // 
             // txtNombre
             // 
@@ -531,6 +527,16 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
             // 
+            // cmbRazonSocial
+            // 
+            this.cmbRazonSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRazonSocial.DropDownWidth = 147;
+            this.cmbRazonSocial.Location = new System.Drawing.Point(161, 256);
+            this.cmbRazonSocial.Name = "cmbRazonSocial";
+            this.cmbRazonSocial.Size = new System.Drawing.Size(147, 22);
+            this.cmbRazonSocial.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbRazonSocial.TabIndex = 90;
+            // 
             // frmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,6 +557,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -583,7 +590,6 @@
         private Krypton.Toolkit.KryptonTextBox txtRTN;
         private Krypton.Toolkit.KryptonTextBox txtID;
         private Krypton.Toolkit.KryptonTextBox txtNombre;
-        private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
         private Krypton.Toolkit.KryptonTextBox txtContacto;
         private Krypton.Toolkit.KryptonTextBox txtTelefono;
         private Krypton.Toolkit.KryptonComboBox cmbDepartamento;
@@ -592,5 +598,6 @@
         private Krypton.Toolkit.KryptonComboBox cmbCiudad;
         private Krypton.Toolkit.KryptonComboBox cmbTipoCliente;
         private Krypton.Toolkit.KryptonTextBox txtFecha;
+        private Krypton.Toolkit.KryptonComboBox cmbRazonSocial;
     }
 }

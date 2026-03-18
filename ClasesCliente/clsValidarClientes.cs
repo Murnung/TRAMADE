@@ -83,7 +83,12 @@ namespace TRAMADE
             else
             {
                 if (!RTN(rtn, cRtn)) return false; // Llama a la base
-                if (!NullOVacio(razon, "Razón Social", cRazon)) return false;
+                if (string.IsNullOrWhiteSpace(razon))
+                {
+                    MessageBox.Show("Debe seleccionar una Razón Social.", "Validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
                 if (!ExisteDatoDuplicado(rtn, "rtn_cliente", "RTN", cRtn)) return false;
             }
 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using TRAMADE.ClasesCliente;
+using TRAMADE.Formulario_Proveedores;
 
 namespace TRAMADE
 {
@@ -16,7 +17,6 @@ namespace TRAMADE
     {
         clsConexion ObjConexion = new clsConexion();
         clsCliente ObjCliente = new clsCliente();
-
         public frmRegistro()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace TRAMADE
         {
             clsCliente.llenarcomboDepartamento(cmbDepartamento, ObjConexion);
             clsCliente.llenarcomboTipoCliente(cmbTipoCliente, ObjConexion);
-
+            clsCombobox.LlenarRazonSocial(cmbRazonSocial);
 
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtFecha.ReadOnly = true;
@@ -92,9 +92,9 @@ namespace TRAMADE
             txtDNI.Enabled = false;
             txtDNI.BackColor = Color.LightGray;
 
-            txtRazonSocial.Text = "";
-            txtRazonSocial.Enabled = false;
-            txtRazonSocial.BackColor = Color.LightGray;
+            cmbRazonSocial.SelectedIndex = -1;
+            cmbRazonSocial.Enabled = false;
+            cmbRazonSocial.BackColor = Color.LightGray;
 
             txtNombre.Focus();
 
@@ -108,7 +108,7 @@ namespace TRAMADE
                  cmbTipoCliente.Text,
                  txtDNI.Text, txtDNI,
                  txtRTN.Text, txtRTN,
-                 txtRazonSocial.Text, txtRazonSocial,
+                 cmbRazonSocial.Text, cmbRazonSocial,
                  txtTelefono.Text, txtTelefono,
                  txtCorreo.Text, txtCorreo,
                  txtDireccion.Text, txtDireccion,
@@ -124,7 +124,8 @@ namespace TRAMADE
 
                 ObjCliente.setIdUsuario(clsSesion.id_usuario);
                 ObjCliente.setNombre(txtNombre.Text);
-                ObjCliente.setRazonSocial(txtRazonSocial.Text);
+
+                ObjCliente.setRazonSocial(cmbRazonSocial.Text);
 
                 ObjCliente.setContacto(txtContacto.Text);
                 ObjCliente.setTelefono(txtTelefono.Text);
@@ -148,12 +149,12 @@ namespace TRAMADE
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo actualizar la información del cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo Registrar la información del cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error crítico al actualizar: " + ex.Message, "Error de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error crítico al registrar: " + ex.Message, "Error de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -166,8 +167,8 @@ namespace TRAMADE
                 txtRTN.Enabled = true;
                 txtRTN.BackColor = Color.White;
 
-                txtRazonSocial.Enabled = true;
-                txtRazonSocial.BackColor = Color.White;
+                cmbRazonSocial.Enabled = true;
+                cmbRazonSocial.BackColor = Color.White;
 
                 txtDNI.Enabled = false;
                 txtDNI.Text = "";
@@ -179,9 +180,9 @@ namespace TRAMADE
                 txtRTN.Text = "";
                 txtRTN.BackColor = Color.LightGray;
 
-                txtRazonSocial.Enabled = false;
-                txtRazonSocial.Text = "";
-                txtRazonSocial.BackColor = Color.LightGray;
+                cmbRazonSocial.Enabled = false;
+                cmbRazonSocial.SelectedIndex = -1;
+                cmbRazonSocial.BackColor = Color.LightGray;
 
                 txtDNI.Enabled = true;
                 txtDNI.BackColor = Color.White;
