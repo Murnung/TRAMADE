@@ -55,8 +55,9 @@ namespace TRAMADE
 
                         intentosFallidos = 0; // ✅ Resetea intentos al lograr éxito
                         this.Hide();
-                        frmMenuPrincipal menu = new frmMenuPrincipal();
-                        menu.Show();
+                        frmVerificacionFacial frm = new frmVerificacionFacial(usuario);
+                        frm.Show();
+                        this.Hide();
                     }
                     else
                     {
