@@ -130,5 +130,10 @@ namespace TRAMADE
         {
             dashboard = null;
         }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

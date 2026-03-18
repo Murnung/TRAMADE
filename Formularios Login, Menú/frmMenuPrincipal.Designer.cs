@@ -160,7 +160,7 @@
             this.lblBienvenidoUsuario.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenidoUsuario.Location = new System.Drawing.Point(91, 18);
             this.lblBienvenidoUsuario.Name = "lblBienvenidoUsuario";
-            this.lblBienvenidoUsuario.Size = new System.Drawing.Size(273, 29);
+            this.lblBienvenidoUsuario.Size = new System.Drawing.Size(350, 38);
             this.lblBienvenidoUsuario.TabIndex = 5;
             this.lblBienvenidoUsuario.Text = "Bienvenido, [Usuario]";
             // 
@@ -280,6 +280,7 @@
             this.btnInventario.TabIndex = 8;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // pnlCompras
             // 
