@@ -226,6 +226,12 @@
     <Compile Include="FormulariosMenú\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulariosMenú\frmAgregarUsusarioBiometrico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosMenú\frmAgregarUsusarioBiometrico.Designer.cs">
+      <DependentUpon>frmAgregarUsusarioBiometrico.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulariosMenú\frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosMenú\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosMenú\frmAgregarUsusarioBiometrico.resx">
+      <DependentUpon>frmAgregarUsusarioBiometrico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosMenú\frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
