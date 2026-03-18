@@ -10,7 +10,7 @@ namespace TRAMADE
 {
     internal class clsValidarClientes : clsValidar
     {
-        public static bool ExisteDatoDuplicado(string valor, string columna, string mensaje, Control campo = null)
+        public static bool ExisteDatoDuplicado(string valor, string columna, string mensaje, int idActual = 0, Control campo = null )
         {
             var columnasPermitidas = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
                 {
@@ -25,8 +25,19 @@ namespace TRAMADE
             {
                 ObjConexion.Abrir();
                 string sql = $"SELECT COUNT(*) FROM CLIENTE WHERE {columna} = @valor";
+
+                if (idActual > 0)
+                {
+                    sql += " AND id_cliente <> @idActual";
+                }
+
                 SqlCommand cmd = new SqlCommand(sql, ObjConexion.SqlC);
                 cmd.Parameters.AddWithValue("@valor", valor.Trim());
+                if (idActual > 0)
+                {
+                    cmd.Parameters.AddWithValue("@idActual", idActual);
+                }
+
                 if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     MessageBox.Show($"El {mensaje} ya está registrado.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -77,19 +88,23 @@ namespace TRAMADE
             // Lógica por Tipo de Cliente
             if (tipo == "PERSONA NATURAL")
             {
-                if (!DNI(dni, cDni)) return false; // Llama a la base
-                if (!ExisteDatoDuplicado(dni, "dni_cliente", "DNI", cDni)) return false;
+                if (!DNI(dni, cDni)) return false;
+
+                if (!ExisteDatoDuplicado(dni, "dni_cliente", "DNI", idActual)) return false;
             }
-            else
+         
+            if (tipo == "PERSONA JURÍDICA")
             {
-                if (!RTN(rtn, cRtn)) return false; // Llama a la base
+                if (!RTN(rtn, cRtn)) return false;
+
                 if (string.IsNullOrWhiteSpace(razon))
                 {
                     MessageBox.Show("Debe seleccionar una Razón Social.", "Validación",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
-                if (!ExisteDatoDuplicado(rtn, "rtn_cliente", "RTN", cRtn)) return false;
+
+                if (!ExisteDatoDuplicado(rtn, "rtn_cliente", "RTN", idActual)) return false;
             }
 
             if (!string.IsNullOrEmpty(correo) && !Correo(correo, cCorreo)) return false;

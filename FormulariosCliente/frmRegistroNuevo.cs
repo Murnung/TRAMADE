@@ -90,6 +90,7 @@ namespace TRAMADE
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             
+
             string busqueda = txtBuscar.Text.Trim();
             if (string.IsNullOrEmpty(busqueda))
             {
@@ -114,12 +115,19 @@ namespace TRAMADE
                 {
                     DataRow row = dt.Rows[0];
                     IdSeleccionado = Convert.ToInt32(row["id_cliente"]);
-                   
+
+                    txtDNI.ReadOnly = true;
+                    txtDNI.Enabled = false;
+                    txtDNI.BackColor = Color.LightGray;
+                    txtRTN.ReadOnly = true;
+                    txtRTN.BackColor = Color.LightGray;
+                    txtRTN.Enabled = false;
 
 
                     txtID.Text = row["id_cliente"].ToString();
                     txtID.ReadOnly = true;
                     txtID.BackColor = Color.LightGray;
+                    
 
                     txtNombre.Text = row["nombre_cliente"].ToString();
                     txtContacto.Text = row["contacto_cliente"].ToString();
