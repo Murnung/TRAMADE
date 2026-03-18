@@ -35,7 +35,6 @@
             this.txtRtn = new Krypton.Toolkit.KryptonTextBox();
             this.txtNombreComercial = new Krypton.Toolkit.KryptonTextBox();
             this.txtDireccionFiscal = new Krypton.Toolkit.KryptonTextBox();
-            this.txtRazonSocial = new Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,9 +50,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.cmbRazonSocial = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.cmbClasificacion)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTerminosdePago)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbClasificacion
@@ -122,16 +123,6 @@
             this.txtDireccionFiscal.Size = new System.Drawing.Size(331, 42);
             this.txtDireccionFiscal.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccionFiscal.TabIndex = 20;
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.CueHint.Color1 = System.Drawing.Color.Gray;
-            this.txtRazonSocial.CueHint.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonSocial.Location = new System.Drawing.Point(329, 189);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(331, 42);
-            this.txtRazonSocial.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonSocial.TabIndex = 19;
             // 
             // label3
             // 
@@ -319,11 +310,26 @@
             this.label12.TabIndex = 63;
             this.label12.Text = "Clasificación:";
             // 
+            // cmbRazonSocial
+            // 
+            this.cmbRazonSocial.CueHint.Color1 = System.Drawing.Color.Gray;
+            this.cmbRazonSocial.CueHint.CueHintText = "SELECCIONE RAZÓN SOCIAL";
+            this.cmbRazonSocial.CueHint.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRazonSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRazonSocial.DropDownWidth = 320;
+            this.cmbRazonSocial.Location = new System.Drawing.Point(329, 205);
+            this.cmbRazonSocial.Name = "cmbRazonSocial";
+            this.cmbRazonSocial.Size = new System.Drawing.Size(331, 26);
+            this.cmbRazonSocial.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRazonSocial.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbRazonSocial.TabIndex = 71;
+            // 
             // frmProveedores_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 722);
+            this.Controls.Add(this.cmbRazonSocial);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -341,7 +347,6 @@
             this.Controls.Add(this.txtRtn);
             this.Controls.Add(this.txtNombreComercial);
             this.Controls.Add(this.txtDireccionFiscal);
-            this.Controls.Add(this.txtRazonSocial);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -353,6 +358,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTerminosdePago)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,7 +372,6 @@
         private Krypton.Toolkit.KryptonTextBox txtRtn;
         private Krypton.Toolkit.KryptonTextBox txtNombreComercial;
         private Krypton.Toolkit.KryptonTextBox txtDireccionFiscal;
-        private Krypton.Toolkit.KryptonTextBox txtRazonSocial;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
@@ -382,5 +387,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label12;
+        private Krypton.Toolkit.KryptonComboBox cmbRazonSocial;
     }
 }

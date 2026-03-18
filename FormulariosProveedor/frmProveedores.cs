@@ -12,7 +12,7 @@ using TRAMADE.Formulario_Proveedores;
 using TRAMADE.Formulario_Proveedores.Clases;
 using TRAMADE.ClasesProveedor;
 
-
+    
 namespace TRAMADE
 {
     public partial class frmProveedores : Form

@@ -12,7 +12,7 @@ namespace TRAMADE.ClasesProveedor
     internal class clsToolTip
     {
         public static void AplicarTooltipsProveedor(
-            KryptonTextBox txtRazonSocial,
+            KryptonComboBox cmbRazonSocial,
             KryptonTextBox txtNombreComercial,
             KryptonTextBox txtDireccionFiscal,
             KryptonTextBox txtRtn,
@@ -28,7 +28,8 @@ namespace TRAMADE.ClasesProveedor
             tip.BackColor = Color.FromArgb(210, 180, 140);
             tip.ForeColor = Color.FromArgb(50, 30, 10);
 
-            tip.SetToolTip(txtRazonSocial.Controls[0], "Razón Social\nNombre legal registrado ante el SAR.\nEj: Maderas del Norte S.A. de C.V.");
+            //tip.SetToolTip(txtRazonSocial.Controls[0], "Razón Social\nNombre legal registrado ante el SAR.\nEj: Maderas del Norte S.A. de C.V.");
+            tip.SetToolTip(cmbRazonSocial.Controls[0], "Seleccione el tipo de razón social del proveedor");
             tip.SetToolTip(txtNombreComercial.Controls[0], "Nombre Comercial\nNombre con el que opera el proveedor.\nEj: Maderas del Norte");
             tip.SetToolTip(txtDireccionFiscal.Controls[0], "Dirección Fiscal\nEj: Col. Las Palmas, Tegucigalpa");
             tip.SetToolTip(txtRtn.Controls[0], "RTN\nEj: 05011994000123\n(14 dígitos: municipio + año + secuencial)");

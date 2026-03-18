@@ -75,6 +75,15 @@ namespace TRAMADE.Formulario_Proveedores
             LlenarTerminosPago(cmbTerminosdePago, ObjConexion);
         }
 
-        
+        public static void LlenarRazonSocial(KryptonComboBox cmb)
+        {
+            cmb.Items.Clear();
+            cmb.Items.Add("S.A. de C.V.");
+            cmb.Items.Add("S. de R.L.");
+            cmb.Items.Add("S. de R.L. de C.V.");
+            cmb.Items.Add("Comerciante Individual");
+            cmb.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
     }
 }

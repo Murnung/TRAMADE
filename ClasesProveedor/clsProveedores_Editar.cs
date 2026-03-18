@@ -46,7 +46,7 @@ namespace TRAMADE.Formulario_Proveedores.Clases
             }
         }
 
-        public void CargarDatosActuales(int idProveedor, KryptonTextBox txtRazonSocial, KryptonTextBox txtNombreComercial,
+        public void CargarDatosActuales(int idProveedor, KryptonComboBox cmbRazonSocial, KryptonTextBox txtNombreComercial,
                                         KryptonTextBox txtDireccionFiscal, KryptonTextBox txtRtn,
                                         KryptonTextBox txtTelefonoGeneral, KryptonTextBox txtCorreoCentral,
                                         KryptonComboBox cmbClasificacion,
@@ -57,7 +57,9 @@ namespace TRAMADE.Formulario_Proveedores.Clases
 
             if (ObjDatos != null)
             {
-                txtRazonSocial.Text = ObjDatos.razon_social_proveedor;
+                //txtRazonSocial.Text = ObjDatos.razon_social_proveedor;
+                //cmbRazonSocial.Text = reader["razon_social_proveedor"].ToString();
+                cmbRazonSocial.Text = ObjDatos.razon_social_proveedor;
                 txtNombreComercial.Text = ObjDatos.nombre_comercial_proveedor;
                 txtDireccionFiscal.Text = ObjDatos.direccion_proveedor;
                 txtRtn.Text = ObjDatos.rtn_proveedor;

@@ -16,15 +16,17 @@ namespace TRAMADE
     public partial class frmProveedores_Editar : Form
     {
         private int _idProveedor;
+          
         clsProveedores_Editar ObjEditar = new clsProveedores_Editar();
         clsConexion ObjConexion = new clsConexion();
         public frmProveedores_Editar(int idProveedor)
         {
             InitializeComponent();
             _idProveedor = idProveedor; // ← asignar el ID
+            clsCombobox.LlenarRazonSocial(cmbRazonSocial);
             clsCombobox.LlenarCombosProveedor(cmbClasificacion, cmbTerminosdePago, ObjConexion);
-            ObjEditar.CargarDatosActuales(_idProveedor, txtRazonSocial, txtNombreComercial, txtDireccionFiscal, txtRtn, txtTelefonoGeneral, txtCorreoCentral, cmbClasificacion, cmbTerminosdePago);
-            clsToolTip.AplicarTooltipsProveedor(txtRazonSocial, txtNombreComercial, txtDireccionFiscal,
+            ObjEditar.CargarDatosActuales(_idProveedor, cmbRazonSocial, txtNombreComercial, txtDireccionFiscal, txtRtn, txtTelefonoGeneral, txtCorreoCentral, cmbClasificacion, cmbTerminosdePago);
+            clsToolTip.AplicarTooltipsProveedor(cmbRazonSocial, txtNombreComercial, txtDireccionFiscal,
                                          txtRtn, txtTelefonoGeneral, txtCorreoCentral,
                                          cmbClasificacion, cmbTerminosdePago);
             txtTelefonoGeneral.KeyPress += clsValidar.TelefonoMaximo_KeyPress;
@@ -34,7 +36,7 @@ namespace TRAMADE
         {
             if (!clsValidar.ValidarProveedor(
             txtNombreComercial.Text, txtNombreComercial,
-            txtRazonSocial.Text, txtRazonSocial,
+            cmbRazonSocial.Text, cmbRazonSocial,
             txtDireccionFiscal.Text, txtDireccionFiscal,
             txtRtn.Text, txtRtn,
             txtTelefonoGeneral.Text, txtTelefonoGeneral,
@@ -43,16 +45,9 @@ namespace TRAMADE
             Convert.ToInt32(cmbTerminosdePago.SelectedValue),
             _idProveedor)) return;
 
-            /*if (!clsValidar.ValidarProveedor(
-            txtNombreComercial.Text, txtRazonSocial.Text, txtDireccionFiscal.Text,
-            txtRtn.Text, txtTelefonoGeneral.Text, txtCorreoCentral.Text,
-            Convert.ToInt32(cmbClasificacion.SelectedValue),
-            Convert.ToInt32(cmbTerminosdePago.SelectedValue),
-            _idProveedor)) return;*/
-
             clsProveedores ObjProveedores = new clsProveedores(
                 clsValidar.Limpiar(txtNombreComercial.Text),
-                clsValidar.Limpiar(txtRazonSocial.Text),
+                clsValidar.Limpiar(cmbRazonSocial.Text),
                 clsValidar.Limpiar(txtDireccionFiscal.Text),
                 clsValidar.Limpiar(txtRtn.Text),
                 Convert.ToInt32(cmbClasificacion.SelectedValue),
