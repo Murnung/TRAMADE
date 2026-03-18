@@ -35,7 +35,7 @@ namespace TRAMADE
 
             if (validarCredenciales(correo, password))
             {
-                // ✅ Credenciales correctas → abrir verificación facial
+                // Credenciales correctas → abrir verificación facial
                 frmVerificacionFacial frm = new frmVerificacionFacial(correo);
                 frm.Show();
                 this.Hide();
@@ -114,6 +114,11 @@ namespace TRAMADE
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,12 +32,12 @@
             this.btnIngresar = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtUsuario = new Krypton.Toolkit.KryptonTextBox();
             this.txtPassword = new Krypton.Toolkit.KryptonTextBox();
             this.btnSalir = new Krypton.Toolkit.KryptonButton();
             this.lkRestablecer = new Krypton.Toolkit.KryptonLinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelBienvenida = new Krypton.Toolkit.KryptonLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,6 +104,17 @@
             this.kryptonLabel1.StateNormal.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.kryptonLabel1.TabIndex = 17;
             this.kryptonLabel1.Values.Text = "TRAMADE \r\n    S.A";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Logo_de_la_empresa;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(325, 284);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -192,18 +203,6 @@
             this.lkRestablecer.TabIndex = 16;
             this.lkRestablecer.Values.Text = "Restablecer";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TRAMADE.Properties.Resources.Logo_de_la_empresa;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(325, 284);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-     //       this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // labelBienvenida
             // 
             this.labelBienvenida.Location = new System.Drawing.Point(498, 53);
@@ -237,8 +236,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
-    //        this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
-     //       this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
