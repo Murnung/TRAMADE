@@ -131,7 +131,7 @@ namespace TRAMADE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (!clsValidacionesCompras.validarBuscarId(txtBuscar.Text.Trim())) return;
+            if (!clsValidar.BuscarId(txtBuscar.Text.Trim())) return;
             DataTable dt = ObjFc.BuscarCompra(ObjConexion, txtBuscar.Text);
             if (dt != null)
             {

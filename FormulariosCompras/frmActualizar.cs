@@ -52,14 +52,9 @@ namespace TRAMADE
         {
             string busqueda = txtbBuscar.Text.Trim();
             if (!clsValidar.NullOVacio(busqueda, "ID Solicitud")) return;
-            if (!clsValidar.SoloNumeros_KeyPress(new KeyPressEventArgs((char)0))) { } // KeyPress en txtbBuscar
+            if (!clsValidar.BuscarId(busqueda)) return;
            
-            /*if (string.IsNullOrEmpty(busqueda))
-            {
-                MessageBox.Show("Ingrese el id de la solicitud de compra");
-                return;
-            }
-            */
+          
             try
             {
                 ObjConexion.Abrir();
@@ -258,12 +253,12 @@ namespace TRAMADE
                 cmbProveedor.SelectedIndex = 0;
 
             // Validaciones ← Solo proveedor y forma de pago
-            if(!clsValidacionesCompras.validarIdSeleccionado(compraIdSeleccionado)) return;
+            if(!clsValidar.IdSeleccionado(compraIdSeleccionado)) return;
             if (!clsValidar.ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return;
             if (!clsValidar.ComboSeleccionado(cmbFormaPago.SelectedIndex, "Forma de Pago")) return;
             if (!clsValidar.FechaEntrega(dtEntrega.Value)) return;
-            if (!clsValidacionesCompras.validarListBox(lstProductos)) return;
-            if (!clsValidacionesCompras.validarComboSinResultado(cmbProveedor, "proveedor")) return;
+            if (!clsValidar.ListBoxConElementos(lstProductos,"producto")) return;
+            if (!clsValidar.validarComboSinResultado(cmbProveedor, "proveedor")) return;
 
             try
             {
@@ -368,7 +363,7 @@ namespace TRAMADE
         {
             int nuevaCantidad = Convert.ToInt32(nudCantidad.Value);
 
-            if (!clsValidacionesCompras.validarModificarCantidad(compraIdSeleccionado, lstProductos, nuevaCantidad)) return;
+            if (!clsValidar.ModificarCantidad(compraIdSeleccionado, lstProductos, nuevaCantidad)) return;
 
             DataRow fila = ObjOp.obtenerFila(lstProductos.SelectedIndex);
             int idProducto = Convert.ToInt32(fila["idProducto"]);

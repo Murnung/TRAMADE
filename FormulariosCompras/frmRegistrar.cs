@@ -203,8 +203,8 @@ namespace TRAMADE
             if (!clsValidar.ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return;
             if (!clsValidar.ComboSeleccionado(cmbFormaPago.SelectedIndex, "Forma de Pago")) return;
             if (!clsValidar.FechaEntrega(dtEntrega.Value)) return;
-            if (!clsValidacionesCompras.validarListBox(lstProductos)) return;
-            if (!clsValidacionesCompras.validarComboSinResultado(cmbProveedor, "proveedor")) return;
+            if (!clsValidar.ListBoxConElementos(lstProductos,"producto")) return;
+            if (!clsValidar.validarComboSinResultado(cmbProveedor, "proveedor")) return;
 
 
             try

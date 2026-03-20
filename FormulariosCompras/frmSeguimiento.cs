@@ -117,8 +117,8 @@ namespace TRAMADE
             // Si hay texto en el buscador, busca por ID
             if (!string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
-                if (!clsValidar.NullOVacio(txtBuscar.Text.Trim(), "ID Solicitud")) return;
-                DataTable dt = ObjFc.BuscarCompra(ObjConexion, txtBuscar.Text);
+                if (!clsValidar.BuscarId(txtBuscar.Text)) return;
+                DataTable dt = ObjFc.BuscarCompra(ObjConexion, txtBuscar.Text.Trim());
                 if (dt != null)
                     dgvCompras.DataSource = dt;
             }
