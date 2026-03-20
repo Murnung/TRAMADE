@@ -295,7 +295,7 @@ namespace TRAMADE
 
         private void btnDNICliente_Click(object sender, EventArgs e) // BOTÓN PARA BUSCAR EL CLIENTE POR DNI O RTN, CON VALIDACIONES ANTES DE REALIZAR LA BÚSQUEDA
         {
-            if (clsValidar.NullOVacio(txtDNICliente.Text, "Por favor, escriba un DNI o RTN antes de buscar.")) return;
+            if (!clsValidar.NullOVacio(txtDNICliente.Text, "DNI o RTN")) return;
 
             if (!clsValidar.EsDniRtnValido(txtDNICliente.Text))
             {
@@ -308,11 +308,12 @@ namespace TRAMADE
 
         private void btnEliminarProducto_Click(object sender, EventArgs e) // BOTÓN PARA ELIMINAR EL PRODUCTO SELECCIONADO EN EL DETALLE DE LA FACTURA
         {
-            if (clsValidar.ValidarFilaSeleccionadaFactura(dgvDetalleFactura.CurrentRow, "Por favor, seleccione un producto de la lista para eliminarlo."))
-            {
-                dgvDetalleFactura.Rows.Remove(dgvDetalleFactura.CurrentRow);
-                CalcularTotales();
-            }
+            if (!clsValidar.ValidarFilaSeleccionadaFactura(dgvDetalleFactura.CurrentRow, "Por favor, seleccione un producto de la lista para eliminarlo.")) return;
+
+            if (dgvDetalleFactura.CurrentRow.IsNewRow) return;
+
+            dgvDetalleFactura.Rows.Remove(dgvDetalleFactura.CurrentRow);
+            CalcularTotales();
         }
 
         private void dgvDetalleFactura_CellValueChanged(object sender, DataGridViewCellEventArgs e)
