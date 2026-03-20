@@ -51,7 +51,6 @@ namespace TRAMADE
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string busqueda = txtbBuscar.Text.Trim();
-            if (!clsValidar.NullOVacio(busqueda, "ID Solicitud")) return;
             if (!clsValidar.BuscarId(busqueda)) return;
            
           

@@ -144,7 +144,7 @@ namespace TRAMADE
         // ─── VALIDAR COMBO SELECCIONADO ───────────────────────────────
         public static bool ComboSeleccionado(int selectedValue, string nombreCampo)
         {
-            if (selectedValue <= 0)
+            if (selectedValue < 0)
             {
                 MessageBox.Show($"Debe seleccionar una opción en '{nombreCampo}'.", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -632,11 +632,13 @@ namespace TRAMADE
             return true;
         }
         // Validación general para compras
-        public static bool ValidarCompras(KryptonComboBox proveedor, KryptonComboBox formaPago, KryptonComboBox producto)
+        public static bool ValidarCompras(KryptonComboBox proveedor, KryptonComboBox formaPago)
         {
-            if (!ComboSeleccionado(proveedor.SelectedIndex, "Proveedor")) return false;
-            if (!ComboSeleccionado(formaPago.SelectedIndex, "Forma de Pago")) return false;
-            if (!ComboSeleccionado(producto.SelectedIndex, "Producto")) return false;
+            if (proveedor.SelectedIndex == -1 || formaPago.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, llene todos los campos vacíos", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             return true;
         }
 
