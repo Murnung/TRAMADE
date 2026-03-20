@@ -21,6 +21,8 @@ namespace TRAMADE.Formulario_Proveedores.Clases
             {
                 ObjConexion.Abrir();
 
+            
+
                 SqlCommand cmd = new SqlCommand("PA_INSERTAR_PROVEEDOR", ObjConexion.SqlC);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -33,6 +35,7 @@ namespace TRAMADE.Formulario_Proveedores.Clases
                 cmd.Parameters.AddWithValue("@id_terminos_de_pago_proveedor", ObjProveedores.id_terminos_de_pago_proveedor);
                 cmd.Parameters.AddWithValue("@contacto_proveedor", ObjProveedores.contacto_proveedor);
                 cmd.Parameters.AddWithValue("@correo_electronico_proveedor", ObjProveedores.correo_electronico_proveedor);
+                cmd.Parameters.AddWithValue("@id_usuario", clsSesion.id_usuario);
 
                 cmd.ExecuteNonQuery();
 
