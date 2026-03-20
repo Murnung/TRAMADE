@@ -376,63 +376,146 @@ namespace TRAMADE
             }
             return true;
         }
+        // ─── VALIDAR EXISTENCIA DE DATO DUPLICADO EN LA BASE DE DATOS (Clientes) ─────
+        public static bool ExisteDatoDuplicado(string valor, string columna, string mensaje, int idActual = 0, Control campo = null)
+        {
+            var columnasPermitidas = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+                {
+                    "dni_cliente", "rtn_cliente", "correo_electronico_cliente"
+                };
+
+            if (!columnasPermitidas.Contains(columna))
+                throw new ArgumentException("Nombre de columna no permitido.", nameof(columna));
+
+            clsConexion ObjConexion = new clsConexion();
+            try
+            {
+                ObjConexion.Abrir();
+                string sql = $"SELECT COUNT(*) FROM CLIENTE WHERE {columna} = @valor";
+
+                if (idActual > 0)
+                {
+                    sql += " AND id_cliente <> @idActual";
+                }
+
+                SqlCommand cmd = new SqlCommand(sql, ObjConexion.SqlC);
+                cmd.Parameters.AddWithValue("@valor", valor.Trim());
+                if (idActual > 0)
+                {
+                    cmd.Parameters.AddWithValue("@idActual", idActual);
+                }
+
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
+                {
+                    MessageBox.Show($"El {mensaje} ya está registrado.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return false;
+                }
+                return true;
+            }
+            finally { ObjConexion.Cerrar(); }
+        }
+        // ─── VALIDAR DATOS DE CONTACTO COMUNES PARA CLIENTES Y PROVEEDORES ───────────────────────────────
+        private static bool ValidarDatosContactoBase(
+        string nombre, Control cNombre, string etiquetaNombre,
+        string direccion, Control cDir,
+        string tel, Control cTel,
+        string correo, Control cCorreo)
+        {
+            // --- Validación de Nombre ---
+            if (!NullOVacio(nombre, etiquetaNombre, cNombre)) return false;
+            if (!SinEspaciosExtremos(nombre, etiquetaNombre, cNombre)) return false;
+            if (!SinDobleEspacio(nombre, etiquetaNombre, cNombre)) return false;
+            if (!SinSoloEspeciales(nombre, etiquetaNombre, cNombre)) return false;
+            if (!SinTresLetrasIguales(nombre, etiquetaNombre)) return false; // Nueva regla integrada
+            if (!LongitudMinima(nombre, etiquetaNombre, 3, cNombre)) return false;
+            if (!LongitudMaxima(nombre, etiquetaNombre, 50, cNombre)) return false;
+
+            // --- Validación de Dirección ---
+            if (!NullOVacio(direccion, "Dirección", cDir)) return false;
+            if (!SinEspaciosExtremos(direccion, "Dirección", cDir)) return false;
+            if (!SinDobleEspacio(direccion, "Dirección", cDir)) return false;
+            if (!SinTresLetrasIguales(direccion, "Dirección")) return false; // Nueva regla integrada
+            if (!LongitudMinima(direccion, "Dirección", 5, cDir)) return false;
+
+            // --- Validación de Teléfono ---
+            if (!NullOVacio(tel, "Teléfono", cTel)) return false;
+            if (!Telefono(tel, cTel)) return false;
+            if (!SinCuatroNumerosIguales(tel, "Teléfono")) return false; // Nueva regla integrada
+
+            // --- Validación de Correo ---
+            if (!NullOVacio(correo, "Correo Electrónico", cCorreo)) return false;
+            if (!SinEspaciosExtremos(correo, "Correo Electrónico", cCorreo)) return false;
+            if (!Correo(correo, cCorreo)) return false;
+
+            return true;
+        }
 
         // ─── VALIDAR PROVEEDOR COMPLETO ───────────────────────────────
         public static bool ValidarProveedor(
-            string nombre, Control ctrlNombre,
-            string razon, Control ctrlRazon,
-            string direccion, Control ctrlDireccion,
-            string rtn, Control ctrlRtn,
-            string telefono, Control ctrlTelefono,
-            string correo, Control ctrlCorreo,
-            int idClasificacion, int idTerminos,
-            int idProveedorActual = 0)
+        string nombre, Control ctrlNombre, string razon, Control ctrlRazon,
+        string direccion, Control ctrlDireccion, string rtn, Control ctrlRtn,
+        string telefono, Control ctrlTelefono, string correo, Control ctrlCorreo,
+        int idClasificacion, int idTerminos, int idProveedorActual = 0)
         {
-            // ─── Nombre Comercial ─────────────────────────────────────
-            if (!NullOVacio(nombre, "Nombre Comercial", ctrlNombre)) return false;
-            if (!SinEspaciosExtremos(nombre, "Nombre Comercial", ctrlNombre)) return false;
-            if (!SinDobleEspacio(nombre, "Nombre Comercial", ctrlNombre)) return false;
-            if (!SinSoloEspeciales(nombre, "Nombre Comercial", ctrlNombre)) return false;
-            if (!SinTresLetrasIguales(nombre, "Nombre Comercial")) return false;  // ← nueva
-            if (!LongitudMinima(nombre, "Nombre Comercial", 3, ctrlNombre)) return false;
-            if (!LongitudMaxima(nombre, "Nombre Comercial", 50, ctrlNombre)) return false;
+            // 1. Validaciones Comunes (Nombre Comercial para proveedores)
+            if (!ValidarDatosContactoBase(nombre, ctrlNombre, "Nombre Comercial", direccion, ctrlDireccion, telefono, ctrlTelefono, correo, ctrlCorreo))
+                return false;
 
-            //ComboBox Razon Social 
-            // ─── Razón Social ─────────────────────────────────────────────
+            // 2. Razón Social (Combo)
             if (string.IsNullOrWhiteSpace(razon))
             {
-                MessageBox.Show("Debe seleccionar una Razón Social.", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar una Razón Social.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            // ─── Dirección ────────────────────────────────────────────
-            if (!NullOVacio(direccion, "Dirección", ctrlDireccion)) return false;
-            if (!SinEspaciosExtremos(direccion, "Dirección", ctrlDireccion)) return false;
-            if (!SinDobleEspacio(direccion, "Dirección", ctrlDireccion)) return false;
-            if (!SinTresLetrasIguales(direccion, "Dirección")) return false;
-            if (!LongitudMinima(direccion, "Dirección", 5, ctrlDireccion)) return false;
-
-            // ─── RTN ──────────────────────────────────────────────────
+            // 3. RTN y Duplicados
             if (!NullOVacio(rtn, "RTN", ctrlRtn)) return false;
             if (!RTN(rtn, ctrlRtn)) return false;
             if (!RTNDuplicado(rtn, idProveedorActual, ctrlRtn)) return false;
-
-            // ─── Teléfono ─────────────────────────────────────────────
-            if (!NullOVacio(telefono, "Teléfono", ctrlTelefono)) return false;
-            if (!Telefono(telefono, ctrlTelefono)) return false;
-            if (!SinCuatroNumerosIguales(telefono, "Teléfono")) return false;
-
-            // ─── Correo ───────────────────────────────────────────────
-            if (!NullOVacio(correo, "Correo Electrónico", ctrlCorreo)) return false;
-            if (!SinEspaciosExtremos(correo, "Correo Electrónico", ctrlCorreo)) return false;
-            if (!Correo(correo, ctrlCorreo)) return false;
             if (!CorreoDuplicado(correo, idProveedorActual, ctrlCorreo)) return false;
 
-            // ─── Combos ───────────────────────────────────────────────
+            // 4. Combos de Clasificación y Términos
             if (!ComboSeleccionado(idClasificacion, "Clasificación")) return false;
             if (!ComboSeleccionado(idTerminos, "Términos de Pago")) return false;
             if (!ClasificacionTerminos(idClasificacion, idTerminos)) return false;
+
+            return true;
+        }
+        // ─── VALIDAR FORMULARIO DE CLIENTE COMPLETO (PERSONA NATURAL O JURÍDICA) ───────────────────────────────
+        public static bool ValidarTodoElFormulario(
+        string nombre, Control cNombre, string tipo, string dni, Control cDni,
+        string rtn, Control cRtn, string razon, Control cRazon,
+        string tel, Control cTel, string correo, Control cCorreo,
+        string direccion, Control cDir, object depto, object ciudad, int idActual = 0)
+        {
+            // 1. Validaciones Comunes
+            if (!ValidarDatosContactoBase(nombre, cNombre, "Nombre", direccion, cDir, tel, cTel, correo, cCorreo))
+                return false;
+
+            // 2. Lógica por Tipo de Cliente
+            if (tipo == "PERSONA NATURAL")
+            {
+                if (!DNI(dni, cDni)) return false;
+                if (!ExisteDatoDuplicado(dni, "dni_cliente", "DNI", idActual)) return false;
+            }
+            else if (tipo == "PERSONA JURÍDICA")
+            {
+                if (string.IsNullOrWhiteSpace(razon))
+                {
+                    MessageBox.Show("Debe seleccionar una Razón Social.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                if (!RTN(rtn, cRtn)) return false;
+                if (!ExisteDatoDuplicado(rtn, "rtn_cliente", "RTN", idActual)) return false;
+            }
+
+            // 3. Ubicación
+            if (depto == null || ciudad == null)
+            {
+                MessageBox.Show("Seleccione una ubicación válida (Departamento y Ciudad).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
             return true;
         }

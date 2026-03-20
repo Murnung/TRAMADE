@@ -102,7 +102,7 @@ namespace TRAMADE
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            bool esValido = clsValidarClientes.ValidarTodoElFormulario
+            bool esValido = clsValidar.ValidarTodoElFormulario
                 (
                  txtNombre.Text, txtNombre,
                  cmbTipoCliente.Text,

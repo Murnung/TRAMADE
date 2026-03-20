@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace TRAMADE
 {
-    internal class clsValidarClientes : clsValidar
+    /*internal class clsValidarClientes : clsValidar
     {
         public static bool ExisteDatoDuplicado(string valor, string columna, string mensaje, int idActual = 0, Control campo = null )
         {
@@ -112,5 +112,5 @@ namespace TRAMADE
 
             return true;
         }
-    }
+    }*/
 }

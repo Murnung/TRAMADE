@@ -224,7 +224,7 @@ namespace TRAMADE
             }
 
 
-            bool esValido = clsValidarClientes.ValidarTodoElFormulario
+            bool esValido = clsValidar.ValidarTodoElFormulario
                 (
                  txtNombre.Text, txtNombre,
                  cmbTipoCliente.Text,
