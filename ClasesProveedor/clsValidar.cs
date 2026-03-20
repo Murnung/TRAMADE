@@ -483,7 +483,7 @@ namespace TRAMADE
         //Validaciones de inventario
 
         // ─── VALIDAR CAMPOS VACÍOS (INVENTARIO) ──────────────────────
-        public static bool ValidarCamposVacios(params TextBox[] campos)
+        /*public static bool ValidarCamposVacios(params TextBox[] campos)
         {
             foreach (TextBox campo in campos)
             {
@@ -496,10 +496,10 @@ namespace TRAMADE
                 }
             }
             return true;
-        }
+        }*/
 
         // ─── VALIDAR COMBOBOX (INVENTARIO) ───────────────────────────
-        public static bool ValidarComboBox(params ComboBox[] combos)
+        /*public static bool ValidarComboBox(params ComboBox[] combos)
         {
             foreach (ComboBox combo in combos)
             {
@@ -512,7 +512,7 @@ namespace TRAMADE
                 }
             }
             return true;
-        }
+        }*/
 
         // ─── VALIDAR DECIMAL (INVENTARIO) ────────────────────────────
         public static bool ValidarDecimal(TextBox campo)
@@ -605,8 +605,18 @@ namespace TRAMADE
             ComboBox cmbCategoria,
             ComboBox cmbSucursal)
         {
-            if (!ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial)) return false;
-            if (!ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal)) return false;
+            //if (!ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial)) return false;
+            //if (!ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal)) return false;
+            if (!NullOVacio(txtNombreProducto.Text, "Nombre Producto")) return false;
+            if (!NullOVacio(txtPrecio.Text, "Precio")) return false;
+            if (!NullOVacio(txtPrecioCosto.Text, "Precio Costo")) return false;
+            if (!NullOVacio(txtStockInicial.Text, "Stock Inicial")) return false;
+            if (!ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return false;
+            if (!ComboSeleccionado(cmbCategoria.SelectedIndex, "Categoría")) return false;
+            if (!ComboSeleccionado(cmbSucursal.SelectedIndex, "Sucursal")) return false;
+            if (!ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return false;
+            if (!ComboSeleccionado(cmbCategoria.SelectedIndex, "Categoría")) return false;
+            if (!ComboSeleccionado(cmbSucursal.SelectedIndex, "Sucursal")) return false;
             if (!ValidarDecimal(txtPrecio)) return false;
             if (!ValidarDecimal(txtPrecioCosto)) return false;
             if (!ValidarEntero(txtStockInicial)) return false;
