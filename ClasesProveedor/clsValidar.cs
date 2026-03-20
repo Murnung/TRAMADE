@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace TRAMADE
 {
@@ -433,6 +434,146 @@ namespace TRAMADE
             if (!ComboSeleccionado(idTerminos, "Términos de Pago")) return false;
             if (!ClasificacionTerminos(idClasificacion, idTerminos)) return false;
 
+            return true;
+        }
+
+
+
+        //-----------------------------------------------------------------------------------------------
+        //Validaciones de inventario
+        // ─── VALIDAR CAMPOS VACÍOS (INVENTARIO) ──────────────────────
+        public static bool ValidarCamposVacios(params TextBox[] campos)
+        {
+            foreach (TextBox campo in campos)
+            {
+                if (string.IsNullOrEmpty(campo.Text.Trim()))
+                {
+                    MessageBox.Show("Por favor complete todos los campos", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    campo.Focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // ─── VALIDAR COMBOBOX (INVENTARIO) ───────────────────────────
+        public static bool ValidarComboBox(params ComboBox[] combos)
+        {
+            foreach (ComboBox combo in combos)
+            {
+                if (combo.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor seleccione todos los campos", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    combo.Focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // ─── VALIDAR DECIMAL (INVENTARIO) ────────────────────────────
+        public static bool ValidarDecimal(TextBox campo)
+        {
+            if (!decimal.TryParse(campo.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out _))
+            {
+                MessageBox.Show("El campo '" + campo.Name + "' debe ser un número válido", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                campo.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        // ─── VALIDAR ENTERO (INVENTARIO) ─────────────────────────────
+        public static bool ValidarEntero(TextBox campo)
+        {
+            if (!int.TryParse(campo.Text, out _))
+            {
+                MessageBox.Show("El campo '" + campo.Name + "' debe ser un número entero", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                campo.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        // ─── VALIDAR POSITIVO (INVENTARIO) ───────────────────────────
+        public static bool ValidarPositivo(TextBox campo)
+        {
+            decimal.TryParse(campo.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal resultado);
+            if (resultado <= 0)
+            {
+                MessageBox.Show("El campo '" + campo.Name + "' debe ser mayor a cero", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                campo.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        // ─── VALIDAR COSTO MENOR QUE PRECIO (INVENTARIO) ─────────────
+        public static bool ValidarCostoMenorPrecio(TextBox txtPrecio, TextBox txtCosto)
+        {
+            decimal.TryParse(txtPrecio.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal precio);
+            decimal.TryParse(txtCosto.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal costo);
+
+            if (costo >= precio)
+            {
+                MessageBox.Show("El precio de costo no puede ser mayor o igual al precio de venta", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCosto.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        // ─── VALIDAR PRODUCTO EXISTENTE (INVENTARIO) ─────────────────
+        public static bool ValidarProductoExiste(string nombreProducto)
+        {
+            clsConexion obj = new clsConexion();
+            try
+            {
+                obj.Abrir();
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT COUNT(*) FROM PRODUCTO WHERE nombre_producto = @nombre", obj.SqlC);
+                cmd.Parameters.AddWithValue("@nombre", nombreProducto);
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("El producto '" + nombreProducto + "' ya existe", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                return true;
+            }
+            finally
+            {
+                obj.Cerrar();
+            }
+        }
+
+        // ─── VALIDAR INVENTARIO COMPLETO ─────────────────────────────
+        public static bool ValidarInventario(
+            TextBox txtNombreProducto,
+            TextBox txtPrecio,
+            TextBox txtPrecioCosto,
+            TextBox txtStockInicial,
+            ComboBox cmbProveedor,
+            ComboBox cmbCategoria,
+            ComboBox cmbSucursal)
+        {
+            if (!ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial)) return false;
+            if (!ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal)) return false;
+            if (!ValidarDecimal(txtPrecio)) return false;
+            if (!ValidarDecimal(txtPrecioCosto)) return false;
+            if (!ValidarEntero(txtStockInicial)) return false;
+            if (!ValidarPositivo(txtPrecio)) return false;
+            if (!ValidarPositivo(txtPrecioCosto)) return false;
+            if (!ValidarPositivo(txtStockInicial)) return false;
+            if (!ValidarCostoMenorPrecio(txtPrecio, txtPrecioCosto)) return false;
+            if (!ValidarProductoExiste(txtNombreProducto.Text)) return false;
             return true;
         }
     }
