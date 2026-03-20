@@ -88,7 +88,7 @@ namespace TRAMADE
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
 
-            if (!clsValidar.ComboSeleccionado(cmbProducto.SelectedIndex, "Producto")) return;
+            if (!clsValidar.ComboSeleccionadoConIndiceMenorCero(cmbProducto.SelectedIndex, "Producto")) return;
 
             if (cmbProducto.SelectedIndex == -1 && cmbProducto.Items.Count > 0)
                 cmbProducto.SelectedIndex = 0;

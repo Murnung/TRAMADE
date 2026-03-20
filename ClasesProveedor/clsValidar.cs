@@ -575,6 +575,19 @@ namespace TRAMADE
         }
 
 
+        // ─── VALIDAR COMBO SELECCIONADO ───────────────────────────────
+        public static bool ComboSeleccionadoConIndiceMenorCero(int selectedValue, string nombreCampo)
+        {
+            if (selectedValue < 0)
+            {
+                MessageBox.Show($"Debe seleccionar una opción en '{nombreCampo}'.", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+
 
         //Validacion de existencia en lista de productos
         public static bool ListBoxConElementos(KryptonListBox lst, string nombreCampo)
