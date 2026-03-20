@@ -117,7 +117,7 @@ namespace TRAMADE
             // Si hay texto en el buscador, busca por ID
             if (!string.IsNullOrWhiteSpace(txtBuscar.Text))
             {
-                if (!clsValidacionesCompras.validarBuscarId(txtBuscar.Text.Trim())) return;
+                if (!clsValidar.NullOVacio(txtBuscar.Text.Trim(), "ID Solicitud")) return;
                 DataTable dt = ObjFc.BuscarCompra(ObjConexion, txtBuscar.Text);
                 if (dt != null)
                     dgvCompras.DataSource = dt;
@@ -125,7 +125,7 @@ namespace TRAMADE
             else
             {
                 // Si no hay texto, busca por fechas
-                if (!clsValidacionesCompras.validarFechaFiltro(dtDesde.Value, dtHasta.Value)) return;
+                if (!clsValidar.FechaFiltro(dtDesde.Value, dtHasta.Value)) return;
                 DataTable dt = ObjFc.FiltrarFechas(ObjConexion, dtDesde, dtHasta, txtBuscar.Text);
                 if (dt != null)
                     dgvCompras.DataSource = dt;

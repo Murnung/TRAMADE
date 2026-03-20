@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Globalization;
@@ -560,6 +561,95 @@ namespace TRAMADE
             MessageBox.Show("Debe seleccionar al menos una fila", "Validación",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
+        }
+
+        //Validar que exista una compra seleccionada a la hora de actualizar o insertar
+        public static bool IdSeleccionado(int id)
+        {
+            if (id == 0)
+            {
+                MessageBox.Show("Ingrese una solicitud de compra primero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+
+
+        //Validacion de existencia en lista de productos
+        public static bool ListBoxConElementos(KryptonListBox lst, string nombreCampo)
+        {
+
+            if (lst.Items.Count == 0)
+            {
+                MessageBox.Show($"Debe de agregar al menos un {nombreCampo}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+
+        //Validacion de buscar
+        public static bool BuscarId(string buscar)
+        {
+            if (string.IsNullOrWhiteSpace(buscar))
+            {
+                MessageBox.Show("Ingrese el id primero antes de buscar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!int.TryParse(buscar, out int numero) || numero <= 0)
+            {
+                MessageBox.Show("Solo se permiten números enteros positivos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+
+        }
+
+        // Validación para modificar cantidad
+        public static bool ModificarCantidad(int idSeleccionado, KryptonListBox lst, int cantidad)
+        {
+            if (idSeleccionado == 0)
+            {
+                MessageBox.Show("Primero busca una compra.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (lst.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecciona un producto de la lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (cantidad <= 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor a 0.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+        // Validación general para compras
+        public static bool ValidarCompras(KryptonComboBox proveedor, KryptonComboBox formaPago, KryptonComboBox producto)
+        {
+            if (!ComboSeleccionado(proveedor.SelectedIndex, "Proveedor")) return false;
+            if (!ComboSeleccionado(formaPago.SelectedIndex, "Forma de Pago")) return false;
+            if (!ComboSeleccionado(producto.SelectedIndex, "Producto")) return false;
+            return true;
+        }
+
+        // Validación para combo box sin resultado
+        public static bool validarComboSinResultado(KryptonComboBox cmb, string nombreCampo)
+        {
+            if (cmb.SelectedIndex == -1 || cmb.SelectedValue == null)
+            {
+                MessageBox.Show($"No se encontró ningún {nombreCampo} con ese criterio de búsqueda.",
+                    "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
         }
 
         //-----------------------------------------------------------------------------------------------------------

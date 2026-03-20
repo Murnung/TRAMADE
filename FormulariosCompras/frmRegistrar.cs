@@ -88,7 +88,7 @@ namespace TRAMADE
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
 
-            if (!clsValidacionesCompras.validarComboProducto(cmbProducto)) return;
+            if (!clsValidar.ComboSeleccionado(cmbProducto.SelectedIndex, "Producto")) return;
 
             if (cmbProducto.SelectedIndex == -1 && cmbProducto.Items.Count > 0)
                 cmbProducto.SelectedIndex = 0;
@@ -199,12 +199,13 @@ namespace TRAMADE
             if (cmbProveedor.SelectedIndex == -1 && cmbProveedor.Items.Count > 0)
                 cmbProveedor.SelectedIndex = 0;
 
-            // Validaciones ← Solo proveedor y forma de pago
-            if (!clsValidacionesCompras.validarComboProveedor(cmbProveedor)) return;
-            if (!clsValidacionesCompras.validarComboFormaPago(cmbFormaPago)) return;
-            if (!clsValidacionesCompras.validarFechaEntrega(dtEntrega.Value)) return;
+            // Validaciones
+            if (!clsValidar.ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return;
+            if (!clsValidar.ComboSeleccionado(cmbFormaPago.SelectedIndex, "Forma de Pago")) return;
+            if (!clsValidar.FechaEntrega(dtEntrega.Value)) return;
             if (!clsValidacionesCompras.validarListBox(lstProductos)) return;
             if (!clsValidacionesCompras.validarComboSinResultado(cmbProveedor, "proveedor")) return;
+
 
             try
             {
@@ -374,6 +375,11 @@ namespace TRAMADE
                 }
                 catch { }
             }
+        }
+
+        private void kryptonGroupBox1_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
