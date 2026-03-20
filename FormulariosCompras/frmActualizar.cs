@@ -51,13 +51,15 @@ namespace TRAMADE
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string busqueda = txtbBuscar.Text.Trim();
-            if (!clsValidacionesCompras.validarBuscarId(busqueda)) return;
-            if (string.IsNullOrEmpty(busqueda))
+            if (!clsValidar.NullOVacio(busqueda, "ID Solicitud")) return;
+            if (!clsValidar.SoloNumeros_KeyPress(new KeyPressEventArgs((char)0))) { } // KeyPress en txtbBuscar
+           
+            /*if (string.IsNullOrEmpty(busqueda))
             {
                 MessageBox.Show("Ingrese el id de la solicitud de compra");
                 return;
             }
-
+            */
             try
             {
                 ObjConexion.Abrir();
@@ -179,7 +181,7 @@ namespace TRAMADE
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (!clsValidacionesCompras.validarComboProducto(cmbProducto)) return;
+            if (!clsValidar.ComboSeleccionado(cmbProducto.SelectedIndex, "Producto")) return;
 
             if (cmbProducto.SelectedIndex == -1 && cmbProducto.Items.Count > 0)
                 cmbProducto.SelectedIndex = 0;
@@ -256,10 +258,10 @@ namespace TRAMADE
                 cmbProveedor.SelectedIndex = 0;
 
             // Validaciones ← Solo proveedor y forma de pago
-            if (!clsValidacionesCompras.validarIdSeleccionado(compraIdSeleccionado)) return;
-            if (!clsValidacionesCompras.validarComboProveedor(cmbProveedor)) return;
-            if (!clsValidacionesCompras.validarComboFormaPago(cmbFormaPago)) return;
-            if (!clsValidacionesCompras.validarFechaEntrega(dtEntrega.Value)) return;
+            if(!clsValidacionesCompras.validarIdSeleccionado(compraIdSeleccionado)) return;
+            if (!clsValidar.ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return;
+            if (!clsValidar.ComboSeleccionado(cmbFormaPago.SelectedIndex, "Forma de Pago")) return;
+            if (!clsValidar.FechaEntrega(dtEntrega.Value)) return;
             if (!clsValidacionesCompras.validarListBox(lstProductos)) return;
             if (!clsValidacionesCompras.validarComboSinResultado(cmbProveedor, "proveedor")) return;
 

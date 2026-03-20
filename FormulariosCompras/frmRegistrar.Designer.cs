@@ -424,6 +424,7 @@
             this.kryptonGroupBox1.Panel.Controls.Add(this.btnQuitar);
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtPrecio);
             this.kryptonGroupBox1.Panel.Controls.Add(this.lstProductos);
+            this.kryptonGroupBox1.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox1_Panel_Paint);
             this.kryptonGroupBox1.Size = new System.Drawing.Size(864, 551);
             this.kryptonGroupBox1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonGroupBox1.StateCommon.Back.Color2 = System.Drawing.Color.White;

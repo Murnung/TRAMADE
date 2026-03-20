@@ -11,7 +11,7 @@ namespace TRAMADE.ClasesCompras
     internal class clsValidacionesCompras
     {
    
-
+        
         //Validar que exista una compra seleccionada a la hora de actualizar o insertar
         public static bool validarIdSeleccionado(int id)
         {
@@ -22,7 +22,7 @@ namespace TRAMADE.ClasesCompras
             }
             return true;
         }
-
+        
 
 
         //Validacion de existencia en lista de productos
@@ -37,46 +37,13 @@ namespace TRAMADE.ClasesCompras
             return true;
         }
 
-        //Validacion de agregar producto
-        public static bool validarComboProducto(KryptonComboBox cmb)
-        {
-            if (cmb.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione un producto primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            return true;
-        }
-
-        //Validacion de agregar proveedor
-        public static bool validarComboProveedor(KryptonComboBox cmb)
-        {
-            if (cmb.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione un proveedor primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            return true;
-        }
-
-        //Validacion de agregar forma de pago
-        public static bool validarComboFormaPago(KryptonComboBox cmb)
-        {
-            if (cmb.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione una forma de pago primero primero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            return true;
-        }
-
 
         //Validacion de buscar
         public static bool validarBuscarId(string buscar)
         {
             if (string.IsNullOrWhiteSpace(buscar))
             {
-                MessageBox.Show("Ingrese el id de la solicitud de compra", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese el id primero antes de buscar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -89,65 +56,7 @@ namespace TRAMADE.ClasesCompras
             return true;
 
         }
-
-        //Valdacion de fecha de entrega
-        public static bool validarFechaEntrega(DateTime entrega)
-        {
-            if (entrega.Date < DateTime.Today)
-            {
-                MessageBox.Show("La fecha de entrega no puede ser menor a la fecha actual", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            return true;
-        }
-        //Validacion de fecha desde
-        public static bool validarFechaFiltro(DateTime desde, DateTime hasta)
-        {
-
-            if (desde.Date > DateTime.Today)
-            {
-                MessageBox.Show("La fecha de inicio del filtro no puede ser mayor a la fecha actual ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            if (hasta.Date < desde.Date)
-            {
-                MessageBox.Show("La fecha final del filtro  no puede ser menor a la fecha inicial ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            return true;
-        }
-        // Validación general que incluye todas
-        public static bool validar_todosLosCampos(KryptonComboBox proveedor, KryptonComboBox formaPago, KryptonComboBox producto)
-        {
-            bool valido = true;
-
-            if (proveedor.SelectedIndex == -1) valido = false;
-            if (formaPago.SelectedIndex == -1) valido = false;
-            if (producto.SelectedIndex == -1) valido = false;
-
-            if (!valido)
-            {
-                MessageBox.Show("Por favor, llene todos los campos vacíos", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            return true;
-
-        }
-
-        //Validacion para fila seleccionada
-        public static bool validarFilaSeleccionada(DataGridView dgv)
-        {
-            foreach (DataGridViewRow fila in dgv.Rows)
-            {
-                if (Convert.ToBoolean(fila.Cells["Seleccionar"].Value))
-                    return true;
-            }
-            MessageBox.Show("Debe seleccionar al menos una compra", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            return false;
-        }
+        
         // Validación para modificar cantidad
         public static bool validarModificarCantidad(int idSeleccionado, KryptonListBox lst, int cantidad)
         {
@@ -170,6 +79,24 @@ namespace TRAMADE.ClasesCompras
             }
 
             return true;
+        }
+        // Validación general que incluye todas
+        public static bool validar_todosLosCampos(KryptonComboBox proveedor, KryptonComboBox formaPago, KryptonComboBox producto)
+        {
+            bool valido = true;
+
+            if (proveedor.SelectedIndex == -1) valido = false;
+            if (formaPago.SelectedIndex == -1) valido = false;
+            if (producto.SelectedIndex == -1) valido = false;
+
+            if (!valido)
+            {
+                MessageBox.Show("Por favor, llene todos los campos vacíos", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+
         }
         // Validación para combo box sin resultado
         public static bool validarComboSinResultado(KryptonComboBox cmb, string nombreCampo)
