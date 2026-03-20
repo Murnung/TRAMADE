@@ -113,7 +113,7 @@ namespace TRAMADE
 
         private void kryptonButton12_Click(object sender, EventArgs e) // ABRIR LA VISTA PREVIA DE LA FACTURA
         {
-            if (clsValidacionesF.ValidarGridVacio(dgvDetalleFactura.Rows.Count, "Agregue productos para ver la vista previa.")) return;
+            if (clsValidar.ValidarGridVacio(dgvDetalleFactura.Rows.Count, "Agregue productos para ver la vista previa.")) return;
 
             frmVistaPrevia objVP = new frmVistaPrevia();
             objVP.txtNombreClienteVP.Text = txtNombreCliente.Text;
@@ -165,7 +165,7 @@ namespace TRAMADE
                 }
             }
 
-            string error = clsValidacionesF.ValidarEmisionFactura( // Validamos todos los datos antes de intentar emitir la factura
+            string error = clsValidar.ValidarEmisionFactura( // Validamos todos los datos antes de intentar emitir la factura
                 txtNombreCliente.Text.Trim(),
                 txtDireccionCliente.Text.Trim(),
                 txtIDVendedor.Text.Trim(),
@@ -183,7 +183,7 @@ namespace TRAMADE
                 return;
             }
 
-            if (!clsValidacionesF.PedirConfirmacion("¿Está seguro que desea emitir y guardar esta factura?")) return;
+            if (!clsValidar.PedirConfirmacion("¿Está seguro que desea emitir y guardar esta factura?")) return;
 
             try
             {
@@ -295,9 +295,9 @@ namespace TRAMADE
 
         private void btnDNICliente_Click(object sender, EventArgs e) // BOTÓN PARA BUSCAR EL CLIENTE POR DNI O RTN, CON VALIDACIONES ANTES DE REALIZAR LA BÚSQUEDA
         {
-            if (clsValidacionesF.ValidarCampoVacio(txtDNICliente.Text, "Por favor, escriba un DNI o RTN antes de buscar.")) return;
+            if (clsValidar.NullOVacio(txtDNICliente.Text, "Por favor, escriba un DNI o RTN antes de buscar.")) return;
 
-            if (!clsValidacionesF.EsDniRtnValido(txtDNICliente.Text))
+            if (!clsValidar.EsDniRtnValido(txtDNICliente.Text))
             {
                 MessageBox.Show("Formato incorrecto. No use espacios en blanco. El DNI debe tener exactamente 13 números y el RTN 14 números.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -308,7 +308,7 @@ namespace TRAMADE
 
         private void btnEliminarProducto_Click(object sender, EventArgs e) // BOTÓN PARA ELIMINAR EL PRODUCTO SELECCIONADO EN EL DETALLE DE LA FACTURA
         {
-            if (clsValidacionesF.ValidarFilaSeleccionada(dgvDetalleFactura.CurrentRow, "Por favor, seleccione un producto de la lista para eliminarlo."))
+            if (clsValidar.ValidarFilaSeleccionadaFactura(dgvDetalleFactura.CurrentRow, "Por favor, seleccione un producto de la lista para eliminarlo."))
             {
                 dgvDetalleFactura.Rows.Remove(dgvDetalleFactura.CurrentRow);
                 CalcularTotales();

@@ -5,6 +5,7 @@ namespace TRAMADE
 {
     public class clsValidacionesF
     {
+        /*
         public static bool ValidarCampoVacio(string texto, string mensajeError)
         {
             if (string.IsNullOrWhiteSpace(texto))
@@ -77,5 +78,6 @@ namespace TRAMADE
             if (documento.Contains(" ")) return false;
             return (documento.Length == 13 || documento.Length == 14);
         }
+        */
     }
 }
