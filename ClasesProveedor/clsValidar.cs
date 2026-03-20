@@ -144,7 +144,7 @@ namespace TRAMADE
         // ─── VALIDAR COMBO SELECCIONADO ───────────────────────────────
         public static bool ComboSeleccionado(int selectedValue, string nombreCampo)
         {
-            if (selectedValue < 0)
+            if (selectedValue <= 0)
             {
                 MessageBox.Show($"Debe seleccionar una opción en '{nombreCampo}'.", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
