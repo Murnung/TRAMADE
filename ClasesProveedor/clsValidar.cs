@@ -435,5 +435,47 @@ namespace TRAMADE
 
             return true;
         }
+
+        // ─── VALIDAR FECHA DE ENTREGA ─────────────────────────────────
+        public static bool FechaEntrega(DateTime entrega)
+        {
+            if (entrega.Date < DateTime.Today)
+            {
+                MessageBox.Show("La fecha de entrega no puede ser menor a la fecha actual", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        // ─── VALIDAR RANGO DE FECHAS (FILTRO) ────────────────────────
+        public static bool FechaFiltro(DateTime desde, DateTime hasta)
+        {
+            if (desde.Date > DateTime.Today)
+            {
+                MessageBox.Show("La fecha de inicio del filtro no puede ser mayor a la fecha actual", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (hasta.Date < desde.Date)
+            {
+                MessageBox.Show("La fecha final del filtro no puede ser menor a la fecha inicial", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        // ─── VALIDAR FILA SELECCIONADA EN DATAGRIDVIEW ────────────────
+        public static bool FilaSeleccionada(DataGridView dgv)
+        {
+            foreach (DataGridViewRow fila in dgv.Rows)
+                if (Convert.ToBoolean(fila.Cells["Seleccionar"].Value))
+                    return true;
+
+            MessageBox.Show("Debe seleccionar al menos una fila", "Validación",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return false;
+        }
     }
 }
