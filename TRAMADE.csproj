@@ -143,13 +143,11 @@
     <Compile Include="ClasesCompras\clsGraficoProductosCompras.cs" />
     <Compile Include="ClasesCompras\clsGraficoProveedoresCompras.cs" />
     <Compile Include="ClasesCompras\clsIndicadoresCompras.cs" />
-    <Compile Include="ClasesCompras\clsValidacionesCompras.cs" />
     <Compile Include="ClasesFacturacion\clsClienteF.cs" />
     <Compile Include="ClasesFacturacion\clsEmitirFacturaF.cs" />
     <Compile Include="ClasesFacturacion\clsFacturaF.cs" />
     <Compile Include="ClasesFacturacion\clsHistorialFacturaF.cs" />
     <Compile Include="ClasesFacturacion\clsProductoF.cs" />
-    <Compile Include="ClasesFacturacion\clsValidacionesF.cs" />
     <Compile Include="ClasesMenu\clsClientesPanel.cs" />
     <Compile Include="ClasesMenu\clsDBCon.cs" />
     <Compile Include="FormulariosMenú\frmVerificacionFacial.cs">
@@ -187,7 +185,6 @@
     <Compile Include="ClasesCliente\clsCliente.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsSesion.cs" />
-    <Compile Include="ClasesCliente\clsValidarClientes.cs" />
     <Compile Include="DatasSet Reportes\dsProductos.cs">
       <DependentUpon>dsProductos.xsd</DependentUpon>
     </Compile>
