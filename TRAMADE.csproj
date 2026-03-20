@@ -139,8 +139,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClasesCliente\clsGraficaPorcentajeClientes.cs" />
-    <Compile Include="ClasesCliente\clsGraficaTopDepa.cs" />
     <Compile Include="ClasesCompras\clsGraficoEstadoCompras.cs" />
     <Compile Include="ClasesCompras\clsGraficoProductosCompras.cs" />
     <Compile Include="ClasesCompras\clsGraficoProveedoresCompras.cs" />
