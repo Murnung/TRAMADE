@@ -7,9 +7,11 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Krypton.Toolkit;
 using System.Linq.Expressions;
+using System.Drawing;
+
 
 namespace TRAMADE.ClasesCliente
 {
@@ -389,6 +391,70 @@ namespace TRAMADE.ClasesCliente
             }
             finally { conexion.Cerrar(); }
             return dt;
+        }
+
+        public  void ConfigurarTipo(string tipoCliente,Control txtRTN,Control cmbRazonSocial,Control txtDNI)
+        {
+            if (tipoCliente == "PERSONA JURÍDICA")
+            {
+             
+                txtRTN.Enabled = true;
+                txtRTN.BackColor = Color.White;
+
+                cmbRazonSocial.Enabled = true;
+                cmbRazonSocial.BackColor = Color.White;
+
+                txtDNI.Enabled = false;
+                txtDNI.Text = "";
+                txtDNI.BackColor = Color.LightGray;
+            }
+            if (tipoCliente == "PERSONA NATURAL")
+            {
+                
+                txtRTN.Enabled = false;
+                txtRTN.Text = "";
+                txtRTN.BackColor = Color.LightGray;
+
+                cmbRazonSocial.Enabled = false;
+                if (cmbRazonSocial is ComboBox cb) 
+                {
+                    cb.SelectedIndex = -1;
+                }
+                cmbRazonSocial.BackColor = Color.LightGray;
+
+              
+                txtDNI.Enabled = true;
+                txtDNI.BackColor = Color.White;
+            }
+            
+        }
+        public  DataTable BuscarCliente(string busqueda, clsConexion conexion)
+        {
+            try
+            {
+                conexion.Abrir();
+                
+                string consulta = @"SELECT C.*, CI.id_departamento 
+                            FROM CLIENTE C 
+                            INNER JOIN CIUDAD CI ON C.id_ciudad = CI.id_ciudad 
+                            WHERE C.rtn_cliente = @busqueda OR C.dni_cliente = @busqueda";
+
+                SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
+                cmd.Parameters.AddWithValue("@busqueda", busqueda);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la consulta de búsqueda: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
         }
 
     }

@@ -416,6 +416,8 @@ namespace TRAMADE
             }
             finally { ObjConexion.Cerrar(); }
         }
+
+
         // ─── VALIDAR DATOS DE CONTACTO COMUNES PARA CLIENTES Y PROVEEDORES ───────────────────────────────
         private static bool ValidarDatosContactoBase(
         string nombre, Control cNombre, string etiquetaNombre,
@@ -423,12 +425,12 @@ namespace TRAMADE
         string tel, Control cTel,
         string correo, Control cCorreo)
         {
-            // --- Validación de Nombre ---
+            
             if (!NullOVacio(nombre, etiquetaNombre, cNombre)) return false;
             if (!SinEspaciosExtremos(nombre, etiquetaNombre, cNombre)) return false;
             if (!SinDobleEspacio(nombre, etiquetaNombre, cNombre)) return false;
             if (!SinSoloEspeciales(nombre, etiquetaNombre, cNombre)) return false;
-            if (!SinTresLetrasIguales(nombre, etiquetaNombre)) return false; // Nueva regla integrada
+            if (!SinTresLetrasIguales(nombre, etiquetaNombre)) return false; 
             if (!LongitudMinima(nombre, etiquetaNombre, 3, cNombre)) return false;
             if (!LongitudMaxima(nombre, etiquetaNombre, 50, cNombre)) return false;
 
@@ -436,13 +438,13 @@ namespace TRAMADE
             if (!NullOVacio(direccion, "Dirección", cDir)) return false;
             if (!SinEspaciosExtremos(direccion, "Dirección", cDir)) return false;
             if (!SinDobleEspacio(direccion, "Dirección", cDir)) return false;
-            if (!SinTresLetrasIguales(direccion, "Dirección")) return false; // Nueva regla integrada
+            if (!SinTresLetrasIguales(direccion, "Dirección")) return false; 
             if (!LongitudMinima(direccion, "Dirección", 5, cDir)) return false;
 
             // --- Validación de Teléfono ---
             if (!NullOVacio(tel, "Teléfono", cTel)) return false;
             if (!Telefono(tel, cTel)) return false;
-            if (!SinCuatroNumerosIguales(tel, "Teléfono")) return false; // Nueva regla integrada
+            if (!SinCuatroNumerosIguales(tel, "Teléfono")) return false;
 
             // --- Validación de Correo ---
             if (!NullOVacio(correo, "Correo Electrónico", cCorreo)) return false;
@@ -459,24 +461,24 @@ namespace TRAMADE
         string telefono, Control ctrlTelefono, string correo, Control ctrlCorreo,
         int idClasificacion, int idTerminos, int idProveedorActual = 0)
         {
-            // 1. Validaciones Comunes (Nombre Comercial para proveedores)
+            
             if (!ValidarDatosContactoBase(nombre, ctrlNombre, "Nombre Comercial", direccion, ctrlDireccion, telefono, ctrlTelefono, correo, ctrlCorreo))
                 return false;
 
-            // 2. Razón Social (Combo)
+            
             if (string.IsNullOrWhiteSpace(razon))
             {
                 MessageBox.Show("Debe seleccionar una Razón Social.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            // 3. RTN y Duplicados
+            
             if (!NullOVacio(rtn, "RTN", ctrlRtn)) return false;
             if (!RTN(rtn, ctrlRtn)) return false;
             if (!RTNDuplicado(rtn, idProveedorActual, ctrlRtn)) return false;
             if (!CorreoDuplicado(correo, idProveedorActual, ctrlCorreo)) return false;
 
-            // 4. Combos de Clasificación y Términos
+          
             if (!ComboSeleccionado(idClasificacion, "Clasificación")) return false;
             if (!ComboSeleccionado(idTerminos, "Términos de Pago")) return false;
             if (!ClasificacionTerminos(idClasificacion, idTerminos)) return false;
@@ -490,11 +492,11 @@ namespace TRAMADE
         string tel, Control cTel, string correo, Control cCorreo,
         string direccion, Control cDir, object depto, object ciudad, int idActual = 0)
         {
-            // 1. Validaciones Comunes
+            
             if (!ValidarDatosContactoBase(nombre, cNombre, "Nombre", direccion, cDir, tel, cTel, correo, cCorreo))
                 return false;
 
-            // 2. Lógica por Tipo de Cliente
+            
             if (tipo == "PERSONA NATURAL")
             {
                 if (!DNI(dni, cDni)) return false;
@@ -511,7 +513,7 @@ namespace TRAMADE
                 if (!ExisteDatoDuplicado(rtn, "rtn_cliente", "RTN", idActual)) return false;
             }
 
-            // 3. Ubicación
+          
             if (depto == null || ciudad == null)
             {
                 MessageBox.Show("Seleccione una ubicación válida (Departamento y Ciudad).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);

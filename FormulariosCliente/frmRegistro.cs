@@ -78,23 +78,13 @@ namespace TRAMADE
 
             cmbTipoCliente.SelectedItem = null;
             cmbDepartamento.SelectedItem = null;
-
             cmbCiudad.DataSource = null;
             cmbCiudad.Items.Clear();
 
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
-            txtRTN.Text = "";
-            txtRTN.Enabled = false;
-            txtRTN.BackColor = Color.LightGray;
-
-            txtDNI.Text = "";
-            txtDNI.Enabled = false;
-            txtDNI.BackColor = Color.LightGray;
-
             cmbRazonSocial.SelectedIndex = -1;
-            cmbRazonSocial.Enabled = false;
-            cmbRazonSocial.BackColor = Color.LightGray;
+            txtRTN.BackColor = txtDNI.BackColor = cmbRazonSocial.BackColor = Color.LightGray;
 
             txtNombre.Focus();
 
@@ -162,6 +152,7 @@ namespace TRAMADE
 
         private void cmbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*
             if (cmbTipoCliente.Text == "PERSONA JURÍDICA")
             {
                 txtRTN.Enabled = true;
@@ -187,7 +178,8 @@ namespace TRAMADE
                 txtDNI.Enabled = true;
                 txtDNI.BackColor = Color.White;
 
-            }
+            }*/
+            ObjCliente.ConfigurarTipo(cmbTipoCliente.Text, txtRTN, cmbRazonSocial, txtDNI);
         }
 
         private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)

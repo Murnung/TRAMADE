@@ -23,11 +23,12 @@ namespace TRAMADE
         {
             InitializeComponent();
             txtID.ReadOnly = true;
+            txtBuscar.Focus();
         }
 
         private void frmRegistroNuevo_Load(object sender, EventArgs e)
         {
-
+            txtBuscar.Focus();
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtFecha.ReadOnly = true;
             txtID.ReadOnly = true;
@@ -67,17 +68,9 @@ namespace TRAMADE
 
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
-            txtRTN.Text = "";
-            txtRTN.Enabled = false;
-            txtRTN.BackColor = Color.Gray;
-
-            txtDNI.Text = "";
-            txtDNI.Enabled = false;
-            txtDNI.BackColor = Color.Gray;
-
-            cmbRazonSocial.SelectedIndex = -1;
-            cmbRazonSocial.Enabled = false;
-            cmbRazonSocial.BackColor = Color.Gray;
+            cmbRazonSocial.SelectedIndex = -1;           
+            txtRTN.Text = txtDNI.Text = "";
+            txtRTN.BackColor = txtDNI.BackColor = cmbRazonSocial.BackColor = Color.LightGray;
         }
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
@@ -99,17 +92,8 @@ namespace TRAMADE
             }
             try
             {
-                ObjConexion.Abrir();
-                string consulta = @"SELECT C.*, CI.id_departamento 
-                    FROM CLIENTE C
-                    INNER JOIN CIUDAD CI ON C.id_ciudad = CI.id_ciudad
-                    WHERE C.rtn_cliente = @busqueda or C.dni_cliente = @busqueda"; 
-                SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC);
-                cmd.Parameters.AddWithValue("@busqueda", busqueda);
 
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataTable dt = ObjCliente.BuscarCliente(busqueda, ObjConexion);
 
                 if (dt.Rows.Count > 0)
                 {
@@ -163,11 +147,7 @@ namespace TRAMADE
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al buscar cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                ObjConexion.Cerrar();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -186,32 +166,7 @@ namespace TRAMADE
 
         private void cmbTipoCliente_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (cmbTipoCliente.Text == "PERSONA JURÍDICA")
-            {
-                txtRTN.Enabled = true;
-                txtRTN.BackColor = Color.White;
-
-                cmbRazonSocial.Enabled = true;
-                cmbRazonSocial.BackColor = Color.White;
-
-                txtDNI.Enabled = false;
-                txtDNI.Text = "";
-                txtDNI.BackColor = Color.Gray;
-            }
-            if (cmbTipoCliente.Text == "PERSONA NATURAL")
-            {
-                txtRTN.Enabled = false;
-                txtRTN.Text = "";
-                txtRTN.BackColor = Color.Gray;
-
-                cmbRazonSocial.Enabled = false;
-                cmbRazonSocial.SelectedIndex = -1;
-                cmbRazonSocial.BackColor = Color.Gray;
-
-                txtDNI.Enabled = true;
-                txtDNI.BackColor = Color.White;
-
-            }
+            ObjCliente.ConfigurarTipo(cmbTipoCliente.Text, txtRTN, cmbRazonSocial, txtDNI);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
