@@ -82,7 +82,7 @@ namespace TRAMADE
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial))
+            /*if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial))
                 return;
 
             if (!clsValidaciones.ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal))
@@ -110,7 +110,11 @@ namespace TRAMADE
                 return;
 
             if (!clsValidaciones.ValidarProductoExiste(txtNombreProducto.Text))
-                return;
+                return;*/
+
+            if (!clsValidar.ValidarInventario(
+            txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial,
+            cmbProveedor, cmbCategoria, cmbSucursal)) return;
 
             clsConexion obj = new clsConexion();
             obj.Abrir();
