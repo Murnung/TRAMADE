@@ -769,7 +769,7 @@ namespace TRAMADE
         }
 
         // ─── VALIDAR INVENTARIO COMPLETO ─────────────────────────────
-        public static bool ValidarInventario(
+        /*public static bool ValidarInventario(
             TextBox txtNombreProducto,
             TextBox txtPrecio,
             TextBox txtPrecioCosto,
@@ -787,9 +787,6 @@ namespace TRAMADE
             if (!ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return false;
             if (!ComboSeleccionado(cmbCategoria.SelectedIndex, "Categoría")) return false;
             if (!ComboSeleccionado(cmbSucursal.SelectedIndex, "Sucursal")) return false;
-            if (!ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return false;
-            if (!ComboSeleccionado(cmbCategoria.SelectedIndex, "Categoría")) return false;
-            if (!ComboSeleccionado(cmbSucursal.SelectedIndex, "Sucursal")) return false;
             if (!ValidarDecimal(txtPrecio)) return false;
             if (!ValidarDecimal(txtPrecioCosto)) return false;
             if (!ValidarEntero(txtStockInicial)) return false;
@@ -799,6 +796,40 @@ namespace TRAMADE
             if (!ValidarCostoMenorPrecio(txtPrecio, txtPrecioCosto)) return false;
             if (!ValidarProductoExiste(txtNombreProducto.Text)) return false;
             return true;
+        }*/
+
+        public static bool ValidarInventario(
+        TextBox txtNombreProducto,
+        TextBox txtPrecio,
+        TextBox txtPrecioCosto,
+        TextBox txtStockInicial,
+        ComboBox cmbCategoria,
+        ComboBox cmbSucursal,
+        ComboBox cmbProveedor = null,
+        bool esNuevo = false)
+        {
+            if (!NullOVacio(txtNombreProducto.Text, "Nombre Producto")) return false;
+            if (!NullOVacio(txtPrecio.Text, "Precio")) return false;
+            if (!NullOVacio(txtPrecioCosto.Text, "Precio Costo")) return false;
+            if (!NullOVacio(txtStockInicial.Text, "Stock Inicial")) return false;
+            if (!ComboSeleccionado(cmbCategoria.SelectedIndex, "Categoría")) return false;
+            if (!ComboSeleccionado(cmbSucursal.SelectedIndex, "Sucursal")) return false;
+            if (cmbProveedor != null)
+                if (!ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return false;
+            if (!ValidarDecimal(txtPrecio)) return false;
+            if (!ValidarDecimal(txtPrecioCosto)) return false;
+            if (!ValidarEntero(txtStockInicial)) return false;
+            if (!ValidarPositivo(txtPrecio)) return false;
+            if (!ValidarPositivo(txtPrecioCosto)) return false;
+            if (!ValidarPositivo(txtStockInicial)) return false;
+            if (!ValidarCostoMenorPrecio(txtPrecio, txtPrecioCosto)) return false;
+            if (esNuevo)
+                if (!ValidarProductoExiste(txtNombreProducto.Text)) return false;
+            return true;
         }
+
+
+
+
     }
 }

@@ -112,9 +112,13 @@ namespace TRAMADE
             if (!clsValidaciones.ValidarProductoExiste(txtNombreProducto.Text))
                 return;*/
 
+            /*if (!clsValidar.ValidarInventario(
+            txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial,
+            cmbProveedor, cmbCategoria, cmbSucursal)) return;*/
+
             if (!clsValidar.ValidarInventario(
             txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial,
-            cmbProveedor, cmbCategoria, cmbSucursal)) return;
+            cmbCategoria, cmbSucursal, cmbProveedor, esNuevo: true)) return;
 
             clsConexion obj = new clsConexion();
             obj.Abrir();

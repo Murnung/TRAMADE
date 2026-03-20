@@ -249,7 +249,7 @@ namespace TRAMADE
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStock))
+            /*if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStock))
                 return;
 
             if (!clsValidaciones.ValidarComboBox(cmbCategoria, cmbSucursal))
@@ -274,7 +274,15 @@ namespace TRAMADE
                 return;
 
             if (!clsValidaciones.ValidarPositivo(txtStock))
-                return;
+                return;*/
+
+            /*if (!clsValidar.ValidarInventario(
+            txtNombreProducto, txtPrecio, txtPrecioCosto, txtStock,
+            cmbCategoria, cmbSucursal)) return;*/
+
+            if (!clsValidar.ValidarInventario(
+            txtNombreProducto, txtPrecio, txtPrecioCosto, txtStock,
+            cmbCategoria, cmbSucursal)) return;
 
             if (lstProveedores.Items.Count == 0)
             {
