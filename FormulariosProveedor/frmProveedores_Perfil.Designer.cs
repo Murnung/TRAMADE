@@ -38,8 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSalir = new Krypton.Toolkit.KryptonButton();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -87,7 +85,6 @@
             this.btnEditar.Size = new System.Drawing.Size(116, 50);
             this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
             this.btnEditar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
-            this.btnEditar.StateCommon.Border.Rounding = 10F;
             this.btnEditar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
             this.btnEditar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.StateTracking.Back.Color1 = System.Drawing.Color.Silver;
@@ -132,29 +129,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Location = new System.Drawing.Point(9, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(931, 65);
             this.panel1.TabIndex = 34;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(874, 13);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(37, 38);
-            this.btnSalir.StateNormal.Back.Color1 = System.Drawing.Color.White;
-            this.btnSalir.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.btnSalir.StatePressed.Back.Color1 = System.Drawing.Color.Red;
-            this.btnSalir.StatePressed.Back.Color2 = System.Drawing.Color.Red;
-            this.btnSalir.StateTracking.Back.Color1 = System.Drawing.Color.Red;
-            this.btnSalir.StateTracking.Back.Color2 = System.Drawing.Color.Red;
-            this.btnSalir.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
-            this.btnSalir.TabIndex = 9;
-            this.btnSalir.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnSalir.Values.Image = global::TRAMADE.Properties.Resources.Cerrar;
-            this.btnSalir.Values.Text = "";
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmProveedores_Perfil
             // 
@@ -170,12 +148,10 @@
             this.Controls.Add(this.lstDatosdeContacto);
             this.Controls.Add(this.lstInformacionGeneral);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProveedores_Perfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProveedores_Perfil";
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +167,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private Krypton.Toolkit.KryptonButton btnSalir;
     }
 }

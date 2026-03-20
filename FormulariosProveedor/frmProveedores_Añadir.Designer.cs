@@ -158,7 +158,6 @@
             this.btnGuardar.Size = new System.Drawing.Size(144, 50);
             this.btnGuardar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnGuardar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnGuardar.StateCommon.Border.Rounding = 10F;
             this.btnGuardar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
             this.btnGuardar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -181,7 +180,6 @@
             this.btnCancelar.Size = new System.Drawing.Size(144, 50);
             this.btnCancelar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
             this.btnCancelar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(107)))), ((int)(((byte)(111)))));
-            this.btnCancelar.StateCommon.Border.Rounding = 10F;
             this.btnCancelar.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.Control;
             this.btnCancelar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.StateTracking.Back.Color1 = System.Drawing.Color.Silver;
@@ -312,7 +310,7 @@
             this.cmbRazonSocial.DropDownWidth = 329;
             this.cmbRazonSocial.Location = new System.Drawing.Point(318, 197);
             this.cmbRazonSocial.Name = "cmbRazonSocial";
-            this.cmbRazonSocial.Size = new System.Drawing.Size(329, 26);
+            this.cmbRazonSocial.Size = new System.Drawing.Size(329, 41);
             this.cmbRazonSocial.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRazonSocial.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbRazonSocial.TabIndex = 63;
@@ -343,7 +341,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProveedores_Añadir";
             this.Text = "frmProveedores_Añadir";
