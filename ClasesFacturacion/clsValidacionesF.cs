@@ -13,8 +13,8 @@ namespace TRAMADE
                 return true;
             }
             return false;
-        }
 
+        }
         public static bool ValidarUsuarioLogueado(int idUsuario)
         {
             if (idUsuario == 0)
