@@ -256,7 +256,7 @@ namespace TRAMADE
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            if (!clsValidacionesCompras.validarListBox(lstProductos)) return;
+            if (!clsValidar.ListBoxConElementos(lstProductos,"producto")) return;
             ObjOp.eliminarProducto(lstProductos);
             txtTotal.Text = ObjOp.TotalLista().ToString("0.00");
         }

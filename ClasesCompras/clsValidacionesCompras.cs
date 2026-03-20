@@ -10,7 +10,7 @@ namespace TRAMADE.ClasesCompras
 {
     internal class clsValidacionesCompras
     {
-   
+   /*
         
         //Validar que exista una compra seleccionada a la hora de actualizar o insertar
         public static bool validarIdSeleccionado(int id)
@@ -108,6 +108,6 @@ namespace TRAMADE.ClasesCompras
                 return false;
             }
             return true;
-        }
+        }*/
     }
 }
