@@ -181,7 +181,7 @@
     <Compile Include="ClasesProveedor\clsProveedores_Perfil.cs" />
     <Compile Include="ClasesProveedor\clsCombobox.cs" />
     <Compile Include="ClasesProveedor\clsToolTip.cs" />
-    <Compile Include="ClasesProveedor\clsValidar.cs" />
+    <Compile Include="Validaciones Generales\clsValidar.cs" />
     <Compile Include="ClasesCliente\clsCliente.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsSesion.cs" />
@@ -392,7 +392,6 @@
     <Compile Include="ClasesInventario\clsMensajes.cs" />
     <Compile Include="ClasesInventario\clsProducto.cs" />
     <Compile Include="ClasesInventario\clsProductoDAL.cs" />
-    <Compile Include="ClasesInventario\clsValidaciones.cs" />
     <Compile Include="FormulariosInventario\frmEditarInv.cs">
       <SubType>Form</SubType>
     </Compile>

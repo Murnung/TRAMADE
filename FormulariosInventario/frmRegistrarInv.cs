@@ -82,39 +82,6 @@ namespace TRAMADE
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            /*if (!clsValidaciones.ValidarCamposVacios(txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial))
-                return;
-
-            if (!clsValidaciones.ValidarComboBox(cmbProveedor, cmbCategoria, cmbSucursal))
-                return;
-
-            if (!clsValidaciones.ValidarDecimal(txtPrecio))
-                return;
-
-            if (!clsValidaciones.ValidarDecimal(txtPrecioCosto))
-                return;
-
-            if (!clsValidaciones.ValidarEntero(txtStockInicial))
-                return;
-
-            if (!clsValidaciones.ValidarPositivo(txtPrecio))
-                return;
-
-            if (!clsValidaciones.ValidarPositivo(txtPrecioCosto))
-                return;
-
-            if (!clsValidaciones.ValidarPositivo(txtStockInicial))
-                return;
-
-            if (!clsValidaciones.ValidarCostoMenorPrecio(txtPrecio, txtPrecioCosto))
-                return;
-
-            if (!clsValidaciones.ValidarProductoExiste(txtNombreProducto.Text))
-                return;*/
-
-            /*if (!clsValidar.ValidarInventario(
-            txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial,
-            cmbProveedor, cmbCategoria, cmbSucursal)) return;*/
 
             if (!clsValidar.ValidarInventario(
             txtNombreProducto, txtPrecio, txtPrecioCosto, txtStockInicial,
