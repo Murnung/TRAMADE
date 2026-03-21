@@ -139,6 +139,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesAdministrador\clsUsuario.cs" />
     <Compile Include="ClasesCompras\clsGraficoEstadoCompras.cs" />
     <Compile Include="ClasesCompras\clsGraficoProductosCompras.cs" />
     <Compile Include="ClasesCompras\clsGraficoProveedoresCompras.cs" />
@@ -150,6 +151,26 @@
     <Compile Include="ClasesFacturacion\clsProductoF.cs" />
     <Compile Include="ClasesMenu\clsClientesPanel.cs" />
     <Compile Include="ClasesMenu\clsDBCon.cs" />
+    <Compile Include="FormulariosAdministrador\frmAdministrador.cs" />
+    <Compile Include="FormulariosAdministrador\frmAdministrador.Designer.cs">
+      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmBitacora.cs" />
+    <Compile Include="FormulariosAdministrador\frmBitacora.Designer.cs">
+      <DependentUpon>frmBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmEditar.cs" />
+    <Compile Include="FormulariosAdministrador\frmEditar.Designer.cs">
+      <DependentUpon>frmEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmNuevo.cs" />
+    <Compile Include="FormulariosAdministrador\frmNuevo.Designer.cs">
+      <DependentUpon>frmNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdministrador\frmUsuarios.cs" />
+    <Compile Include="FormulariosAdministrador\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulariosMenú\frmVerificacionFacial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +325,21 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmAdministrador.resx">
+      <DependentUpon>frmAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmBitacora.resx">
+      <DependentUpon>frmBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmEditar.resx">
+      <DependentUpon>frmEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmNuevo.resx">
+      <DependentUpon>frmNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdministrador\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCompras\frmActualizar.resx">
       <DependentUpon>frmActualizar.cs</DependentUpon>
