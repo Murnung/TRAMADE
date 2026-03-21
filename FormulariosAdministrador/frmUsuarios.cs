@@ -29,11 +29,14 @@ namespace TRAMADE
 
         private void RecargarUsuarios()
         {
-            string consulta = "select * from VistaUsuarioTabla";
-            SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dgbUsuarios.DataSource = dt;
+            DataTable dt = ObjUsuario.obtenerUsuariosTabla(ObjConexion);
+            if (dt != null)
+            {
+                dgbUsuarios.DataSource = dt;
+                chkActivar.Enabled = false;
+                chkActivar.Checked = false;
+                btnActualizar.Enabled = false;
+            }
         }
 
 
@@ -66,22 +69,19 @@ namespace TRAMADE
         {
             try
             {
-                ObjConexion.Abrir(); // Abrir la conexión
                 RecargarUsuarios();
 
                 chkActivar.Enabled = false;
+                btnActualizar.Enabled = false;
+
                 dgbUsuarios.Columns["ID rol"].Visible = false;
                 dgbUsuarios.Columns["ID sucursal"].Visible = false;
                 dgbUsuarios.Columns["ID estado"].Visible = false;
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos: " + ex.Message);
-            }
-            finally
-            {
-                ObjConexion.Cerrar(); // Siempre cerrar la conexión
+                MessageBox.Show("Error al iniciar formulario: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -124,7 +124,7 @@ namespace TRAMADE
             }
 
             chkActivar.Enabled = false; // vuelve a deshabilitar
-
+            btnActualizar.Enabled = false;
 
             bool ok = ObjUsuario.cambiarEstado(ObjConexion, id, estado);
 
@@ -147,42 +147,24 @@ namespace TRAMADE
             if (e.RowIndex >= 0)
             {
                 chkActivar.Enabled = true;
+                btnActualizar.Enabled = true;
                 chkActivar.Checked = Convert.ToInt32(dgbUsuarios.Rows[e.RowIndex].Cells["ID estado"].Value) == 1;
             }
         }
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
         {
-            try
+            string nombre = txtBuscar.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nombre))
             {
-                string nombre = txtBuscar.Text.Trim();
-                if (string.IsNullOrWhiteSpace(nombre))
-                {
-                    RecargarUsuarios();
-                    ObjConexion.Cerrar();
-                    return;
-                }
-                ObjConexion.Abrir();
-
-                // Prepara el comando SQL y agrega el parámetro con comodín %
-                string consulta = "select * from VistaUsuarioTabla where Nombre like @nombre";
-                SqlCommand cmd = new SqlCommand(consulta, ObjConexion.SqlC);
-                cmd.Parameters.AddWithValue("@nombre",nombre);
-
-                // Ejecuta la consulta y llena un DataTable con los resultados
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable resultado = new DataTable();
-                adapter.Fill(resultado);
-
-                dgbUsuarios.DataSource = resultado;
-
-                ObjConexion.Cerrar();
+                RecargarUsuarios();
+                return;
             }
-            catch (Exception ex)
-            {
-                ObjConexion.Cerrar();
-                MessageBox.Show("Error al buscar: " + ex.Message);
-            }
+
+            DataTable dt = ObjUsuario.buscarUsuariosPorNombre(ObjConexion, nombre);
+            if (dt != null)
+                dgbUsuarios.DataSource = dt;
 
         }
 

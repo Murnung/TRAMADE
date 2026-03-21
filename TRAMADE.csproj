@@ -139,6 +139,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesAdministrador\clsBitacora.cs" />
     <Compile Include="ClasesAdministrador\clsUsuario.cs" />
     <Compile Include="ClasesCompras\clsGraficoEstadoCompras.cs" />
     <Compile Include="ClasesCompras\clsGraficoProductosCompras.cs" />
@@ -157,19 +158,27 @@
     <Compile Include="FormulariosAdministrador\frmAdministrador.Designer.cs">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmBitacora.cs" />
+    <Compile Include="FormulariosAdministrador\frmBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormulariosAdministrador\frmBitacora.Designer.cs">
       <DependentUpon>frmBitacora.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmEditar.cs" />
+    <Compile Include="FormulariosAdministrador\frmEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormulariosAdministrador\frmEditar.Designer.cs">
       <DependentUpon>frmEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmNuevo.cs" />
+    <Compile Include="FormulariosAdministrador\frmNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormulariosAdministrador\frmNuevo.Designer.cs">
       <DependentUpon>frmNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosAdministrador\frmUsuarios.cs" />
+    <Compile Include="FormulariosAdministrador\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormulariosAdministrador\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>

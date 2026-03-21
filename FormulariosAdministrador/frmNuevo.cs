@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -64,6 +65,19 @@ namespace TRAMADE
                 MessageBox.Show("Llene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            // Validar nombre
+             if (!clsValidar.NullOVacio(txtNombre.Text, "Nombre", txtNombre)) return;
+            if (!clsValidar.SinEspaciosExtremos(txtNombre.Text, "Nombre", txtNombre)) return;
+            if (!clsValidar.SinDobleEspacio(txtNombre.Text, "Nombre", txtNombre)) return;
+            if (!clsValidar.LongitudMinima(txtNombre.Text, "Nombre", 3, txtNombre)) return;
+            if (!clsValidar.LongitudMaxima(txtNombre.Text, "Nombre", 50, txtNombre)) return;
+
+            // Validar correo electrónico completo
+            if (!clsValidar.ValidarCorreoUsuario(txtCorreo.Text.Trim(), txtCorreo)) return;
+
+            // Validar contraseña
+            if (!clsValidar.LongitudMinima(txtContraseña.Text, "Contraseña", 6, txtContraseña)) return;
+            if (!clsValidar.LongitudMaxima(txtContraseña.Text, "Contraseña", 20, txtContraseña)) return;
 
             //Asignar valores al objeto
             ObjUsuario.setNombre(txtNombre.Text.Trim());

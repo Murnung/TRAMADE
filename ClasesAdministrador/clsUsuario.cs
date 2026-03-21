@@ -132,16 +132,36 @@ namespace TRAMADE.ClasesAdministrador
             }
         }
 
-        public bool actualizarUsuario(clsConexion conexion, int idUsuario,
-                              string nombre, string correo, string contrasena)
+        public bool actualizarUsuario(clsConexion conexion, int idUsuario,string nombre, string correo, string contrasena)
         {
             try
             {
                 conexion.Abrir();
 
+                // Si no se ingresó contraseña nueva, recuperar la actual de la BD
+                string contrasenaFinal = contrasena;
+
+                if (string.IsNullOrWhiteSpace(contrasena))
+                {
+                    SqlCommand cmdObtener = new SqlCommand(
+                        "SELECT password_usuario FROM USUARIO WHERE id_usuario = @id",
+                        conexion.SqlC);
+                    cmdObtener.Parameters.AddWithValue("@id", idUsuario);
+
+                    object resultado = cmdObtener.ExecuteScalar();
+
+                    if (resultado == null || resultado == DBNull.Value)
+                    {
+                        MessageBox.Show("No se pudo recuperar la contraseña actual.", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+
+                    contrasenaFinal = resultado.ToString();
+                }
+
+                // Ejecutar el SP con la contraseña correcta (nueva o la que ya tenía)
                 SqlCommand comando = new SqlCommand("PA_ACTUALIZAR_USUARIO", conexion.SqlC);
-
-
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@id_usuario", idUsuario);
@@ -150,15 +170,15 @@ namespace TRAMADE.ClasesAdministrador
                 comando.Parameters.AddWithValue("@id_sucursal", sucursal);
                 comando.Parameters.AddWithValue("@nombre_usuario", nombre);
                 comando.Parameters.AddWithValue("@correo_usuario", correo);
-                comando.Parameters.AddWithValue("@password_usuario", contrasena);
+                comando.Parameters.AddWithValue("@password_usuario", contrasenaFinal);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
-
                 return filasAfectadas > 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al actualizar usuario: " + ex.Message);
+                MessageBox.Show("Error al actualizar usuario: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -186,6 +206,56 @@ namespace TRAMADE.ClasesAdministrador
             {
                 MessageBox.Show("Error al actualizar el estado del usuario: " + ex.Message);
                 return false;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+        // ─── RECARGAR TODOS LOS USUARIOS ─────────────────────────────
+        public DataTable obtenerUsuariosTabla(clsConexion conexion)
+        {
+            try
+            {
+                conexion.Abrir();
+                string consulta = "SELECT * FROM VistaUsuarioTabla";
+                SqlDataAdapter adapter = new SqlDataAdapter(consulta, conexion.SqlC);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar usuarios: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+
+        // ─── BUSCAR USUARIOS POR NOMBRE ──────────────────────────────
+        public DataTable buscarUsuariosPorNombre(clsConexion conexion, string nombre)
+        {
+            try
+            {
+                conexion.Abrir();
+                string consulta = "SELECT * FROM VistaUsuarioTabla WHERE Nombre LIKE @nombre";
+                SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC);
+                cmd.Parameters.AddWithValue("@nombre", "%" + nombre.Trim() + "%");
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar usuarios: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
             finally
             {

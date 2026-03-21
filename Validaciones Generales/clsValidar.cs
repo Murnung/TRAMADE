@@ -908,7 +908,50 @@ namespace TRAMADE
             }
             return "";
         }
-        
 
+        // ─── VALIDAR CORREO DUPLICADO EN USUARIOS ────────────────────────────────
+        public static bool CorreoDuplicadoUsuario(string correo, int idUsuarioActual = 0, Control campo = null)
+        {
+            clsConexion ObjConexion = new clsConexion();
+            try
+            {
+                ObjConexion.Abrir();
+                SqlCommand cmd = new SqlCommand(@"
+                SELECT COUNT(*) FROM USUARIO 
+                WHERE correo_usuario = @correo 
+                AND id_usuario != @idUsuarioActual", ObjConexion.SqlC);
+                cmd.Parameters.AddWithValue("@correo", correo.Trim());
+                cmd.Parameters.AddWithValue("@idUsuarioActual", idUsuarioActual);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count > 0)
+                {
+                    MessageBox.Show("El correo ingresado ya está registrado en otro usuario.",
+                        "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    LimpiarControl(campo);
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al validar correo: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+        }
+        // ─── VALIDAR CORREO DE USUARIO COMPLETO ──────────────────────────────────
+        public static bool ValidarCorreoUsuario(string correo, Control campo = null, int idUsuarioActual = 0)
+        {
+            if (!NullOVacio(correo, "Correo Electrónico", campo)) return false;
+            if (!SinEspaciosExtremos(correo, "Correo Electrónico", campo)) return false;
+            if (!Correo(correo, campo)) return false;
+            if (!LongitudMaxima(correo, "Correo Electrónico", 100, campo)) return false;
+            if (!CorreoDuplicadoUsuario(correo, idUsuarioActual, campo)) return false;
+            return true;
+        }
     }
 }

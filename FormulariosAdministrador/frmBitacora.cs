@@ -16,6 +16,7 @@ namespace TRAMADE
     {
         clsConexion conexion = new clsConexion();
         clsUsuario ObjUsuario = new clsUsuario();
+        clsBitacora ObjBitacora = new clsBitacora();
         public frmBitacora()
         {
             InitializeComponent();
@@ -28,11 +29,9 @@ namespace TRAMADE
 
         private void RecargarBitacora()
         {
-            string consulta = "SELECT * FROM VistaBitacora";
-            SqlDataAdapter adapter = new SqlDataAdapter(consulta, conexion.SqlC);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            dgvBitacora.DataSource = dt;
+            DataTable dt = ObjBitacora.obtenerBitacoraTabla(conexion);
+            if (dt != null)
+                dgvBitacora.DataSource = dt;
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -54,17 +53,12 @@ namespace TRAMADE
             try
             {
                 clsUsuario.llenarComboRol(cmbUsuario, conexion);
-                conexion.Abrir();
                 RecargarBitacora();
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos: " + ex.Message);
-            }
-            finally
-            {
-                conexion.Cerrar(); // Siempre cerrar la conexión
+                MessageBox.Show("Error al cargar los datos: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -95,48 +89,13 @@ namespace TRAMADE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                conexion.Abrir(); // Abrimos la conexión
+            if (!clsValidar.FechaFiltro(dtDesde.Value, dtHasta.Value)) return;
 
-                // Consulta base
-                string consulta = "SELECT * FROM VistaBitacora WHERE [Fecha de acción] >= @desde AND [Fecha de acción] <= @hasta";
+            string rol = cmbUsuario.Text.Trim();
 
-                string rol = cmbUsuario.Text.Trim();
-
-                if (!string.IsNullOrWhiteSpace(rol))
-                {
-                    consulta += " AND Rol = @rol"; // Agregamos filtro por rol si aplica
-                }
-               
-                
-                using (SqlCommand cmd = new SqlCommand(consulta, conexion.SqlC))
-                {
-                    // Parámetros de fecha
-                    cmd.Parameters.AddWithValue("@desde", dtDesde.Value.Date);
-                    cmd.Parameters.AddWithValue("@hasta", dtHasta.Value.Date.AddDays(1).AddSeconds(-1)); // hasta 23:59:59
-
-                    // Parámetro de rol si aplica
-                    if (!string.IsNullOrWhiteSpace(rol))
-                        cmd.Parameters.AddWithValue("@rol", rol);
-
-                    // Llenar DataTable con los resultados
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    // Asignar al DataGridView
-                    dgvBitacora.DataSource = dt;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al filtrar la bitácora: " + ex.Message);
-            }
-            finally
-            {
-                conexion.Cerrar(); // Cerramos la conexión siempre
-            }
+            DataTable dt = ObjBitacora.filtrarBitacora(conexion, dtDesde.Value, dtHasta.Value, rol);
+            if (dt != null)
+                dgvBitacora.DataSource = dt;
         }
     }
     

@@ -68,6 +68,10 @@ namespace TRAMADE.FormulariosAdministrador
 
             string busqueda = txtBuscar.Text.Trim();
 
+            // Validar campo de búsqueda
+            if (!clsValidar.NullOVacio(busqueda, "Nombre o Correo")) return;
+            if (!clsValidar.LongitudMinima(busqueda, "Nombre o Correo", 3)) return;
+
             if (string.IsNullOrEmpty(busqueda))
             {
                 MessageBox.Show("Ingrese nombre o correo.");
@@ -126,6 +130,30 @@ namespace TRAMADE.FormulariosAdministrador
                 MessageBox.Show("No hay usuario seleccionado.");
                 return;
             }
+            // ── Validar Nombre ────────────────────────────────────────────
+            if (!clsValidar.NullOVacio(txtNombre.Text, "Nombre", txtNombre)) return;
+            if (!clsValidar.SinEspaciosExtremos(txtNombre.Text, "Nombre", txtNombre)) return;
+            if (!clsValidar.SinDobleEspacio(txtNombre.Text, "Nombre", txtNombre)) return;
+            if (!clsValidar.LongitudMinima(txtNombre.Text, "Nombre", 3, txtNombre)) return;
+            if (!clsValidar.LongitudMaxima(txtNombre.Text, "Nombre", 50, txtNombre)) return;
+
+            // ── Validar Correo (pasando el id actual para excluirlo del duplicado) ──
+            if (!clsValidar.ValidarCorreoUsuario(txtCorreo.Text.Trim(), txtCorreo, usuarioIdSeleccionado)) return;
+
+            // ── Validar Contraseña (solo si fue modificada) ───────────────
+            if (!string.IsNullOrWhiteSpace(txtContrasena.Text))
+            {
+                if (!clsValidar.LongitudMinima(txtContrasena.Text, "Contraseña", 6, txtContrasena)) return;
+                if (!clsValidar.LongitudMaxima(txtContrasena.Text, "Contraseña", 20, txtContrasena)) return;
+            }
+
+            // ── Validar Combos ────────────────────────────────────────────
+            if (!clsValidar.ComboSeleccionado(Convert.ToInt32(cmbRol.SelectedValue), "Rol")) return;
+            if (!clsValidar.ComboSeleccionado(Convert.ToInt32(cmbSucursal.SelectedValue), "Sucursal")) return;
+
+            // ── Guardar y actualizar ──────────────────────────────────────
+            clsUsuario.setRol(Convert.ToInt32(cmbRol.SelectedValue));
+            clsUsuario.setSucursal(Convert.ToInt32(cmbSucursal.SelectedValue));
 
             // guardar valores en el objeto
             clsUsuario.setRol(Convert.ToInt32(cmbRol.SelectedValue));
@@ -140,7 +168,11 @@ namespace TRAMADE.FormulariosAdministrador
             );
 
             if (actualizado)
+            {
+
                 MessageBox.Show("Usuario actualizado correctamente.");
+                btnLimpiar_Click(sender, e);
+            }
             else
                 MessageBox.Show("Error al actualizar el usuario.");
         }
@@ -158,6 +190,15 @@ namespace TRAMADE.FormulariosAdministrador
             txtCorreo.Clear();
             txtContrasena.Clear();
             cmbRol.SelectedIndex = -1;
-            cmbSucursal.SelectedIndex = -1;        }
+            cmbSucursal.SelectedIndex = -1;
+            txtNombre.Enabled = false;
+            txtCorreo.Enabled = false;
+            txtContrasena.Enabled = false;
+            cmbRol.Enabled = false;
+            cmbSucursal.Enabled = false;
+            btnConfirmar.Enabled = false;
+            usuarioIdSeleccionado = 0;
+            txtBuscar.Focus();
+        }
     }
 }
