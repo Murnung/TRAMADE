@@ -131,7 +131,7 @@
             this.label2.Size = new System.Drawing.Size(556, 32);
             this.label2.TabIndex = 24;
             this.label2.Text = "REGISTRO DE SOLICITUD DE COMPRAS";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+
             // 
             // label5
             // 

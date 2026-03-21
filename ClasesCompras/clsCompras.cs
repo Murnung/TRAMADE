@@ -24,6 +24,7 @@ namespace TRAMADE.ClasesCompras
         private decimal precioCosto;
         private bool autorizar = false;
         private const decimal IVA = 0.15m;
+        clsConexion ObjConexion = new clsConexion();
 
         //Constructor vacio
         public clsCompras()
@@ -61,8 +62,32 @@ namespace TRAMADE.ClasesCompras
         public decimal Subtotal() { return cantidad * precioCosto; }
         public decimal Impuesto() { return Subtotal() * IVA; }
         public decimal Total() { return Subtotal() * (1 + IVA); }
-       
-        
+
+
+        //Carga datos 
+        public DataTable obtenerTablaCompras()
+        {
+            try
+            {
+                clsConexion ObjConexion = new clsConexion();
+                ObjConexion.Abrir();
+                string consulta = "SELECT * FROM VistaComprasTabla";
+                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al recargar: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                ObjConexion.Cerrar();
+            }
+        }
+
     }
 }
     

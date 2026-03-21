@@ -376,6 +376,7 @@
             this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonGroupBox1);
             this.kryptonGroupBox4.Panel.Controls.Add(this.dtDesde);
             this.kryptonGroupBox4.Panel.Controls.Add(this.dgvCompras);
+            this.kryptonGroupBox4.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox4_Panel_Paint);
             this.kryptonGroupBox4.Size = new System.Drawing.Size(1271, 676);
             this.kryptonGroupBox4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.kryptonGroupBox4.StateCommon.Border.Rounding = 10F;

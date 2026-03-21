@@ -60,31 +60,6 @@ namespace TRAMADE
 
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void kryptonTextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRegresar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
 
@@ -117,31 +92,7 @@ namespace TRAMADE
 
         }
 
-        private void btnRegresar_Click_2(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+     
         private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbProducto.SelectedIndex != -1 && cmbProducto.SelectedItem is DataRowView) //Verifica con selectedIndex que se este seleccionando algo y "is DataRowView": Revisa que lo que seleccionaste sea una fila de datos real y no un simple texto.

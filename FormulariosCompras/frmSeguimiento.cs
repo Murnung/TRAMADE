@@ -26,39 +26,25 @@ namespace TRAMADE
         private void recargarCompras()
         {
 
-            try
-            {
-                ObjConexion.Abrir();
-                string consulta = "SELECT * FROM VistaComprasTabla";
-                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgvCompras.DataSource = dt;
+            DataTable dt = ObjCompras.obtenerTablaCompras();
+            if (dt == null) return;
 
-                dgvCompras.Columns["ID proveedor"].Visible = false;
-                dgvCompras.Columns["ID producto"].Visible = false;
-                dgvCompras.Columns["ID forma pago"].Visible = false;
-                dgvCompras.Columns["ID estado"].Visible = false;
+            dgvCompras.DataSource = dt;
+            dgvCompras.Columns["ID proveedor"].Visible = false;
+            dgvCompras.Columns["ID producto"].Visible = false;
+            dgvCompras.Columns["ID forma pago"].Visible = false;
+            dgvCompras.Columns["ID estado"].Visible = false;
 
-                dgvCompras.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-                dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgvCompras.ReadOnly = true;
-                dgvCompras.AllowUserToResizeRows = false;
-                dgvCompras.AllowUserToResizeColumns = false;
-                dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
-                dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                dgvCompras.EnableHeadersVisualStyles = false;
-                dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
-                dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al recargar: " + ex.Message);
-            }
-            finally
-            {
-                ObjConexion.Cerrar();
-            }
+            dgvCompras.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCompras.ReadOnly = true;
+            dgvCompras.AllowUserToResizeRows = false;
+            dgvCompras.AllowUserToResizeColumns = false;
+            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCompras.EnableHeadersVisualStyles = false;
+            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -94,15 +80,9 @@ namespace TRAMADE
         private void frmSeguimiento_Load(object sender, EventArgs e)
         {
             recargarCompras();
-           
-
-            
-
             clsIndicadoresCompras.totalSolicitudesRegistradas(ObjConexion, lblSolicitudesRegistradas);
             clsIndicadoresCompras.totalValorPendiente(ObjConexion, lblValorTotal);
             clsIndicadoresCompras.tiempoEsperaPromedio(ObjConexion, lblTiempoPromedio);
-
-
         }
 
 
@@ -137,6 +117,11 @@ namespace TRAMADE
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             recargarCompras();
+        }
+
+        private void kryptonGroupBox4_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -37,24 +37,27 @@ namespace TRAMADE
 
         private void recargarCompras()
         {
-            try
-            {
-                ObjConexion.Abrir();
-                string consulta = "SELECT * FROM VistaComprasTabla";
-                SqlDataAdapter adapter = new SqlDataAdapter(consulta, ObjConexion.SqlC);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgvCompras.DataSource = dt;
-                AgregarColumnaCheck();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al recargar: " + ex.Message);
-            }
-            finally
-            {
-                ObjConexion.Cerrar();
-            }
+            DataTable dt = ObjCompras.obtenerTablaCompras();
+            if (dt == null) return;
+
+            dgvCompras.DataSource = dt;
+            AgregarColumnaCheck();
+
+            dgvCompras.Columns["ID proveedor"].Visible = false;
+            dgvCompras.Columns["ID producto"].Visible = false;
+            dgvCompras.Columns["ID forma pago"].Visible = false;
+            dgvCompras.Columns["ID estado"].Visible = false;
+
+            dgvCompras.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCompras.AllowUserToResizeRows = false;
+            dgvCompras.AllowUserToResizeColumns = false;
+            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
+            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvCompras.EnableHeadersVisualStyles = false;
+            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
+            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvCompras.AllowUserToAddRows = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -75,31 +78,21 @@ namespace TRAMADE
         private void frmAutorizar_Load(object sender, EventArgs e)
         {
             recargarCompras();
-            dgvCompras.Columns["ID proveedor"].Visible = false;
-            dgvCompras.Columns["ID producto"].Visible = false;
-            dgvCompras.Columns["ID forma pago"].Visible = false;
-            dgvCompras.Columns["ID estado"].Visible = false;
-
-            dgvCompras.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCompras.AllowUserToResizeRows = false;
-            dgvCompras.AllowUserToResizeColumns = false;
-            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(148, 114, 71);
-            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvCompras.EnableHeadersVisualStyles = false;
-            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.FromArgb(178, 154, 111);
-            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.White;
+           
 
         }
 
         private void btnAutorizar_Click(object sender, EventArgs e)
         {
             if (!clsValidar.FilaSeleccionada(dgvCompras)) return;
+
             foreach (DataGridViewRow fila in dgvCompras.Rows)
             {
+                if (fila.IsNewRow) continue;
+
                 bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
 
-                if (marcado)
+                if (marcado && fila.Cells["ID compra"].Value != DBNull.Value && fila.Cells["ID compra"].Value != null)
                 {
                     int idCompra = Convert.ToInt32(fila.Cells["ID compra"].Value);
                     ObjOp.autorizarCompra(ObjConexion, idCompra);
@@ -116,9 +109,11 @@ namespace TRAMADE
 
             foreach (DataGridViewRow fila in dgvCompras.Rows)
             {
+                if (fila.IsNewRow) continue;
+
                 bool marcado = Convert.ToBoolean(fila.Cells["Seleccionar"].Value);
 
-                if (marcado)
+                if (marcado && fila.Cells["ID compra"].Value != DBNull.Value && fila.Cells["ID compra"].Value != null)
                 {
                     int idCompra = Convert.ToInt32(fila.Cells["ID compra"].Value);
                     ObjOp.denegarCompra(ObjConexion, idCompra);
