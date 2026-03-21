@@ -151,7 +151,9 @@
     <Compile Include="ClasesFacturacion\clsProductoF.cs" />
     <Compile Include="ClasesMenu\clsClientesPanel.cs" />
     <Compile Include="ClasesMenu\clsDBCon.cs" />
-    <Compile Include="FormulariosAdministrador\frmAdministrador.cs" />
+    <Compile Include="FormulariosAdministrador\frmAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormulariosAdministrador\frmAdministrador.Designer.cs">
       <DependentUpon>frmAdministrador.cs</DependentUpon>
     </Compile>
