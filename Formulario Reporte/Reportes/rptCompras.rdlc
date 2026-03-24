@@ -530,8 +530,8 @@
                     <TextRun>
                       <Value>Sucursal:</Value>
                       <Style>
-                        <FontFamily>Poppins</FontFamily>
-                        <Color>White</Color>
+                        <FontFamily>Poppins Black</FontFamily>
+                        <Color>LightGrey</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -564,8 +564,8 @@
                     <TextRun>
                       <Value>=First(Fields!Sucursal.Value, "DataSet_Compras")</Value>
                       <Style>
-                        <FontFamily>Poppins</FontFamily>
-                        <Color>White</Color>
+                        <FontFamily>Poppins Black</FontFamily>
+                        <Color>LightGrey</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
