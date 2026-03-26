@@ -22,7 +22,6 @@ namespace TRAMADE
         public frmProveedores_Editar(int idProveedor)
         {
             InitializeComponent();
-            txtRtn.Enabled = false;
             _idProveedor = idProveedor; // ← asignar el ID
             clsCombobox.LlenarRazonSocial(cmbRazonSocial);
             clsCombobox.LlenarCombosProveedor(cmbClasificacion, cmbTerminosdePago, ObjConexion);
