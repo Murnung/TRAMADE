@@ -495,7 +495,7 @@
             // 
             // kryptonLabel12
             // 
-            this.kryptonLabel12.Location = new System.Drawing.Point(468, 86);
+            this.kryptonLabel12.Location = new System.Drawing.Point(514, 85);
             this.kryptonLabel12.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonLabel12.Name = "kryptonLabel12";
             this.kryptonLabel12.Size = new System.Drawing.Size(160, 31);
