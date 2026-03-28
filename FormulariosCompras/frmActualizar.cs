@@ -251,10 +251,10 @@ namespace TRAMADE
             if (cmbProveedor.SelectedIndex == -1 && cmbProveedor.Items.Count > 0)
                 cmbProveedor.SelectedIndex = 0;
 
-            // Validaciones ← Solo proveedor y forma de pago
+        
             if(!clsValidar.IdSeleccionado(compraIdSeleccionado)) return;
             if (!clsValidar.ComboSeleccionado(cmbProveedor.SelectedIndex, "Proveedor")) return;
-            if (!clsValidar.ComboSeleccionado(cmbFormaPago.SelectedIndex, "Forma de Pago")) return;
+            //if (!clsValidar.ComboSeleccionado(cmbFormaPago.SelectedIndex, "Forma de Pago")) return;
             if (!clsValidar.FechaEntrega(dtEntrega.Value)) return;
             if (!clsValidar.ListBoxConElementos(lstProductos,"producto")) return;
             if (!clsValidar.validarComboSinResultado(cmbProveedor, "proveedor")) return;
@@ -420,6 +420,11 @@ namespace TRAMADE
                 }
                 catch { }
             }
+        }
+
+        private void kryptonGroupBox1_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

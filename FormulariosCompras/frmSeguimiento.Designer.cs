@@ -50,6 +50,9 @@
             this.dtHasta = new Krypton.Toolkit.KryptonDateTimePicker();
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             this.kryptonGroupBox4 = new Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
@@ -70,14 +73,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4.Panel)).BeginInit();
             this.kryptonGroupBox4.Panel.SuspendLayout();
             this.kryptonGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5.Panel)).BeginInit();
+            this.kryptonGroup5.Panel.SuspendLayout();
+            this.kryptonGroup5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 12);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(26, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(605, 32);
             this.label2.TabIndex = 77;
@@ -86,41 +94,43 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 200);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 154);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(284, 29);
             this.label1.TabIndex = 78;
-            this.label1.Text = "PERÍODO";
+            this.label1.Text = "PERIODO Y BUSQUEDA";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(352, 265);
+            this.label3.Location = new System.Drawing.Point(650, 195);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.Size = new System.Drawing.Size(152, 20);
             this.label3.TabIndex = 79;
-            this.label3.Text = "COMPRA";
+            this.label3.Text = "Número de compra";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(440, 261);
+            this.txtBuscar.Location = new System.Drawing.Point(654, 227);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(283, 33);
+            this.txtBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.txtBuscar.StateCommon.Border.Rounding = 10F;
             this.txtBuscar.TabIndex = 81;
             // 
             // dtDesde
             // 
-            this.dtDesde.Location = new System.Drawing.Point(40, 224);
+            this.dtDesde.Location = new System.Drawing.Point(23, 226);
             this.dtDesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtDesde.Name = "dtDesde";
             this.dtDesde.Size = new System.Drawing.Size(277, 29);
+            this.dtDesde.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.dtDesde.StateCommon.Border.Rounding = 5F;
             this.dtDesde.TabIndex = 82;
             // 
@@ -167,7 +177,7 @@
             this.dgvCompras.BackgroundColor = System.Drawing.Color.White;
             this.dgvCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompras.Location = new System.Drawing.Point(38, 300);
+            this.dgvCompras.Location = new System.Drawing.Point(7, -1);
             this.dgvCompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
@@ -180,7 +190,7 @@
             // kryptonGroupBox2
             // 
             this.kryptonGroupBox2.CaptionVisible = false;
-            this.kryptonGroupBox2.Location = new System.Drawing.Point(68, 72);
+            this.kryptonGroupBox2.Location = new System.Drawing.Point(37, 29);
             this.kryptonGroupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // kryptonGroupBox2.Panel
@@ -220,7 +230,7 @@
             // kryptonGroupBox1
             // 
             this.kryptonGroupBox1.CaptionVisible = false;
-            this.kryptonGroupBox1.Location = new System.Drawing.Point(457, 72);
+            this.kryptonGroupBox1.Location = new System.Drawing.Point(426, 29);
             this.kryptonGroupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // kryptonGroupBox1.Panel
@@ -261,7 +271,7 @@
             // kryptonGroupBox3
             // 
             this.kryptonGroupBox3.CaptionVisible = false;
-            this.kryptonGroupBox3.Location = new System.Drawing.Point(858, 72);
+            this.kryptonGroupBox3.Location = new System.Drawing.Point(827, 29);
             this.kryptonGroupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // kryptonGroupBox3.Panel
@@ -300,7 +310,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(744, 261);
+            this.btnBuscar.Location = new System.Drawing.Point(956, 221);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -327,22 +337,23 @@
             // 
             // dtHasta
             // 
-            this.dtHasta.Location = new System.Drawing.Point(40, 265);
+            this.dtHasta.Location = new System.Drawing.Point(342, 226);
             this.dtHasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtHasta.Name = "dtHasta";
             this.dtHasta.Size = new System.Drawing.Size(277, 29);
+            this.dtHasta.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
             this.dtHasta.StateCommon.Border.Rounding = 5F;
             this.dtHasta.TabIndex = 91;
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(889, 261);
+            this.btnRefrescar.Location = new System.Drawing.Point(1101, 221);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnRefrescar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
             this.btnRefrescar.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnRefrescar.OverrideFocus.Back.Color2 = System.Drawing.Color.Silver;
-            this.btnRefrescar.Size = new System.Drawing.Size(51, 33);
+            this.btnRefrescar.Size = new System.Drawing.Size(44, 31);
             this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
             this.btnRefrescar.StateCommon.Border.Rounding = 10F;
@@ -360,13 +371,15 @@
             // kryptonGroupBox4
             // 
             this.kryptonGroupBox4.CaptionVisible = false;
-            this.kryptonGroupBox4.Location = new System.Drawing.Point(28, 32);
+            this.kryptonGroupBox4.Location = new System.Drawing.Point(28, 65);
             // 
             // kryptonGroupBox4.Panel
             // 
+            this.kryptonGroupBox4.Panel.Controls.Add(this.label8);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.label7);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonGroup5);
             this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonGroupBox2);
             this.kryptonGroupBox4.Panel.Controls.Add(this.btnRefrescar);
-            this.kryptonGroupBox4.Panel.Controls.Add(this.label2);
             this.kryptonGroupBox4.Panel.Controls.Add(this.dtHasta);
             this.kryptonGroupBox4.Panel.Controls.Add(this.label1);
             this.kryptonGroupBox4.Panel.Controls.Add(this.btnBuscar);
@@ -375,12 +388,48 @@
             this.kryptonGroupBox4.Panel.Controls.Add(this.txtBuscar);
             this.kryptonGroupBox4.Panel.Controls.Add(this.kryptonGroupBox1);
             this.kryptonGroupBox4.Panel.Controls.Add(this.dtDesde);
-            this.kryptonGroupBox4.Panel.Controls.Add(this.dgvCompras);
             this.kryptonGroupBox4.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox4_Panel_Paint);
-            this.kryptonGroupBox4.Size = new System.Drawing.Size(1271, 676);
-            this.kryptonGroupBox4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.kryptonGroupBox4.Size = new System.Drawing.Size(1271, 659);
+            this.kryptonGroupBox4.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonGroupBox4.StateCommon.Border.Rounding = 10F;
             this.kryptonGroupBox4.TabIndex = 93;
+            // 
+            // kryptonGroup5
+            // 
+            this.kryptonGroup5.Location = new System.Drawing.Point(15, 278);
+            this.kryptonGroup5.Margin = new System.Windows.Forms.Padding(4);
+            // 
+            // kryptonGroup5.Panel
+            // 
+            this.kryptonGroup5.Panel.Controls.Add(this.dgvCompras);
+            this.kryptonGroup5.Size = new System.Drawing.Size(1226, 369);
+            this.kryptonGroup5.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonGroup5.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonGroup5.StateCommon.Border.Rounding = 20F;
+            this.kryptonGroup5.StateCommon.Border.Width = 1;
+            this.kryptonGroup5.TabIndex = 155;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(340, 195);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 20);
+            this.label7.TabIndex = 156;
+            this.label7.Text = "Fecha fin";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(25, 195);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 20);
+            this.label8.TabIndex = 157;
+            this.label8.Text = "Fecha incio";
             // 
             // frmSeguimiento
             // 
@@ -389,6 +438,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(1338, 736);
             this.Controls.Add(this.kryptonGroupBox4);
+            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSeguimiento";
@@ -419,7 +469,12 @@
             this.kryptonGroupBox4.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4)).EndInit();
             this.kryptonGroupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5.Panel)).EndInit();
+            this.kryptonGroup5.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup5)).EndInit();
+            this.kryptonGroup5.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -446,5 +501,8 @@
         private System.Windows.Forms.Label lblTiempoPromedio;
         private Krypton.Toolkit.KryptonButton btnRefrescar;
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox4;
+        private Krypton.Toolkit.KryptonGroup kryptonGroup5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
