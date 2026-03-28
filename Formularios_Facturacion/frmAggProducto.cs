@@ -245,6 +245,11 @@ namespace TRAMADE
         {
             
         }
+
+        private void frmAggProducto_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

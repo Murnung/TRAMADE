@@ -99,5 +99,10 @@ namespace TRAMADE
         }
 
         private void dgvHistorialFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+
+        private void kryptonGroup1_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

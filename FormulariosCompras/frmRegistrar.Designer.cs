@@ -55,12 +55,12 @@
             this.cmbFormaPago = new Krypton.Toolkit.KryptonComboBox();
             this.dtEntrega = new Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.kryptonGroupBox4 = new Krypton.Toolkit.KryptonGroupBox();
             this.kryptonGroupBox3 = new Krypton.Toolkit.KryptonGroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProveedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFormaPago)).BeginInit();
@@ -93,7 +93,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(106, 35);
             this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar.StateCommon.Border.Rounding = 10F;
+            this.btnLimpiar.StateCommon.Border.Rounding = 5F;
             this.btnLimpiar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnLimpiar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnLimpiar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
@@ -119,7 +119,7 @@
             this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnRegistrar.StateCommon.Border.Rounding = 10F;
+            this.btnRegistrar.StateCommon.Border.Rounding = 5F;
             this.btnRegistrar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnRegistrar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnRegistrar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -249,7 +249,7 @@
             this.btnAgregar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
             this.btnAgregar.StateCommon.Border.Color1 = System.Drawing.Color.DarkGray;
             this.btnAgregar.StateCommon.Border.Color2 = System.Drawing.Color.DarkGray;
-            this.btnAgregar.StateCommon.Border.Rounding = 10F;
+            this.btnAgregar.StateCommon.Border.Rounding = 5F;
             this.btnAgregar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnAgregar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
             this.btnAgregar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
@@ -284,7 +284,7 @@
             this.btnQuitar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnQuitar.StateCommon.Border.Color1 = System.Drawing.Color.DarkGray;
             this.btnQuitar.StateCommon.Border.Color2 = System.Drawing.Color.DarkGray;
-            this.btnQuitar.StateCommon.Border.Rounding = 10F;
+            this.btnQuitar.StateCommon.Border.Rounding = 5F;
             this.btnQuitar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnQuitar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnQuitar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -292,7 +292,7 @@
             this.btnQuitar.TabIndex = 68;
             this.btnQuitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnQuitar.Values.Image = global::TRAMADE.Properties.Resources.X__2___1_;
-            this.btnQuitar.Values.Text = "QUITAR";
+            this.btnQuitar.Values.Text = "Quitar";
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // lstProductos
@@ -497,6 +497,19 @@
             this.kryptonGroupBox1.StateCommon.Border.Rounding = 10F;
             this.kryptonGroupBox1.TabIndex = 117;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.ForeColor = System.Drawing.Color.DarkGray;
+            this.label14.Location = new System.Drawing.Point(27, 176);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(770, 32);
+            this.label14.TabIndex = 153;
+            this.label14.Text = "_________________________________________________________________________________" +
+    "____________________________\r\n\r\n";
+            // 
             // kryptonGroupBox4
             // 
             this.kryptonGroupBox4.CaptionVisible = false;
@@ -568,19 +581,6 @@
             this.label4.Size = new System.Drawing.Size(181, 22);
             this.label4.TabIndex = 118;
             this.label4.Text = "Productos agregados";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.ForeColor = System.Drawing.Color.DarkGray;
-            this.label14.Location = new System.Drawing.Point(27, 176);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(770, 32);
-            this.label14.TabIndex = 153;
-            this.label14.Text = "_________________________________________________________________________________" +
-    "____________________________\r\n\r\n";
             // 
             // frmRegistrar
             // 

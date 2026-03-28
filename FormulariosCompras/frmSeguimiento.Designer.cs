@@ -50,9 +50,9 @@
             this.dtHasta = new Krypton.Toolkit.KryptonDateTimePicker();
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             this.kryptonGroupBox4 = new Krypton.Toolkit.KryptonGroupBox();
-            this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
@@ -119,9 +119,9 @@
             this.txtBuscar.Location = new System.Drawing.Point(654, 227);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(283, 33);
+            this.txtBuscar.Size = new System.Drawing.Size(283, 31);
             this.txtBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
-            this.txtBuscar.StateCommon.Border.Rounding = 10F;
+            this.txtBuscar.StateCommon.Border.Rounding = 5F;
             this.txtBuscar.TabIndex = 81;
             // 
             // dtDesde
@@ -323,7 +323,7 @@
             this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateCommon.Border.Rounding = 10F;
+            this.btnBuscar.StateCommon.Border.Rounding = 5F;
             this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnBuscar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -356,7 +356,7 @@
             this.btnRefrescar.Size = new System.Drawing.Size(44, 31);
             this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRefrescar.StateCommon.Border.Rounding = 10F;
+            this.btnRefrescar.StateCommon.Border.Rounding = 5F;
             this.btnRefrescar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnRefrescar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnRefrescar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
@@ -394,6 +394,28 @@
             this.kryptonGroupBox4.StateCommon.Border.Rounding = 10F;
             this.kryptonGroupBox4.TabIndex = 93;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(25, 195);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 20);
+            this.label8.TabIndex = 157;
+            this.label8.Text = "Fecha incio";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(340, 195);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 20);
+            this.label7.TabIndex = 156;
+            this.label7.Text = "Fecha fin";
+            // 
             // kryptonGroup5
             // 
             this.kryptonGroup5.Location = new System.Drawing.Point(15, 278);
@@ -408,28 +430,6 @@
             this.kryptonGroup5.StateCommon.Border.Rounding = 20F;
             this.kryptonGroup5.StateCommon.Border.Width = 1;
             this.kryptonGroup5.TabIndex = 155;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(340, 195);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 20);
-            this.label7.TabIndex = 156;
-            this.label7.Text = "Fecha fin";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 195);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 20);
-            this.label8.TabIndex = 157;
-            this.label8.Text = "Fecha incio";
             // 
             // frmSeguimiento
             // 

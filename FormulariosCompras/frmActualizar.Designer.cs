@@ -131,7 +131,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(107, 41);
             this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnLimpiar.StateCommon.Border.Rounding = 10F;
+            this.btnLimpiar.StateCommon.Border.Rounding = 5F;
             this.btnLimpiar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnLimpiar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnLimpiar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
@@ -158,7 +158,7 @@
             this.btnActualizar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnActualizar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnActualizar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnActualizar.StateCommon.Border.Rounding = 10F;
+            this.btnActualizar.StateCommon.Border.Rounding = 5F;
             this.btnActualizar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnActualizar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnActualizar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -362,7 +362,7 @@
             this.btnQuitar.Size = new System.Drawing.Size(107, 37);
             this.btnQuitar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnQuitar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.btnQuitar.StateCommon.Border.Rounding = 10F;
+            this.btnQuitar.StateCommon.Border.Rounding = 5F;
             this.btnQuitar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnQuitar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnQuitar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -396,7 +396,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(118, 37);
             this.btnAgregar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
             this.btnAgregar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
-            this.btnAgregar.StateCommon.Border.Rounding = 10F;
+            this.btnAgregar.StateCommon.Border.Rounding = 5F;
             this.btnAgregar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnAgregar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
             this.btnAgregar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
@@ -496,7 +496,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(649, 76);
+            this.btnBuscar.Location = new System.Drawing.Point(639, 76);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -504,12 +504,12 @@
             this.btnBuscar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.OverrideFocus.Back.Color2 = System.Drawing.Color.Blue;
             this.btnBuscar.OverrideFocus.Border.Rounding = 10F;
-            this.btnBuscar.Size = new System.Drawing.Size(101, 34);
+            this.btnBuscar.Size = new System.Drawing.Size(107, 34);
             this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnBuscar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
-            this.btnBuscar.StateCommon.Border.Rounding = 10F;
+            this.btnBuscar.StateCommon.Border.Rounding = 5F;
             this.btnBuscar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnBuscar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
             this.btnBuscar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -518,6 +518,7 @@
             this.btnBuscar.StateTracking.Border.Rounding = 10F;
             this.btnBuscar.TabIndex = 74;
             this.btnBuscar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnBuscar.Values.Image = global::TRAMADE.Properties.Resources.lupa__1_;
             this.btnBuscar.Values.Text = "BUSCAR";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 

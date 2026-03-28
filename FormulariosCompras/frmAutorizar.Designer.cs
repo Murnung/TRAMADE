@@ -36,9 +36,9 @@
             this.btnBuscar = new Krypton.Toolkit.KryptonButton();
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
             this.label3 = new System.Windows.Forms.Label();
+            this.kryptonGroup5 = new Krypton.Toolkit.KryptonGroup();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
@@ -176,7 +176,7 @@
             this.btnRefrescar.Size = new System.Drawing.Size(51, 33);
             this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnRefrescar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
-            this.btnRefrescar.StateCommon.Border.Rounding = 10F;
+            this.btnRefrescar.StateCommon.Border.Rounding = 5F;
             this.btnRefrescar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
             this.btnRefrescar.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.Black;
             this.btnRefrescar.StateTracking.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
@@ -210,19 +210,16 @@
             this.kryptonGroupBox1.StateCommon.Border.Rounding = 10F;
             this.kryptonGroupBox1.TabIndex = 94;
             // 
-            // label14
+            // label3
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.ForeColor = System.Drawing.Color.DarkGray;
-            this.label14.Location = new System.Drawing.Point(16, 94);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(1120, 32);
-            this.label14.TabIndex = 153;
-            this.label14.Text = "_________________________________________________________________________________" +
-    "______________________________________________________________________________\r\n" +
-    "\r\n";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 20);
+            this.label3.TabIndex = 155;
+            this.label3.Text = "Número de compra";
             // 
             // kryptonGroup5
             // 
@@ -239,16 +236,19 @@
             this.kryptonGroup5.StateCommon.Border.Width = 1;
             this.kryptonGroup5.TabIndex = 154;
             // 
-            // label3
+            // label14
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 20);
-            this.label3.TabIndex = 155;
-            this.label3.Text = "Número de compra";
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.ForeColor = System.Drawing.Color.DarkGray;
+            this.label14.Location = new System.Drawing.Point(16, 94);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(1120, 32);
+            this.label14.TabIndex = 153;
+            this.label14.Text = "_________________________________________________________________________________" +
+    "______________________________________________________________________________\r\n" +
+    "\r\n";
             // 
             // frmAutorizar
             // 
