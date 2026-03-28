@@ -331,5 +331,10 @@ namespace TRAMADE
         {
 
         }
+
+        private void kryptonGroupBox2_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -56,6 +56,11 @@
             this.dtEntrega = new Krypton.Toolkit.KryptonDateTimePicker();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.kryptonGroupBox2 = new Krypton.Toolkit.KryptonGroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.kryptonGroupBox3 = new Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonGroupBox4 = new Krypton.Toolkit.KryptonGroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProveedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFormaPago)).BeginInit();
@@ -63,17 +68,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
             this.kryptonGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
+            this.kryptonGroupBox2.Panel.SuspendLayout();
+            this.kryptonGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3.Panel)).BeginInit();
+            this.kryptonGroupBox3.Panel.SuspendLayout();
+            this.kryptonGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4.Panel)).BeginInit();
+            this.kryptonGroupBox4.Panel.SuspendLayout();
+            this.kryptonGroupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(536, 484);
+            this.btnLimpiar.Location = new System.Drawing.Point(463, 617);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.OverrideDefault.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.OverrideDefault.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.OverrideFocus.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.OverrideFocus.Back.Color2 = System.Drawing.Color.Silver;
-            this.btnLimpiar.Size = new System.Drawing.Size(106, 29);
+            this.btnLimpiar.Size = new System.Drawing.Size(106, 35);
             this.btnLimpiar.StateCommon.Back.Color1 = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.StateCommon.Back.Color2 = System.Drawing.SystemColors.ButtonFace;
             this.btnLimpiar.StateCommon.Border.Rounding = 10F;
@@ -84,19 +101,20 @@
             this.btnLimpiar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnLimpiar.TabIndex = 70;
             this.btnLimpiar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnLimpiar.Values.Image = global::TRAMADE.Properties.Resources.Escoba_borrador_png_3_;
             this.btnLimpiar.Values.Text = "LIMPIAR";
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(648, 484);
+            this.btnRegistrar.Location = new System.Drawing.Point(580, 614);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.OverrideFocus.Back.Color2 = System.Drawing.Color.Blue;
             this.btnRegistrar.OverrideFocus.Border.Rounding = 10F;
-            this.btnRegistrar.Size = new System.Drawing.Size(175, 29);
+            this.btnRegistrar.Size = new System.Drawing.Size(175, 35);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
             this.btnRegistrar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(44)))), ((int)(((byte)(131)))));
@@ -126,19 +144,18 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 38);
+            this.label2.Location = new System.Drawing.Point(13, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(556, 32);
             this.label2.TabIndex = 24;
             this.label2.Text = "REGISTRO DE SOLICITUD DE COMPRAS";
-
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(357, 107);
+            this.label5.Location = new System.Drawing.Point(349, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(151, 22);
             this.label5.TabIndex = 27;
@@ -148,7 +165,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(541, 237);
+            this.label9.Location = new System.Drawing.Point(540, 202);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 22);
             this.label9.TabIndex = 31;
@@ -158,7 +175,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 107);
+            this.label6.Location = new System.Drawing.Point(15, 88);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 22);
             this.label6.TabIndex = 33;
@@ -169,7 +186,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(28, 281);
+            this.label10.Location = new System.Drawing.Point(20, 255);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 22);
             this.label10.TabIndex = 35;
@@ -180,7 +197,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(32, 339);
+            this.label11.Location = new System.Drawing.Point(362, 255);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 22);
             this.label11.TabIndex = 36;
@@ -189,9 +206,9 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(236)))));
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(326, 339);
+            this.label12.Location = new System.Drawing.Point(14, 22);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 22);
             this.label12.TabIndex = 37;
@@ -200,9 +217,9 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(236)))));
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(332, 281);
+            this.label13.Location = new System.Drawing.Point(3, 22);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 22);
             this.label13.TabIndex = 38;
@@ -211,9 +228,9 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(236)))));
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(338, 396);
+            this.label15.Location = new System.Drawing.Point(14, 25);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 22);
             this.label15.TabIndex = 39;
@@ -221,23 +238,26 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(530, 176);
+            this.btnAgregar.Location = new System.Drawing.Point(470, 202);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.OverrideDefault.Back.Color1 = System.Drawing.Color.LightSkyBlue;
-            this.btnAgregar.OverrideDefault.Back.Color2 = System.Drawing.Color.LightSkyBlue;
-            this.btnAgregar.OverrideFocus.Back.Color1 = System.Drawing.Color.LightSkyBlue;
-            this.btnAgregar.OverrideFocus.Back.Color2 = System.Drawing.Color.SteelBlue;
-            this.btnAgregar.Size = new System.Drawing.Size(191, 29);
-            this.btnAgregar.StateCommon.Back.Color1 = System.Drawing.Color.LightSkyBlue;
-            this.btnAgregar.StateCommon.Back.Color2 = System.Drawing.Color.LightSkyBlue;
+            this.btnAgregar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
+            this.btnAgregar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
+            this.btnAgregar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
+            this.btnAgregar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
+            this.btnAgregar.Size = new System.Drawing.Size(135, 36);
+            this.btnAgregar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
+            this.btnAgregar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
+            this.btnAgregar.StateCommon.Border.Color1 = System.Drawing.Color.DarkGray;
+            this.btnAgregar.StateCommon.Border.Color2 = System.Drawing.Color.DarkGray;
             this.btnAgregar.StateCommon.Border.Rounding = 10F;
             this.btnAgregar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnAgregar.StateTracking.Back.Color1 = System.Drawing.Color.LightSkyBlue;
-            this.btnAgregar.StateTracking.Back.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnAgregar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(170)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
+            this.btnAgregar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(179)))), ((int)(((byte)(121)))));
             this.btnAgregar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnAgregar.TabIndex = 52;
             this.btnAgregar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnAgregar.Values.Text = "AGREGAR PRODUCTO";
+            this.btnAgregar.Values.Image = global::TRAMADE.Properties.Resources.Signo_de_suma_png_redimensionada_2;
+            this.btnAgregar.Values.Text = "Agregar";
             this.btnAgregar.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // label16
@@ -245,7 +265,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.White;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(24, 171);
+            this.label16.Location = new System.Drawing.Point(13, 202);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(192, 22);
             this.label16.TabIndex = 54;
@@ -253,68 +273,101 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(729, 176);
+            this.btnQuitar.Location = new System.Drawing.Point(624, 202);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.OverrideDefault.Back.Color1 = System.Drawing.Color.LightSkyBlue;
-            this.btnQuitar.OverrideDefault.Back.Color2 = System.Drawing.Color.LightSkyBlue;
-            this.btnQuitar.OverrideFocus.Back.Color1 = System.Drawing.Color.LightSkyBlue;
-            this.btnQuitar.OverrideFocus.Back.Color2 = System.Drawing.Color.SteelBlue;
-            this.btnQuitar.Size = new System.Drawing.Size(107, 29);
-            this.btnQuitar.StateCommon.Back.Color1 = System.Drawing.Color.LightSkyBlue;
-            this.btnQuitar.StateCommon.Back.Color2 = System.Drawing.Color.LightSkyBlue;
+            this.btnQuitar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnQuitar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnQuitar.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnQuitar.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnQuitar.Size = new System.Drawing.Size(119, 36);
+            this.btnQuitar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnQuitar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnQuitar.StateCommon.Border.Color1 = System.Drawing.Color.DarkGray;
+            this.btnQuitar.StateCommon.Border.Color2 = System.Drawing.Color.DarkGray;
             this.btnQuitar.StateCommon.Border.Rounding = 10F;
             this.btnQuitar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Black;
-            this.btnQuitar.StateTracking.Back.Color1 = System.Drawing.Color.LightSkyBlue;
-            this.btnQuitar.StateTracking.Back.Color2 = System.Drawing.Color.SteelBlue;
+            this.btnQuitar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnQuitar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnQuitar.StateTracking.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertCheckedTracking;
             this.btnQuitar.TabIndex = 68;
             this.btnQuitar.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnQuitar.Values.Image = global::TRAMADE.Properties.Resources.X__2___1_;
             this.btnQuitar.Values.Text = "QUITAR";
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // lstProductos
             // 
-            this.lstProductos.Location = new System.Drawing.Point(530, 211);
+            this.lstProductos.Location = new System.Drawing.Point(19, 324);
             this.lstProductos.Name = "lstProductos";
-            this.lstProductos.Size = new System.Drawing.Size(306, 245);
+            this.lstProductos.Size = new System.Drawing.Size(736, 170);
+            this.lstProductos.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.lstProductos.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.lstProductos.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
             this.lstProductos.StateCommon.Border.Rounding = 10F;
             this.lstProductos.TabIndex = 70;
             this.lstProductos.SelectedIndexChanged += new System.EventHandler(this.lstProductos_SelectedIndexChanged);
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(184, 280);
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Location = new System.Drawing.Point(145, 255);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(93, 27);
+            this.txtPrecio.Size = new System.Drawing.Size(190, 31);
+            this.txtPrecio.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.txtPrecio.StateCommon.Border.Color1 = System.Drawing.Color.DarkGray;
+            this.txtPrecio.StateCommon.Border.Color2 = System.Drawing.Color.DarkGray;
+            this.txtPrecio.StateCommon.Border.Rounding = 5F;
             this.txtPrecio.TabIndex = 76;
             // 
             // txtSubtotal
             // 
-            this.txtSubtotal.Location = new System.Drawing.Point(430, 280);
+            this.txtSubtotal.Enabled = false;
+            this.txtSubtotal.Location = new System.Drawing.Point(95, 22);
             this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(94, 27);
+            this.txtSubtotal.Size = new System.Drawing.Size(94, 31);
+            this.txtSubtotal.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.txtSubtotal.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.txtSubtotal.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.txtSubtotal.StateCommon.Border.Rounding = 5F;
             this.txtSubtotal.TabIndex = 77;
+            this.txtSubtotal.Text = "L 0.00";
             // 
             // txtImpuesto
             // 
-            this.txtImpuesto.Location = new System.Drawing.Point(430, 339);
+            this.txtImpuesto.Enabled = false;
+            this.txtImpuesto.Location = new System.Drawing.Point(113, 22);
             this.txtImpuesto.Name = "txtImpuesto";
-            this.txtImpuesto.Size = new System.Drawing.Size(94, 27);
+            this.txtImpuesto.Size = new System.Drawing.Size(94, 31);
+            this.txtImpuesto.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.txtImpuesto.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.txtImpuesto.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.txtImpuesto.StateCommon.Border.Rounding = 5F;
             this.txtImpuesto.TabIndex = 78;
+            this.txtImpuesto.Text = "L 0.00";
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(430, 396);
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(98, 24);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(94, 27);
+            this.txtTotal.Size = new System.Drawing.Size(94, 31);
+            this.txtTotal.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.txtTotal.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.txtTotal.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
+            this.txtTotal.StateCommon.Border.Rounding = 5F;
             this.txtTotal.TabIndex = 79;
+            this.txtTotal.Text = "L 0.00";
             // 
             // cmbProducto
             // 
             this.cmbProducto.DropDownWidth = 186;
-            this.cmbProducto.Location = new System.Drawing.Point(253, 171);
+            this.cmbProducto.Location = new System.Drawing.Point(221, 202);
             this.cmbProducto.Name = "cmbProducto";
-            this.cmbProducto.Size = new System.Drawing.Size(190, 26);
+            this.cmbProducto.Size = new System.Drawing.Size(223, 30);
+            this.cmbProducto.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.cmbProducto.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.DarkGray;
+            this.cmbProducto.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.DarkGray;
+            this.cmbProducto.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cmbProducto.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProducto.TabIndex = 81;
             this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
@@ -324,9 +377,11 @@
             // cmbProveedor
             // 
             this.cmbProveedor.DropDownWidth = 186;
-            this.cmbProveedor.Location = new System.Drawing.Point(145, 106);
+            this.cmbProveedor.Location = new System.Drawing.Point(145, 88);
             this.cmbProveedor.Name = "cmbProveedor";
-            this.cmbProveedor.Size = new System.Drawing.Size(190, 26);
+            this.cmbProveedor.Size = new System.Drawing.Size(190, 30);
+            this.cmbProveedor.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.cmbProveedor.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cmbProveedor.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbProveedor.TabIndex = 82;
             this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
@@ -340,7 +395,7 @@
             0,
             0,
             0});
-            this.nudCantidad.Location = new System.Drawing.Point(184, 339);
+            this.nudCantidad.Location = new System.Drawing.Point(480, 255);
             this.nudCantidad.Maximum = new decimal(new int[] {
             100,
             0,
@@ -352,7 +407,11 @@
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(93, 26);
+            this.nudCantidad.Size = new System.Drawing.Size(248, 30);
+            this.nudCantidad.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.nudCantidad.StateCommon.Border.Color1 = System.Drawing.Color.DarkGray;
+            this.nudCantidad.StateCommon.Border.Color2 = System.Drawing.Color.DarkGray;
+            this.nudCantidad.StateCommon.Border.Rounding = 5F;
             this.nudCantidad.TabIndex = 112;
             this.nudCantidad.Value = new decimal(new int[] {
             1,
@@ -366,7 +425,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(24, 211);
+            this.label17.Location = new System.Drawing.Point(15, 144);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(131, 22);
             this.label17.TabIndex = 113;
@@ -376,18 +435,26 @@
             // 
             this.cmbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFormaPago.DropDownWidth = 186;
-            this.cmbFormaPago.Location = new System.Drawing.Point(253, 211);
+            this.cmbFormaPago.Location = new System.Drawing.Point(221, 144);
             this.cmbFormaPago.Name = "cmbFormaPago";
-            this.cmbFormaPago.Size = new System.Drawing.Size(190, 26);
+            this.cmbFormaPago.Size = new System.Drawing.Size(223, 30);
+            this.cmbFormaPago.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.cmbFormaPago.StateCommon.ComboBox.Border.Color1 = System.Drawing.Color.DarkGray;
+            this.cmbFormaPago.StateCommon.ComboBox.Border.Color2 = System.Drawing.Color.DarkGray;
+            this.cmbFormaPago.StateCommon.ComboBox.Border.Rounding = 5F;
             this.cmbFormaPago.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.cmbFormaPago.TabIndex = 114;
             this.cmbFormaPago.SelectedIndexChanged += new System.EventHandler(this.cmbFormaPago_SelectedIndexChanged);
             // 
             // dtEntrega
             // 
-            this.dtEntrega.Location = new System.Drawing.Point(530, 107);
+            this.dtEntrega.Location = new System.Drawing.Point(518, 89);
             this.dtEntrega.Name = "dtEntrega";
-            this.dtEntrega.Size = new System.Drawing.Size(306, 25);
+            this.dtEntrega.Size = new System.Drawing.Size(237, 29);
+            this.dtEntrega.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(240)))));
+            this.dtEntrega.StateCommon.Border.Color1 = System.Drawing.Color.Silver;
+            this.dtEntrega.StateCommon.Border.Color2 = System.Drawing.Color.DarkGray;
+            this.dtEntrega.StateCommon.Border.Rounding = 5F;
             this.dtEntrega.TabIndex = 116;
             // 
             // kryptonGroupBox1
@@ -397,6 +464,11 @@
             // 
             // kryptonGroupBox1.Panel
             // 
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonGroupBox4);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonGroupBox3);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.label7);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonGroupBox2);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.label4);
             this.kryptonGroupBox1.Panel.Controls.Add(this.label3);
             this.kryptonGroupBox1.Panel.Controls.Add(this.label2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.btnRegistrar);
@@ -411,21 +483,15 @@
             this.kryptonGroupBox1.Panel.Controls.Add(this.label17);
             this.kryptonGroupBox1.Panel.Controls.Add(this.label11);
             this.kryptonGroupBox1.Panel.Controls.Add(this.nudCantidad);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.label12);
             this.kryptonGroupBox1.Panel.Controls.Add(this.cmbProveedor);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.label13);
             this.kryptonGroupBox1.Panel.Controls.Add(this.cmbProducto);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.label15);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.txtTotal);
             this.kryptonGroupBox1.Panel.Controls.Add(this.btnAgregar);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.txtImpuesto);
             this.kryptonGroupBox1.Panel.Controls.Add(this.label16);
-            this.kryptonGroupBox1.Panel.Controls.Add(this.txtSubtotal);
             this.kryptonGroupBox1.Panel.Controls.Add(this.btnQuitar);
             this.kryptonGroupBox1.Panel.Controls.Add(this.txtPrecio);
             this.kryptonGroupBox1.Panel.Controls.Add(this.lstProductos);
             this.kryptonGroupBox1.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox1_Panel_Paint);
-            this.kryptonGroupBox1.Size = new System.Drawing.Size(864, 551);
+            this.kryptonGroupBox1.Size = new System.Drawing.Size(801, 692);
             this.kryptonGroupBox1.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.kryptonGroupBox1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroupBox1.StateCommon.Border.Rounding = 10F;
@@ -438,7 +504,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(-46, 70);
+            this.label3.Location = new System.Drawing.Point(-30, 54);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(952, 32);
@@ -447,12 +513,84 @@
     "______________________________________________________\r\n\r\n";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 299);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(181, 22);
+            this.label4.TabIndex = 118;
+            this.label4.Text = "Productos agregados";
+            // 
+            // kryptonGroupBox2
+            // 
+            this.kryptonGroupBox2.CaptionVisible = false;
+            this.kryptonGroupBox2.Location = new System.Drawing.Point(24, 514);
+            // 
+            // kryptonGroupBox2.Panel
+            // 
+            this.kryptonGroupBox2.Panel.Controls.Add(this.label13);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.txtSubtotal);
+            this.kryptonGroupBox2.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox2_Panel_Paint);
+            this.kryptonGroupBox2.Size = new System.Drawing.Size(227, 84);
+            this.kryptonGroupBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(236)))));
+            this.kryptonGroupBox2.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(236)))));
+            this.kryptonGroupBox2.StateCommon.Border.Rounding = 5F;
+            this.kryptonGroupBox2.TabIndex = 119;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Location = new System.Drawing.Point(-44, 652);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(952, 32);
+            this.label7.TabIndex = 120;
+            this.label7.Text = "_________________________________________________________________________________" +
+    "______________________________________________________\r\n\r\n";
+            // 
+            // kryptonGroupBox3
+            // 
+            this.kryptonGroupBox3.CaptionVisible = false;
+            this.kryptonGroupBox3.Location = new System.Drawing.Point(273, 514);
+            // 
+            // kryptonGroupBox3.Panel
+            // 
+            this.kryptonGroupBox3.Panel.Controls.Add(this.txtImpuesto);
+            this.kryptonGroupBox3.Panel.Controls.Add(this.label12);
+            this.kryptonGroupBox3.Size = new System.Drawing.Size(227, 84);
+            this.kryptonGroupBox3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(236)))));
+            this.kryptonGroupBox3.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(236)))));
+            this.kryptonGroupBox3.StateCommon.Border.Rounding = 5F;
+            this.kryptonGroupBox3.TabIndex = 121;
+            // 
+            // kryptonGroupBox4
+            // 
+            this.kryptonGroupBox4.CaptionVisible = false;
+            this.kryptonGroupBox4.Location = new System.Drawing.Point(523, 512);
+            // 
+            // kryptonGroupBox4.Panel
+            // 
+            this.kryptonGroupBox4.Panel.Controls.Add(this.txtTotal);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.label15);
+            this.kryptonGroupBox4.Size = new System.Drawing.Size(232, 86);
+            this.kryptonGroupBox4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(236)))));
+            this.kryptonGroupBox4.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(244)))), ((int)(((byte)(241)))), ((int)(((byte)(236)))));
+            this.kryptonGroupBox4.StateCommon.Border.Rounding = 5F;
+            this.kryptonGroupBox4.TabIndex = 122;
+            // 
             // frmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(108)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(915, 604);
+            this.ClientSize = new System.Drawing.Size(845, 735);
             this.Controls.Add(this.kryptonGroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmRegistrar";
@@ -467,6 +605,21 @@
             this.kryptonGroupBox1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).EndInit();
             this.kryptonGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).EndInit();
+            this.kryptonGroupBox2.Panel.ResumeLayout(false);
+            this.kryptonGroupBox2.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).EndInit();
+            this.kryptonGroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3.Panel)).EndInit();
+            this.kryptonGroupBox3.Panel.ResumeLayout(false);
+            this.kryptonGroupBox3.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3)).EndInit();
+            this.kryptonGroupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4.Panel)).EndInit();
+            this.kryptonGroupBox4.Panel.ResumeLayout(false);
+            this.kryptonGroupBox4.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4)).EndInit();
+            this.kryptonGroupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -500,5 +653,10 @@
         private Krypton.Toolkit.KryptonDateTimePicker dtEntrega;
         private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox2;
+        private System.Windows.Forms.Label label7;
+        private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox3;
+        private Krypton.Toolkit.KryptonGroupBox kryptonGroupBox4;
     }
 }
