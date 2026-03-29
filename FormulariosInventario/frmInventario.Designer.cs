@@ -52,6 +52,7 @@ namespace TRAMADE
             this.btnRefrescar = new Krypton.Toolkit.KryptonButton();
             this.lblHora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnExportarTodasEtiquetas = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgProducto)).BeginInit();
@@ -64,7 +65,7 @@ namespace TRAMADE
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.Silver;
             this.txtBuscar.Location = new System.Drawing.Point(65, 20);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(146, 20);
             this.txtBuscar.TabIndex = 0;
@@ -76,7 +77,7 @@ namespace TRAMADE
             this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltrar.FormattingEnabled = true;
             this.cmbFiltrar.Location = new System.Drawing.Point(326, 22);
-            this.cmbFiltrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbFiltrar.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFiltrar.Name = "cmbFiltrar";
             this.cmbFiltrar.Size = new System.Drawing.Size(129, 21);
             this.cmbFiltrar.TabIndex = 1;
@@ -86,7 +87,7 @@ namespace TRAMADE
             // 
             this.btnRegistrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRegistrar.Location = new System.Drawing.Point(529, 21);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(61, 20);
             this.btnRegistrar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
@@ -100,7 +101,7 @@ namespace TRAMADE
             // 
             this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEditar.Location = new System.Drawing.Point(608, 21);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(61, 20);
             this.btnEditar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
@@ -114,7 +115,7 @@ namespace TRAMADE
             // 
             this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnEliminar.Location = new System.Drawing.Point(686, 21);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(61, 20);
             this.btnEliminar.StateCommon.Back.Color1 = System.Drawing.Color.IndianRed;
@@ -140,7 +141,7 @@ namespace TRAMADE
             // 
             this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRegresar.Location = new System.Drawing.Point(38, 393);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(61, 20);
             this.btnRegresar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
@@ -154,7 +155,7 @@ namespace TRAMADE
             // 
             this.btnExportarInventario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnExportarInventario.Location = new System.Drawing.Point(644, 394);
-            this.btnExportarInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExportarInventario.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportarInventario.Name = "btnExportarInventario";
             this.btnExportarInventario.Size = new System.Drawing.Size(131, 20);
             this.btnExportarInventario.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
@@ -188,7 +189,7 @@ namespace TRAMADE
             this.dgvInventario.AllowUserToAddRows = false;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(18, 59);
-            this.dgvInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvInventario.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RowHeadersVisible = false;
             this.dgvInventario.RowHeadersWidth = 51;
@@ -205,7 +206,7 @@ namespace TRAMADE
             this.panel2.Controls.Add(this.imgProducto);
             this.panel2.Controls.Add(this.lblNombreProducto);
             this.panel2.Location = new System.Drawing.Point(182, 341);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(348, 84);
             this.panel2.TabIndex = 13;
@@ -215,7 +216,7 @@ namespace TRAMADE
             // 
             this.imgProducto.Image = global::TRAMADE.Properties.Resources.photo_8924441;
             this.imgProducto.Location = new System.Drawing.Point(24, 6);
-            this.imgProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgProducto.Margin = new System.Windows.Forms.Padding(2);
             this.imgProducto.Name = "imgProducto";
             this.imgProducto.Size = new System.Drawing.Size(106, 74);
             this.imgProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -237,7 +238,7 @@ namespace TRAMADE
             // btnSiguiente
             // 
             this.btnSiguiente.Location = new System.Drawing.Point(895, 394);
-            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(2);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(21, 20);
             this.btnSiguiente.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
@@ -251,7 +252,7 @@ namespace TRAMADE
             // btnAtras
             // 
             this.btnAtras.Location = new System.Drawing.Point(799, 393);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(2);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(20, 20);
             this.btnAtras.StateCommon.Back.Color1 = System.Drawing.SystemColors.Control;
@@ -266,7 +267,7 @@ namespace TRAMADE
             // 
             this.pictureBox3.Image = global::TRAMADE.Properties.Resources.calendar_55281;
             this.pictureBox3.Location = new System.Drawing.Point(810, 19);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(27, 20);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -276,7 +277,7 @@ namespace TRAMADE
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(578, 70);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 41);
             this.pictureBox1.TabIndex = 0;
@@ -287,7 +288,7 @@ namespace TRAMADE
             this.panel1.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 133);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(967, 150);
             this.panel1.TabIndex = 11;
@@ -296,7 +297,7 @@ namespace TRAMADE
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(220, 20);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(20, 20);
             this.btnBuscar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
@@ -310,7 +311,7 @@ namespace TRAMADE
             // btnRefrescar
             // 
             this.btnRefrescar.Location = new System.Drawing.Point(249, 20);
-            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefrescar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(20, 20);
             this.btnRefrescar.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
@@ -338,12 +339,27 @@ namespace TRAMADE
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnExportarTodasEtiquetas
+            // 
+            this.btnExportarTodasEtiquetas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExportarTodasEtiquetas.Location = new System.Drawing.Point(644, 347);
+            this.btnExportarTodasEtiquetas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExportarTodasEtiquetas.Name = "btnExportarTodasEtiquetas";
+            this.btnExportarTodasEtiquetas.Size = new System.Drawing.Size(131, 20);
+            this.btnExportarTodasEtiquetas.StateCommon.Back.Color1 = System.Drawing.Color.Silver;
+            this.btnExportarTodasEtiquetas.StateCommon.Back.Color2 = System.Drawing.Color.Silver;
+            this.btnExportarTodasEtiquetas.TabIndex = 21;
+            this.btnExportarTodasEtiquetas.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnExportarTodasEtiquetas.Values.Text = "Exportar Etiquetas";
+            this.btnExportarTodasEtiquetas.Click += new System.EventHandler(this.btnExportarTodasEtiquetas_Click);
+            // 
             // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 436);
             this.ControlBox = false;
+            this.Controls.Add(this.btnExportarTodasEtiquetas);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.btnBuscar);
@@ -364,7 +380,7 @@ namespace TRAMADE
             this.Controls.Add(this.cmbFiltrar);
             this.Controls.Add(this.txtBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmInventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInventario";
@@ -406,5 +422,6 @@ namespace TRAMADE
         private Krypton.Toolkit.KryptonButton btnRefrescar;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer timer1;
+        private Krypton.Toolkit.KryptonButton btnExportarTodasEtiquetas;
     }
 }

@@ -23,6 +23,7 @@ namespace TRAMADE
 
         private void frmInventario_Load(object sender, EventArgs e)
         {
+            // ── Estilo del grid (igual que antes) ─────────────────────────────
             dgvInventario.ReadOnly = true;
             dgvInventario.AllowUserToResizeRows = false;
             dgvInventario.AllowUserToResizeColumns = false;
@@ -34,6 +35,7 @@ namespace TRAMADE
 
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
+            btnExportarTodasEtiquetas.Enabled = false; // ← nuevo botón, deshabilitado al inicio
 
             CargarProductos();
 
@@ -47,15 +49,21 @@ namespace TRAMADE
             timer1.Start();
         }
 
+        // ─── Cargar productos (sin cambios) ───────────────────────────────────
         private void CargarProductos()
         {
             int totalRegistros = clsProductoDAL.ContarProductos();
             totalPaginas = (int)Math.Ceiling((double)totalRegistros / registrosPorPagina);
             lblPagina.Text = "Página " + paginaActual + " de " + totalPaginas;
 
-            DataTable dt = clsProductoDAL.ObtenerProductos(filtroActual, paginaActual, registrosPorPagina);
+            DataTable dt = clsProductoDAL.ObtenerProductos(
+                filtroActual, paginaActual, registrosPorPagina);
             dgvInventario.DataSource = dt;
-            dgvInventario.Columns["imagen_producto"].Visible = false;
+
+            // Ocultar columnas internas
+            if (dgvInventario.Columns.Contains("imagen_producto"))
+                dgvInventario.Columns["imagen_producto"].Visible = false;
+
             dgvInventario.AllowUserToResizeColumns = false;
             dgvInventario.AllowUserToResizeRows = false;
             dgvInventario.ReadOnly = true;
@@ -66,11 +74,12 @@ namespace TRAMADE
                 clsMensajes.Aviso("No hay productos registrados");
         }
 
+        // ─── Alertas de stock (sin cambios) ───────────────────────────────────
         private void AplicarAlertas()
         {
             if (!dgvInventario.Columns.Contains("Alerta"))
             {
-                DataGridViewTextBoxColumn colAlerta = new DataGridViewTextBoxColumn();
+                var colAlerta = new DataGridViewTextBoxColumn();
                 colAlerta.Name = "Alerta";
                 colAlerta.HeaderText = "Alerta";
                 dgvInventario.Columns.Add(colAlerta);
@@ -103,11 +112,13 @@ namespace TRAMADE
             }
         }
 
+        // ─── Selección en el grid ─────────────────────────────────────────────
         private void dgvInventario_SelectionChanged(object sender, EventArgs e)
         {
             bool haySeleccion = dgvInventario.SelectedRows.Count > 0;
             btnEditar.Enabled = haySeleccion;
             btnEliminar.Enabled = haySeleccion;
+            btnExportarTodasEtiquetas.Enabled = haySeleccion; // ← habilitar con selección
 
             if (haySeleccion)
             {
@@ -118,7 +129,7 @@ namespace TRAMADE
                 if (imagenObj != null && imagenObj != DBNull.Value)
                 {
                     byte[] imagenBytes = (byte[])imagenObj;
-                    using (System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBytes))
+                    using (var ms = new MemoryStream(imagenBytes))
                     {
                         imgProducto.Image = Image.FromStream(ms);
                         imgProducto.SizeMode = PictureBoxSizeMode.Zoom;
@@ -131,6 +142,34 @@ namespace TRAMADE
             }
         }
 
+        // ─── NUEVO: Imprimir etiqueta del producto seleccionado ───────────────
+        
+
+        /// <summary>
+        /// Consulta el codigo_barras directamente desde PRODUCTO por si la vista
+        /// no expone esa columna.
+        /// </summary>
+        private string ObtenerCodigoBarrasPorId(int idProducto)
+        {
+            clsConexion obj = new clsConexion();
+            obj.Abrir();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT codigo_barras FROM PRODUCTO WHERE id_producto = @id", obj.SqlC);
+                cmd.Parameters.AddWithValue("@id", idProducto);
+                object resultado = cmd.ExecuteScalar();
+                return resultado != null && resultado != DBNull.Value
+                    ? resultado.ToString()
+                    : string.Empty;
+            }
+            finally
+            {
+                obj.Cerrar();
+            }
+        }
+
+        // ─── Registrar (sin cambios) ──────────────────────────────────────────
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             frmRegistrarInv frm = new frmRegistrarInv();
@@ -138,6 +177,7 @@ namespace TRAMADE
             CargarProductos();
         }
 
+        // ─── Editar (sin cambios) ─────────────────────────────────────────────
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dgvInventario.SelectedRows.Count == 0)
@@ -145,13 +185,13 @@ namespace TRAMADE
                 clsMensajes.Aviso("Selecciona un producto para editar");
                 return;
             }
-
             int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["ID"].Value);
             frmEditarInv frm = new frmEditarInv(idProducto);
             frm.ShowDialog();
             CargarProductos();
         }
 
+        // ─── Eliminar (sin cambios) ───────────────────────────────────────────
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvInventario.SelectedRows.Count == 0)
@@ -159,7 +199,6 @@ namespace TRAMADE
                 clsMensajes.Aviso("Selecciona un producto para eliminar");
                 return;
             }
-
             int idProducto = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["ID"].Value);
 
             if (clsMensajes.Confirmar("¿Estás seguro que deseas eliminar este producto?"))
@@ -177,6 +216,7 @@ namespace TRAMADE
             }
         }
 
+        // ─── Buscar (sin cambios) ─────────────────────────────────────────────
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
@@ -184,16 +224,17 @@ namespace TRAMADE
                 CargarProductos();
                 return;
             }
-
             DataTable dt = clsProductoDAL.BuscarProductos(txtBuscar.Text);
             dgvInventario.DataSource = dt;
-            dgvInventario.Columns["imagen_producto"].Visible = false;
+            if (dgvInventario.Columns.Contains("imagen_producto"))
+                dgvInventario.Columns["imagen_producto"].Visible = false;
             AplicarAlertas();
 
             if (dgvInventario.Rows.Count == 0)
                 clsMensajes.Aviso("No se encontraron resultados para: " + txtBuscar.Text);
         }
 
+        // ─── Refrescar (sin cambios) ──────────────────────────────────────────
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             txtBuscar.Text = "";
@@ -203,54 +244,36 @@ namespace TRAMADE
             CargarProductos();
         }
 
+        // ─── Filtrar (sin cambios) ────────────────────────────────────────────
         private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbFiltrar.SelectedItem == null) return;
 
             switch (cmbFiltrar.SelectedItem.ToString())
             {
-                case "Orden Alfabético":
-                    filtroActual = "ORDER BY Nombre ASC";
-                    break;
-                case "Categoría":
-                    filtroActual = "ORDER BY Categoría ASC";
-                    break;
-                case "Sucursal":
-                    filtroActual = "ORDER BY Sucursal ASC";
-                    break;
-                case "Proveedor":
-                    filtroActual = "ORDER BY Proveedor ASC";
-                    break;
-                case "Mayor Stock":
-                    filtroActual = "ORDER BY Stock DESC";
-                    break;
-                case "Menor Stock":
-                    filtroActual = "ORDER BY Stock ASC";
-                    break;
+                case "Orden Alfabético": filtroActual = "ORDER BY Nombre ASC"; break;
+                case "Categoría": filtroActual = "ORDER BY Categoría ASC"; break;
+                case "Sucursal": filtroActual = "ORDER BY Sucursal ASC"; break;
+                case "Proveedor": filtroActual = "ORDER BY Proveedor ASC"; break;
+                case "Mayor Stock": filtroActual = "ORDER BY Stock DESC"; break;
+                case "Menor Stock": filtroActual = "ORDER BY Stock ASC"; break;
             }
-
             paginaActual = 1;
             CargarProductos();
         }
 
+        // ─── Paginación (sin cambios) ─────────────────────────────────────────
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (paginaActual < totalPaginas)
-            {
-                paginaActual++;
-                CargarProductos();
-            }
+            if (paginaActual < totalPaginas) { paginaActual++; CargarProductos(); }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            if (paginaActual > 1)
-            {
-                paginaActual--;
-                CargarProductos();
-            }
+            if (paginaActual > 1) { paginaActual--; CargarProductos(); }
         }
 
+        // ─── Exportar Excel (sin cambios) ─────────────────────────────────────
         private void btnExportarInventario_Click(object sender, EventArgs e)
         {
             try
@@ -265,7 +288,8 @@ namespace TRAMADE
 
                     clsConexion obj = new clsConexion();
                     obj.Abrir();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM VistaProductosDetalle " + filtroActual, obj.SqlC);
+                    SqlCommand cmd = new SqlCommand(
+                        "SELECT * FROM VistaProductosDetalle " + filtroActual, obj.SqlC);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -278,7 +302,8 @@ namespace TRAMADE
                     {
                         ExcelWorksheet hoja = excel.Workbook.Worksheets.Add("Inventario");
 
-                        hoja.Cells[1, 1].Value = "Fecha de exportación: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                        hoja.Cells[1, 1].Value = "Fecha de exportación: " +
+                            DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
                         hoja.Cells[1, 1].Style.Font.Bold = true;
                         hoja.Cells[1, 1, 1, dt.Columns.Count].Merge = true;
 
@@ -286,7 +311,8 @@ namespace TRAMADE
                         {
                             hoja.Cells[2, i + 1].Value = dt.Columns[i].ColumnName;
                             hoja.Cells[2, i + 1].Style.Font.Bold = true;
-                            hoja.Cells[2, i + 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                            hoja.Cells[2, i + 1].Style.Fill.PatternType =
+                                OfficeOpenXml.Style.ExcelFillStyle.Solid;
                             hoja.Cells[2, i + 1].Style.Fill.BackgroundColor.SetColor(Color.Brown);
                             hoja.Cells[2, i + 1].Style.Font.Color.SetColor(Color.White);
                         }
@@ -296,7 +322,7 @@ namespace TRAMADE
                                 hoja.Cells[i + 3, j + 1].Value = dt.Rows[i][j];
 
                         hoja.Cells.AutoFitColumns();
-                        excel.SaveAs(new System.IO.FileInfo(saveFile.FileName));
+                        excel.SaveAs(new FileInfo(saveFile.FileName));
                     }
 
                     clsMensajes.Exito("Inventario exportado correctamente");
@@ -308,22 +334,23 @@ namespace TRAMADE
             }
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        // ─── Otros eventos (sin cambios) ──────────────────────────────────────
+        private void btnRegresar_Click(object sender, EventArgs e) { this.Close(); }
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblFecha.Text = DateTime.Now.ToString("dd/MM/yy");
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
-
         private void txtBuscar_TextChanged(object sender, EventArgs e) { }
         private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
         private void panel2_Paint(object sender, PaintEventArgs e) { }
         private void panel1_Paint(object sender, PaintEventArgs e) { }
         private void lblFecha_Click(object sender, EventArgs e) { }
         private void lblHora_Click(object sender, EventArgs e) { }
+
+        private void btnExportarTodasEtiquetas_Click(object sender, EventArgs e)
+        {
+            clsCodigoBarras.ExportarTodasEtiquetas();
+        }
     }
 }
