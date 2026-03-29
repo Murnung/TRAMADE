@@ -75,6 +75,8 @@ namespace TRAMADE
             txtCorreo.Text = "";
             txtDireccion.Text = "";
 
+            txtRTN.Text = txtDNI.Text = "";
+            
 
             cmbTipoCliente.SelectedItem = null;
             cmbDepartamento.SelectedItem = null;
@@ -104,7 +106,9 @@ namespace TRAMADE
                  txtDireccion.Text, txtDireccion,
                  cmbDepartamento.SelectedValue,
                  cmbCiudad.SelectedValue,
-                 0
+                 cmbTipoCliente.SelectedValue,
+                 0,
+                 txtContacto.Text, txtContacto
                 );
 
             if (!esValido) return;
@@ -205,8 +209,17 @@ namespace TRAMADE
         {
 
             clsValidar.SoloNumeros_KeyPress(e);
+           
         }
 
-  
+        private void txtCorreo_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clsValidar.ForzarMinusculas_KeyPress(e);
+        }
     }
 }

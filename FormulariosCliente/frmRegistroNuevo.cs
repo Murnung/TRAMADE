@@ -103,9 +103,10 @@ namespace TRAMADE
                     txtDNI.ReadOnly = true;
                     txtDNI.Enabled = false;
                     txtDNI.BackColor = Color.LightGray;
-                    txtRTN.ReadOnly = true;
-                    txtRTN.BackColor = Color.LightGray;
-                    txtRTN.Enabled = false;
+                   
+                    txtRTN.ReadOnly = false;
+                    txtRTN.Enabled = true;  
+                    txtRTN.BackColor = Color.White;
 
 
                     txtID.Text = row["id_cliente"].ToString();
@@ -182,7 +183,7 @@ namespace TRAMADE
             bool esValido = clsValidar.ValidarTodoElFormulario
                 (
                  txtNombre.Text, txtNombre,
-                 cmbTipoCliente.Text,
+                 cmbTipoCliente.Text, 
                  txtDNI.Text, txtDNI,
                  txtRTN.Text, txtRTN,
                  cmbRazonSocial.Text, cmbRazonSocial,
@@ -191,7 +192,9 @@ namespace TRAMADE
                  txtDireccion.Text, txtDireccion,
                  cmbDepartamento.SelectedValue,
                  cmbCiudad.SelectedValue,
-                 idActual
+                 cmbTipoCliente.SelectedValue,
+                 idActual,
+                 txtContacto.Text, txtContacto
                 );
 
             if (!esValido) return;
@@ -237,13 +240,18 @@ namespace TRAMADE
 
         private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             clsValidar.SoloNumeros_KeyPress(e);
+            
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clsValidar.ForzarMinusculas_KeyPress(e);
         }
     }
 }

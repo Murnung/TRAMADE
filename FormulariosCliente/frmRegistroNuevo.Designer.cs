@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.kryptonGroup1 = new Krypton.Toolkit.KryptonGroup();
+            this.cmbRazonSocial = new Krypton.Toolkit.KryptonComboBox();
             this.txtTelefono = new Krypton.Toolkit.KryptonTextBox();
             this.cmbTipoCliente = new Krypton.Toolkit.KryptonComboBox();
             this.cmbCiudad = new Krypton.Toolkit.KryptonComboBox();
@@ -65,15 +66,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.cmbRazonSocial = new Krypton.Toolkit.KryptonComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
             this.kryptonGroup1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroup1
@@ -123,6 +123,16 @@
             this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroup1.StateCommon.Border.Rounding = 30F;
             this.kryptonGroup1.TabIndex = 1;
+            // 
+            // cmbRazonSocial
+            // 
+            this.cmbRazonSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRazonSocial.DropDownWidth = 147;
+            this.cmbRazonSocial.Location = new System.Drawing.Point(161, 219);
+            this.cmbRazonSocial.Name = "cmbRazonSocial";
+            this.cmbRazonSocial.Size = new System.Drawing.Size(147, 22);
+            this.cmbRazonSocial.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.cmbRazonSocial.TabIndex = 91;
             // 
             // txtTelefono
             // 
@@ -368,6 +378,7 @@
             this.txtCorreo.ShortcutsEnabled = false;
             this.txtCorreo.Size = new System.Drawing.Size(195, 23);
             this.txtCorreo.TabIndex = 17;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // label15
             // 
@@ -558,16 +569,6 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Departamento*";
             // 
-            // cmbRazonSocial
-            // 
-            this.cmbRazonSocial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRazonSocial.DropDownWidth = 147;
-            this.cmbRazonSocial.Location = new System.Drawing.Point(161, 219);
-            this.cmbRazonSocial.Name = "cmbRazonSocial";
-            this.cmbRazonSocial.Size = new System.Drawing.Size(147, 22);
-            this.cmbRazonSocial.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.cmbRazonSocial.TabIndex = 91;
-            // 
             // frmRegistroNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,10 +586,10 @@
             this.kryptonGroup1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).EndInit();
             this.kryptonGroup1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbTipoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCiudad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbRazonSocial)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -293,6 +294,12 @@ namespace TRAMADE
             }
             return true;
         }
+        // ─── VALIDAR FORZAR MINUSCULAS ─────────────────────────
+        public static void ForzarMinusculas_KeyPress(KeyPressEventArgs e)
+        {
+            
+            e.KeyChar = char.ToLower(e.KeyChar);
+        }
 
         // ─── VALIDAR DNI (13 DÍGITOS) ────────────────────────────────
         public static bool DNI(string valor, Control campo = null)
@@ -413,8 +420,23 @@ namespace TRAMADE
                     return false;
                 }
                 return true;
+
+
             }
             finally { ObjConexion.Cerrar(); }
+        }
+
+        public static bool SinNumeros(string valor, string nombreCampo, Control campo = null)
+        {
+            if (string.IsNullOrWhiteSpace(valor)) return true;
+            if (System.Text.RegularExpressions.Regex.IsMatch(valor.Trim(), @"\d"))
+            {
+                MessageBox.Show($"El campo '{nombreCampo}' no puede contener números.",
+                    "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (campo != null) campo.Focus();
+                return false;
+            }
+            return true;
         }
 
 
@@ -433,6 +455,7 @@ namespace TRAMADE
             if (!SinTresLetrasIguales(nombre, etiquetaNombre)) return false; 
             if (!LongitudMinima(nombre, etiquetaNombre, 3, cNombre)) return false;
             if (!LongitudMaxima(nombre, etiquetaNombre, 50, cNombre)) return false;
+            if (!SinNumeros(nombre, etiquetaNombre, cNombre)) return false;
 
             // --- Validación de Dirección ---
             if (!NullOVacio(direccion, "Dirección", cDir)) return false;
@@ -486,17 +509,33 @@ namespace TRAMADE
             return true;
         }
         // ─── VALIDAR FORMULARIO DE CLIENTE COMPLETO (PERSONA NATURAL O JURÍDICA) ───────────────────────────────
-        public static bool ValidarTodoElFormulario(
-        string nombre, Control cNombre, string tipo, string dni, Control cDni,
-        string rtn, Control cRtn, string razon, Control cRazon,
-        string tel, Control cTel, string correo, Control cCorreo,
-        string direccion, Control cDir, object depto, object ciudad, int idActual = 0)
+        public static bool ValidarTodoElFormulario
+            (
+                string nombre, Control cNombre, string tipo, string dni, Control cDni,
+                string rtn, Control cRtn, string razon, Control cRazon,
+                string tel, Control cTel, string correo, Control cCorreo,
+                string direccion, Control cDir, object depto, object ciudad, object tipocli, int idActual = 0,
+                string contacto = "", Control cContacto = null
+            )
         {
             
             if (!ValidarDatosContactoBase(nombre, cNombre, "Nombre", direccion, cDir, tel, cTel, correo, cCorreo))
                 return false;
 
+            if (!NullOVacio(contacto, "Contacto", cContacto)) return false;
+            if (!SinEspaciosExtremos(contacto, "Contacto", cContacto)) return false;
+            if (!SinDobleEspacio(contacto, "Contacto", cContacto)) return false;
+            if (!SinSoloEspeciales(contacto, "Contacto", cContacto)) return false;
+            if (!SinTresLetrasIguales(contacto, "Contacto")) return false;
+            if (!LongitudMinima(contacto,"Contacto", 3, cContacto)) return false;
+            if (!LongitudMaxima(contacto, "Contacto", 50, cContacto)) return false;
+            if (!SinNumeros(contacto, "Contacto", cContacto)) return false;
             
+            if (tipocli == null || tipocli.ToString() == "0")
+            {
+                MessageBox.Show("Debe seleccionar un Tipo de Cliente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             if (tipo == "PERSONA NATURAL")
             {
                 if (!DNI(dni, cDni)) return false;
@@ -514,12 +553,13 @@ namespace TRAMADE
             }
 
           
-            if (depto == null || ciudad == null)
+            if (depto == null || ciudad == null || depto.ToString() == "0" || ciudad.ToString() == "0")
             {
                 MessageBox.Show("Seleccione una ubicación válida (Departamento y Ciudad).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
+            
             return true;
         }
 
